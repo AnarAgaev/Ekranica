@@ -3,11 +3,13 @@
 html {
     box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
     box-sizing: inherit;
+}
+
+* {
     border: none;
     padding: 0;
     outline: none !important
@@ -18,15 +20,6 @@ html, body {
     min-height: 100vh;
     font-size: 16px;
 }
-
-
-
-
-
-
-
-
-
 
 body {
     display: flex;
@@ -53,20 +46,17 @@ body {
 .h2, h2 { font-size: 20px; }
 .h3, h3 { font-size: 14px; }
 
-@media (min-width: $st) {
+@media (min-width: $screen-tablet) {
     .h1, h1 { font-size: 60px; }
     .h2, h2 { font-size: 40px; }
     .h3, h3 { font-size: 24px; }
 }
 
-@media (min-width: $sd) {
+@media (min-width: $screen-desktop) {
     .h1, h1 { font-size: 60px; }
     .h2, h2 { font-size: 30px; }
     .h3, h3 { font-size: 24px; }
 }
-
-
-
 
 .header,
 .footer { flex: none; }
@@ -105,11 +95,11 @@ body {
     }
 }
 
-@media (min-width: $sm {
+@media (min-width: $screen-mobile) {
 
 }
 
-@media (min-width: $md) {
+@media (min-width: $screen-tablet) {
     .container {
         width: 672px;
         //max-width: 768px;
@@ -126,7 +116,7 @@ body {
     }
 }
 
-@media (min-width: $lg) {
+@media (min-width: $screen-desktop) {
     .container {
         width: 1344px;
         //max-width:1920px;
@@ -142,14 +132,6 @@ body {
         }
     }
 }
-
-
-
-
-
-
-
-
 
 
 ul {
@@ -606,4 +588,3 @@ input, textarea {
         transition: opacity 0.3s ease;
     }
 }
-
