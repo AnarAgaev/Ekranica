@@ -1,0 +1,55 @@
+section.section.section_wrap.payment
+    .container
+        .row
+            .col_3.payment__caption
+                h1.section__title Схемы оплаты
+                .section__subtitle После согласования всех деталей с клиентом заключается договор. Далее необходимо внести предоплату, после чего сотрудники нашей компании приступают к изготовлению проекта с учетом индивидуальных особенностей и потребностей вашего заказа
+                a.payment__download(href="")
+                    span.icon
+                    span.caption Скачать реквизиты
+                .payment__comment Плательщикам НДС просьба заблаговременно подготовить копию свидетельства налогоплательщика
+
+            form(action="/" method="POST").calc__form
+                h3.calc__title Калькулятор рассрочки
+                .control__group
+                    label.control__wrap
+                        span.control__caption Стоимость оборудования
+                        span.control__container.control_price
+                            input(value="1500000")
+                            span.caption ₽
+                    label.control__wrap
+                        span.control__caption Срок рассрочки
+                        span.control__container.control_term
+                            input.select(value="24" readonly)
+                            span.caption мес
+                    label.control__wrap
+                        span.control__caption Первый платёж
+                        span.control__container.control_payment
+                            input.select(value="30" readonly)
+                            span.caption %
+                input.btn.btn_action.calc__btn(type="submit" value="Рассчитать")
+
+                span.calc__line
+
+                .calc__results
+                    .calc__price
+                        | Итого к оплате
+                        span.dash —
+                        span#calcPrice 1 752 373
+                        | ₽
+                    .calc__overpayment
+                        | Переплата за
+                        span#calcMonth 24
+                        | месяца
+                        span.dash —
+                        span#calcOverpyment 252 373
+                        | ₽
+                    .calc__comment
+                        | Первый платёж
+                        span.dash —
+                        | 30% от стоимости экрана.
+                        br
+                        | Остаток можно погашать ежемесячно до трех лет
+
+
+

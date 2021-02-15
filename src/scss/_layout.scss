@@ -1,0 +1,100 @@
+@import "variables";
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    border: none;
+    padding: 0;
+    outline: none !important
+}
+
+//- Make sticky footer
+html, body {
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: normal;
+    color: $color-text-primary;
+    line-height: 1.4;
+    overflow-x: hidden;
+    // background-color: $color-back-secondary;
+}
+
+.header,
+.footer { flex: none; }
+
+.main {
+    flex: 1 0 auto;
+    padding: 91px 0;
+    margin-top: 124px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 272px; // by 320px:  272px = (56px * 4) + (16px * 3)
+    // padding: 0 24px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+}
+
+@for $i from 1 through 4 {
+    .col_#{$i} {
+        position: relative;
+        width: 100%;
+        max-width: calc(100% / 4 * #{$i} - 16px);
+        margin: 0 8px;
+    }
+}
+
+@media (min-width: $md) {
+    .container {
+        max-width: 672px; // by 768px: 672px = (92px * 6) + (24px * 5)
+        // padding: 0 48px;
+    }
+
+    .row {
+        margin: 0 -12px;
+    }
+
+    @for $i from 1 through 6 {
+        .col_#{$i} {
+            max-width: calc(100% / 6 * #{$i} - 24px);
+            margin: 0 12px;
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .container {
+        max-width: 1344px; // by 1920px: 1344px = (144px * 6) + (96px * 5)
+        // padding: 0 288px;
+    }
+
+    .row { margin: 0 -48px; }
+
+    @for $i from 1 through 6 {
+        .col_#{$i} {
+            max-width: calc(100% / 6 * #{$i} - 96px);
+            margin: 0 48px;
+        }
+    }
+}

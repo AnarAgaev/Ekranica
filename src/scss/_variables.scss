@@ -1,0 +1,19 @@
+//- Animation functions
+$transition             :  all .2s ease-in-out;
+
+// Colors
+$color-back-primary     : #0B0D19;
+$color-back-secondary   : #0D101F;
+$color-accent           : #AB78FF;
+$color-icons            : #F6F0FF;
+$color-text-primary     : #D9D9D9;
+$color-text-secondary   : #A3A3A3;
+$color-text-inactive    : #80758F;
+
+// Media
+$sm                     : 272px;  // by 320px
+$md                     : 672px;  // by 768px
+$lg                     : 1344px; // by 1920px
+
+// Fonts
+$font-primary           : 'Montserrat', sans-serif;
