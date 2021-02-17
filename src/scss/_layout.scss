@@ -7,7 +7,7 @@ html {
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
     border: none;
     padding: 0;
     outline: none !important
@@ -204,5 +204,279 @@ a {
 
     &:hover {
         color: $color-accent
+    }
+}
+
+//- Buttons
+.btn,
+a.btn,
+button.btn,
+input.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: $transition;
+
+    &_primary {
+        padding: 14px 34px;
+        height: 50px;
+        font-weight: 500;
+        background: linear-gradient(343.22deg, #181932 -36.39%, #0F111E 72.73%);
+        color: $color-text-primary;
+        background: $color-accent;
+        box-shadow:
+                -14px -28px 40px rgba(35, 33, 58, 0.64),
+                14px 28px 30px rgba(4, 5, 14, 0.64),
+                inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                inset -2px -2px 30px rgba(255, 255, 255, 0.2);
+        border: 2px solid $color-accent;
+
+        &:hover {
+            background: #8356CC;
+            border: 2px solid #8356CC;
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3),
+                    inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                    inset -2px -2px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        &:active {
+            color: $color-text-inactive;
+            background: #5B4589;
+            border: 2px solid #5B4589;
+            box-shadow:
+                    -14px -28px 40px rgba(35, 33, 58, 0.64),
+                    14px 28px 30px rgba(4, 5, 14, 0.64),
+                    inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                    inset -2px -2px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        &:focus {
+            background: $color-accent;
+            border: 2px solid $color-accent;
+            box-shadow:
+                    -14px -28px 40px rgba(35, 33, 58, 0.64),
+                    14px 28px 30px rgba(4, 5, 14, 0.64),
+                    inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                    inset -2px -2px 30px rgba(255, 255, 255, 0.2),
+                    0 0 0 2px rgba(131,86,204,1);
+        }
+
+        &.inactive {
+            cursor: default;
+            color: $color-text-inactive;
+            background: #5B4589;
+            border: 2px solid #5B4589;
+            box-shadow:
+                    inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                    inset -2px -2px 30px rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    &_secondary {
+        padding: 14px 34px;
+        height: 50px;
+        font-weight: 500;
+        background: $color-back-secondary;
+        color: $color-text-primary;
+        box-shadow:
+                -14px -28px 30px rgba(35, 33, 58, 0.35),
+                14px 28px 30px rgba(4, 5, 14, 0.3),
+                inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+        border: 2px solid #141727;
+
+        &:hover {
+            color: $color-text-secondary;
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3);
+        }
+
+        &:active {
+            color: $color-text-inactive;
+            background: $color-back-primary;
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3);
+        }
+
+        &:focus {
+            color: $color-text-primary;
+            background: $color-back-secondary;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                    inset -4px -4px 24px rgba(255, 255, 255, 0.06),
+                    0 0 0 2px #141727;
+        }
+
+        &.inactive {
+            cursor: default;
+            color: #3A374B;
+            background: $color-back-secondary;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                    inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+        }
+    }
+
+    &_calltoaction {
+        padding: 16px 34px;
+        height: 54px;
+        font-weight: 500;
+        color: $color-accent;
+        background: $color-back-secondary;
+        box-shadow:
+                -14px -28px 30px rgba(35, 33, 58, 0.35),
+                14px 28px 30px rgba(4, 5, 14, 0.3),
+                inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+
+        &:hover {
+            color: #8356CC;
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3),
+                    inset 4px 4px 24px rgba(4, 2, 19, 0),
+                    inset -4px -4px 24px rgba(255, 255, 255, 0);
+        }
+
+        &:active {
+            color: #5B4589;
+            background: $color-back-primary;
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3);
+        }
+
+        &:focus {
+            color: #8356CC;
+            background: $color-back-secondary;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                    inset -4px -4px 24px rgba(255, 255, 255, 0.06),
+                    0 0 0 2px rgba(56, 35, 89, 1);
+        }
+
+        &.inactive {
+            cursor: default;
+            color: #3A374B;
+            background: $color-back-secondary;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                    inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+        }
+    }
+
+    &_ghost {
+        margin-right: 48px;
+        padding: 8px 12px;
+        height: 38px;
+        font-weight: 400;
+        border-radius: 10px;
+        box-shadow: 0 0 0 2px rgba(56,35,89,0);
+        transition: $transition;
+
+        &:hover {
+            svg path {
+                stroke:  $color-text-primary;
+            }
+            span {
+                color: $color-text-primary;
+
+                &::after {
+                    border-right-color: $color-text-primary;
+                    border-bottom-color: $color-text-primary;
+                }
+            }
+        }
+
+        &:active {
+            svg path {
+                stroke:  $color-text-secondary;
+            }
+            span {
+                color: $color-text-secondary;
+
+                &::after {
+                    border-right-color: $color-text-secondary;
+                    border-bottom-color: $color-text-secondary;
+                }
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(56,35,89,1);
+
+            svg path {
+                stroke: $color-accent;
+            }
+            span {
+                color: $color-accent;
+
+                &::after {
+                    border-right-color: $color-accent;
+                    border-bottom-color: $color-accent;
+                }
+            }
+        }
+
+        &.inactive {
+            cursor: default;
+
+            svg path {
+                stroke: #3A374B;
+            }
+            span {
+                color: #3A374B;
+
+                &::after {
+                    border-right-color: #3A374B;
+                    border-bottom-color: #3A374B;
+                }
+            }
+        }
+
+        .icon-pic {
+            height: 16px;
+            width: 16px;
+            margin-right: 11px;
+            margin-top: -2px;
+
+            svg path {
+                transition: $transition;
+            }
+        }
+
+        span {
+            color: $color-accent;
+            transition: $transition;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                position: relative;
+                margin-left: 8px;
+                width: 7px;
+                height: 7px;
+                border-right: 1px solid $color-accent;
+                border-bottom: 1px solid $color-accent;
+                transform: rotate(-45deg);
+                transition: $transition;
+            }
+        }
     }
 }
