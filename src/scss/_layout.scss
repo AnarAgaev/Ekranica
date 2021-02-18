@@ -31,7 +31,7 @@ body {
     font-weight: normal;
     color: $color-text-primary;
     overflow-x: hidden;
-    background-color: $color-back-secondary;
+    background-color: $color-back-primary;
 }
 
 .header,
@@ -204,6 +204,10 @@ a {
 
     &:hover {
         color: $color-accent
+    }
+
+    &.active {
+        color: $color-accent !important;
     }
 }
 
@@ -477,6 +481,51 @@ input.btn {
                 transform: rotate(-45deg);
                 transition: $transition;
             }
+        }
+    }
+}
+
+//- Social icons
+.social-icon {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: linear-gradient(321.49deg, rgba(11,13,25,.7), rgba(37,38,58,.5));
+
+    &__pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 42px;
+        width: 42px;
+        top: 4px;
+        left: 4px;
+        border-radius: 50%;
+        background: linear-gradient( 321.49deg, #1c1d30 -6.41%, #0b0c12 90.97%);
+        box-shadow:
+                -10px -10px 30px rgba(54, 38, 66, 0.35),
+                10px 10px 30px rgba(4, 5, 14, 0.4);
+
+        svg {
+            width: 18px;
+            height: 18px;
+
+            path {
+                transition: $transition;
+            }
+        }
+    }
+
+    &:hover {
+        svg path {
+            stroke: #636363;
+        }
+
+        svg #vk {
+            fill: #636363;
         }
     }
 }
