@@ -619,6 +619,7 @@ input.btn {
 //- Section
 .section {
     position: relative;
+    margin-top: 96px;
 
     &__title {
         font-size: 24px;
@@ -634,6 +635,63 @@ input.btn {
 
         @media (min-width: $lg) {
             font-size: 60px;
+        }
+    }
+
+    &_banner {
+        margin-top: 0;
+    }
+
+    &_offer {
+        z-index: 3;
+
+        @media (min-width: $md) {
+            margin-top: 186px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 408px;
+        }
+    }
+
+    &__link {
+        display: block;
+        margin-top: 12px;
+        line-height: 1.15;
+        font-size: 16px;
+
+        @media (min-width: $md) {
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        @media (min-width: $lg){
+            display: inline-block;
+            margin-left: 23px;
+        }
+
+        a {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: 1.15;
+
+            @media (min-width: $md) {
+                line-height: 1.6;
+            }
+
+            &::after {
+                content: '';
+                display: inline-block;
+                position: relative;
+                margin-left: 12px;
+                width: 7px;
+                height: 7px;
+                border-right: 1px solid $color-accent;
+                border-bottom: 1px solid $color-accent;
+                transform: rotate(-45deg);
+                transition: $transition;
+            }
         }
     }
 }

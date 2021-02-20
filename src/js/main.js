@@ -73,10 +73,12 @@ $(document).ready(function () {
 
 
     // Main banner on index page at the header
-    $('#indexBanner').slick({
-        prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnBannerPrev"></button>',
-        nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnBannerNext"></button>',
-    });
+    $('#indexBanner').slick(
+        {
+            prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnBannerPrev"></button>',
+            nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnBannerNext"></button>',
+        }
+    );
 
     function replaceBannerNums (direction) {
         const active = $('.banner__nums-number.active')[0];
@@ -148,6 +150,27 @@ $(document).ready(function () {
             replaceBannerNums(false);
         }
     });
+
+
+    // Offer Slider
+    $('#offerList').slick(
+        {
+            infinite: false,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnOfferPrev"></button>',
+            nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnOfferNext"></button>',
+            responsive: [
+                {
+                    breakpoint: 1440,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        }
+    );
 
 
 
