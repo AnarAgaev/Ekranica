@@ -20,6 +20,10 @@
                 20px 27px 40px rgba(4, 5, 14, 0.17);
     }
 
+    @media (min-width: $md) {
+        padding: 46px 48px 48px;
+    }
+
     @media (min-width: $xl) {
         display: flex;
         flex-wrap: wrap;

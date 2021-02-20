@@ -1,4 +1,5 @@
 // Includes custom scripts
+import './js/anim';
 import './js/main';
 
 // Include vendor styles

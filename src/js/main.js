@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    window.actionStopper = true;
+
+
     function getScreenType () {
         window.isDesctop = $(document).width() > 1700;
     }
@@ -48,6 +51,10 @@ $(document).ready(function () {
     });
 
 
+
+
+
+
     // FOOTER
     // Replace phone at the footer to the socials section for desktop viewport
     function replaceFooterPhone () {
@@ -65,6 +72,92 @@ $(document).ready(function () {
 
 
 
+    // Main banner on index page at the header
+    $('#indexBanner').slick({
+        prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnBannerPrev"></button>',
+        nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnBannerNext"></button>',
+    });
+
+    function replaceBannerNums (direction) {
+        const active = $('.banner__nums-number.active')[0];
+        const passive = $('.banner__nums-number.passive')[0];
+        const prevActive = $(active).prev()[0];
+        const nextPassive = $(passive).next()[0];
+
+        if (direction) {
+            $(active).removeClass('active');
+            $(passive).removeClass('passive').addClass('active');
+            $(nextPassive).addClass('passive');
+
+            $('.banner__nums-wrap').animate(
+                {left: "-90px"},
+                200,
+                function () {
+                    $('.banner__nums-wrap').children()[0].remove();
+                    $('.banner__nums-wrap').css("left", "-45px");
+
+                    const clone = $(passive).clone()[0];
+                    $(clone).removeClass('active');
+                    $('.banner__nums-wrap').append(clone);
+                }
+            );
+        } else {
+            $(active).removeClass('active').addClass('passive');
+            $(prevActive).addClass('active');
+            $(passive).removeClass('passive');
+
+            $('.banner__nums-wrap').animate(
+                {left: "0"},
+                200,
+                function () {
+                    const clone = $(nextPassive).clone()[0];
+                    $('.banner__nums-wrap').prepend(clone);
+                    $('.banner__nums-wrap').css("left", "-45px");
+                    $('.banner__nums-number:last-child').last().remove();
+                }
+            );
+        }
+    }
+
+    $('#btnBannerPrev').on('click', function () {
+        if (actionStopper) {
+            actionStopper = false;
+            replaceBannerNums(false);
+
+            setTimeout(function () {
+                actionStopper = true;
+            }, 500);
+        }
+    });
+
+    $('#btnBannerNext').on('click', function () {
+        if (actionStopper) {
+            actionStopper = false;
+            replaceBannerNums(true);
+
+            setTimeout(function () {
+                actionStopper = true;
+            }, 500);
+        }
+    });
+
+    $('#indexBanner').on('swipe', function(event, slick, direction){
+        if (direction === 'left') {
+            replaceBannerNums(true);
+        } else {
+            replaceBannerNums(false);
+        }
+    });
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,6 +165,7 @@ $(document).ready(function () {
         getScreenType();
         replaceFooterPhone();
     });
+
 
 
 });
