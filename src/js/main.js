@@ -172,6 +172,34 @@ $(document).ready(function () {
         }
     );
 
+    // Partners Choose Slider
+    $(window).on('load resize orientationchange', function() {
+        $('#partnersChoose').each(function () {
+            let $carousel = $(this);
+            /* Initializes a slick carousel only on mobile screens */
+            // slick on mobile
+            if ( $(window).width() > 1339 ) {
+                if ($carousel.hasClass('slick-initialized')) {
+                    $carousel.slick('unslick');
+                }
+            } else {
+                if ( !$carousel.hasClass('slick-initialized') ) {
+                    $carousel.slick({
+                        arrows: false,
+                        slidesToShow: 5,
+                        slidesToScroll: 1,
+                        adaptiveHeight: true,
+                        mobileFirst: true,
+                    });
+                }
+            }
+        });
+    });
+
+
+
+
+
 
 
 

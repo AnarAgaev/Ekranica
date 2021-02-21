@@ -646,11 +646,28 @@ input.btn {
         z-index: 3;
 
         @media (min-width: $md) {
-            margin-top: 186px;
+            margin-top: 126px;
         }
 
         @media (min-width: $lg) {
-            margin-top: 408px;
+            margin-top: 348px;
+        }
+    }
+
+    &_partners-choose {
+
+        @media (min-width: $lg) {
+            padding-top: 132px;
+        }
+
+        h2 {
+            @media (min-width: $md) {
+                width: 450px;
+            }
+
+            @media (min-width: $lg) {
+                width: 700px;
+            }
         }
     }
 
