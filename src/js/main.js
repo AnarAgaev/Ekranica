@@ -187,10 +187,19 @@ $(document).ready(function () {
                     $carousel.slick({
                         infinite: false,
                         arrows: false,
-                        slidesToShow: 2,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
                         adaptiveHeight: true,
-                        //mobileFirst: true,
+                        mobileFirst: true,
+                        responsive: [
+                            {
+                                breakpoint: 767,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
                     });
                 }
             }
@@ -209,7 +218,27 @@ $(document).ready(function () {
     );
 
 
+    // Projects Slider
+    $('#clientsList').slick(
+        {
+            infinite: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnClientsPrev"></button>',
+            nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnClientsNext"></button>',
+            mobileFirst: true,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
 
+        }
+    );
 
 
 

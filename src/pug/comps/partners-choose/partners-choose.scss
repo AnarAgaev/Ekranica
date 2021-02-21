@@ -38,12 +38,10 @@
 
     &__list {
         margin-top: 48px;
-        width: 448px;
-        //width: 1120px;
+        //width: 224px;
 
         @media (min-width: $md) {
             width: 696px;
-            //width: 1740px;
             margin-top: 68px;
         }
 
@@ -182,9 +180,15 @@
     }
 
     .lets-meet {
+        height: 180px;
+        margin-bottom: 20px;
 
         &::before {
             display: none;
+        }
+
+        @media (min-width: $md) {
+            margin-bottom: 0;
         }
 
         @media (min-width: $lg) {
