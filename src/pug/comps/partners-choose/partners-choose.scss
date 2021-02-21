@@ -3,10 +3,12 @@
 
     @media (min-width: $md) {
         padding-bottom: 140px;
+        padding-top: 42px;
     }
 
     @media (min-width: $lg) {
         padding-bottom: 0;
+        padding-top: 0;
     }
 
     &__background {
@@ -17,7 +19,7 @@
         background: url(/img/banner-back.svg) no-repeat center center;
         z-index: 0;
         transform: scale(-1, 1);
-        top: 470px;
+        top: 575px;
         height: 400px;
         background-size: 130%;
         background-position-x: 70%;
@@ -27,16 +29,22 @@
         }
 
         @media (min-width: $lg) {
-            display: none;
+            background: url(/img/body-back-line.svg) no-repeat center center;
+            top: 1690px;
+            height: 571px;
+            transform: scale(1, 1);
         }
     }
 
     &__list {
         margin-top: 48px;
-        width: 1120px;
+        width: 448px;
+        //width: 1120px;
 
         @media (min-width: $md) {
-            width: 1740px;
+            width: 696px;
+            //width: 1740px;
+            margin-top: 68px;
         }
 
         @media (min-width: $lg) {
@@ -63,6 +71,7 @@
             width: 100%;
             padding-top: 0;
             padding-left: 144px;
+            padding-right: 0;
             margin-bottom: 96px;
         }
 
@@ -96,6 +105,7 @@
         @media (min-width: $lg) {
             width: 96px;
             height: 96px;
+            margin-top: 4px;
         }
 
         .back {
@@ -132,7 +142,6 @@
                 margin-top: -4px;
             }
         }
-
     }
 
     &__title {

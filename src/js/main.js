@@ -185,16 +185,28 @@ $(document).ready(function () {
             } else {
                 if ( !$carousel.hasClass('slick-initialized') ) {
                     $carousel.slick({
+                        infinite: false,
                         arrows: false,
-                        slidesToShow: 5,
+                        slidesToShow: 2,
                         slidesToScroll: 1,
                         adaptiveHeight: true,
-                        mobileFirst: true,
+                        //mobileFirst: true,
                     });
                 }
             }
         });
     });
+
+    // Projects Slider
+    $('#projectsList').slick(
+        {
+            infinite: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnProjectsPrev"></button>',
+            nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnProjectsNext"></button>',
+        }
+    );
 
 
 
