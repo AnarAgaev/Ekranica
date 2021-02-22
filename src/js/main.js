@@ -243,7 +243,38 @@ $(document).ready(function () {
 
 
 
+    // FAQ toggle
+    $('.faq__caption').on('click', function (e) {
+        const isVisible =  $(e.target).parent().hasClass('visible');
 
+        //$('.faq__item').removeClass('visible');
+
+        if (isVisible) {
+            $(e.target)
+                .parent().removeClass('visible');
+        } else {
+            $(e.target)
+                .parent().addClass('visible');
+        }
+    });
+
+    $('.faq__toggler').on('click', function (e) {
+        e.stopPropagation();
+
+        const isVisible = $(e.target).closest('.faq__item').hasClass('visible');
+
+        //$('.faq__item').removeClass('visible');
+
+        if (isVisible) {
+            $(e.target)
+                .closest('.faq__item')
+                .removeClass('visible');
+        } else {
+            $(e.target)
+                .closest('.faq__item')
+                .addClass('visible');
+        }
+    });
 
 
 
