@@ -1,0 +1,389 @@
+@import "../../../scss/variables";
+
+.feedback {
+    overflow-x: hidden;
+    margin-bottom: -50px;
+
+    &__background {
+        display: none;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background: url(/img/banner-back.svg) no-repeat center center;
+        z-index: 0;
+        transform: scale(-1, 1);
+        top: 725px;
+        height: 400px;
+        background-size: 130%;
+        background-position-x: 70%;
+
+        @media (min-width: $md) {
+            display: block;
+        }
+
+        @media (min-width: $lg) {
+            background: url(/img/body-back-line.svg) no-repeat center center;
+            top: 920px;
+            height: 571px;
+            transform: scale(1, 1);
+        }
+    }
+
+    &__list {
+        width: 432px; // &__item * 2
+        margin-top: 18px; // 48 - 30
+
+        @media (min-width: $md) {
+            width: 812px; // &__item * 2
+            margin-top: 38px; //68 - 30
+        }
+
+        @media (min-width: $lg) {
+            width: 2596px; // &__item * 2
+            margin-top: 88px; // 118 - 30
+        }
+    }
+
+    &__item {
+        width: 216px; // 200 + 16
+        min-height: 440px;
+        float: left;
+        padding-bottom: 50px;
+        margin-top: 30px;
+
+        @media (min-width: $md) {
+            width: 406px; // 358 + 48
+            min-height: 614px;
+        }
+
+        @media (min-width: $lg) {
+            width: 1298px; // 1164 + 134
+            min-height: 520px;
+        }
+    }
+
+    &__card {
+        width: 200px;
+        min-height: 352px;
+        background: $color-back-primary;
+        box-shadow:
+                -14px -14px 30px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+        border-radius: 12px;
+        padding: 0 16px 16px 16px;
+        margin-top: 16px;
+        margin-bottom: 73px;
+        position: relative;
+
+        @media (min-width: $md) {
+            width: 358px;
+            min-height: 508px;
+            margin-top: 34px;
+            padding: 0 48px 25px 34px;
+            margin-bottom: 72px;
+        }
+
+        @media (min-width: $lg) {
+            width: 1164px;
+            min-height: 520px;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 0 60px 0 480px;
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
+
+    &__pic {
+        width: 168px;
+        height: 168px;
+        border-radius: 12px;
+        transform: translateY(-16px);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: $md) {
+            width: 290px;
+            height: 308px;
+            box-shadow:
+                    -14px -14px 30px rgba(54, 38, 66, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            transform: translateY(-34px);
+        }
+
+        @media (min-width: $lg) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 420px;
+            height: 520px;
+            box-shadow:
+                    -10px -10px 30px rgba(54, 38, 66, 0.35),
+                    10px 10px 30px rgba(4, 5, 14, 0.4);
+            transform: translateY(0);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            background: $color-back-primary;
+            opacity: 0.8;
+            transition: $transition;
+        }
+
+        .btn {
+            z-index: 7;
+
+            @media (min-width: $lg) {
+                width: 96px;
+                height: 96px;
+                background-size: 50%;
+                box-shadow:
+                        inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                        inset -2px -2px 30px rgba(255, 255, 255, 0.2),
+                        inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                        inset -2px -2px 30px rgba(255, 255, 255, 0.2),
+                        -14px -28px 30px rgba(54, 38, 66, 0.8),
+                        14px 28px 30px rgba(4, 5, 14, 0.5);
+            }
+        }
+    }
+
+    &__quotes {
+        display: none;
+        padding-top: 36px;
+        padding-left: 12px;
+
+        &::before, &::after {
+            content: "";
+            width: 40px;
+            height: 68px;
+            display: inline-block;
+            position: relative;
+            margin-right: 24px;
+            background: url("/img/i-quote.svg") no-repeat left center;
+        }
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__line {
+        display: none;
+        height: 12px;
+        width: 744px;
+        background: $color-back-primary;
+        box-shadow:
+                -20px -27px 40px rgba(35, 33, 58, 0.35),
+                20px 27px 40px rgba(4, 5, 14, 0.17),
+                inset -2px -2px 5px rgba(52, 40, 62, 0.3),
+                inset 2px 2px 5px rgba(0, 2, 12, 0.8);
+        border-radius: 12px;
+        margin: 62px 0 62px -62px;
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__msg {
+        display: none;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: $color-text-inactive;
+        transition: $transition;
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        margin-top: 8px;
+        transition: $transition;
+
+        @media (min-width: $md) {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            margin-top: 0;
+        }
+
+        @media (min-width: $lg) {
+            flex-direction: row;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 160%;
+            margin-top: 48px;
+
+            span {
+                padding-right: 6px;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    &__job {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        margin-top: 8px;
+
+        @media (min-width: $md) {
+            font-size: 14px;
+            margin-top: 16px;
+        }
+    }
+
+    &__socials {
+        position: absolute;
+        bottom: -72px;
+        left: 0;
+
+        .social-icon {
+            margin-right: 16px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &__pic {
+                svg path {
+                    stroke: #3A374B;
+                }
+            }
+
+            &:hover {
+                svg path {
+                    stroke: #636363 !important;
+                }
+            }
+        }
+
+        @media (min-width: $lg) {
+            top: 36px;
+            right: 0;
+            left: auto;
+            bottom: auto;
+        }
+    }
+
+    .slick-list {
+        padding-left: 43px;
+        margin-left: -43px;
+    }
+
+    .slick-current {
+        .feedback__pic {
+            &::before {
+                opacity: 0;
+            }
+        }
+
+        .feedback__name,
+        .feedback__msg {
+            color: $color-text-secondary;
+        }
+
+
+        .social-icon__pic {
+            svg path {
+                stroke: #AB78FF;
+            }
+        }
+    }
+
+    #btnFeedbackPrev,
+    #btnFeedbackNext {
+        position: absolute;
+        left: -191px;
+        top: 50%;
+        width: 68px;
+        height: 68px;
+        display: none !important;
+
+        @media (min-width: $lg) {
+            display: flex !important;
+        }
+
+        &:focus {
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                    inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+        }
+
+        &[aria-disabled="true"] {
+            cursor: default;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                    inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+
+            &::before {
+                border-right-color: #202231;
+                border-bottom-color: #202231;
+            }
+
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 19px;
+            height: 19px;
+            top: 1px;
+            border-right: 2px solid #80758F;
+            border-bottom: 2px solid #80758F;
+            transition: $transition;
+            position: relative;
+        }
+    }
+
+    #btnFeedbackPrev {
+        margin-top: 6px;
+
+        &::before {
+            transform: rotate(135deg);
+            left: 3px;
+        }
+    }
+
+    #btnFeedbackNext {
+        margin-top: -96px;
+
+        &::before {
+            transform: rotate(-45deg);
+            left: -6px;
+        }
+    }
+}

@@ -242,6 +242,19 @@ $(document).ready(function () {
 
 
 
+    // Feedback Slider
+    $('#feedbackList').slick(
+        {
+            infinite: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnFeedbackPrev"></button>',
+            nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnFeedbackNext"></button>',
+        }
+    );
+
+
+
 
     // FAQ toggle
     $('.faq__caption').on('click', function (e) {
