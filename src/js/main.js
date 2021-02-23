@@ -241,7 +241,6 @@ $(document).ready(function () {
     );
 
 
-
     // Feedback Slider
     $('#feedbackList').slick(
         {
@@ -252,6 +251,41 @@ $(document).ready(function () {
             nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnFeedbackNext"></button>',
         }
     );
+
+
+    // Work on order Slider
+    $(window).on('load resize orientationchange', function() {
+        $('#workChoose').each( function () {
+            let $carousel = $(this);
+            /* Initializes a slick carousel only on mobile screens */
+            // slick on mobile
+            if ( $(window).width() > 1339 ) {
+                if ($carousel.hasClass('slick-initialized')) {
+                    $carousel.slick('unslick');
+                }
+            } else {
+                if ( !$carousel.hasClass('slick-initialized') ) {
+                    $carousel.slick({
+                        infinite: false,
+                        arrows: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        mobileFirst: true,
+                        responsive: [
+                            {
+                                breakpoint: 767,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    });
+                }
+            }
+        });
+    });
+
 
 
 

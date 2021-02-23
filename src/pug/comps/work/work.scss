@@ -1,0 +1,271 @@
+@import "../../../scss/variables";
+
+.work {
+    overflow-x: hidden;
+
+    &__background {
+        display: none;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background: url(/img/banner-back.svg) no-repeat center center;
+        z-index: 0;
+        transform: scale(1, 1);
+        top: 495px;
+        height: 400px;
+        background-size: 130%;
+        background-position-x: 70%;
+
+        @media (min-width: $md) {
+            display: block;
+        }
+
+        @media (min-width: $lg) {
+            background: url(/img/body-back-line.svg) no-repeat center center;
+            top: 1218px;
+            height: 571px;
+            transform: scale(-1, 1);
+        }
+    }
+
+    &__list {
+        width: 448px; // &__item * 2
+        margin-top: 18px; // 48 - 30 Для того чтобы не срезались тени
+
+        @media (min-width: $md) {
+            width: 1044px; // &__item * 3
+            margin-top: 38px; // 68 - 30
+        }
+
+        @media (min-width: $lg) {
+            width: 1626px; // > &__item * 3
+            margin-top: 104px; // 134 - 30
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        width: 224px; // 200 + 24
+        min-height: 334px;
+        margin-top: 30px;
+
+        @media (min-width: $md) {
+            width: 348px; // 324 + 24
+            min-height: 306px;
+        }
+
+        @media (min-width: $lg) {
+            width: 542px; // 522 + 20
+            min-height: 294px;
+
+            &:nth-child(3),
+            &:nth-child(6) {
+                .work__day::after,
+                .work__day::after {
+                    width: 1000px;
+                    flex: none;
+                }
+
+                span {
+                    flex: 1 0 auto;
+                }
+            }
+
+            &:nth-child(1),
+            &:nth-child(4) {
+                .work__day::before,
+                .work__day::before {
+                    content: "";
+                    display: block;
+                    width: 1000px;
+                    height: 12px;
+                    position: absolute;
+                    top: calc(50% - 6px);
+                    border-radius: 12px;
+                    background: $color-back-primary;
+                    transform: translateX(-100%);
+                    margin-left: -24px;
+                    box-shadow:
+                            -20px -27px 40px rgba(35, 33, 58, 0.35),
+                            20px 27px 40px rgba(4, 5, 14, 0.17),
+                            inset -2px -2px 5px rgba(52, 40, 62, 0.3),
+                            inset 2px 2px 5px rgba(0, 2, 12, 0.8);
+                }
+            }
+        }
+    }
+
+    &__card {
+        width: 200px;
+        min-height: 334px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $md) {
+            width: 324px;
+            min-height: 306px;
+        }
+
+        @media (min-width: $lg) {
+            width: 522px;
+            min-height: 294px;
+        }
+    }
+
+    &__num {
+        width: 158px;
+        height: 158px;
+        margin-left: -33px;
+        margin-bottom: -9px;
+        position: relative;
+        margin-top: -36px;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 80px;
+            left: 152px;
+            width: 80px;
+            height: 10px;
+            background: $color-back-primary;
+            border-radius: 12px;
+            box-shadow:
+                    -20px -27px 40px rgba(35, 33, 58, 0.35),
+                    20px 27px 40px rgba(4, 5, 14, 0.17),
+                    inset -2px -2px 5px rgba(52, 40, 62, 0.3),
+                    inset 2px 2px 5px rgba(0, 2, 12, 0.8);
+
+            @media (min-width: $md) {
+                display: none;
+            }
+        }
+
+        @media (min-width: $md) {
+            margin-top: -37px;
+        }
+
+        @media (min-width: $lg) {
+            margin-left: -57px;
+            margin-top: 11px;
+            width: 234px;
+            height: 234px;
+        }
+    }
+
+    &__period {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 160%;
+        margin-bottom: 4px;
+        color: $color-text-inactive;
+
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__day {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+        margin-bottom: 16px;
+        color: $color-accent;
+        position: relative;
+
+        @media (min-width: $md) {
+            font-weight: 400;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+
+            @media (min-width: $lg){
+                margin-left: 12px;
+            }
+        }
+
+        span {
+            display: inline-block;
+            margin-right: 34px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 10px;
+            margin-bottom: 36px;
+
+            &::after {
+                content: "";
+                display: block;
+                height: 12px;
+                flex: 1 0 auto;
+                border-radius: 12px;
+                background: $color-back-primary;
+                box-shadow:
+                        -20px -27px 40px rgba(35, 33, 58, 0.35),
+                        20px 27px 40px rgba(4, 5, 14, 0.17),
+                        inset -2px -2px 5px rgba(52, 40, 62, 0.3),
+                        inset 2px 2px 5px rgba(0, 2, 12, 0.8);
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        margin-bottom: 12px;
+        color: $color-text-secondary;
+
+        @media (min-width: $md) {
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        @media (min-width: $lg) {
+            position: absolute;
+            width: 293px;
+            top: 96px;
+            left: 153px;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 140%;
+        }
+    }
+
+    &__content {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+
+        @media (min-width: $lg) {
+            width: 447px;
+            font-size: 14px;
+        }
+    }
+
+    &__steps {
+        position: absolute;
+        bottom: -51px;
+        right: -192px;
+        display: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: $color-text-primary;
+        text-shadow: 0 0 20px $color-accent;
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+}

@@ -705,11 +705,11 @@ input.btn {
         }
 
         @media (min-width: $md) {
-            margin-top: 149px;
+            margin-top: 173px;
         }
 
         @media (min-width: $lg) {
-            margin-top: 326px;
+            margin-top: 362px;
         }
     }
 
@@ -758,4 +758,54 @@ input.btn {
             }
         }
     }
+
+    &_work {
+        margin-top: 87px;
+
+        h2 {
+            @media (min-width: $md) {
+                width: 444px;
+            }
+
+            @media (min-width: $lg) {
+                width: 582px;
+                margin-bottom: -66px;
+            }
+        }
+
+        @media (min-width: $md) {
+            margin-top: 144px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 289px;
+        }
+    }
+
+    &_clients {
+        margin-top: 58px;
+
+        @media (min-width: $md) {
+            margin-top: 312px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 96px;
+        }
+    }
+
+    &_feedback {
+        @media (min-width: $md) {
+            margin-top: 134px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 264px;
+        }
+    }
+}
+
+.slick-list {
+    padding-left: 500px !important;
+    margin-left: -500px !important;
 }

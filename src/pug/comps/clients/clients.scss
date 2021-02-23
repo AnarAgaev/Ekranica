@@ -90,6 +90,7 @@
         width: 68px;
         height: 68px;
         display: none !important;
+        z-index: 10;
 
         @media (min-width: $lg) {
             display: flex !important;
@@ -150,8 +151,6 @@
     }
 
     .slick-list {
-        padding-left: 45px;
-        margin-left: -45px;
         padding-bottom: 50px;
     }
 }
