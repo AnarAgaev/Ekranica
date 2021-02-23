@@ -41,6 +41,11 @@
             color: $color-text-secondary;
             margin-top: -13px;
 
+            @media (min-width: $md) {
+                font-weight: bold;
+                font-size: 24px;
+            }
+
             @media (min-width: $xl) {
                 order: 1;
                 text-align: right;

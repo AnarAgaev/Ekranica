@@ -1,0 +1,53 @@
+section.section.section_callback
+    .callback
+        .container
+            .row
+                .col-sm-4.col-md-6.col-lg-6
+                    h2.section__title
+                        | Связаться с нами
+                        span.section__link
+                            a.revers(href="") Открыть контакты
+
+                .col-sm-4.col-md-6.col-lg-4
+                    .callback__title Заинтересовались светодиодным оборудованием?
+                    .callback__subtitle Укажите ваш мобильный номер телефона и мы перезвоним в течение 5 минут
+
+                    form.callback__form#callbackForm(action="/" method="POST")
+                        .callback__data
+                            // Для валидного значения меняем класс у controller на valid
+                            .controller.controller__input.valid
+                                label.label.label__icon
+                                    span.icon
+                                        img(src="/img/i-phone.svg" alt="")
+                                    input(type="text" placeholder="+7 900 000 00 00" name="phone" value="+7 999 345 67 89")
+                                .validator.validator__cross
+                                    img.valid(src="/img/i-validator-cross-valid.svg" alt="")
+                                    img.invalid(src="/img/i-validator-cross-invalid.svg" alt="")
+                                .validator.validator__check
+                                    img.valid(src="/img/i-validator-check-valid.svg" alt="")
+                                    img.invalid(src="/img/i-validator-check-invalid.svg" alt="")
+
+                            .controller.controller__check
+                                label.label.label__check
+                                    input(type="checkbox" checked="")
+                                    span.checker
+                                        img.check(src="/img/i-check.svg" alt="")
+                                        img.uncheck(src="/img/i-uncheck.svg" alt="")
+                                    span.txt
+                                        | Я даю согласие на
+                                        a.revers(href="" target="_blank") обработку моих персональных данных
+
+                        .callback__actions
+                            .btn.btn_primary Отправить номер
+                            span.send-mail
+                                | Или напишите нам
+                                a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru
+
+
+
+
+
+
+
+                .col-lg-2.callback__pic
+                    img(src="/img/callback-pic.png" alt="")

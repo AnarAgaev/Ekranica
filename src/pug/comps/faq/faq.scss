@@ -1,10 +1,6 @@
 @import "../../../scss/variables";
 
 .faq {
-
-    margin-top: 500px; // Убрать после подгонки
-
-
     &__list {
         display: flex;
         flex-direction: column;
@@ -170,6 +166,10 @@
             line-height: 160%;
             color: $color-text-inactive;
             margin: 24px 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
         }
 
         ul {
@@ -297,9 +297,19 @@
             top: -38px;
             left: 50%;
             margin-left: -105px;
+
+            @media (min-width: $md) {
+                top: -13px;
+            }
+        }
+
+        @media (min-width: $md) {
+            margin-top: 26px;
         }
 
         @media (min-width:  $lg) {
+            margin-top: 0;
+
             .btn {
                 display: flex;
                 justify-content: center;
