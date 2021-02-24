@@ -93,7 +93,7 @@ $(document).ready(function () {
 
             $('.banner__nums-wrap').animate(
                 {left: "-90px"},
-                200,
+                400,
                 function () {
                     $('.banner__nums-wrap').children()[0].remove();
                     $('.banner__nums-wrap').css("left", "-45px");
@@ -110,7 +110,7 @@ $(document).ready(function () {
 
             $('.banner__nums-wrap').animate(
                 {left: "0"},
-                200,
+                400,
                 function () {
                     const clone = $(nextPassive).clone()[0];
                     $('.banner__nums-wrap').prepend(clone);
@@ -285,9 +285,6 @@ $(document).ready(function () {
             }
         });
     });
-
-
-
 
 
     // FAQ toggle

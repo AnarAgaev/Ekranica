@@ -962,8 +962,9 @@ input[type="checkbox"]:checked + .checker {
         font-size: 14px;
         line-height: 160%;
         color: $color-text-inactive;
-        padding-left: 38px;
+        padding-left: 32px;
         position: relative;
+        margin-right: 0;
 
         @media (min-width: $lg) {
             padding-left: 34px;

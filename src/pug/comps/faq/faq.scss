@@ -63,7 +63,8 @@
         &.visible {
             .faq__description{
                 margin-top: 0;
-                max-height: 1500px;
+                opacity: 1;
+                max-height: 1700px;
 
                 @media (min-width: $lg) {
                     margin-top: 48px;
@@ -77,12 +78,7 @@
             }
 
             .faq__toggler {
-                transform: translateY(-50%) rotate(0deg);
-
-                @media (min-width: $lg) {
-                    transform: translate(-8px, -85%) rotate(0deg);
-                }
-
+                transform: translateY(-50%) rotate(180deg);
             }
         }
     }
@@ -99,7 +95,8 @@
                 inset -5px -6px 20px rgba(0, 2, 12, 0.2);
         position: absolute;
         top: 50%;
-        transform: translateY(-50%) rotate(180deg);
+        transform: translateY(-50%) rotate(0deg);
+
         right: 0;
 
         &::before {
@@ -133,6 +130,10 @@
             background: transparent;
             box-shadow: none;
         }
+
+        @media (min-width: $lg) {
+            transform: translate(-8px, -85%) rotate(0deg);
+        }
     }
 
     &__caption {
@@ -156,6 +157,7 @@
         height: auto;
         max-height: 0;
         margin-top: 0;
+        opacity: 0;
         transition: $transition;
         padding-left: 10px;
         margin-left: -10px;
@@ -167,8 +169,10 @@
             color: $color-text-inactive;
             margin: 24px 0;
 
-            &:first-child {
-                margin-top: 0;
+            @media (min-width: $lg) {
+                &:first-child {
+                    margin-top: 0;
+                }
             }
         }
 

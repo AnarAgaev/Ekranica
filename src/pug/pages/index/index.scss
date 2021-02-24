@@ -156,6 +156,8 @@
         right: auto;
         z-index: 1;
         overflow: hidden;
+        bottom: 0;
+        transition: all .4s;
 
         @media (min-width: $md) {
             top: 177px;
@@ -185,19 +187,20 @@
             width: 45px;
             display: flex;
             align-items: flex-end;
-            transition: $transition;
+            transition: all .4s;
+            line-height: 1.6;
+            padding-bottom: 0;
 
             &::before {
                 content: "/";
                 display: block;
                 font-weight: 400;
                 font-size: 14px;
-                color: #867C94;
+                color: rgba(134, 124, 148, 1);
                 width: 6px;
                 left: 0;
                 position: absolute;
-                opacity: 1;
-                transition: $transition;
+                transition: all .4s;
             }
 
             &.active {
@@ -208,10 +211,11 @@
                 padding-left: 8px;
                 color: $color-accent;
                 opacity: 1;
+                transition: all .4s;
 
                 &::before {
-                    opacity: 0;
-                    padding-left: 0;
+                    color: rgba(134, 124, 148, 0);
+                    transition: all .4s;
                 }
 
                 @media (min-width: $lg) {
@@ -223,18 +227,17 @@
             &.passive {
                 font-weight: 500;
                 font-size: 14px;
-                line-height: 160%;
                 color: $color-text-inactive;
                 position: relative;
                 opacity: 1;
                 bottom: 1px;
                 padding-left: 8px;
-
+                transition: all .4s;
+                padding-bottom: 3px;
 
                 @media (min-width: $lg) {
                     font-weight: 400;
                     color: #867C94;
-                    bottom: 5px;
                 }
             }
         }

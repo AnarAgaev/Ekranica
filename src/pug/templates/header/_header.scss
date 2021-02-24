@@ -15,7 +15,7 @@
 
     @media (min-width: $md) {
         height: 114px;
-        padding: 0 39px;
+        padding: 0 48px;
     }
 
     @media (min-width: $lg) {
@@ -43,7 +43,7 @@
             transform: translateY(0);
         }
 
-        @media (min-width: 1700px) {
+        @media (min-width: $xl) {
             display: flex;
         }
     }
@@ -139,7 +139,7 @@
             transform: translate(-50%, -50%);
         }
 
-        @media (min-width: 1700px) {
+        @media (min-width: $xl) {
             display: none;
         }
     }
@@ -204,7 +204,7 @@
             height: auto;
             transform: translateX(-25px);
             opacity: 0;
-            transition: all .3s;
+            transition: all .2s;
             transition-delay: 0s;
 
             a {
@@ -272,7 +272,7 @@
                     color: $color-accent;
                 }
 
-                @media (min-width: 1700px) {
+                @media (min-width: $xl) {
                     display: none;
                 }
             }
@@ -360,7 +360,7 @@
         }
     }
 
-    @media (min-width: 1700px) {
+    @media (min-width: $xl) {
         .nav {
             flex: 1 0 auto;
             height: 100%;
@@ -437,7 +437,7 @@
                 position: fixed;
                 left: 0;
                 transform: translateY(15px);
-                transition: visibility 0s linear .3s, transform .3s ease-out, opacity .2s linear;
+                transition: visibility 0s linear .2s, transform .2s ease-out, opacity .2s linear;
                 opacity: 0;
                 visibility: collapse;
                 background-color: $color-back-primary;
@@ -494,7 +494,7 @@
                 li {
                     transform: translateY(20px);
                     opacity: 0;
-                    transition: all .3s;
+                    transition: all .2s;
 
                     @for $i from 1 through 10 {
                         &:nth-child(#{$i}) {
@@ -529,7 +529,7 @@
                     visibility: visible;
                     opacity: 1;
                     transform: translateY(0);
-                    transition: visibility 0s linear 0s, transform .3s ease-out, opacity .2s linear
+                    transition: visibility 0s linear 0s, transform .2s ease-out, opacity .2s linear
                 }
 
                 .nav__droplist::after {
@@ -547,7 +547,7 @@
     &__btns-group {
         display: none;
 
-        @media (min-width: 1700px) {
+        @media (min-width: $xl) {
             display: flex;
             justify-content: flex-end;
             align-items: center;
