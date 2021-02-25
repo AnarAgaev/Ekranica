@@ -76,14 +76,6 @@
         @media (min-width: $lg) {
             font-size: 30px;
             line-height: 140%;
-
-            .city, .location {
-                display: inline-block;
-            }
-
-            .location {
-                padding-left: 10px;
-            }
         }
     }
 
@@ -135,6 +127,32 @@
             background: rgba(11, 13, 25, .8);
             opacity: 1;
             transition: $transition;
+        }
+    }
+
+    .city {
+        @media (min-width: $lg) {
+            display: inline-block;
+        }
+    }
+
+    .location {
+        @media (min-width: $lg) {
+            display: inline-block;
+            padding-left: 10px;
+        }
+
+        &.empty-city {
+            min-height: 44px;
+
+            @media (min-width: $md) {
+                min-height: 62px;
+            }
+
+            @media (min-width: $lg) {
+                min-height: 42px;
+                padding-left: 0;
+            }
         }
     }
 

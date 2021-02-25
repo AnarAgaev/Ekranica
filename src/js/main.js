@@ -151,7 +151,6 @@ $(document).ready(function () {
         }
     });
 
-
     // Offer Slider
     $('#offerList').slick(
         {
@@ -206,7 +205,6 @@ $(document).ready(function () {
         });
     });
 
-
     // Projects Slider
     $('#projectsList').slick(
         {
@@ -217,7 +215,6 @@ $(document).ready(function () {
             nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnProjectsNext"></button>',
         }
     );
-
 
     // Projects Slider
     $('#clientsList').slick(
@@ -240,7 +237,6 @@ $(document).ready(function () {
 
         }
     );
-
 
     // Feedback Slider
     $('#feedbackList').slick(
@@ -268,7 +264,7 @@ $(document).ready(function () {
 
     // Work on order Slider
     $(window).on('load resize orientationchange', function() {
-        $('#workChoose').each( function () {
+        $('#workOrder, #workRent').each( function () {
             let $carousel = $(this);
             /* Initializes a slick carousel only on mobile screens */
             // slick on mobile

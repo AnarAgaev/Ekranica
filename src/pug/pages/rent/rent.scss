@@ -30,4 +30,56 @@
             }
         }
     }
+
+    .work {
+        &__list {
+            @media (min-width: $xl) {
+                margin-top: 4px;
+            }
+        }
+
+        .work__item {
+            margin-top: 64px;
+        }
+
+        &__day {
+            align-items: center;
+        }
+    }
+
+    .projects {
+        .section__title {
+            @media (min-width: $md) {
+                width: 400px;
+            }
+
+            @media (min-width: $lg) {
+                width: auto;
+            }
+
+            a {
+                display: none;
+
+                @media (min-width: $md) {
+                    display: block;
+                }
+
+                @media (min-width: $lg) {
+                    display: none;
+                }
+            }
+        }
+
+        &__list {
+            margin-top: -16px;
+
+            @media (min-width: $md) {
+                margin-top: 21px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 83px;
+            }
+        }
+    }
 }
