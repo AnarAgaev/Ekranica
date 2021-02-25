@@ -1,4 +1,6 @@
-.partners-choose {
+@import "../../../scss/variables";
+
+.list {
     overflow-x: hidden;
 
     @media (min-width: $md) {

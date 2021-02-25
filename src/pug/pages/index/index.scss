@@ -4,6 +4,125 @@
     main {
         padding-top: 0;
     }
+
+
+    .section {
+        position: relative;
+
+        &_banner {
+            margin-top: 0;
+        }
+
+        &_offer {
+            z-index: 3;
+
+            @media (min-width: $md) {
+                margin-top: 129px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 348px;
+            }
+        }
+
+        &_list {
+            margin-top: 55px;
+
+            @media (min-width: $lg) {
+                padding-top: 173px;
+            }
+        }
+
+        &_projects {
+            h2 {
+                @media (min-width: $md) {
+                    width: 368px;
+                }
+
+                @media (min-width: $lg) {
+                    width: 687px;
+                }
+            }
+
+            @media (min-width: $md) {
+                margin-top: 173px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 362px;
+            }
+        }
+
+        &_work {
+            margin-top: 87px;
+
+            h2 {
+                @media (min-width: $md) {
+                    width: 444px;
+                }
+
+                @media (min-width: $lg) {
+                    width: 582px;
+                    margin-bottom: -66px;
+                }
+            }
+
+            @media (min-width: $md) {
+                margin-top: 144px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 289px;
+            }
+        }
+
+        &_clients {
+            margin-top: 58px;
+
+            @media (min-width: $md) {
+                margin-top: 312px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 96px;
+            }
+        }
+
+        &_feedback {
+            @media (min-width: $md) {
+                margin-top: 134px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 264px;
+            }
+        }
+
+        &_callback {
+            margin-top: 144px;
+
+            @media (min-width: $md) {
+                margin-top: 312px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 476px;
+            }
+        }
+
+        &_faq {
+            margin-top: 100px;
+
+            @media (min-width: $md) {
+                margin-top: 232px;
+                margin-bottom: 45px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 275px;
+            }
+        }
+    }
 }
 
 .banner {

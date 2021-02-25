@@ -1,255 +1,257 @@
 $(document).ready(function () {
-    // Animation for mobile
-    let wMobi = cMob.width = 275,
-        hMobi = cMob.height = 400,
-        ctxMobi = cMob.getContext( '2d' ),
+    if ( $('.page-index')[0] ) {
+        // Animation for mobile
+        let wMobi = cMob.width = 275,
+            hMobi = cMob.height = 400,
+            ctxMobi = cMob.getContext( '2d' ),
 
-        optsMobi = {
+            optsMobi = {
 
-            side: 7,
-            distance: 9,
-            depthZ: 100,
-            depthY: 70,
-            particleRadius: 1,
-            fillColor: 'rgba(171,120,255,alp)',
-            strokeColor: '#A3A3A3',
-            rotYVel: .009,
+                side: 7,
+                distance: 9,
+                depthZ: 100,
+                depthY: 70,
+                particleRadius: 1,
+                fillColor: 'rgba(171,120,255,alp)',
+                strokeColor: '#A3A3A3',
+                rotYVel: .009,
 
-            focalLength: 270,
-            vanishPoint: {
+                focalLength: 270,
+                vanishPoint: {
 
-                x: wMobi / 2,
-                y: hMobi / 2 - hMobi / 1.5
-            }
-        },
-
-        rotYMobi = 0,
-        tickMobi = 0;
-
-    function animMobi(){
-
-        window.requestAnimationFrame( animMobi );
-
-        ++tickMobi;
-        rotYMobi += optsMobi.rotYVel;
-
-        let cos = Math.cos( rotYMobi ),
-            sin = Math.sin( rotYMobi );
-
-        ctxMobi.fillStyle = '#0B0D19';
-        ctxMobi.fillRect( 0, 0, wMobi, hMobi );
-
-        for (let i = 0; i < optsMobi.side; ++i )
-            for (let j = 0; j < optsMobi.side; ++j )
-                for (let k = 0; k < optsMobi.side; ++k ) {
-
-                    let x = ( i - optsMobi.side / 2 ) * optsMobi.distance,
-                        y = ( j - optsMobi.side / 2 ) * optsMobi.distance,
-                        z = ( k - optsMobi.side / 2 ) * optsMobi.distance,
-                        filled = Math.sin( ( tickMobi + x + z + y ) / 30 ) * optsMobi.side < i && Math.sin( ( tickMobi + x + z + y ) / 30 ) * optsMobi.side > i - 5 ;
-
-                    let x1 = x;
-                    x = x * cos - z * sin;
-                    z = z * cos + x1 * sin;
-
-                    z += optsMobi.depthZ;
-                    y += optsMobi.depthY;
-
-                    let scale = optsMobi.focalLength / z,
-                        screenX = optsMobi.vanishPoint.x + x * scale,
-                        screenY = optsMobi.vanishPoint.y + y * scale;
-
-                    ctxMobi.beginPath();
-
-                    if ( filled ) {
-
-                        ctxMobi.arc( screenX, screenY, scale * optsMobi.particleRadius * 2, 0, Math.PI * 2 );
-
-                        let gradient = ctxMobi.createRadialGradient( screenX, screenY, 0, screenX, screenY, scale * optsMobi.particleRadius * 2 );
-                        gradient.addColorStop( 0, optsMobi.fillColor.replace( 'alp', 1 ) );
-                        gradient.addColorStop( 1, optsMobi.fillColor.replace( 'alp', 0 ) );
-
-                        ctxMobi.fillStyle = gradient;
-                        ctxMobi.fill();
-                    } else {
-
-                        ctxMobi.arc( screenX, screenY, scale * optsMobi.particleRadius, 0, Math.PI * 2 )
-
-                        ctxMobi.lineWidth = scale / 20;
-                        ctxMobi.strokeStyle = optsMobi.strokeColor;
-                        ctxMobi.stroke();
-                    }
+                    x: wMobi / 2,
+                    y: hMobi / 2 - hMobi / 1.5
                 }
-    }
-    animMobi();
+            },
 
+            rotYMobi = 0,
+            tickMobi = 0;
 
-    // Animation for tablet
-    let wTab = cTab.width = 275,
-        hTab = cTab.height = 400,
-        ctxTab = cTab.getContext( '2d' ),
+        function animMobi(){
 
-        optsTab = {
+            window.requestAnimationFrame( animMobi );
 
-            side: 7,
-            distance: 9,
-            depthZ: 100,
-            depthY: 70,
-            particleRadius: 1,
-            fillColor: 'rgba(171,120,255,alp)',
-            strokeColor: '#A3A3A3',
-            rotYVel: .009,
+            ++tickMobi;
+            rotYMobi += optsMobi.rotYVel;
 
-            focalLength: 270,
-            vanishPoint: {
+            let cos = Math.cos( rotYMobi ),
+                sin = Math.sin( rotYMobi );
 
-                x: wTab / 2,
-                y: hTab / 2 - hTab / 1.5
-            }
-        },
+            ctxMobi.fillStyle = '#0B0D19';
+            ctxMobi.fillRect( 0, 0, wMobi, hMobi );
 
-        rotYTab = 0,
-        tickTab = 0;
+            for (let i = 0; i < optsMobi.side; ++i )
+                for (let j = 0; j < optsMobi.side; ++j )
+                    for (let k = 0; k < optsMobi.side; ++k ) {
 
-    function animTab(){
+                        let x = ( i - optsMobi.side / 2 ) * optsMobi.distance,
+                            y = ( j - optsMobi.side / 2 ) * optsMobi.distance,
+                            z = ( k - optsMobi.side / 2 ) * optsMobi.distance,
+                            filled = Math.sin( ( tickMobi + x + z + y ) / 30 ) * optsMobi.side < i && Math.sin( ( tickMobi + x + z + y ) / 30 ) * optsMobi.side > i - 5 ;
 
-        window.requestAnimationFrame( animTab );
+                        let x1 = x;
+                        x = x * cos - z * sin;
+                        z = z * cos + x1 * sin;
 
-        ++tickTab;
-        rotYTab += optsTab.rotYVel;
+                        z += optsMobi.depthZ;
+                        y += optsMobi.depthY;
 
-        let cos = Math.cos( rotYTab ),
-            sin = Math.sin( rotYTab );
+                        let scale = optsMobi.focalLength / z,
+                            screenX = optsMobi.vanishPoint.x + x * scale,
+                            screenY = optsMobi.vanishPoint.y + y * scale;
 
-        ctxTab.fillStyle = '#0B0D19';
-        ctxTab.fillRect( 0, 0, wTab, hTab );
+                        ctxMobi.beginPath();
 
-        for (let i = 0; i < optsTab.side; ++i )
-            for (let j = 0; j < optsTab.side; ++j )
-                for (let k = 0; k < optsTab.side; ++k ) {
+                        if ( filled ) {
 
-                    let x = ( i - optsTab.side / 2 ) * optsTab.distance,
-                        y = ( j - optsTab.side / 2 ) * optsTab.distance,
-                        z = ( k - optsTab.side / 2 ) * optsTab.distance,
-                        filled = Math.sin( ( tickTab + x + z + y ) / 30 ) * optsTab.side < i && Math.sin( ( tickTab + x + z + y ) / 30 ) * optsTab.side > i - 5 ;
+                            ctxMobi.arc( screenX, screenY, scale * optsMobi.particleRadius * 2, 0, Math.PI * 2 );
 
-                    let x1 = x;
-                    x = x * cos - z * sin;
-                    z = z * cos + x1 * sin;
+                            let gradient = ctxMobi.createRadialGradient( screenX, screenY, 0, screenX, screenY, scale * optsMobi.particleRadius * 2 );
+                            gradient.addColorStop( 0, optsMobi.fillColor.replace( 'alp', 1 ) );
+                            gradient.addColorStop( 1, optsMobi.fillColor.replace( 'alp', 0 ) );
 
-                    z += optsTab.depthZ;
-                    y += optsTab.depthY;
+                            ctxMobi.fillStyle = gradient;
+                            ctxMobi.fill();
+                        } else {
 
-                    let scale = optsTab.focalLength / z,
-                        screenX = optsTab.vanishPoint.x + x * scale,
-                        screenY = optsTab.vanishPoint.y + y * scale;
+                            ctxMobi.arc( screenX, screenY, scale * optsMobi.particleRadius, 0, Math.PI * 2 )
 
-                    ctxTab.beginPath();
-
-                    if ( filled ) {
-
-                        ctxTab.arc( screenX, screenY, scale * optsTab.particleRadius * 2, 0, Math.PI * 2 );
-
-                        let gradient = ctxTab.createRadialGradient( screenX, screenY, 0, screenX, screenY, scale * optsTab.particleRadius * 2 );
-                        gradient.addColorStop( 0, optsTab.fillColor.replace( 'alp', 1 ) );
-                        gradient.addColorStop( 1, optsTab.fillColor.replace( 'alp', 0 ) );
-
-                        ctxTab.fillStyle = gradient;
-                        ctxTab.fill();
-                    } else {
-
-                        ctxTab.arc( screenX, screenY, scale * optsTab.particleRadius, 0, Math.PI * 2 )
-
-                        ctxTab.lineWidth = scale / 20;
-                        ctxTab.strokeStyle = optsTab.strokeColor;
-                        ctxTab.stroke();
+                            ctxMobi.lineWidth = scale / 20;
+                            ctxMobi.strokeStyle = optsMobi.strokeColor;
+                            ctxMobi.stroke();
+                        }
                     }
+        }
+        animMobi();
+
+
+        // Animation for tablet
+        let wTab = cTab.width = 275,
+            hTab = cTab.height = 400,
+            ctxTab = cTab.getContext( '2d' ),
+
+            optsTab = {
+
+                side: 7,
+                distance: 9,
+                depthZ: 100,
+                depthY: 70,
+                particleRadius: 1,
+                fillColor: 'rgba(171,120,255,alp)',
+                strokeColor: '#A3A3A3',
+                rotYVel: .009,
+
+                focalLength: 270,
+                vanishPoint: {
+
+                    x: wTab / 2,
+                    y: hTab / 2 - hTab / 1.5
                 }
-    }
-    animTab();
+            },
 
+            rotYTab = 0,
+            tickTab = 0;
 
-    // Animation for desktop
-    let wDesk = cDesk.width = 600,
-        hDesk = cDesk.height = 530,
-        ctxDesk = cDesk.getContext( '2d' ),
+        function animTab(){
 
-        optsDesk = {
+            window.requestAnimationFrame( animTab );
 
-            side: 8,
-            distance: 10,
-            depthZ: 100,
-            depthY: 70,
-            particleRadius: 1,
-            fillColor: 'rgba(171,120,255,alp)',
-            strokeColor: '#A3A3A3',
-            rotYVel: .009,
+            ++tickTab;
+            rotYTab += optsTab.rotYVel;
 
-            focalLength: 270,
-            vanishPoint: {
+            let cos = Math.cos( rotYTab ),
+                sin = Math.sin( rotYTab );
 
-                x: wDesk / 2,
-                y: hDesk / 2 - hDesk / 1.8
-            }
-        },
+            ctxTab.fillStyle = '#0B0D19';
+            ctxTab.fillRect( 0, 0, wTab, hTab );
 
-        rotYDesk = 0,
-        tickDesk = 0;
+            for (let i = 0; i < optsTab.side; ++i )
+                for (let j = 0; j < optsTab.side; ++j )
+                    for (let k = 0; k < optsTab.side; ++k ) {
 
-    function animDesk(){
+                        let x = ( i - optsTab.side / 2 ) * optsTab.distance,
+                            y = ( j - optsTab.side / 2 ) * optsTab.distance,
+                            z = ( k - optsTab.side / 2 ) * optsTab.distance,
+                            filled = Math.sin( ( tickTab + x + z + y ) / 30 ) * optsTab.side < i && Math.sin( ( tickTab + x + z + y ) / 30 ) * optsTab.side > i - 5 ;
 
-        window.requestAnimationFrame( animDesk );
+                        let x1 = x;
+                        x = x * cos - z * sin;
+                        z = z * cos + x1 * sin;
 
-        ++tickDesk;
-        rotYDesk += optsDesk.rotYVel;
+                        z += optsTab.depthZ;
+                        y += optsTab.depthY;
 
-        let cos = Math.cos( rotYDesk ),
-            sin = Math.sin( rotYDesk );
+                        let scale = optsTab.focalLength / z,
+                            screenX = optsTab.vanishPoint.x + x * scale,
+                            screenY = optsTab.vanishPoint.y + y * scale;
 
-        ctxDesk.fillStyle = '#0B0D19';
-        ctxDesk.fillRect( 0, 0, wDesk, hDesk );
+                        ctxTab.beginPath();
 
-        for (let i = 0; i < optsDesk.side; ++i )
-            for (let j = 0; j < optsDesk.side; ++j )
-                for (let k = 0; k < optsDesk.side; ++k ) {
+                        if ( filled ) {
 
-                    let x = ( i - optsDesk.side / 2 ) * optsDesk.distance,
-                        y = ( j - optsDesk.side / 2 ) * optsDesk.distance,
-                        z = ( k - optsDesk.side / 2 ) * optsDesk.distance,
-                        filled = Math.sin( ( tickDesk + x + z + y ) / 30 ) * optsDesk.side < i && Math.sin( ( tickDesk + x + z + y ) / 30 ) * optsDesk.side > i - 5 ;
+                            ctxTab.arc( screenX, screenY, scale * optsTab.particleRadius * 2, 0, Math.PI * 2 );
 
-                    let x1 = x;
-                    x = x * cos - z * sin;
-                    z = z * cos + x1 * sin;
+                            let gradient = ctxTab.createRadialGradient( screenX, screenY, 0, screenX, screenY, scale * optsTab.particleRadius * 2 );
+                            gradient.addColorStop( 0, optsTab.fillColor.replace( 'alp', 1 ) );
+                            gradient.addColorStop( 1, optsTab.fillColor.replace( 'alp', 0 ) );
 
-                    z += optsDesk.depthZ;
-                    y += optsDesk.depthY;
+                            ctxTab.fillStyle = gradient;
+                            ctxTab.fill();
+                        } else {
 
-                    let scale = optsDesk.focalLength / z,
-                        screenX = optsDesk.vanishPoint.x + x * scale,
-                        screenY = optsDesk.vanishPoint.y + y * scale;
+                            ctxTab.arc( screenX, screenY, scale * optsTab.particleRadius, 0, Math.PI * 2 )
 
-                    ctxDesk.beginPath();
-
-                    if ( filled ) {
-
-                        ctxDesk.arc( screenX, screenY, scale * optsDesk.particleRadius * 2, 0, Math.PI * 2 );
-
-                        let gradient = ctxDesk.createRadialGradient( screenX, screenY, 0, screenX, screenY, scale * optsDesk.particleRadius * 2 );
-                        gradient.addColorStop( 0, optsDesk.fillColor.replace( 'alp', 1 ) );
-                        gradient.addColorStop( 1, optsDesk.fillColor.replace( 'alp', 0 ) );
-
-                        ctxDesk.fillStyle = gradient;
-                        ctxDesk.fill();
-                    } else {
-
-                        ctxDesk.arc( screenX, screenY, scale * optsDesk.particleRadius, 0, Math.PI * 2 )
-
-                        ctxDesk.lineWidth = scale / 20;
-                        ctxDesk.strokeStyle = optsDesk.strokeColor;
-                        ctxDesk.stroke();
+                            ctxTab.lineWidth = scale / 20;
+                            ctxTab.strokeStyle = optsTab.strokeColor;
+                            ctxTab.stroke();
+                        }
                     }
+        }
+        animTab();
+
+
+        // Animation for desktop
+        let wDesk = cDesk.width = 600,
+            hDesk = cDesk.height = 530,
+            ctxDesk = cDesk.getContext( '2d' ),
+
+            optsDesk = {
+
+                side: 8,
+                distance: 10,
+                depthZ: 100,
+                depthY: 70,
+                particleRadius: 1,
+                fillColor: 'rgba(171,120,255,alp)',
+                strokeColor: '#A3A3A3',
+                rotYVel: .009,
+
+                focalLength: 270,
+                vanishPoint: {
+
+                    x: wDesk / 2,
+                    y: hDesk / 2 - hDesk / 1.8
                 }
+            },
+
+            rotYDesk = 0,
+            tickDesk = 0;
+
+        function animDesk(){
+
+            window.requestAnimationFrame( animDesk );
+
+            ++tickDesk;
+            rotYDesk += optsDesk.rotYVel;
+
+            let cos = Math.cos( rotYDesk ),
+                sin = Math.sin( rotYDesk );
+
+            ctxDesk.fillStyle = '#0B0D19';
+            ctxDesk.fillRect( 0, 0, wDesk, hDesk );
+
+            for (let i = 0; i < optsDesk.side; ++i )
+                for (let j = 0; j < optsDesk.side; ++j )
+                    for (let k = 0; k < optsDesk.side; ++k ) {
+
+                        let x = ( i - optsDesk.side / 2 ) * optsDesk.distance,
+                            y = ( j - optsDesk.side / 2 ) * optsDesk.distance,
+                            z = ( k - optsDesk.side / 2 ) * optsDesk.distance,
+                            filled = Math.sin( ( tickDesk + x + z + y ) / 30 ) * optsDesk.side < i && Math.sin( ( tickDesk + x + z + y ) / 30 ) * optsDesk.side > i - 5 ;
+
+                        let x1 = x;
+                        x = x * cos - z * sin;
+                        z = z * cos + x1 * sin;
+
+                        z += optsDesk.depthZ;
+                        y += optsDesk.depthY;
+
+                        let scale = optsDesk.focalLength / z,
+                            screenX = optsDesk.vanishPoint.x + x * scale,
+                            screenY = optsDesk.vanishPoint.y + y * scale;
+
+                        ctxDesk.beginPath();
+
+                        if ( filled ) {
+
+                            ctxDesk.arc( screenX, screenY, scale * optsDesk.particleRadius * 2, 0, Math.PI * 2 );
+
+                            let gradient = ctxDesk.createRadialGradient( screenX, screenY, 0, screenX, screenY, scale * optsDesk.particleRadius * 2 );
+                            gradient.addColorStop( 0, optsDesk.fillColor.replace( 'alp', 1 ) );
+                            gradient.addColorStop( 1, optsDesk.fillColor.replace( 'alp', 0 ) );
+
+                            ctxDesk.fillStyle = gradient;
+                            ctxDesk.fill();
+                        } else {
+
+                            ctxDesk.arc( screenX, screenY, scale * optsDesk.particleRadius, 0, Math.PI * 2 )
+
+                            ctxDesk.lineWidth = scale / 20;
+                            ctxDesk.strokeStyle = optsDesk.strokeColor;
+                            ctxDesk.stroke();
+                        }
+                    }
+        }
+        animDesk();
     }
-    animDesk();
 });

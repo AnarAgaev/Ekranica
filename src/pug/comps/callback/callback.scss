@@ -30,8 +30,10 @@
         line-height: 160%;
         color: $color-text-inactive;
         margin-top: 12px;
+        width: 200px;
 
         @media (min-width: $md) {
+            width: auto;
         }
 
         @media (min-width: $lg) {

@@ -1,0 +1,33 @@
+@import "../../../scss/variables";
+
+.page-rent {
+
+    .section {
+        margin-top: 96px;
+        margin-bottom: 96px;
+
+        @media (min-width: $md) {
+            margin-top: 134px;
+            margin-bottom: 134px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 264px;
+            margin-bottom: 264px;
+        }
+    }
+
+
+    .list {
+        &__background {
+            display: none;
+        }
+
+        &__item {
+
+            @media (min-width: $xl) {
+                margin-bottom: 38px;
+            }
+        }
+    }
+}

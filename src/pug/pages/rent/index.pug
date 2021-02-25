@@ -1,0 +1,13 @@
+//- Include used template for this page
+extends ../../templates/default
+
+//- VARIABLES FOR INCLUDE THIS IN USED TEMPLATE
+block variables
+    - const title       = 'Аренда | Ekranika'
+    - const description = 'Write description for the page here'
+    - const keywords    = 'Write keywords for the page here'
+    - const pageClass   = 'page-rent'
+
+block content
+    include ../../comps/list/list-rent
+    include ../../comps/types/types-equipment
