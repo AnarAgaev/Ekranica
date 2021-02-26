@@ -11,10 +11,23 @@ $color-text-secondary   : #A3A3A3;
 $color-text-inactive    : #80758F;
 
 // Media
-$sm                     : 288px;  // by 320px
-$md                     : 696px;  // by 768px
-$lg                     : 1440px; // by 1920px
-$xl                     : 1700px; // for header and footer max visible
+$sm                     : 320px;  // by 320px
+$md                     : 768px;  // by 768px
+$lg                     : 1920px; // by 1920px
+//$xl                   : 1700px; // for header and footer max visible
+//$xxl                  : 1920px; // by 4k screens
+
+
+
+
+
+
+
+//$sm                     : 288px;  // by 320px
+//$md                     : 696px;  // by 768px
+//$lg                     : 1440px; // by 1920px
+//$xl                     : $xl; // for header and footer max visible
+//$xxl                    : 1920px; // by 4k screens
 
 // Fonts
 $font-primary           : 'Montserrat', sans-serif;

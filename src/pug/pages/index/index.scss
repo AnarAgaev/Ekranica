@@ -9,7 +9,7 @@
     .section {
         position: relative;
 
-        &_banner {
+        &_slider {
             margin-top: 0;
         }
 
@@ -125,7 +125,7 @@
     }
 }
 
-.banner {
+.slider {
 
     &__item {
         padding: 0;
@@ -144,7 +144,7 @@
         }
 
         @media (min-width: $lg) {
-            padding: 74px 0 0;
+            padding: 74px 0 200px;
         }
     }
 
@@ -244,9 +244,12 @@
         width: 100%;
         position: absolute;
         left: 0;
-        background: url("/img/banner-back.svg") no-repeat center center;
+        background: url("/img/curved-line.svg") no-repeat center center;
         background-size: contain;
         z-index: 1;
+
+
+
 
         @media (min-width: $md) {
             display: block;
@@ -406,8 +409,8 @@
 
 }
 
-#btnBannerPrev,
-#btnBannerNext {
+#btnSliderPrev,
+#btnSliderNext {
     position: absolute;
     top: 472px;
     z-index: 1;
@@ -435,7 +438,7 @@
     }
 }
 
-#btnBannerPrev {
+#btnSliderPrev {
     right: 112px;
 
     @media (min-width: $lg) {
@@ -448,7 +451,7 @@
     }
 }
 
-#btnBannerNext {
+#btnSliderNext {
     right: 48px;
 
     @media (min-width: $lg) {
@@ -460,4 +463,3 @@
         left: -2px;
     }
 }
-

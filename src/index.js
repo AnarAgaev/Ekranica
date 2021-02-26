@@ -1,6 +1,7 @@
 // Includes custom scripts
-import './js/anim';
 import './js/main';
+import './js/anim';
+import './js/swiper';
 
 // Include vendor styles
 import 'normalize.css';

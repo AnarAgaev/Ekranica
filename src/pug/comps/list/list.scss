@@ -18,7 +18,7 @@
         width: 100%;
         position: absolute;
         left: 0;
-        background: url(/img/banner-back.svg) no-repeat center center;
+        background: url(/img/curved-line.svg) no-repeat center center;
         z-index: 0;
         transform: scale(-1, 1);
         top: 575px;
@@ -31,7 +31,7 @@
         }
 
         @media (min-width: $lg) {
-            background: url(/img/body-back-line.svg) no-repeat center center;
+            background: url(/img/body-curved-line.svg) no-repeat center center;
             top: 1690px;
             height: 571px;
             transform: scale(1, 1);

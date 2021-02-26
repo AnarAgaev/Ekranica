@@ -43,7 +43,7 @@
             transform: translateY(0);
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             display: flex;
         }
     }
@@ -139,7 +139,7 @@
             transform: translate(-50%, -50%);
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             display: none;
         }
     }
@@ -196,6 +196,13 @@
             display: block;
             height: auto;
             padding: 16px 0 34px;
+
+            //@media (min-width: $xxl) {
+            //    display: flex;
+            //    justify-content: center;
+            //
+            //    //justify-content: space-between;
+            //}
         }
 
         &__item {
@@ -272,7 +279,7 @@
                     color: $color-accent;
                 }
 
-                @media (min-width: $xl) {
+                @media (min-width: $lg) {
                     display: none;
                 }
             }
@@ -285,6 +292,12 @@
             padding-top: 0;
             opacity: 0;
             transition: $transition;
+
+            //@media (min-width: $xxl) {
+            //    display: flex;
+            //    justify-content: center;
+            //    margin-left: -130px;
+            //}
         }
 
         .drop-visible {
@@ -360,7 +373,7 @@
         }
     }
 
-    @media (min-width: $xl) {
+    @media (min-width: $lg) {
         .nav {
             flex: 1 0 auto;
             height: 100%;
@@ -547,7 +560,7 @@
     &__btns-group {
         display: none;
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             display: flex;
             justify-content: flex-end;
             align-items: center;

@@ -24,7 +24,7 @@
         padding: 46px 48px 48px;
     }
 
-    @media (min-width: $xl) {
+    @media (min-width: $lg) {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -46,7 +46,7 @@
                 font-size: 24px;
             }
 
-            @media (min-width: $xl) {
+            @media (min-width: $lg) {
                 order: 1;
                 text-align: right;
                 width: 100%;
@@ -111,7 +111,15 @@
             }
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: 960px) {
+            &__list {
+                & > li {
+                    width: 25%;
+                }
+            }
+        }
+
+        @media (min-width: $lg) {
             order: 3;
             flex: 1 0 auto;
             margin-top: 0;
@@ -119,6 +127,7 @@
             &__list {
                 & > li {
                     margin-right: 96px;
+                    width: auto;
                 }
             }
 
@@ -154,6 +163,14 @@
                 }
             }
         }
+
+        @media (min-width: 2048px) {
+            &__list {
+                & > li {
+                    width: 25%;
+                }
+            }
+        }
     }
 
     &__logo {
@@ -166,13 +183,13 @@
             margin-top: 22px;
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             order: 2;
             width: 298px;
             height: 79px;
             display: flex;
             position: relative;
-            margin-right: 133px;
+            margin-right: 7.7%; // 133px для разрешения 1920px
             margin-top: -51px;
 
             img {
@@ -192,7 +209,7 @@
                 margin-right: 0;
             }
 
-            @media (min-width: $xl) {
+            @media (min-width: $lg) {
                 margin-top: 35px;
                 margin-left: 14px;
                 margin-right: 0;
@@ -204,7 +221,7 @@
             margin-top: 22px;
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             order: 4;
             float: initial;
             margin-top: 0;
@@ -227,7 +244,7 @@
             line-height: 1.6;
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             display: none;
         }
     }
@@ -249,7 +266,7 @@
             margin-top: 8px;
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             display: flex;
             justify-content: space-between;
             width: 100%;

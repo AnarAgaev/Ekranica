@@ -1,6 +1,9 @@
 @import "../../../scss/variables";
 
 .page-rent {
+    main {
+        padding-top: 0;
+    }
 
     .section {
         margin-top: 96px;
@@ -17,6 +20,10 @@
         }
     }
 
+    .section_banner {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
     .list {
         &__background {
@@ -25,7 +32,7 @@
 
         &__item {
 
-            @media (min-width: $xl) {
+            @media (min-width: 1700px) {
                 margin-bottom: 38px;
             }
         }
@@ -33,7 +40,7 @@
 
     .work {
         &__list {
-            @media (min-width: $xl) {
+            @media (min-width: 1700px) {
                 margin-top: 4px;
             }
         }
