@@ -64,9 +64,17 @@
             display: flex;
             flex-wrap: wrap;
 
-            & > li {
-                width: 50%;
+            .section-1,
+            .section-3 {
+                width: 92px;
+                margin-right: 17.64705882352941%;
             }
+
+            .section-2,
+            .section-4 {
+                width: 48%;
+            }
+
         }
 
         &__item {
@@ -86,11 +94,11 @@
 
         @media (min-width: $md) {
             &__list {
-                flex-wrap: nowrap;
+                //flex-wrap: nowrap;
 
                 & > li {
-                    width: auto;
-                    margin-right: 34px;
+                    width: auto !important;
+                    margin-right: 5.05952380952381% !important;
                 }
             }
 
@@ -107,15 +115,7 @@
             }
             .section-4 {
                 order: 4;
-                margin-right: 0;
-            }
-        }
-
-        @media (min-width: 960px) {
-            &__list {
-                & > li {
-                    width: 25%;
-                }
+                //margin-right: 0;
             }
         }
 
@@ -126,7 +126,7 @@
 
             &__list {
                 & > li {
-                    margin-right: 96px;
+                    margin-right: 9.366676098389127% !important;
                     width: auto;
                 }
             }
@@ -175,12 +175,12 @@
 
     &__logo {
         display: inline-block;
-        margin-top: 24px;
+        margin-top: 16px;
         width: 136px;
         height: 48px;
 
         @media (min-width: $md) {
-            margin-top: 22px;
+            margin-top: 24px;
         }
 
         @media (min-width: $lg) {
@@ -189,7 +189,7 @@
             height: 79px;
             display: flex;
             position: relative;
-            margin-right: 7.7%; // 133px для разрешения 1920px
+            margin-right: 7.75462962962963%;
             margin-top: -51px;
 
             img {
@@ -200,7 +200,7 @@
     }
 
     &__socials {
-        margin-top: 24px;
+        margin-top: 16px;
 
         .social-icon {
             margin-right: 14px;
@@ -234,7 +234,7 @@
     }
 
     &__policy {
-        margin-top: 24px;
+        margin-top: 18px;
 
         a {
             display: inline-block;
@@ -242,6 +242,9 @@
             font-weight: 400;
             font-size: 12px;
             line-height: 1.6;
+        }
+        @media (min-width: $md) {
+            margin-top: 28px;
         }
 
         @media (min-width: $lg) {
@@ -255,20 +258,22 @@
         line-height: 1.6;
         color: $color-text-inactive;
         margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
 
         .copy {
             display: inline-block;
             padding-right: 24px;
+            margin-bottom: 8px;
         }
 
         .caption {
             display: inline-block;
-            margin-top: 8px;
         }
 
         @media (min-width: $lg) {
-            display: flex;
-            justify-content: space-between;
             width: 100%;
             order: 5;
             margin-top: 53px;
@@ -277,12 +282,12 @@
 
             .caption {
                 order: 1;
-                margin-top: 0;
             }
 
             .copy {
                 order: 2;
                 padding-right: 0;
+                margin-bottom: 0;
             }
         }
     }
