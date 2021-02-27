@@ -1,83 +1,65 @@
-section.section.section_slider
-    .slider__background
+section.section.section_slider-banner
+    .slider-banner__background
+        .slider-banner__background-wrap
+            img(src="/img/slider-curved-line.svg" alt="")
 
-    .slide-nums
-        .slide-nums__current
-            .slide-nums__scrolled
-                .slide-nums__number.active 01
-                .slide-nums__number 02
-                .slide-nums__number 03
-                .slide-nums__number 04
-        .slide-nums__all
-            .number 04
-
-    .slider#indexsSlider
-        // Если слайд один, менять инлайновый padding на padding: 79px 0 0; 97px
-        .slider__item
-            .container
-                .row
-                    .col-sm-4.col-md-2.col-lg-3.img
-                        .slider__picture
-                            canvas#cMob.slider__animation
-                            canvas#cTab.slider__animation
-                            canvas#cDesk.slider__animation
-                    .col-sm-4.col-md-4.col-lg-3.desc
-                        h2.slider__title.section__title Погрузись в мир LED экранов
-                        .slider__subtitle Аренда под ключ 5000 р/м2
-                        .slider__actions
+    .container
+        .slider-banner.swiper-container
+            .slider-banner__wrap.swiper-wrapper
+                .slider-banner__slide.animation-slide.swiper-slide
+                    .slider-banner__picture
+                        canvas#cMob.slider-banner__animation
+                        canvas#cTab.slider-banner__animation
+                        canvas#cDesk.slider-banner__animation
+                    .slider-banner__description
+                        h2.slider-banner__title.section__title(data-swiper-parallax-x="-500" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="600") Погрузись в мир LED экранов
+                        .slider-banner__subtitle(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700") Аренда под ключ 5000 р/м2
+                        .slider-banner__actions
                             a.btn.btn_primary Узнать стоимость
                             a.link.revers(href="") Как выбрать экран?
 
+                .slider-banner__slide.swiper-slide
+                    .slider-banner__picture
+                        .image(style="background-image: url('/img/temp/temp-img.png')")
+                    .slider-banner__description
+                        h2.slider-banner__title.section__title(data-swiper-parallax-x="-500" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="600") Светодиодные экраны в рассрочку
+                        .slider-banner__subtitle(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700") Аренда под ключ 5000 р/м2
+                        .slider-banner__actions
+                            a.btn.btn_primary Рассчитать стоимость
+                            a.link.revers(href="") Как выбрать экран?
 
-        .swiper-container
+                .slider-banner__slide.swiper-slide
+                    .slider-banner__picture
+                        .image(style="background-image: url('/img/temp/temp-img.png')")
+                    .slider-banner__description
+                        h2.slider-banner__title.section__title(data-swiper-parallax-x="-500" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="600") Погрузись в мир LED экранов
+                        .slider-banner__subtitle(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700") Аренда под ключ 5000 р/м2
+                        .slider-banner__actions
+                            a.btn.btn_primary Узнать стоимость
+                            a.link.revers(href="") Как выбрать экран?
 
-            .swiper-wrapper
-                .swiper-slide
-                .swiper-slide
-                .swiper-slide
-                .swiper-slide
+        .slide-nums#sliderNums
+            .slide-nums__current
+                .slide-nums__scrolled
+                    .slide-nums__number.active 01
+                    .slide-nums__number 02
+                    .slide-nums__number 03
+            .slide-nums__all
+                .number 03
 
-            .swiper-button-prev
-            .swiper-button-next
-
-
-
-
-
+        .btn.btn_icon-outlined.not-focused#btnSliderPrev
+        .btn.btn_icon-outlined.not-focused#btnSliderNext
 
 
 
-        //.slider__item
-        //    .container
-        //        .row
-        //            .col-sm-4.col-md-2.col-lg-3.img
-        //                .slider__picture(style="background-image: url('https://via.placeholder.com/700/0D101F/80758F?text=imagae+2')")
-        //            .col-sm-4.col-md-4.col-lg-3.desc
-        //                h2.slider__title.section__title Светодиодные экраны в рассрочку
-        //                .slider__actions
-        //                    a.btn.btn_primary Рассчитать стоимость
-        //                    a.link.revers(href="") Как выбрать экран?
-        //
-        //.slider__item
-        //    .container
-        //        .row
-        //            .col-sm-4.col-md-2.col-lg-3.img
-        //                .slider__picture(style="background-image: url('https://via.placeholder.com/700/0D101F/80758F?text=imagae+3')")
-        //            .col-sm-4.col-md-4.col-lg-3.desc
-        //                h2.slider__title.section__title Погрузись в мир LED экранов
-        //                .slider__subtitle Аренда под ключ 5000 р/м2
-        //                .slider__actions
-        //                    a.btn.btn_primary Узнать стоимость
-        //                    a.link.revers(href="") Как выбрать экран?
-        //
-        //.slider__item
-        //    .container
-        //        .row
-        //            .col-sm-4.col-md-2.col-lg-3.img
-        //                .slider__picture(style="background-image: url('https://via.placeholder.com/700/0D101F/80758F?text=imagae+4')")
-        //            .col-sm-4.col-md-4.col-lg-3.desc
-        //                h2.slider__title.section__title Погрузись в мир LED экранов
-        //                .slider__subtitle Аренда под ключ 5000 р/м2
-        //                .slider__actions
-        //                    a.btn.btn_primary Узнать стоимость
-        //                    a.link.revers(href="") Как выбрать экран?
+
+//.swiper-container
+//
+//    .swiper-wrapper
+//        .swiper-slide
+//        .swiper-slide
+//        .swiper-slide
+//        .swiper-slide
+//
+//    .swiper-button-prev
+//    .swiper-button-next

@@ -125,40 +125,56 @@
     }
 }
 
-.slider {
+.section_slider-banner {
+    .container {
+        width: 100%;
 
-    &__item {
-        padding: 0;
+        @media (min-width: $lg) {
+            width: calc(70vw + 100px); // для компенсации размера тени кнопки на десктопах
+        }
+    }
+}
+
+.slider-banner {
+    &__slide {
+        padding: 0 7.2vw;
+        display: flex;
+        flex-wrap: wrap;
 
         @media (min-width: $md) {
-            padding-top: 24px;
-            padding-bottom: 140px;
-
-            .desc {
-                order: 1;
-            }
-
-            .img {
-                order: 2;
-            }
+            padding: 24px 6.25% 0;
+            flex-wrap: nowrap;
         }
 
         @media (min-width: $lg) {
-            padding: 74px 0 200px;
+            padding: 98px 50px 0;
+        }
+
+        &.animation-slide {
+            @media (min-width: $md) {
+                padding-bottom: 300px
+            }
+
+            @media (min-width: $lg) {
+                padding-bottom: 450px;
+            }
         }
     }
 
     &__title {
         margin-top: 4px;
         margin-bottom: 12px;
+        max-width: 272px;
 
-        @media (min-width: $lg) {
-            margin-top: 24px;
+        @media (min-width: $md) {
+            margin-top: 0;
             margin-bottom: 36px;
+            max-width: 500px; // Подбрано, чтобы заголовок занимал не менне 2 строк
         }
 
         @media (min-width: $lg) {
             margin-bottom: 34px;
+            max-width: 570px;
         }
     }
 
@@ -187,11 +203,12 @@
         flex-direction: column;
         align-items: flex-start;
         margin-top: 34px;
+        z-index: 0;
 
         @media (min-width: $md) {
             flex-direction: row;
             align-items: center;
-            padding-bottom: 60px;
+            padding-bottom: 50px;
         }
 
         .btn {
@@ -219,164 +236,64 @@
 
     &__picture {
         width: 100%;
+        height: 175px;
         position: relative;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        &::before {
-            display: block;
-            content: '';
-            padding-bottom: 170px;
-
-            @media (min-width: $md) {
-                padding-bottom: 100%;
-            }
-
-            @media (min-width: $lg) {
-                padding-bottom: 70%;
-            }
-        }
-    }
-
-    &__background {
-        display: none;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        background: url("/img/curved-line.svg") no-repeat center center;
-        background-size: contain;
-        z-index: 1;
-
-
-
+        margin-bottom: 24px;
 
         @media (min-width: $md) {
-            display: block;
+            height: 269px;
+            margin-bottom: 0;
+            order: 2;
+        }
+
+        @media (min-width: $lg) {
             height: 400px;
-            background-size: 130%;
-            background-position-x: 70%;
-            top: 280px;
+            margin-left: 5vw; // 96px взято из системы отступов
         }
 
-        @media (min-width: $lg) {
-            z-index: 0;
-            top: 337px;
-            height: 731px;
-            background-size: 100%;
-            background-position-x: center;
+        .image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: $color-back-secondary;
         }
     }
 
-    &__nums {
-        width: 71px;
-        height: 42px;
-        position: absolute;
-        top: 109px;
-        left: 50%;
-        margin-left: -143px;
-        right: auto;
-        z-index: 1;
-        overflow: hidden;
-        bottom: 0;
-        transition: all .4s;
-
+    &__description {
         @media (min-width: $md) {
-            top: 177px;
-            margin-left: 0;
-            left: auto;
-            right: 94px;
+            order: 1;
+            flex: 1 0 auto;
+            width: 57.29166666666667vw; // 440px - ширина по макету
         }
 
         @media (min-width: $lg) {
-            left: auto;
-            right: 88px;
-            top: 397px;
-            margin-left: 0;
-        }
-
-        &-wrap {
-            width: 500px;
-            height: 42px;
-            display: flex;
-            position: absolute;
-            left: -45px;
-        }
-
-        &-number {
-            opacity: 0;
-            height: 42px;
-            width: 45px;
-            display: flex;
-            align-items: flex-end;
-            transition: all .4s;
-            line-height: 1.6;
-            padding-bottom: 0;
-
-            &::before {
-                content: "/";
-                display: block;
-                font-weight: 400;
-                font-size: 14px;
-                color: rgba(134, 124, 148, 1);
-                width: 6px;
-                left: 0;
-                position: absolute;
-                transition: all .4s;
-            }
-
-            &.active {
-                font-size: 24px;
-                line-height: 1.3;
-                font-weight: 700;
-                letter-spacing: 0.02em;
-                padding-left: 8px;
-                color: $color-accent;
-                opacity: 1;
-                transition: all .4s;
-
-                &::before {
-                    color: rgba(134, 124, 148, 0);
-                    transition: all .4s;
-                }
-
-                @media (min-width: $lg) {
-                    font-size: 30px;
-                    padding-left: 0;
-                }
-            }
-
-            &.passive {
-                font-weight: 500;
-                font-size: 14px;
-                color: $color-text-inactive;
-                position: relative;
-                opacity: 1;
-                bottom: 1px;
-                padding-left: 8px;
-                transition: all .4s;
-                padding-bottom: 3px;
-
-                @media (min-width: $lg) {
-                    font-weight: 400;
-                    color: #867C94;
-                }
-            }
+            order: 1;
+            flex: 1 0 auto;
+            // width: 45vw; // 864px - ширина по макету между направляющими
+            width: 29.6875vw; // 570px - подобрано для корректного отображения
         }
     }
 
     &__animation {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50vw;
+        transform: translateX(-50%);
+        z-index: -1;
 
         @media (min-width: $md) {
-            left: -50px;
+            left: 0;
+            top: -35px;
         }
 
         @media (min-width: $lg) {
+            left: 50%;
             top: -100px;
-            left: -50px;
         }
 
         &#cMob {
@@ -404,9 +321,55 @@
                 display: block;
             }
         }
-
     }
 
+    &__background {
+        display: none;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        z-index: 2;
+
+        @media (min-width: $md) {
+            display: block;
+            top: 300px;
+        }
+
+        @media (min-width: $lg) {
+            top: 525px;
+        }
+
+        &-wrap {
+            @media (min-width: $md) {
+                position: relative;
+                width: 120vw;
+                left: -15vw;
+            }
+
+            @media (min-width: $lg) {
+                width: 100vw;
+                left: 0;
+            }
+        }
+    }
+}
+
+#sliderNums {
+    top: 141px;
+    left: calc(7.2vw - 15px);
+
+    @media (min-width: $md) {
+        top: 178px;
+        left: auto;
+        right: 76px;
+    }
+
+    @media (min-width: $lg) {
+        top: 394px;
+        left: auto;
+        right: 82px;
+    }
 }
 
 #btnSliderPrev,
@@ -430,7 +393,7 @@
 
     @media (min-width: $md) {
         display: flex !important;
-        top: 230px;
+        top: 227px;
     }
 
     @media (min-width: $lg) {
@@ -439,7 +402,7 @@
 }
 
 #btnSliderPrev {
-    right: 112px;
+    right: 96px;
 
     @media (min-width: $lg) {
         right: 169px;
@@ -452,7 +415,7 @@
 }
 
 #btnSliderNext {
-    right: 48px;
+    right: 32px;
 
     @media (min-width: $lg) {
         right: 87px;

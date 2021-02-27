@@ -1,14 +1,14 @@
 $(document).ready(function () {
     if ( $('.page-index')[0] ) {
         // Animation for mobile
-        let wMobi = cMob.width = 275,
+        let wMobi = cMob.width = 320,
             hMobi = cMob.height = 400,
             ctxMobi = cMob.getContext( '2d' ),
 
             optsMobi = {
 
                 side: 7,
-                distance: 9,
+                distance: 10,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
@@ -86,14 +86,14 @@ $(document).ready(function () {
 
 
         // Animation for tablet
-        let wTab = cTab.width = 275,
-            hTab = cTab.height = 400,
+        let wTab = cTab.width = 600,
+            hTab = cTab.height = 700,
             ctxTab = cTab.getContext( '2d' ),
 
             optsTab = {
 
-                side: 7,
-                distance: 9,
+                side: 9,
+                distance: 12,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
@@ -105,7 +105,7 @@ $(document).ready(function () {
                 vanishPoint: {
 
                     x: wTab / 2,
-                    y: hTab / 2 - hTab / 1.5
+                    y: hTab / 2 - hTab / 1.9
                 }
             },
 
@@ -171,14 +171,14 @@ $(document).ready(function () {
 
 
         // Animation for desktop
-        let wDesk = cDesk.width = 600,
-            hDesk = cDesk.height = 530,
+        let wDesk = cDesk.width = 1100,
+            hDesk = cDesk.height = 1000,
             ctxDesk = cDesk.getContext( '2d' ),
 
             optsDesk = {
 
-                side: 8,
-                distance: 10,
+                side: 8.2,
+                distance: 14,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
@@ -190,7 +190,7 @@ $(document).ready(function () {
                 vanishPoint: {
 
                     x: wDesk / 2,
-                    y: hDesk / 2 - hDesk / 1.8
+                    y: hDesk / 2 - hDesk / 2.1
                 }
             },
 

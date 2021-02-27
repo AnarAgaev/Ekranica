@@ -292,6 +292,7 @@
             padding-top: 0;
             opacity: 0;
             transition: $transition;
+            z-index: 50;
 
             //@media (min-width: $xxl) {
             //    display: flex;

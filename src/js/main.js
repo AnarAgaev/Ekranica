@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
     function getScreenType () {
-        window.isDesctop = $(document).width() > 1919;
+        window.isDesctop = window.innerWidth > 1919;
     }
     getScreenType();
 
