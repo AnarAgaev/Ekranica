@@ -56,15 +56,32 @@ body {
 
 
 .container {
-    width: 85vw;
+    width: 85%;
     margin: 0 auto;
 
     @media (min-width: $md) {
-        width: 87.5vw;
+        width: 87.5%;
     }
 
     @media (min-width: $lg) {
-        width: 70vw;
+        width: 70%;
+    }
+}
+
+
+.container-endless {
+    position: relative;
+    width: 92.5%;
+    margin-left: 7.5%;
+
+    @media (min-width: $md) {
+        width: 93.75%;
+        margin-left: 6.25%;
+    }
+
+    @media (min-width: $lg) {
+        width: 85%;
+        margin-left: 15%;
     }
 }
 
@@ -91,7 +108,7 @@ body {
 //    }
 //}
 
-@media (min-width: $md) {
+//@media (min-width: $md) {
     //.container {
     //    max-width: calc(100% - 6.25% * 2);
     //}
@@ -108,9 +125,9 @@ body {
     //        margin: 0 12px;
     //    }
     //}
-}
+//}
 
-@media (min-width: $lg) {
+//@media (min-width: $lg) {
     //.container {
     //    max-width: calc(100% - 15% * 2);
     //}
@@ -127,7 +144,7 @@ body {
     //        margin: 0 48px;
     //    }
     //}
-}
+//}
 
 
 

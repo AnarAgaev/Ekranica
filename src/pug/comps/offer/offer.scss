@@ -1,19 +1,22 @@
 @import "../../../scss/variables";
 
 .offer {
-    overflow-x: hidden;
-
     &__list {
+        width: 108.108108108108108%;
+        margin-left: -8.108108108108108%;
+        padding-left: 8.108108108108108%;
         margin-top: 31px;
-        width: 432px;
-
         @media (min-width: $md) {
-            width: 812px;
+            width: 106.666666666666667%;
+            margin-left: -6.666666666666667%;
+            padding-left: 6.666666666666667%;
             margin-top: 68px;
         }
 
         @media (min-width: $lg) {
-            width: 1920px;
+            width: calc(100% + 40px);
+            margin-left: -40px;
+            padding-left: 40px;
             margin-top: 133px;
         }
     }
@@ -124,8 +127,8 @@
     }
 }
 
-#btnOfferPrev,
-#btnOfferNext {
+#btnOfferSliderPrev,
+#btnOfferSliderNext {
     position: absolute;
     left: -190px;
     top: 50%;
@@ -174,7 +177,7 @@
     }
 }
 
-#btnOfferPrev {
+#btnOfferSliderPrev {
     margin-top: -6px;
 
     &::before {
@@ -183,7 +186,7 @@
     }
 }
 
-#btnOfferNext {
+#btnOfferSliderNext {
     margin-top: -108px;
 
     &::before {

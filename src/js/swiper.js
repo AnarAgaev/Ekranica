@@ -22,7 +22,7 @@ function showAnimation(index) {
 }
 
 new Swiper('.slider-banner', {
-    autoHeight: true,
+    //autoHeight: true,
     navigation: {
         nextEl: '#btnSliderNext',
         prevEl: '#btnSliderPrev',
@@ -35,4 +35,15 @@ new Swiper('.slider-banner', {
             showAnimation(evt.activeIndex);
         }
     },
+});
+
+new Swiper('.offer__list', {
+    //autoHeight: true,
+    slidesPerView: 'auto',
+    speed: 500,
+    navigation: {
+        nextEl: '#btnOfferSliderNext',
+        prevEl: '#btnOfferSliderPrev',
+    },
+    parallax:true,
 });
