@@ -35,5 +35,4 @@ new Swiper('.slider-banner', {
             showAnimation(evt.activeIndex);
         }
     },
-
 });

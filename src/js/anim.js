@@ -2,7 +2,7 @@ $(document).ready(function () {
     if ( $('.page-index')[0] ) {
         // Animation for mobile
         let wMobi = cMob.width = 320,
-            hMobi = cMob.height = 400,
+            hMobi = cMob.height = 500,
             ctxMobi = cMob.getContext( '2d' ),
 
             optsMobi = {
@@ -87,13 +87,13 @@ $(document).ready(function () {
 
         // Animation for tablet
         let wTab = cTab.width = 700,
-            hTab = cTab.height = 700,
+            hTab = cTab.height = 1200,
             ctxTab = cTab.getContext( '2d' ),
 
             optsTab = {
 
                 side: 9,
-                distance: 12,
+                distance: 11,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
@@ -172,12 +172,12 @@ $(document).ready(function () {
 
         // Animation for desktop
         let wDesk = cDesk.width = 1100,
-            hDesk = cDesk.height = 1000,
+            hDesk = cDesk.height = 1700,
             ctxDesk = cDesk.getContext( '2d' ),
 
             optsDesk = {
 
-                side: 8.2,
+                side: 8,
                 distance: 14,
                 depthZ: 100,
                 depthY: 70,

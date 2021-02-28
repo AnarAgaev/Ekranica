@@ -2,83 +2,92 @@
 
 
 // Main Slider on index page at the header
-$('#indexsSlider').slick(
-    {
-        prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnSliderPrev"></button>',
-        nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnSliderNext"></button>',
-    }
-);
+// $('#indexsSlider').slick(
+//     {
+//         prevArrow: '<button type="button" class="slick-prev btn btn_icon-outlined" id="btnSliderPrev"></button>',
+//         nextArrow: '<button type="button" class="slick-next btn btn_icon-outlined" id="btnSliderNext"></button>',
+//     }
+// );
 
-function replaceSliderNums (direction) {
-    const active = $('.slider__nums-number.active')[0];
-    const passive = $('.slider__nums-number.passive')[0];
-    const prevActive = $(active).prev()[0];
-    const nextPassive = $(passive).next()[0];
+// function replaceSliderNums (direction) {
+//     const active = $('.slider__nums-number.active')[0];
+//     const passive = $('.slider__nums-number.passive')[0];
+//     const prevActive = $(active).prev()[0];
+//     const nextPassive = $(passive).next()[0];
+//
+//     if (direction) {
+//         $(active).removeClass('active');
+//         $(passive).removeClass('passive').addClass('active');
+//         $(nextPassive).addClass('passive');
+//
+//         $('.slider__nums-wrap').animate(
+//             {left: "-90px"},
+//             400,
+//             function () {
+//                 $('.slider__nums-wrap').children()[0].remove();
+//                 $('.slider__nums-wrap').css("left", "-45px");
+//
+//                 const clone = $(passive).clone()[0];
+//                 $(clone).removeClass('active');
+//                 $('.slider__nums-wrap').append(clone);
+//             }
+//         );
+//     } else {
+//         $(active).removeClass('active').addClass('passive');
+//         $(prevActive).addClass('active');
+//         $(passive).removeClass('passive');
+//
+//         $('.slider__nums-wrap').animate(
+//             {left: "0"},
+//             400,
+//             function () {
+//                 const clone = $(nextPassive).clone()[0];
+//                 $('.slider__nums-wrap').prepend(clone);
+//                 $('.slider__nums-wrap').css("left", "-45px");
+//                 $('.slider__nums-number:last-child').last().remove();
+//             }
+//         );
+//     }
+// }
 
-    if (direction) {
-        $(active).removeClass('active');
-        $(passive).removeClass('passive').addClass('active');
-        $(nextPassive).addClass('passive');
+// $('#btnSliderPrev').on('click', function () {
+//     if (actionStopper) {
+//         actionStopper = false;
+//         replaceSliderNums(false);
+//
+//         setTimeout(function () {
+//             actionStopper = true;
+//         }, 500);
+//     }
+// });
 
-        $('.slider__nums-wrap').animate(
-            {left: "-90px"},
-            400,
-            function () {
-                $('.slider__nums-wrap').children()[0].remove();
-                $('.slider__nums-wrap').css("left", "-45px");
+// $('#btnSliderNext').on('click', function () {
+//     if (actionStopper) {
+//         actionStopper = false;
+//         replaceSliderNums(true);
+//
+//         setTimeout(function () {
+//             actionStopper = true;
+//         }, 500);
+//     }
+// });
 
-                const clone = $(passive).clone()[0];
-                $(clone).removeClass('active');
-                $('.slider__nums-wrap').append(clone);
-            }
-        );
-    } else {
-        $(active).removeClass('active').addClass('passive');
-        $(prevActive).addClass('active');
-        $(passive).removeClass('passive');
+// $('#indexSlider').on('swipe', function(event, slick, direction){
+//     if (direction === 'left') {
+//         replaceSliderNums(true);
+//     } else {
+//         replaceSliderNums(false);
+//     }
+// });
 
-        $('.slider__nums-wrap').animate(
-            {left: "0"},
-            400,
-            function () {
-                const clone = $(nextPassive).clone()[0];
-                $('.slider__nums-wrap').prepend(clone);
-                $('.slider__nums-wrap').css("left", "-45px");
-                $('.slider__nums-number:last-child').last().remove();
-            }
-        );
-    }
-}
 
-$('#btnSliderPrev').on('click', function () {
-    if (actionStopper) {
-        actionStopper = false;
-        replaceSliderNums(false);
 
-        setTimeout(function () {
-            actionStopper = true;
-        }, 500);
-    }
-});
 
-$('#btnSliderNext').on('click', function () {
-    if (actionStopper) {
-        actionStopper = false;
-        replaceSliderNums(true);
 
-        setTimeout(function () {
-            actionStopper = true;
-        }, 500);
-    }
-});
 
-$('#indexSlider').on('swipe', function(event, slick, direction){
-    if (direction === 'left') {
-        replaceSliderNums(true);
-    } else {
-        replaceSliderNums(false);
-    }
-});
+
+
+
 
 // Offer Slider
 $('#offerList').slick(
