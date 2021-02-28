@@ -86,7 +86,7 @@ $(document).ready(function () {
 
 
         // Animation for tablet
-        let wTab = cTab.width = 600,
+        let wTab = cTab.width = 700,
             hTab = cTab.height = 700,
             ctxTab = cTab.getContext( '2d' ),
 

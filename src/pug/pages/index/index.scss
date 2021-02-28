@@ -128,6 +128,8 @@
 .section_slider-banner {
     .container {
         width: 100%;
+        position: relative;
+        z-index: 2;
 
         @media (min-width: $lg) {
             width: calc(70vw + 100px); // для компенсации размера тени кнопки на десктопах
@@ -148,16 +150,6 @@
 
         @media (min-width: $lg) {
             padding: 98px 50px 0;
-        }
-
-        &.animation-slide {
-            @media (min-width: $md) {
-                padding-bottom: 300px
-            }
-
-            @media (min-width: $lg) {
-                padding-bottom: 450px;
-            }
         }
     }
 
@@ -280,20 +272,34 @@
     }
 
     &__animation {
+        position: relative;
+        z-index: 0;
+        opacity: 0;
+        transition: all .4s;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    &__canvas {
         position: absolute;
         top: 0;
         left: 50vw;
         transform: translateX(-50%);
-        z-index: -1;
 
         @media (min-width: $md) {
-            left: 0;
-            top: -35px;
+            right: 0;
+            left: auto;
+            transform: translateX(0);
+        }
+
+        @media (min-width: 1200px) {
+            transform: translateX(-20%);
         }
 
         @media (min-width: $lg) {
-            left: 50%;
-            top: -100px;
+            transform: translateX(-10%);
         }
 
         &#cMob {
@@ -324,33 +330,34 @@
     }
 
     &__background {
-        display: none;
-        width: 100%;
         position: absolute;
-        left: 0;
         overflow: hidden;
-        z-index: 2;
+        width: 100vw;
+        transform: translateY(-50%);
+        display: none;
+        z-index: 1;
 
         @media (min-width: $md) {
+            top: 480px;
             display: block;
-            top: 300px;
         }
 
         @media (min-width: $lg) {
-            top: 525px;
+            top: 700px;
+        }
+    }
+
+    &__background-wrap {
+        position: relative;
+
+        @media (min-width: $md) {
+            width: 110vw;
+            left: -10vw;
         }
 
-        &-wrap {
-            @media (min-width: $md) {
-                position: relative;
-                width: 120vw;
-                left: -15vw;
-            }
-
-            @media (min-width: $lg) {
-                width: 100vw;
-                left: 0;
-            }
+        @media (min-width: $lg) {
+            width: 100vw;
+            left: 0;
         }
     }
 }
@@ -368,7 +375,7 @@
     @media (min-width: $lg) {
         top: 394px;
         left: auto;
-        right: 82px;
+        right: -147px;
     }
 }
 
@@ -405,7 +412,7 @@
     right: 96px;
 
     @media (min-width: $lg) {
-        right: 169px;
+        right: -60px;
     }
 
     &::before {
@@ -418,7 +425,7 @@
     right: 32px;
 
     @media (min-width: $lg) {
-        right: 87px;
+        right: -142px;
     }
 
     &::before {

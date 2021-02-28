@@ -1,4 +1,9 @@
 section.section.section_slider-banner
+    .slider-banner__animation.visible#sliderAnimation
+        canvas#cMob.slider-banner__canvas
+        canvas#cTab.slider-banner__canvas
+        canvas#cDesk.slider-banner__canvas
+
     .slider-banner__background
         .slider-banner__background-wrap
             img(src="/img/slider-curved-line.svg" alt="")
@@ -6,11 +11,10 @@ section.section.section_slider-banner
     .container
         .slider-banner.swiper-container
             .slider-banner__wrap.swiper-wrapper
-                .slider-banner__slide.animation-slide.swiper-slide
+                // .animation-slide
+                .slider-banner__slide.swiper-slide
                     .slider-banner__picture
-                        canvas#cMob.slider-banner__animation
-                        canvas#cTab.slider-banner__animation
-                        canvas#cDesk.slider-banner__animation
+                        // Картинку в первом слайде удалили, так как на первом слайде показыватеся анимация на главной
                     .slider-banner__description
                         h2.slider-banner__title.section__title(data-swiper-parallax-x="-500" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="600") Погрузись в мир LED экранов
                         .slider-banner__subtitle(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700") Аренда под ключ 5000 р/м2

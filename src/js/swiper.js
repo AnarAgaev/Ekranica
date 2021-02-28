@@ -1,18 +1,24 @@
-function moveSliderNums(index) {
+function changeActiveNumber(index) {
     const height = $("#sliderNums").height();
 
-    const scrolled = $("#sliderNums")
-        .children(".slide-nums__current")
-        .children(".slide-nums__scrolled");
+    const scrollable = $("#sliderNums")
+        .find(".slide-nums__scrolled");
 
-    $(scrolled)
-        .children(".slide-nums__number")
+    $("#sliderNums .slide-nums__number")
         .removeClass('active');
 
-    $('#sliderNums .slide-nums__number:eq(' + index + ')')
+    $("#sliderNums .slide-nums__number:eq(" + index + ")")
         .addClass('active');
 
-    $(scrolled).css("top", "-" + height * index + "px");
+    $(scrollable).css("top", "-" + height * index + "px");
+}
+
+function showAnimation(index) {
+    if (index !== 0) {
+        $("#sliderAnimation").removeClass("visible");
+    } else {
+        $("#sliderAnimation").addClass("visible");
+    }
 }
 
 new Swiper('.slider-banner', {
@@ -24,11 +30,9 @@ new Swiper('.slider-banner', {
     speed: 500,
     parallax:true,
     on: {
-        slideNextTransitionStart: function (evt) {
-            moveSliderNums(evt.activeIndex);
-        },
-        slidePrevTransitionStart: function (evt) {
-            moveSliderNums(evt.activeIndex);
+        activeIndexChange: function (evt) {
+            changeActiveNumber(evt.activeIndex);
+            showAnimation(evt.activeIndex);
         }
     },
 
