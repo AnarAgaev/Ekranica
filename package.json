@@ -20,7 +20,8 @@
 	},
 	"browserslist": [
 		"> 1%",
-		"last 1 version"
+		"last 1 version",
+		"IE 10"
 	],
 	"devDependencies": {
 		"@babel/core": "^7.13.1",
@@ -49,5 +50,9 @@
 		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.2",
 		"webpack-merge": "^4.2.2"
+	},
+	"dependencies": {
+		"jquery": "^3.5.1",
+		"swiper": "^6.4.15"
 	}
 }

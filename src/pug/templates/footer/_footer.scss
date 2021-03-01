@@ -1,8 +1,8 @@
 @import "../../../scss/variables";
 
 .footer {
-    padding: 46px 24px 48px;
     position: relative;
+    padding: 48px 7.5%;
 
     &:before {
         content: "";
@@ -21,7 +21,8 @@
     }
 
     @media (min-width: $md) {
-        padding: 46px 48px 48px;
+        padding-left: 6.25%;
+        padding-right: 6.25%;
     }
 
     @media (min-width: $lg) {
@@ -29,7 +30,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        padding: 96px 96px 102px;
+        padding: 96px 5vw;
     }
 
     &__phone {

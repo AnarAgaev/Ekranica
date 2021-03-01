@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 $(document).ready(function () {
     if ( $('.page-index')[0] ) {
         // Animation for mobile

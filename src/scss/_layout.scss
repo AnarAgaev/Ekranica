@@ -85,6 +85,42 @@ body {
     }
 }
 
+.container-endless-lg-fix {
+    position: relative;
+    width: 92.5%;
+    margin-left: 7.5%;
+
+    @media (min-width: $md) {
+        width: 93.75%;
+        margin-left: 6.25%;
+    }
+
+    @media (min-width: $lg) {
+        width: 70vw;
+        //margin: 0 auto;
+        margin-left: 15%;
+    }
+}
+
+.endless {
+    width: 108.108108108108108%;
+    margin-left: -8.108108108108108%;
+    padding-left: 8.108108108108108%;
+
+    @media (min-width: $md) {
+        width: 106.666666666666667%;
+        margin-left: -6.666666666666667%;
+        padding-left: 6.666666666666667%;
+    }
+
+    @media (min-width: $lg) {
+        width: calc(100% + 40px);
+        margin-left: -40px;
+        padding-left: 40px;
+    }
+}
+
+
 
 //.container {
 //    margin: 0 auto;
@@ -748,6 +784,7 @@ input.btn {
         &.swiper-button-disabled {
             // icon color is #3A374B
 
+            background: $color-back-secondary !important;
             cursor: default;
             box-shadow:
                 -14px -28px 30px rgba(35, 33, 58, 0.35),

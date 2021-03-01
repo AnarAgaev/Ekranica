@@ -1,3 +1,13 @@
+import $ from "jquery";
+
+import Swiper from 'swiper';
+
+// core version + navigation, pagination modules:
+import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+
+// configure Swiper to use modules
+SwiperCore.use([Navigation, Pagination]);
+
 function changeActiveNumber(index) {
     const height = $("#sliderNums").height();
 
@@ -47,3 +57,31 @@ new Swiper('.offer__list', {
     },
     parallax:true,
 });
+
+
+const breakpointXL = window.matchMedia ('(min-width: 1920px)');
+let partnersChooseSlider;
+
+function breakpointXLChecker() {
+    if ( breakpointXL.matches === true ) {
+        if ( partnersChooseSlider !== undefined ) {
+            partnersChooseSlider.destroy(true, true);
+        }
+        return;
+    } else if ( breakpointXL.matches === false ) {
+        return enablePartnersChooseSlider();
+    }
+}
+
+function enablePartnersChooseSlider() {
+    partnersChooseSlider = new Swiper('#partnersChooseSlider', {
+        autoHeight: true,
+        slidesPerView: 'auto',
+        speed: 500,
+        parallax:true,
+        spaceBetween: 24,
+    });
+}
+
+breakpointXL.addListener(breakpointXLChecker);
+breakpointXLChecker();

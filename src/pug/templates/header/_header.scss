@@ -163,11 +163,10 @@
 
     &__logo {
         width: 150px;
-        height: 52px;
+        height: auto;
 
         @media (min-width: $md) {
             width: 215px;
-            height: 57px;
         }
 
         @media (min-width: $lg) {
@@ -187,7 +186,7 @@
         overflow-y: auto;
         width: 100%;
         background: $color-back-primary;
-        padding: 0 24px;
+        padding: 0 7.5%;
         transition: $transition;
 
         &__list {
@@ -357,7 +356,7 @@
     @media (min-width: $md) {
         .nav {
             top: 114px;
-            padding: 0 48px;
+            padding: 0 6.25vw;
             height: calc(100% - 114px);
 
             &__list {
