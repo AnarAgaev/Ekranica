@@ -80,6 +80,17 @@ function enablePartnersChooseSlider() {
         speed: 500,
         parallax:true,
         spaceBetween: 24,
+        breakpoints: {
+            768: {
+                //slidesPerView: 3,
+                autoHeight: false,
+            },
+            1140: {
+                autoHeight: false,
+                spaceBetween: 68,
+            },
+
+        }
     });
 }
 
