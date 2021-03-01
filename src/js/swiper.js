@@ -40,9 +40,9 @@ new Swiper('.slider-banner', {
     speed: 500,
     parallax:true,
     on: {
-        activeIndexChange: function (evt) {
-            changeActiveNumber(evt.activeIndex);
-            showAnimation(evt.activeIndex);
+        activeIndexChange: function (swiper) {
+            changeActiveNumber(swiper.activeIndex);
+            showAnimation(swiper.activeIndex);
         }
     },
 });
@@ -57,6 +57,33 @@ new Swiper('.offer__list', {
     },
     parallax:true,
 });
+
+new Swiper('.projects__list', {
+    //autoHeight: true,
+    slidesPerView: 'auto',
+    speed: 500,
+    navigation: {
+        nextEl: '#btnProjectsNext',
+        prevEl: '#btnProjectsPrev',
+    },
+    on: {
+        reachEnd: function (swiper) {
+            if ($(document).width() > 1024) {
+                $('.projects__item:eq(-2)').addClass('active');
+            }
+
+            $('.projects__item:last-child').addClass('active');
+        },
+        fromEdge:  function (swiper) {
+            if ($(document).width() > 1024) {
+                $('.projects__item:eq(-2)').removeClass('active');
+            }
+
+            $('.projects__item:last-child').removeClass('active');
+        },
+    }
+});
+
 
 
 const breakpointXL = window.matchMedia ('(min-width: 1920px)');

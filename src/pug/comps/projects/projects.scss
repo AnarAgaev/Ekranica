@@ -1,40 +1,31 @@
 @import "../../../scss/variables";
 
 .projects {
-    overflow-x: hidden;
-    margin-bottom: -50px;
 
     &__list {
-        width: 432px; // ширина в 2 элемента &__item
-        margin-top: 3px;
-        padding-bottom: 24px;
+        padding-top: 34px;
+        padding-bottom: 70px;
 
         @media (min-width: $md) {
-            width: 1024px; // ширина в 2 элемента &__item
-            margin-top: 20px;
+            padding-top: 68px;
         }
 
         @media (min-width: $lg) {
-            width: 1836px; // ширина в 2 элемента &__item
-            margin-top: 84px;
+            padding-top: 134px;
         }
     }
 
     &__item {
         width: 216px;
-        min-height: 298px;
-        padding-top: 45px;
-        float: left;
+        padding-top: 16px;
 
         @media (min-width: $md) {
             width: 512px;
-            min-height: 478px;
-            padding-top: 48px;
+            padding-top: 0;
         }
 
         @media (min-width: $lg) {
             width: 918px;
-            min-height: 652px;
         }
     }
 
@@ -64,6 +55,7 @@
         font-size: 14px;
         line-height: 160%;
         color: $color-text-inactive;
+        transition: color .5s;
 
         @media (min-width: $md) {
             font-weight: 700;
@@ -126,7 +118,7 @@
             z-index: 1;
             background: rgba(11, 13, 25, .8);
             opacity: 1;
-            transition: $transition;
+            transition: opacity .5s;
         }
     }
 
@@ -207,7 +199,7 @@
     }
 
     #btnProjectsPrev {
-        margin-top: -35px;
+        margin-top: 18px;
 
         &::before {
             transform: rotate(135deg);
@@ -216,7 +208,7 @@
     }
 
     #btnProjectsNext {
-        margin-top: -137px;
+        margin-top: -85px;
 
         &::before {
             transform: rotate(-45deg);
@@ -224,7 +216,8 @@
         }
     }
 
-    .slick-current {
+    .swiper-slide-active,
+    .active {
         .projects__place {
             color: $color-text-secondary;
         }
@@ -232,9 +225,5 @@
         .projects__pic::after {
             opacity: 0;
         }
-    }
-
-    .slick-list {
-        padding-bottom: 50px;
     }
 }

@@ -1,6 +1,7 @@
 @import "../../../scss/variables";
 
 .offer {
+
     &__list {
         padding-top: 34px;
 
@@ -147,7 +148,7 @@
 }
 
 #btnOfferSliderPrev {
-    margin-top: -6px;
+    margin-top: 60px;
 
     &::before {
         transform: rotate(135deg);
@@ -156,7 +157,7 @@
 }
 
 #btnOfferSliderNext {
-    margin-top: -108px;
+    margin-top: -40px;
 
     &::before {
         transform: rotate(-45deg);

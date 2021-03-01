@@ -54,7 +54,6 @@ body {
 
 }
 
-
 .container {
     width: 85%;
     margin: 0 auto;
@@ -67,7 +66,6 @@ body {
         width: 70%;
     }
 }
-
 
 .container-endless {
     position: relative;
@@ -97,7 +95,6 @@ body {
 
     @media (min-width: $lg) {
         width: 70vw;
-        //margin: 0 auto;
         margin-left: 15%;
     }
 }
@@ -119,209 +116,6 @@ body {
         padding-left: 40px;
     }
 }
-
-
-
-//.container {
-//    margin: 0 auto;
-//    width: 100%;
-//    max-width: calc(100% - 7.5% * 2);
-//}
-//
-//.row {
-//    display: flex;
-//    flex-wrap: wrap;
-//    margin: 0 -8px;
-//}
-//
-//@for $i from 1 through 4 {
-//    .col-sm-#{$i} {
-//        position: relative;
-//        width: 100%;
-//        max-width: calc(100% / 4 * #{$i} - 16px);
-//        flex: 0 0 calc(100% / 4 * #{$i} - 16px);
-//        margin: 0 8px;
-//    }
-//}
-
-//@media (min-width: $md) {
-    //.container {
-    //    max-width: calc(100% - 6.25% * 2);
-    //}
-    //
-    //.row {
-    //    margin: 0 -12px;
-    //}
-    //
-    //@for $i from 1 through 6 {
-    //    .col-md-#{$i} {
-    //        width: 100%;
-    //        max-width: calc(100% / 6 * #{$i} - 24px) !important;
-    //        flex: 0 0 calc(100% / 4 * #{$i} - 24px) !important;
-    //        margin: 0 12px;
-    //    }
-    //}
-//}
-
-//@media (min-width: $lg) {
-    //.container {
-    //    max-width: calc(100% - 15% * 2);
-    //}
-
-    //.row {
-    //    margin: 0 -48px;
-    //}
-    //
-    //@for $i from 1 through 6 {
-    //    .col-lg-#{$i} {
-    //        width: 100%;
-    //        max-width: calc(100% / 6 * #{$i} - 96px) !important;
-    //        flex: 0 0 calc(100% / 6 * #{$i} - 96px) !important;
-    //        margin: 0 48px;
-    //    }
-    //}
-//}
-
-
-
-
-
-
-
-
-//.row {
-//    display: flex;
-//    flex-wrap: wrap;
-//    margin: 0 -8px;
-//}
-//
-//@for $i from 1 through 4 {
-//    .col-sm-#{$i} {
-//        position: relative;
-//        width: 100%;
-//        max-width: calc(100% / 4 * #{$i} - 16px);
-//        margin: 0 8px;
-//    }
-//}
-//
-//@media (min-width: $md) {
-//    .container {
-//        max-width: 696px; //- by 768px: 672px = (92px * 6) + (24px * 6) = (92px + 24px) * 6
-//        padding: 0 12px;
-//        // padding: 0 48px;
-//    }
-//
-//    .row {
-//        margin: 0 -12px;
-//    }
-//
-//    @for $i from 1 through 6 {
-//        .col-md-#{$i} {
-//            width: 100%;
-//            max-width: calc(100% / 6 * #{$i} - 24px) !important;
-//            margin: 0 12px;
-//        }
-//    }
-//}
-//
-//@media (min-width: $lg) {
-//    .container {
-//        max-width: 1440px; //- by 1920px: 1344px = (144px * 6) + (96px * 6) = (144px + 96px) * 4
-//        padding: 0 48px;
-//        // padding: 0 288px;
-//    }
-//
-//    .row {
-//        margin: 0 -48px;
-//    }
-//
-//    @for $i from 1 through 6 {
-//        .col-lg-#{$i} {
-//            width: 100%;
-//            max-width: calc(100% / 6 * #{$i} - 96px) !important;
-//            margin: 0 48px;
-//        }
-//    }
-//}
-//
-//@media (min-width: $xxl) {
-//    .container {
-//        max-width: calc(100% - 288px * 2);
-//        margin:  0 288px;
-//    }
-//}
-//
-
-
-//.container {
-//    width: 100%;
-//    margin: 0 auto;
-//    max-width: 288px; //- by 320px:  272px = (56px * 4) + (16px * 4) = (56px + 16px) * 4
-//    padding: 0 8px;
-//    // padding: 0 24px;
-//}
-//
-//.row {
-//    display: flex;
-//    flex-wrap: wrap;
-//    margin: 0 -8px;
-//}
-//
-//@for $i from 1 through 4 {
-//    .col-sm-#{$i} {
-//        position: relative;
-//        width: 100%;
-//        max-width: calc(100% / 4 * #{$i} - 16px);
-//        margin: 0 8px;
-//    }
-//}
-//
-//@media (min-width: $md) {
-//    .container {
-//        max-width: 696px; //- by 768px: 672px = (92px * 6) + (24px * 6) = (92px + 24px) * 6
-//        padding: 0 12px;
-//        // padding: 0 48px;
-//    }
-//
-//    .row {
-//        margin: 0 -12px;
-//    }
-//
-//    @for $i from 1 through 6 {
-//        .col-md-#{$i} {
-//            width: 100%;
-//            max-width: calc(100% / 6 * #{$i} - 24px) !important;
-//            margin: 0 12px;
-//        }
-//    }
-//}
-//
-//@media (min-width: $lg) {
-//    .container {
-//        max-width: 1440px; //- by 1920px: 1344px = (144px * 6) + (96px * 6) = (144px + 96px) * 4
-//        padding: 0 48px;
-//        // padding: 0 288px;
-//    }
-//
-//    .row {
-//        margin: 0 -48px;
-//    }
-//
-//    @for $i from 1 through 6 {
-//        .col-lg-#{$i} {
-//            width: 100%;
-//            max-width: calc(100% / 6 * #{$i} - 96px) !important;
-//            margin: 0 48px;
-//        }
-//    }
-//}
-//
-//@media (min-width: $xxl) {
-//    .container {
-//        max-width: calc(100% - 288px * 2);
-//        margin:  0 288px;
-//    }
-//}
 
 //- Typography
 .h1, h1,

@@ -25,10 +25,14 @@
         }
 
         &_list {
-            margin-top: 55px;
+            margin-top: 52px;
+
+            @media (min-width: $md) {
+                margin-top: 95px;
+            }
 
             @media (min-width: $lg) {
-                padding-top: 173px;
+                margin-top: 228px;
             }
         }
 
@@ -44,11 +48,11 @@
             }
 
             @media (min-width: $md) {
-                margin-top: 173px;
+                margin-top: 331px;
             }
 
             @media (min-width: $lg) {
-                margin-top: 362px;
+                margin-top: 327px;
             }
         }
 
