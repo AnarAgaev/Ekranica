@@ -55,30 +55,50 @@ new Swiper('.offer__list', {
         nextEl: '#btnOfferSliderNext',
         prevEl: '#btnOfferSliderPrev',
     },
-    parallax:true,
+    breakpoints: {
+        1024: {
+            spaceBetween: 16,
+        },
+        1140: {
+            spaceBetween: 34,
+        },
+        1920: {
+            spaceBetween: 0,
+        },
+    },
 });
 
-new Swiper('.projects__list', {
+new Swiper('#projectsList', {
     slidesPerView: 'auto',
     speed: 500,
     navigation: {
         nextEl: '#btnProjectsNext',
         prevEl: '#btnProjectsPrev',
     },
-    on: {
-        reachEnd: function (swiper) {
-            if ($(document).width() > 1024) {
-                $('.projects__item:eq(-2)').addClass('active');
-            }
-
-            $('.projects__item:last-child').addClass('active');
+    breakpoints: {
+        1024: {
+            spaceBetween: 16,
         },
-        fromEdge:  function (swiper) {
-            if ($(document).width() > 1024) {
-                $('.projects__item:eq(-2)').removeClass('active');
-            }
+        1140: {
+            spaceBetween: 34,
+        },
+        1920: {
+            spaceBetween: 0,
+        },
+    },
+    on: {
+        reachEnd: function () {
+            // Let's get all elements after active
+            const lastItems = $('#projectsList .swiper-slide-active')
+                .nextAll('.projects__item');
 
-            $('.projects__item:last-child').removeClass('active');
+            // Add class visible all elements after active and active too.
+            for (let i = 0; i <= lastItems.length; i++) {
+                $(lastItems[i]).addClass('visible');
+            }
+        },
+        fromEdge:  function () {
+            $('.projects__item').removeClass('visible');
         },
     }
 });
@@ -95,11 +115,52 @@ new Swiper('#clientsList', {
         768: {
             spaceBetween: 24,
         },
+        1024: {
+            spaceBetween: 48,
+        },
+        1140: {
+            spaceBetween: 68,
+        },
         1920: {
             spaceBetween: 96,
         },
     },
 });
+
+new Swiper('#feedbackList', {
+    slidesPerView: 'auto',
+    speed: 500,
+    spaceBetween: 16,
+    navigation: {
+        nextEl: '#btnFeedbackNext',
+        prevEl: '#btnFeedbackPrev',
+    },
+    breakpoints: {
+        768: {
+            spaceBetween: 48,
+        },
+        1140: {
+            spaceBetween: 68,
+        },
+        1920: {
+            spaceBetween: 134,
+        },
+    },
+    on: {
+        reachEnd: function () {
+            const lastItems = $('#feedbackList .swiper-slide-active')
+                .nextAll('.feedback__item');
+
+            for (let i = 0; i <= lastItems.length; i++) {
+                $(lastItems[i]).addClass('visible');
+            }
+        },
+        fromEdge:  function () {
+            $('.feedback__item').removeClass('visible');
+        },
+    }
+});
+
 
 
 
@@ -131,6 +192,10 @@ function enablePartnersChooseSlider() {
             768: {
                 autoHeight: false,
             },
+            1024: {
+                autoHeight: false,
+                spaceBetween: 48,
+            },
             1140: {
                 autoHeight: false,
                 spaceBetween: 68,
@@ -148,6 +213,10 @@ function enableWorkOrderSlider() {
         breakpoints: {
             768: {
                 autoHeight: false,
+            },
+            1024: {
+                autoHeight: false,
+                spaceBetween: 48,
             },
             1140: {
                 autoHeight: false,

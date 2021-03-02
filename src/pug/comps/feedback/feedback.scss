@@ -1,69 +1,81 @@
 @import "../../../scss/variables";
 
 .feedback {
-    overflow-x: hidden;
-    margin-bottom: -50px;
+
+    //&__background {
+    //    display: none;
+    //    width: 100%;
+    //    position: absolute;
+    //    left: 0;
+    //    background: url(/img/curved-line.svg) no-repeat center center;
+    //    z-index: 0;
+    //    transform: scale(-1, 1);
+    //    top: 725px;
+    //    height: 400px;
+    //    background-size: 130%;
+    //    background-position-x: 70%;
+    //
+    //    @media (min-width: $md) {
+    //        display: block;
+    //    }
+    //
+    //    @media (min-width: $lg) {
+    //        background: url(/img/body-curved-line.svg) no-repeat center center;
+    //        top: 920px;
+    //        height: 571px;
+    //        transform: scale(1, 1);
+    //    }
+    //}
 
     &__background {
-        display: none;
-        width: 100%;
         position: absolute;
-        left: 0;
-        background: url(/img/curved-line.svg) no-repeat center center;
-        z-index: 0;
-        transform: scale(-1, 1);
-        top: 725px;
-        height: 400px;
-        background-size: 130%;
-        background-position-x: 70%;
+        overflow: hidden;
+        width: 100%;
+        transform: translateY(-50%);
+        display: none;
+        z-index: -1;
 
         @media (min-width: $md) {
+            top: 1025px;
             display: block;
         }
 
         @media (min-width: $lg) {
-            background: url(/img/body-curved-line.svg) no-repeat center center;
-            top: 920px;
-            height: 571px;
-            transform: scale(1, 1);
+            top: 1170px;
+            transform: translateY(-50%) scale(-1, 1);
         }
     }
 
+
     &__list {
-        width: 432px; // &__item * 2
-        margin-top: 18px; // 48 - 30
+        padding-top: 34px;
+        padding-bottom: 70px;
+        margin-top: 30px;
 
         @media (min-width: $md) {
-            width: 812px; // &__item * 2
-            margin-top: 38px; //68 - 30
+            padding-top: 68px;
+            margin-top: 34px;
         }
 
         @media (min-width: $lg) {
-            width: 2596px; // &__item * 2
-            margin-top: 88px; // 118 - 30
+            padding-top: 134px;
+            margin-top: -18px;
         }
     }
 
     &__item {
-        width: 216px; // 200 + 16
-        min-height: 440px;
-        float: left;
-        padding-bottom: 50px;
-        margin-top: 30px;
+        width: 200px;
 
         @media (min-width: $md) {
-            width: 406px; // 358 + 48
-            min-height: 614px;
+            width: 358px;
         }
 
         @media (min-width: $lg) {
-            width: 1298px; // 1164 + 134
-            min-height: 520px;
+            width: 1164px;
         }
     }
 
     &__card {
-        width: 200px;
         min-height: 352px;
         background: $color-back-primary;
         box-shadow:
@@ -71,22 +83,16 @@
                 16px 5px 40px rgba(4, 5, 14, 0.6);
         border-radius: 12px;
         padding: 0 16px 16px 16px;
-        margin-top: 16px;
         margin-bottom: 73px;
         position: relative;
 
         @media (min-width: $md) {
-            width: 358px;
             min-height: 508px;
-            margin-top: 34px;
             padding: 0 48px 25px 34px;
-            margin-bottom: 72px;
         }
 
         @media (min-width: $lg) {
-            width: 1164px;
             min-height: 520px;
-            margin-bottom: 0;
             margin-top: 0;
             padding: 0 60px 0 480px;
             box-shadow: none;
@@ -135,6 +141,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
+            border-radius: 12px;
             top: 0;
             left: 0;
             z-index: 5;
@@ -295,7 +302,8 @@
         }
     }
 
-    .slick-current {
+    .swiper-slide-active,
+    .visible {
         .feedback__pic {
             &::before {
                 opacity: 0;
@@ -307,7 +315,6 @@
             color: $color-text-secondary;
         }
 
-
         .social-icon__pic {
             svg path {
                 stroke: #AB78FF;
@@ -315,70 +322,11 @@
         }
     }
 
-    #btnFeedbackPrev,
-    #btnFeedbackNext {
-        position: absolute;
-        left: -191px;
-        top: 50%;
-        width: 68px;
-        height: 68px;
-        display: none !important;
-
-        @media (min-width: $lg) {
-            display: flex !important;
-        }
-
-        &:focus {
-            box-shadow:
-                    -14px -28px 30px rgba(35, 33, 58, 0.35),
-                    14px 28px 30px rgba(4, 5, 14, 0.3),
-                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
-                    inset -4px -4px 24px rgba(255, 255, 255, 0.06);
-        }
-
-        &[aria-disabled="true"] {
-            cursor: default;
-            box-shadow:
-                    -14px -28px 30px rgba(35, 33, 58, 0.35),
-                    14px 28px 30px rgba(4, 5, 14, 0.3),
-                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
-                    inset -4px -4px 24px rgba(255, 255, 255, 0.06);
-
-            &::before {
-                border-right-color: #202231;
-                border-bottom-color: #202231;
-            }
-
-        }
-
-        &::before {
-            content: "";
-            display: block;
-            width: 19px;
-            height: 19px;
-            top: 1px;
-            border-right: 2px solid #80758F;
-            border-bottom: 2px solid #80758F;
-            transition: $transition;
-            position: relative;
-        }
-    }
-
     #btnFeedbackPrev {
-        margin-top: 6px;
-
-        &::before {
-            transform: rotate(135deg);
-            left: 3px;
-        }
+        margin-top: 13px;
     }
 
     #btnFeedbackNext {
-        margin-top: -96px;
-
-        &::before {
-            transform: rotate(-45deg);
-            left: -6px;
-        }
+        margin-top: -90px;
     }
 }
