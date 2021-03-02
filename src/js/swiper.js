@@ -59,7 +59,6 @@ new Swiper('.offer__list', {
 });
 
 new Swiper('.projects__list', {
-    //autoHeight: true,
     slidesPerView: 'auto',
     speed: 500,
     navigation: {
@@ -82,6 +81,24 @@ new Swiper('.projects__list', {
             $('.projects__item:last-child').removeClass('active');
         },
     }
+});
+
+new Swiper('#clientsList', {
+    slidesPerView: 'auto',
+    speed: 500,
+    spaceBetween: 16,
+    navigation: {
+        nextEl: '#btnClientsSliderNext',
+        prevEl: '#btnClientsSliderPrev',
+    },
+    breakpoints: {
+        768: {
+            spaceBetween: 24,
+        },
+        1920: {
+            spaceBetween: 96,
+        },
+    },
 });
 
 
@@ -118,7 +135,7 @@ function enablePartnersChooseSlider() {
                 autoHeight: false,
                 spaceBetween: 68,
             },
-        }
+        },
     });
 }
 

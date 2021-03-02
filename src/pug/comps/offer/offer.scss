@@ -19,7 +19,6 @@
         min-height: 352px;
         padding-top: 35px;
         padding-bottom: 38px;
-        float: left;
 
         @media (min-width: $md) {
             width: 406px;
@@ -120,46 +119,10 @@
     }
 }
 
-#btnOfferSliderPrev,
-#btnOfferSliderNext {
-    position: absolute;
-    left: -190px;
-    top: 50%;
-    width: 68px;
-    height: 68px;
-    display: none !important;
-
-    @media (min-width: $lg) {
-        display: flex !important;
-    }
-
-    &::before {
-        content: "";
-        display: block;
-        width: 19px;
-        height: 19px;
-        top: 1px;
-        border-right: 2px solid #80758F;
-        border-bottom: 2px solid #80758F;
-        transition: $transition;
-        position: relative;
-    }
-}
-
 #btnOfferSliderPrev {
     margin-top: 60px;
-
-    &::before {
-        transform: rotate(135deg);
-        left: 3px;
-    }
 }
 
 #btnOfferSliderNext {
     margin-top: -40px;
-
-    &::before {
-        transform: rotate(-45deg);
-        left: -6px;
-    }
 }

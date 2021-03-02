@@ -17,7 +17,8 @@
         }
 
         @media (min-width: $lg) {
-            top: 1510px;
+            top: 1503px;
+            transform: translateY(-50%) scale(1, 1);
         }
     }
 
