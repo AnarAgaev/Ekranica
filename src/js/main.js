@@ -76,11 +76,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
     $(window).resize(function () {
         getScreenType();
         replaceFooterPhone();

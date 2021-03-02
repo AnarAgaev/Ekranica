@@ -3,6 +3,7 @@ import './js/polyfills';
 import './js/swiper';
 import './js/anim';
 import './js/main';
+import './js/faq';
 
 // Include vendor styles
 import 'normalize.css';

@@ -116,7 +116,7 @@
         }
 
         &_faq {
-            margin-top: 100px;
+            margin-top: 144px;
 
             @media (min-width: $md) {
                 margin-top: 232px;
@@ -125,6 +125,7 @@
 
             @media (min-width: $lg) {
                 margin-top: 275px;
+                margin-bottom: 170px;
             }
         }
     }

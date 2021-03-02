@@ -5,7 +5,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 48px;
-        margin-bottom: 34px;
+        margin-bottom: 8px;
 
         @media (min-width: $md) {
             margin-bottom: 26px;
@@ -13,13 +13,12 @@
 
         @media (min-width: $lg) {
             margin-top: 134px;
+            margin-bottom: 0;
         }
     }
 
     &__item {
         width: 100%;
-        //width: 272px;
-        //height: 52px;
         font-size: 20px;
         font-weight: 500;
         line-height: 130%;
@@ -29,13 +28,7 @@
         color: $color-text-secondary;
         margin-bottom: 24px;
 
-        &:nth-last-child(2) {
-            margin-bottom: 0 !important;
-        }
-
         @media (min-width: $md) {
-            //width: 672px;
-            //height: 61px;//height: 52px;
             padding: 16px 24px;
             font-weight: 400;
             font-size: 18px;
@@ -47,8 +40,6 @@
         }
 
         @media (min-width: $lg) {
-            //width: 1344px;
-            //height: 138px;//height: 61px;//height: 52px;
             padding: 48px;
             font-weight: 700;
             font-size: 30px;
@@ -62,84 +53,93 @@
 
         &.visible {
             .faq__description{
-                margin-top: 0;
                 opacity: 1;
-                max-height: 1700px;
 
-                @media (min-width: $lg) {
-                    margin-top: 48px;
-                }
-            }
-
-            & + .faq__points {
-                margin-bottom: 34px;
-                max-height: 50px;
-                opacity: 1;
+                //@media (min-width: $lg) {
+                //    padding-top: 48px;
+                //}
             }
 
             .faq__toggler {
-                transform: translateY(-50%) rotate(180deg);
+                &::before {
+                    transform: translateX(2px) rotate(45deg);
+
+                    @media (min-width: $lg) {
+                        transform: translateX(6px) rotate(45deg);
+                    }
+                }
+
+                &::after {
+                    transform: translateX(-2px) rotate(-45deg);
+
+                    @media (min-width: $lg) {
+                        transform: translateX(-6px) rotate(-45deg);
+                    }
+                }
             }
         }
     }
 
     &__toggler {
-        height: 24px;
         width: 24px;
-        border-radius: 50%;
+        height: 24px;
         background: $color-back-primary;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 12px);
+        right: 0;
         box-shadow:
                 -10px -10px 30px rgba(35, 33, 58, 0.16),
                 10px 10px 30px rgba(4, 5, 14, 0.8),
                 inset 5px 6px 20px rgba(35, 33, 58, 0.5),
                 inset -5px -6px 20px rgba(0, 2, 12, 0.2);
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%) rotate(0deg);
-
-        right: 0;
-
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 7px;
-            height: 7px;
-            border-right: 1px solid $color-text-secondary;
-            border-bottom: 1px solid $color-text-secondary;
-            transform: translate(-50%, -65%) rotate(45deg);
-            transition: $transition;
-            top: 50%;
-            left: 50%;
-
-            @media (min-width: $md) {
-                width: 10px;
-                height: 10px;
-            }
-
-            @media (min-width: $lg) {
-                width: 68px;
-                height: 56px;
-                border: none;
-                transform: translate(-50%, -50%);
-                background: url("/img/faq-arr.svg") no-repeat center;
-            }
-        }
 
         @media (min-width: $md) {
             background: transparent;
             box-shadow: none;
         }
 
-        @media (min-width: $lg) {
-            transform: translate(-8px, -85%) rotate(0deg);
+        &::before, &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 7px;
+            height: 1px;
+            background-color: $color-text-secondary;
+            transition: $transition;
+            top: 50%;
+            border-radius: 999px;
+            left: calc(50% - 3px);
+
+            @media (min-width: $lg) {
+                width: 20px;
+                height: 3px;
+                box-shadow: -4px -5px 20px #674A7D,
+                    4px 5px 10px #00020C;
+            }
+        }
+
+        &::before {
+            transform: translateX(-2px) rotate(45deg);
+
+            @media (min-width: $lg) {
+                transform: translateX(-6px) rotate(45deg);
+            }
+        }
+
+        &::after {
+            transform: translateX(2px) rotate(-45deg);
+
+            @media (min-width: $lg) {
+                transform: translateX(6px) rotate(-45deg);
+            }
         }
     }
 
     &__caption {
         cursor: pointer;
         position: relative;
-        padding-right: 24px;
+        padding-right: 40px;
 
         @media (min-width: $md) {
 
@@ -148,17 +148,13 @@
         @media (min-width: $lg) {
             padding-right: 48px;
         }
-
-
     }
 
     &__description {
         overflow-y: hidden;
-        height: auto;
         max-height: 0;
-        margin-top: 0;
+        height: auto;
         opacity: 0;
-        transition: $transition;
         padding-left: 10px;
         margin-left: -10px;
 
@@ -171,7 +167,7 @@
 
             @media (min-width: $lg) {
                 &:first-child {
-                    margin-top: 0;
+                    padding-top: 24px;
                 }
             }
         }
@@ -210,10 +206,6 @@
             }
         }
 
-        &-body {
-
-        }
-
         &-footer {
             display: flex;
             flex-direction: column;
@@ -237,11 +229,7 @@
             }
 
             .btn {
-                margin-bottom: 24px;
-
-                @media (min-width: $md) {
-
-                }
+                margin-bottom: 48px;
 
                 @media (min-width: $lg) {
                     flex: 1 0 auto;
@@ -249,62 +237,26 @@
                     margin-bottom: 0;
                 }
             }
-
-        }
-    }
-
-    &__points {
-        margin-bottom: 0;
-        height: 100px;
-        opacity: 0;
-        max-height: 0;
-        position: relative;
-        transition: $transition;
-
-        &::before, &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 8px;
-            height: 8px;
-            background: linear-gradient(296.57deg, #0B0C12 12.5%, #1C1D30 75%);
-            box-shadow: -2px -1px 4px #362642, 2px 1px 4px #04050E;
-        }
-
-        &::before {
-            top: 0;
-        }
-
-        &::after {
-            bottom: 0;
-        }
-
-        &:last-of-type {
-            display: none;
         }
     }
 
     &__more {
         display: flex;
         justify-content: center;
+        position: relative;
 
         .btn {
             padding-left: 60px;
+            position: relative;
         }
 
         img {
             width: 98px;
             height: 130px;
             position: absolute;
-            top: -38px;
+            top: -40px;
             left: 50%;
             margin-left: -105px;
-
-            @media (min-width: $md) {
-                top: -13px;
-            }
         }
 
         @media (min-width: $md) {
@@ -324,14 +276,13 @@
                 background: $color-back-primary;
                 box-shadow: -10px -10px 30px rgba(35, 33, 58, 0.35), 10px 10px 30px rgba(4, 5, 14, 0.4);
                 border-radius: 12px;
-                margin: 34px 0;
                 border: none;
                 font-weight: 700;
                 font-size: 30px;
                 line-height: 140%;
                 letter-spacing: 0.02em;
+                position: relative;
                 color: $color-text-secondary;
-
 
                 &::before, &::after {
                     content: "";
