@@ -2,31 +2,6 @@
 
 .feedback {
 
-    //&__background {
-    //    display: none;
-    //    width: 100%;
-    //    position: absolute;
-    //    left: 0;
-    //    background: url(/img/curved-line.svg) no-repeat center center;
-    //    z-index: 0;
-    //    transform: scale(-1, 1);
-    //    top: 725px;
-    //    height: 400px;
-    //    background-size: 130%;
-    //    background-position-x: 70%;
-    //
-    //    @media (min-width: $md) {
-    //        display: block;
-    //    }
-    //
-    //    @media (min-width: $lg) {
-    //        background: url(/img/body-curved-line.svg) no-repeat center center;
-    //        top: 920px;
-    //        height: 571px;
-    //        transform: scale(1, 1);
-    //    }
-    //}
-
     &__background {
         position: absolute;
         overflow: hidden;

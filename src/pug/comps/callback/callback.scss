@@ -158,21 +158,32 @@
         }
     }
 
-    &__pic {
-        position: relative;
+    &__background-pic {
+        position: absolute;
         display: none;
 
-        @media (min-width: $lg) {
+        @media (min-width: 1440px) {
             display: block;
+            top: 85px;
+            left: calc(50% + 50px);
+        }
+
+        @media (min-width: $lg) {
+            top: 86px;
+            left: calc(50% + 293px);
         }
 
         img {
-            width: 640px;
+            width: 500px;
             height: auto;
             position: absolute;
             top: -157px;
             left: -7px;
             max-width: none;
+
+            @media (min-width: $lg) {
+                width: 640px;
+            }
         }
     }
 
