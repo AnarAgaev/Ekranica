@@ -33,7 +33,7 @@
         max-height: 0;
         background: $color-back-secondary;
         box-shadow: inset -2px -2px 3px rgba(35,33,58,.5), inset 2px 2px 3px rgba(0,2,12,.5), 5px 5px 30px rgba(54,38,66,.3), -5px -5px 30px rgba(4,5,14,.4);
-        transition: $transition;
+        transition: all .1s;
         transform: translateY(5px);
         z-index: -1;
 
@@ -292,12 +292,6 @@
             opacity: 0;
             transition: $transition;
             z-index: 50;
-
-            //@media (min-width: $xxl) {
-            //    display: flex;
-            //    justify-content: center;
-            //    margin-left: -130px;
-            //}
         }
 
         .drop-visible {
@@ -377,7 +371,6 @@
         .nav {
             flex: 1 0 auto;
             height: 100%;
-            //overflow: initial;
             overflow: visible;
             position: relative;
             top: auto;
@@ -448,11 +441,12 @@
                 align-items: stretch;
                 padding: 49px 0 49px 425px;
                 position: fixed;
-                left: 0;
+                left: -9999px;
                 transform: translateY(15px);
-                transition: visibility 0s linear .2s, transform .2s ease-out, opacity .2s linear;
+                //transition: visibility 0s linear .2s, transform .2s ease-out, opacity .2s linear;
+                transition: left 0s linear .1s, transform .1s ease-out, opacity .1s linear;
                 opacity: 0;
-                visibility: collapse;
+                //visibility: collapse;
                 background-color: $color-back-primary;
                 overflow: initial;
                 max-height: none;
@@ -539,10 +533,12 @@
 
             .dropdown:hover {
                 .dropsection {
-                    visibility: visible;
+                    //visibility: visible;
+                    left: 0;
                     opacity: 1;
                     transform: translateY(0);
-                    transition: visibility 0s linear 0s, transform .2s ease-out, opacity .2s linear
+                    //transition: visibility 0s linear 0s, transform .2s ease-out, opacity .2s linear
+                    transition: left 0s linear 0s, transform .2s ease-out, opacity .2s linear
                 }
 
                 .nav__droplist::after {

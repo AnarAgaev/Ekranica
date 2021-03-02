@@ -1,69 +1,72 @@
 @import "../../../scss/variables";
 
 .work {
-    overflow-x: hidden;
+    overflow: hidden;
 
     &__background {
-        display: none;
-        width: 100%;
         position: absolute;
-        left: 0;
-        background: url(/img/curved-line.svg) no-repeat center center;
-        z-index: 0;
-        transform: scale(1, 1);
-        top: 495px;
-        height: 400px;
-        background-size: 130%;
-        background-position-x: 70%;
+        overflow: hidden;
+        width: 100%;
+        transform: translateY(-50%) scale(-1, 1);
+        display: none;
+        z-index: -1;
 
         @media (min-width: $md) {
+            top: 780px;
             display: block;
         }
 
         @media (min-width: $lg) {
-            background: url(/img/body-curved-line.svg) no-repeat center center;
-            top: 1218px;
-            height: 571px;
-            transform: scale(-1, 1);
+            top: 1510px;
         }
     }
 
-    &__list {
-        width: 448px; // &__item * 2
-        margin-top: 18px; // 48 - 30 Для того чтобы не срезались тени
-
-        @media (min-width: $md) {
-            width: 1044px; // &__item * 3
-            margin-top: 38px; // 68 - 30
-        }
-
+    &__list__wrap {
         @media (min-width: $lg) {
-            width: 1626px; // > &__item * 3
-            margin-top: 104px; // 134 - 30
             display: flex;
             flex-wrap: wrap;
         }
     }
 
-    &__item {
-        width: 224px; // 200 + 24
-        min-height: 334px;
-        margin-top: 30px;
+    &__list {
+        padding-top: 34px;
+        margin-top: 16px;
 
         @media (min-width: $md) {
-            width: 348px; // 324 + 24
-            min-height: 306px;
+            padding-top: 68px;
+            margin-top: 0;
         }
 
         @media (min-width: $lg) {
-            width: 542px; // 522 + 20
-            min-height: 294px;
+            padding-top: 134px;
+            overflow: initial;
+        }
+    }
+
+    &__item {
+        width: 200px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $md) {
+            width: 324px;
+        }
+
+        @media (min-width: $lg) {
+            width: 23.28125vw;
+            margin-right: 96px;
+            margin-bottom: 30px;
+
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
 
             &:nth-child(3),
             &:nth-child(6) {
                 .work__day::after,
                 .work__day::after {
-                    width: 1000px;
+                    width: 100vw;
                     flex: none;
                 }
 
@@ -78,7 +81,7 @@
                 .work__day::before {
                     content: "";
                     display: block;
-                    width: 1000px;
+                    width: 100vw;
                     height: 12px;
                     position: absolute;
                     top: calc(50% - 6px);
@@ -93,24 +96,6 @@
                             inset 2px 2px 5px rgba(0, 2, 12, 0.8);
                 }
             }
-        }
-    }
-
-    &__card {
-        width: 200px;
-        min-height: 334px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-
-        @media (min-width: $md) {
-            width: 324px;
-            min-height: 306px;
-        }
-
-        @media (min-width: $lg) {
-            width: 522px;
-            min-height: 294px;
         }
     }
 
@@ -170,7 +155,7 @@
     &__day {
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         font-weight: 500;
         font-size: 14px;
         line-height: 160%;
@@ -248,15 +233,14 @@
         color: $color-text-inactive;
 
         @media (min-width: $lg) {
-            width: 447px;
             font-size: 14px;
         }
     }
 
     &__steps {
         position: absolute;
-        bottom: -51px;
-        right: -192px;
+        bottom: 14px;
+        right: -203px;
         display: none;
         font-weight: 400;
         font-size: 16px;

@@ -87,16 +87,20 @@ new Swiper('.projects__list', {
 
 
 const breakpointXL = window.matchMedia ('(min-width: 1920px)');
-let partnersChooseSlider;
+let partnersChooseSlider, workOrderSlider;
 
 function breakpointXLChecker() {
     if ( breakpointXL.matches === true ) {
         if ( partnersChooseSlider !== undefined ) {
             partnersChooseSlider.destroy(true, true);
         }
-        return;
+
+        if ( workOrderSlider !== undefined ) {
+            workOrderSlider.destroy(true, true);
+        }
     } else if ( breakpointXL.matches === false ) {
-        return enablePartnersChooseSlider();
+        enablePartnersChooseSlider();
+        enableWorkOrderSlider();
     }
 }
 
@@ -105,21 +109,37 @@ function enablePartnersChooseSlider() {
         autoHeight: true,
         slidesPerView: 'auto',
         speed: 500,
-        parallax:true,
         spaceBetween: 24,
         breakpoints: {
             768: {
-                //slidesPerView: 3,
                 autoHeight: false,
             },
             1140: {
                 autoHeight: false,
                 spaceBetween: 68,
             },
-
         }
     });
 }
 
+function enableWorkOrderSlider() {
+    workOrderSlider = new Swiper('#workOrder', {
+        autoHeight: true,
+        slidesPerView: 'auto',
+        speed: 500,
+        spaceBetween: 24,
+        breakpoints: {
+            768: {
+                autoHeight: false,
+            },
+            1140: {
+                autoHeight: false,
+                spaceBetween: 68,
+            },
+        }
+    });
+}
+
+// Here are listening breakpoint for large screen and initial check
 breakpointXL.addListener(breakpointXLChecker);
 breakpointXLChecker();

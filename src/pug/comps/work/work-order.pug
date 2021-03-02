@@ -1,16 +1,19 @@
 section.section.section_work
+
     .work__background
+        .work__background-wrap
+            img(src="/img/body-curved-line.svg" alt="")
+
     .work
         .container
-            .row
-                .col-sm-4.col-md-6.col-lg-6
-                    h2.section__title Как мы работаем над заказом
-                    .work__steps 6 шагов до наслаждения яркостью
+            h2.section__title Как мы работаем над заказом
+            .work__steps 6 шагов до наслаждения яркостью
 
-        .container
-            .work__list#workOrder
-                .work__item
-                    .work__card
+        .container-endless
+            .endless.work__list.swiper-container#workOrder
+                .work__list__wrap.swiper-wrapper
+
+                    .work__item.swiper-slide
                         .work__num
                             img(src="/img/i-rownd-num-1.png" alt="")
                         .work__period Срок выполнения
@@ -20,8 +23,7 @@ section.section.section_work
                         .work__title Подбор экрана и комплектующих
                         .work__content Обсуждаем с клиентом задачу, подбираем готовое решение, определяем LED модули и систему управления. Формируем заказ
 
-                .work__item
-                    .work__card
+                    .work__item.swiper-slide
                         .work__num
                             img(src="/img/i-rownd-num-2.png" alt="")
                         .work__period Срок выполнения
@@ -31,8 +33,7 @@ section.section.section_work
                         .work__title Согласование проекта
                         .work__content Встречаемся с клиентом, чтобы подтвердить расчёты и сметы, согласовать электропроект. При необходимости помогаем подготовить помещение под установку экрана
 
-                .work__item
-                    .work__card
+                    .work__item.swiper-slide
                         .work__num
                             img(src="/img/i-rownd-num-3.png" alt="")
                         .work__period Срок выполнения
@@ -42,8 +43,7 @@ section.section.section_work
                         .work__title Изготовление и прошивка
                         .work__content Собираем светодиодные модули и каркас в прочную упаковку, готовим к транспортировке. Выбираем программное обеспечение, выполняем подготовку и настройки
 
-                .work__item
-                    .work__card
+                    .work__item.swiper-slide
                         .work__num
                             img(src="/img/i-rownd-num-4.png" alt="")
                         .work__period Срок выполнения
@@ -53,8 +53,7 @@ section.section.section_work
                         .work__title Доставка на объект клиента
                         .work__content Перевозим комплектующие для сборки LED экрана на площадку
 
-                .work__item
-                    .work__card
+                    .work__item.swiper-slide
                         .work__num
                             img(src="/img/i-rownd-num-5.png" alt="")
                         .work__period Срок выполнения
@@ -64,8 +63,7 @@ section.section.section_work
                         .work__title Сборка и монтаж оборудования
                         .work__content Собираем LED экран из подготовленных и доставленных на площадку комплектующих, устанавливаем его в соответствии с проектом. Вносим завершающие настройки перед запуском
 
-                .work__item
-                    .work__card
+                    .work__item.swiper-slide
                         .work__num
                             img(src="/img/i-rownd-num-6.png" alt="")
                         .work__period Срок выполнения
@@ -74,5 +72,3 @@ section.section.section_work
                             span 1 день
                         .work__title Запуск LED экрана
                         .work__content Рассказываем, как загружать контент и пользоваться управлением. Ваш LED экран работает, посетители наслаждаются ярким и чётким изображением
-
-                .work__item

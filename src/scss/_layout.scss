@@ -57,6 +57,7 @@ body {
 .container {
     width: 85%;
     margin: 0 auto;
+    position: relative;
 
     @media (min-width: $md) {
         width: 87.5%;
