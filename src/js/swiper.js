@@ -55,15 +55,16 @@ new Swiper('.offer__list', {
         nextEl: '#btnOfferSliderNext',
         prevEl: '#btnOfferSliderPrev',
     },
+    spaceBetween: 16,
     breakpoints: {
-        1024: {
-            spaceBetween: 16,
+        768: {
+            spaceBetween: 48,
         },
-        1140: {
-            spaceBetween: 34,
+        1440: {
+            spaceBetween: 68,
         },
         1920: {
-            spaceBetween: 0,
+            spaceBetween: 96,
         },
     },
 });
@@ -184,7 +185,7 @@ function breakpointXLChecker() {
 
 function enablePartnersChooseSlider() {
     partnersChooseSlider = new Swiper('#partnersChooseSlider', {
-        autoHeight: true,
+        //autoHeight: true,
         slidesPerView: 'auto',
         speed: 500,
         spaceBetween: 24,

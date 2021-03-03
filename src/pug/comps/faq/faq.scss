@@ -18,6 +18,7 @@
     }
 
     &__item {
+        display: none;
         width: 100%;
         font-size: 20px;
         font-weight: 500;
@@ -27,6 +28,9 @@
         border-radius: 12px;
         color: $color-text-secondary;
         margin-bottom: 24px;
+        transform: translateY(25px);
+        opacity: 0;
+        transition: all .5s ease-in-out;
 
         @media (min-width: $md) {
             padding: 16px 24px;
@@ -77,6 +81,15 @@
                     }
                 }
             }
+        }
+        
+        &.display {
+            display: block;
+        }
+
+        &.show {
+            transform: translateY(0);
+            opacity: 1;
         }
     }
 
@@ -157,6 +170,7 @@
         opacity: 0;
         padding-left: 10px;
         margin-left: -10px;
+
 
         p {
             font-weight: 400;
@@ -255,8 +269,13 @@
             height: 130px;
             position: absolute;
             top: -40px;
-            left: 50%;
-            margin-left: -105px;
+            left: -6px;
+        }
+
+        &.roll-up {
+            img {
+                transform: scale(1, -1);
+            }
         }
 
         @media (min-width: $md) {
@@ -308,6 +327,5 @@
                 display: none;
             }
         }
-
     }
 }

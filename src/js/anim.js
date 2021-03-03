@@ -22,7 +22,7 @@ $(document).ready(function () {
                 vanishPoint: {
 
                     x: wMobi / 2,
-                    y: hMobi / 2 - hMobi / 1.5
+                    y: hMobi / 2 - hMobi / 1.65
                 }
             },
 
