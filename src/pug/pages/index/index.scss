@@ -1,11 +1,16 @@
 @import "../../../scss/variables";
 
 // Use it only on Index page
-body {
+body.page-index  {
     overflow: hidden;
 }
 
+.loading-container {
+    display: none;
+}
+
 .page-index {
+
     main {
         padding-top: 0;
     }
@@ -135,29 +140,28 @@ body {
         }
     }
 
-    .header,
-    .footer,
-    .main {
-        transform: translateY(-50px);
-        opacity: 0;
-        transition: none;
-    }
 
-    &.loaded {
-        .header,
-        .footer,
+    &.loading {
+        .header {
+            opacity: 0;
+            transition: all .7s;
+        }
+
         .main {
-            transform: translateY(0);
-            opacity: 1;
+            opacity: 0;
+            transform: translateY(-50px);
             transition: all .5s;
         }
+    }
 
-        .main {
-            transition-delay: .1s;
+    &.loading.loaded {
+        .header {
+            opacity: 1;
         }
 
-        .footer {
-            transition-delay: .2s;
+        .main {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 
@@ -166,7 +170,7 @@ body {
         height: 100vh;
         position: fixed;
         top: 0;
-        left: -9999px;
+        left: 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -378,6 +382,10 @@ body {
 
         @media (min-width: $lg) {
             transform: translateX(-10%);
+        }
+
+        @media (min-width: $xl) {
+            transform: translate(-40%, 100px) scale(1.1, 1.1);
         }
 
         &#cMob {

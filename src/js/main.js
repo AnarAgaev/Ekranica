@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     /* It's the valid phone function */
     window.validPhone = function(phone) {
-        let regular = /^((8|\+7)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{6,10}$/;
+        let regular = /^(\+7)?(\d{3}?)?[\d]{11}$/;
         return regular.test(phone);
     }
 

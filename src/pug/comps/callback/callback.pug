@@ -18,11 +18,11 @@ section.section.section_callback
                 form.callback__form.default-animation.animation-element#callbackForm(action="/" method="POST")
                     .callback__data
                         // Для валидного значения меняем класс у controller на valid
-                        .controller.controller__input.uncheck
+                        .controller.controller__input
                             label.label.label__icon
                                 span.icon
                                     img(src="/img/i-phone.svg" alt="")
-                                input(type="number" placeholder="+7 900 000 00 00" name="phone" value="" id="callbackPhone")
+                                input(type="text" placeholder="+7 900 000 00 00" name="phone" id="callbackPhone")
                             .validator.validator__cross
                                 img.valid(src="/img/i-validator-cross-valid.svg" alt="")
                                 img.invalid(src="/img/i-validator-cross-invalid.svg" alt="")

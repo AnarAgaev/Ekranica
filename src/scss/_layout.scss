@@ -712,10 +712,6 @@ input.btn {
         font-weight: 700;
         color: $color-text-primary;
 
-        span:first-child {
-            display: inline-block;
-        }
-
         @media (min-width: $md) {
             font-size: 40px;
             line-height: 1.4;
@@ -974,6 +970,7 @@ input[type="checkbox"]:checked + .checker {
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
+        transition: $transition;
     }
 }
 
@@ -1001,23 +998,22 @@ input[type="checkbox"]:checked + .checker {
     }
 }
 
-.controller.uncheck {
-    .validator__cross {
-        .valid {
-            opacity: 1;
-        }
-        .invalid {
-            opacity: 0;
-        }
+// Default values
+.validator__cross {
+    .valid {
+        opacity: 1;
     }
+    .invalid {
+        opacity: 0;
+    }
+}
 
-    .validator__check {
-        .valid {
-            opacity: 0;
-        }
-        .invalid {
-            opacity: 1;
-        }
+.validator__check {
+    .valid {
+        opacity: 0;
+    }
+    .invalid {
+        opacity: 1;
     }
 }
 

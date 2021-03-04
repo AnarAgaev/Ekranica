@@ -12,7 +12,6 @@ $(document).ready(function () {
         );
 
         $('body').addClass('loading');
-        $('.loading-container').css('left', '0');
 
         setTimeout(function () {
             $('.loading-container').addClass('hide');
@@ -20,21 +19,16 @@ $(document).ready(function () {
 
         setTimeout(function () {
             $('body')
-                .removeClass('loading')
                 .addClass('loaded')
                 .css('overflow-y', 'auto');
 
-            $('.loading-container').css('left', '-9999px');
+            $('.loading-container').css('left', '-99999px');
         }, 2000);
 
         setTimeout(function () {
             $('body').removeClass('loading loaded');
             $('.loading-container').remove();
-            $('.header, .footer, .main').css({
-                'transform': 'translateY(0)',
-                'opacity': '1',
-                'transition': 'none',
-            });
+
         }, 3500);
 
 
