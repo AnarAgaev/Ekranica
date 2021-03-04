@@ -1,27 +1,28 @@
 section.section.section_callback
     .callback
         .container
-            h2.section__title
+            // Классы .default-animation.animation-element добавить только на главной странице
+            h2.section__title.default-animation.animation-element
                 | Связаться с нами
-                span.section__link
+                span.section__link.default-animation.animation-element
                     a.revers(href="") Открыть контакты
 
-            .callback__title Заинтересовались светодиодным оборудованием?
-            .callback__subtitle Укажите ваш мобильный номер телефона и мы перезвоним в течение 5 минут
+            .callback__title.default-animation.animation-element Заинтересовались светодиодным оборудованием?
+            .callback__subtitle.default-animation.animation-element Укажите ваш мобильный номер телефона и мы перезвоним в течение 5 минут
 
-        .callback__background-pic
+        .callback__background-pic.default-animation.animation-element
             img(src="/img/callback-pic.png" alt="")
 
         .container-endless
             .endless
-                form.callback__form#callbackForm(action="/" method="POST")
+                form.callback__form.default-animation.animation-element#callbackForm(action="/" method="POST")
                     .callback__data
                         // Для валидного значения меняем класс у controller на valid
-                        .controller.controller__input.valid
+                        .controller.controller__input.uncheck
                             label.label.label__icon
                                 span.icon
                                     img(src="/img/i-phone.svg" alt="")
-                                input(type="text" placeholder="+7 900 000 00 00" name="phone" value="+7 999 345 67 89")
+                                input(type="number" placeholder="+7 900 000 00 00" name="phone" value="" id="callbackPhone")
                             .validator.validator__cross
                                 img.valid(src="/img/i-validator-cross-valid.svg" alt="")
                                 img.invalid(src="/img/i-validator-cross-invalid.svg" alt="")
@@ -40,7 +41,7 @@ section.section.section_callback
                                     a.revers(href="" target="_blank") обработку моих персональных данных
 
                     .callback__actions
-                        .btn.btn_primary Отправить номер
+                        button.btn.btn_primary(type="submit") Отправить номер
                         span.send-mail
                             | Или напишите нам
                             a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru

@@ -2,6 +2,16 @@
 
 .clients {
 
+    .section__title {
+        opacity: 1;
+        transform: translateX(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateX(25px);
+        }
+    }
+
     &__list {
         padding-top: 34px;
         padding-bottom: 48px;
@@ -21,6 +31,12 @@
         width: 200px;
         height: 108px;
         position: relative;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) .clients__link {
+                transition-delay: 0.1s * $i;
+            }
+        }
 
         @media (min-width: $md) {
             width: 232px;
@@ -47,6 +63,14 @@
         box-shadow:
                 -14px -14px 30px rgba(35, 33, 58, 0.35),
                 16px 5px 40px rgba(4, 5, 14, 0.6);
+
+        filter: opacity(1);
+        transform: translateX(0);
+
+        &.animation-element {
+            filter: opacity(0);
+            transform: translateX(25px);
+        }
 
         img, svg {
             max-width: 100%;

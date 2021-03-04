@@ -10,7 +10,7 @@ html {
     box-sizing: border-box;
     border: none;
     padding: 0;
-    outline: none !important
+    outline: none !important;
 }
 
 //- Make sticky footer
@@ -712,6 +712,10 @@ input.btn {
         font-weight: 700;
         color: $color-text-primary;
 
+        span:first-child {
+            display: inline-block;
+        }
+
         @media (min-width: $md) {
             font-size: 40px;
             line-height: 1.4;
@@ -973,21 +977,47 @@ input[type="checkbox"]:checked + .checker {
     }
 }
 
-.valid {
-    .validator__cross .valid {
-        opacity: 1;
-    }
-    .validator__check .valid {
-        opacity: 1 !important;
+.controller.valid {
+    .validator__cross,
+    .validator__check {
+        .valid {
+            opacity: 1;
+        }
+        .invalid {
+            opacity: 0
+        }
     }
 }
 
-.invalid {
-    .validator__cross .invalid {
-        opacity: 1;
+.controller.invalid {
+    .validator__cross,
+    .validator__check {
+        .valid {
+            opacity: 0;
+        }
+        .invalid {
+            opacity: 1;
+        }
     }
-    .validator__check .invalid {
-        opacity: 1 !important;
+}
+
+.controller.uncheck {
+    .validator__cross {
+        .valid {
+            opacity: 1;
+        }
+        .invalid {
+            opacity: 0;
+        }
+    }
+
+    .validator__check {
+        .valid {
+            opacity: 0;
+        }
+        .invalid {
+            opacity: 1;
+        }
     }
 }
 
@@ -998,6 +1028,17 @@ input {
     white-space: nowrap;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
 input, textarea {
     &::-webkit-input-placeholder {
         color: #3A374B;
@@ -1120,4 +1161,12 @@ input, textarea {
             }
         }
     }
+}
+
+// Default props for animation elements
+.default-animation {
+    opacity: 1;
+    transform: translate(0, 0) scale(1, 1);
+    transition: all .7s ease-out;
+    filter: grayscale(0) blur(0);
 }

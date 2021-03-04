@@ -28,16 +28,30 @@
             width: 384px;
             padding-top: 89px;
         }
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) .offer__card {
+                transition-delay: 0.1s * $i;
+            }
+        }
     }
 
     &__card {
         height: 100%;
         border-radius: 12px;
         background: $color-back-primary;
+        position: relative;
         box-shadow:
                 -14px -14px 30px rgba(35, 33, 58, 0.35),
                 16px 5px 40px rgba(4, 5, 14, 0.6);
         padding: 0 16px 16px;
+        transform: translateY(0);
+        opacity: 1;
+
+        &.animation-element {
+            transform: translateY(50px);
+            opacity: 0;
+        }
 
         @media (min-width: $md) {
             padding: 0 48px 34px 34px;
@@ -108,6 +122,18 @@
         @media (min-width: $lg) {
             margin-top: 14px;
             padding-left: 12px;
+        }
+    }
+
+    .section__title {
+        .animation-element {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        .section__link.animation-element {
+            opacity: 0;
+            transform: translateX(25px);
         }
     }
 }

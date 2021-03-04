@@ -2,6 +2,16 @@
 
 .feedback {
 
+    .section__title {
+        opacity: 1;
+        transform: translateX(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateX(25px);
+        }
+    }
+
     &__background {
         position: absolute;
         overflow: hidden;
@@ -41,6 +51,12 @@
     &__item {
         width: 200px;
 
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) .feedback__card {
+                transition-delay: 0.1s * $i;
+            }
+        }
+
         @media (min-width: $md) {
             width: 358px;
         }
@@ -60,6 +76,14 @@
         padding: 0 16px 16px 16px;
         margin-bottom: 73px;
         position: relative;
+
+        opacity: 1;
+        transform: translateX(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateX(35px);
+        }
 
         @media (min-width: $md) {
             min-height: 508px;

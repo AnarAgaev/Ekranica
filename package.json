@@ -52,6 +52,7 @@
 		"webpack-merge": "^4.2.2"
 	},
 	"dependencies": {
+		"imask": "^6.0.7",
 		"jquery": "^3.5.1",
 		"swiper": "^6.4.15"
 	}

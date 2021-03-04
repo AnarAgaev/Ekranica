@@ -1,11 +1,40 @@
 @import "../../../scss/variables";
 
 .faq {
+
+    .section__title {
+        opacity: 1;
+        transform: translateY(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+    }
+
+    .section__link {
+        opacity: 1;
+        transform: translateX(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateX(25px);
+        }
+    }
+
     &__list {
         display: flex;
         flex-direction: column;
         margin-top: 48px;
         margin-bottom: 8px;
+
+        opacity: 1;
+        transform: translateY(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
         @media (min-width: $md) {
             margin-bottom: 26px;

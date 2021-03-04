@@ -2,6 +2,26 @@
 
 .callback {
 
+    .section__title {
+        opacity: 1;
+        transform: translateY(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+    }
+
+    .section__link {
+        opacity: 1;
+        transform: translateX(0);
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateX(25px);
+        }
+    }
+
     &__title {
         font-weight: 500;
         font-size: 20px;
@@ -9,6 +29,15 @@
         letter-spacing: 0.02em;
         color: $color-text-secondary;
         margin-top: 34px;
+
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .1s;
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
         @media (min-width: $md) {
             font-weight: 700;
@@ -32,6 +61,15 @@
         margin-top: 12px;
         width: 200px;
 
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .2s;
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
         @media (min-width: $md) {
             width: auto;
         }
@@ -46,6 +84,15 @@
         margin-top: 34px;
         display: flex;
         flex-direction: column;
+
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .3s;
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
         @media (min-width: $md) {
 
@@ -161,6 +208,15 @@
     &__background-pic {
         position: absolute;
         display: none;
+
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: .4s;
+
+        &.animation-element {
+            opacity: 0;
+            transform: translateX(30px);
+        }
 
         @media (min-width: 1440px) {
             display: block;
