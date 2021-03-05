@@ -40,8 +40,7 @@
     }
 
     &__list {
-        padding-top: 34px;
-        margin-top: 12px;
+        padding-top: 48px;
 
         @media (min-width: $md) {
             padding-top: 68px;
@@ -49,7 +48,7 @@
         }
 
         @media (min-width: $lg) {
-            padding-top: 134px;
+            padding-top: 68px;
             overflow: initial;
         }
     }
@@ -220,6 +219,7 @@
         @media (min-width: $lg) {
             margin-top: 10px;
             margin-bottom: 36px;
+            width: calc(100% + 76px);
 
             &::after {
                 content: "";

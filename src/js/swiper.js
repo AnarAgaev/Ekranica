@@ -72,19 +72,20 @@ new Swiper('.offer__list', {
 new Swiper('#projectsList', {
     slidesPerView: 'auto',
     speed: 500,
+    spaceBetween: 16,
     navigation: {
         nextEl: '#btnProjectsNext',
         prevEl: '#btnProjectsPrev',
     },
     breakpoints: {
-        1024: {
-            spaceBetween: 16,
+        768: {
+            spaceBetween: 48,
         },
         1140: {
-            spaceBetween: 34,
+            spaceBetween: 68,
         },
         1920: {
-            spaceBetween: 0,
+            spaceBetween: 96,
         },
     },
     on: {
@@ -176,12 +177,9 @@ new Swiper('#typesSlider', {
             spaceBetween: 24,
         },
         1024: {
-            spaceBetween: 34,
-        },
-        1440: {
             spaceBetween: 48,
         },
-        1920: {
+        1440: {
             spaceBetween: 68,
         },
     },
@@ -205,8 +203,9 @@ new Swiper('#typesSlider', {
 
 const breakpointXL = window.matchMedia ('(min-width: 1920px)');
 let partnersChooseSlider,
+    rentListSlider,
     workOrderSlider,
-    rentListSlider;
+    workRentSlider;
 
 function breakpointXLChecker() {
     if ( breakpointXL.matches === true ) {
@@ -222,10 +221,15 @@ function breakpointXLChecker() {
             rentListSlider.destroy(true, true);
         }
 
+        if ( workRentSlider !== undefined ) {
+            workRentSlider.destroy(true, true);
+        }
+
     } else if ( breakpointXL.matches === false ) {
         enablePartnersChooseSlider();
         enableWorkOrderSlider();
         enableRentListSlider();
+        enableWorkRentSlider();
     }
 }
 
@@ -298,6 +302,28 @@ function enableWorkOrderSlider() {
         });
     }
 }
+
+function enableWorkRentSlider() {
+    if ($('#workRent')[0]) {
+        workRentSlider = new Swiper('#workRent', {
+            autoHeight: true,
+            slidesPerView: 'auto',
+            speed: 500,
+            spaceBetween: 24,
+            breakpoints: {
+                1024: {
+                    autoHeight: false,
+                    spaceBetween: 48,
+                },
+                1140: {
+                    autoHeight: false,
+                    spaceBetween: 68,
+                },
+            }
+        });
+    }
+}
+
 
 // Here are listening breakpoint for large screen and initial check
 breakpointXL.addListener(breakpointXLChecker);

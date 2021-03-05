@@ -31,10 +31,6 @@
             &::after {
                 display: none;
             }
-
-            @media (min-width: $lg) {
-                letter-spacing: 0.02em;
-            }
         }
 
         @media (min-width: $md) {
@@ -123,7 +119,7 @@
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
-        background-color: $color-back-primary;
+        background-color: $color-text-secondary;
 
         @media (min-width: $md) {
             width: 184px;

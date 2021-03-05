@@ -76,7 +76,6 @@ body.page-index  {
 
                 @media (min-width: $lg) {
                     width: 582px;
-                    margin-bottom: -66px;
                 }
             }
 
@@ -139,7 +138,6 @@ body.page-index  {
             }
         }
     }
-
 
     &.loading {
         .header {

@@ -25,36 +25,49 @@
         margin-bottom: 0;
     }
 
+    .section_types {
+        .endless {
+            @media (min-width: 1920px) {
+                width: calc(100% + 40px);
+                margin-left: -30px;
+                padding-left: 30px;
+            }
+        }
+    }
+
     .list {
         &__background {
             display: none;
         }
 
-        &__item {
-
+        &__title {
             @media (min-width: $md) {
-                width: 300px;
+                max-width: 270px;
             }
 
             @media (min-width: $lg) {
+                max-width: none;
+            }
+        }
+
+        &__item {
+
+            @media (min-width: $md) {
+                max-width: 300px;
+            }
+
+            @media (min-width: $lg) {
+                max-width: none;
                 margin-bottom: 68px;
             }
         }
     }
 
     .work {
-        &__list {
-            @media (min-width: 1700px) {
-                margin-top: 4px;
-            }
-        }
-
         .work__item {
-            margin-top: 64px;
-        }
-
-        &__day {
-            align-items: center;
+            @media (min-width: $lg) {
+                margin-bottom: 64px;
+            }
         }
     }
 
@@ -67,30 +80,30 @@
             @media (min-width: $lg) {
                 width: auto;
             }
+        }
 
-            a {
+        .section__link {
+            display: none;
+
+            @media (min-width: $md) {
+                display: block;
+            }
+
+            @media (min-width: $lg) {
                 display: none;
-
-                @media (min-width: $md) {
-                    display: block;
-                }
-
-                @media (min-width: $lg) {
-                    display: none;
-                }
             }
         }
 
         &__list {
-            margin-top: -16px;
-
-            @media (min-width: $md) {
-                margin-top: 21px;
-            }
-
-            @media (min-width: $lg) {
-                margin-top: 83px;
-            }
+            //margin-top: -16px;
+            //
+            ////@media (min-width: $md) {
+            ////    margin-top: 21px;
+            ////}
+            //
+            //@media (min-width: $lg) {
+            //    margin-top: 83px;
+            //}
         }
     }
 }

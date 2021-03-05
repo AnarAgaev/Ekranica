@@ -23,7 +23,7 @@
     }
 
     &__list {
-        padding-top: 34px;
+        padding-top: 48px;
         padding-bottom: 70px;
 
         @media (min-width: $md) {
@@ -36,8 +36,7 @@
     }
 
     &__item {
-        width: 216px;
-        padding-top: 16px;
+        width: 200px;
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i}) .projects__card {
@@ -46,12 +45,11 @@
         }
 
         @media (min-width: $md) {
-            width: 512px;
-            padding-top: 0;
+            width: 464px;
         }
 
         @media (min-width: $lg) {
-            width: 918px;
+            width: 822px;
         }
     }
 
