@@ -166,7 +166,9 @@ new Swiper('#feedbackList', {
 
 
 const breakpointXL = window.matchMedia ('(min-width: 1920px)');
-let partnersChooseSlider, workOrderSlider;
+let partnersChooseSlider,
+    workOrderSlider,
+    rentListSlider;
 
 function breakpointXLChecker() {
     if ( breakpointXL.matches === true ) {
@@ -177,54 +179,86 @@ function breakpointXLChecker() {
         if ( workOrderSlider !== undefined ) {
             workOrderSlider.destroy(true, true);
         }
+
+        if ( rentListSlider !== undefined ) {
+            rentListSlider.destroy(true, true);
+        }
+
     } else if ( breakpointXL.matches === false ) {
         enablePartnersChooseSlider();
         enableWorkOrderSlider();
+        enableRentListSlider();
     }
 }
 
+
 function enablePartnersChooseSlider() {
-    partnersChooseSlider = new Swiper('#partnersChooseSlider', {
-        //autoHeight: true,
-        slidesPerView: 'auto',
-        speed: 500,
-        spaceBetween: 24,
-        breakpoints: {
-            768: {
-                autoHeight: false,
+    if ($('#partnersChooseSlider')[0]) {
+        partnersChooseSlider = new Swiper('#partnersChooseSlider', {
+            //autoHeight: true,
+            slidesPerView: 'auto',
+            speed: 500,
+            spaceBetween: 24,
+            breakpoints: {
+                768: {
+                    autoHeight: false,
+                },
+                1024: {
+                    autoHeight: false,
+                    spaceBetween: 48,
+                },
+                1140: {
+                    autoHeight: false,
+                    spaceBetween: 68,
+                },
             },
-            1024: {
-                autoHeight: false,
-                spaceBetween: 48,
+        });
+    }
+}
+
+function enableRentListSlider() {
+    if ($('#rentList')[0]) {
+        rentListSlider = new Swiper('#rentList', {
+            //autoHeight: true,
+            slidesPerView: 'auto',
+            speed: 500,
+            spaceBetween: 24,
+            breakpoints: {
+                768: {
+                    autoHeight: false,
+                    spaceBetween: 48,
+                },
+                1140: {
+                    autoHeight: false,
+                    spaceBetween: 68,
+                },
             },
-            1140: {
-                autoHeight: false,
-                spaceBetween: 68,
-            },
-        },
-    });
+        });
+    }
 }
 
 function enableWorkOrderSlider() {
-    workOrderSlider = new Swiper('#workOrder', {
-        autoHeight: true,
-        slidesPerView: 'auto',
-        speed: 500,
-        spaceBetween: 24,
-        breakpoints: {
-            768: {
-                autoHeight: false,
-            },
-            1024: {
-                autoHeight: false,
-                spaceBetween: 48,
-            },
-            1140: {
-                autoHeight: false,
-                spaceBetween: 68,
-            },
-        }
-    });
+    if ($('#workOrder')[0]) {
+        workOrderSlider = new Swiper('#workOrder', {
+            autoHeight: true,
+            slidesPerView: 'auto',
+            speed: 500,
+            spaceBetween: 24,
+            breakpoints: {
+                768: {
+                    autoHeight: false,
+                },
+                1024: {
+                    autoHeight: false,
+                    spaceBetween: 48,
+                },
+                1140: {
+                    autoHeight: false,
+                    spaceBetween: 68,
+                },
+            }
+        });
+    }
 }
 
 // Here are listening breakpoint for large screen and initial check

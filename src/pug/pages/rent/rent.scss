@@ -32,8 +32,12 @@
 
         &__item {
 
-            @media (min-width: 1700px) {
-                margin-bottom: 38px;
+            @media (min-width: $md) {
+                width: 300px;
+            }
+
+            @media (min-width: $lg) {
+                margin-bottom: 68px;
             }
         }
     }
