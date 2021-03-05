@@ -101,7 +101,7 @@ new Swiper('#projectsList', {
         fromEdge:  function () {
             $('.projects__item').removeClass('visible');
         },
-    }
+    },
 });
 
 new Swiper('#clientsList', {
@@ -162,7 +162,45 @@ new Swiper('#feedbackList', {
     }
 });
 
+new Swiper('#typesSlider', {
+    //autoHeight: true,
+    slidesPerView: 'auto',
+    speed: 500,
+    navigation: {
+        nextEl: '#btntypesSliderNext',
+        prevEl: '#btntypesSliderPrev',
+    },
+    spaceBetween: 16,
+    breakpoints: {
+        768: {
+            spaceBetween: 24,
+        },
+        1024: {
+            spaceBetween: 34,
+        },
+        1440: {
+            spaceBetween: 48,
+        },
+        1920: {
+            spaceBetween: 68,
+        },
+    },
+    on: {
+        reachEnd: function () {
+            // Let's get all elements after active
+            const lastItems = $('#typesSlider .swiper-slide-active')
+                .nextAll('.types__item');
 
+            // Add class visible all elements after active and active too.
+            for (let i = 0; i <= lastItems.length; i++) {
+                $(lastItems[i]).addClass('visible');
+            }
+        },
+        fromEdge:  function () {
+            $('.types__item').removeClass('visible');
+        },
+    }
+});
 
 
 const breakpointXL = window.matchMedia ('(min-width: 1920px)');
