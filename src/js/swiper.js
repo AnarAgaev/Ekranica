@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 
 // core version + navigation, pagination modules:
 import SwiperCore, { Navigation, Pagination } from 'swiper/core';
@@ -8,16 +8,16 @@ import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 // configure Swiper to use modules
 SwiperCore.use([Navigation, Pagination]);
 
-function changeActiveNumber(index) {
-    const height = $("#sliderNums").height();
+function changeActiveNumber(index, numsId) {
+    const height = $(numsId).height();
 
-    const scrollable = $("#sliderNums")
+    const scrollable = $(numsId)
         .find(".slide-nums__scrolled");
 
-    $("#sliderNums .slide-nums__number")
+    $(numsId + " .slide-nums__number")
         .removeClass('active');
 
-    $("#sliderNums .slide-nums__number:eq(" + index + ")")
+    $(numsId + " .slide-nums__number:eq(" + index + ")")
         .addClass('active');
 
     $(scrollable).css("top", "-" + height * index + "px");
@@ -41,11 +41,28 @@ new Swiper('.slider-banner', {
     parallax:true,
     on: {
         activeIndexChange: function (swiper) {
-            changeActiveNumber(swiper.activeIndex);
+            changeActiveNumber(swiper.activeIndex, "#sliderNums");
             showAnimation(swiper.activeIndex);
         }
     },
 });
+
+
+new Swiper('#rentBanner', {
+    speed: 500,
+    parallax: true,
+    navigation: {
+        nextEl: '#btnBannerProjectsNext',
+        prevEl: '#btnBannerProjectsPrev',
+    },
+    on: {
+        activeIndexChange: function (swiper) {
+            changeActiveNumber(swiper.activeIndex, "#bannerSliderNums");
+        }
+    },
+});
+
+
 
 new Swiper('.offer__list', {
     //autoHeight: true,
