@@ -25,13 +25,16 @@
     &__list {
         padding-top: 48px;
         padding-bottom: 70px;
+        margin-bottom: -55px;
 
         @media (min-width: $md) {
             padding-top: 68px;
+            margin-bottom: -35px;
         }
 
         @media (min-width: $lg) {
             padding-top: 134px;
+            margin-bottom: 0;
         }
     }
 

@@ -254,7 +254,7 @@ function breakpointXLChecker() {
 function enablePartnersChooseSlider() {
     if ($('#partnersChooseSlider')[0]) {
         partnersChooseSlider = new Swiper('#partnersChooseSlider', {
-            //autoHeight: true,
+            autoHeight: true,
             slidesPerView: 'auto',
             speed: 500,
             spaceBetween: 24,
@@ -278,7 +278,7 @@ function enablePartnersChooseSlider() {
 function enableRentListSlider() {
     if ($('#rentList')[0]) {
         rentListSlider = new Swiper('#rentList', {
-            //autoHeight: true,
+            autoHeight: true,
             slidesPerView: 'auto',
             speed: 500,
             spaceBetween: 24,
@@ -323,13 +323,13 @@ function enableWorkOrderSlider() {
 function enableWorkRentSlider() {
     if ($('#workRent')[0]) {
         workRentSlider = new Swiper('#workRent', {
-            autoHeight: true,
+            // autoHeight: true,
             slidesPerView: 'auto',
             speed: 500,
             spaceBetween: 24,
             breakpoints: {
                 1024: {
-                    autoHeight: false,
+                    // autoHeight: false,
                     spaceBetween: 48,
                 },
                 1140: {

@@ -1,0 +1,44 @@
+section.section.section_form-order
+    .form-order
+        .container
+            h2.section__title Оставьте заявку, мы поможем с выбором
+
+        .container
+            form.form-order__form#orderForm(action="/" method="POST")
+                .form-order__data
+
+                    .form-order__user-data
+                        .controller-group
+                            label.controller-label Как вас зовут?
+                            .controller-wrap
+                                span.controller-icon
+                                    img(src="/img/icon-person.svg" alt="")
+                                input(type="text" placeholder="Константин Константинопольский" name="name" id="orderFormName")
+
+                        .controller-group
+                            label.controller-label Номер телефона
+                            .controller-wrap
+                                span.controller-icon
+                                    img(src="/img/icon-phone.svg" alt="")
+                                input(type="text" placeholder="+7 900 000 00 00" name="phone" id="formOrderPhone")
+
+                    .form-order__comments
+                        .controller-group
+                            label.controller-label Комментарий
+                            .controller-wrap
+                                span.controller-icon
+                                    img(src="/img/icon-message.svg" alt="")
+                                textarea(placeholder="Напишите что-нибудь" name="message" id="orderFormMsg")
+
+
+                .form-order__actions
+                    span.form-order__privacy
+                        | Нажимая на кнопку “Отправить заявку”, я даю согласие на
+                        a.revers(href="/") обработку моих персональных данных
+                    .form-order__button
+                        button.btn.btn_primary.form-order__submit(type="submit") Отправить заявку
+                        span.form-order__button-link
+                            | Или напишите нам
+                            a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru
+                    span.form-order__note Перезвоним в течение рабочего дня и поможем определиться с типом оборудования для аренды под ключ
+

@@ -7,6 +7,7 @@ import './js/faq';
 import './js/loading-bar.min';
 import './pug/pages/index/index';
 import './pug/comps/callback/callback';
+import './pug/comps/form-order/form-order'
 
 // Include vendor styles
 import 'normalize.css';
