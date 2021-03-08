@@ -38,8 +38,8 @@
         }
     }
 
-    &__item {
-        width: 200px;
+    &__slide {
+        width: 216px; // 200px + 16px
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i}) .projects__card {
@@ -48,11 +48,15 @@
         }
 
         @media (min-width: $md) {
-            width: 464px;
+            width: 512px; // 464px + 48px
+        }
+
+        @media (min-width: 1440px) {
+            width: 532px; // 464px + 68px
         }
 
         @media (min-width: $lg) {
-            width: 822px;
+            width: 918px; // 822px + 96px
         }
     }
 

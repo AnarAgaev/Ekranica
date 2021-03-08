@@ -35,12 +35,6 @@
         }
     }
 
-    .section_projects {
-        .projects {
-            margin-top: -48px;
-        }
-    }
-
     .list {
         &__background {
             display: none;
@@ -56,21 +50,19 @@
             }
         }
 
-        &__item {
-
-            @media (min-width: $md) {
-                max-width: 300px;
-            }
-
+        &__slide {
             @media (min-width: $lg) {
-                max-width: none;
                 margin-bottom: 68px;
             }
         }
     }
 
     .work {
-        .work__item {
+        @media (min-width: $lg) {
+            margin-bottom: -28px;
+        }
+
+        .work__slide {
             @media (min-width: $lg) {
                 margin-bottom: 64px;
             }

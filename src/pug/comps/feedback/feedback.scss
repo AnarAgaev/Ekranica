@@ -31,7 +31,6 @@
         }
     }
 
-
     &__list {
         padding-top: 34px;
         padding-bottom: 70px;
@@ -48,8 +47,8 @@
         }
     }
 
-    &__item {
-        width: 200px;
+    &__slide {
+        width: 216px; // 200px + 16px
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i}) .feedback__card {
@@ -58,15 +57,20 @@
         }
 
         @media (min-width: $md) {
-            width: 358px;
+            width: 406px; // 358px + 48px
+        }
+
+        @media (min-width: 1440px) {
+            width: 426px; // 358px + 68px
         }
 
         @media (min-width: $lg) {
-            width: 1164px;
+            width: 1298px; // 1164px + 134px
         }
     }
 
     &__card {
+        width: 200px;
         min-height: 352px;
         background: $color-back-primary;
         box-shadow:
@@ -86,11 +90,13 @@
         }
 
         @media (min-width: $md) {
+            width: 358px;
             min-height: 508px;
             padding: 0 48px 25px 34px;
         }
 
         @media (min-width: $lg) {
+            width: 1164px;
             min-height: 520px;
             margin-top: 0;
             padding: 0 60px 0 480px;

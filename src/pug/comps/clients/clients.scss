@@ -27,16 +27,36 @@
         }
     }
 
-    &__item {
-        width: 200px;
-        height: 108px;
-        position: relative;
+    &__slide {
+        width: 216px; // 200px + 16px
 
         @for $i from 1 through 5 {
             &:nth-child(#{$i}) .clients__link {
                 transition-delay: 0.1s * $i;
             }
         }
+
+        @media (min-width: $md) {
+            width: 256px; // 232px + 24px
+        }
+
+        @media (min-width: 1024px) {
+            width: 280px; // 232px + 48px
+        }
+
+        @media (min-width: 1440px) {
+            width: 300px; // 232px + 68px
+        }
+
+        @media (min-width: $lg) {
+            width: 440px; // 344px + 96px
+        }
+    }
+
+    &__card {
+        width: 200px;
+        height: 108px;
+        position: relative;
 
         @media (min-width: $md) {
             width: 232px;

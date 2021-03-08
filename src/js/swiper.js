@@ -63,8 +63,7 @@ new Swiper('#rentBanner', {
 });
 
 
-
-new Swiper('.offer__list', {
+new Swiper('#offerSlider', {
     //autoHeight: true,
     slidesPerView: 'auto',
     speed: 500,
@@ -72,44 +71,20 @@ new Swiper('.offer__list', {
         nextEl: '#btnOfferSliderNext',
         prevEl: '#btnOfferSliderPrev',
     },
-    spaceBetween: 16,
-    breakpoints: {
-        768: {
-            spaceBetween: 48,
-        },
-        1440: {
-            spaceBetween: 68,
-        },
-        1920: {
-            spaceBetween: 96,
-        },
-    },
 });
 
 new Swiper('#projectsList', {
     slidesPerView: 'auto',
     speed: 500,
-    spaceBetween: 16,
     navigation: {
         nextEl: '#btnProjectsNext',
         prevEl: '#btnProjectsPrev',
-    },
-    breakpoints: {
-        768: {
-            spaceBetween: 48,
-        },
-        1140: {
-            spaceBetween: 68,
-        },
-        1920: {
-            spaceBetween: 96,
-        },
     },
     on: {
         reachEnd: function () {
             // Let's get all elements after active
             const lastItems = $('#projectsList .swiper-slide-active')
-                .nextAll('.projects__item');
+                .nextAll('.projects__slide');
 
             // Add class visible all elements after active and active too.
             for (let i = 0; i <= lastItems.length; i++) {
@@ -117,7 +92,7 @@ new Swiper('#projectsList', {
             }
         },
         fromEdge:  function () {
-            $('.projects__item').removeClass('visible');
+            $('.projects__slide').removeClass('visible');
         },
     },
 });
@@ -125,57 +100,31 @@ new Swiper('#projectsList', {
 new Swiper('#clientsList', {
     slidesPerView: 'auto',
     speed: 500,
-    spaceBetween: 16,
+    // spaceBetween: 16,
     navigation: {
         nextEl: '#btnClientsSliderNext',
         prevEl: '#btnClientsSliderPrev',
-    },
-    breakpoints: {
-        768: {
-            spaceBetween: 24,
-        },
-        1024: {
-            spaceBetween: 48,
-        },
-        1140: {
-            spaceBetween: 68,
-        },
-        1920: {
-            spaceBetween: 96,
-        },
     },
 });
 
 new Swiper('#feedbackList', {
     slidesPerView: 'auto',
     speed: 500,
-    spaceBetween: 16,
     navigation: {
         nextEl: '#btnFeedbackNext',
         prevEl: '#btnFeedbackPrev',
     },
-    breakpoints: {
-        768: {
-            spaceBetween: 48,
-        },
-        1140: {
-            spaceBetween: 68,
-        },
-        1920: {
-            spaceBetween: 134,
-        },
-    },
     on: {
         reachEnd: function () {
             const lastItems = $('#feedbackList .swiper-slide-active')
-                .nextAll('.feedback__item');
+                .nextAll('.feedback__slide');
 
             for (let i = 0; i <= lastItems.length; i++) {
                 $(lastItems[i]).addClass('visible');
             }
         },
         fromEdge:  function () {
-            $('.feedback__item').removeClass('visible');
+            $('.feedback__slide').removeClass('visible');
         },
     }
 });
@@ -188,23 +137,11 @@ new Swiper('#typesSlider', {
         nextEl: '#btntypesSliderNext',
         prevEl: '#btntypesSliderPrev',
     },
-    spaceBetween: 16,
-    breakpoints: {
-        768: {
-            spaceBetween: 24,
-        },
-        1024: {
-            spaceBetween: 48,
-        },
-        1440: {
-            spaceBetween: 68,
-        },
-    },
     on: {
         reachEnd: function () {
             // Let's get all elements after active
             const lastItems = $('#typesSlider .swiper-slide-active')
-                .nextAll('.types__item');
+                .nextAll('.types__slide');
 
             // Add class visible all elements after active and active too.
             for (let i = 0; i <= lastItems.length; i++) {
@@ -212,7 +149,7 @@ new Swiper('#typesSlider', {
             }
         },
         fromEdge:  function () {
-            $('.types__item').removeClass('visible');
+            $('.types__slide').removeClass('visible');
         },
     }
 });
@@ -250,25 +187,15 @@ function breakpointXLChecker() {
     }
 }
 
-
 function enablePartnersChooseSlider() {
     if ($('#partnersChooseSlider')[0]) {
         partnersChooseSlider = new Swiper('#partnersChooseSlider', {
             autoHeight: true,
             slidesPerView: 'auto',
             speed: 500,
-            spaceBetween: 24,
             breakpoints: {
                 768: {
                     autoHeight: false,
-                },
-                1024: {
-                    autoHeight: false,
-                    spaceBetween: 48,
-                },
-                1140: {
-                    autoHeight: false,
-                    spaceBetween: 68,
                 },
             },
         });
@@ -281,15 +208,9 @@ function enableRentListSlider() {
             autoHeight: true,
             slidesPerView: 'auto',
             speed: 500,
-            spaceBetween: 24,
             breakpoints: {
                 768: {
                     autoHeight: false,
-                    spaceBetween: 48,
-                },
-                1140: {
-                    autoHeight: false,
-                    spaceBetween: 68,
                 },
             },
         });
@@ -302,18 +223,9 @@ function enableWorkOrderSlider() {
             autoHeight: true,
             slidesPerView: 'auto',
             speed: 500,
-            spaceBetween: 24,
             breakpoints: {
                 768: {
                     autoHeight: false,
-                },
-                1024: {
-                    autoHeight: false,
-                    spaceBetween: 48,
-                },
-                1140: {
-                    autoHeight: false,
-                    spaceBetween: 68,
                 },
             }
         });
@@ -323,24 +235,17 @@ function enableWorkOrderSlider() {
 function enableWorkRentSlider() {
     if ($('#workRent')[0]) {
         workRentSlider = new Swiper('#workRent', {
-            // autoHeight: true,
+            autoHeight: true,
             slidesPerView: 'auto',
             speed: 500,
-            spaceBetween: 24,
             breakpoints: {
-                1024: {
-                    // autoHeight: false,
-                    spaceBetween: 48,
-                },
-                1140: {
+                768: {
                     autoHeight: false,
-                    spaceBetween: 68,
                 },
             }
         });
     }
 }
-
 
 // Here are listening breakpoint for large screen and initial check
 breakpointXL.addListener(breakpointXLChecker);
