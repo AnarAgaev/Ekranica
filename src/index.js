@@ -3,8 +3,10 @@ import './js/polyfills';
 import './js/swiper';
 import './js/anim';
 import './js/main';
-import './js/faq';
 import './js/loading-bar.min';
+import './pug/templates/header/header';
+import './pug/templates/footer/footer';
+import './pug/comps/faq/faq';
 import './pug/pages/index/index';
 import './pug/comps/callback/callback';
 import './pug/comps/form-order/form-order'

@@ -70,26 +70,7 @@ $(document).ready(function () {
     });
 
     $('.faq__toggler').on('click', function (e) {
-        e.stopPropagation();
-
-        if (faqUnLock) {
-            faqUnLock = false;
-
-            setTimeout(function () {
-                faqUnLock = true;
-            }, 300);
-
-            const desc =  $(e.target)
-                .closest('.faq__caption')
-                .next();
-
-            if ( $(e.target).closest('.faq__item').hasClass('visible') ) {
-                hideFaqEl(desc);
-
-            } else {
-                showFaqEl(desc);
-            }
-        }
+        $(e.target).parent().click();
     });
 
     // Show/hide FAQ items
@@ -121,7 +102,7 @@ $(document).ready(function () {
             $('.faq__item:eq('+ i +')').removeClass('display show');
             $('.faq__item').removeClass('visible');
             $('.faq__description').attr('style', '');
-            $('.faq__more span').text('Ещё вопросы');
+            $('.faq__more .text').text('Ещё вопросы');
             $('.faq__more').removeClass('roll-up');
         }
 
@@ -132,7 +113,7 @@ $(document).ready(function () {
 
     function checkEnd() {
         if ( $(".faq__item").last().hasClass('show') ) {
-            $('.faq__more span').text('Скрыть вопросы');
+            $('.faq__more .text').text('Скрыть вопросы');
             $('.faq__more').addClass('roll-up');
         }
     }

@@ -30,18 +30,13 @@ section.section.section_callback
                                 img.valid(src="/img/i-validator-check-valid.svg" alt="")
                                 img.invalid(src="/img/i-validator-check-invalid.svg" alt="")
 
-                        .controller.controller__check
-                            label.label.label__check
-                                input(type="checkbox" checked="")
-                                span.checker
-                                    img.check(src="/img/i-check.svg" alt="")
-                                    img.uncheck(src="/img/i-uncheck.svg" alt="")
-                                span.txt
-                                    | Я даю согласие на
-                                    a.revers(href="" target="_blank") обработку моих персональных данных
+                        span.send-mail
+                            | Или напишите нам на адрес
+                            a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru
 
                     .callback__actions
                         button.btn.btn_primary(type="submit") Отправить номер
-                        span.send-mail
-                            | Или напишите нам
-                            a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru
+
+                        span.privacy
+                            | Нажимая на кнопку “Отправить номер”, я даю согласие на
+                            a.revers(href="" target="_blank") обработку моих персональных данных
