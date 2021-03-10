@@ -100,7 +100,6 @@ new Swiper('#projectsList', {
 new Swiper('#clientsList', {
     slidesPerView: 'auto',
     speed: 500,
-    // spaceBetween: 16,
     navigation: {
         nextEl: '#btnClientsSliderNext',
         prevEl: '#btnClientsSliderPrev',
@@ -155,7 +154,7 @@ new Swiper('#typesSlider', {
 });
 
 
-const breakpointXL = window.matchMedia ('(min-width: 1920px)');
+const breakpointXL = window.matchMedia ('(min-width: 1860px)');
 let partnersChooseSlider,
     rentListSlider,
     workOrderSlider,

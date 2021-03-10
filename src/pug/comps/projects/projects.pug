@@ -12,7 +12,7 @@ section.section.section_projects
                 .projects__list__wrap.swiper-wrapper
 
                     .projects__slide.swiper-slide
-                        .projects__card.default-animation.animation-element
+                        a.projects__card.default-animation.animation-element(href="")
                             .projects__place
                                 .city г. Москва
                                 .location Конференц-зал
@@ -21,10 +21,11 @@ section.section.section_projects
                                     | Экран 13,11 м
                                     sup 2
                                 .pixels Шаг пикселя 2,5 мм
-                            .projects__pic(style="background-image: url('/img/temp/projecs.jpg')")
+                            .projects__pic
+                                .image(style="background-image: url('/img/temp/projecs.jpg')")
 
                     .projects__slide.swiper-slide
-                        .projects__card.default-animation.animation-element
+                        a.projects__card.default-animation.animation-element(href="")
                             .projects__place
                                 .city
                                 // Если город не указан добавляем .empty-city
@@ -34,10 +35,11 @@ section.section.section_projects
                                     | Экран Absen 48 м
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
-                            .projects__pic(style="background-image: url('/img/temp/projecs1.jpg')")
+                            .projects__pic
+                                .image(style="background-image: url('/img/temp/projecs1.jpg')")
 
                     .projects__slide.swiper-slide
-                        .projects__card.default-animation.animation-element
+                        a.projects__card.default-animation.animation-element(href="")
                             .projects__place
                                 .city
                                 .location.empty-city Ассоциация банков России
@@ -46,10 +48,11 @@ section.section.section_projects
                                     | Экран Absen 18 м
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
-                            .projects__pic(style="background-image: url('/img/temp/projecs3.jpg')")
+                            .projects__pic
+                                .image(style="background-image: url('/img/temp/projecs3.jpg')")
 
                     .projects__slide.swiper-slide
-                        .projects__card
+                        a.projects__card(href="")
                             .projects__place
                                 .city г. Москва
                                 .location Конференц-зал
@@ -58,10 +61,11 @@ section.section.section_projects
                                     | Экран 13,11 м
                                     sup 2
                                 .pixels Шаг пикселя 2,5 мм
-                            .projects__pic(style="background-image: url('/img/temp/projecs.jpg')")
+                            .projects__pic
+                                .image(style="background-image: url('/img/temp/projecs.jpg')")
 
                     .projects__slide.swiper-slide
-                        .projects__card
+                        a.projects__card(href="")
                             .projects__place
                                 .city
                                 .location.empty-city Экспоцентр Москва
@@ -70,10 +74,11 @@ section.section.section_projects
                                     | Экран Absen 48 м
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
-                            .projects__pic(style="background-image: url('/img/temp/projecs1.jpg')")
+                            .projects__pic
+                                .image(style="background-image: url('/img/temp/projecs1.jpg')")
 
                     .projects__slide.swiper-slide
-                        .projects__card
+                        a.projects__card(href="")
                             .projects__place
                                 .city
                                 .location.empty-city Ассоциация банков России
@@ -82,7 +87,8 @@ section.section.section_projects
                                     | Экран Absen 18 м
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
-                            .projects__pic(style="background-image: url('/img/temp/projecs3.jpg')")
+                            .projects__pic
+                                .image(style="background-image: url('/img/temp/projecs3.jpg')")
 
             .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnProjectsPrev
             .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnProjectsNext

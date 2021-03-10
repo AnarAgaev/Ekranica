@@ -61,6 +61,10 @@
     .nav {
         margin-top: 24px;
 
+        ul {
+            position: relative;
+        }
+
         &__list {
             display: flex;
             flex-wrap: wrap;
@@ -172,6 +176,30 @@
                 }
             }
         }
+
+        .designed {
+            display: none;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 160%;
+            color: $color-text-inactive;
+            position: absolute;
+            bottom: -78px;
+            width: 150px;
+
+
+            @media (min-width: $lg) {
+                display: block;
+            }
+
+            a {
+                color: $color-text-secondary;
+
+                &:hover {
+                    color: $color-accent;
+                }
+            }
+        }
     }
 
     &__logo {
@@ -204,7 +232,7 @@
         margin-top: 16px;
 
         .social-icon {
-            margin-right: 14px;
+            margin-right: 16px;
 
             &:last-child {
                 margin-right: 0;
@@ -212,7 +240,7 @@
 
             @media (min-width: $lg) {
                 margin-top: 35px;
-                margin-left: 14px;
+                margin-left: 16px;
                 margin-right: 0;
             }
         }
@@ -272,6 +300,18 @@
 
         .caption {
             display: inline-block;
+        }
+
+        .designed {
+            margin-top: 16px;
+
+            a {
+                color: $color-text-secondary;
+            }
+
+            @media (min-width: $lg) {
+                display: none;
+            }
         }
 
         @media (min-width: $lg) {

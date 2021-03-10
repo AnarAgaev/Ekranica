@@ -145,14 +145,14 @@
             box-shadow:
                     -8px -6px 30px rgba(35, 33, 58, 0.8),
                     8px 8px 58px rgba(4, 5, 14, 0.76);
-            filter: blur(6px);
+            filter: blur(4px);
 
             @media (min-width: $lg) {
                 background: linear-gradient(321.49deg, #1C1D30 -6.41%, #0B0C12 90.97%);
                 box-shadow:
                         -12px -10px 30px rgba(35, 33, 58, 0.8),
                         12px 12px 58px rgba(4, 5, 14, 0.76);
-                filter: blur(8px);
+                filter: blur(4px);
             }
         }
 

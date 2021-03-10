@@ -1,5 +1,5 @@
 // Includes custom scripts
-import './js/polyfills';
+// import './js/polyfills';
 import './js/swiper';
 import './js/anim';
 import './js/main';

@@ -22,7 +22,11 @@ $(document).ready(function () {
     }
 
     function getScreenType () {
-        window.isDesctop = window.innerWidth > 1919;
+        window.isDesctop = window.innerWidth > 1859;
+
+        console.log('window.isDesctop: ', isDesctop);
+        console.log('window.innerWidth: ', window.innerWidth);
+
     }
     getScreenType();
 
