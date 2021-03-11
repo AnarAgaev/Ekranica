@@ -140,21 +140,6 @@
             transform: translateY(0);
         }
 
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 12px;
-            top: 0;
-            left: 0;
-            z-index: 5;
-            background: $color-back-primary;
-            opacity: 0.8;
-            transition: $transition;
-        }
-
         .btn {
             z-index: 7;
         }
@@ -163,10 +148,6 @@
             &:hover {
                 .btn {
                     @extend .btn_play:hover;
-                }
-
-                &::before {
-                    opacity: 0;
                 }
             }
         }
@@ -216,7 +197,7 @@
         font-size: 30px;
         line-height: 140%;
         letter-spacing: 0.02em;
-        color: $color-text-inactive;
+        color: $color-text-secondary;
         transition: $transition;
 
         @media (min-width: $lg) {
@@ -235,7 +216,7 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 160%;
-        color: $color-text-inactive;
+        color: $color-text-secondary;
         margin-top: 8px;
         transition: $transition;
 
@@ -288,18 +269,6 @@
             &:last-child {
                 margin-right: 0;
             }
-
-            &__pic {
-                svg path {
-                    stroke: #3A374B;
-                }
-            }
-
-            &:hover {
-                svg path {
-                    stroke: #80758F !important;
-                }
-            }
         }
 
         @media (min-width: $lg) {
@@ -307,26 +276,6 @@
             right: 0;
             left: auto;
             bottom: auto;
-        }
-    }
-
-    .swiper-slide-active,
-    .visible {
-        .feedback__pic {
-            &::before {
-                opacity: 0;
-            }
-        }
-
-        .feedback__name,
-        .feedback__msg {
-            color: $color-text-secondary;
-        }
-
-        .social-icon__pic {
-            svg path {
-                stroke: #AB78FF;
-            }
         }
     }
 

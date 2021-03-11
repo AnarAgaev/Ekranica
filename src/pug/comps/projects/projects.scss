@@ -116,7 +116,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 160%;
-        color: $color-text-inactive;
+        color: $color-text-secondary;
         transition: color .5s;
 
         @media (min-width: $md) {
@@ -165,20 +165,6 @@
             width: 754px;
             transform: translate(20px, 68px);
             margin-top: -20px;
-        }
-
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            background: rgba(11, 13, 25, .8);
-            opacity: 1;
-            transition: opacity .5s;
         }
 
         .image {
@@ -230,16 +216,5 @@
 
     #btnProjectsNext {
         margin-top: -85px;
-    }
-
-    .swiper-slide-active,
-    .visible {
-        .projects__place {
-            color: $color-text-secondary;
-        }
-
-        .projects__pic::after {
-            opacity: 0;
-        }
     }
 }

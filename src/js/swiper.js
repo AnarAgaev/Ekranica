@@ -80,21 +80,6 @@ new Swiper('#projectsList', {
         nextEl: '#btnProjectsNext',
         prevEl: '#btnProjectsPrev',
     },
-    on: {
-        reachEnd: function () {
-            // Let's get all elements after active
-            const lastItems = $('#projectsList .swiper-slide-active')
-                .nextAll('.projects__slide');
-
-            // Add class visible all elements after active and active too.
-            for (let i = 0; i <= lastItems.length; i++) {
-                $(lastItems[i]).addClass('visible');
-            }
-        },
-        fromEdge:  function () {
-            $('.projects__slide').removeClass('visible');
-        },
-    },
 });
 
 new Swiper('#clientsList', {
@@ -113,19 +98,6 @@ new Swiper('#feedbackList', {
         nextEl: '#btnFeedbackNext',
         prevEl: '#btnFeedbackPrev',
     },
-    on: {
-        reachEnd: function () {
-            const lastItems = $('#feedbackList .swiper-slide-active')
-                .nextAll('.feedback__slide');
-
-            for (let i = 0; i <= lastItems.length; i++) {
-                $(lastItems[i]).addClass('visible');
-            }
-        },
-        fromEdge:  function () {
-            $('.feedback__slide').removeClass('visible');
-        },
-    }
 });
 
 new Swiper('#typesSlider', {
