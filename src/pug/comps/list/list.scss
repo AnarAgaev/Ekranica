@@ -65,10 +65,6 @@
         position: relative;
         padding-top: 72px;
 
-        &:first-child .number img {
-            margin-top: -9px;
-        }
-
         @media (min-width: $md) {
             width: 348px;  // 324px + 24px
         }
@@ -130,7 +126,8 @@
         @media (min-width: $lg) {
             width: 96px;
             height: 96px;
-            margin-top: 4px;
+            margin-top: 8px;
+            margin-left: 1px;
         }
 
         .back {
@@ -148,30 +145,82 @@
             filter: blur(4px);
 
             @media (min-width: $lg) {
-                background: linear-gradient(321.49deg, #1C1D30 -6.41%, #0B0C12 90.97%);
                 box-shadow:
                         -12px -10px 30px rgba(35, 33, 58, 0.8),
                         12px 12px 58px rgba(4, 5, 14, 0.76);
-                filter: blur(4px);
             }
         }
 
         .number {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 5px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: block;
 
-            img {
+            .img {
+                width: 58px;
+                height: 58px;
+                top: 1px;
+                left: -2px;
+                display: block;
                 z-index: 1;
-                margin-top: -4px;
+                position: absolute;
                 transition: all .5s;
                 filter: grayscale(0);
                 transform: scale(1, 1);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
 
                 &.animation-element {
                     filter: grayscale(100%);
                     transform: scale(1.7, 1.7);
+                }
+
+                @for $i from 1 through 7 {
+                    &.img_#{$i} {
+                        background-image: url("/img/nums/#{$i}.svg");
+                    }
+                }
+
+                @media (min-width: $lg) {
+                    width: 114px;
+                    height: 114px;
+
+                    &.img_1 {
+                        top: -7px;
+                        left: -12px;
+                    }
+
+                    &.img_2 {
+                        top: -9px;
+                        left: -10px;
+                    }
+
+                    &.img_3 {
+                        top: -7px;
+                        left: -10px;
+                    }
+
+                    &.img_4 {
+                        top: -9px;
+                        left: -12px;
+                    }
+
+                    &.img_5 {
+                        top: -8px;
+                        left: -10px;
+                    }
+
+                    &.img_6 {
+                        top: -8px;
+                        left: -11px;
+                    }
+
+                    &.img_7 {
+                        top: -6px;
+                        left: -11px;
+                    }
                 }
             }
         }

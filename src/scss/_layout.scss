@@ -606,7 +606,11 @@ input.btn {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        background: $color-accent url("/img/i-play.svg") no-repeat center center;
+        transition: $transition;
+        background-color: $color-accent;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("/img/i-play.svg");
         box-shadow:
                 0 0 0 2px $color-accent,
                 inset 5px 4px 10px rgba(49, 4, 38, 0.5),
@@ -615,6 +619,27 @@ input.btn {
                 inset -2px -2px 30px rgba(255, 255, 255, 0.2),
                 -8px -16px 30px rgba(54, 38, 66, 0.8),
                 8px 16px 30px rgba(4, 5, 14, 0.5);
+
+        @media (min-width: $lg) {
+            width: 96px;
+            height: 96px;
+            background-size: 50%;
+            box-shadow:
+                    inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                    inset -2px -2px 30px rgba(255, 255, 255, 0.2),
+                    -14px -28px 30px rgba(54, 38, 66, 0.8),
+                    14px 28px 30px rgba(4, 5, 14, 0.5);
+
+            &:hover {
+                background-image: url("/img/i-play-hover.svg");
+                background-color: #9A5BFF;
+                box-shadow:
+                        inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                        inset -2px -2px 30px rgba(255, 255, 255, 0.2),
+                        -8px -16px 30px rgba(35, 33, 58, 0.35),
+                        8px 16px 30px rgba(4, 5, 14, 0.3);
+            }
+        }
     }
 }
 

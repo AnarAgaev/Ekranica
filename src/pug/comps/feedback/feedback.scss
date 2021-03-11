@@ -157,18 +157,17 @@
 
         .btn {
             z-index: 7;
+        }
 
-            @media (min-width: $lg) {
-                width: 96px;
-                height: 96px;
-                background-size: 50%;
-                box-shadow:
-                        inset 5px 4px 10px rgba(49, 4, 38, 0.5),
-                        inset -2px -2px 30px rgba(255, 255, 255, 0.2),
-                        inset 5px 4px 10px rgba(49, 4, 38, 0.5),
-                        inset -2px -2px 30px rgba(255, 255, 255, 0.2),
-                        -14px -28px 30px rgba(54, 38, 66, 0.8),
-                        14px 28px 30px rgba(4, 5, 14, 0.5);
+        @media (min-width: $lg) {
+            &:hover {
+                .btn {
+                    @extend .btn_play:hover;
+                }
+
+                &::before {
+                    opacity: 0;
+                }
             }
         }
     }
@@ -222,6 +221,10 @@
 
         @media (min-width: $lg) {
             display: block;
+
+            &.hover {
+              color: $color-accent !important;
+            }
         }
     }
 

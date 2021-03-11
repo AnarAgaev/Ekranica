@@ -65,7 +65,9 @@
         width: 200px;
         min-height: 282px;
         background: $color-back-primary;
-        box-shadow: -14px -14px 30px rgba(35, 33, 58, 0.35), 16px 5px 40px rgba(4, 5, 14, 0.6);
+        box-shadow:
+                -14px -14px 40px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
         border-radius: 12px;
         padding: 16px 16px 0 16px;
         opacity: 1;
@@ -95,6 +97,10 @@
 
                 .city, .location {
                     color: $color-accent;
+                }
+
+                .projects__pic::after {
+                    opacity: 0;
                 }
             }
 
