@@ -3,23 +3,11 @@
 .projects {
 
     .section__title {
-        opacity: 1;
-        transform: translateY(0);
+        @extend .title-animation;
+    }
 
-        &.animation-element {
-            opacity: 0;
-            transform: translateY(25px);
-        }
-
-        .section__link {
-            opacity: 1;
-            transform: translateX(0);
-
-            &.animation-element {
-                opacity: 0;
-                transform: translateX(25px);
-            }
-        }
+    .section__link {
+        @extend .title-link-animation;
     }
 
     &__list {
@@ -58,6 +46,12 @@
         @media (min-width: $lg) {
             width: 918px; // 822px + 96px
         }
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) .projects__card {
+                transition-delay: 0.3s * $i;
+            }
+        }
     }
 
     &__card {
@@ -70,13 +64,8 @@
                 16px 5px 40px rgba(4, 5, 14, 0.6);
         border-radius: 12px;
         padding: 16px 16px 0 16px;
-        opacity: 1;
-        transform: translateX(0);
 
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+        @extend .card-animation;
 
         @media (min-width: $md) {
             width: 440px;

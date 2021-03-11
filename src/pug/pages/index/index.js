@@ -30,30 +30,5 @@ $(document).ready(function () {
             $('.loading-container').remove();
 
         }, 3500);
-
-
-        // Animation items on index page when user is scrolling screen
-        const els = $('.animation-element');
-
-        function showAnimElements (els) {
-            let scrollTop = $(window).scrollTop();
-            let windowHeight = $(window).height();
-            let pointOfDisplay = windowHeight / 1.2;
-
-            $(els).each(function () {
-                let offsetTopElement = $(this).offset().top;
-
-                if ( offsetTopElement - pointOfDisplay < scrollTop ) {
-                    $(this).removeClass('animation-element');
-                }
-            });
-        }
-
-        showAnimElements(els);
-
-        // Show items on the page after scroll
-        $(window).scroll(function () {
-            showAnimElements(els);
-        });
     }
 });

@@ -29,4 +29,32 @@ $(document).ready(function () {
     $(window).resize(function () {
         getScreenType();
     });
+
+    // Animation items when user has scrolled screen to place of item
+    const els = $('.animation-element');
+
+    if (els.length > 0) {
+
+        function showAnimElements (els) {
+            let scrollTop = $(window).scrollTop();
+            let windowHeight = $(window).height();
+            let pointOfDisplay = windowHeight / 1.2;
+
+            $(els).each(function () {
+                let offsetTopElement = $(this).offset().top;
+
+                if ( offsetTopElement - pointOfDisplay < scrollTop ) {
+                    $(this).removeClass('animation-element');
+                }
+            });
+        }
+
+        showAnimElements(els);
+
+        // Show items on the page after scroll
+        $(window).scroll(function () {
+            showAnimElements(els);
+        });
+    }
+
 });

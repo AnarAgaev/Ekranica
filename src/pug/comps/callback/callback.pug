@@ -1,21 +1,20 @@
 section.section.section_callback
     .callback
         .container
-            // Классы .default-animation.animation-element добавить только на главной странице
-            h2.section__title.default-animation.animation-element
+            h2.section__title.animation-element
                 | Связаться с нами
-                span.section__link.default-animation.animation-element
+                span.section__link.animation-element
                     a.revers(href="") Открыть контакты
 
-            .callback__title.default-animation.animation-element Заинтересовались светодиодным оборудованием?
-            .callback__subtitle.default-animation.animation-element Укажите ваш мобильный номер телефона и мы перезвоним в течение 5 минут
+            .callback__title.animation-element Заинтересовались светодиодным оборудованием?
+            .callback__subtitle.animation-element Укажите ваш мобильный номер телефона и мы перезвоним в течение 5 минут
 
-        .callback__background-pic.default-animation.animation-element
+        .callback__background-pic.animation-element
             img(src="/img/callback-pic.png" alt="")
 
         .container-endless
             .endless
-                form.callback__form.default-animation.animation-element#callbackForm(action="/" method="POST")
+                form.callback__form.animation-element#callbackForm(action="/" method="POST")
                     .callback__data
                         // Для валидного значения меняем класс у controller на valid
                         .controller.controller__input

@@ -4,13 +4,11 @@
     overflow: hidden;
 
     .section__title {
-        opacity: 1;
-        transform: translateX(0);
+        @extend .title-animation;
+    }
 
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+    .work__steps {
+        @extend .title-link-animation;
     }
 
     &__background {
@@ -213,12 +211,13 @@
         color: $color-accent;
         position: relative;
 
+        transition: $anim-title;
         opacity: 1;
         transform: translateX(0);
 
         &.animation-element {
             opacity: 0;
-            transform: translateX(25px);
+            transform: translateX(50px);
         }
 
         @media (min-width: $md) {
@@ -268,15 +267,8 @@
         letter-spacing: 0.02em;
         margin-bottom: 12px;
         color: $color-text-secondary;
-        filter: grayscale(0);
-        transition: all .7s;
-        opacity: 1;
-        transform: translateX(0);
 
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+        @extend .title-animation;
 
         @media (min-width: $md) {
             font-weight: 700;
@@ -299,13 +291,8 @@
         font-size: 12px;
         line-height: 160%;
         color: $color-text-inactive;
-        opacity: 1;
-        transform: translateX(0);
 
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+        @extend .title-link-animation;
 
         @media (min-width: $lg) {
             font-size: 14px;

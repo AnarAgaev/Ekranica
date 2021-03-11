@@ -3,13 +3,7 @@
 .clients {
 
     .section__title {
-        opacity: 1;
-        transform: translateX(0);
-
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+        @extend .title-animation;
     }
 
     &__list {
@@ -32,7 +26,7 @@
 
         @for $i from 1 through 5 {
             &:nth-child(#{$i}) .clients__link {
-                transition-delay: 0.1s * $i;
+                transition-delay: 0.25s * $i;
             }
         }
 
@@ -84,13 +78,7 @@
                 -14px -14px 40px rgba(35, 33, 58, 0.35),
                 16px 5px 40px rgba(4, 5, 14, 0.6);
 
-        filter: opacity(1);
-        transform: translateX(0);
-
-        &.animation-element {
-            filter: opacity(0);
-            transform: translateX(25px);
-        }
+        @extend .card-animation;
 
         img, svg {
             max-width: 100%;

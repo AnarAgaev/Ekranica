@@ -3,23 +3,11 @@
 .faq {
 
     .section__title {
-        opacity: 1;
-        transform: translateY(0);
-
-        &.animation-element {
-            opacity: 0;
-            transform: translateY(25px);
-        }
+        @extend .title-animation;
     }
 
     .section__link {
-        opacity: 1;
-        transform: translateX(0);
-
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+        @extend .title-link-animation;
     }
 
     &__list {
@@ -28,13 +16,7 @@
         margin-top: 48px;
         margin-bottom: 8px;
 
-        opacity: 1;
-        transform: translateY(0);
-
-        &.animation-element {
-            opacity: 0;
-            transform: translateY(30px);
-        }
+        @extend .card-animation;
 
         @media (min-width: $md) {
             margin-bottom: 0;

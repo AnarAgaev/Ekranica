@@ -3,13 +3,7 @@
 .list {
 
     .section__title {
-        opacity: 1;
-        transform: translateX(0);
-
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+        @extend .title-animation;
     }
 
     &__background {
@@ -165,16 +159,18 @@
                 display: block;
                 z-index: 1;
                 position: absolute;
-                transition: all .5s;
+                transition: all 1.7s cubic-bezier(0.22, 1, 0.36, 1);
                 filter: grayscale(0);
                 transform: scale(1, 1);
+                opacity: 1;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 100%;
 
                 &.animation-element {
                     filter: grayscale(100%);
-                    transform: scale(1.7, 1.7);
+                    opacity: 0;
+                    transform: scale(0.3, 0.3);
                 }
 
                 @for $i from 1 through 7 {
@@ -235,16 +231,16 @@
         margin-bottom: 12px;
         opacity: 1;
         transform: translateX(0);
-        transition: all .5s;
+        transition: all 1.7s cubic-bezier(0, 0.55, 0.45, 1);
 
         &.animation-element {
             opacity: 0;
-            transform: translateX(40px);
+            transform: translateX(70px);
         }
 
         @for $i from 1 through 7 {
             &:nth-child(#{$i}) {
-                transition-delay: 0.07s * $i;
+                transition-delay: 0.1s * $i;
             }
         }
 
@@ -270,16 +266,16 @@
         margin-top: 12px;
         opacity: 1;
         transform: translateX(0);
-        transition: all .5s;
+        transition: all 1.7s cubic-bezier(0, 0.55, 0.45, 1);
 
         &.animation-element {
             opacity: 0;
-            transform: translateX(50px);
+            transform: translateX(100px);
         }
 
         @for $i from 1 through 7 {
             &:nth-child(#{$i}) {
-                transition-delay: 0.07s * $i;
+                transition-delay: 0.1s * $i;
             }
         }
 
@@ -290,22 +286,15 @@
     }
 
     .lets-meet {
-        //height: 180px;
-        //margin-bottom: 20px;
-
         &::before {
             display: none;
         }
-
-        //@media (min-width: $md) {
-        //    margin-bottom: 0;
-        //}
 
         @media (min-width: $lg) {
             margin-top: -16px;
         }
 
-        span {
+        .text {
             display: block;
             font-size: 24px;
             line-height: 1.3;
@@ -314,6 +303,17 @@
             color: $color-text-secondary;
             margin-bottom: 12px;
             margin-top: 4px;
+            transition: $anim-el;
+            background:
+                    linear-gradient($color-text-secondary 0%, $color-text-secondary 50%, $color-accent 50%, $color-accent 100%)
+                    center 0;
+            background-size: auto 500px;
+            -webkit-background-clip: text; /* Обрезаем фон по тексту */
+            -webkit-text-fill-color: transparent; /* Прозрачный текст */
+
+            &.animation-element {
+                background-position: center -250px;
+            }
 
             @media (min-width: $md) {
                 font-size: 30px;
@@ -327,10 +327,21 @@
             }
         }
 
-        a {
+        .link {
             font-weight: 400;
             font-size: 16px;
             line-height: 1.6;
+
+            &-container {
+                opacity: 1;
+                transform: translateY(0);
+                transition: all 1.7s linear;
+
+                &.animation-element {
+                    opacity: 0;
+                    transform: translateY(-25px);
+                }
+            }
 
             &::after {
                 content: '';

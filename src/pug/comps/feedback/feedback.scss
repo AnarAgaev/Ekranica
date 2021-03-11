@@ -3,13 +3,7 @@
 .feedback {
 
     .section__title {
-        opacity: 1;
-        transform: translateX(0);
-
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(25px);
-        }
+        @extend .title-animation;
     }
 
     &__background {
@@ -81,13 +75,7 @@
         margin-bottom: 73px;
         position: relative;
 
-        opacity: 1;
-        transform: translateX(0);
-
-        &.animation-element {
-            opacity: 0;
-            transform: translateX(35px);
-        }
+        @extend .card-animation;
 
         @media (min-width: $md) {
             width: 358px;
