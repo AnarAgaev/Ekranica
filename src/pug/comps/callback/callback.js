@@ -2,10 +2,52 @@ import $ from "jquery";
 import IMask from 'imask';
 
 $(document).ready(function () {
-    let callbackFormValid = true;
-
     $('#callbackForm').on('submit', function(e) {
         e.preventDefault();
+
+        let phone = $('#callbackPhone').val();
+        let callbackFormValid = true;
+
+        function animationError() {
+            const controller = $('#callbackPhone').closest('.controller');
+            const validator = $('#callbackForm .validator__cross');
+
+            // Add invalid class if controller haven't it
+            if (!$(controller).hasClass('invalid')) {
+                $(controller).addClass('invalid');
+            }
+
+            // Add error animation class if controller haven't it
+            if (!$(validator).hasClass('bounce-top')) {
+                $(validator).addClass('bounce-top');
+
+                setTimeout(function () {
+                    $(validator).removeClass('bounce-top');
+                }, 1000);
+            }
+        }
+
+        if (phone !== '') {
+            if (!validPhone(phone.replace(/\s+|\+/g, ''))) {
+                callbackFormValid = false;
+                animationError();
+            }
+
+        } else {
+            callbackFormValid = false;
+            animationError();
+        }
+
+        if (callbackFormValid) {
+
+
+
+            // !!!!!!!!!!!!!!!!!!!!!!!   Send date to server
+
+
+            modalOpen(this);
+        }
+
     });
 
     // It's the handler of the phone value
