@@ -10,7 +10,7 @@ $(document).ready(function () {
             $(nums).each(function () {
                 let scrollTop = $(window).scrollTop();
                 let windowHeight = $(window).height();
-                let pointOfDisplay = windowHeight / 1.2;
+                let pointOfDisplay = windowHeight / 1;
                 let offsetTopElement = $(this).offset().top;
 
                 if ( offsetTopElement - pointOfDisplay < scrollTop ) {
