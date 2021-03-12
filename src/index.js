@@ -11,6 +11,7 @@ import './pug/pages/index/index';
 import './pug/comps/callback/callback';
 import './pug/comps/form-order/form-order'
 import './pug/comps/feedback/feedback';
+import './pug/comps/work/work';
 
 // Include vendor styles
 import 'normalize.css';
