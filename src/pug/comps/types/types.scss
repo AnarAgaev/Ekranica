@@ -10,7 +10,7 @@
         padding-top: 0;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         background: $color-back-secondary;
         padding-top: 134px;
     }
@@ -38,7 +38,7 @@
             margin-top: 10px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: auto;
         }
     }
@@ -51,7 +51,7 @@
             margin-bottom: -50px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             padding-top: 134px;
             margin-bottom: 0;
         }
@@ -71,7 +71,7 @@
 
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 596px; // 528px + 68px
             padding-bottom: 0;
         }
@@ -96,7 +96,7 @@
             margin-bottom: 0;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 528px;
             padding: 0 48px 48px;
             margin-top: 0;
@@ -139,7 +139,7 @@
             transform: translateY(-48px);
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 432px;
             height: 325px;
         }
@@ -173,7 +173,7 @@
             margin-top: -22px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 172px;
             font-size: 18px;
             margin-top: 50px;
@@ -223,7 +223,7 @@
             margin-top: 16px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             position: absolute;
             bottom: 66px;
             left: 457px;

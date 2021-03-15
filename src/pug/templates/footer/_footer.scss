@@ -25,7 +25,7 @@
         padding-right: 6.25%;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -47,7 +47,7 @@
                 font-size: 24px;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 order: 1;
                 text-align: right;
                 width: 100%;
@@ -124,7 +124,7 @@
             }
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             order: 3;
             flex: 1 0 auto;
             margin-top: 0;
@@ -188,7 +188,7 @@
             width: 150px;
 
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 display: block;
             }
 
@@ -212,7 +212,7 @@
             margin-top: 24px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             order: 2;
             width: 298px;
             height: 79px;
@@ -238,7 +238,7 @@
                 margin-right: 0;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 margin-top: 35px;
                 margin-left: 16px;
                 margin-right: 0;
@@ -250,7 +250,7 @@
             margin-top: 22px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             order: 4;
             float: initial;
             margin-top: 0;
@@ -276,7 +276,7 @@
             margin-top: 28px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: none;
         }
     }
@@ -309,12 +309,12 @@
                 color: $color-text-secondary;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 display: none;
             }
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 100%;
             order: 5;
             margin-top: 53px;

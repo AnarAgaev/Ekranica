@@ -19,7 +19,7 @@
             display: block;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             top: 1170px;
             transform: translateY(-50%) scale(-1, 1);
         }
@@ -35,7 +35,7 @@
             margin-top: 34px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             padding-top: 134px;
             margin-top: -18px;
         }
@@ -58,7 +58,7 @@
             width: 426px; // 358px + 68px
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 1298px; // 1164px + 134px
         }
     }
@@ -83,7 +83,7 @@
             padding: 0 48px 25px 34px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 1164px;
             min-height: 520px;
             margin-top: 0;
@@ -116,7 +116,7 @@
             transform: translateY(-34px);
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             position: absolute;
             top: 0;
             left: 0;
@@ -132,7 +132,7 @@
             z-index: 7;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             &:hover {
                 .btn {
                     @extend .btn_play:hover;
@@ -156,7 +156,7 @@
             background: url("/img/i-quote.svg") no-repeat left center;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: block;
         }
     }
@@ -174,7 +174,7 @@
         border-radius: 12px;
         margin: 62px 0 62px -62px;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: block;
         }
     }
@@ -188,7 +188,7 @@
         color: $color-text-secondary;
         transition: $transition;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: block;
 
             &.hover {
@@ -216,7 +216,7 @@
             margin-top: 0;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             flex-direction: row;
             font-weight: 400;
             font-size: 14px;
@@ -259,7 +259,7 @@
             }
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             top: 36px;
             right: 0;
             left: auto;

@@ -11,7 +11,7 @@
     }
 
     .section_list {
-        @media (min-width: $lg){
+        @media (min-width: $xl){
             margin-top: 216px;
         }
     }
@@ -22,12 +22,12 @@
             margin-top: -38px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             margin-top: -68px;
         }
 
         .endless {
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 width: calc(100% + 40px);
                 margin-left: -30px;
                 padding-left: 30px;
@@ -45,25 +45,25 @@
                 max-width: 270px;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 max-width: none;
             }
         }
 
         &__slide {
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 margin-bottom: 68px;
             }
         }
     }
 
     .work {
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             margin-bottom: -28px;
         }
 
         .work__slide {
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 margin-bottom: 64px;
             }
         }
@@ -75,7 +75,7 @@
                 width: 400px;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 width: auto;
             }
         }
@@ -87,7 +87,7 @@
                 display: block;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 display: none;
             }
         }
@@ -99,7 +99,7 @@
             ////    margin-top: 21px;
             ////}
             //
-            //@media (min-width: $lg) {
+            //@media (min-width: $xl) {
             //    margin-top: 83px;
             //}
         }

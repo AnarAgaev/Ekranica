@@ -28,7 +28,7 @@
             max-width: 500px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 30px;
             line-height: 140%;
             margin-top: 115px;
@@ -51,7 +51,7 @@
             width: auto;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 14px;
             margin-top: 37px;
         }
@@ -69,7 +69,7 @@
 
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             margin-top: 115px;
             flex-direction: row;
         }
@@ -83,14 +83,14 @@
         .validator__cross {
             display: none;
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 display: block;
             }
         }
     }
 
     .controller__input {
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             height: 90px;
             margin-bottom: 36px;
 
@@ -112,7 +112,7 @@
     }
 
     &__data {
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 558px;
         }
 
@@ -139,7 +139,7 @@
             align-items: center;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             flex-direction: column;
             align-items: flex-start;
         }
@@ -148,7 +148,7 @@
 
             margin-top: 24px;
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 margin-top: 20px;
             }
         }
@@ -162,7 +162,7 @@
             }
 
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 margin-left: 0;
                 margin-top: 34px;
             }
@@ -182,7 +182,7 @@
             left: calc(50% + 50px);
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             top: 86px;
             left: calc(50% + 293px);
         }
@@ -195,7 +195,7 @@
             left: -7px;
             max-width: none;
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 width: 640px;
             }
         }

@@ -1,56 +1,74 @@
 section.section.section_slider-banner
-    .slider-banner__animation.visible#sliderAnimation
-        canvas#cMob.slider-banner__canvas
-        canvas#cTab.slider-banner__canvas
-        canvas#cDesk.slider-banner__canvas
 
-    .slider-banner__background
-        .slider-banner__background-wrap
-            img(src="/img/slider-curved-line.svg" alt="")
+    .slider
+        .pattern-border
+
+        .slider__background-image.swiper-container#bannerPictureSlider
+            .swiper-wrapper
+                .swiper-slide
+                    .slider__picture(data-swiper-parallax-opacity="0" data-swiper-parallax="-200" data-swiper-parallax-duration="1000")
+                        .slider__animation.visible#sliderAnimation
+                            canvas#cMob.slider__canvas
+                            canvas#cTab.slider__canvas
+                            canvas#cDesk.slider__canvas
+
+                .swiper-slide
+                    .slider__picture(data-swiper-parallax-opacity="0" data-swiper-parallax="-200" data-swiper-parallax-duration="1000")
+                        img.image.picture-man(src="/img/slider-back-1.jpg" alt="")
+
+                .swiper-slide
+                    .slider__picture(data-swiper-parallax-opacity="0" data-swiper-parallax="-200" data-swiper-parallax-duration="1000")
+                        img.image(src="/img/slider-back-2.jpg" alt="")
+
+                .swiper-slide
+                    .slider__picture(data-swiper-parallax-opacity="0" data-swiper-parallax="-200" data-swiper-parallax-duration="1000")
+                        img.image(src="/img/slider-back-3.jpg" alt="")
+
+        .slider__mask#bannerMask
+            .slider__mask-wrap
+                img(src="/img/divider.svg" alt="")
+
+        .slider__controll.swiper-container#bannerContentSlider
+            .swiper-wrapper
+                .slider__slide.swiper-slide
+                    h2.slider__title(data-swiper-parallax-x="-50" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="900") Погрузись в мир LED экранов
+                    .slider__subtitle(data-swiper-parallax-x="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1200") Аренда под ключ 5000 р/м2
+                    .slider__actions
+                        a.btn.btn_primary(data-swiper-parallax-x="-300" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1700") Узнать стоимость
+                        a.link.revers(href="" data-swiper-parallax-x="-350" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2100") Как выбрать экран?
+
+                .slider__slide.swiper-slide
+                    h2.slider__title(data-swiper-parallax-x="-50" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="900") Погрузись в мир LED экранов
+                    .slider__subtitle(data-swiper-parallax-x="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1200") Аренда под ключ 5000 р/м2
+                    .slider__actions
+                        a.btn.btn_primary(data-swiper-parallax-x="-300" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1700") Узнать стоимость
+                        a.link.revers(href="" data-swiper-parallax-x="-350" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2100") Как выбрать экран?
+
+                .slider__slide.swiper-slide
+                    h2.slider__title(data-swiper-parallax-x="-50" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="900") Погрузись в мир LED экранов
+                    .slider__subtitle(data-swiper-parallax-x="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1200") Аренда под ключ 5000 р/м2
+                    .slider__actions
+                        a.btn.btn_primary(data-swiper-parallax-x="-300" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1700") Узнать стоимость
+                        a.link.revers(href="" data-swiper-parallax-x="-350" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2100") Как выбрать экран?
+
+                .slider__slide.swiper-slide
+                    h2.slider__title(data-swiper-parallax-x="-50" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="900") Погрузись в мир LED экранов
+                    .slider__subtitle(data-swiper-parallax-x="-200" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1200") Аренда под ключ 5000 р/м2
+                    .slider__actions
+                        a.btn.btn_primary(data-swiper-parallax-x="-300" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="1700") Узнать стоимость
+                        a.link.revers(href="" data-swiper-parallax-x="-350" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="2100") Как выбрать экран?
+
+            .slide-nums#sliderNums
+                .slide-nums__current
+                    .slide-nums__scrolled
+                        .slide-nums__number.active 01
+                        .slide-nums__number 02
+                        .slide-nums__number 03
+                        .slide-nums__number 04
+                .slide-nums__all
+                    .number 04
+
+            .btn.btn_icon-outlined.not-focused#btnSliderPrev
+            .btn.btn_icon-outlined.not-focused#btnSliderNext
 
 
-    .container
-        .slider-banner.swiper-container
-            .slider-banner__wrap.swiper-wrapper
-
-                .slider-banner__slide.swiper-slide
-                    .slider-banner__picture
-                        // Картинку в первом слайде удалили, так как на первом слайде показыватеся анимация на главной
-                    .slider-banner__description
-                        h2.slider-banner__title.section__title(data-swiper-parallax-x="-500" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="600") Погрузись в мир LED экранов
-                        .slider-banner__subtitle(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700") Аренда под ключ 5000 р/м2
-                        .slider-banner__actions
-                            a.btn.btn_primary Узнать стоимость
-                            a.link.revers(href="") Как выбрать экран?
-
-                .slider-banner__slide.swiper-slide
-                    .slider-banner__picture
-                        .image(style="background-image: url('/img/temp/temp-img.png')")
-                    .slider-banner__description
-                        h2.slider-banner__title.section__title(data-swiper-parallax-x="-500" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="600") Светодиодные экраны в рассрочку
-                        .slider-banner__subtitle(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700") Аренда под ключ 5000 р/м2
-                        .slider-banner__actions
-                            a.btn.btn_primary Рассчитать стоимость
-                            a.link.revers(href="") Как выбрать экран?
-
-                .slider-banner__slide.swiper-slide
-                    .slider-banner__picture
-                        .image(style="background-image: url('/img/temp/temp-img.png')")
-                    .slider-banner__description
-                        h2.slider-banner__title.section__title(data-swiper-parallax-x="-500" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="600") Погрузись в мир LED экранов
-                        .slider-banner__subtitle(data-swiper-parallax-x="-600" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700") Аренда под ключ 5000 р/м2
-                        .slider-banner__actions
-                            a.btn.btn_primary Узнать стоимость
-                            a.link.revers(href="") Как выбрать экран?
-
-        .slide-nums#sliderNums
-            .slide-nums__current
-                .slide-nums__scrolled
-                    .slide-nums__number.active 01
-                    .slide-nums__number 02
-                    .slide-nums__number 03
-            .slide-nums__all
-                .number 03
-
-        .btn.btn_icon-outlined.not-focused#btnSliderPrev
-        .btn.btn_icon-outlined.not-focused#btnSliderNext

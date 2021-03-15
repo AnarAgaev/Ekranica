@@ -20,7 +20,7 @@
             margin-bottom: -35px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             padding-top: 134px;
             margin-bottom: 0;
         }
@@ -43,7 +43,7 @@
             width: 532px; // 464px + 68px
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 918px; // 822px + 96px
         }
 
@@ -73,7 +73,7 @@
             padding: 34px 34px 0 34px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 648px;
             height: 584px;
             padding: 48px 48px 0 48px;
@@ -116,7 +116,7 @@
             margin-bottom: 24px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 30px;
             line-height: 140%;
         }
@@ -149,7 +149,7 @@
             transform: translateY(34px);
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             height: 446px;
             width: 754px;
             transform: translate(20px, 68px);
@@ -172,7 +172,7 @@
     .city {
         transition: all .4s ease-out;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: inline-block;
         }
     }
@@ -180,7 +180,7 @@
     .location {
         transition: all .4s ease-out;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: inline-block;
             padding-left: 10px;
         }
@@ -192,7 +192,7 @@
                 min-height: 62px;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 min-height: 42px;
                 padding-left: 0;
             }

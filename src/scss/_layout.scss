@@ -41,19 +41,16 @@ body {
 
 .main {
     flex: 1 0 auto;
-    padding: 95px 0;
-    margin-top: 76px;
+    padding-top: 76px;
     overflow-x: hidden;
     max-width: 100vw;
 
     @media (min-width: $md) {
-        margin-top: 114px;
-        padding-bottom: 134px;
+        padding-top: 114px;
     }
 
-    @media (min-width: $lg) {
-        margin-top: 124px;
-        padding-bottom: 264px;
+    @media (min-width: $xl) {
+
     }
 
 }
@@ -67,7 +64,7 @@ body {
         width: 87.5%;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         width: 70%;
     }
 }
@@ -82,7 +79,7 @@ body {
         margin-left: 6.25%;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         width: 85%;
         margin-left: 15%;
     }
@@ -98,7 +95,7 @@ body {
         margin-left: 6.25%;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         width: 70vw;
         margin-left: 15%;
     }
@@ -115,7 +112,7 @@ body {
         padding-left: 6.666666666666667%;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         width: calc(100% + 40px);
         margin-left: -40px;
         padding-left: 40px;
@@ -159,7 +156,7 @@ body {
     }
 }
 
-@media (min-width: $lg) {
+@media (min-width: $xl) {
     .h2, h2 {                   //- Heading/30
         font-size: 30px;
     }
@@ -619,7 +616,7 @@ input.btn {
                 -8px -16px 30px rgba(54, 38, 66, 0.8),
                 8px 16px 30px rgba(4, 5, 14, 0.5);
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 96px;
             height: 96px;
             background-size: 50%;
@@ -650,7 +647,7 @@ input.btn {
     height: 68px;
     display: none !important;
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         display: flex !important;
     }
 
@@ -734,7 +731,7 @@ input.btn {
         margin-bottom: 134px;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         margin-top: 264px;
         margin-bottom: 264px;
     }
@@ -755,7 +752,7 @@ input.btn {
             line-height: 1.4;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 60px;
         }
     }
@@ -771,7 +768,7 @@ input.btn {
             margin-top: 8px;
         }
 
-        @media (min-width: $lg){
+        @media (min-width: $xl){
             display: inline-block;
             margin-left: 23px;
         }
@@ -812,7 +809,7 @@ input.btn {
                 width: 450px;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 width: 700px;
             }
         }
@@ -898,7 +895,7 @@ input[type="checkbox"]:checked + .checker {
 .label {
     margin-right: 16px;
 
-    @media (min-width: $lg) {
+    @media (min-width: $xl) {
         margin-right: 24px;
     }
 
@@ -1145,7 +1142,7 @@ input, textarea {
         textarea {
             width: 100%;
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 font-weight: normal;
                 font-size: 24px;
                 line-height: 140%;
@@ -1155,14 +1152,14 @@ input, textarea {
         }
 
         input {
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 height: 80px;
                 padding: 24px 24px 24px 92px;
             }
         }
 
         textarea {
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 padding: 24px 24px 24px 92px;
             }
         }
@@ -1177,7 +1174,7 @@ input, textarea {
         color: $color-text-secondary;
         margin-bottom: 12px;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 18px;
         }
     }
@@ -1194,7 +1191,7 @@ input, textarea {
         top: -5px;
         left: 17px;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 120px;
             top: -33px;
             left: -7px;
@@ -1203,77 +1200,82 @@ input, textarea {
 }
 
 .slide-nums {
-width: 84px;
-height: 42px;
-display: flex;
-position: absolute;
-z-index: 1;
-
-&__current {
-    width: 42px;
-    height: 42px;
-}
-
-&__scrolled {
-    height: auto;
-    position: absolute;
-    top: 0;
-    transition: top .4s ease-out;
-}
-
-&__number {
-    width: 42px;
-    height: 42px;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 130%;
-    letter-spacing: 0.02em;
-    color: $color-accent;
-    transition: opacity .4s ease-out;;
-    text-align: right;
-    padding-top: 7px;
-    opacity: 0;
-
-    @media (min-width: $lg) {
-        font-size: 30px;
-        line-height: 140%;
-        padding-top: 5px;
-    }
-
-    &.active {
-        opacity: 1;
-    }
-}
-
-&__all {
-    width: 42px;
+    width: 84px;
     height: 42px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    position: absolute;
+    z-index: 1;
 
-    .number {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 160%;
-        color: $color-text-secondary;
-        justify-content: flex-start;
-        padding-bottom: 5px;
-        padding-left: 6px;
+    &__current {
+        width: 42px;
+        height: 42px;
+    }
+
+    &__scrolled {
+        height: 42px;
+        width: auto;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(0px);
+        transition: transform .5s ease-out;
+    }
+
+    &__number {
+        width: 42px;
+        height: 42px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-accent;
+        transition: opacity .2s linear;
+        text-align: right;
+        padding-top: 7px;
+        opacity: 0;
 
         @media (min-width: $lg) {
-            font-weight: 400;
-            padding-bottom: 0;
-            padding-left: 10px;
+            font-size: 30px;
+            line-height: 140%;
+            padding-top: 5px;
         }
 
-        &::before {
-            content: "/";
-            display: inline-block;
-            margin-right: 4px;
+        &.active {
+            opacity: 1;
+            transition: opacity .4s linear;
         }
     }
-}
+
+    &__all {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .number {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 160%;
+            color: $color-text-secondary;
+            justify-content: flex-start;
+            padding-bottom: 5px;
+            padding-left: 6px;
+
+            @media (min-width: $lg) {
+                font-weight: 400;
+                padding-bottom: 0;
+                padding-left: 10px;
+            }
+
+            &::before {
+                content: "/";
+                display: inline-block;
+                margin-right: 4px;
+            }
+        }
+    }
 }
 
 // Default props for animation elements
@@ -1333,7 +1335,7 @@ filter: grayscale(0) blur(0);
             margin: 1.75rem auto;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             max-width: 946px;
         }
     }
@@ -1355,7 +1357,7 @@ filter: grayscale(0) blur(0);
             padding: 96px 48px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             padding: 96px;
         }
     }
@@ -1392,7 +1394,7 @@ filter: grayscale(0) blur(0);
             margin-bottom: 16px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 30px;
             margin-bottom: 24px;
         }
@@ -1409,7 +1411,7 @@ filter: grayscale(0) blur(0);
             font-size: 16px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 18px;
             color: $color-text-primary;
         }
@@ -1429,7 +1431,7 @@ filter: grayscale(0) blur(0);
 
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             top: 48px;
             right: 48px;
         }

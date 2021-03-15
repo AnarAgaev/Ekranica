@@ -9,8 +9,8 @@ $(document).ready(function () {
 
             optsMobi = {
 
-                side: 7,
-                distance: 10,
+                side: 6,
+                distance: 11,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
@@ -22,7 +22,7 @@ $(document).ready(function () {
                 vanishPoint: {
 
                     x: wMobi / 2,
-                    y: hMobi / 2 - hMobi / 1.65
+                    y: hMobi / 2 - hMobi / 2
                 }
             },
 
@@ -89,12 +89,12 @@ $(document).ready(function () {
 
         // Animation for tablet
         let wTab = cTab.width = 700,
-            hTab = cTab.height = 1200,
+            hTab = cTab.height = 1000,
             ctxTab = cTab.getContext( '2d' ),
 
             optsTab = {
 
-                side: 9,
+                side: 7,
                 distance: 11,
                 depthZ: 100,
                 depthY: 70,
@@ -107,7 +107,7 @@ $(document).ready(function () {
                 vanishPoint: {
 
                     x: wTab / 2,
-                    y: hTab / 2 - hTab / 1.9
+                    y: hTab / 2 - hTab / 2
                 }
             },
 
@@ -173,14 +173,14 @@ $(document).ready(function () {
 
 
         // Animation for desktop
-        let wDesk = cDesk.width = 1100,
-            hDesk = cDesk.height = 1700,
+        let wDesk = cDesk.width = 1056, //1100,
+            hDesk = cDesk.height = 1500, //1700,
             ctxDesk = cDesk.getContext( '2d' ),
 
             optsDesk = {
 
                 side: 8,
-                distance: 14,
+                distance: 11,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
@@ -192,7 +192,7 @@ $(document).ready(function () {
                 vanishPoint: {
 
                     x: wDesk / 2,
-                    y: hDesk / 2 - hDesk / 2.1
+                    y: hDesk / 2 - hDesk / 2
                 }
             },
 

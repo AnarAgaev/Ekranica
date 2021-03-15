@@ -16,7 +16,7 @@
             margin-top: 0;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             padding-top: 134px;
         }
     }
@@ -42,7 +42,7 @@
             width: 300px; // 232px + 68px
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 440px; // 344px + 96px
         }
     }
@@ -57,7 +57,7 @@
             height: 121px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: 344px;
             height: 210px;
         }

@@ -5,7 +5,7 @@
         width: 100vw;
         position: relative;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             width: calc(90% + 100px);
             min-width: 1828px;
         }
@@ -23,7 +23,7 @@
             padding: 24px 6.25% 0;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             // одна карточка по ширине блока
             // боковые и нижний отступы по 50px для того чтобы не срезались тени,
             // заложены в размер конетйнера .container : ширира + 100px (два по 50px)
@@ -49,7 +49,7 @@
             margin-bottom: 34px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             //width: 816px;
             width: 42.5vw;
             height: 620px;
@@ -67,7 +67,7 @@
         flex: 1 0 auto;
         position: relative;
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             padding-left: 5.555555555555556%;
         }
     }
@@ -84,7 +84,7 @@
             left: 6.25%;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             top: 354px;
             left: auto;
             right: 250px;
@@ -106,7 +106,7 @@
             margin-bottom: 63px;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 60px;
             margin-bottom: 134px;
         }
@@ -129,7 +129,7 @@
 
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             font-size: 30px;
             line-height: 140%;
             color: #BDBDBD;
@@ -148,7 +148,7 @@
             order: 4;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             flex-direction: column;
             width: 474px;
         }
@@ -163,7 +163,7 @@
                 width: 50%;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 width: 100%;
                 font-weight: normal;
                 font-size: 14px;
@@ -179,7 +179,7 @@
             order: 5;
         }
 
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: flex;
             align-items: center;
             width: 550px;
@@ -189,7 +189,7 @@
         }
 
         .btn {
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 order: 2;
             }
         }
@@ -206,7 +206,7 @@
                 margin-left: 24px;
             }
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 font-size: 18px;
                 margin-left: 0;
                 margin-right: 48px;
