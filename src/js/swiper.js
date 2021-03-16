@@ -44,6 +44,7 @@ $(document).ready(function () {
     const bannerContSlider = new Swiper('#bannerContentSlider', {
         speed: 1500,
         parallax: true,
+        //autoHeight: true,
         navigation: {
             nextEl: '#btnSliderNext',
             prevEl: '#btnSliderPrev',

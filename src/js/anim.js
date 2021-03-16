@@ -3,8 +3,8 @@ import $ from "jquery";
 $(document).ready(function () {
     if ( $('.page-index')[0] ) {
         // Animation for mobile
-        let wMobi = cMob.width = 320,
-            hMobi = cMob.height = 500,
+        let wMobi = cMob.width = 500,
+            hMobi = cMob.height = 700,
             ctxMobi = cMob.getContext( '2d' ),
 
             optsMobi = {
@@ -87,6 +87,8 @@ $(document).ready(function () {
         animMobi();
 
 
+
+
         // Animation for tablet
         let wTab = cTab.width = 700,
             hTab = cTab.height = 1000,
@@ -95,7 +97,7 @@ $(document).ready(function () {
             optsTab = {
 
                 side: 7,
-                distance: 11,
+                distance: 14,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
@@ -172,15 +174,17 @@ $(document).ready(function () {
         animTab();
 
 
+
+
         // Animation for desktop
-        let wDesk = cDesk.width = 1056, //1100,
+        let wDesk = cDesk.width = 1000, //1100,
             hDesk = cDesk.height = 1500, //1700,
             ctxDesk = cDesk.getContext( '2d' ),
 
             optsDesk = {
 
                 side: 8,
-                distance: 11,
+                distance: 14,
                 depthZ: 100,
                 depthY: 70,
                 particleRadius: 1,
