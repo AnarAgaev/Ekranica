@@ -47,7 +47,8 @@ $(document).ready(function () {
         function showAnimElements (els) {
             let scrollTop = $(window).scrollTop();
             let windowHeight = $(window).height();
-            let pointOfDisplay = windowHeight / 1.2;
+            // let pointOfDisplay = windowHeight / 1.2;
+            let pointOfDisplay = windowHeight - 100; // 100px from bottom of the screen
 
             $(els).each(function () {
                 let offsetTopElement = $(this).offset().top;
@@ -83,15 +84,11 @@ $(document).ready(function () {
     }
 
     window.modalClose = function (el) {
-        let resetSourceId;
 
         if ( $(el).hasClass('modal') ) {
             $(el).removeClass('visible');
-            //
-            // resetSourceId = $(el).data('sourceReset');
         } else {
             $(el).closest('.modal').removeClass('visible');
-            // resetSourceId = $(el).closest('.modal').data('sourceReset');
         }
 
         $('body')
@@ -101,12 +98,6 @@ $(document).ready(function () {
         $('header.header').css({
             'paddingRight': '5vw',
         });
-
-        // Clean source if it's needed
-        // if (resetSourceId) {
-        //     $(resetSourceId)[0].reset();
-        //     $(resetSourceId + ' .controller').removeClass('valid input checked');
-        // }
     }
 
     // Handler click on btns close modal
