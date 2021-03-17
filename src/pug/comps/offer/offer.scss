@@ -44,7 +44,7 @@
 
         @for $i from 1 through 5 {
             &:nth-child(#{$i}) .offer__card {
-                transition-delay: 0.1s * $i;
+                transition-delay: 0.3s * $i;
             }
         }
     }

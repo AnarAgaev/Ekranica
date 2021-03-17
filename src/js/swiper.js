@@ -172,7 +172,7 @@ $(document).ready(function () {
     function enablePartnersChooseSlider() {
         if ($('#partnersChooseSlider')[0]) {
             partnersChooseSlider = new Swiper('#partnersChooseSlider', {
-                autoHeight: true,
+                //autoHeight: true,
                 slidesPerView: 'auto',
                 speed: 500,
                 breakpoints: {

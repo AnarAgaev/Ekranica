@@ -286,8 +286,14 @@
     }
 
     .lets-meet {
+        display: none;
+
         &::before {
             display: none;
+        }
+
+        @media (min-width: $lg) {
+            display: block;
         }
 
         @media (min-width: $xl) {
@@ -303,16 +309,14 @@
             color: $color-text-secondary;
             margin-bottom: 12px;
             margin-top: 4px;
-            transition: $anim-el;
-            background:
-                    linear-gradient($color-text-secondary 0%, $color-text-secondary 50%, $color-accent 50%, $color-accent 100%)
-                    center 0;
-            background-size: auto 500px;
-            -webkit-background-clip: text; /* Обрезаем фон по тексту */
-            -webkit-text-fill-color: transparent; /* Прозрачный текст */
+            opacity: 1;
+            transform: translateX(0);
+            transition: $anim-card;
+            transition-delay: .3s;
 
             &.animation-element {
-                background-position: center -250px;
+                opacity: 0;
+                transform: translateY(50px);
             }
 
             @media (min-width: $md) {
@@ -331,15 +335,17 @@
             font-weight: 400;
             font-size: 16px;
             line-height: 1.6;
+            transition: $transition;
 
             &-container {
                 opacity: 1;
                 transform: translateY(0);
-                transition: all 1.7s linear;
+                transition: $anim-card;
+                transition-delay: .5s;
 
                 &.animation-element {
                     opacity: 0;
-                    transform: translateY(-25px);
+                    transform: translateY(50px);
                 }
             }
 
@@ -354,7 +360,7 @@
                 border-right: 1px solid #AB78FF;
                 border-bottom: 1px solid #AB78FF;
                 transform: rotate(-45deg);
-                transition: all 0.2s ease-in-out;
+                transition: $transition;
             }
 
             &:hover::after {

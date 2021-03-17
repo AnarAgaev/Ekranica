@@ -2,12 +2,37 @@
 
 .callback {
 
+    .container,
+    .container-endless {
+        @media (min-width: $md) {
+            padding-left: 34px;
+        }
+
+        @media (min-width: $lg) {
+            padding-left: 0;
+        }
+    }
+
     .section__title {
         @extend .title-animation;
     }
 
     .section__link {
         @extend .title-link-animation;
+
+        @media (min-width: $md) {
+            display: inline-block;
+            margin-left: 24px;
+        }
+
+        @media (min-width: $lg) {
+        }
+
+        @media (min-width: $xl) {
+        }
+
+        @media (min-width: $xxl) {
+        }
     }
 
     &__title {
@@ -16,23 +41,29 @@
         line-height: 130%;
         letter-spacing: 0.02em;
         color: $color-text-secondary;
-        margin-top: 34px;
+        margin-top: 36px;
 
         transition-delay: 0.5s !important;
         @extend .title-animation;
 
         @media (min-width: $md) {
             font-weight: 700;
-            font-size: 24px;
-            margin-top: 48px;
-            max-width: 500px;
+            font-size: 30px;
+            line-height: 140%;
+            margin-top: 96px;
+            padding-right: 68px;
+        }
+
+        @media (min-width: $lg) {
+            padding-right: 400px;
         }
 
         @media (min-width: $xl) {
             font-size: 30px;
             line-height: 140%;
-            margin-top: 115px;
+            margin-top: 96px;
             max-width: 570px;
+            padding-right: 0;
         }
     }
 
@@ -49,11 +80,13 @@
 
         @media (min-width: $md) {
             width: auto;
+            font-size: 14px;
+            margin-top: 16px;
         }
 
         @media (min-width: $xl) {
             font-size: 14px;
-            margin-top: 37px;
+            margin-top: 24px;
         }
     }
 
@@ -66,12 +99,12 @@
         @extend .card-animation;
 
         @media (min-width: $md) {
-
+            margin-top: 68px;
         }
 
         @media (min-width: $xl) {
-            margin-top: 115px;
             flex-direction: row;
+            flex-wrap: wrap;
         }
     }
 
@@ -83,14 +116,14 @@
         .validator__cross {
             display: none;
 
-            @media (min-width: $xl) {
+            @media (min-width: $md) {
                 display: block;
             }
         }
     }
 
     .controller__input {
-        @media (min-width: $xl) {
+        @media (min-width: $md) {
             height: 90px;
             margin-bottom: 36px;
 
@@ -115,13 +148,6 @@
         @media (min-width: $xl) {
             width: 558px;
         }
-
-        .send-mail {
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 160%;
-            color: $color-text-inactive;
-        }
     }
 
     &__actions {
@@ -137,16 +163,24 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
+            margin-top: 12px;
         }
 
         @media (min-width: $xl) {
             flex-direction: column;
             align-items: flex-start;
+            margin-top: 0;
+            z-index: 1;
         }
 
         .btn {
+            margin-top: 34px;
+            order: 2;
 
-            margin-top: 24px;
+            @media (min-width: $md) {
+                margin-top: 0;
+                order: 1;
+            }
 
             @media (min-width: $xl) {
                 margin-top: 20px;
@@ -154,18 +188,45 @@
         }
 
         .privacy {
-            margin-top: 24px;
+            display: inline-block;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 160%;
+            color: $color-text-inactive;
+            margin-top: 10px;
+            order: 1;
 
             @media (min-width: $md) {
-                margin-left: 16px;
-                max-width: 450px;
+                order: 2;
+                margin-left: 24px;
+                margin-top: 0;
+                max-width: 376px;
+                font-size: 14px;
             }
-
 
             @media (min-width: $xl) {
                 margin-left: 0;
                 margin-top: 34px;
             }
+        }
+    }
+
+    .send-mail {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        margin-top: 16px;
+
+        @media (min-width: $md) {
+            margin-top: 34px;
+            font-size: 14px;
+        }
+
+        @media (min-width: $xl) {
+            display: block;
+            width: 100%;
+            margin-top: -23px;
         }
     }
 
@@ -176,29 +237,25 @@
 
         @extend .title-link-animation;
 
-        @media (min-width: 1440px) {
+        @media (min-width: $lg) {
             display: block;
-            top: 85px;
-            left: calc(50% + 50px);
+            top: 100px;
+            left: calc(50% + 220px);
         }
 
         @media (min-width: $xl) {
-            top: 86px;
-            left: calc(50% + 293px);
+            top: -64px;
+            left: calc(50% + 360px);
         }
 
         img {
-            width: 500px;
-            height: auto;
-            position: absolute;
-            top: -157px;
-            left: -7px;
+            width: 431px;
             max-width: none;
+            height: auto;
 
             @media (min-width: $xl) {
-                width: 640px;
+                width: 557px;
             }
         }
     }
-
 }

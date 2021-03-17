@@ -29,13 +29,11 @@ section.section.section_callback
                                 img.valid(src="/img/i-validator-check-valid.svg" alt="")
                                 img.invalid(src="/img/i-validator-check-invalid.svg" alt="")
 
-                        span.send-mail
-                            | Или напишите нам на адрес
-                            a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru
-
                     .callback__actions
                         button.btn.btn_primary(type="submit") Отправить номер
 
-                        span.privacy
-                            | Нажимая на кнопку “Отправить номер”, я даю согласие на
+                        span.privacy Нажимая на кнопку “Отправить номер”, я даю согласие на
                             a.revers(href="" target="_blank") обработку моих персональных данных
+
+                    span.send-mail Или напишите нам
+                        a(href="mailto:info@ekranika.ru") info@ekranika.ru

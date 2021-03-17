@@ -115,6 +115,7 @@
             left: 50%;
             top: 50%;
             transition: $transition;
+            border-radius: 1px;
         }
 
         &::before {
@@ -133,6 +134,7 @@
             top: 50%;
             background-color: $color-icons;
             transform: translate(-50%, -50%);
+            border-radius: 1px;
         }
 
         @media (min-width: $xl) {

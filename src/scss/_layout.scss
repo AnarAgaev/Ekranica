@@ -42,7 +42,7 @@ body {
 .main {
     flex: 1 0 auto;
     padding-top: 76px;
-    overflow-x: hidden;
+    overflow: hidden;
     max-width: 100vw;
 
     @media (min-width: $md) {
@@ -64,6 +64,10 @@ body {
         width: 87.5%;
     }
 
+    @media (min-width: $lg) {
+        width: 70.13177159590044%;
+    }
+
     @media (min-width: $xl) {
         width: 70%;
     }
@@ -79,13 +83,18 @@ body {
         margin-left: 6.25%;
     }
 
+    @media (min-width: $lg) {
+        width: 85.06588579795022%;
+        margin-left: 14.93411420204978%;
+    }
+
     @media (min-width: $xl) {
         width: 85%;
         margin-left: 15%;
     }
 }
 
-.container-endless-lg-fix {
+.container-endless-fix {
     position: relative;
     width: 92.5%;
     margin-left: 7.5%;
@@ -93,6 +102,11 @@ body {
     @media (min-width: $md) {
         width: 93.75%;
         margin-left: 6.25%;
+    }
+
+    @media (min-width: $lg) {
+        width: 85.06588579795022%;
+        margin-left: 14.93411420204978%;
     }
 
     @media (min-width: $xl) {
@@ -759,7 +773,7 @@ input.btn {
 
     &__link {
         display: block;
-        margin-top: 19px;
+        margin-top: 18px;
         line-height: 1.15;
         font-size: 16px;
 
@@ -895,7 +909,7 @@ input[type="checkbox"]:checked + .checker {
 .label {
     margin-right: 16px;
 
-    @media (min-width: $xl) {
+    @media (min-width: $md) {
         margin-right: 24px;
     }
 

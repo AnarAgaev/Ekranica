@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 
 
-            // !!!!!!!!!!!!!!!!!!!!!!!   Send date to server
+            // !!!!!!!!!!!!!!!!!!!!!!!   Send data to server
 
 
             modalOpen(this);
