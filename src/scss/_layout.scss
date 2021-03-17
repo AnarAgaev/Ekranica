@@ -228,6 +228,7 @@ a,
 a.link {
     text-decoration: none;
     color: $color-text-primary;
+    transition: $transition;
 
     &:hover {
         color: $color-accent
@@ -264,9 +265,8 @@ input.btn {
         padding: 14px 34px;
         height: 50px;
         font-weight: 500;
-        background: linear-gradient(343.22deg, #181932 -36.39%, #0F111E 72.73%);
         color: $color-text-primary;
-        background: $color-accent;
+        background-color: $color-accent;
         border: 2px solid $color-accent;
         box-shadow:
                 -14px -28px 40px rgba(35, 33, 58, 0.64),
@@ -275,8 +275,8 @@ input.btn {
                 inset -2px -2px 30px rgba(255, 255, 255, 0.2);
 
         &:hover {
-            background: #9A5BFF;
-            border: 2px solid #9A5BFF;
+            background-color: #9A5BFF;
+            border-color: #9A5BFF;
             box-shadow:
                     -8px -16px 30px rgba(35, 33, 58, 0.35),
                     8px 16px 30px rgba(4, 5, 14, 0.3),
@@ -285,33 +285,31 @@ input.btn {
         }
 
         &:active {
-            color: $color-text-inactive;
-            background: #5B4589;
-            border: 2px solid #5B4589;
+            color: $color-text-secondary;
+            background-color: #9A5BFF;
+            border-color: #9A5BFF;
             box-shadow:
-                    -14px -28px 40px rgba(35, 33, 58, 0.64),
-                    14px 28px 30px rgba(4, 5, 14, 0.64),
                     inset 5px 4px 10px rgba(49, 4, 38, 0.5),
                     inset -2px -2px 30px rgba(255, 255, 255, 0.2);
         }
 
         &:focus {
             color: $color-text-primary;
-            background: $color-accent;
-            border: 2px solid $color-accent;
+            background-color: $color-accent;
+            border-color: $color-accent;
             box-shadow:
+                    0 0 0 2px #9A5BFF,
                     -14px -28px 40px rgba(35, 33, 58, 0.64),
                     14px 28px 30px rgba(4, 5, 14, 0.64),
                     inset 5px 4px 10px rgba(49, 4, 38, 0.5),
-                    inset -2px -2px 30px rgba(255, 255, 255, 0.2),
-                    0 0 0 2px rgba(131,86,204,1);
+                    inset -2px -2px 30px rgba(255, 255, 255, 0.2);
         }
 
         &.inactive {
             cursor: default;
             color: $color-text-inactive;
             background: #5B4589;
-            border: 2px solid #5B4589;
+            border-color: #5B4589;
             box-shadow:
                     inset 5px 4px 10px rgba(49, 4, 38, 0.5),
                     inset -2px -2px 30px rgba(255, 255, 255, 0.2);
