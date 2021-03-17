@@ -958,39 +958,81 @@ margin-bottom: 24px;
 }
 
 .validator {
-width: 32px;
-height: 32px;
-margin-right: 16px;
-transition: $transition;
-position: relative;
-
-img {
-    width: 100px;
-    max-width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
     transition: $transition;
-}
+    position: relative;
+
+    img {
+        width: 100px;
+        max-width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: $transition;
+    }
 }
 
-.controller.valid {
-.validator__cross,
-.validator__check {
+.controller.checked.valid {
+    .validator__check {
+        display: block;
+    }
+
+    .validator__cross {
+        display: none;
+    }
+
+    .validator__cross,
+    .validator__check {
+        .valid {
+            opacity: 1;
+        }
+        .invalid {
+            opacity: 0
+        }
+    }
+}
+
+.controller.checked.invalid {
+    .validator__cross {
+        display: block;
+    }
+
+    .validator__check {
+        display: none;
+    }
+
+    .validator__cross,
+    .validator__check {
+        .valid {
+            opacity: 0;
+        }
+        .invalid {
+            opacity: 1;
+        }
+    }
+}
+
+// Default values
+.validator__cross {
+    display: none;
+
+    @media (min-width: $md) {
+        display: block !important;
+    }
+
     .valid {
         opacity: 1;
     }
     .invalid {
-        opacity: 0
+        opacity: 0;
     }
 }
-}
 
-.controller.invalid {
-.validator__cross,
 .validator__check {
     .valid {
         opacity: 0;
@@ -998,26 +1040,6 @@ img {
     .invalid {
         opacity: 1;
     }
-}
-}
-
-// Default values
-.validator__cross {
-.valid {
-    opacity: 1;
-}
-.invalid {
-    opacity: 0;
-}
-}
-
-.validator__check {
-.valid {
-    opacity: 0;
-}
-.invalid {
-    opacity: 1;
-}
 }
 
 // Error animation

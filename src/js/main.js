@@ -87,14 +87,12 @@ $(document).ready(function () {
 
         if ( $(el).hasClass('modal') ) {
             $(el).removeClass('visible');
-
-            resetSourceId = $(el).data('sourceReset');
+            //
+            // resetSourceId = $(el).data('sourceReset');
         } else {
             $(el).closest('.modal').removeClass('visible');
-            resetSourceId = $(el).closest('.modal').data('sourceReset');
+            // resetSourceId = $(el).closest('.modal').data('sourceReset');
         }
-
-        console.log('resetSourceId: ', resetSourceId)
 
         $('body')
             .removeClass('modal-open')
@@ -105,10 +103,10 @@ $(document).ready(function () {
         });
 
         // Clean source if it's needed
-        if (resetSourceId) {
-            $(resetSourceId)[0].reset();
-            $(resetSourceId + ' .controller').removeClass('valid');
-        }
+        // if (resetSourceId) {
+        //     $(resetSourceId)[0].reset();
+        //     $(resetSourceId + ' .controller').removeClass('valid input checked');
+        // }
     }
 
     // Handler click on btns close modal

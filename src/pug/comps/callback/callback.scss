@@ -112,14 +112,6 @@
         input {
             width: 224px;
         }
-
-        .validator__cross {
-            display: none;
-
-            @media (min-width: $md) {
-                display: block;
-            }
-        }
     }
 
     .controller__input {
