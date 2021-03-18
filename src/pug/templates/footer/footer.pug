@@ -1,3 +1,11 @@
+.footer__logotype
+    a.logo(href="/")
+        img(src="/img/logo.svg" alt="")
+
+    span.designed
+        | Дизайн -
+        a.revers(href="https://www.behance.net/maltsevoleg" target="_blank") Олег Мальцев
+
 .footer__content
 
     .footer__contacts
@@ -28,35 +36,36 @@
                             path(fill-rule="evenodd" clip-rule="evenodd" d="M7 12L12 9L7 6V12Z" stroke="#80758F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                             path(d="M12.378 1.25H5.625C3.20897 1.25 1.25 3.20897 1.25 5.625V12.378C1.25 14.7925 3.20747 16.75 5.622 16.75H12.378C14.7924 16.75 16.75 14.7927 16.75 12.3787V5.622C16.75 3.20747 14.7925 1.25 12.378 1.25Z" stroke="#80758F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
-        a.logo(href="/")
-            img(src="/img/footer-mob-logo.svg" alt="")
 
+        a.logo(href="/")
+            img.logo-mob(src="/img/footer-mob-logo.svg" alt="")
+            img.logo-desc(src="/img/logo.svg" alt="")
     .nav
         ul.nav__list
             li.nav__item
-                a(href="") Калькулятор
+                a(href="") Продукция на заказ
+            li.nav__item
+                a(href="") Портфолио
             li.nav__item
                 a(href="") Сертификаты
             li.nav__item
-                a(href="") Продукция на заказ
-            li.nav__item
-                a(href="") Прошивки
-            li.nav__item
                 a(href="") Готовые решения
+            li.nav__item
+                a(href="") База знаний
             li.nav__item
                 a(href="") Оплата
             li.nav__item
                 a(href="") Услуги
             li.nav__item
+                a(href="") Прошивки
+            li.nav__item
                 a(href="") Гарантии
             li.nav__item
-                a(href="") Портфолио
-            li.nav__item
-                a(href="") Контакты
-            li.nav__item
-                a(href="") База знаний
+                a(href="") Калькулятор
             li.nav__item
                 a(href="") О компании
+            li.nav__item
+                a(href="") Контакты
 
 .footer__copyright
     span.content Любое использование, либо копирование материалов сайта, элементов дизайна и оформления может осуществляться лишь с разрешения автора
