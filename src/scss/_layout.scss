@@ -1007,23 +1007,23 @@ input[type="checkbox"]:checked + .checker {
 }
 
 .controller {
-display: flex;
-align-items: center;
-width: 100%;
-margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
 
-&__input {
-    height: 46px;
-    z-index: 1;
-}
+    &__input {
+        height: 46px;
+        z-index: 1;
+    }
 
-&__check {
-    z-index: 5;
-}
+    &__check {
+        z-index: 5;
+    }
 
-@media (min-width: $md) {
-    margin-bottom: 34px;
-}
+    @media (min-width: $md) {
+        margin-bottom: 34px;
+    }
 }
 
 .validator {
@@ -1072,7 +1072,9 @@ margin-bottom: 24px;
     }
 
     .validator__check {
-        display: none;
+        @media (max-width: $md - 1) {
+            display: none;
+        }
     }
 
     .validator__cross,
@@ -1535,6 +1537,9 @@ filter: grayscale(0) blur(0);
     &-img {
         display: none;
         width: 198px;
+        opacity: 0;
+        transform: translateY(-25px) scale(0.5);
+        transition: $anim-title;
 
         @media (min-width: $md) {
            display: block;
@@ -1555,6 +1560,11 @@ filter: grayscale(0) blur(0);
         .modal__dialog {
             transform: translate(0, 0);
             transition: transform .7s cubic-bezier(0, 0.55, 0.45, 1);
+        }
+
+        .modal-img {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
     }
 }
