@@ -18,6 +18,10 @@
         padding: 0 6.25vw;
     }
 
+    @media (min-width: $lg) {
+        padding: 0 4.978038067349927vw;
+    }
+
     @media (min-width: $xl) {
         padding: 0 5vw;
     }
@@ -49,18 +53,14 @@
     &.nav-visible {
 
         .nav-toggler {
-            background: $color-back-secondary;
-            box-shadow:
-                    -14px -28px 30px rgba(35, 33, 58, 0.35),
-                    14px 28px 30px rgba(4, 5, 14, 0.3),
-                    inset 4px 4px 24px rgba(4, 2, 19, 0.5),
-                    inset -4px -4px 24px rgba(255, 255, 255, 0.06);
-
             &::before, &::after {
                 content: "";
                 display: block;
-                background-color: $color-text-inactive;
                 top: 50%;
+
+                @media (min-width: $md) {
+                    background-color: $color-text-inactive;
+                }
             }
 
             &::before {
@@ -82,10 +82,11 @@
             &__item {
                 transform: translateX(0);
                 opacity: 1;
+                transition: all 0.8s cubic-bezier(0, 0.55, 0.45, 1);
 
                 @for $i from 1 through 15 {
                     &:nth-child(#{$i}) {
-                        transition-delay: calc(#{$i} * 0.05s);
+                        transition-delay: 0.1s * $i;
                     }
                 }
             }
@@ -98,24 +99,29 @@
         background: transparent;
         border-radius: 50%;
         position: relative;
-        box-shadow:
-                -14px -28px 30px rgba(35, 33, 58, 0),
-                14px 28px 30px rgba(4, 5, 14, 0),
-                inset 4px 4px 24px rgba(4, 2, 19, 0),
-                inset -4px -4px 24px rgba(255, 255, 255, 0);
+        background: $color-back-secondary;
         transition: $transition;
+        box-shadow:
+                -14px -28px 30px rgba(35, 33, 58, 0.35),
+                14px 28px 30px rgba(4, 5, 14, 0.3),
+                inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                inset -4px -4px 24px rgba(255, 255, 255, 0.06);
 
         &::before, &::after {
             content: "";
             display: block;
             width: 18px;
             height: 2px;
-            background-color: $color-icons;
+            background-color: $color-accent;
             position: absolute;
             left: 50%;
             top: 50%;
             transition: $transition;
             border-radius: 1px;
+
+            @media (min-width: $md) {
+                background-color: $color-text-primary;
+            }
         }
 
         &::before {
@@ -132,12 +138,16 @@
             height: 2px;
             left: 50%;
             top: 50%;
-            background-color: $color-icons;
+            background-color: $color-accent;
             transform: translate(-50%, -50%);
             border-radius: 1px;
+
+            @media (min-width: $md) {
+                background-color: $color-text-primary;
+            }
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             display: none;
         }
     }
@@ -150,9 +160,30 @@
             width: 215px;
         }
 
+        @media (min-width: $lg) {
+            margin-right: 4.978038067349927vw;
+        }
+
         @media (min-width: $xl) {
-            margin-right: 118px;
-            margin-top: -10px;
+            margin-right: 6.145833333333333vw;
+        }
+
+        .logo-desc {
+            display: none;
+
+            @media (min-width: $md) {
+                display: block;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: -11px;
+            }
+        }
+
+        .logo-mob {
+            @media (min-width: $md) {
+                display: none;
+            }
         }
     }
 
@@ -168,7 +199,7 @@
         width: 100%;
         background: $color-back-primary;
         padding: 0 7.5%;
-        transition: $transition;
+        transition: all .3s;
 
         &__list {
             left: 0;
@@ -176,23 +207,22 @@
             display: block;
             height: auto;
             padding: 16px 0 34px;
-
-            //@media (min-width: $xxl) {
-            //    display: flex;
-            //    justify-content: center;
-            //
-            //    //justify-content: space-between;
-            //}
         }
 
         &__item {
             margin-right: 0;
             margin-bottom: 24px;
             height: auto;
-            transform: translateX(-25px);
+            transform: translateX(-20px);
             opacity: 0;
             transition: all .2s;
             transition-delay: 0s;
+
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                &:nth-child(n + 5) {
+                    display: none;
+                }
+            }
 
             a {
                 font-size: 14px;
@@ -200,7 +230,6 @@
                 display: inline-block;
                 height: 100%;
                 font-weight: 500;
-                color: $color-text-secondary;
             }
 
             &.dropdown {
@@ -260,7 +289,7 @@
                     color: $color-accent;
                 }
 
-                @media (min-width: $xl) {
+                @media (min-width: $lg) {
                     display: none;
                 }
             }
@@ -310,13 +339,7 @@
                 line-height: 1.6;
                 color: $color-text-secondary;
                 margin-bottom: 8px;
-                margin-left: 20px;
-            }
-
-            &:last-child {
-                a {
-                    margin-bottom: 0;
-                }
+                margin-left: 24px;
             }
 
             &_caption a {
@@ -325,6 +348,80 @@
                 color: $color-text-primary;
                 margin-bottom: 16px;
                 margin-left: 0;
+            }
+
+            &:last-child a {
+                @media (max-width: $lg - 1) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .nav__points {
+            display: none;
+            margin: 0;
+
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                display: block;
+            }
+
+            .dropsection {
+                padding: 40px 0 34px calc(4.978038067349927vw + 215px + 4.978038067349927vw);
+            }
+
+            .nav__droplist {
+                padding-top: 9px;
+                padding-left: 76px;
+                margin-left: 355px;
+            }
+
+            .nav__droplist::before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 6px;
+                height: 100%;
+                max-height: 0;
+                top: 50%;
+                left: 0;
+                background: $color-back-secondary;
+                box-shadow:
+                        inset -2px -2px 3px rgba(35, 33, 58, 0.5),
+                        inset 2px 2px 3px rgba(0, 2, 12, 0.5),
+                        -5px -5px 30px rgba(54, 38, 66, 0.30),
+                        5px 5px 30px rgba(4, 5, 14, 0.4);
+                border-radius: 12px;
+                transition: all .9s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .nav__points-btn {
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: auto;
+
+                &::before,
+                &::after {
+                    content: "";
+                }
+
+                span,
+                &::before,
+                &::after {
+                    display: block;
+                    position: relative;
+                    width: 3px;
+                    height: 3px;
+                    background: $color-text-secondary;
+                    border-radius: 50%;
+                    padding: 0;
+                    margin: 0 3px 0 0;
+                    top: auto;
+                    right: auto;
+                    transform: none;
+                    border: none;
+                }
             }
         }
     }
@@ -341,15 +438,7 @@
         }
     }
 
-    @media (min-width: $xl) {
-        .nav {
-            top: 124px;
-            padding: 0 88px;
-            height: calc(100% - 124px);
-        }
-    }
-
-    @media (min-width: $xl) {
+    @media (min-width: $lg) {
         .nav {
             flex: 1 0 auto;
             height: 100%;
@@ -372,7 +461,7 @@
             }
 
             &__item {
-                margin-right: 36px;
+                margin-right: 26px;
                 margin-bottom: 0;
                 height: 100%;
                 transform: initial !important;
@@ -413,6 +502,14 @@
                         border-color: $color-accent
                     }
                 }
+
+                &.nav__points:hover .nav__points-btn {
+                    span,
+                    &::before,
+                    &::after {
+                        background-color: $color-accent;
+                    }
+                }
             }
 
             .dropsection {
@@ -420,7 +517,8 @@
                 display: flex;
                 flex-direction: row;
                 align-items: stretch;
-                padding: 49px 0 49px 425px;
+                // Padding left is padding-left for header + width for logotype + margin-right for logotype
+                padding: 54px 0 49px calc(4.978038067349927vw + 215px + 4.978038067349927vw);
                 position: fixed;
                 left: -9999px;
                 transition: left 0s linear .1s, transform .1s ease-out, opacity .1s linear;
@@ -439,19 +537,19 @@
                 margin-bottom: 0;
 
                 &:first-child {
-                    width: 292px;
+                    width: 264px;
                     padding-left: 0;
                 }
 
                 &:nth-child(2) {
-                    width: 406px;
-                    padding-left: 96px;
+                    width: 351px;
+                    padding-left: 67px;
                     padding-right: 40px;
                 }
 
                 &:last-child {
-                    width: 300px;
-                    padding-left: 97px;
+                    width: 290px;
+                    padding-left: 68px;
 
                     &::after {
                         display: none;
@@ -516,7 +614,8 @@
                     transition: left 0s linear 0s, transform .2s ease-out, opacity .2s linear
                 }
 
-                .nav__droplist::after {
+                .nav__droplist::after,
+                .nav__droplist::before {
                     max-height: 100%;
                     top: 0;
                 }
@@ -529,13 +628,67 @@
         }
     }
 
+    @media (min-width: $xl) {
+        .nav {
+            &__item {
+                margin-right: 36px;
+            }
+
+            &__droplist {
+                &:first-child {
+                    width: 292px;
+                }
+
+                &:nth-child(2) {
+                    width: 406px;
+                    padding-left: 96px;
+                }
+
+                &:last-child {
+                    width: 300px;
+                    padding-left: 97px;
+                }
+            }
+
+            .dropsection {
+                padding-left: calc(5vw + 215px + 6.145833333333333vw);
+            }
+        }
+    }
+
+    &__action-group {
+        display: flex;
+        align-items: center;
+        z-index: 1;
+    }
+
     &__btns-group {
         display: none;
 
-        @media (min-width: $xl) {
+        @media (min-width: $md) {
+            display: block;
+        }
+
+        @media (min-width: $lg) {
             display: flex;
             justify-content: flex-end;
             align-items: center;
+        }
+
+        .btn_ghost {
+            display: none;
+
+            @media (min-width: $lg) {
+                display: flex;
+            }
+        }
+
+        .btn_calltoaction {
+            margin-right: 34px;
+
+            @media (min-width: $lg) {
+                margin-right: 0;
+            }
         }
     }
 }

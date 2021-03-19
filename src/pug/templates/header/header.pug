@@ -1,5 +1,6 @@
 a.header__logo(href="/")
-    img(src="/img/logo.svg" alt="")
+    img.logo-mob(src="/img/mob-logo.svg" alt="")
+    img.logo-desc(src="/img/logo.svg" alt="")
 
 .nav
     ul.nav__list
@@ -52,12 +53,30 @@ a.header__logo(href="/")
             a(href="") Наши работы
         li.nav__item
             a(href="") Оплата и доставка
+
+        // Все пункты меню полсе 3-го, кроме
+        // кнопок Калькулятор и Оформить заявку
+        // дополнительно дублируем в выпадющее меню
+        li.nav__item.nav__points.dropdown
+            a.nav__points-btn(href="")
+                span
+            .dropsection
+                ul.nav__droplist
+                    li.nav__dropitem
+                        a(href="#") База знаний
+                    li.nav__dropitem
+                        a(href="#") О нас
+                    li.nav__dropitem
+                        a(href="#") Контакты
+
         li.nav__item
             a(href="") База знаний
         li.nav__item
             a(href="") О нас
         li.nav__item
             a(href="") Контакты
+
+        // Эти пункты меню должны присутствовать в единственном числе
         li.nav__item.nav__item_icon
             .icon.icon_calc
                 img(src="/img/i-calc-signs.svg" alt="")
@@ -67,15 +86,16 @@ a.header__logo(href="/")
                 img(src="/img/i-mail.svg" alt="")
             a(href="") Оформить заявку
 
-.nav-toggler#navToggler
-    span
+.header__action-group
+    .header__btns-group
+        .btn.btn_ghost
+            .icon-pic
+                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M1 3.1H5.2M3.1 5.2V1M10.8 3.1H15M11.5 15H15M11.5 11.5H15M1 11.5L4.5 15M1 15L4.5 11.5" stroke="#AB78FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+            span Калькулятор
+        .btn.btn_calltoaction Оформить заявку
 
-.header__btns-group
-    .btn.btn_ghost
-        .icon-pic
-            svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                path(d="M1 3.1H5.2M3.1 5.2V1M10.8 3.1H15M11.5 15H15M11.5 11.5H15M1 11.5L4.5 15M1 15L4.5 11.5" stroke="#AB78FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
-        span Калькулятор
-    .btn.btn_calltoaction Оформить заявку
+    .nav-toggler#navToggler
+        span
 
 span#navLine

@@ -5,7 +5,7 @@ import './js/anim';
 import './js/main';
 import './js/loading-bar.min';
 import './pug/templates/header/header';
-import './pug/templates/footer/footer';
+// import './pug/templates/footer/footer';
 import './pug/comps/faq/faq';
 import './pug/pages/index/index';
 import './pug/comps/callback/callback';
