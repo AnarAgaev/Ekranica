@@ -1420,28 +1420,26 @@ filter: grayscale(0) blur(0);
     background-color: rgba(0,0,0,.5);
     backdrop-filter: blur(0);
     display: flex;
-    align-items: flex-start;
-    transition: left 0s linear .15s, opacity .15s linear 0s, backdrop-filter .15s linear 0s;
-
-    @media (min-width: $md) {
-        align-items: center;
-    }
+    align-items: center;
+    transition:
+            left 0s linear .15s,
+            opacity .15s linear 0s,
+            backdrop-filter .15s linear 0s;
 
     &__dialog {
-        margin: 7.5vw;
         position: relative;
-        width: calc(100% - 15vw);
+        width: 272px;
+        margin: 1.75rem auto;
         pointer-events: none;
         transform: translate(0, -25px);
         transition: transform .15s linear;
 
         @media (min-width: $md) {
-            max-width: 768px;
-            margin: 1.75rem auto;
+            width: 414px;
         }
 
-        @media (min-width: $xl) {
-            max-width: 946px;
+        @media (min-width: $lg) {
+            width: 621px;
         }
     }
 
@@ -1453,17 +1451,20 @@ filter: grayscale(0) blur(0);
         pointer-events: auto;
         background-clip: padding-box;
         outline: 0;
-        background: $color-back-primary;
-        border: 1px solid #382359;
-        border-radius: 34px;
-        padding: 68px 24px 48px;
+        padding: 24px 16px;
+        border-radius: 12px;
+        background: linear-gradient(318.46deg, #1C1D30 -26.8%, #0B0D19 91.86%);
+        box-shadow:
+                -5px -5px 20px rgba(35, 33, 58, 0.35),
+                5px 5px 20px rgba(4, 5, 14, 0.8);
+
 
         @media (min-width: $md) {
-            padding: 96px 48px;
+            padding: 48px 68px;
         }
 
-        @media (min-width: $xl) {
-            padding: 96px;
+        @media (min-width: $lg) {
+            padding: 64px 68px;
         }
     }
 
@@ -1476,31 +1477,33 @@ filter: grayscale(0) blur(0);
     &__body {
         position: relative;
         flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__footer {
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__title {
-        font-weight: 500;
-        font-size: 20px;
+        font-weight: bold;
+        font-size: 24px;
         line-height: 130%;
-        letter-spacing: 0.02em;
-        color: $color-text-secondary;
-        margin-bottom: 12px;
         text-align: center;
+        letter-spacing: 0.02em;
+        color: $color-text-primary;
+        margin-bottom: 12px;
 
         @media (min-width: $md) {
-            font-weight: bold;
-            font-size: 40px;
-            line-height: 140%;
-            color: $color-text-primary;
             margin-bottom: 16px;
         }
 
-        @media (min-width: $xl) {
-            font-size: 30px;
+        @media (min-width: $lg) {
+            font-size: 40px;
+            line-height: 140%;
             margin-bottom: 24px;
         }
     }
@@ -1509,69 +1512,37 @@ filter: grayscale(0) blur(0);
         font-weight: normal;
         font-size: 14px;
         line-height: 160%;
-        color: $color-text-inactive;
         text-align: center;
+        color: $color-text-primary;
+        margin-bottom: 38px;
+        padding: 0 5.882352941176471%;
 
         @media (min-width: $md) {
-            font-size: 16px;
+            margin-bottom: 4px;
+            padding: 0;
+        }
+
+        @media (min-width: $lg) {
+            font-size: 18px;
+            line-height: 160%;
+            margin-bottom: 18px;
         }
 
         @media (min-width: $xl) {
-            font-size: 18px;
-            color: $color-text-primary;
         }
     }
 
-    &__close {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        background-color: transparent;
-        top: 19px;
-        right: 24px;
-        cursor: pointer;
-        transition: transform .5s cubic-bezier(0, 0.55, 0.45, 1);
+    &-img {
+        display: none;
+        width: 198px;
 
         @media (min-width: $md) {
-
+           display: block;
+            margin-bottom: 4px;
         }
 
-        @media (min-width: $xl) {
-            top: 48px;
-            right: 48px;
-        }
-
-        &:hover {
-            transform: rotate(180deg);
-
-            &::before, &::after {
-                background-color: $color-accent;
-            }
-        }
-
-        &::before, &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 18px;
-            height: 1px;
-            background-color: #F6F0FF;
-            box-shadow:
-                    0px 0px 16px rgba(255, 255, 255, 0.48),
-                    -14px -28px 30px rgba(35, 33, 58, 0.15),
-                    14px 28px 30px rgba(4, 5, 14, 0.3),
-                    -6px -6px 30px rgba(35, 33, 58, 0.15),
-                    6px 6px 30px rgba(0, 2, 12, 0.3);
-        }
-
-        &::before {
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        &::after {
-            transform: translate(-50%, -50%) rotate(-45deg);
+        @media (min-width: $lg) {
+            margin-bottom: 18px;
         }
     }
 
@@ -1583,7 +1554,7 @@ filter: grayscale(0) blur(0);
 
         .modal__dialog {
             transform: translate(0, 0);
-            transition: transform 1s cubic-bezier(0, 0.55, 0.45, 1);
+            transition: transform .7s cubic-bezier(0, 0.55, 0.45, 1);
         }
     }
 }
