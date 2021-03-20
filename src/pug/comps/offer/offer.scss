@@ -11,21 +11,22 @@
     }
 
     &__list {
-        padding-top: 34px;
+        padding-top: 40px; // для того чтобы не срезались тени и карточки 34-тень + 16-смещение картинки
+        margin-top: -24px; // для того чтобы компенсировать padding-top - смещение картинки на 16px
         margin-bottom: -38px; // Компенсируем padding-bottom: 38px; у слайда, для того чтобы не срезалась тень
 
         @media (min-width: $md) {
-            padding-top: 68px;
+            margin-top: -6px;
         }
 
         @media (min-width: $xl) {
-            padding-top: 134px;
+            padding-top: 0;
+            margin-top: 0;
         }
     }
 
     &__slide {
         width: 216px; // 200px + 16px
-        padding-top: 35px;
         padding-bottom: 38px;
         height: auto;
 
@@ -33,7 +34,8 @@
             width: 406px; // 358px + 48px
         }
 
-        @media (min-width: 1440px) {
+
+        @media (min-width: $lg) {
             width: 426px; // 358px + 68px
         }
 
@@ -139,10 +141,14 @@
             margin-top: 0;
         }
 
+        @media (min-width: $lg) {
+            padding-left: 8px;
+        }
+
         @media (min-width: $xl) {
             font-size: 30px;
             line-height: 1.4;
-            margin-top: -39px;
+            margin-top: -40px;
             padding-left: 12px;
         }
     }
@@ -156,7 +162,11 @@
 
         @media (min-width: $md) {
             font-size: 14px;
-            margin-top: 18px;
+            margin-top: 16px;
+        }
+
+        @media (min-width: $lg) {
+            padding-left: 8px;
         }
 
         @media (min-width: $xl) {
@@ -167,9 +177,17 @@
 }
 
 #btnOfferSliderPrev {
-    margin-top: 60px;
+    margin-top: 0;
+
+    @media (min-width: $xl) {
+        margin-top: -6px;
+    }
 }
 
 #btnOfferSliderNext {
-    margin-top: -40px;
+    margin-top: -102px;
+
+    @media (min-width: $xl) {
+        margin-top: -108px;
+    }
 }

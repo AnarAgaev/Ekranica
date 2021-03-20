@@ -16,8 +16,6 @@ body.page-index  {
     }
 
     .section {
-        position: relative;
-
         &_slider {
             margin-top: 0;
         }
@@ -26,39 +24,27 @@ body.page-index  {
             z-index: 3;
 
             @media (min-width: $md) {
-                margin-top: 221px;
+                margin-top: -38px;
             }
 
             @media (min-width: $xl) {
-                margin-top: 273px;
-            }
-        }
-
-        &_list {
-            margin-top: 52px;
-
-            @media (min-width: $md) {
-                margin-top: 95px;
-            }
-
-            @media (min-width: $xl) {
-                margin-top: 228px;
+                margin-top: -129px;
             }
         }
 
         &_projects {
-            h2 {
-                @media (min-width: $md) {
-                    width: 368px;
-                }
-
-                @media (min-width: $xl) {
-                    width: 687px;
-                }
-            }
+            //h2 {
+            //    @media (min-width: $md) {
+            //        width: 368px;
+            //    }
+            //
+            //    @media (min-width: $xl) {
+            //        width: 687px;
+            //    }
+            //}
 
             @media (min-width: $md) {
-                margin-top: 330px;
+                margin-top: 216px;
             }
 
             @media (min-width: $xl) {
@@ -66,75 +52,75 @@ body.page-index  {
             }
         }
 
-        &_work {
-            h2 {
-                @media (min-width: $md) {
-                    width: 444px;
-                }
-
-                @media (min-width: $xl) {
-                    width: 582px;
-                }
-            }
-
-            @media (min-width: $md) {
-                margin-top: 153px;
-            }
-
-            @media (min-width: $xl) {
-                margin-top: 260px;
-            }
-        }
-
-        &_clients {
-            margin-top: 115px;
-
-            @media (min-width: $md) {
-                margin-top: 312px;
-            }
-
-            @media (min-width: $xl) {
-                margin-top: 392px;
-            }
-        }
-
-        &_feedback {
-            margin-top: 48px;
-
-            @media (min-width: $md) {
-                margin-top: 86px;
-            }
-
-            @media (min-width: $xl) {
-                margin-top: 216px;
-            }
-        }
-
-        &_callback {
-            margin-top: 74px;
-
-            @media (min-width: $md) {
-                margin-top: 242px;
-            }
-
-            @media (min-width: $xl) {
-                margin-top: 333px;
-            }
-        }
-
-        &_faq {
-            margin-top: 144px;
-
-            @media (min-width: $md) {
-                margin-top: 232px;
-                margin-bottom: 45px;
-            }
-
-            @media (min-width: $xl) {
-                margin-top: 275px;
-                margin-bottom: 134px;
-            }
-        }
+        //&_work {
+        //    h2 {
+        //        @media (min-width: $md) {
+        //            width: 444px;
+        //        }
+        //
+        //        @media (min-width: $xl) {
+        //            width: 582px;
+        //        }
+        //    }
+        //
+        //    @media (min-width: $md) {
+        //        margin-top: 153px;
+        //    }
+        //
+        //    @media (min-width: $xl) {
+        //        margin-top: 260px;
+        //    }
+        //}
+        //
+        //&_clients {
+        //    margin-top: 115px;
+        //
+        //    @media (min-width: $md) {
+        //        margin-top: 312px;
+        //    }
+        //
+        //    @media (min-width: $xl) {
+        //        margin-top: 392px;
+        //    }
+        //}
+        //
+        //&_feedback {
+        //    margin-top: 48px;
+        //
+        //    @media (min-width: $md) {
+        //        margin-top: 86px;
+        //    }
+        //
+        //    @media (min-width: $xl) {
+        //        margin-top: 216px;
+        //    }
+        //}
+        //
+        //&_callback {
+        //    margin-top: 74px;
+        //
+        //    @media (min-width: $md) {
+        //        margin-top: 242px;
+        //    }
+        //
+        //    @media (min-width: $xl) {
+        //        margin-top: 333px;
+        //    }
+        //}
+        //
+        //&_faq {
+        //    margin-top: 144px;
+        //
+        //    @media (min-width: $md) {
+        //        margin-top: 232px;
+        //        margin-bottom: 45px;
+        //    }
+        //
+        //    @media (min-width: $xl) {
+        //        margin-top: 275px;
+        //        margin-bottom: 134px;
+        //    }
+        //}
     }
 
     &.loading {
@@ -201,6 +187,10 @@ body.page-index  {
             }
         }
     }
+}
+
+.section_slider {
+    margin-top: 0;
 }
 
 .slider {

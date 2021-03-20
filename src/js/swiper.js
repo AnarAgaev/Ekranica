@@ -138,8 +138,7 @@ $(document).ready(function () {
         }
     });
 
-
-    const breakpointXL = window.matchMedia ('(min-width: 1860px)');
+    const breakpointXL = window.matchMedia ('(min-width: 1366px)');
     let partnersChooseSlider,
         rentListSlider,
         workOrderSlider,
@@ -174,14 +173,9 @@ $(document).ready(function () {
     function enablePartnersChooseSlider() {
         if ($('#partnersChooseSlider')[0]) {
             partnersChooseSlider = new Swiper('#partnersChooseSlider', {
-                //autoHeight: true,
+                observer: true,
                 slidesPerView: 'auto',
                 speed: 500,
-                breakpoints: {
-                    768: {
-                        autoHeight: false,
-                    },
-                },
             });
         }
     }

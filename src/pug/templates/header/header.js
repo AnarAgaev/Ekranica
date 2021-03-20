@@ -41,4 +41,9 @@ $(document).ready(function () {
             parent.click();
         }
     });
+
+
+    $('.nav__points-btn').on('click', function (e) {
+        e.preventDefault();
+    });
 });
