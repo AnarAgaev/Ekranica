@@ -33,22 +33,16 @@ body.page-index  {
         }
 
         &_projects {
-            //h2 {
-            //    @media (min-width: $md) {
-            //        width: 368px;
-            //    }
-            //
-            //    @media (min-width: $xl) {
-            //        width: 687px;
-            //    }
-            //}
-
             @media (min-width: $md) {
                 margin-top: 216px;
             }
 
+            @media (min-width: $lg) {
+                margin-top: 209px;
+            }
+
             @media (min-width: $xl) {
-                margin-top: 327px;
+                margin-top: 329px;
             }
         }
 

@@ -4,6 +4,14 @@
 
     .section__title {
         @extend .title-animation;
+
+        @media (min-width: $md) {
+            width: 450px;
+        }
+
+        @media (min-width: $xl) {
+            width: 687px;
+        }
     }
 
     .section__link {
@@ -11,19 +19,10 @@
     }
 
     &__list {
-        padding-top: 48px;
-        padding-bottom: 70px;
-        margin-bottom: -55px;
-
-        @media (min-width: $md) {
-            padding-top: 68px;
-            margin-bottom: -35px;
-        }
-
-        @media (min-width: $xl) {
-            padding-top: 134px;
-            margin-bottom: 0;
-        }
+        padding-top: 50px;
+        margin-top: -50px;
+        padding-bottom: 68px;
+        margin-bottom: -68px;
     }
 
     &__slide {
@@ -39,7 +38,7 @@
             width: 512px; // 464px + 48px
         }
 
-        @media (min-width: 1440px) {
+        @media (min-width: $lg) {
             width: 532px; // 464px + 68px
         }
 
@@ -200,10 +199,18 @@
     }
 
     #btnProjectsPrev {
-        margin-top: 18px;
+        margin-top: 23px;
+
+        @media (min-width: $xl) {
+            margin-top: -23px;
+        }
     }
 
     #btnProjectsNext {
-        margin-top: -85px;
+        margin-top: -78px;
+
+        @media (min-width: $xl) {
+            margin-top: -126px;
+        }
     }
 }
