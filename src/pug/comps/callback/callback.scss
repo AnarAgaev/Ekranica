@@ -41,7 +41,7 @@
         line-height: 130%;
         letter-spacing: 0.02em;
         color: $color-text-secondary;
-        margin-top: 36px;
+        margin-top: -13px;
 
         transition-delay: 0.5s !important;
         @extend .title-animation;
@@ -61,7 +61,7 @@
         @media (min-width: $xl) {
             font-size: 30px;
             line-height: 140%;
-            margin-top: 96px;
+            margin-top: -38px;
             max-width: 570px;
             padding-right: 0;
         }
