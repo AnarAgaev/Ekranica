@@ -14,13 +14,8 @@
         display: flex;
         flex-direction: column;
         margin-top: 48px;
-        margin-bottom: 8px;
 
         @extend .card-animation;
-
-        @media (min-width: $md) {
-            margin-bottom: 0;
-        }
 
         @media (min-width: $xl) {
             margin-top: 134px;
@@ -30,18 +25,22 @@
     &__item {
         display: none;
         width: 100%;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 130%;
-        letter-spacing: 0.02em;
-        text-align: left;
         border-radius: 12px;
-        color: $color-text-secondary;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
+        background: $color-back-primary;
+        padding: 12px;
+        box-shadow:
+                -5px -5px 20px rgba(35, 33, 58, 0.35),
+                5px 5px 20px rgba(4, 5, 14, 0.8),
+                inset 24px 24px 110px rgba(4, 2, 19, 0.5),
+                inset -24px -24px 110px rgba(255, 255, 255, 0.06);
         transform: translateY(25px);
         opacity: 0;
-        background-color: transparent;
-        transition: opacity .5s ease-out, transform .5s ease-out, background-color .2s, box-shadow .2s;
+        transition:
+                opacity .5s ease-out,
+                transform .5s ease-out,
+                background-color .2s,
+                box-shadow .2s;
 
         @for $i from 1 through 20 {
             &:nth-child(#{$i}) {
@@ -50,24 +49,17 @@
         }
 
         @media (min-width: $md) {
-            padding: 16px 24px;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 160%;
-            background: $color-back-primary;
+            margin-bottom: 24px;
+            padding: 24px 34px;
             box-shadow:
                     -14px -14px 40px rgba(35, 33, 58, 0.35),
                     16px 5px 40px rgba(4, 5, 14, 0.6);
+        }
+
+        @media (min-width: $lg) {
+            padding: 34px;
 
             &:hover {
-                box-shadow:
-                        -14px -14px 40px rgba(35, 33, 58, 0.35),
-                        16px 5px 40px rgba(4, 5, 14, 0.6),
-                        inset 24px 24px 110px rgba(4, 2, 19, 0.5),
-                        inset -24px -24px 110px rgba(255, 255, 255, 0.06);
-            }
-
-            &.visible {
                 box-shadow:
                         -14px -14px 40px rgba(35, 33, 58, 0.35),
                         16px 5px 40px rgba(4, 5, 14, 0.6),
@@ -77,14 +69,17 @@
         }
 
         @media (min-width: $xl) {
-            padding: 0 48px;
-            font-weight: 700;
-            font-size: 30px;
-            line-height: 140%;
+            padding: 48px;
             margin-bottom: 34px;
         }
 
         &.visible {
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6),
+                    inset 24px 24px 110px rgba(4, 2, 19, 0.5),
+                    inset -24px -24px 110px rgba(255, 255, 255, 0.06);
+
             .faq__description{
                 opacity: 1;
             }
@@ -94,7 +89,7 @@
                     transform: translateX(2px) rotate(45deg);
                     z-index: 1;
 
-                    @media (min-width: $xl) {
+                    @media (min-width: $md) {
                         transform: translateX(6px) rotate(45deg);
                     }
                 }
@@ -103,7 +98,7 @@
                     transform: translateX(-2px) rotate(-45deg);
                     z-index: 2;
 
-                    @media (min-width: $xl) {
+                    @media (min-width: $md) {
                         transform: translateX(-6px) rotate(-45deg);
                     }
                 }
@@ -126,7 +121,17 @@
         border-radius: 50%;
         position: absolute;
         top: calc(50% - 12px);
-        right: 0;
+        right: -3px;
+
+        @media (min-width: $md) {
+            top: calc(50% - 14px);
+            right: 0;
+        }
+
+        @media (min-width: $xl) {
+            top: calc(50% - 16px);
+            right: -13px;
+        }
 
         &::before, &::after {
             content: "";
@@ -139,8 +144,9 @@
             top: 50%;
             border-radius: 999px;
             left: calc(50% - 3px);
+            box-shadow: -2px -2px 5px #726C77, 2px 2px 5px #00020C;
 
-            @media (min-width: $xl) {
+            @media (min-width: $md) {
                 left: calc(50% - 12px);
                 width: 20px;
                 height: 3px;
@@ -156,7 +162,7 @@
             transform: translateX(-2px) rotate(45deg);
             z-index: 2;
 
-            @media (min-width: $xl) {
+            @media (min-width: $md) {
                 transform: translateX(-6px) rotate(45deg);
             }
         }
@@ -165,23 +171,49 @@
             transform: translateX(2px) rotate(-45deg);
             z-index: 1;
 
-            @media (min-width: $xl) {
+            @media (min-width: $md) {
                 transform: translateX(6px) rotate(-45deg);
             }
         }
     }
 
     &__caption {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: $color-text-secondary;
         cursor: pointer;
         position: relative;
-        padding-right: 40px;
+        padding-right: 24px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin-top: -12px;
+        margin-bottom: -12px;
 
         @media (min-width: $md) {
-
+            font-weight: bold;
+            font-size: 24px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            margin-top: -24px;
+            margin-bottom: -24px;
         }
 
         @media (min-width: $xl) {
-            padding: 48px 96px 48px 0;
+            padding-top: 34px;
+            padding-bottom: 34px;
+            margin-top: -34px;
+            margin-bottom: -34px;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 30px;
+            line-height: 140%;
         }
     }
 
@@ -190,66 +222,93 @@
         max-height: 0;
         height: auto;
         opacity: 0;
-        padding-left: 10px;
-        margin-left: -10px;
 
         p {
             font-weight: 400;
-            font-size: 16px;
+            font-size: 12px;
             line-height: 160%;
             color: $color-text-inactive;
-            margin: 24px 0;
+            margin: 8px 0;
 
             @media (min-width: $md) {
-                &:first-child {
-                    margin-top: 0;
-                }
+                font-size: 14px;
+            }
 
-                &:last-child {
-                    margin-bottom: 0;
-                }
+            @media (min-width: $xl) {
+                font-size: 16px;
+                margin: 12px 0;
             }
         }
 
         ul {
-            margin: 34px 0;
 
             li {
-                padding-left: 25px;
                 margin: 24px 0;
 
                 span {
                     display: block;
                     font-weight: 400;
-                    font-size: 16px;
+                    font-size: 12px;
                     line-height: 160%;
                     color: $color-text-secondary;
+                    opacity: 0.8;
                     position: relative;
+                    padding-left: 18px;
+
+                    @media (min-width: $md) {
+                        font-size: 14px;
+                    }
+
+                    @media (min-width: $xl) {
+                        font-size: 16px;
+                        padding-left: 25px;
+                    }
 
                     &::before {
                         content: "";
                         position: absolute;
-                        top: 10px;
-                        left: -24px;
+                        top: 5px;
+                        left: 0;
 
                         @extend .point;
+
+                        @media (min-width: $xl) {
+                            top: 8px;
+                        }
                     }
                 }
 
-                p {
-                    margin: 12px 0;
+                @media (min-width: $md) {
+                    &:first-child span:first-child {
+                        margin-top: 34px;
+                    }
+                }
+
+                @media (min-width: $xl) {
+                    &:first-child span:first-child {
+                        margin-top: 36px;
+                    }
+
+                    p {
+                        padding-left: 25px;
+                    }
                 }
             }
         }
 
         &-body {
+            padding-top: 28px;
+
             @media (min-width: $md) {
-                padding-top: 16px;
+                padding-top: 50px;
+            }
+
+            @media (min-width: $lg) {
+                padding-top: 35px;
             }
 
             @media (min-width: $xl) {
-                padding-top: 20px;
-                padding-bottom: 48px;
+                padding-top: 56px;
             }
         }
 
@@ -260,28 +319,37 @@
             align-items: flex-start;
 
             @media (min-width: $md) {
+                flex-direction: row;
+                align-items: flex-end;
+                margin-top: 34px;
+                margin-bottom: 10px;
+            }
 
+            @media (min-width: $lg) {
+                align-items: center;
+                margin-bottom: 0;
             }
 
             @media (min-width: $xl) {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: -48px;
-                margin-bottom: 24px;
+                margin-top: 36px;
             }
 
             p {
                 color: $color-text-secondary;
                 margin-top: 0;
+
+                @media (min-width: $md) {
+                    margin: 0;
+                }
             }
 
             .btn {
-                margin-bottom: 24px;
+                margin-top: 8px;
 
-                @media (min-width: $xl) {
+                @media (min-width: $md) {
                     flex: 1 0 auto;
-                    margin-left: 48px;
+                    margin-top: 0;
+                    margin-left: 24px;
                 }
             }
         }
@@ -289,87 +357,57 @@
 
     &__more {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
+        height: 76px;
+        box-shadow:
+            -5px -5px 20px rgba(35, 33, 58, 0.35),
+            5px 5px 20px rgba(4, 5, 14, 0.8),
+            inset 24px 24px 110px rgba(4, 2, 19, 0.5),
+            inset -24px -24px 110px rgba(255, 255, 255, 0.06);
+        background: $color-back-primary;
+        border-radius: 12px;
         font-size: 20px;
         font-weight: 500;
         line-height: 130%;
         letter-spacing: 0.02em;
-        border-radius: 12px;
         color: $color-text-secondary;
         transition: background-color .2s, box-shadow .2s;
-        padding: 16px 0;
-        box-shadow:
-                -14px -14px 40px rgba(35, 33, 58, 0.35),
-                16px 5px 40px rgba(4, 5, 14, 0.6);
-
+        padding: 0 12px;
 
         .points {
+            .point {
                 display: none;
 
-                .point {
-                    margin-right: 12px;
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
+                &:first-child {
+                    display: block;
                 }
 
                 @media (min-width: $md) {
-                    display: flex;
-
-                    &_left {
-                        margin-left: 24px;
-                    }
-
-                    &_right {
-                        margin-right: 24px;
-                    }
-                }
-
-                @media (min-width: $xl) {
-                    &_left {
-                        margin-left: 48px;
-                    }
-
-                    &_right {
-                        margin-right: 48px;
-                    }
+                    display: block !important;
+                    margin-right: 8px;
                 }
             }
-
-        .icon {
-            width: 16px;
-            height: 32px;
-            margin-right: 12px;
-            position: relative;
 
             @media (min-width: $md) {
-                display: none;
+                display: flex;
             }
-
-            img {
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 98px;
-                height: 130px;
-                max-width: none;
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        &.roll-up .icon {
-            transform: scale(1, -1);
         }
 
         @media (min-width: $md) {
-            justify-content: space-between;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 160%;
+            height: 90px;
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            font-weight: bold;
+            font-size: 24px;
+            padding: 0 34px;
+        }
+
+        @media (min-width: $lg) {
+            height: 110px;
+            cursor: pointer;
 
             &:hover {
                 box-shadow:
@@ -381,11 +419,10 @@
         }
 
         @media (min-width: $xl) {
-            padding: 48px 0;
-            font-weight: 700;
+            height: 138px;
             font-size: 30px;
             line-height: 140%;
-            cursor: pointer;
+            padding: 0 48px;
         }
     }
 }
