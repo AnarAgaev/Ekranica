@@ -18,27 +18,68 @@
         position: absolute;
         overflow: hidden;
         width: 100%;
-        transform: scale(-1, 1);
         display: none;
         z-index: -1;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% 100%;
 
         @media (min-width: $md) {
             display: block;
-            bottom: -350px;
+            bottom: -595px;
+            height: 685px;
+            transform: scale(-1, 1);
+            background-image: url("/img/divider-content-768.png");
         }
 
-        @media (min-width: 1024px) {
-            bottom: -420px;
+        @media (min-width: $lg) {
+            bottom: -550px;
+            height: 571px;
+            transform: none;
+            background-image: url("/img/divider-content-1366.png");
         }
 
         @media (min-width: $xl) {
-            bottom: -920px;
-            transform: translateY(-50%) scale(1, 1);
+            bottom: -640px;
+            background-image: url("/img/divider-content-1920.png");
         }
 
         @media (min-width: $xxl) {
-            bottom: -1150px;
+            bottom: -830px;
+            height: 800px;
         }
+
+
+
+
+
+
+
+
+
+        //position: absolute;
+        //overflow: hidden;
+        //width: 100%;
+        //display: none;
+        //z-index: -1;
+        //
+        //@media (min-width: $md) {
+        //    display: block;
+        //    bottom: -350px;
+        //}
+        //
+        //@media (min-width: 1024px) {
+        //    bottom: -420px;
+        //}
+        //
+        //@media (min-width: $xl) {
+        //    bottom: -920px;
+        //    transform: translateY(-50%) scale(1, 1);
+        //}
+        //
+        //@media (min-width: $xxl) {
+        //    bottom: -1150px;
+        //}
     }
 
     &__list__wrap {

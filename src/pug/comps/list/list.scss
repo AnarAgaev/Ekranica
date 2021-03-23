@@ -24,37 +24,32 @@
         width: 100%;
         display: none;
         z-index: -1;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% 100%;
 
         @media (min-width: $md) {
-            bottom: -265px;
             display: block;
-        }
-
-        @media (min-width: 1024px) {
-            bottom: -365px;
+            bottom: -540px;
+            height: 685px;
+            background-image: url("/img/divider-content-768.png");
         }
 
         @media (min-width: $lg) {
-            bottom: -420px;
-        }
-
-        @media (min-width: 1600px) {
-            bottom: -490px;
+            bottom: -550px;
+            height: 571px;
+            background-image: url("/img/divider-content-1366.png");
         }
 
         @media (min-width: $xl) {
             bottom: -640px;
+            background-image: url("/img/divider-content-1920.png");
         }
 
         @media (min-width: $xxl) {
-            bottom: -790px;
+            bottom: -830px;
+            height: 800px;
         }
-    }
-
-    &__background-wrap {
-        position: relative;
-        width: 100%;
-        left: 0;
     }
 
     &__list__wrap {

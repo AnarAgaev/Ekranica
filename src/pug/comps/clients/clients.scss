@@ -7,18 +7,10 @@
     }
 
     &__list {
-        padding-top: 34px;
-        padding-bottom: 48px;
-        margin-top: 14px;
-
-        @media (min-width: $md) {
-            padding-top: 68px;
-            margin-top: 0;
-        }
-
-        @media (min-width: $xl) {
-            padding-top: 134px;
-        }
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: -40px;
+        margin-bottom: -40px;
     }
 
     &__slide {
@@ -31,15 +23,11 @@
         }
 
         @media (min-width: $md) {
-            width: 256px; // 232px + 24px
+            width: 336px; // 288px + 48px
         }
 
-        @media (min-width: 1024px) {
-            width: 280px; // 232px + 48px
-        }
-
-        @media (min-width: 1440px) {
-            width: 300px; // 232px + 68px
+        @media (min-width: $lg) {
+            width: 412px; // 344px + 68px
         }
 
         @media (min-width: $xl) {
@@ -53,11 +41,11 @@
         position: relative;
 
         @media (min-width: $md) {
-            width: 232px;
-            height: 121px;
+            width: 288px;
+            height: 176px;
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
             width: 344px;
             height: 210px;
         }
@@ -75,8 +63,14 @@
         background-color: $color-back-primary;
         border-radius: 12px;
         box-shadow:
-                -14px -14px 40px rgba(35, 33, 58, 0.35),
-                16px 5px 40px rgba(4, 5, 14, 0.6);
+                -5px -5px 20px rgba(35, 33, 58, 0.35),
+                5px 5px 20px rgba(4, 5, 14, 0.8);
+
+        @media (min-width: $md) {
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+        }
 
         @extend .card-animation;
 
@@ -93,18 +87,20 @@
             }
         }
 
-        &:hover {
-            path {
-                fill: $color-accent;
+        @media (min-width: $lg) {
+            &:hover {
+                path {
+                    fill: $color-accent;
+                }
             }
         }
     }
 
     #btnClientsSliderPrev {
-        margin-top: 57px;
+        margin-top: 16px;
     }
 
     #btnClientsSliderNext {
-        margin-top: -45px;
+        margin-top: -87px;
     }
 }

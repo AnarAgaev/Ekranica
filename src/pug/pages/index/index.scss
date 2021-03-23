@@ -46,18 +46,20 @@ body.page-index  {
             }
         }
 
-        //&_clients {
-        //    margin-top: 115px;
-        //
-        //    @media (min-width: $md) {
-        //        margin-top: 312px;
-        //    }
-        //
-        //    @media (min-width: $xl) {
-        //        margin-top: 392px;
-        //    }
-        //}
-        //
+        &_clients {
+            @media (min-width: $md) {
+                margin-top: 284px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 201px;
+            }
+
+            @media (min-width: $xl) {
+                margin-top: 326px;
+            }
+        }
+
         //&_feedback {
         //    margin-top: 48px;
         //
@@ -230,30 +232,36 @@ body.page-index  {
         position: absolute;
         overflow: hidden;
         width: 100%;
-        transform: translateY(-50%);
         display: none;
         z-index: 2;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% 100%;
+
 
         @media (min-width: $md) {
-            top: 750px;
             display: block;
+            top: 560px;
+            height: 600px;
+            background-image: url("/img/divider-slider-768.png");
         }
 
         @media (min-width: $lg) {
-            top: 786px;
+            top: 345px;
+            height: 764px;
+            background-image: url("/img/divider-slider-1366.png");
         }
 
         @media (min-width: $xl) {
-            top: 1082px;
+            top: 690px;
+            height: 785px;
+            background-image: url("/img/divider-slider-1920.png");
         }
 
         @media (min-width: $xxl) {
-            top: 1150px;
+            top: 630px;
+            height: 1037px;
         }
-    }
-
-    &__mask-wrap {
-        position: relative;
     }
 
     &__controll {
