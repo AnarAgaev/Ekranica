@@ -198,14 +198,8 @@ $(document).ready(function () {
     function enableWorkOrderSlider() {
         if ($('#workOrder')[0]) {
             workOrderSlider = new Swiper('#workOrder', {
-                autoHeight: true,
                 slidesPerView: 'auto',
                 speed: 500,
-                breakpoints: {
-                    768: {
-                        autoHeight: false,
-                    },
-                }
             });
         }
     }

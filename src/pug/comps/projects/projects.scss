@@ -21,8 +21,15 @@
     &__list {
         padding-top: 50px;
         margin-top: -50px;
-        padding-bottom: 68px;
-        margin-bottom: -68px;
+        padding-bottom: 16px;
+
+        @media (min-width: $md) {
+            padding-bottom: 34px;
+        }
+
+        @media (min-width: $xl) {
+            padding-bottom: 66px;
+        }
     }
 
     &__slide {
@@ -199,7 +206,7 @@
     }
 
     #btnProjectsPrev {
-        margin-top: 23px;
+        margin-top: 40px;
 
         @media (min-width: $xl) {
             margin-top: -23px;
@@ -207,7 +214,7 @@
     }
 
     #btnProjectsNext {
-        margin-top: -78px;
+        margin-top: -62px;
 
         @media (min-width: $xl) {
             margin-top: -126px;
