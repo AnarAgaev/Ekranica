@@ -693,7 +693,7 @@ input.btn {
             background-repeat: no-repeat;
             background-position: center;
 
-            @media (min-width: $xl) {
+            @media (min-width: $md) {
                 background-size: 50%;
             }
         }
@@ -708,7 +708,7 @@ input.btn {
             opacity: 0;
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $md) {
             width: 98px;
             height: 98px;
             border-width: 3px;

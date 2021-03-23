@@ -60,30 +60,20 @@ body.page-index  {
             }
         }
 
-        //&_feedback {
-        //    margin-top: 48px;
-        //
-        //    @media (min-width: $md) {
-        //        margin-top: 86px;
-        //    }
-        //
-        //    @media (min-width: $xl) {
-        //        margin-top: 216px;
-        //    }
-        //}
-        //
-        //&_callback {
-        //    margin-top: 74px;
-        //
-        //    @media (min-width: $md) {
-        //        margin-top: 242px;
-        //    }
-        //
-        //    @media (min-width: $xl) {
-        //        margin-top: 333px;
-        //    }
-        //}
-        //
+        &_callback {
+            @media (min-width: $md) {
+                margin-top: 312px;
+            }
+
+            @media (min-width: $lg) {
+                margin-top: 302px;
+            }
+
+            @media (min-width: $xl) {
+                margin-top: 578px;
+            }
+        }
+
         //&_faq {
         //    margin-top: 144px;
         //
