@@ -183,14 +183,8 @@ $(document).ready(function () {
     function enableRentListSlider() {
         if ($('#rentList')[0]) {
             rentListSlider = new Swiper('#rentList', {
-                autoHeight: true,
                 slidesPerView: 'auto',
                 speed: 500,
-                breakpoints: {
-                    768: {
-                        autoHeight: false,
-                    },
-                },
             });
         }
     }
