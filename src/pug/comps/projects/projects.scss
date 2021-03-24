@@ -35,12 +35,6 @@
     &__slide {
         width: 216px; // 200px + 16px
 
-        @for $i from 1 through 3 {
-            &:nth-child(#{$i}) .projects__card {
-                transition-delay: 0.5s * $i;
-            }
-        }
-
         @media (min-width: $md) {
             width: 512px; // 464px + 48px
         }

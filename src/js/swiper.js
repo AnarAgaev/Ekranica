@@ -86,7 +86,7 @@ $(document).ready(function () {
         },
     });
 
-    new Swiper('#projectsList', {
+    new Swiper('#projectsSlider', {
         slidesPerView: 'auto',
         speed: 500,
         navigation: {
@@ -118,8 +118,8 @@ $(document).ready(function () {
         slidesPerView: 'auto',
         speed: 500,
         navigation: {
-            nextEl: '#btntypesSliderNext',
-            prevEl: '#btntypesSliderPrev',
+            nextEl: '#btnTypesSliderNext',
+            prevEl: '#btnTypesSliderPrev',
         },
         on: {
             reachEnd: function () {
