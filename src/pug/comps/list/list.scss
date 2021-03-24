@@ -69,7 +69,12 @@
         margin-top: -25px;
         padding-top: 25px;
 
-        @media (min-width: $md) {
+        @media (min-width: $lg) {
+            margin-bottom: -68px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: -96px;
         }
     }
 

@@ -33,19 +33,19 @@
         }
 
         @media (min-width: $lg) {
-            bottom: -550px;
+            bottom: -618px;
             height: 571px;
             transform: none;
             background-image: url("/img/divider-content-1366.png");
         }
 
         @media (min-width: $xl) {
-            bottom: -640px;
+            bottom: -737px;
             background-image: url("/img/divider-content-1920.png");
         }
 
         @media (min-width: $xxl) {
-            bottom: -830px;
+            bottom: -927px;
             height: 800px;
         }
     }
@@ -64,6 +64,11 @@
 
         @media (min-width: $lg) {
             overflow: initial;
+            margin-bottom: -68px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: -97px;
         }
     }
 
@@ -331,7 +336,7 @@
     &__day {
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         font-weight: 500;
         font-size: 14px;
         line-height: 160%;
@@ -375,6 +380,7 @@
         }
 
         @media (min-width: $md) {
+            align-items: center;
             font-weight: normal;
             line-height: 130%;
             letter-spacing: 0.02em;

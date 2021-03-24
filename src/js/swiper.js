@@ -201,14 +201,8 @@ $(document).ready(function () {
     function enableWorkRentSlider() {
         if ($('#workRent')[0]) {
             workRentSlider = new Swiper('#workRent', {
-                autoHeight: true,
                 slidesPerView: 'auto',
                 speed: 500,
-                breakpoints: {
-                    768: {
-                        autoHeight: false,
-                    },
-                }
             });
         }
     }
