@@ -53,7 +53,7 @@
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i}) .feedback__card {
-                transition-delay: 0.5s * $i;
+                transition-delay: 0.3s * $i;
             }
         }
 

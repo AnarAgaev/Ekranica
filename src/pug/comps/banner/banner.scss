@@ -1,34 +1,33 @@
 @import "../../../scss/variables";
 
 .section_banner {
-    .container {
-        width: 100vw;
-        position: relative;
+    margin-top: 0;
 
-        @media (min-width: $xl) {
-            width: calc(90% + 100px);
-            min-width: 1828px;
-        }
+    .container {
+        width: 100%;
+        position: relative;
     }
 }
 
 .banner {
 
+    padding-bottom: 50px;
+    margin-bottom: -50px;
+
     &__slide {
-        // padding: 30px 24px 0;
-        padding: 30px 7.5% 0;
+        padding: 16px 7.5% 0;
 
         @media (min-width: $md) {
-            // padding: 24px 48px 0;
             padding: 24px 6.25% 0;
         }
 
-        @media (min-width: $xl) {
-            // одна карточка по ширине блока
-            // боковые и нижний отступы по 50px для того чтобы не срезались тени,
-            // заложены в размер конетйнера .container : ширира + 100px (два по 50px)
-            padding: 96px 50px 50px;
+        @media (min-width: $lg) {
+            padding: 48px 4.978038067349927% 0;
             display: flex;
+        }
+
+        @media (min-width: $xl) {
+            padding: 96px 5vw 0;
         }
     }
 
@@ -44,16 +43,21 @@
         16px 5px 40px rgba(4, 5, 14, 0.6);
 
         @media (min-width: $md) {
-            width: 672px;
             height: 378px;
             margin-bottom: 34px;
         }
 
-        @media (min-width: $xl) {
-            //width: 816px;
-            width: 42.5vw;
-            height: 620px;
+        @media (min-width: $lg) {
+            width: 48.69918699186992%;
+            height: 556px;
             margin-bottom: 0;
+            flex: 1 0 auto;
+        }
+
+        @media (min-width: $xl) {
+            width: 47.69140853302162%;
+            height: 620px;
+            flex: none;
             box-shadow: -14px -28px 30px rgba(35, 33, 58, 0.15),
             14px 28px 30px rgba(4, 5, 14, 0.3),
             -6px -6px 30px rgba(35, 33, 58, 0.15),
@@ -67,6 +71,12 @@
         flex: 1 0 auto;
         position: relative;
 
+        @media (min-width: $lg) {
+            padding-left: 48px;
+            flex: auto;
+            display: block;
+        }
+
         @media (min-width: $xl) {
             padding-left: 5.555555555555556%;
         }
@@ -74,7 +84,7 @@
 
     .slide-nums {
         position: absolute;
-        top: 223px;
+        top: 209px;
         left: 7.5%;
         margin-left: -15px;
         z-index: 1;
@@ -84,10 +94,16 @@
             left: 6.25%;
         }
 
-        @media (min-width: $xl) {
-            top: 354px;
+        @media (min-width: $lg) {
+            top: 44px;
+            right: calc(4.978038067349927% - 5px);
             left: auto;
-            right: 250px;
+        }
+
+        @media (min-width: $xl) {
+            top: 356px;
+            left: auto;
+            right: calc(5vw + 183px);
         }
     }
 
@@ -106,9 +122,13 @@
             margin-bottom: 63px;
         }
 
+        @media (min-width: $lg) {
+            margin-bottom: 34px;
+        }
+
         @media (min-width: $xl) {
             font-size: 60px;
-            margin-bottom: 134px;
+            margin-bottom: 138px;
         }
     }
 
@@ -127,6 +147,11 @@
             width: 280px;
             order: 3;
 
+        }
+
+        @media (min-width: $lg) {
+            width: auto;
+            margin-bottom: 24px;
         }
 
         @media (min-width: $xl) {
@@ -148,6 +173,10 @@
             order: 4;
         }
 
+        @media (min-width: $lg) {
+            flex-direction: column;
+        }
+
         @media (min-width: $xl) {
             flex-direction: column;
             width: 474px;
@@ -161,10 +190,23 @@
 
             @media (min-width: $md) {
                 width: 50%;
+
+                &:first-child {
+                    padding-right: 80px;
+                }
+
+                &:last-child {
+                    padding-left: 12px;
+                }
+            }
+
+            @media (min-width: $lg) {
+                width: 100%;
+                font-size: 14px;
+                padding: 0 !important;
             }
 
             @media (min-width: $xl) {
-                width: 100%;
                 font-weight: normal;
                 font-size: 14px;
                 color: #636363;
@@ -179,18 +221,24 @@
             order: 5;
         }
 
-        @media (min-width: $xl) {
-            display: flex;
-            align-items: center;
-            width: 550px;
+        @media (min-width: $lg) {
             position: absolute;
             bottom: 0;
             right: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (min-width: $xl) {
+            right: -16px;
         }
 
         .btn {
-            @media (min-width: $xl) {
+            margin-right: 24px;
+
+            @media (min-width: $lg) {
                 order: 2;
+                margin-right: 0;
             }
         }
 
@@ -203,13 +251,11 @@
 
             @media (min-width: $md) {
                 margin-top: 0;
-                margin-left: 24px;
             }
 
-            @media (min-width: $xl) {
+            @media (min-width: $lg) {
                 font-size: 18px;
-                margin-left: 0;
-                margin-right: 48px;
+                margin-right: 34px;
                 order: 1;
             }
         }
@@ -219,15 +265,43 @@
     #btnBannerProjectsPrev,
     #btnBannerProjectsNext {
         left: auto;
-        margin-top: -53px;
         z-index: 1;
+        top: 331px;
+
+        @media (max-width: $xl - 1) {
+            width: 48px;
+            height: 48px;
+            top: 124px;
+
+            &:before {
+                width: 13px;
+                height: 13px;
+                top: 0;
+            }
+        }
     }
 
     #btnBannerProjectsPrev {
-        right: 149px;
+        right: calc(5vw + 85px);
+
+        @media (max-width: $xl - 1) {
+            right: 141px;
+
+            &:before {
+                left: 3px;
+            }
+        }
     }
 
     #btnBannerProjectsNext {
-        right: 48px;
+        right: calc(5vw - 17px);
+
+        @media (max-width: $xl - 1) {
+            right: 68px;
+
+            &:before {
+                left: -3px;
+            }
+        }
     }
 }
