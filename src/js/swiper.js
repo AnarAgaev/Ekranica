@@ -139,68 +139,36 @@ $(document).ready(function () {
     });
 
     const breakpointXL = window.matchMedia ('(min-width: 1366px)');
-    let partnersChooseSlider,
-        rentListSlider,
-        workOrderSlider,
-        workRentSlider;
+    let listSlider, workSlider;
 
     function breakpointXLChecker() {
         if ( breakpointXL.matches === true ) {
-            if ( partnersChooseSlider !== undefined ) {
-                partnersChooseSlider.destroy(true, true);
+            if ( listSlider !== undefined ) {
+                listSlider.destroy(true, true);
             }
 
-            if ( workOrderSlider !== undefined ) {
-                workOrderSlider.destroy(true, true);
-            }
-
-            if ( rentListSlider !== undefined ) {
-                rentListSlider.destroy(true, true);
-            }
-
-            if ( workRentSlider !== undefined ) {
-                workRentSlider.destroy(true, true);
+            if ( workSlider !== undefined ) {
+                workSlider.destroy(true, true);
             }
 
         } else if ( breakpointXL.matches === false ) {
-            enablePartnersChooseSlider();
-            enableWorkOrderSlider();
-            enableRentListSlider();
-            enableWorkRentSlider();
+            enableListSlider();
+            enableWorkSlider();
         }
     }
 
-    function enablePartnersChooseSlider() {
-        if ($('#partnersChooseSlider')[0]) {
-            partnersChooseSlider = new Swiper('#partnersChooseSlider', {
-                observer: true,
+    function enableListSlider() {
+        if ($('#listSlider')[0]) {
+            listSlider = new Swiper('#listSlider', {
                 slidesPerView: 'auto',
                 speed: 500,
             });
         }
     }
 
-    function enableRentListSlider() {
-        if ($('#rentList')[0]) {
-            rentListSlider = new Swiper('#rentList', {
-                slidesPerView: 'auto',
-                speed: 500,
-            });
-        }
-    }
-
-    function enableWorkOrderSlider() {
-        if ($('#workOrder')[0]) {
-            workOrderSlider = new Swiper('#workOrder', {
-                slidesPerView: 'auto',
-                speed: 500,
-            });
-        }
-    }
-
-    function enableWorkRentSlider() {
-        if ($('#workRent')[0]) {
-            workRentSlider = new Swiper('#workRent', {
+    function enableWorkSlider() {
+        if ($('#workSlider')[0]) {
+            workSlider = new Swiper('#workSlider', {
                 slidesPerView: 'auto',
                 speed: 500,
             });
