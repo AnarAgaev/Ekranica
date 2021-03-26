@@ -59,7 +59,7 @@ $(document).ready(function () {
     bannerPicSlider.controller.control = bannerContSlider;
     bannerContSlider.controller.control = bannerPicSlider;
 
-    new Swiper('#rentBanner', {
+    new Swiper('#contentBanner', {
         speed: 500,
         parallax: true,
         navigation: {

@@ -1,0 +1,93 @@
+section.section.section_projects
+    .projects
+        .container
+
+            h2.section__title.animation-element
+                span.title Реализованные проекты
+                span.section__link.animation-element
+                    a.revers(href="") Смотреть портфолио
+
+        .container-endless
+            .endless.projects__list.swiper-container#projectsSlider
+                .projects__list__wrap.swiper-wrapper
+
+                    .projects__slide.swiper-slide
+                        a.projects__card.animation-element(href="")
+                            .projects__place
+                                // Если не указан город, добавлять к .location класс .empty-city
+
+                                .location.empty-city Парк отель «‎Орловский»
+                            .projects__params
+                                .screen
+                                    | Экран 13,11 м
+                                    sup 2
+                                .pixels Шаг пикселя 2,5 мм
+                            .projects__pic
+                                .image(style="background-image: url('/img/placeholder-img.png')")
+
+                    .projects__slide.swiper-slide
+                        a.projects__card.animation-element(href="")
+                            .projects__place
+                                .location.empty-city День рождения г. Шаховская
+                            .projects__params
+                                .screen
+                                    | Экран Absen 48 м
+                                    sup 2
+                                .pixels Шаг пикселя 3,9 мм
+                            .projects__pic
+                                .image(style="background-image: url('/img/placeholder-img.png')")
+
+                    .projects__slide.swiper-slide
+                        a.projects__card.animation-element(href="")
+                            .projects__place
+                                .city
+                                .location.empty-city Ассоциация банков России
+                            .projects__params
+                                .screen
+                                    | Экран Absen 18 м
+                                    sup 2
+                                .pixels Шаг пикселя 3,9 мм
+                            .projects__pic
+                                .image(style="background-image: url('/img/placeholder-img.png')")
+
+                    .projects__slide.swiper-slide
+                        a.projects__card(href="")
+                            .projects__place
+                                .city г. Москва
+                                .location Конференц-зал
+                            .projects__params
+                                .screen
+                                    | Экран 13,11 м
+                                    sup 2
+                                .pixels Шаг пикселя 2,5 мм
+                            .projects__pic
+                                .image(style="background-image: url('/img/placeholder-img.png')")
+
+                    .projects__slide.swiper-slide
+                        a.projects__card(href="")
+                            .projects__place
+                                .city
+                                .location.empty-city День рождения г. Шаховская
+                            .projects__params
+                                .screen
+                                    | Экран Absen 48 м
+                                    sup 2
+                                .pixels Шаг пикселя 3,9 мм
+                            .projects__pic
+                                .image(style="background-image: url('/img/placeholder-img.png')")
+
+                    .projects__slide.swiper-slide
+                        a.projects__card(href="")
+                            .projects__place
+                                .city
+                                .location.empty-city Ассоциация банков России
+                            .projects__params
+                                .screen
+                                    | Экран Absen 18 м
+                                    sup 2
+                                .pixels Шаг пикселя 3,9 мм
+                            .projects__pic
+                                .image(style="background-image: url('/img/placeholder-img.png')")
+
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnProjectsPrev
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnProjectsNext

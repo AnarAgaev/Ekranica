@@ -1,4 +1,9 @@
 @import "../../../scss/variables";
 
 .page-installation {
+    .work .section__title {
+        @media (min-width: $xl) {
+            width: 100%;
+        }
+    }
 }
