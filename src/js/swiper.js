@@ -35,7 +35,6 @@ $(document).ready(function () {
     const bannerPicSlider = new Swiper('#bannerPictureSlider', {
         speed: 1500,
         parallax: true,
-        grabCursor: true,
         effect: "fade",
         fadeEffect: {
             crossFade: true
@@ -45,8 +44,6 @@ $(document).ready(function () {
     const bannerContSlider = new Swiper('#bannerContentSlider', {
         speed: 1500,
         parallax: true,
-        grabCursor: true,
-        //autoHeight: true,
         navigation: {
             nextEl: '#btnSliderNext',
             prevEl: '#btnSliderPrev',

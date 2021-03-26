@@ -15,7 +15,7 @@ html {
 
 //- Make sticky footer
 html, body {
-    min-height: 100vh;
+    min-height: 100%;
     font-size: 16px;
 }
 
@@ -501,19 +501,11 @@ input.btn {
             svg path {
                 transition: $transition;
             }
-
-            @media (min-width: $xl) {
-                margin-right: 0;
-            }
         }
 
         span {
             color: $color-accent;
             transition: $transition;
-
-            @media (min-width: $xl) {
-                display: none;
-            }
 
             &::after {
                 content: '';
@@ -526,54 +518,6 @@ input.btn {
                 border-bottom: 1px solid $color-accent;
                 transform: rotate(-45deg);
                 transition: $transition;
-            }
-        }
-
-        @media (min-width: $xl) {
-            margin-right: 48px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            font-weight: 500;
-            color: $color-accent;
-            background: linear-gradient(343.22deg, #181932 -36.39%, #0F111E 72.73%);
-            box-shadow: -10px -10px 30px rgba(54, 38, 66, 0.35), 10px 10px 30px rgba(4, 5, 14, 0.4);
-
-            &:hover {
-                color: #9A5BFF;
-                box-shadow:
-                        -8px -16px 30px rgba(35, 33, 58, 0.35),
-                        8px 16px 30px rgba(4, 5, 14, 0.3);
-            }
-
-            &:active {
-                color: #5B4589;
-                background: $color-back-primary;
-                box-shadow:
-                        -8px -16px 30px rgba(35, 33, 58, 0.35),
-                        8px 16px 30px rgba(4, 5, 14, 0.3);
-            }
-
-            &:focus {
-                color: #9A5BFF;
-                background: $color-back-secondary;
-                box-shadow:
-                        -14px -28px 30px rgba(35, 33, 58, 0.35),
-                        14px 28px 30px rgba(4, 5, 14, 0.3),
-                        inset 4px 4px 24px rgba(4, 2, 19, 0.5),
-                        inset -4px -4px 24px rgba(255, 255, 255, 0.06),
-                        0 0 0 2px #382359;
-            }
-
-            &.inactive {
-                cursor: default;
-                color: #3A374B;
-                background: $color-back-secondary;
-                box-shadow:
-                        -14px -28px 30px rgba(35, 33, 58, 0.35),
-                        14px 28px 30px rgba(4, 5, 14, 0.3),
-                        inset 4px 4px 24px rgba(4, 2, 19, 0.5),
-                        inset -4px -4px 24px rgba(255, 255, 255, 0.06);
             }
         }
     }
@@ -748,8 +692,8 @@ input.btn {
     &::before {
         content: "";
         display: block;
-        width: 19px;
-        height: 19px;
+        width: 20px;
+        height: 20px;
         top: 1px;
         border-right: 2px solid #80758F;
         border-bottom: 2px solid #80758F;
@@ -980,7 +924,7 @@ input[type="checkbox"]:checked + .checker {
             transform: translateY(-50%);
 
             img {
-                width: 102px;
+                width: 40px;
                 max-width: none;
                 height: 130px;
                 position: absolute;
@@ -998,17 +942,125 @@ input[type="checkbox"]:checked + .checker {
     width: 100%;
     margin-bottom: 24px;
 
+    @media (min-width: $md) {
+        margin-bottom: 48px;
+    }
+
     &__input {
         height: 46px;
         z-index: 1;
+        position: relative;
     }
 
     &__check {
         z-index: 5;
     }
 
-    @media (min-width: $md) {
+    &-group {
+        width: 100%;
         margin-bottom: 34px;
+
+        input,
+        textarea {
+            width: 100%;
+
+            @media (min-width: $xl) {
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: $color-text-secondary;
+            }
+        }
+
+        input {
+            @media (min-width: $xl) {
+                height: 80px;
+                padding: 24px 24px 24px 92px;
+            }
+        }
+
+        textarea {
+            @media (min-width: $xl) {
+                padding: 24px 24px 24px 92px;
+            }
+        }
+
+        .label__icon {
+            margin: 0;
+            width: 100%;
+        }
+
+        .validator {
+            position: absolute;
+            right: 0;
+            top: 9px;
+            display: none;
+
+            @media (min-width: $md) {
+                display: block;
+            }
+        }
+        
+        .validator__cross {
+            display: none !important;
+
+            @media (min-width: $lg) {
+                display: block !important;
+                right: -72px;
+                top: 25px;
+            }
+
+            @media (min-width: $xl) {
+                display: none !important;
+            }
+        }
+
+        .validator__check {
+
+            @media (min-width: $lg) {
+                right: -120px;
+                top: 25px;
+            }
+
+            @media (min-width: $xl) {
+                display: none !important;
+            }
+        }
+
+    }
+
+    &-label {
+        display: block;
+        width: 100%;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        margin-bottom: 12px;
+
+        @media (min-width: $lg) {
+            font-size: 18px;
+        }
+    }
+
+    &-wrap {
+        width: 100%;
+        position: relative;
+    }
+
+    &-icon {
+        display: block;
+        position: absolute;
+        width: 46px;
+        top: -5px;
+        left: 17px;
+
+        @media (min-width: $xl) {
+            width: 120px;
+            top: -33px;
+            left: -7px;
+        }
     }
 }
 
@@ -1223,73 +1275,6 @@ input, textarea {
     opacity: 0;
     transition: opacity 0.2s ease;
 }
-}
-
-
-.controller {
-    &-group {
-        width: 100%;
-        margin-bottom: 48px;
-
-        input,
-        textarea {
-            width: 100%;
-
-            @media (min-width: $xl) {
-                font-weight: normal;
-                font-size: 24px;
-                line-height: 140%;
-                letter-spacing: 0.02em;
-                color: $color-text-secondary;
-            }
-        }
-
-        input {
-            @media (min-width: $xl) {
-                height: 80px;
-                padding: 24px 24px 24px 92px;
-            }
-        }
-
-        textarea {
-            @media (min-width: $xl) {
-                padding: 24px 24px 24px 92px;
-            }
-        }
-    }
-
-    &-label {
-        display: block;
-        width: 100%;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 160%;
-        color: $color-text-secondary;
-        margin-bottom: 12px;
-
-        @media (min-width: $xl) {
-            font-size: 18px;
-        }
-    }
-
-    &-wrap {
-        width: 100%;
-        position: relative;
-    }
-
-    &-icon {
-        display: block;
-        position: absolute;
-        width: 46px;
-        top: -5px;
-        left: 17px;
-
-        @media (min-width: $xl) {
-            width: 120px;
-            top: -33px;
-            left: -7px;
-        }
-    }
 }
 
 .slide-nums {

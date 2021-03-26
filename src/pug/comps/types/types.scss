@@ -120,12 +120,11 @@
                 }
 
                 .types__link {
-                    span {
-                        width: 30px;
-                        background-color: $color-accent;
+                    svg {
+                        left: 6px;
 
-                        &::before, &::after {
-                            background-color: $color-accent;
+                        path {
+                            stroke: $color-accent
                         }
                     }
                 }
@@ -231,38 +230,24 @@
     }
 
     &__link {
-        width: 30px;
-        max-width: 30px;
+        display: block;
+        position: relative;
+        width: 28px;
         height: 24px;
+        max-width: 28px;
         margin-top: 8px;
 
-        span {
-            display: block;
-            position: relative;
-            width: 20px;
-            height: 1px;
-            transition: all .3s;
+        svg {
+            position: absolute;
+            height: auto;
+            width: 110px;
             top: 50%;
-            background-color: $color-icons;
+            left: 0;
+            transform: translate(-39px, -50%);
+            transition: all .3s ease;
 
-            &::before, &::after {
-                content: "";
-                display: block;
-                width: 8px;
-                height: 1px;
-                background-color: $color-icons;
-                transition: all .3s;
-                position: absolute;
-                top: 50%;
-                right: 0;
-            }
-
-            &::before {
-                transform: translateY(2px) rotate(-45deg);
-            }
-
-            &::after {
-                transform: translateY(-4px) rotate(45deg);
+            path {
+                transition: all .3s ease;
             }
         }
 

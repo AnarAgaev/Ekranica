@@ -1,11 +1,15 @@
-// INCLUDE STYLE COMPONENTS
+// Include vendor styles
+@import "../css/loading-bar.min.css";
+
+// Include template styles
 @import "variables";
 @import "fonts";
 @import "layout";
 @import "debug-grid";
 @import "../pug/templates/header/header";
 @import "../pug/templates/footer/footer";
-@import "../pug/pages/index/index";
+
+// Include components styles
 @import "../pug/comps/offer/offer";
 @import "../pug/comps/list/list";
 @import "../pug/comps/projects/projects";
@@ -14,9 +18,11 @@
 @import "../pug/comps/feedback/feedback";
 @import "../pug/comps/work/work";
 @import "../pug/comps/callback/callback";
-@import "../pug/pages/rent/rent";
 @import "../pug/comps/types/types";
 @import "../pug/comps/banner/banner";
 @import "../pug/comps/form-order/form-order";
 
-@import "../css/loading-bar.min.css";
+// Include page styles
+@import "../pug/pages/index/index";
+@import "../pug/pages/rent/rent";
+@import "../pug/pages/installation/installation";

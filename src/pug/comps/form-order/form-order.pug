@@ -1,43 +1,62 @@
 section.section.section_form-order
     .form-order
         .container
-            h2.section__title Оставьте заявку, мы поможем с выбором
+            h2.section__title.animation-element Оставьте заявку, мы поможем с выбором
 
         .container
-            form.form-order__form#orderForm(action="/" method="POST")
+            form.form-order__form#callbackForm(action="/" method="POST")
                 .form-order__data
 
-                    .form-order__user-data
+                    .form-order__user-data.animation-element
                         .controller-group
                             label.controller-label Как вас зовут?
-                            .controller-wrap
-                                span.controller-icon
-                                    img(src="/img/icon-person.svg" alt="")
-                                input(type="text" placeholder="Константин Константинопольский" name="name" id="orderFormName")
+                            // Для валидного значения меняем класс у controller на valid
+                            .controller.controller__input
+                                label.label.label__icon
+                                    span.controller-icon.icon-human
+                                        img(src="/img/icon-person.svg" alt="")
+                                    input(type="text" placeholder="Константин Константинопольский" name="name" id="orderFormName")
+                                .validator.validator__cross
+                                    img.valid(src="/img/i-validator-cross-valid.svg" alt="")
+                                    img.invalid(src="/img/i-validator-cross-invalid.svg" alt="")
+                                .validator.validator__check
+                                    img.valid(src="/img/i-validator-check-valid.svg" alt="")
+                                    img.invalid(src="/img/i-validator-check-invalid.svg" alt="")
 
                         .controller-group
                             label.controller-label Номер телефона
-                            .controller-wrap
-                                span.controller-icon
-                                    img(src="/img/icon-phone.svg" alt="")
-                                input(type="text" placeholder="+7 900 000 00 00" name="phone" id="formOrderPhone")
+                            // Для валидного значения меняем класс у controller на valid
+                            .controller.controller__input
+                                label.label.label__icon
+                                    span.controller-icon.icon-phone
+                                        img(src="/img/icon-phone.svg" alt="")
+                                    input(type="text" placeholder="+7 900 000 00 00" name="phone" id="callbackPhone")
+                                .validator.validator__cross
+                                    img.valid(src="/img/i-validator-cross-valid.svg" alt="")
+                                    img.invalid(src="/img/i-validator-cross-invalid.svg" alt="")
+                                .validator.validator__check
+                                    img.valid(src="/img/i-validator-check-valid.svg" alt="")
+                                    img.invalid(src="/img/i-validator-check-invalid.svg" alt="")
 
-                    .form-order__comments
+                    .form-order__comments.animation-element
                         .controller-group
                             label.controller-label Комментарий
                             .controller-wrap
-                                span.controller-icon
+                                span.controller-icon.icon-msg
                                     img(src="/img/icon-message.svg" alt="")
                                 textarea(placeholder="Напишите что-нибудь" name="message" id="orderFormMsg")
 
 
-                .form-order__actions
-                    span.form-order__privacy
-                        | Нажимая на кнопку “Отправить заявку”, я даю согласие на
-                        a.revers(href="/") обработку моих персональных данных
-                    .form-order__button
-                        button.btn.btn_primary.form-order__submit(type="submit") Отправить заявку
-                        span.form-order__button-link
-                            | Или напишите нам
-                            a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru
+                .form-order__actions.animation-element
+                    .form-order__actions-group
+                        span.form-order__privacy
+                            | Нажимая на кнопку “Отправить заявку”, я даю согласие на
+                            a.revers(href="/") обработку моих персональных данных
+                        .form-order__button
+                            button.btn.btn_primary.form-order__submit(type="submit") Отправить заявку
+
+                            // !!!! Если после обсуждения не понадобится, удалить.
+                            //span.form-order__button-link
+                            //    | Или напишите нам
+                            //    a.revers(href="mailto:info@ekranika.ru") info@ekranika.ru
                     span.form-order__note Перезвоним в течение рабочего дня и поможем определиться с типом оборудования для аренды под ключ
