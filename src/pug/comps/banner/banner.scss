@@ -125,6 +125,7 @@
 
         @media (min-width: $lg) {
             margin-bottom: 34px;
+            max-width: 75%;
         }
 
         @media (min-width: $xl) {
@@ -153,13 +154,14 @@
         @media (min-width: $lg) {
             width: auto;
             margin-bottom: 24px;
+            max-width: 75%;
         }
 
         @media (min-width: $xl) {
             font-size: 30px;
             line-height: 140%;
             color: #BDBDBD;
-            width: 400px;
+            max-width: 50%;
             margin-bottom: 48px;
         }
     }

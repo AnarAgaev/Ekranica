@@ -1,7 +1,7 @@
 section.section.section_projects
     .projects
-
         .container
+
             h2.section__title.animation-element
                 span.title Реализованные проекты
                 span.section__link.animation-element
@@ -14,31 +14,28 @@ section.section.section_projects
                     .projects__slide.swiper-slide
                         a.projects__card.animation-element(href="")
                             .projects__place
-                                .city г. Москва
+                                // Если не указан город, добавлять к .location класс .empty-city
 
-                                    // Если не указан город, добавлять к .location класс .empty-city
-                                .location Конференц-зал
+                                .location.empty-city Парк отель «‎Орловский»
                             .projects__params
                                 .screen
                                     | Экран 13,11 м
                                     sup 2
                                 .pixels Шаг пикселя 2,5 мм
                             .projects__pic
-                                .image(style="background-image: url('/img/temp/projecs.jpg')")
+                                .image(style="background-image: url('/img/placeholder-img.png')")
 
                     .projects__slide.swiper-slide
                         a.projects__card.animation-element(href="")
                             .projects__place
-                                .city
-                                // Если город не указан добавляем .empty-city
-                                .location.empty-city Экспоцентр Москва
+                                .location.empty-city День рождения г. Шаховская
                             .projects__params
                                 .screen
                                     | Экран Absen 48 м
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
                             .projects__pic
-                                .image(style="background-image: url('/img/temp/projecs1.jpg')")
+                                .image(style="background-image: url('/img/placeholder-img.png')")
 
                     .projects__slide.swiper-slide
                         a.projects__card.animation-element(href="")
@@ -51,7 +48,7 @@ section.section.section_projects
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
                             .projects__pic
-                                .image(style="background-image: url('/img/temp/projecs3.jpg')")
+                                .image(style="background-image: url('/img/placeholder-img.png')")
 
                     .projects__slide.swiper-slide
                         a.projects__card(href="")
@@ -64,20 +61,20 @@ section.section.section_projects
                                     sup 2
                                 .pixels Шаг пикселя 2,5 мм
                             .projects__pic
-                                .image(style="background-image: url('/img/temp/projecs.jpg')")
+                                .image(style="background-image: url('/img/placeholder-img.png')")
 
                     .projects__slide.swiper-slide
                         a.projects__card(href="")
                             .projects__place
                                 .city
-                                .location.empty-city Экспоцентр Москва
+                                .location.empty-city День рождения г. Шаховская
                             .projects__params
                                 .screen
                                     | Экран Absen 48 м
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
                             .projects__pic
-                                .image(style="background-image: url('/img/temp/projecs1.jpg')")
+                                .image(style="background-image: url('/img/placeholder-img.png')")
 
                     .projects__slide.swiper-slide
                         a.projects__card(href="")
@@ -90,7 +87,7 @@ section.section.section_projects
                                     sup 2
                                 .pixels Шаг пикселя 3,9 мм
                             .projects__pic
-                                .image(style="background-image: url('/img/temp/projecs3.jpg')")
+                                .image(style="background-image: url('/img/placeholder-img.png')")
 
             .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnProjectsPrev
             .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnProjectsNext
