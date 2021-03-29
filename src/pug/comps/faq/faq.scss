@@ -85,23 +85,16 @@
             }
 
             .faq__toggler {
-                &::before {
-                    transform: translateX(2px) rotate(45deg);
-                    z-index: 1;
+                background-image: url("/img/icon-faq-up-320.svg");
 
-                    @media (min-width: $md) {
-                        transform: translateX(6px) rotate(45deg);
-                    }
+                @media (min-width: $md) {
+                    background-image: url("/img/icon-faq-up-768.svg");
                 }
 
-                &::after {
-                    transform: translateX(-2px) rotate(-45deg);
-                    z-index: 2;
-
-                    @media (min-width: $md) {
-                        transform: translateX(-6px) rotate(-45deg);
-                    }
+                @media (min-width: $xl) {
+                    background-image: url("/img/icon-faq-up-1920.svg");
                 }
+
             }
         }
         
@@ -117,63 +110,28 @@
 
     &__toggler {
         width: 24px;
-        height: 24px;
-        border-radius: 50%;
+        height: 20px;
         position: absolute;
-        top: calc(50% - 12px);
-        right: -3px;
+        top: calc(50% - 10px);
+        right: -4px;
+        background: url("/img/icon-faq-down-320.svg") center center no-repeat;
 
         @media (min-width: $md) {
-            top: calc(50% - 14px);
-            right: 0;
+            width: 68px;
+            height: 56px;
+            top: calc(50% - 33px);
+            right: -16px;
+            background-image: url("/img/icon-faq-down-768.svg");
+        }
+
+        @media (min-width: $lg) {
+            right: -14px;
         }
 
         @media (min-width: $xl) {
-            top: calc(50% - 16px);
-            right: -13px;
-        }
-
-        &::before, &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 7px;
-            height: 1px;
-            background-color: $color-text-secondary;
-            transition: $transition;
-            top: 50%;
-            border-radius: 999px;
-            left: calc(50% - 3px);
-            box-shadow: -2px -2px 5px #726C77, 2px 2px 5px #00020C;
-
-            @media (min-width: $md) {
-                left: calc(50% - 12px);
-                width: 20px;
-                height: 3px;
-                box-shadow:
-                        -4px -5px 20px #726C77,
-                        4px 5px 10px #00020C,
-                        inset -1px -1px 2px rgba(52, 40, 62, 0.3),
-                        inset 1px 1px 5px rgba(0, 2, 12, 0.8);
-            }
-        }
-
-        &::before {
-            transform: translateX(-2px) rotate(45deg);
-            z-index: 2;
-
-            @media (min-width: $md) {
-                transform: translateX(-6px) rotate(45deg);
-            }
-        }
-
-        &::after {
-            transform: translateX(2px) rotate(-45deg);
-            z-index: 1;
-
-            @media (min-width: $md) {
-                transform: translateX(6px) rotate(-45deg);
-            }
+            top: calc(50% - 34px);
+            right: -17px;
+            background-image: url("/img/icon-faq-down-768.svg");
         }
     }
 

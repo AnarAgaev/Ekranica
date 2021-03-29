@@ -805,22 +805,19 @@ input.btn {
                 line-height: 1.6;
             }
 
-            &::after {
-                content: '';
-                display: inline-block;
-                position: relative;
-                margin-left: 7px;
-                width: 7px;
-                height: 7px;
-                border-right: 1px solid $color-accent;
-                border-bottom: 1px solid $color-accent;
-                transform: rotate(-45deg);
-                transition: $transition;
+            @media (min-width: $md) {
+                &:hover svg path {
+                    stroke: $color-text-primary;
+                }
             }
 
-            &:hover::after {
-                border-right-color: $color-text-primary;
-                border-bottom-color: $color-text-primary;
+            svg {
+                position: relative;
+                transform: translate(6px, 4px);
+
+                path {
+                    transition: $transition;
+                }
             }
         }
     }
