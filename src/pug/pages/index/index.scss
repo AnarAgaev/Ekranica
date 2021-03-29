@@ -451,20 +451,19 @@ body.page-index  {
         display: none;
         z-index: 1;
 
-        &::before {
-            content: "";
-            display: block;
-            width: 12px;
-            height: 12px;
-            top: 1px;
-            border-right: 2px solid #80758F;
-            border-bottom: 2px solid #80758F;
-            transition: $transition;
+        svg {
+            width: 10px;
             position: relative;
+
+            path {
+                transition: all .3s;
+            }
         }
 
         @media (min-width: $md) {
             display: flex;
+            justify-content: center;
+            align-items: center;
             bottom: 24px;
         }
 
@@ -478,6 +477,9 @@ body.page-index  {
     }
 
     #btnSliderPrev {
+        svg {
+            transform: scale(-1, 1);
+        }
 
         @media (min-width: $md) {
             right: 89px;
@@ -498,6 +500,9 @@ body.page-index  {
     }
 
     #btnSliderNext {
+        svg {
+            transform: translate(1px, 0);
+        }
 
         @media (min-width: $md) {
             right: 24px;
@@ -509,11 +514,6 @@ body.page-index  {
 
         @media (min-width: $xl) {
             right: 68px;
-        }
-
-        &::before {
-            transform: rotate(-45deg);
-            left: -2px;
         }
     }
 
