@@ -51,27 +51,13 @@
     }
 
     &.nav-visible {
-
         .nav-toggler {
-            &::before, &::after {
-                content: "";
-                display: block;
-                top: 50%;
-
-                @media (min-width: $md) {
-                    background-color: $color-text-inactive;
-                }
+            .closed {
+                opacity: 0;
             }
 
-            &::before {
-                transform: translateX(-50%) rotate(45deg);
-            }
-            &::after {
-                transform: translateX(-50%) rotate(-45deg);
-            }
-
-            span {
-                background-color: transparent;
+            .open {
+                opacity: 1;
             }
         }
 
@@ -96,59 +82,50 @@
     .nav-toggler {
         width: 48px;
         height: 48px;
-        background: transparent;
-        border-radius: 50%;
         position: relative;
+        border-radius: 50%;
         background: $color-back-secondary;
-        transition: $transition;
+        transition: all .3s;
         box-shadow:
                 -14px -28px 30px rgba(35, 33, 58, 0.35),
                 14px 28px 30px rgba(4, 5, 14, 0.3),
                 inset 4px 4px 24px rgba(4, 2, 19, 0.5),
                 inset -4px -4px 24px rgba(255, 255, 255, 0.06);
 
-        &::before, &::after {
-            content: "";
-            display: block;
-            width: 18px;
-            height: 2px;
-            background-color: $color-accent;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transition: $transition;
-            border-radius: 1px;
-
-            @media (min-width: $md) {
-                background-color: $color-text-primary;
-            }
-        }
-
-        &::before {
-            transform: translate(-50%, -7px);
-        }
-        &::after {
-            transform: translate(-50%, 5px);
-        }
-
-        span {
-            display: block;
-            position: absolute;
-            width: 18px;
-            height: 2px;
-            left: 50%;
-            top: 50%;
-            background-color: $color-accent;
-            transform: translate(-50%, -50%);
-            border-radius: 1px;
-
-            @media (min-width: $md) {
-                background-color: $color-text-primary;
-            }
+        @media (min-width: $md) {
+            width: 50px;
+            height: 50px;
         }
 
         @media (min-width: $lg) {
             display: none;
+        }
+
+        span {
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @media (min-width: $md) {
+                width: 50px;
+                height: 50px;
+            }
+
+            &.closed {
+                background: url("/img/icon-burger.svg") center center no-repeat;
+                opacity: 1;
+
+                @media (min-width: $md) {
+                    background: url("/img/icon-burger-tab.svg") center center no-repeat;
+                }
+            }
+
+            &.open {
+                background: url("/img/icon-nav-close.svg") center center no-repeat;
+                opacity: 0;
+            }
         }
     }
 
