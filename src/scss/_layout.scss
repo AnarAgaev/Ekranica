@@ -624,12 +624,12 @@ input.btn {
         }
 
         &::before {
-            background-image: url("/img/i-play.svg");
+            background-image: url("/img/icon-play.svg");
             opacity: 1;
         }
 
         &::after {
-            background-image: url("/img/i-play-hover.svg");
+            background-image: url("/img/icon-play-hover.svg");
             opacity: 0;
         }
 
