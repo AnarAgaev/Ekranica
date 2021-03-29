@@ -184,6 +184,12 @@
             display: block;
             height: auto;
             padding: 16px 0 34px;
+
+            @media (min-width: $lg) {
+                & > .nav__item > a {
+                    color: $color-text-secondary;
+                }
+            }
         }
 
         &__item {
@@ -212,21 +218,28 @@
             &.dropdown {
                 position: relative;
 
-                & > a::after {
-                    content: '';
+                .drop-arr {
                     display: inline-block;
                     position: relative;
-                    margin-left: 8px;
-                    width: 7px;
-                    height: 7px;
-                    border-right: 1px solid $color-text-primary;
-                    border-bottom: 1px solid $color-text-primary;
-                    transform: translateY(-2px) rotate(45deg);
-                    transition: $transition;
-                }
+                    transform: translate(4px, 3px);
+                    transition: all .3s;
 
-                & > a:hover {
-                    color: $color-text-primary;
+                    svg {
+                        transition: all .3s;
+                    }
+
+                    svg path {
+                        transition: all .3s;
+                    }
+
+                    @media (min-width: $lg) {
+                        transform: translate(3px, 3px);
+                        padding-right: 1px;
+
+                        svg path {
+                            stroke: $color-text-secondary;
+                        }
+                    }
                 }
             }
 
@@ -293,10 +306,15 @@
                 color: $color-accent !important;
             }
 
-            & > a::after {
-                border-right-color: $color-accent;
-                border-bottom-color: $color-accent;
-                transform: translateY(2px) rotate(-135deg);
+            .drop-arr {
+
+                svg {
+                    transform: rotate(180deg);
+
+                    path {
+                        stroke: $color-accent;
+                    }
+                }
             }
         }
 
@@ -457,26 +475,12 @@
                 }
 
                 &.dropdown {
-                    & > a {
-                        padding-right: 15px;
-                    }
-
-                    & > a::after {
-                        display: block;
-                        position: absolute;
-                        margin-left: 0;
-                        margin-top: -5px;
-                        margin-top: -3px;
-                        top: 50%;
-                        right: 0;
-                    }
-
                     &:hover > a {
                         color: $color-accent;
-                    }
 
-                    &:hover > a::after {
-                        border-color: $color-accent
+                        svg path {
+                            stroke: $color-accent;
+                        }
                     }
                 }
 
