@@ -533,10 +533,12 @@ input.btn {
                         inset -4px -4px 24px rgba(255, 255, 255, 0);
 
                 color: $color-icons;
-            }
 
-            &:hover::before {
-                border-color: $color-icons !important;
+                svg {
+                    path {
+                        stroke:  $color-icons;
+                    }
+                }
             }
         }
 
@@ -583,9 +585,16 @@ input.btn {
                 inset 4px 4px 24px rgba(4, 2, 19, 0.5),
                 inset -4px -4px 24px rgba(255, 255, 255, 0.06) !important;
 
-        &::before,
-        &:hover::before {
-                border-color: $color-icons-inactive !important;
+            svg {
+                path {
+                    stroke: $color-icons-inactive !important;
+                }
+            }
+
+            &:hover svg {
+                path {
+                    stroke: $color-icons-inactive !important;
+                }
             }
         }
     }
@@ -665,35 +674,30 @@ input.btn {
 
     @media (min-width: $lg) {
         display: flex !important;
+        justify-content: center;
+        align-items: center;
     }
 
     @media (min-width: $xl) {
         left: -190px;
     }
 
-    &::before {
-        content: "";
-        display: block;
-        width: 20px;
-        height: 20px;
-        top: 1px;
-        border-right: 2px solid #80758F;
-        border-bottom: 2px solid #80758F;
-        transition: $transition;
-        position: relative;
+
+    svg path {
+        transition: all .3s;
     }
 
     &_next {
-        &::before {
-            transform: rotate(-45deg);
-            left: -6px;
+
+        svg {
+            position: relative;
+            transform: translate(2px, 1px);
         }
     }
 
     &_prev {
-        &::before {
-            transform: rotate(135deg);
-            left: 3px;
+        svg {
+            transform: scale(-1, 1);
         }
     }
 }
