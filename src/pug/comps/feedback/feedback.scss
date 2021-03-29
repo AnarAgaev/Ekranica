@@ -121,8 +121,8 @@
 
         @media (min-width: $md) {
             position: absolute;
-            width: 324px;
-            height: 100%;
+            width: 321px;
+            height: 408px;
             left: 0;
             top: 0;
             transform: none;
@@ -137,6 +137,7 @@
 
         @media (min-width: $xl) {
             width: 420px;
+            height: 520px;
         }
 
         .btn {

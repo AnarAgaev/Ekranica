@@ -45,7 +45,7 @@
 
         @media (min-width: $md) {
             height: 378px;
-            margin-bottom: 34px;
+            margin-bottom: 96px;
         }
 
         @media (min-width: $lg) {
@@ -91,7 +91,7 @@
         z-index: 1;
 
         @media (min-width: $md) {
-            top: 508px;
+            top: 430px;
             left: 6.25%;
         }
 
@@ -104,7 +104,7 @@
         @media (min-width: $xl) {
             top: 356px;
             left: auto;
-            right: calc(5vw + 183px);
+            right: calc(5vw + 200px);
         }
     }
 
@@ -120,7 +120,7 @@
             font-size: 40px;
             line-height: 140%;
             order: 1;
-            margin-bottom: 63px;
+            margin-bottom: 24px;
         }
 
         @media (min-width: $lg) {
@@ -233,10 +233,6 @@
             align-items: center;
         }
 
-        @media (min-width: $xl) {
-            right: -16px;
-        }
-
         .btn {
             margin-right: 24px;
 
@@ -272,40 +268,38 @@
         z-index: 1;
         top: 331px;
 
+        svg {
+            position: relative;
+
+            path {
+                transition: all .3s;
+            }
+        }
+
         @media (max-width: $xl - 1) {
             width: 48px;
             height: 48px;
             top: 124px;
 
-            &:before {
-                width: 13px;
-                height: 13px;
-                top: 0;
+            svg {
+                width: 10px;
             }
         }
     }
 
     #btnBannerProjectsPrev {
-        right: calc(5vw + 85px);
+        right: calc(5vw + 102px);
 
         @media (max-width: $xl - 1) {
             right: 141px;
-
-            &:before {
-                left: 3px;
-            }
         }
     }
 
     #btnBannerProjectsNext {
-        right: calc(5vw - 17px);
+        right: 5vw;
 
         @media (max-width: $xl - 1) {
             right: 68px;
-
-            &:before {
-                left: -3px;
-            }
         }
     }
 }

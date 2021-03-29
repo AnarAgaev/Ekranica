@@ -41,11 +41,21 @@
         }
 
         @media (min-width: $md) {
-            max-width: 250px;
+            display: block;
+
+            a {
+                display: block;
+                max-width: 250px;
+            }
         }
 
         @media (min-width: $lg) {
-            max-width: none;
+            display: inline;
+
+            a {
+                display: inline;
+                max-width: none;
+            }
         }
     }
 
