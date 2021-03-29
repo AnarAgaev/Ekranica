@@ -436,13 +436,9 @@ input.btn {
             svg path {
                 stroke:  $color-text-primary;
             }
-            span {
-                color: $color-text-primary;
 
-                &::after {
-                    border-right-color: $color-text-primary;
-                    border-bottom-color: $color-text-primary;
-                }
+            .arr {
+                color: $color-text-primary;
             }
         }
 
@@ -450,13 +446,9 @@ input.btn {
             svg path {
                 stroke:  $color-text-secondary;
             }
-            span {
-                color: $color-text-secondary;
 
-                &::after {
-                    border-right-color: $color-text-secondary;
-                    border-bottom-color: $color-text-secondary;
-                }
+            .arr {
+                color: $color-text-secondary;
             }
         }
 
@@ -466,13 +458,8 @@ input.btn {
             svg path {
                 stroke: $color-accent;
             }
-            span {
+            .arr {
                 color: $color-accent;
-
-                &::after {
-                    border-right-color: $color-accent;
-                    border-bottom-color: $color-accent;
-                }
             }
         }
 
@@ -482,13 +469,8 @@ input.btn {
             svg path {
                 stroke: #3A374B;
             }
-            span {
+            .arr {
                 color: #3A374B;
-
-                &::after {
-                    border-right-color: #3A374B;
-                    border-bottom-color: #3A374B;
-                }
             }
         }
 
@@ -498,26 +480,25 @@ input.btn {
             margin-right: 11px;
             margin-top: -2px;
 
-            svg path {
-                transition: $transition;
+            svg {
+                transform: translate(1px, 1px);
+
+                path {
+                    transition: $transition;
+                }
             }
         }
 
-        span {
+        .arr {
             color: $color-accent;
             transition: $transition;
 
-            &::after {
-                content: '';
-                display: inline-block;
-                position: relative;
-                margin-left: 8px;
-                width: 7px;
-                height: 7px;
-                border-right: 1px solid $color-accent;
-                border-bottom: 1px solid $color-accent;
-                transform: rotate(-45deg);
-                transition: $transition;
+            svg {
+                transform: translate(8px, 4px);
+
+                path {
+                    transition: $transition;
+                }
             }
         }
     }
