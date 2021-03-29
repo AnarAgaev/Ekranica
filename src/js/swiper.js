@@ -74,7 +74,6 @@ $(document).ready(function () {
     });
 
     new Swiper('#offerSlider', {
-        //autoHeight: true,
         slidesPerView: 'auto',
         speed: 500,
         navigation: {
