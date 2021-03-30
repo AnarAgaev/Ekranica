@@ -14,8 +14,13 @@
         }
     }
 
+    input, textarea {
+        padding-left: 40px;
+        padding-right: 16px;
+    }
+
     textarea {
-        height: 253px;
+        height: 90px;
 
         @media (min-width: $md) {
             height: 124px;
@@ -33,11 +38,10 @@
         @media (min-width: $md) {
         }
 
-        @media (min-width: 1440px) {
+        @media (min-width: $xl) {
             flex-direction: row;
             justify-content: space-between;
         }
-
     }
 
     &__user-data {
@@ -50,7 +54,7 @@
         }
 
         @media (min-width: $xl) {
-            width: 46.2453531598513%;
+            width: 42.63976157767118%;
         }
     }
 
@@ -67,6 +71,22 @@
                 font-size: 24px;
                 line-height: 140%;
                 letter-spacing: 0.02em;
+            }
+        }
+
+        &.checked.invalid .validator__check {
+            @media (max-width: $lg - 1) {
+                display: none;
+            }
+
+            @media (min-width: $xl) {
+                display: none;
+            }
+        }
+
+        &.checked.valid .validator__cross {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                display: block;
             }
         }
     }
@@ -92,7 +112,7 @@
         height: 16px;
         position: absolute;
         top: 16px;
-        left: 32px;
+        left: 16px;
 
         @media (min-width: $lg) {
             width: 56px;
@@ -148,7 +168,7 @@
 
         transition-delay: .3s;
 
-        @media (min-width: 1440px) {
+        @media (min-width: $xl) {
             width: 46.2453531598513%;
         }
     }
@@ -177,7 +197,7 @@
             display: flex;
             align-items: center;
             flex-direction: row-reverse;
-            margin-top: 34px;
+            margin-top: 24px;
             margin-bottom: 34px;
             justify-content: flex-end;
         }
@@ -201,7 +221,7 @@
         line-height: 160%;
         color: $color-text-inactive;
         margin-top: 10px;
-        margin-bottom: 34px;
+        margin-bottom: 16px;
 
         @media (min-width: $md) {
             font-size: 14px;
@@ -219,7 +239,7 @@
     }
 
     &__button {
-        margin-bottom: 16px;
+        margin-bottom: 34px;
 
         @media (min-width: $md) {
             margin: 0 24px 0 0;
@@ -231,34 +251,13 @@
             flex: 1 0 auto;
         }
     }
-    
-    &__button-link {
-        display: none;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 160%;
-        color: $color-text-inactive;
-
-        @media (min-width: $md) {
-            display: block;
-            margin-left: 24px;
-        }
-
-        @media (min-width: 1440px) {
-            display: none;
-        }
-    }
 
     &__note {
         display: block;
         font-weight: normal;
-        font-size: 12px;
-        line-height: 160%;
         color: $color-text-inactive;
-
-        @media (min-width: $md) {
-            font-size: 14px;
-        }
+        font-size: 14px;
+        line-height: 160%;
 
         @media (min-width: $xl) {
             width: 46.2453531598513%;

@@ -842,24 +842,15 @@ textarea {
     line-height: 160%;
     transition: $transition;
     box-shadow:
-            -14px -28px 30px rgba(35, 33, 58, 0.35),
-            14px 28px 30px rgba(4, 5, 14, 0.3),
+            -10px -10px 30px rgba(35, 33, 58, 0.35),
+            10px 10px 30px rgba(4, 5, 14, 0.55),
             inset 4px 4px 24px rgba(4, 2, 19, 0.5),
             inset -4px -4px 24px rgba(255, 255, 255, 0.06);
 
-    &:hover {
-        box-shadow:
-                -14px -28px 30px rgba(35, 33, 58, 0.35),
-                14px 28px 30px rgba(4, 5, 14, 0.3),
-                inset 4px 4px 24px rgba(4, 2, 19, 0.5),
-                inset -4px -4px 24px rgba(255, 255, 255, 0.06),
-                0px 0px 0px 1px rgba(36,24,56,1);
-    }
-
     &:focus {
         box-shadow:
-                -14px -28px 30px rgba(35, 33, 58, 0.35),
-                14px 28px 30px rgba(4, 5, 14, 0.3),
+                -10px -10px 30px rgba(35, 33, 58, 0.35),
+                10px 10px 30px rgba(4, 5, 14, 0.55),
                 inset 4px 4px 24px rgba(4, 2, 19, 0.5),
                 inset -4px -4px 24px rgba(255, 255, 255, 0.06),
                 0px 0px 0px 2px rgba(70,51,112,1);
@@ -977,7 +968,6 @@ input[type="checkbox"]:checked + .checker {
             position: absolute;
             right: 0;
             top: 9px;
-            display: none;
 
             @media (min-width: $md) {
                 display: block;
@@ -985,16 +975,16 @@ input[type="checkbox"]:checked + .checker {
         }
         
         .validator__cross {
-            display: none !important;
+            display: none;
 
             @media (min-width: $lg) {
-                display: block !important;
+                display: block;
                 right: -72px;
                 top: 25px;
             }
 
             @media (min-width: $xl) {
-                display: none !important;
+                display: none;
             }
         }
 
@@ -1006,7 +996,7 @@ input[type="checkbox"]:checked + .checker {
             }
 
             @media (min-width: $xl) {
-                display: none !important;
+                right: -72px;
             }
         }
 
@@ -1113,7 +1103,7 @@ input[type="checkbox"]:checked + .checker {
     display: none;
 
     @media (min-width: $md) {
-        display: block !important;
+        display: block;
     }
 
     .valid {

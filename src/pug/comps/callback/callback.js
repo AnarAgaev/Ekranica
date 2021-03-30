@@ -4,8 +4,8 @@ import IMask from 'imask';
 $(document).ready(function () {
 
     let mask;
-    const form = $('#callbackPhone').closest('form');
-    const controller = $('#callbackPhone').closest('.controller');
+    const form = $('#phone').closest('form');
+    const controller = $('#phone').closest('.controller');
     const validator = $('#callbackForm .validator__cross');
 
     function animationError() {
@@ -30,7 +30,7 @@ $(document).ready(function () {
     }
 
     function checkPhone () {
-        let phone = $('#callbackPhone').val();
+        let phone = $('#phone').val();
 
         if (phone !== '') {
             if (!validPhone(phone.replace(/\s+|\+/g, ''))) {
@@ -40,7 +40,7 @@ $(document).ready(function () {
     }
 
     // It's the handler of the phone value
-    const el = document.getElementById('callbackPhone');
+    const el = document.getElementById('phone');
 
     if (el) {
         const maskOptions = {
@@ -53,6 +53,8 @@ $(document).ready(function () {
         // mask.on("complete", phoneHandler);
 
         function phoneHandler() {
+            mask.updateValue();
+
             if (validPhone(mask.unmaskedValue)) {
                 $(controller).addClass('valid');
                 $(controller).removeClass('invalid');
@@ -71,13 +73,13 @@ $(document).ready(function () {
     }
 
     // Handle unfocused phone input
-    $('#callbackPhone').blur(function () {
+    $('#phone').blur(function () {
         checkPhone();
     });
 
     // Show error on input when user scroll on it focused
     $(window).scroll(function () {
-        if ($('#callbackPhone').is(':focus')) {
+        if ($('#phone').is(':focus')) {
             checkPhone();
         }
     });
@@ -85,7 +87,7 @@ $(document).ready(function () {
     $('#callbackForm').on('submit', function(e) {
         e.preventDefault();
 
-        let phone = $('#callbackPhone').val();
+        let phone = $('#phone').val();
         let callbackFormValid = true;
 
         if (phone !== '') {
