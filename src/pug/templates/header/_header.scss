@@ -52,12 +52,27 @@
 
     &.nav-visible {
         .nav-toggler {
-            .closed {
-                opacity: 0;
+
+            svg path {
+                stroke: $color-text-inactive;
+                transition: stroke .1s linear .1s;
             }
 
-            .open {
-                opacity: 1;
+            .top-line {
+                margin-top: -1px;
+                transform: rotate(45deg);
+                transition: margin-top .1s linear 0s, transform .1s linear .3s;
+            }
+
+            .middle-line {
+                opacity: 0;
+                transition: opacity .1s linear .1s;
+            }
+
+            .bottom-line {
+                margin-top: -1px;
+                transform: rotate(-45deg);
+                transition: margin-top .1s linear 0s, transform .1s linear .3s;
             }
         }
 
@@ -102,29 +117,40 @@
         }
 
         span {
-            width: 48px;
-            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 2px;
+            margin-left: -9px;
+        }
+
+        .top-line {
+            margin-top: -7px;
+            transform: rotate(0);
+            transition: transform .1s linear 0s, margin-top .1s linear .3s;
+        }
+
+        .middle-line {
+            margin-top: -1px;
+            transition: opacity .1s linear .1s;
+        }
+
+        .bottom-line {
+            margin-top: 5px;
+            transform: rotate(0);
+            transition: transform .1s linear 0s, margin-top .1s linear .3s;
+        }
+
+        svg path {
+            stroke: $color-accent;
+            transition: stroke .1s linear .1s;
 
             @media (min-width: $md) {
-                width: 50px;
-                height: 50px;
-            }
-
-            &.closed {
-                background: url("/img/icon-burger.svg") center center no-repeat;
-                opacity: 1;
-
-                @media (min-width: $md) {
-                    background: url("/img/icon-burger-tab.svg") center center no-repeat;
-                }
-            }
-
-            &.open {
-                background: url("/img/icon-nav-close.svg") center center no-repeat;
-                opacity: 0;
+                stroke: $color-text-primary;
             }
         }
     }
