@@ -31,6 +31,17 @@
 
     .section__title {
         @extend .title-animation;
+
+        .title {
+            @media (min-width: $md) {
+                display: block;
+            }
+
+            @media (min-width: $lg) {
+                display: inline-block;
+
+            }
+        }
     }
 
     .section__link {
@@ -41,8 +52,6 @@
         }
 
         @media (min-width: $md) {
-            display: block;
-
             a {
                 display: block;
                 max-width: 250px;
@@ -50,8 +59,6 @@
         }
 
         @media (min-width: $lg) {
-            display: inline;
-
             a {
                 display: inline;
                 max-width: none;

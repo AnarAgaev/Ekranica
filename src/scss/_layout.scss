@@ -550,6 +550,13 @@ input.btn {
                     inset -4px -4px 24px rgba(255, 255, 255, 0.06) !important;
         }
 
+        &.lite-background {
+            background: linear-gradient(321.49deg, #1C1D30 -6.41%, #0D101F 90.97%) !important;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.6) !important;
+        }
+
         &:active {
             // icon color is #80758F $color-text-inactive
 
@@ -594,6 +601,25 @@ input.btn {
             &:hover svg {
                 path {
                     stroke: $color-icons-inactive !important;
+                }
+            }
+        }
+
+        &.swiper-button-disabled.lite-background {
+            background: linear-gradient(321.49deg, #1C1D30 -6.41%, #0D101F 90.97%) !important;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.35),
+                    14px 28px 30px rgba(4, 5, 14, 0.6) !important;
+
+            svg {
+                path {
+                    stroke: #202231 !important;
+                }
+            }
+
+            &:hover svg {
+                path {
+                    stroke: #202231 !important;
                 }
             }
         }

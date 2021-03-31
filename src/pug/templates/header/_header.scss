@@ -226,6 +226,7 @@
 
                     svg {
                         transition: all .3s;
+                        transform: scale(1, 1);
                     }
 
                     svg path {
@@ -309,7 +310,7 @@
             .drop-arr {
 
                 svg {
-                    transform: rotate(180deg);
+                    transform: scale(1, -1);
 
                     path {
                         stroke: $color-accent;
@@ -477,6 +478,10 @@
                 &.dropdown {
                     &:hover > a {
                         color: $color-accent;
+
+                        svg {
+                            transform: scale(1, -1);
+                        }
 
                         svg path {
                             stroke: $color-accent;

@@ -22,6 +22,7 @@ $(document).ready(function () {
     $('#navToggler').on('click', function () {
         $('#header').toggleClass('nav-visible');
         $('.nav__item.dropdown').removeClass('drop-visible');
+        $('.nav__item.dropdown > a').removeClass('drop-visible');
     });
 
     $('.nav__item.dropdown').on('click', function (e) {
