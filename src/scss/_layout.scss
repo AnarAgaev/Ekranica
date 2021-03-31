@@ -1429,9 +1429,12 @@ filter: grayscale(0) blur(0);
                 -5px -5px 20px rgba(35, 33, 58, 0.35),
                 5px 5px 20px rgba(4, 5, 14, 0.8);
 
-
         @media (min-width: $md) {
             padding: 48px 68px;
+            background: linear-gradient(317.6deg, #1C1D30 -101.32%, #0B0D19 92.12%);
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
         }
 
         @media (min-width: $lg) {
@@ -1507,8 +1510,8 @@ filter: grayscale(0) blur(0);
         display: none;
         width: 198px;
         opacity: 0;
-        transform: translateY(-25px) scale(0.5);
-        transition: $anim-title;
+        transform: translateY(-15px) scale(0.9);
+        transition: all .5s cubic-bezier(0, 0.55, 0.45, 1);
 
         @media (min-width: $md) {
            display: block;
@@ -1523,12 +1526,12 @@ filter: grayscale(0) blur(0);
     &.visible {
         left: 0;
         opacity: 1;
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(4px);
         transition: left 0s linear 0s, opacity .15s linear 0s, backdrop-filter .15s linear 0s;
 
         .modal__dialog {
             transform: translate(0, 0);
-            transition: transform .7s cubic-bezier(0, 0.55, 0.45, 1);
+            transition: transform .5s cubic-bezier(0, 0.55, 0.45, 1);
         }
 
         .modal-img {
