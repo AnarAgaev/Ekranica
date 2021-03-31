@@ -85,15 +85,36 @@
             }
 
             .faq__toggler {
-                background-image: url("/img/icon-faq-up-320.svg");
+                &::before {
+                    left: 11px;
 
-                @media (min-width: $md) {
-                    background-image: url("/img/icon-faq-up-768.svg");
+                    @media (min-width: $md) {
+                        left: 13px;
+                    }
                 }
 
-                @media (min-width: $xl) {
-                    background-image: url("/img/icon-faq-up-1920.svg");
+                &::after {
+                    left: 0;
+
+                    @media (min-width: $md) {
+                        left: 24px;
+                    }
                 }
+
+
+
+
+
+
+            //    background-image: url("/img/icon-faq-up-320.svg");
+            //
+            //    @media (min-width: $md) {
+            //        background-image: url("/img/icon-faq-up-768.svg");
+            //    }
+            //
+            //    @media (min-width: $xl) {
+            //        background-image: url("/img/icon-faq-up-1920.svg");
+            //    }
 
             }
         }
@@ -110,28 +131,59 @@
 
     &__toggler {
         width: 24px;
-        height: 20px;
+        height: 24px;
         position: absolute;
         top: calc(50% - 10px);
         right: -4px;
-        background: url("/img/icon-faq-down-320.svg") center center no-repeat;
 
         @media (min-width: $md) {
             width: 68px;
             height: 56px;
             top: calc(50% - 33px);
             right: -16px;
-            background-image: url("/img/icon-faq-down-768.svg");
         }
 
         @media (min-width: $lg) {
             right: -14px;
         }
 
-        @media (min-width: $xl) {
-            top: calc(50% - 34px);
-            right: -16px;
-            background-image: url("/img/icon-faq-down-1920.svg");
+        &::before, &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            transition: $transition;
+        }
+
+        &::before {
+            width: 6px;
+            height: 6px;
+            top: 8px;
+            left: 7px;
+            background: url("/img/icon-faq-320-left-line.svg") no-repeat center center;
+
+            @media (min-width: $md) {
+                width: 56px;
+                height: 56px;
+                top: 0;
+                left: 0;
+                background-image: url("/img/icon-faq-768-left-line.svg");
+            }
+        }
+
+        &::after {
+            width: 20px;
+            height: 20px;
+            top: 1px;
+            left: 4px;
+            background: url("/img/icon-faq-320-right-line.svg") no-repeat center center;
+
+            @media (min-width: $md) {
+                width: 16px;
+                height: 16px;
+                top: 25px;
+                left: 36px;
+                background-image: url("/img/icon-faq-768-right-line.svg");
+            }
         }
     }
 
