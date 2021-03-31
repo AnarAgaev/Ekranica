@@ -1,14 +1,3 @@
-// import $ from "jquery";
-// import IMask from 'imask';
-//
-// $(document).ready(function () {
-//     let formValid = true;
-//
-//     $('#orderForm').on('submit', function(e) {
-//         e.preventDefault();
-//     });
-// });
-
 import $ from "jquery";
 import IMask from 'imask';
 

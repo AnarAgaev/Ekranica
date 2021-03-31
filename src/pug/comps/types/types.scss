@@ -1,15 +1,6 @@
 @import "../../../scss/variables";
 
 .types {
-    background: $color-back-secondary;
-    padding-top: 48px;
-    padding-bottom: 48px;
-
-    @media (min-width: $md) {
-        background: transparent;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
 
     @media (min-width: $lg) {
         background: $color-back-secondary;
@@ -22,48 +13,24 @@
         padding-bottom: 134px;
     }
 
-    .endless {
-        @media (min-width: $xl) {
-            margin-left: -30px;
-            padding-left: 30px;
-        }
-    }
-
     .section__title {
         @extend .title-animation;
 
         .title {
             @media (min-width: $md) {
                 display: block;
+                margin-bottom: -15px;
             }
 
             @media (min-width: $lg) {
                 display: inline-block;
-
+                margin-bottom: 0;
             }
         }
     }
 
     .section__link {
         @extend .title-link-animation;
-
-        a:after {
-            display: none;
-        }
-
-        @media (min-width: $md) {
-            a {
-                display: block;
-                max-width: 250px;
-            }
-        }
-
-        @media (min-width: $lg) {
-            a {
-                display: inline;
-                max-width: none;
-            }
-        }
     }
 
     &__list {
@@ -74,23 +41,23 @@
     }
 
     &__slide {
-        height: auto;
         margin-top: 16px;
-        width: 216px; // 200px + 16px
+        width: 266px; // 242px + 24px
 
         @media (min-width: $md) {
-            width: 256px; // 232px + 24px
+            width: 493px; // 445px + 48px
             margin-top: 48px;
+            height: auto;
         }
 
         @media (min-width: $lg) {
-            width: 485px; // 437px + 48px
-            margin-top: 68px;
+            width: 513px; // 445px + 68px
+            margin-top: 48px;
         }
 
         @media (min-width: $xl) {
-            width: 596px; // 528px + 68px
-            margin-top: 96px;
+            width: 720px; // 624px + 96px
+            margin-top: 89px;
         }
 
         @for $i from 1 through 5 {
@@ -104,60 +71,62 @@
         @extend .card-animation;
 
         position: relative;
-        width: 200px;
-        height: 100%;
+        width: 242px;
+        height: auto;
         display: flex;
         flex-direction: column;
+        padding: 0 16px 16px;
         background: $color-back-secondary;
         border-radius: 12px;
-        padding: 0 16px 16px;
         box-shadow:
                 -14px -14px 30px rgba(35, 33, 58, 0.35),
                 16px 5px 40px rgba(4, 5, 14, 0.6);
 
+
         @media (min-width: $md) {
-            width: 232px;
-            padding: 0 24px 24px;
-        }
-
-        @media (min-width: $lg) {
-            width: 437px;
+            width: 445px;
+            height: 100%;
             padding: 0 34px 34px;
-
-            &:hover {
-                .types__pic {
-                    .image {
-                        width: 110%;
-                        height: 110%;
-                    }
-                }
-
-                .types__caption {
-                    color: $color-accent;
-                }
-            }
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
         }
 
         @media (min-width: $xl) {
-            justify-content: space-between;
-            width: 528px;
+            width: 624px;
             padding: 0 48px 48px;
-            box-shadow:
-                    -14px -28px 30px rgba(35, 33, 58, 0.15),
-                    14px 28px 30px rgba(4, 5, 14, 0.3),
-                    -6px -6px 30px rgba(35, 33, 58, 0.15),
-                    6px 6px 30px rgba(0, 2, 12, 0.3);
         }
     }
 
     &__pic {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        position: absolute;
+        position: relative;
+        width: 211px;
+        height: 168px;
         border-radius: 12px;
+        transform: translateY(-16px);
         overflow: hidden;
+
+        @media (min-width: $md) {
+            width: 377px;
+            height: 323px;
+            transform: translateY(-48px);
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+        }
+
+        @media (min-width: $lg) {
+            width: 377px;
+            height: 323px;
+            transform: translateY(-48px);
+        }
+
+        @media (min-width: $xl) {
+            width: 528px;
+            height: 364px;
+            transform: translateY(-89px);
+        }
+
 
         .image {
             position: absolute;
@@ -172,109 +141,112 @@
         }
     }
 
-    &__pic-wrap {
-        width: 168px;
-        height: 168px;
-        position: relative;
-        transform: translateY(-16px);
-
-        @media (min-width: $md) {
-            width: 184px;
-            height: 200px;
-            transform: translateY(-48px);
-        }
-
-        @media (min-width: $lg) {
-            width: 369px;
-            height: 369px;
-            transform: translateY(-68px);
-        }
-
-        @media (min-width: $xl) {
-            width: 432px;
-            height: 432px;
-            transform: translateY(-96px);
-        }
-
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 8px;
-            height: 8px;
-            background: #C4C4C4;
-
-            @media (min-width: $lg) {
-                width: 12px;
-                height: 12px;
-                bottom: -14px;
-            }
-        }
-    }
-
-    &__content {
-        margin-top: 8px;
-        flex: 1 0 auto;
+    &__title {
         display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: space-between;
 
         @media (min-width: $md) {
-            margin-top: -24px;
-        }
-
-        @media (min-width: $lg) {
-            flex-wrap: nowrap;
-            flex-direction: row;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-top: 0;
+            display: block;
+            margin-top: -14px;
         }
 
         @media (min-width: $xl) {
-            flex: none;
-            align-items: center;
+            margin-top: -41px;
         }
     }
 
     &__caption {
+        width: 170px;
         font-weight: 500;
         font-size: 14px;
         line-height: 160%;
-        color: $color-text-primary;
-        transition: all .3s;
-        padding-left: 8px;
+        color: $color-text-secondary;
 
         @media (min-width: $md) {
-            font-weight: 400;
-            font-size: 16px;
-        }
-
-        @media (min-width: $lg) {
-            font-size: 18px;
-            padding-right: 48px;
-            padding-left: 12px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
         }
 
         @media (min-width: $xl) {
+            font-size: 30px;
+            line-height: 140%;
+        }
+    }
+
+    &__description {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-25px);
+        transition: all .7s;
+
+        @media (min-width: $md) {
+            max-height: none;
+            opacity: 1;
+            transform: none;
+            overflow: initial;
+        }
+
+        @media (min-width: $lg) {
+            font-size: 14px;
+        }
+
+        .text {
+            margin-top: 16px;
+
+            @media (min-width: $md) {
+                margin-top: 8px;
+            }
+
+            @media (min-width: $xl) {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    &__btn {
+        width: 24px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            transform: scale(1, -1);
+            transition: transform .3s;
+        }
+
+        @media (min-width: $md) {
+            display: none;
+        }
+    }
+
+    .open {
+        .types__description {
+            max-height: 400px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .types__btn svg {
+            transform: scale(1, 1);
         }
     }
 
     #btnTypesSliderPrev {
-        margin-top: -8px;
-
-        @media (min-width: $xl) {
-            margin-top: -23px;
-        }
+        margin-top: 16px;
     }
 
     #btnTypesSliderNext {
-        margin-top: -110px;
-
-        @media (min-width: $xl) {
-            margin-top: -126px;
-        }
+        margin-top: -87px;
     }
 }
