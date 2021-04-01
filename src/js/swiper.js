@@ -73,6 +73,20 @@ $(document).ready(function () {
         },
     });
 
+    new Swiper('#contentBannerSlider', {
+        speed: 700,
+        parallax: true,
+        navigation: {
+            nextEl: '#btnBannerProjectsNext',
+            prevEl: '#btnBannerProjectsPrev',
+        },
+        on: {
+            activeIndexChange: function (swiper) {
+                changeActiveNumber(swiper.activeIndex, "#bannerSliderNums");
+            }
+        },
+    });
+
     new Swiper('#offerSlider', {
         slidesPerView: 'auto',
         speed: 500,

@@ -1,0 +1,330 @@
+@import "../../../scss/variables";
+
+.section_banner-content {
+    margin-top: 0;
+
+    .container {
+        width: 100%;
+        position: relative;
+    }
+}
+
+.banner-content {
+
+    &__wrap {
+        padding: 16px 7.5% 0;
+
+        @media (min-width: $md) {
+            padding: 24px 6.25% 0;
+        }
+
+        @media (min-width: $lg) {
+            padding: 48px 4.978038067349927% 0;
+            display: flex;
+        }
+
+        @media (min-width: $xl) {
+            padding: 96px 5vw 0;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        height: 176px;
+        border-radius: 12px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-bottom: 79px;
+        box-shadow: -14px -14px 30px rgba(35, 33, 58, 0.35),
+        16px 5px 40px rgba(4, 5, 14, 0.6);
+
+        @media (min-width: $md) {
+            height: 378px;
+            margin-bottom: 96px;
+        }
+
+        @media (min-width: $lg) {
+            width: 48.69918699186992%;
+            height: 556px;
+            margin-bottom: 0;
+            flex: 1 0 auto;
+        }
+
+        @media (min-width: $xl) {
+            width: 47.69140853302162%;
+            height: 620px;
+            flex: none;
+            box-shadow: -14px -28px 30px rgba(35, 33, 58, 0.15),
+            14px 28px 30px rgba(4, 5, 14, 0.3),
+            -6px -6px 30px rgba(35, 33, 58, 0.15),
+            6px 6px 30px rgba(0, 2, 12, 0.3);
+        }
+    }
+
+    &__desc {
+        position: relative;
+
+        @media (min-width: $lg) {
+            padding-left: 48px;
+            display: block;
+        }
+
+        @media (min-width: $xl) {
+            padding-left: 5.555555555555556%;
+        }
+    }
+
+    .slide-nums {
+        position: absolute;
+        top: 209px;
+        left: 7.5%;
+        margin-left: -15px;
+        z-index: 1;
+
+        @media (min-width: $md) {
+            top: 430px;
+            left: 6.25%;
+        }
+
+        @media (min-width: $lg) {
+            top: 44px;
+            right: calc(4.978038067349927% - 5px);
+            left: auto;
+        }
+
+        @media (min-width: $xl) {
+            top: 356px;
+            left: auto;
+            right: calc(5vw + 200px);
+        }
+    }
+
+    &__slider {
+        width: 100vw;
+        transform: translateX(-7.5%);
+
+        @media (min-width: $md) {
+            transform: translateX(-6.25%);
+        }
+
+        @media (min-width: $lg) {
+            width: 51.135841471vw;
+            margin-left: -48px;
+            transform: none;
+        }
+
+        @media (min-width: $xl) {
+            width: 51.588541vw;
+            margin-left: -4.95036vw;
+        }
+    }
+
+    &__slide {
+        padding: 0 7.5%;
+
+        @media (min-width: $md) {
+            padding: 0 6.25%;
+        }
+
+        @media (min-width: $lg) {
+            padding: 0 0 0 48px;
+        }
+
+        @media (min-width: $xl) {
+            padding-left: 4.950364583333333vw;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        margin-bottom: 16px;
+        color: $color-text-primary;
+
+        @media (min-width: $md) {
+            font-size: 40px;
+            line-height: 140%;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 34px;
+            max-width: 75%;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 60px;
+            margin-bottom: 54px;
+            min-height: 168px;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        margin-bottom: 12px;
+        color: $color-text-secondary;
+
+        @media (min-width: $md) {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            width: 280px;
+        }
+
+        @media (min-width: $lg) {
+            width: 65%;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 30px;
+            line-height: 140%;
+            color: #BDBDBD;
+            width: 50%;
+            margin-bottom: 48px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $md) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: $lg) {
+            flex-direction: column;
+            width: 85%;
+        }
+
+        @media (min-width: $xl) {
+            flex-direction: column;
+            width: 55%;
+        }
+
+        .paragraph {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 160%;
+            color: $color-text-inactive;
+
+            @media (min-width: $md) {
+                &:first-child {
+                    width: 38.0952380952381%;
+                    padding: 0 !important;
+                }
+
+                &:last-child {
+                    width: 60%;
+                    padding-left: 92px;
+                }
+            }
+
+            @media (min-width: $lg) {
+                width: 100% !important;
+                padding: 0 !important;
+                font-size: 14px;
+            }
+
+            @media (min-width: $xl) {
+                font-weight: normal;
+                font-size: 14px;
+                color: #636363;
+            }
+        }
+    }
+
+    &__actions {
+        margin-top: 34px;
+
+        @media (min-width: $lg) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            margin-right: 4.978038067349927vw;
+        }
+
+        @media (min-width: $xl) {
+            margin-right: 5vw;
+        }
+
+        .btn {
+            margin-right: 24px;
+
+            @media (min-width: $lg) {
+                order: 2;
+                margin-right: 0;
+            }
+        }
+
+        .link {
+            display: inline-block;
+            margin-top: 24px;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 160%;
+
+            @media (min-width: $md) {
+                margin-top: 0;
+            }
+
+            @media (min-width: $lg) {
+                font-size: 18px;
+                margin-right: 34px;
+                order: 1;
+            }
+        }
+    }
+
+    #btnBannerProjectsPrev,
+    #btnBannerProjectsNext {
+        left: auto;
+        z-index: 1;
+        top: 331px;
+
+        svg {
+            position: relative;
+
+            path {
+                transition: all .3s;
+            }
+        }
+
+        @media (max-width: $xl - 1) {
+            width: 48px;
+            height: 48px;
+            top: 124px;
+
+            svg {
+                width: 10px;
+            }
+        }
+    }
+
+    #btnBannerProjectsPrev {
+        right: calc(5vw + 102px);
+
+        @media (max-width: $xl - 1) {
+            right: 141px;
+        }
+    }
+
+    #btnBannerProjectsNext {
+        right: 5vw;
+
+        @media (max-width: $xl - 1) {
+            right: 68px;
+        }
+    }
+}

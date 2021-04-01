@@ -1425,16 +1425,10 @@ filter: grayscale(0) blur(0);
         padding: 24px 16px;
         border-radius: 12px;
         background: linear-gradient(318.46deg, #1C1D30 -26.8%, #0B0D19 91.86%);
-        box-shadow:
-                -5px -5px 20px rgba(35, 33, 58, 0.35),
-                5px 5px 20px rgba(4, 5, 14, 0.8);
 
         @media (min-width: $md) {
             padding: 48px 68px;
             background: linear-gradient(317.6deg, #1C1D30 -101.32%, #0B0D19 92.12%);
-            box-shadow:
-                    -14px -14px 40px rgba(35, 33, 58, 0.35),
-                    16px 5px 40px rgba(4, 5, 14, 0.6);
         }
 
         @media (min-width: $lg) {
