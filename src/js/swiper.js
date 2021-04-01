@@ -80,6 +80,11 @@ $(document).ready(function () {
             nextEl: '#btnBannerProjectsNext',
             prevEl: '#btnBannerProjectsPrev',
         },
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: true,
+            disableOnInteraction: false,
+        },
         on: {
             activeIndexChange: function (swiper) {
                 changeActiveNumber(swiper.activeIndex, "#bannerSliderNums");
@@ -124,28 +129,21 @@ $(document).ready(function () {
     });
 
     new Swiper('#typesSlider', {
-        //autoHeight: true,
         slidesPerView: 'auto',
         speed: 500,
         navigation: {
             nextEl: '#btnTypesSliderNext',
             prevEl: '#btnTypesSliderPrev',
         },
-        on: {
-            reachEnd: function () {
-                // Let's get all elements after active
-                const lastItems = $('#typesSlider .swiper-slide-active')
-                    .nextAll('.types__slide');
+    });
 
-                // Add class visible all elements after active and active too.
-                for (let i = 0; i <= lastItems.length; i++) {
-                    $(lastItems[i]).addClass('visible');
-                }
-            },
-            fromEdge:  function () {
-                $('.types__slide').removeClass('visible');
-            },
-        }
+    new Swiper('#typicalSolutionsSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        navigation: {
+            nextEl: '#btnTypicalSolutionsNext',
+            prevEl: '#btnTypicalSolutionsPrev',
+        },
     });
 
     const breakpointXL = window.matchMedia ('(min-width: 1366px)');

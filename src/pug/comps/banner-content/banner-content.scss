@@ -152,7 +152,7 @@
 
         @media (min-width: $lg) {
             margin-bottom: 34px;
-            max-width: 75%;
+            max-width: 70%;
         }
 
         @media (min-width: $xl) {
@@ -216,15 +216,25 @@
             line-height: 160%;
             color: $color-text-inactive;
 
+            &:nth-child(2) {
+                margin-top: 16px;
+            }
+
             @media (min-width: $md) {
-                &:first-child {
+                &:nth-child(1) {
                     width: 38.0952380952381%;
                     padding: 0 !important;
                 }
 
-                &:last-child {
+                &:nth-child(2) {
                     width: 60%;
                     padding-left: 92px;
+
+                }
+
+                &:last-child {
+                    width: 60%;
+                    margin-top: 0;
                 }
             }
 
@@ -232,6 +242,10 @@
                 width: 100% !important;
                 padding: 0 !important;
                 font-size: 14px;
+
+                &:nth-child(2) {
+                    margin-top: 16px;
+                }
             }
 
             @media (min-width: $xl) {

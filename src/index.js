@@ -15,6 +15,7 @@ import './pug/comps/form-order/form-order'
 import './pug/comps/feedback/feedback';
 import './pug/comps/work/work';
 import './pug/comps/types/types';
+import './pug/comps/typical-solutions/typical-solutions';
 
 // Include vendor styles
 import 'normalize.css';
