@@ -16,6 +16,7 @@ import './pug/comps/feedback/feedback';
 import './pug/comps/work/work';
 import './pug/comps/types/types';
 import './pug/comps/typical-solutions/typical-solutions';
+import './pug/comps/custom-cursor/custom-cursor';
 
 // Include vendor styles
 import 'normalize.css';
