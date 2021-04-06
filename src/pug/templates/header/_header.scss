@@ -54,7 +54,7 @@
         .nav-toggler {
 
             svg path {
-                stroke: $color-text-inactive;
+                fill: $color-text-inactive;
                 transition: stroke .1s linear .1s;
             }
 
@@ -146,11 +146,11 @@
         }
 
         svg path {
-            stroke: $color-accent;
-            transition: stroke .1s linear .1s;
+            fill: $color-accent;
+            transition: fill .1s linear .1s;
 
             @media (min-width: $md) {
-                stroke: $color-text-primary;
+                fill: $color-text-primary;
             }
         }
     }
