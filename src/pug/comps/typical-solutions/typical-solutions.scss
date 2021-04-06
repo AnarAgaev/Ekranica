@@ -17,6 +17,10 @@
 
     .section__title {
         @extend .title-animation;
+
+        @media (min-width: $xl) {
+            margin-bottom: 96px;
+        }
     }
 
     &__list {
@@ -272,6 +276,14 @@
                     display: none;
                 }
             }
+        }
+    }
+
+    &__controlls {
+        margin-bottom: 48px;
+
+        @media (min-width: $xl) {
+            margin-bottom: 68px;
         }
     }
 
