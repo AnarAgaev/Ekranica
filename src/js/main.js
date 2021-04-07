@@ -22,7 +22,7 @@ $(document).ready(function () {
     }
 
     /* Get window scroll width */
-    function getScrollWidth () {
+    window.getScrollWidth = function () {
         let documentWidth = parseInt(document.documentElement.clientWidth);
         let windowsWidth = parseInt(window.innerWidth);
 
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     /* Get screen type, desktop or not */
     function getScreenType () {
-        window.isDesctop = window.innerWidth > 1345;
+        window.isDesctop = window.innerWidth > 1365;
     }
     getScreenType();
 

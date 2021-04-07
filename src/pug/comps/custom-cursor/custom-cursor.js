@@ -5,9 +5,6 @@ $(document).ready(function () {
     const cursor = document
         .getElementById('cursor');
 
-    console.log(
-        cursor
-    )
     const imagesWithCursor = document
         .getElementsByClassName('custom-cursor');
 
