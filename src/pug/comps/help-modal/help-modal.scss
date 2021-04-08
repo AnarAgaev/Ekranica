@@ -1,0 +1,180 @@
+@import "../../../scss/variables";
+
+.help-modal {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: -9999px;
+    opacity: 0;
+    position: fixed;
+    z-index: 999;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    background-color: rgba(0,0,0,.5);
+    backdrop-filter: blur(0);
+    transition:
+            left 0s linear .15s,
+            opacity .15s linear 0s,
+            backdrop-filter .15s linear 0s;
+
+    @media (min-width: $md) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (min-width: $lg) {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: block;
+        top: 0;
+        backdrop-filter: none;
+        z-index: 3;
+        background: none;
+        cursor: default;
+        border-radius: 34px;
+        overflow: initial !important;
+    }
+
+    &__dialog {
+        position: relative;
+        width: 256px;
+        margin: 1.75rem auto;
+        transform: translate(0, -25px);
+        transition: transform .15s linear;
+
+        @media (min-width: $md) {
+            width: 640px;
+        }
+
+        @media (min-width: $lg) {
+            margin: 0;
+        }
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+        background: rgba(13, 16, 31, 0.4);
+        border: 1px solid #241838;
+        box-sizing: border-box;
+        backdrop-filter: blur(20px);
+        border-radius: 34px;
+        padding: 34px;
+
+        @media (min-width: $md) {
+            padding-left: 100px;
+            padding-right: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__close {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        cursor: pointer;
+        transition: all .3s;
+        transform: rotate(0);
+        overflow: hidden;
+
+        @media (min-width: $lg) {
+            &:hover {
+                transform: rotate(180deg);
+
+                svg path {
+                    stroke: $color-text-inactive;
+                }
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $md) {
+            width: 200px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__picture {
+        width: 126px;
+        height: 126px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .vertical {
+            width: 52px;
+            height: 126px;
+        }
+
+        .horizontal {
+            width: 126px;
+            height: 52px;
+        }
+    }
+
+    &__caption {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-primary;
+        margin: 16px 0 12px;
+
+        @media (min-width: $md) {
+            margin-top: 24px;
+        }
+    }
+
+    &__text {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-primary;
+        width: 70%;
+
+        @media (min-width: $md) {
+            width: 100%;
+        }
+    }
+
+    &.visible {
+        left: 0;
+        opacity: 1;
+        backdrop-filter: blur(4px);
+        transition:
+                left 0s linear 0s,
+                opacity .15s linear 0s,
+                backdrop-filter .15s linear 0s;
+
+        @media (min-width: $lg) {
+            left: 24px !important;
+        }
+
+        .help-modal__dialog {
+            transform: translate(0, 0);
+            transition: transform .5s cubic-bezier(0, 0.55, 0.45, 1);
+        }
+    }
+}

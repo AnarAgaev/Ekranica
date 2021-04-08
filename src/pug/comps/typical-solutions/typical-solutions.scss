@@ -287,6 +287,59 @@
         }
     }
 
+    &__help {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        cursor: pointer;
+
+        svg circle,
+        svg path {
+            transition: $transition;
+        }
+
+        @media (min-width: $lg) {
+            &:hover > svg {
+                circle {
+                    stroke: $color-accent;
+                }
+
+                path {
+                    stroke: $color-accent;
+                }
+            }
+        }
+    }
+
+    &__controll-caption {
+        display: inline-flex;
+        align-items: center;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("/img/icon-ts.svg") center no-repeat;
+            transform: scale(1, 1);
+            position: relative;
+            top: 1px;
+            margin-left: 9px;
+            transition: transform .3s;
+
+            @media (min-width: $lg) {
+                display: none;
+            }
+        }
+    }
+
     #btnTypicalSolutionsPrev {
         margin-top: 16px;
     }
