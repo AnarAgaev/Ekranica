@@ -14,7 +14,13 @@ section.section.section_typical-solutions
 
                     .typical-solutions__controll-caption Тип исполнения
                     .typical-solutions__content
-                        .radio
+                        .typical-solutions__content-body
+                            .radio-group
+                                .marker
+                                input#typeVertical(type='radio' name='type' value='' checked='')
+                                label(for='typeVertical') Вертикальный
+                                input#typeHorizontal(type='radio' name='type' value='')
+                                label(for='typeHorizontal') Горизонтальный
 
 
 

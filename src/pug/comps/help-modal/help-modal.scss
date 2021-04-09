@@ -60,7 +60,6 @@
         background: rgba(13, 16, 31, 0.4);
         border: 1px solid #241838;
         box-sizing: border-box;
-        backdrop-filter: blur(20px);
         border-radius: 34px;
         padding: 34px;
 
@@ -162,7 +161,7 @@
     &.visible {
         left: 0;
         opacity: 1;
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(8px);
         transition:
                 left 0s linear 0s,
                 opacity .15s linear 0s,

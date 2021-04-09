@@ -187,6 +187,10 @@
             font-size: 24px;
             line-height: 130%;
         }
+
+        @media (min-width: $xl) {
+            order: 1;
+        }
     }
 
     &__params {
@@ -287,6 +291,14 @@
         }
     }
 
+    &__controller {
+        @media (min-width: $xl) {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
     &__help {
         width: 16px;
         height: 16px;
@@ -312,6 +324,12 @@
                 }
             }
         }
+
+        @media (min-width: $xl) {
+            top: 0;
+            order: 3;
+            margin-left: 24px;
+        }
     }
 
     &__controll-caption {
@@ -321,6 +339,8 @@
         font-size: 14px;
         line-height: 160%;
         color: $color-text-secondary;
+        z-index: 1;
+        position: relative;
 
         &::after {
             content: "";
@@ -336,6 +356,70 @@
 
             @media (min-width: $lg) {
                 display: none;
+            }
+        }
+    }
+
+    &__content {
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        opacity: 0;
+        padding-left: 7.5vw;
+        margin-left: -7.5vw;
+        transition: all .5s;
+
+        @media (min-width: $md) {
+            padding-left: 6.25vw;
+            margin-left: -6.25vw;
+            padding-top: 30px;
+            margin-top: -30px;
+            padding-bottom: 30px;
+            margin-bottom: -30px;
+        }
+
+        @media (min-width: $lg) {
+            padding: 0;
+            margin: 0;
+            max-height: none;
+            transform: none;
+            opacity: 1;
+            overflow: initial;
+        }
+
+        &-body {
+            padding-top: 24px;
+            position: relative;
+
+            @media (min-width: $md) {
+                padding-top: 12px;
+            }
+
+            @media (min-width: $lg) {
+                padding-top: 16px;
+            }
+
+            @media (min-width: $xl) {
+                padding-top: 0;
+                margin-left: 34px;
+                order: 2;
+            }
+        }
+    }
+
+    .visible {
+        &::after {
+            transform: scale(1, -1);
+        }
+
+        & + .typical-solutions__content {
+            max-height: 200px;
+            transform: translateY(0);
+            opacity: 1;
+
+            @media (min-width: $md) {
+                max-height: 150px;
             }
         }
     }
