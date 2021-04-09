@@ -160,4 +160,16 @@ $(document).ready(function () {
        }
     }
 
+
+    // Handle click on buttons at the simple select
+    const selects = $('.select-simple');
+
+    if (selects.length > 0) {
+        for (let i = 0; i < selects.length; i++) {
+            $(selects[i]).on('click', function () {
+                $(this).toggleClass('open')
+            });
+        }
+    }
+
 });

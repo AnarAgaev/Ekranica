@@ -1753,3 +1753,149 @@ input[type='radio'] {
     //    border-radius: 34px;
     //}
 }
+
+// Simple select group
+.select-simple {
+    width: auto;
+    height: 60px;
+    padding: 16px 34px;
+    background: $color-back-secondary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: box-shadow .3s;
+    box-shadow:
+            -10px -10px 30px rgba(35, 33, 58, 0.35),
+            10px 10px 30px rgba(4, 5, 14, 0.55),
+            inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+            inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+
+    @media (min-width: $lg) {
+        &:hover {
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3),
+                    inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+                    inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+
+            .selected {
+                color: #9A5BFF;
+            }
+        }
+    }
+
+    &__selected-item {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-accent;
+        transition: color .3s;
+    }
+
+    &__arr {
+        margin-left: 6px;
+        width: 16px;
+        height: 16px;
+        background: url("/img/icon-select.svg") center no-repeat;
+        transition:  transform .3s;
+        transform: scale(1, 1);
+    }
+
+    &__container {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -12px;
+        transform: translateY(100%);
+        z-index: 3;
+        padding: 16px 6px 16px 34px;
+        background: rgba(13, 16, 31, 0.4);
+        border: 1px solid #382359;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+        border-radius: 34px;
+        cursor: default;
+    }
+
+    &__list {
+        min-width: 100%;
+        max-height: 214px;
+        overflow-y: auto;
+        padding-right: 28px;
+    }
+
+    &__item {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-primary;
+        white-space: nowrap;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: color .3s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            &:hover {
+                color: $color-accent;
+            }
+        }
+        
+        &.active {
+            color: $color-accent;
+            cursor: default;
+        }
+    }
+
+    &.open {
+        .select-simple__arr {
+            transform: scale(1, -1);
+        }
+    }
+}
+
+// Custom scrollbar
+//- скроллбар
+.scroller::-webkit-scrollbar {
+    width: 6px;
+    height: 0;
+    background: transparent;
+}
+
+//- кнопки управления полузунком и скроллом
+.scroller::-webkit-scrollbar-button {
+    width: 6px;
+    height: 14px;
+}
+
+//- Цвет дорожки, по которой двигается бегунок прокрутки.
+.scroller::-webkit-scrollbar-track {
+}
+
+//- видимая часть трека
+.scroller::-webkit-scrollbar-track-piece {
+}
+
+//- Цвет бегунка полосы, а так же его закругление.
+.scroller::-webkit-scrollbar-thumb {
+    background: #241838;
+    border-radius: 12px;
+}
+
+//- уголоки на кнопках уаправления ползунком
+.scroller::-webkit-scrollbar-corner {
+    display: none;
+}
+
+//- Основная ширина полосы прокрутки.
+.scroller::-webkit-resizer {
+    width: 12px;
+    height: 0;
+}

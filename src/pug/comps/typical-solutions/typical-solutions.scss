@@ -287,15 +287,31 @@
         margin-bottom: 48px;
 
         @media (min-width: $xl) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             margin-bottom: 68px;
         }
     }
 
     &__controller {
+        margin-bottom: 34px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: 48px;
+        }
+
         @media (min-width: $xl) {
             display: inline-flex;
             align-items: center;
             justify-content: flex-start;
+            margin-right: 0;
         }
     }
 
@@ -368,7 +384,7 @@
         opacity: 0;
         padding-left: 7.5vw;
         margin-left: -7.5vw;
-        transition: all .5s;
+        transition: all .7s;
 
         @media (min-width: $md) {
             padding-left: 6.25vw;
