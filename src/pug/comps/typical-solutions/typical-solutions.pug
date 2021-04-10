@@ -5,50 +5,40 @@ section.section.section_typical-solutions
             h2.section__title.animation-element
                 span.title Готовые кабинеты
 
-        .container
-            .typical-solutions__controlls
-                .typical-solutions__controller
-                    .typical-solutions__help.help-button(data-help-modal-id="#helpModalTypicalSolutions")
+        .container-endless-fix.filter
+            .endless.typical-solutions__controlls
+
+                .label-controll
+                    .label-controll__help.help-button(data-help-modal-id="helpModalTypicalSolutions")
                         include ../../../img/icon-help.svg
                         include ../../comps/help-modal/help-modal-typical-solutions
 
-                    .typical-solutions__controll-caption Тип исполнения
-                    .typical-solutions__content
-                        .typical-solutions__content-body
-                            .radio-group
-                                .marker
-                                input#typeVertical(type='radio' name='type' value='' checked='')
-                                label(for='typeVertical') Вертикальный
-                                input#typeHorizontal(type='radio' name='type' value='')
-                                label(for='typeHorizontal') Горизонтальный
+                    .label-controll__caption Тип исполнения
+                    .label-controll__body
+                        .label-controll__content
+                            include ../../comps/custom-slider-radio/custom-slider-radio-types
 
+                .label-controll
+                    .label-controll__help.help-button(data-help-modal-id="helpModalPixelStep")
+                        include ../../../img/icon-help.svg
+                        include ../../comps/help-modal/help-modal-pixel-step
 
-                .typical-solutions__controller
-                    .typical-solutions__controll-caption Тип решения
-                    .typical-solutions__content
-                        .typical-solutions__content-body
-                            .select-simple
-                                .select-simple__selected-item.selected Медиафасад
-                                .select-simple__arr
-                                .select-simple__container
-                                    ul.select-simple__list
-                                        li.select-simple__item.active Медиафасад
-                                        li.select-simple__item Бегущая строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
-                                        li.select-simple__item Строка
+                    .label-controll__caption Шаг пикселя
+                    .label-controll__body
+                        .label-controll__content
+                            include ../custom-selects/suffix-select-pixel-step
 
+                .label-controll
+                    .label-controll__caption Тип решения
+                    .label-controll__body
+                        .label-controll__content
+                            include ../custom-selects/simple-select-types
 
-
-
+                //.label-controll
+                //    .label-controll__caption Ширина
+                //    .label-controll__body
+                //        .label-controll__content
+                //            include ../custom-selects/suffix-select-width
 
         .container-endless
             .endless.typical-solutions__list.swiper-container#typicalSolutionsSlider
@@ -56,7 +46,31 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
+                                .typical-solutions__pics
+                                    // При сборке превому элементу добавить класс .active
+                                    .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+                                    .image(style="background-image: url('/img/placeholder-img.png')")
+                                .typical-solutions__dots
+                                    // При сборке превому элементу добавить класс .active
+                                    .dot.active
+                                    .dot
+                                    .dot
+                                    .dot
+                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
+                            .typical-solutions__params
+                                span Яркость: 800
+                                span Вес кабинета: 8
+                                span Цена/кабинет: $1057
+                            .typical-solutions__actions
+                                a.btn.btn_primary(href="#")
+                                a.revers(href="#") Рассчитать
+
+                    .typical-solutions__slide.swiper-slide
+                        .typical-solutions__card.animation-element
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -80,7 +94,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -104,7 +118,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -128,7 +142,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -152,7 +166,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -176,7 +190,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -200,7 +214,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -224,7 +238,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
@@ -248,31 +262,7 @@ section.section.section_typical-solutions
 
                     .typical-solutions__slide.swiper-slide
                         .typical-solutions__card.animation-element
-                            .typical-solutions__galary
-                                .typical-solutions__pics
-                                    // При сборке превому элементу добавить класс .active
-                                    .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
-                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
-                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
-                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
-                                .typical-solutions__dots
-                                    // При сборке превому элементу добавить класс .active
-                                    .dot.active
-                                    .dot
-                                    .dot
-                                    .dot
-                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
-                            .typical-solutions__params
-                                span Яркость: 800
-                                span Вес кабинета: 8
-                                span Цена/кабинет: $1057
-                            .typical-solutions__actions
-                                a.btn.btn_primary(href="#")
-                                a.revers(href="#") Рассчитать
-
-                    .typical-solutions__slide.swiper-slide
-                        .typical-solutions__card.animation-element
-                            .typical-solutions__galary
+                            .typical-solutions__gallary
                                 .typical-solutions__pics
                                     // При сборке превому элементу добавить класс .active
                                     .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")

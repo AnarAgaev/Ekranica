@@ -6,6 +6,8 @@ import './js/anim';
 import './js/main';
 import './js/loading-bar.min';
 import './pug/templates/header/header';
+import './pug/comps/custom-selects/custom-selects';
+import './pug/comps/custom-slider-radio/custom-slider-radio';
 
 // import './pug/templates/footer/footer';
 import './pug/comps/faq/faq';

@@ -177,3 +177,30 @@
         }
     }
 }
+
+@-moz-document url-prefix() {
+    .help-modal__content {
+        background: rgba(13, 16, 31, 0.8);
+    }
+}
+
+
+.help-modal_default {
+    .help-modal {
+        &__content {
+            display: flex;
+            flex-direction: column;
+            padding: 34px;
+        }
+
+        &__caption {
+            margin-top: 0;
+        }
+
+        &__dialog {
+            @media (min-width: $lg) {
+                width: 500px;
+            }
+        }
+    }
+}

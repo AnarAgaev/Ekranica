@@ -1534,368 +1534,169 @@ filter: grayscale(0) blur(0);
     }
 }
 
-
-input[type='radio'] {
-    display: none;
-}
-.radio-group {
-    display: flex;
-    flex-direction: column;
-
-    @media (min-width: $md) {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: flex-start;
-        width: auto;
-        height: 62px;
-        padding: 4px;
-        background: $color-back-secondary;
-        box-shadow:
-                -10px -10px 30px rgba(35, 33, 58, 0.35),
-                10px 10px 30px rgba(4, 5, 14, 0.55),
-                inset -5px -6px 20px rgba(35, 33, 58, 0.3),
-                inset 5px 6px 20px rgba(0, 2, 12, 0.5);
-        border-radius: 999px;
-    }
-
-    label {
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 160%;
-        color: $color-text-secondary;
-        padding-left: 32px;
-        margin-bottom: 16px;
-        position: relative;
-
-        &::before {
-            content: "";
-            display: block;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: calc(50% - 10px);
-            left: 0;
-            border-radius: 50%;
-            background: $color-back-secondary;
-            transform: rotate(-90deg);
-            box-shadow:
-                    -2px -4px 8px rgba(35, 33, 58, 0.6),
-                    2px 4px 8px rgba(4, 5, 14, 0.6),
-                    -1px -1px 8px rgba(35, 33, 58, 0.6),
-                    1px 1px 8px rgba(0, 2, 12, 0.6),
-                    inset -2px -4px 8px rgba(35, 33, 58, 0.6),
-                    inset 2px 4px 8px rgba(4, 5, 14, 0.8);
-
-            @media (min-width: $md) {
-                display: none;
-            }
-        }
-
-        &::after {
-            content: "";
-            display: block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: $color-accent;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.56);
-            transform: rotate(-90deg);
-            position: absolute;
-            top: calc(50% - 6px);
-            left: 4px;
-            transition: $transition;
-            opacity: 0;
-
-            @media (min-width: $md) {
-                display: none;
-            }
-        }
-
-        @media (min-width: $md) {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding: 16px 24px;
-            height: 54px;
-            box-sizing: border-box;
-            border-radius: 999px;
-            margin-right: 4px;
-            margin-bottom: 0;
-            font-size: 14px;
-            z-index: 1;
-            color: $color-text-inactive;
-            transition: color .3s ease-out;
-            cursor: pointer;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-    }
-
-    input[type='radio']:checked + label {
-
-        &::after {
-            opacity: 1;
-        }
-
-        @media (min-width: $md) {
-            color: $color-accent;
-            cursor: default;
-        }
-    }
-
-    .marker {
-        width: 0;
-        height: 54px;
-        display: none;
-        position: absolute;
-        left: 0;
-        bottom: 4px;
-        z-index: 0;
-        transition: all .3s ease-out;
-        background: $color-back-secondary;
-        box-shadow:
-                -10px -10px 30px rgba(35, 33, 58, 0.16),
-                10px 10px 30px rgba(4, 5, 14, 0.8),
-                inset 5px 6px 20px rgba(35, 33, 58, 0.5),
-                inset -5px -6px 20px rgba(0, 2, 12, 0.2),
-                0px 0px 0px 1px $color-back-secondary;
-        border-radius: 999px;
-
-        @media (min-width: $md) {
-            display: block;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //display: flex;
-    //align-items: center;
-    //
-    //&__title {
-    //    font-size: 18px;
-    //    line-height: 1.6;
-    //    color: $color-text-secondary;
-    //    margin-right: 34px;
-    //}
-    //
-    //&__btns {
-    //    position: relative;
-    //    display: flex;
-    //    border-radius: 999px;
-    //    flex-direction: row;
-    //    align-items: flex-start;
-    //    padding: 4px;
-    //    background: $color-back-primary;
-    //    box-shadow: -10px -10px 30px rgba(35, 33, 58, 0.35), 10px 10px 30px rgba(4, 5, 14, 0.55), inset -5px -6px 20px rgba(35, 33, 58, 0.3), inset 5px 6px 20px rgba(0, 2, 12, 0.5);
-    //}
-    //
-    //.btn {
-    //    padding: 13px 26px;
-    //    transition: $transition;
-    //    z-index: 1;
-    //    display: block;
-    //
-    //    &:hover {
-    //        color: $color-accent;
-    //    }
-    //
-    //    &.active {
-    //        color: $color-accent;
-    //    }
-    //
-    //    &:first-child {
-    //        left: 0;
-    //    }
-    //
-    //}
-    //
-    //.marker {
-    //    display: block;
-    //    position: absolute;
-    //    left: 0;
-    //    top: 0;
-    //    z-index: 0;
-    //    height: 100%;
-    //    transition: $transition;
-    //
-    //    background: #0D101F;
-    //    border: 1px solid #0D101F;
-    //    box-sizing: border-box;
-    //    box-shadow: -10px -10px 30px rgba(35, 33, 58, 0.16), 10px 10px 30px rgba(4, 5, 14, 0.8), inset 5px 6px 20px rgba(35, 33, 58, 0.5), inset -5px -6px 20px rgba(0, 2, 12, 0.2);
-    //    border-radius: 34px;
-    //}
-}
-
-// Simple select group
-.select-simple {
-    width: auto;
-    height: 60px;
-    padding: 16px 34px;
-    background: $color-back-secondary;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+// Controller with label
+.label-controll {
+    margin-bottom: 34px;
     position: relative;
-    cursor: pointer;
-    border-radius: 999px;
-    transition: box-shadow .3s;
-    box-shadow:
-            -10px -10px 30px rgba(35, 33, 58, 0.35),
-            10px 10px 30px rgba(4, 5, 14, 0.55),
-            inset -5px -6px 20px rgba(35, 33, 58, 0.3),
-            inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     @media (min-width: $lg) {
-        &:hover {
-            box-shadow:
-                    -8px -16px 30px rgba(35, 33, 58, 0.35),
-                    8px 16px 30px rgba(4, 5, 14, 0.3),
-                    inset -5px -6px 20px rgba(35, 33, 58, 0.3),
-                    inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: 48px;
+    }
 
-            .selected {
-                color: #9A5BFF;
-            }
+    @media (min-width: $xl) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 0;
+    }
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            z-index: 10 - $i;
         }
     }
 
-    &__selected-item {
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 160%;
-        color: $color-accent;
-        transition: color .3s;
-    }
-
-    &__arr {
-        margin-left: 6px;
+    &__help {
         width: 16px;
         height: 16px;
-        background: url("/img/icon-select.svg") center no-repeat;
-        transition:  transform .3s;
-        transform: scale(1, 1);
-    }
-
-    &__container {
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: -12px;
-        transform: translateY(100%);
-        z-index: 3;
-        padding: 16px 6px 16px 34px;
-        background: rgba(13, 16, 31, 0.4);
-        border: 1px solid #382359;
-        box-sizing: border-box;
-        backdrop-filter: blur(10px);
-        border-radius: 34px;
-        cursor: default;
-    }
-
-    &__list {
-        min-width: 100%;
-        max-height: 214px;
-        overflow-y: auto;
-        padding-right: 28px;
-    }
-
-    &__item {
-        display: block;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 160%;
-        color: $color-text-primary;
-        white-space: nowrap;
+        margin-right: 8px;
+        display: inline-block;
+        position: relative;
+        top: 3px;
         cursor: pointer;
-        margin-bottom: 10px;
-        transition: color .3s;
+        z-index: 4;
 
-        &:last-child {
-            margin-bottom: 0;
+        svg circle,
+        svg path {
+            transition: $transition;
         }
 
         @media (min-width: $lg) {
-            &:hover {
-                color: $color-accent;
+            &:hover > svg {
+                circle {
+                    stroke: $color-accent;
+                }
+
+                path {
+                    stroke: $color-accent;
+                }
             }
         }
-        
-        &.active {
-            color: $color-accent;
-            cursor: default;
+
+        @media (min-width: $xl) {
+            top: 0;
+            order: 3;
+            margin-left: 24px;
         }
     }
 
-    &.open {
-        .select-simple__arr {
+    &__caption {
+        display: inline-flex;
+        align-items: center;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        z-index: 1;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("/img/icon-ts.svg") center no-repeat;
+            transform: scale(1, 1);
+            position: relative;
+            top: 1px;
+            margin-left: 9px;
+            transition: transform .3s;
+
+            @media (min-width: $lg) {
+                display: none;
+            }
+        }
+    }
+
+    &__body {
+        height: auto;
+        max-height: 0;
+        transform: translateY(-10px);
+        opacity: 0;
+        padding-left: 7.5vw;
+        margin-left: -7.5vw;
+        position: relative;
+        left: -999999999px;
+        transition:
+                left 0s linear .5s,
+                max-height .4s linear .2s,
+                transform .5s linear 0s,
+                opacity .5s linear 0s;
+
+        @media (min-width: $md) {
+            padding-left: 6.25vw;
+            margin-left: -6.25vw;
+            padding-top: 30px;
+            margin-top: -30px;
+            padding-bottom: 30px;
+            margin-bottom: -30px;
+        }
+
+        @media (min-width: $lg) {
+            padding: 0;
+            margin: 0;
+            max-height: none;
+            transform: none;
+            opacity: 1;
+            overflow: initial;
+            left: 0;
+        }
+    }
+
+    &__content {
+        padding-top: 24px;
+        position: relative;
+
+        @media (min-width: $md) {
+            padding-top: 12px;
+        }
+
+        @media (min-width: $lg) {
+            padding-top: 16px;
+        }
+
+        @media (min-width: $xl) {
+            padding-top: 0;
+            margin-left: 34px;
+            order: 2;
+        }
+    }
+
+    .visible {
+        &::after {
             transform: scale(1, -1);
         }
+
+        & + .label-controll__body {
+            max-height: 200px;
+            transform: translateY(0);
+            opacity: 1;
+            left: 0;
+            transition:
+                    left 0s linear 0s,
+                    max-height .4s linear 0s,
+                    transform .5s linear 0s,
+                    opacity .4s linear .1s;
+
+            @media (min-width: $md) {
+                max-height: 150px;
+            }
+        }
     }
-}
-
-// Custom scrollbar
-//- скроллбар
-.scroller::-webkit-scrollbar {
-    width: 6px;
-    height: 0;
-    background: transparent;
-}
-
-//- кнопки управления полузунком и скроллом
-.scroller::-webkit-scrollbar-button {
-    width: 6px;
-    height: 14px;
-}
-
-//- Цвет дорожки, по которой двигается бегунок прокрутки.
-.scroller::-webkit-scrollbar-track {
-}
-
-//- видимая часть трека
-.scroller::-webkit-scrollbar-track-piece {
-}
-
-//- Цвет бегунка полосы, а так же его закругление.
-.scroller::-webkit-scrollbar-thumb {
-    background: #241838;
-    border-radius: 12px;
-}
-
-//- уголоки на кнопках уаправления ползунком
-.scroller::-webkit-scrollbar-corner {
-    display: none;
-}
-
-//- Основная ширина полосы прокрутки.
-.scroller::-webkit-resizer {
-    width: 12px;
-    height: 0;
 }

@@ -1,0 +1,237 @@
+@import "../../../scss/variables";
+
+.custom-select {
+    width: auto;
+    padding: 16px 34px;
+    z-index: 3;
+    height: 60px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 999px;
+    background: $color-back-secondary;
+    transition: box-shadow .3s;
+    box-shadow:
+            -10px -10px 30px rgba(35, 33, 58, 0.35),
+            10px 10px 30px rgba(4, 5, 14, 0.55),
+            inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+            inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+
+    @media (min-width: $lg) {
+        &:hover {
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3),
+                    inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+                    inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+
+            .selected {
+                color: #9A5BFF;
+            }
+        }
+    }
+
+    &__container {
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        z-index: 3;
+        padding: 16px 6px 16px 34px;
+        background: rgba(13, 16, 31, 0.4);
+        border: 1px solid #382359;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+        border-radius: 34px;
+        cursor: default;
+        margin-top: 15px;
+        opacity: 0;
+        transform: translateY(100%);
+        left: -999999px;
+        transition:
+                left 0s linear .3s,
+                opacity .3s linear 0s,
+                bottom .3s linear 0s;
+    }
+
+    &__list {
+        min-width: 100%;
+        max-height: 214px;
+        overflow-y: auto;
+        padding-right: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__item {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-primary;
+        white-space: nowrap;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: color .3s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            &:hover {
+                color: $color-accent;
+            }
+        }
+
+        &.active {
+            color: $color-accent;
+            cursor: default;
+        }
+    }
+
+    &.open {
+        .custom-select__container  {
+            opacity: 1;
+            bottom: -12px;
+            left: 0;
+            transition:
+                    left 0s linear 0s,
+                    opacity .3s linear 0s,
+                    bottom .3s linear 0s;
+        }
+
+        // Customize open state fore custom elements
+        .select-simple__arr,
+        .select-suffix__arr {
+            transform: scale(1, -1);
+        }
+    }
+}
+
+@-moz-document url-prefix() {
+    .custom-select__container {
+        padding: 26px 6px 26px 34px;
+        background: rgba(13, 16, 31, 0.8);
+    }
+}
+
+// Custom scrollbar
+.scroller {
+    //- Стили для firefox
+    scrollbar-color: #241838 transparent;
+    scrollbar-width: thin;
+
+    //- скроллбар
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 0;
+        background: transparent;
+    }
+
+    //- кнопки управления полузунком и скроллом
+    &::-webkit-scrollbar-button {
+        width: 6px;
+        height: 14px;
+    }
+
+    //- Цвет дорожки, по которой двигается бегунок прокрутки.
+    &::-webkit-scrollbar-track {
+    }
+
+    //- видимая часть трека
+    &::-webkit-scrollbar-track-piece {
+    }
+
+    //- Цвет бегунка полосы, а так же его закругление.
+    &::-webkit-scrollbar-thumb {
+        background: #241838;
+        border-radius: 12px;
+    }
+
+    //- уголоки на кнопках уаправления ползунком
+    &::-webkit-scrollbar-corner {
+        display: none;
+    }
+
+    //- Основная ширина полосы прокрутки.
+    &::-webkit-resizer {
+        width: 12px;
+        height: 0;
+    }
+}
+
+// Simple select group
+.select-simple {
+
+    .custom-select__container {
+        min-width: 196px;
+    }
+
+    &__selected-item {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-accent;
+        transition: color .3s;
+    }
+
+    &__arr {
+        margin-left: 6px;
+        width: 16px;
+        height: 16px;
+        background: url("/img/icon-select.svg") center no-repeat;
+        transition:  transform .3s;
+        transform: scale(1, 1);
+    }
+}
+
+// Suffix select group
+.select-suffix {
+
+    .custom-select__container {
+        min-width: 150px;
+    }
+
+    .custom-select__item {
+        min-width: 43px;
+    }
+
+    &__selected-item {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-accent;
+        transition: color .3s;
+    }
+
+    &__arr {
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+        margin-right: 16px;
+        background: url("/img/icon-select.svg") center no-repeat;
+        transition:  transform .3s;
+        transform: scale(1, 1);
+    }
+
+    &__delimiter {
+        width: 2px;
+        height: 28px;
+        margin-right: 16px;
+        background: url("/img/icon-delimiter.svg") center no-repeat;
+        box-shadow:
+                -1px -2px 4px rgba(35, 33, 58, 0.6),
+                1px 2px 4px rgba(4, 5, 14, 0.8);
+    }
+
+    &__units {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+    }
+}
+
+

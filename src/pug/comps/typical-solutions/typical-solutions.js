@@ -1,12 +1,19 @@
 import $ from "jquery";
 
 $(document).ready(function () {
-    const btns = $('.typical-solutions__controll-caption');
+    const dots = $('.typical-solutions__dots .dot');
 
-    if (btns.length > 0) {
-        for (let i = 0; i < btns.length; i++) {
-            $(btns[i]).on('click', function () {
-                $(this).toggleClass('visible');
+    if (dots.length > 0) {
+        for (let i = 0; i < dots.length; i++) {
+            $(dots[i]).on('click', function () {
+                const numEl = $(this).index();
+                const imgs = $(this).closest('.typical-solutions__gallary').find('.image');
+
+                $('.typical-solutions__dots .dot').removeClass('active');
+                $(this).addClass('active');
+
+                $(imgs).removeClass('active');
+                $(imgs[numEl]).addClass('active');
             });
         }
     }

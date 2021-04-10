@@ -122,54 +122,14 @@ $(document).ready(function () {
         });
     }
 
+    // Handle click on controllers with label
+    const btnsControll = $('.label-controll__caption');
 
-    // Handle click on buttons at the radio group
-    const radioBtns = $('.radio-group label');
-
-    function setRadioMarker(label) {
-        const marker = $(label).parent().children('.marker');
-        const width = $(label).innerWidth();
-        const left = $(label).position().left;
-
-        $(marker).css({
-            'width': width,
-            'left': left + 'px',
-        });
-    }
-
-    function initRadioMarker() {
-        const btns = $("input[type='radio']:checked + label");
-
-        if (btns.length > 0) {
-            for (let i = 0; i < btns.length; i++) {
-                setRadioMarker(btns[i]);
-            }
-        }
-    }
-    setTimeout(initRadioMarker, 300);
-
-    $(window).resize(function () {
-        initRadioMarker();
-    });
-
-    if (radioBtns.length > 0) {
-       for (let i = 0; i < radioBtns.length; i++) {
-           $(radioBtns[i]).on('click', function () {
-               setRadioMarker(this);
-           });
-       }
-    }
-
-
-    // Handle click on buttons at the simple select
-    const selects = $('.select-simple');
-
-    if (selects.length > 0) {
-        for (let i = 0; i < selects.length; i++) {
-            $(selects[i]).on('click', function () {
-                $(this).toggleClass('open')
+    if (btnsControll.length > 0) {
+        for (let i = 0; i < btnsControll.length; i++) {
+            $(btnsControll[i]).on('click', function () {
+                $(this).toggleClass('visible');
             });
         }
     }
-
 });
