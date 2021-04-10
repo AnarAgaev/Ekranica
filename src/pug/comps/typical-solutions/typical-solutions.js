@@ -8,8 +8,9 @@ $(document).ready(function () {
             $(dots[i]).on('click', function () {
                 const numEl = $(this).index();
                 const imgs = $(this).closest('.typical-solutions__gallary').find('.image');
+                const dots = $(this).closest('.typical-solutions__gallary').find('.dot');
 
-                $('.typical-solutions__dots .dot').removeClass('active');
+                $(dots).removeClass('active');
                 $(this).addClass('active');
 
                 $(imgs).removeClass('active');
