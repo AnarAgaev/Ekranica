@@ -1,15 +1,17 @@
-// Добавлять класс custom-select всем кастомным селектам
-.select-simple.custom-select
-    .select-simple__selected-item.selected Медиафасад
-    .select-simple__arr
-    .custom-select__container
-        .custom-select__list.scroller
-            .custom-select__item.active Медиафасад
-            .custom-select__item Бегущая строка
-            .custom-select__item Строка 1
-            .custom-select__item Строка 2
-            .custom-select__item Строка 3
-            .custom-select__item Строка 4
-            .custom-select__item Строка 5
-            .custom-select__item Строка 6
-            .custom-select__item Строка 7
+.label-controll
+    .label-controll__caption Тип решения
+    .label-controll__body
+        .label-controll__content
+
+            // Добавлять класс custom-select всем кастомным селектам
+            .select-simple.custom-select#Custom-Property-Name_SolutionType(data-controller-type="custom-select")
+                // Если есть значение по умолчанию добавить его в .select-suffix__selected-item.selected
+                .select-simple__selected-item.selected
+                .select-simple__arr
+                .custom-select__container
+                    .custom-select__list.scroller
+                        // Если есть значение по умолчанию добавить .active соответствующему значению
+                        // Список значений формировать динамически из параметров элементв на стороне сервера
+                        // Тип свойства фильтра data-filter-property НЕ ТРОГАТЬ! именно так оно указано в JS
+                        .custom-select__item.filter-controller(data-filter-property="solutionType" data-filter-value="media") Медиафасад
+                        .custom-select__item.filter-controller(data-filter-property="solutionType" data-filter-value="ticker") Бегущая строка

@@ -1,6 +1,9 @@
+@import "../../../scss/variables";
+
 input[type='radio'] {
     display: none;
 }
+
 .radio-group {
     display: flex;
     flex-direction: column;
@@ -15,12 +18,23 @@ input[type='radio'] {
         height: 62px;
         padding: 4px;
         background: $color-back-secondary;
+        transition: box-shadow .3s;
         box-shadow:
                 -10px -10px 30px rgba(35, 33, 58, 0.35),
                 10px 10px 30px rgba(4, 5, 14, 0.55),
                 inset -5px -6px 20px rgba(35, 33, 58, 0.3),
                 inset 5px 6px 20px rgba(0, 2, 12, 0.5);
         border-radius: 999px;
+
+        @media (min-width: $lg) {
+            &:hover {
+                box-shadow:
+                        -8px -16px 30px rgba(35, 33, 58, 0.35),
+                        8px 16px 30px rgba(4, 5, 14, 0.3),
+                        inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+                        inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+            }
+        }
     }
 
     label {
@@ -100,6 +114,12 @@ input[type='radio'] {
                 margin-right: 0;
             }
         }
+
+        @media (min-width: $lg) {
+            &:hover {
+                color: $color-accent;
+            }
+        }
     }
 
     input[type='radio']:checked + label {
@@ -124,6 +144,7 @@ input[type='radio'] {
         z-index: 0;
         transition: all .3s ease-out;
         background: $color-back-secondary;
+        opacity: 0;
         box-shadow:
                 -10px -10px 30px rgba(35, 33, 58, 0.16),
                 10px 10px 30px rgba(4, 5, 14, 0.8),

@@ -13,6 +13,7 @@ $(document).ready(function () {
         $(marker).css({
             'width': width,
             'left': left + 'px',
+            'opacity': '1',
         });
     }
 

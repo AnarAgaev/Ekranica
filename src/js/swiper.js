@@ -80,11 +80,6 @@ $(document).ready(function () {
             nextEl: '#btnBannerProjectsNext',
             prevEl: '#btnBannerProjectsPrev',
         },
-        autoplay: {
-            delay: 3000,
-            stopOnLastSlide: true,
-            disableOnInteraction: false,
-        },
         on: {
             activeIndexChange: function (swiper) {
                 changeActiveNumber(swiper.activeIndex, "#bannerSliderNums");
@@ -137,7 +132,7 @@ $(document).ready(function () {
         },
     });
 
-    new Swiper('#typicalSolutionsSlider', {
+    window.tsSlider = new Swiper('#typicalSolutionsSlider', {
         slidesPerView: 'auto',
         speed: 500,
         navigation: {

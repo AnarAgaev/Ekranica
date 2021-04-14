@@ -1,7 +1,7 @@
 @import "../../../scss/variables";
 
 .custom-cursor {
-    cursor: url(/img/icon-plus.svg) 10 10, pointer;
+    cursor: url(/img/icon-magnifier.svg) 19 19, pointer;
 }
 
 .cursor {
@@ -9,18 +9,18 @@
     width: 0;
     height: 0;
     background-color: transparent;
-    transform: translate(100px, 100px);
+    transform: translate(68px, 68px);
     border-radius: 50%;
-    box-shadow: -100px -100px 0 0 rgba(0, 0, 0, 0.5);
+    box-shadow: -68px -68px 0 0 rgba(11, 13, 25, .8);
     opacity: 0;
-    z-index: 20;
+    z-index: 5;
     transition: opacity .2s, width 0s .1s, height 0s .1s, transform 0s .1s;
 
     &.visible {
-        width: 100px;
-        height: 100px;
+        width: 68px;
+        height: 68px;
         opacity: 1;
-        transform: translate(50px, 50px);
+        transform: translate(34px, 34px);
         transition: opacity 0s 0s, width .3s 0s, height .3s 0s, transform .3s 0s
     }
 

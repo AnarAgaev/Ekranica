@@ -1,5 +1,5 @@
 section.section.section_typical-solutions
-    .typical-solutions
+    .typical-solutions(data-filter-state='{"executionType":"","pixelStep":"","width":""}')
 
         .container
             h2.section__title.animation-element
@@ -7,44 +7,22 @@ section.section.section_typical-solutions
 
         .container-endless-fix.filter
             .endless.typical-solutions__controlls
+                include ../custom-slider-radio/custom-slider-radio-types
+                include ../custom-selects/suffix-select-pixel-step
+                //include ../custom-selects/simple-select-types
+                include ../custom-selects/suffix-select-width
 
-                .label-controll
-                    .label-controll__help.help-button(data-help-modal-id="helpModalTypicalSolutions")
-                        include ../../../img/icon-help.svg
-                        include ../../comps/help-modal/help-modal-typical-solutions
+        .container#notFilterTsResults
+            .typical-solutions__not-results
+                .typical-solutions__not-results-text Нет элементов удовлетворящих выбранным значениям
+                .typical-solutions__not-results-btn
+                    .btn.btn_primary#tsResetFilter Сбросить фильтр
 
-                    .label-controll__caption Тип исполнения
-                    .label-controll__body
-                        .label-controll__content
-                            include ../../comps/custom-slider-radio/custom-slider-radio-types
-
-                .label-controll
-                    .label-controll__help.help-button(data-help-modal-id="helpModalPixelStep")
-                        include ../../../img/icon-help.svg
-                        include ../../comps/help-modal/help-modal-pixel-step
-
-                    .label-controll__caption Шаг пикселя
-                    .label-controll__body
-                        .label-controll__content
-                            include ../custom-selects/suffix-select-pixel-step
-
-                .label-controll
-                    .label-controll__caption Тип решения
-                    .label-controll__body
-                        .label-controll__content
-                            include ../custom-selects/simple-select-types
-
-                //.label-controll
-                //    .label-controll__caption Ширина
-                //    .label-controll__body
-                //        .label-controll__content
-                //            include ../custom-selects/suffix-select-width
-
-        .container-endless
+        .container-endless#tsSlider
             .endless.typical-solutions__list.swiper-container#typicalSolutionsSlider
                 .typical-solutions__list__wrap.swiper-wrapper
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -68,7 +46,31 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
+                        .typical-solutions__card.animation-element
+                            .typical-solutions__gallary
+                                .typical-solutions__pics
+                                    // При сборке превому элементу добавить класс .active
+                                    .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                .typical-solutions__dots
+                                    // При сборке превому элементу добавить класс .active
+                                    .dot.active
+                                    .dot
+                                    .dot
+                                    .dot
+                            .typical-solutions__caption Шаг 1,53 кабинет 650х480 для помещений
+                            .typical-solutions__params
+                                span Яркость: 800
+                                span Вес кабинета: 8
+                                span Цена/кабинет: $1057
+                            .typical-solutions__actions
+                                a.btn.btn_primary(href="#")
+                                a.revers(href="#") Рассчитать
+
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"4000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -92,7 +94,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -116,7 +118,79 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
+                        .typical-solutions__card.animation-element
+                            .typical-solutions__gallary
+                                .typical-solutions__pics
+                                    // При сборке превому элементу добавить класс .active
+                                    .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                .typical-solutions__dots
+                                    // При сборке превому элементу добавить класс .active
+                                    .dot.active
+                                    .dot
+                                    .dot
+                                    .dot
+                            .typical-solutions__caption Шаг 2,5 кабинет 640х480 для помещений
+                            .typical-solutions__params
+                                span Яркость: 800
+                                span Вес кабинета: 8
+                                span Цена/кабинет: $1057
+                            .typical-solutions__actions
+                                a.btn.btn_primary(href="#")
+                                a.revers(href="#") Рассчитать
+
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"3000"}')
+                        .typical-solutions__card.animation-element
+                            .typical-solutions__gallary
+                                .typical-solutions__pics
+                                    // При сборке превому элементу добавить класс .active
+                                    .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                .typical-solutions__dots
+                                    // При сборке превому элементу добавить класс .active
+                                    .dot.active
+                                    .dot
+                                    .dot
+                                    .dot
+                            .typical-solutions__caption Шаг 2,5 кабинет 640х480 для помещений
+                            .typical-solutions__params
+                                span Яркость: 800
+                                span Вес кабинета: 8
+                                span Цена/кабинет: $1057
+                            .typical-solutions__actions
+                                a.btn.btn_primary(href="#")
+                                a.revers(href="#") Рассчитать
+
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
+                        .typical-solutions__card.animation-element
+                            .typical-solutions__gallary
+                                .typical-solutions__pics
+                                    // При сборке превому элементу добавить класс .active
+                                    .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                .typical-solutions__dots
+                                    // При сборке превому элементу добавить класс .active
+                                    .dot.active
+                                    .dot
+                                    .dot
+                                    .dot
+                            .typical-solutions__caption Шаг 2,5 кабинет 640х480 для помещений
+                            .typical-solutions__params
+                                span Яркость: 800
+                                span Вес кабинета: 8
+                                span Цена/кабинет: $1057
+                            .typical-solutions__actions
+                                a.btn.btn_primary(href="#")
+                                a.revers(href="#") Рассчитать
+
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -140,7 +214,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -155,7 +229,7 @@ section.section.section_typical-solutions
                                     .dot
                                     .dot
                                     .dot
-                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
+                            .typical-solutions__caption Шаг 2,5 кабинет 640х480 для помещений
                             .typical-solutions__params
                                 span Яркость: 800
                                 span Вес кабинета: 8
@@ -164,7 +238,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"5000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -179,7 +253,7 @@ section.section.section_typical-solutions
                                     .dot
                                     .dot
                                     .dot
-                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
+                            .typical-solutions__caption Шаг 3,5 кабинет 640х480 для помещений
                             .typical-solutions__params
                                 span Яркость: 800
                                 span Вес кабинета: 8
@@ -188,7 +262,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"4,5","width":"6000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -203,7 +277,7 @@ section.section.section_typical-solutions
                                     .dot
                                     .dot
                                     .dot
-                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
+                            .typical-solutions__caption Шаг 4,5 кабинет 640х480 для помещений
                             .typical-solutions__params
                                 span Яркость: 800
                                 span Вес кабинета: 8
@@ -212,7 +286,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"5,5","width":"6000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -227,7 +301,30 @@ section.section.section_typical-solutions
                                     .dot
                                     .dot
                                     .dot
-                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
+                            .typical-solutions__caption Шаг 5,5 кабинет 640х480 для помещений
+                            .typical-solutions__params
+                                span Яркость: 800
+                                span Вес кабинета: 8
+                                span Цена/кабинет: $1057
+                            .typical-solutions__actions
+                                a.btn.btn_primary(href="#")
+                                a.revers(href="#") Рассчитать
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"6,5","width":"3420"}')
+                        .typical-solutions__card.animation-element
+                            .typical-solutions__gallary
+                                .typical-solutions__pics
+                                    // При сборке превому элементу добавить класс .active
+                                    .image.active(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
+                                    .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+                                .typical-solutions__dots
+                                    // При сборке превому элементу добавить класс .active
+                                    .dot.active
+                                    .dot
+                                    .dot
+                                    .dot
+                            .typical-solutions__caption Шаг 6,5 кабинет 640х480 для помещений
                             .typical-solutions__params
                                 span Яркость: 800
                                 span Вес кабинета: 8
@@ -236,7 +333,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"7,5","width":"7000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -251,7 +348,7 @@ section.section.section_typical-solutions
                                     .dot
                                     .dot
                                     .dot
-                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
+                            .typical-solutions__caption Шаг 7,5 кабинет 640х480 для помещений
                             .typical-solutions__params
                                 span Яркость: 800
                                 span Вес кабинета: 8
@@ -260,7 +357,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"8,5","width":"7000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallary
                                 .typical-solutions__pics
@@ -275,7 +372,7 @@ section.section.section_typical-solutions
                                     .dot
                                     .dot
                                     .dot
-                            .typical-solutions__caption Шаг 1,53 кабинет 640х480 для помещений
+                            .typical-solutions__caption Шаг 8,5 кабинет 640х480 для помещений
                             .typical-solutions__params
                                 span Яркость: 800
                                 span Вес кабинета: 8
