@@ -5,8 +5,8 @@
 
             // Добавлять класс custom-select всем кастомным селектам
             .select-suffix.custom-select#tsWidth(data-controller-type="custom-select")
-                // Если есть значение по умолчанию добавить его в .select-suffix__selected-item.selected
-                .select-suffix__selected-item.selected
+                // Если есть значение по умолчанию добавить его в .select-suffix__selected-item.selected вместо &nbsp;
+                .select-suffix__selected-item.selected &nbsp;
                 .select-suffix__arr
                 .select-suffix__delimiter
                 .select-suffix__units мм
@@ -15,6 +15,7 @@
                         // Если есть значение по умолчанию добавить .active соответствующему значению
                         // Список значений формировать динамически из параметров элементв на стороне сервера
                         // Тип свойства фильтра data-filter-property НЕ ТРОГАТЬ! именно так оно указано в JS
+                        .custom-select__item.filter-controller(data-filter-property="width" data-filter-value="") Сбросить
                         .custom-select__item.filter-controller(data-filter-property="width" data-filter-value="3420") 3420
                         .custom-select__item.filter-controller(data-filter-property="width" data-filter-value="4000") 4000
                         .custom-select__item.filter-controller(data-filter-property="width" data-filter-value="5000") 5000

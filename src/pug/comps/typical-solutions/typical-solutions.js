@@ -38,9 +38,10 @@ $(document).ready(function () {
             tsFilterState[prop] = value.toString();
         }
 
-        /* Обновляем DOM В СООТВЕТСТВИИС НОВЫМ STATE
+        /* Обновляем DOM в соответствии с новым STATE
          * Проходим по всем слайдам и скрываем те,
-         * которые не удовлетворяют фильтру (добавить класс hidden),
+         * которые не удовлетворяют фильтру
+         * (добавить класс hidden),
          * в противном случае показываем.
          */
         for (let j = 0; j < tsItems.length ; j++) {
@@ -60,7 +61,7 @@ $(document).ready(function () {
                 $(tsItems[j]).removeClass('hidden');
             }
 
-            // Переинициализируем слайдер
+            // Переинициализируем соответствующий слайдер
             tsSlider.update();
         }
 
@@ -91,22 +92,7 @@ $(document).ready(function () {
         }
     }
 
-    // Сбрасываем результаты фильтра
-    $('#tsResetFilter').on('click', function () {
-        setState(
-            undefined,
-            undefined,
-            true
-        );
-
-        resetControlls(
-            $('#tsExecutionType'),
-            $('#tsPixelStep'),
-            $('#tsWidth'),
-        );
-    });
-
-    // Сбрасываем контроллеры
+    // Сбрасываем все контроллеры
     function resetControlls(...constrolls) {
         if (constrolls.length > 0) {
             for (let i = 0; i < constrolls.length; i++) {
@@ -133,8 +119,22 @@ $(document).ready(function () {
 
                         break;
                 }
-
             }
         }
     }
+
+    // Сбрасываем все результаты фильтра
+    $('#tsResetFilter').on('click', function () {
+        setState(
+            undefined,
+            undefined,
+            true
+        );
+
+        resetControlls(
+            $('#tsExecutionType'),
+            $('#tsPixelStep'),
+            $('#tsWidth'),
+        );
+    });
 });

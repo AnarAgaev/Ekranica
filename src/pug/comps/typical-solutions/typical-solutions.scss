@@ -317,7 +317,7 @@
         flex-direction: column;
         z-index: 3;
 
-        @media (min-width: $md) {
+        @media (min-width: $lg) {
             flex-direction: row;
             align-items: center;
         }
@@ -325,12 +325,19 @@
         &-text {
             font-size: 14px;
             line-height: 1.6;
+            max-width: 270px;
+            position: relative;
+            z-index: 1;
+
+            @media (min-width: $lg) {
+                max-width: none;
+            }
         }
 
         &-btn {
             margin-top: 16px;
 
-            @media (min-width: $md) {
+            @media (min-width: $lg) {
                 margin-top: 0;
                 margin-left: 24px;
             }
@@ -339,10 +346,15 @@
 
     #notFilterTsResults {
         display: none;
+        z-index: 1;
 
         &.visible {
             display: block;
         }
+    }
+
+    #tsSlider {
+        z-index: 0;
     }
 
     #btnTypicalSolutionsPrev {

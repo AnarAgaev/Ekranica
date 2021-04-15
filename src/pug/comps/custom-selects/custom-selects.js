@@ -16,9 +16,10 @@ import $ from "jquery";
  *
  *     .select-CUSTOM-CLASS__container.custom-select__container
  *         .select-CUSTOM-CLASS__list.custom-select__list.scroller
- *             .select-CUSTOM-CLASS__item.custom-select__item.active ITEM NAME
- *             .select-CUSTOM-CLASS__item.custom-select__item ITEM NAME
- *             .select-CUSTOM-CLASS__item.custom-select__item ITEM NAME
+ *             .select-CUSTOM-CLASS__item.filter-controller(data-filter-property="prop_name" data-filter-value="") Сбросить
+ *             .select-CUSTOM-CLASS__item.filter-controller(data-filter-property="prop_name" data-filter-value="prop_value").active ITEM NAME
+ *             .select-CUSTOM-CLASS__item.filter-controller(data-filter-property="prop_name" data-filter-value="prop_value").ITEM NAME
+ *             .select-CUSTOM-CLASS__item.filter-controller(data-filter-property="prop_name" data-filter-value="prop_value").ITEM NAME
  *             ...
  */
 
@@ -56,7 +57,7 @@ $(document).ready(function () {
      * Handle click on select item
      *
      * Any selects must have element span with class .selected
-     * for put it selected item after lick on item.
+     * for put in it selected item after lick on item into the select.
      *
      * Items into custom select must have class .custom-select__item
      *
@@ -70,10 +71,15 @@ $(document).ready(function () {
                 const selected = $(this).closest('.custom-select').children('.selected');
                 const items = $(this).closest('.custom-select__list').children('.custom-select__item');
 
-                $(selected).text($(this).text());
                 $(items).removeClass('active');
-                $(this).addClass('active');
                 $('.custom-select').removeClass('open');
+
+                if ($(this).data('filterValue') === '') {
+                    $(selected).html('&nbsp;');
+                } else {
+                    $(selected).text($(this).text());
+                    $(this).addClass('active');
+                }
             });
         }
     }
@@ -88,9 +94,11 @@ $(document).ready(function () {
                 if (items.length > 0) {
                     for (let j = 0; j < items.length; j++) {
 
-                        width = $(items[j]).width() > width
-                            ? $(items[j]).width()
-                            : width;
+                        if ($(items[j]).data('filterValue') !== '') {
+                            width = $(items[j]).width() > width
+                                ? $(items[j]).width()
+                                : width;
+                        }
                     }
                 }
 
@@ -98,6 +106,6 @@ $(document).ready(function () {
                     .children('.selected')
                     .css('minWidth', width + 'px');
             }
-        }, 300);
+        }, 500);
     }
 });
