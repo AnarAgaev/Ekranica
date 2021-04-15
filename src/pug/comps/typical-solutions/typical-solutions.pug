@@ -5,24 +5,23 @@ section.section.section_typical-solutions
             h2.section__title.animation-element
                 span.title Готовые кабинеты
 
-        .container-endless-fix.filter
+        .container-endless.filter
             .endless.typical-solutions__controlls
                 include ../custom-slider-radio/custom-slider-radio-types
                 include ../custom-selects/suffix-select-pixel-step
-                //include ../custom-selects/simple-select-types
                 include ../custom-selects/suffix-select-width
 
-        .container#notFilterTsResults
+        .container#notFilterResults
             .typical-solutions__not-results
                 .typical-solutions__not-results-text Нет элементов удовлетворящих выбранным значениям
                 .typical-solutions__not-results-btn
-                    .btn.btn_primary#tsResetFilter Сбросить фильтр
+                    .btn.btn_primary#resetFilter Сбросить фильтр
 
         .container-endless#tsSlider
             .endless.typical-solutions__list.swiper-container#typicalSolutionsSlider
                 .typical-solutions__list__wrap.swiper-wrapper
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -31,6 +30,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                     .image(style="background-image: url('/img/placeholder-img.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -46,7 +51,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -55,6 +60,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -70,7 +81,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"4000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"4000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -79,6 +90,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -94,7 +111,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -103,6 +120,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -118,7 +141,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -127,6 +150,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -142,7 +171,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"3000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"3000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -151,6 +180,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -166,7 +201,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -175,6 +210,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -190,7 +231,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -199,6 +240,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -214,7 +261,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"3420"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -223,6 +270,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -238,7 +291,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"5000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"5000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -247,6 +300,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -262,7 +321,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"4,5","width":"6000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"4,5","width":"6000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -271,6 +330,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -286,7 +351,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"5,5","width":"6000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"5,5","width":"6000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -295,6 +360,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -309,7 +380,7 @@ section.section.section_typical-solutions
                             .typical-solutions__actions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"6,5","width":"3420"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"6,5","width":"3420"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -318,6 +389,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -333,7 +410,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"7,5","width":"7000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"7,5","width":"7000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -342,6 +419,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active
@@ -357,7 +440,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"8,5","width":"7000"}')
+                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"8,5","width":"7000"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -366,6 +449,12 @@ section.section.section_typical-solutions
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-1.png')")
                                     .image(style="background-image: url('/img/temp/led-screen-card-placeholder-2.png')")
+
+                                    .typical-solutions__pics-prev.slider-gallery-controller(data-direction="prev")
+                                        include ../../../img/icon-title-arr.svg
+                                    .typical-solutions__pics-next.slider-gallery-controller(data-direction="next")
+                                        include ../../../img/icon-title-arr.svg
+
                                 .typical-solutions__dots
                                     // При сборке превому элементу добавить класс .active
                                     .dot.active

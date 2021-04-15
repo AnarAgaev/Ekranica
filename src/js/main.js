@@ -132,4 +132,58 @@ $(document).ready(function () {
             });
         }
     }
+
+
+    // Gallery animation into the cards on all slider with filter
+    const dots = $('.dot');
+
+    if (dots.length > 0) {
+        for (let i = 0; i < dots.length; i++) {
+            $(dots[i]).on('click', function () {
+                const numEl = $(this).index();
+                const imgs = $(this).closest('.gallery').find('.image');
+                const dots = $(this).closest('.gallery').find('.dot');
+
+                $(dots).removeClass('active');
+                $(this).addClass('active');
+
+                $(imgs).removeClass('active');
+                $(imgs[numEl]).addClass('active');
+            });
+        }
+    }
+
+    // Handle click on controlls at the gallery in slider
+    const btnGalleryControll = $('.slider-gallery-controller');
+
+    if (btnGalleryControll.length > 0)  {
+        for (let i = 0; i < btnGalleryControll.length; i++) {
+            $(btnGalleryControll[i]).on('click', function () {
+                const direction = $(this).data('direction');
+
+                const activeIndex = $(this).closest('.gallery').find('.dot.active').index();
+                const dots = $(this).closest('.gallery').find('.dot');
+                const imgs = $(this).closest('.gallery').find('.image');
+                let nextIndex;
+
+                $(dots).removeClass('active');
+                $(imgs).removeClass('active');
+
+                if (direction === 'prev') {
+                    nextIndex = activeIndex === 0
+                        ? dots.length - 1
+                        : activeIndex - 1;
+                }
+
+                if (direction === 'next') {
+                    nextIndex = activeIndex + 1 === dots.length
+                        ? 0 :
+                        activeIndex + 1;
+                }
+
+                $(dots).eq(nextIndex).addClass('active');
+                $(imgs).eq(nextIndex).addClass('active');
+            });
+        }
+    }
 });
