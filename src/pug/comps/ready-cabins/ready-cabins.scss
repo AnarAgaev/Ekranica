@@ -1,6 +1,6 @@
 @import "../../../scss/variables";
 
-.typical-solutions {
+.ready-cabins {
     background: $color-back-secondary;
     padding-top: 48px;
     padding-bottom: 48px;
@@ -52,7 +52,7 @@
         }
 
         @for $i from 1 through 5 {
-            &:nth-child(#{$i}) .typical-solutions__card {
+            &:nth-child(#{$i}) .ready-cabins__card {
                 transition-delay: 0.3s * $i;
             }
         }
@@ -308,9 +308,6 @@
         margin-bottom: 48px;
 
         @media (min-width: $xl) {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
             margin-bottom: 68px;
         }
     }

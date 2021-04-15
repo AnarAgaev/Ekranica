@@ -2,8 +2,50 @@ import $ from "jquery";
 
 $(document).ready(function () {
 
+    // Gallery animation into the cards on all slider with filter
+    const dots = $('.dot');
+
+    if (dots.length > 0) {
+        for (let i = 0; i < dots.length; i++) {
+            $(dots[i]).on('click', function () {
+                const numEl = $(this).index();
+                const imgs = $(this).closest('.gallery').find('.image');
+                const dots = $(this).closest('.gallery').find('.dot');
+
+                $(dots).removeClass('active');
+                $(this).addClass('active');
+
+                $(imgs).removeClass('active');
+                $(imgs[numEl]).addClass('active');
+            });
+        }
+    }
+
+
+    // Auto slider for gallery animation into the cards on all slider with filter
+    const gallerys = $('.gallery');
+
+    if (gallerys.length > 0) {
+        setInterval(function () {
+            for (let i = 0; i < gallerys.length; i++) {
+                const activeIndex = $(gallerys[i]).find('.dot.active').index();
+                const dots = $(gallerys[i]).find('.dot');
+                const imgs = $(gallerys[i]).find('.image');
+                const nextIndex = activeIndex + 1 === dots.length ? 0 : activeIndex + 1;
+
+                $(dots).removeClass('active');
+                $(dots).eq(nextIndex).addClass('active');
+
+
+                $(imgs).removeClass('active');
+                $(imgs).eq(nextIndex).addClass('active');
+            }
+        }, 3000);
+    }
+
+
     // TYPICAL SOLUTIONS FILTER
-    const tsItems = $('.typical-solutions__slide');
+    const tsItems = $('.ready-cabins__slide');
     const tsFilterConstrols = $('.filter-controller');
     const tsFilterState = {
         executionType: '',
@@ -50,7 +92,7 @@ $(document).ready(function () {
 
         // Обработка пустого результата фильтрации
         // если нет ни одного элемента удовлетворяющего фильтру
-        const slides = $('.typical-solutions__slide:not(".hidden")');
+        const slides = $('.ready-cabins__slide:not(".hidden")');
 
         if (slides.length === 0) {
             $('#notFilterTsResults').addClass('visible');

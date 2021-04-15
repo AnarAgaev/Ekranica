@@ -18,6 +18,7 @@ import './pug/comps/feedback/feedback';
 import './pug/comps/work/work';
 import './pug/comps/types/types';
 import './pug/comps/typical-solutions/typical-solutions';
+import './pug/comps/ready-cabins/ready-cabins';
 import './pug/comps/custom-cursor/custom-cursor';
 import './pug/comps/galary-modal/gallery-modal';
 import './pug/comps/help-modal/help-modal';
