@@ -46,6 +46,8 @@ $(document).ready(function () {
                 const isModalVisible = $(modal).hasClass('visible');
 
                 $('.help-modal').removeClass('visible');
+                $('.help-modal').css('left', '');
+
 
                 if (!isModalVisible) {
 
@@ -77,6 +79,7 @@ $(document).ready(function () {
                 const modal = $(this).closest('.help-modal');
 
                 $(modal).removeClass('visible');
+                $(modal).css('left', '');
 
                 responsiveClose();
             });
