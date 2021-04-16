@@ -1,6 +1,12 @@
 @import "../../../scss/variables";
 
 .page-installation {
+    .banner-content__text .paragraph {
+        @media (min-width: $xl) {
+            max-width: 60%;
+        }
+    }
+
     .work .section__title {
         @media (min-width: $xl) {
             width: 100%;

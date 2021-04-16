@@ -8,4 +8,23 @@
             min-height: initial;
         }
     }
+
+    .banner-content__text .paragraph {
+        @media (min-width: $xl) {
+            max-width: 60%;
+        }
+    }
+
+    .banner-content .slide-nums {
+        @media (min-width: $xl) {
+            top: 240px;
+        }
+    }
+
+    .banner-content #btnBannerProjectsPrev,
+    .banner-content #btnBannerProjectsNext {
+        @media (min-width: $xl) {
+            top: 218px;
+        }
+    }
 }

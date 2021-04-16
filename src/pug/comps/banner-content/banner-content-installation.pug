@@ -18,9 +18,16 @@ section.section.section_banner-content
                                     .paragraph Составим план подготовительных работ и обозначим возможные варианты монтажа
 
                             .banner-content__slide.swiper-slide
-                                .banner-content__subtitle(data-swiper-parallax-opacity="0") Заголовок второго слайда
+                                .banner-content__subtitle(data-swiper-parallax-opacity="0")
+                                    | Заголовок второго
+                                    br
+                                    | слайда
                                 .banner-content__text(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
                                     .paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur deleniti eius eum facere fugit harum id itaque iure iusto, labore laboriosam obcaecati officiis quaerat ratione rem temporibus! Odit!
+
+                    .banner-content__actions
+                        a.btn.btn_primary Рассчитать стоимость
+                        a.link.revers Отправить заявку на расчёт
 
             .slide-nums#bannerSliderNums
                 .slide-nums__current
@@ -29,7 +36,6 @@ section.section.section_banner-content
                         .slide-nums__number 02
                 .slide-nums__all
                     .number 02
-
 
             .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnBannerProjectsPrev
                 include ../../../img/icon-slider-btn-arr.svg

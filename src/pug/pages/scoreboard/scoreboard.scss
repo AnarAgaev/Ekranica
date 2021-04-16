@@ -2,10 +2,20 @@
 
 .page-scoreboard {
 
-    //.banner-content__title {
-    //    @media (min-width: $xl) {
-    //        margin-bottom: 64px;
-    //        min-height: initial;
-    //    }
-    //}
+    .banner-content .slide-nums {
+        @media (min-width: $xl) {
+            top: 313px;
+        }
+    }
+
+    .banner-content #btnBannerProjectsPrev,
+    .banner-content #btnBannerProjectsNext {
+        @media (min-width: $xl) {
+            top: 291px;
+        }
+    }
+
+    .banner-content__subtitle {
+        width: auto;
+    }
 }

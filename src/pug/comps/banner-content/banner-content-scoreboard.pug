@@ -1,0 +1,78 @@
+section.section.section_banner-content
+    .container
+        .banner-content
+            .banner-content__wrap
+                .banner-content__picture(style="background-image: url('/img/placeholder-img.jpg');" data-swiper-parallax-opacity="0")
+                .banner-content__desc
+                    h2.banner-content__title Электронное табло
+
+                    .banner-content__slider.swiper-container#contentBannerSlider
+                        .banner-content__slider-wrap.swiper-wrapper
+
+                            .banner-content__slide.swiper-slide
+                                .banner-content__subtitle(data-swiper-parallax-opacity="0") Описание
+                                .banner-content__text.banner-content__text_large(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
+                                    .paragraph Это светодиодный экран с большим шагом пикселя. Подходит для рекламы в виде статических изображений или анимации. С помощью такого устройства транслируют повтор моментов в спортивных соревнованиях и матчах, обозначают порядок посетителей в электронных очередях.
+                                    .paragraph Его используют, чтобы показывать цены на заправках, время, месяц, день недели и температуру воздуха, курс валют в банках и других финансовых организациях. На железнодорожных вокзалах и в аэропортах электронное табло информирует о прибытии и отправлении транспорта.
+
+                            .banner-content__slide.swiper-slide
+                                .banner-content__subtitle(data-swiper-parallax-opacity="0") Области применения
+                                .banner-content__text_two-column(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
+                                    .paragraph
+                                        .paragraph__title
+                                            .icon
+                                                include ../../../img/icon-transport.svg
+                                            | Транспорт и общественные места
+                                        ul.paragraph__list
+                                            li.paragraph__item
+                                                span.point
+                                                | Рекламные строки в общественном транспорте
+                                            li.paragraph__item
+                                                span.point
+                                                | Системы оповощения для навигации
+                                            li.paragraph__item
+                                                span.point
+                                                | Бегущие строки со справочной информацией
+                                            li.paragraph__item
+                                                span.point
+                                                | Новостные ленты
+                                            li.paragraph__item
+                                                span.point
+                                                | Статистика для спортивных матчей
+
+                                    .paragraph
+                                        .paragraph__title
+                                            .icon
+                                                include ../../../img/icon-commercial.svg
+                                            | Коммерция
+                                        ul.paragraph__list
+                                            li.paragraph__item
+                                                span.point
+                                                | Декорации для небольших пространств
+                                            li.paragraph__item
+                                                span.point
+                                                | Оформление стендов
+                                            li.paragraph__item
+                                                span.point
+                                                | Оформление витрин
+                                            li.paragraph__item
+                                                span.point
+                                                | Декорации для ресторанов, баров, пабов
+
+                    .banner-content__actions
+                        a.btn.btn_primary Рассчитать стоимость
+                        a.link.revers Отправить заявку на расчёт
+
+            .slide-nums#bannerSliderNums
+                .slide-nums__current
+                    .slide-nums__scrolled
+                        .slide-nums__number.active 01
+                        .slide-nums__number 02
+                .slide-nums__all
+                    .number 02
+
+
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnBannerProjectsPrev
+                include ../../../img/icon-slider-btn-arr.svg
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnBannerProjectsNext
+                include ../../../img/icon-slider-btn-arr.svg

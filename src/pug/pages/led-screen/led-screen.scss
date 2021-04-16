@@ -1,4 +1,22 @@
 @import "../../../scss/variables";
 
 .page-led-screen {
+    .banner-content__text .paragraph {
+        @media (min-width: $xl) {
+            max-width: 55%;
+        }
+    }
+
+    .banner-content .slide-nums {
+        @media (min-width: $xl) {
+            top: 313px;
+        }
+    }
+
+    .banner-content #btnBannerProjectsPrev,
+    .banner-content #btnBannerProjectsNext {
+        @media (min-width: $xl) {
+            top: 291px;
+        }
+    }
 }
