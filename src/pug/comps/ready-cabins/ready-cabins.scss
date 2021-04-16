@@ -398,7 +398,7 @@
         }
     }
 
-    #notFilterResults {
+    #notRcFilterResults {
         display: none;
         z-index: 1;
 
@@ -407,11 +407,11 @@
         }
     }
 
-    #tsSlider {
+    #rcSlider {
         z-index: 0;
     }
 
-    #btnTypicalSolutionsPrev {
+    #btnRcPrev {
         margin-top: 16px;
 
         &.hidden {
@@ -419,7 +419,7 @@
         }
     }
 
-    #btnTypicalSolutionsNext {
+    #btnRcNext {
         margin-top: -87px;
 
         &.hidden {

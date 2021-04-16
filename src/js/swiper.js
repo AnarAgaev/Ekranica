@@ -132,12 +132,21 @@ $(document).ready(function () {
         },
     });
 
+    window.rcSlider = new Swiper('#readyCabinsSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        navigation: {
+            nextEl: '#btnRcNext',
+            prevEl: '#btnRcPrev',
+        },
+    });
+
     window.tsSlider = new Swiper('#typicalSolutionsSlider', {
         slidesPerView: 'auto',
         speed: 500,
         navigation: {
-            nextEl: '#btnTypicalSolutionsNext',
-            prevEl: '#btnTypicalSolutionsPrev',
+            nextEl: '#btnTSNext',
+            prevEl: '#btnTsPrev',
         },
     });
 

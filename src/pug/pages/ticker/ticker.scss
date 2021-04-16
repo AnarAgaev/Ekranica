@@ -1,4 +1,11 @@
 @import "../../../scss/variables";
 
-.ticker {
+.page-ticker {
+
+    .banner-content__title {
+        @media (min-width: $xl) {
+            margin-bottom: 64px;
+            min-height: initial;
+        }
+    }
 }

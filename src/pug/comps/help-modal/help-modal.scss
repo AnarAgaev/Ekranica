@@ -168,7 +168,7 @@
                 backdrop-filter .15s linear 0s;
 
         @media (min-width: $lg) {
-            left: 24px !important;
+            left: 24px ;
         }
 
         .help-modal__dialog {
@@ -199,7 +199,7 @@
 
         &__dialog {
             @media (min-width: $lg) {
-                width: 500px;
+                width: 450px;
             }
         }
     }

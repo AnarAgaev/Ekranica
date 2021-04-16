@@ -1,0 +1,39 @@
+section.section.section_banner-content
+    .container
+        .banner-content
+            .banner-content__wrap
+                .banner-content__picture(style="background-image: url('/img/placeholder-img.jpg');" data-swiper-parallax-opacity="0")
+                .banner-content__desc
+                    h2.banner-content__title Бегущая строка
+
+                    .banner-content__slider.swiper-container#contentBannerSlider
+                        .banner-content__slider-wrap.swiper-wrapper
+
+                            .banner-content__slide.swiper-slide
+                                .banner-content__subtitle(data-swiper-parallax-opacity="0") Описание
+                                .banner-content__text(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
+                                    .paragraph Это светодиодные экраны ограниченного размера с большим шагом пикселя. Состоят из модулей, размещённых в 2–3 ряда. Бывают одноцветными и многоцветными. Подходят для передачи рекламных сообщений, важной информации и просто для привлечения внимания с помощью текста, бегущего справа налево. Возможна демонстрация как простых «пиксельных» изображений, так и динамического видеоряда с поправкой на размер изделия.
+                                    .paragraph Один из самых популярных и доступных видов наружной рекламы. Используются в помещениях, на открытых и закрытых спортивных площадках. Украшают магазины, гостиничные комплексы, рестораны и другие здания.
+
+                            .banner-content__slide.swiper-slide
+                                .banner-content__subtitle(data-swiper-parallax-opacity="0") Заголовок второго слайда
+                                .banner-content__text(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
+                                    .paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolore quod reprehenderit similique tempora. Culpa cumque, dolor enim eum explicabo illo ipsum laboriosam libero suscipit? Consequatur dignissimos enim impedit quidem.
+
+                    .banner-content__actions
+                        a.btn.btn_primary Рассчитать стоимость
+                        a.link.revers Отправить заявку на расчёт
+
+            .slide-nums#bannerSliderNums
+                .slide-nums__current
+                    .slide-nums__scrolled
+                        .slide-nums__number.active 01
+                        .slide-nums__number 02
+                .slide-nums__all
+                    .number 02
+
+
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnBannerProjectsPrev
+                include ../../../img/icon-slider-btn-arr.svg
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnBannerProjectsNext
+                include ../../../img/icon-slider-btn-arr.svg

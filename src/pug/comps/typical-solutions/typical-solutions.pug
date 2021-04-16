@@ -3,25 +3,26 @@ section.section.section_typical-solutions
 
         .container
             h2.section__title.animation-element
-                span.title Готовые кабинеты
+                span.title Типовые решения
 
-        .container-endless.filter
+        .container-endless-fix.filter
             .endless.typical-solutions__controlls
                 include ../custom-slider-radio/custom-slider-radio-types
+                include ../custom-selects/simple-select-types
                 include ../custom-selects/suffix-select-pixel-step
                 include ../custom-selects/suffix-select-width
 
-        .container#notFilterResults
+        .container#notFilterTsResults
             .typical-solutions__not-results
                 .typical-solutions__not-results-text Нет элементов удовлетворящих выбранным значениям
                 .typical-solutions__not-results-btn
-                    .btn.btn_primary#resetFilter Сбросить фильтр
+                    .btn.btn_primary#resetTsFilter Сбросить фильтр
 
         .container-endless#tsSlider
             .endless.typical-solutions__list.swiper-container#typicalSolutionsSlider
                 .typical-solutions__list__wrap.swiper-wrapper
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -51,7 +52,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"1,53","width":"3420", "solutionType":"media"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -81,7 +82,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"4000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"4000", "solutionType":"media"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -111,7 +112,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -141,7 +142,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000", "solutionType":"media"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -171,7 +172,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"3000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"3000", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -201,7 +202,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"4000", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -231,7 +232,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"1,53","width":"3420", "solutionType":"media"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -261,7 +262,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"3420"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"2,5","width":"3420", "solutionType":"media"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -291,7 +292,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"5000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"vertical","pixelStep":"3,5","width":"5000", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -321,7 +322,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"4,5","width":"6000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"4,5","width":"6000", "solutionType":"media"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -351,7 +352,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"5,5","width":"6000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"5,5","width":"6000", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -380,7 +381,7 @@ section.section.section_typical-solutions
                             .typical-solutions__actions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"6,5","width":"3420"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"6,5","width":"3420", "solutionType":"media"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -410,7 +411,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"7,5","width":"7000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"7,5","width":"7000", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -440,7 +441,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-                    .typical-solutions__slide.simple-filter-slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"8,5","width":"7000"}')
+                    .typical-solutions__slide.swiper-slide(data-filter-props='{"executionType":"horizontal","pixelStep":"8,5","width":"7000", "solutionType":"ticker"}')
                         .typical-solutions__card.animation-element
                             .typical-solutions__gallery.gallery
                                 .typical-solutions__pics
@@ -470,7 +471,7 @@ section.section.section_typical-solutions
                                 a.btn.btn_primary(href="#")
                                 a.revers(href="#") Рассчитать
 
-            .btn.btn_icon-outlined.lite-background.slider-controller.slider-controller_prev#btnTypicalSolutionsPrev
+            .btn.btn_icon-outlined.lite-background.slider-controller.slider-controller_prev#btnTsPrev
                 include ../../../img/icon-slider-btn-arr.svg
-            .btn.btn_icon-outlined.lite-background.slider-controller.slider-controller_next#btnTypicalSolutionsNext
+            .btn.btn_icon-outlined.lite-background.slider-controller.slider-controller_next#btnTSNext
                 include ../../../img/icon-slider-btn-arr.svg
