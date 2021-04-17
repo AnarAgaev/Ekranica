@@ -9,12 +9,6 @@
         }
     }
 
-    .banner-content__subtitle {
-        @media (min-width: 768px) {
-            width: auto;
-        }
-    }
-
     .banner-content .slide-nums {
         @media (min-width: $xl) {
             top: 240px;

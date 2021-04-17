@@ -19,10 +19,84 @@ section.section.section_banner-content
 
 
                             .banner-content__slide.swiper-slide
-                                .banner-content__subtitle(data-swiper-parallax-opacity="0")
-                                    | Заголовок второго слайда
-                                .banner-content__text(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
-                                    .paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur deleniti eius eum facere fugit harum id itaque iure iusto, labore laboriosam obcaecati officiis quaerat ratione rem temporibus! Odit!
+                                .banner-content__subtitle(data-swiper-parallax-opacity="0") Области применения
+                                .banner-content__text_two-column(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
+                                    .paragraph
+                                        .paragraph__title
+                                            .icon
+                                                include ../../../img/icon-people.svg
+                                            | Рекламные кампании и конференции
+                                        ul.paragraph__list
+                                            li.paragraph__item
+                                                span.point
+                                                | Рекламные ролики
+                                            li.paragraph__item
+                                                span.point
+                                                | Презентация продукта
+                                            li.paragraph__item
+                                                span.point
+                                                | Выставочный стенд
+                                            li.paragraph__item
+                                                span.point
+                                                | Видеомост и конференц связь
+                                            li.paragraph__item
+                                                span.point
+                                                | Прямая трансляция
+                                            li.paragraph__item
+                                                span.point
+                                                | Информационный стенд
+
+                                    .paragraph
+                                        .paragraph__title
+                                            .icon
+                                                include ../../../img/icon-star.svg
+                                            | Мероприятия и развлечения
+                                        ul.paragraph__list
+                                            li.paragraph__item
+                                                span.point
+                                                | Элемент декора
+                                            li.paragraph__item
+                                                span.point
+                                                | Динамическая фотозона
+                                            li.paragraph__item
+                                                span.point
+                                                | Оформление сцены (медиакулисы)
+                                            li.paragraph__item
+                                                span.point
+                                                | Оформление шоурума
+                                            li.paragraph__item
+                                                span.point
+                                                | Видеофон для концертов
+
+                            .banner-content__slide.swiper-slide
+                                .banner-content__subtitle(data-swiper-parallax-opacity="0") Документация
+                                .banner-content__text.banner-content__text_large(data-swiper-parallax-x="-700" data-swiper-parallax-opacity="0" data-swiper-parallax-duration="700")
+                                    .paragraph
+                                        ul.paragraph__single-list
+                                            li.paragraph__single-list-item
+                                                a.paragraph__single-link(href="")
+                                                    .icon
+                                                        include ../../../img/icon-down.svg
+                                                    | Файлы и прошивки контроллеров серии TB
+
+                                            li.paragraph__single-list-item
+                                                a.paragraph__single-link(href="")
+                                                    .icon
+                                                        include ../../../img/icon-down.svg
+                                                    | Файлы и прошивки для видеопроцессоров серии VX
+
+                                            li.paragraph__single-list-item
+                                                a.paragraph__single-link(href="")
+                                                    .icon
+                                                        include ../../../img/icon-down.svg
+                                                    | Файлы и прошивки для MCTRL
+
+                                            li.paragraph__single-list-item
+                                                a.paragraph__single-link(href="")
+                                                    .icon
+                                                        include ../../../img/icon-down.svg
+                                                    | Файлы и прошивки для MRV
+
 
                     .banner-content__actions
                         a.btn.btn_primary Рассчитать стоимость
@@ -33,8 +107,9 @@ section.section.section_banner-content
                     .slide-nums__scrolled
                         .slide-nums__number.active 01
                         .slide-nums__number 02
+                        .slide-nums__number 03
                 .slide-nums__all
-                    .number 02
+                    .number 03
 
             .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnBannerProjectsPrev
                 include ../../../img/icon-slider-btn-arr.svg

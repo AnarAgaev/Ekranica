@@ -1,9 +1,9 @@
 @import "../../../scss/variables";
 
 .page-led-screen {
-    .banner-content__text .paragraph {
+    .banner-content__slide:first-child .paragraph {
         @media (min-width: $xl) {
-            max-width: 55%;
+            max-width: 60%;
         }
     }
 
@@ -17,6 +17,18 @@
     .banner-content #btnBannerProjectsNext {
         @media (min-width: $xl) {
             top: 291px;
+        }
+    }
+
+    .banner-content__text_two-column .paragraph {
+        @media (min-width: $xl) {
+            padding-right: 0;
+        }
+    }
+
+    .banner-content__text_two-column .paragraph:last-child {
+        @media (min-width: $xl) {
+            padding-left: 64px;
         }
     }
 }
