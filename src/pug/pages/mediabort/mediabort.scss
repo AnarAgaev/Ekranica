@@ -1,0 +1,30 @@
+@import "../../../scss/variables";
+
+.page-mediabort {
+
+    .banner-content__title {
+        @media (min-width: $xl) {
+            margin-bottom: 64px;
+            min-height: initial;
+        }
+    }
+
+    .banner-content__subtitle {
+        @media (min-width: 768px) {
+            width: auto;
+        }
+    }
+
+    .banner-content .slide-nums {
+        @media (min-width: $xl) {
+            top: 240px;
+        }
+    }
+
+    .banner-content #btnBannerProjectsPrev,
+    .banner-content #btnBannerProjectsNext {
+        @media (min-width: $xl) {
+            top: 218px;
+        }
+    }
+}
