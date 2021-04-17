@@ -192,29 +192,6 @@
     }
 
     &__text {
-        //display: flex;
-        //flex-direction: column;
-        //
-        //@media (min-width: $md) {
-        //    flex-direction: row;
-        //    flex-wrap: wrap;
-        //}
-        //
-        //@media (min-width: $lg) {
-        //    flex-direction: column;
-        //    width: 85%;
-        //}
-        //
-        //@media (min-width: $xl) {
-        //    flex-direction: column;
-        //    width: 55%;
-        //
-        //    &_large {
-        //        width: 61%;
-        //    }
-        //}
-
-
         display: flex;
         flex-direction: column;
 
@@ -270,45 +247,6 @@
                 max-width: none;
                 color: #636363;
             }
-
-
-            //&:nth-child(2) {
-            //    margin-top: 16px;
-            //}
-            //
-            //@media (min-width: $md) {
-            //    &:nth-child(1) {
-            //        width: 38.0952380952381%;
-            //        padding: 0 !important;
-            //    }
-            //
-            //    &:nth-child(2) {
-            //        width: 60%;
-            //        padding-left: 92px;
-            //
-            //    }
-            //
-            //    &:last-child {
-            //        width: 60%;
-            //        margin-top: 0;
-            //    }
-            //}
-            //
-            //@media (min-width: $lg) {
-            //    width: 100% !important;
-            //    padding: 0 !important;
-            //    font-size: 14px;
-            //
-            //    &:nth-child(2) {
-            //        margin-top: 16px;
-            //    }
-            //}
-            //
-            //@media (min-width: $xl) {
-            //    font-weight: normal;
-            //    font-size: 14px;
-            //    color: #636363;
-            //}
         }
     }
 
@@ -317,14 +255,6 @@
         flex-direction: column;
 
         @media (min-width: $md) {
-            flex-direction: row;
-        }
-
-        @media (min-width: $lg) {
-            flex-direction: column;
-        }
-
-        @media (min-width: $xl) {
             flex-direction: row;
         }
 
@@ -350,9 +280,7 @@
             }
 
             @media (min-width: $lg) {
-                width: 100%;
-                padding: 0;
-                margin-bottom: 16px;
+                padding: 0 68px 0 0;
 
                 &:last-child {
                     padding-left: 0;
@@ -360,10 +288,11 @@
             }
 
             @media (min-width: $xl) {
-                width: 50%;
+                padding-right: 34px;
 
                 &:last-child {
-                    padding-left: 60px;
+                    padding-left: 34px;
+                    padding-right: 0;
                 }
             }
         }
@@ -391,16 +320,8 @@
                 height: 20px;
                 display: block;
                 position: absolute;
-                top: 1px;
+                top: calc(50% - 10px);
                 left: 0;
-
-                @media (min-width: $lg) {
-                    top: 2px;
-                }
-
-                @media (min-width: $xl) {
-                    top: 4px;
-                }
 
                 svg {
                     position: absolute;
@@ -438,20 +359,14 @@
                 color: #636363;
             }
 
-
             .point {
                 display: block;
                 position: absolute;
-                top: 5px;
+                top: calc(50% - 4.5px);
                 left: 0;
-
-                @media (min-width: $lg) {
-                    top: 7px;
-                }
             }
         }
     }
-
 
     &__actions {
         margin-top: 34px;

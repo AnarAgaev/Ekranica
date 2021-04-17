@@ -68,6 +68,7 @@
         overflow: hidden;
         border-radius: 50%;
         background: $color-back-secondary;
+        transition: $transition;
         box-shadow:
                 inset 4px 4px 24px rgba(4, 2, 19, 0.5),
                 inset -4px -4px 24px rgba(255, 255, 255, 0.06);
@@ -84,6 +85,8 @@
             height: 50px;
 
             &:hover {
+                transform: rotate(90deg);
+
                 svg path {
                     stroke: $color-accent ;
                 }
@@ -96,7 +99,7 @@
             position: absolute;
             top: calc(50% + 3px);
             left: 50%;
-            transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%);
 
             @media (min-width: $md) {
                 width: 102px;
@@ -104,7 +107,7 @@
             }
 
             path {
-                transition: stroke .2s;
+                transition: $transition;
             }
         }
     }

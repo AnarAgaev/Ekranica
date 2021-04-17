@@ -1,22 +1,25 @@
 @import "../../../scss/variables";
 
-.page-scoreboard {
+.page-media-facade {
+
+    .banner-content__title {
+        @media (min-width: $xl) {
+            margin-bottom: 64px;
+            min-height: initial;
+        }
+    }
 
     .banner-content .slide-nums {
         @media (min-width: $xl) {
-            top: 313px;
+            top: 240px;
         }
     }
 
     .banner-content #btnBannerProjectsPrev,
     .banner-content #btnBannerProjectsNext {
         @media (min-width: $xl) {
-            top: 291px;
+            top: 218px;
         }
-    }
-
-    .banner-content__subtitle {
-        width: auto;
     }
 
     .banner-content__text_two-column .paragraph {
@@ -28,12 +31,6 @@
             &:last-child {
                 padding-left: 16px;
             }
-
-            .paragraph__title {
-                min-height: 50px;
-                display: flex;
-                align-items: center;
-            }
         }
 
         @media (min-width: $xl) {
@@ -44,10 +41,6 @@
             &:last-child {
                 padding-left: 48px;
                 padding-right: 0;
-            }
-
-            .paragraph__title {
-                min-height: initial;
             }
         }
     }
