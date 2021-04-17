@@ -1,21 +1,25 @@
 @import "../../../scss/variables";
 
-.page-video-banner {
+.page-videocube {
+    .banner-content__title {
+        @media (min-width: $xl) {
+            margin-bottom: 64px;
+            min-height: initial;
+        }
+    }
 
     .banner-content .slide-nums {
         @media (min-width: $xl) {
-            top: 313px;
+            top: 240px;
         }
     }
 
     .banner-content #btnBannerProjectsPrev,
     .banner-content #btnBannerProjectsNext {
         @media (min-width: $xl) {
-            top: 291px;
+            top: 218px;
         }
     }
 
-    .banner-content__subtitle {
-        width: auto;
-    }
+
 }

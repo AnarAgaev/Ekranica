@@ -1,0 +1,21 @@
+@import "../../../scss/variables";
+
+.page-videobanner {
+
+    .banner-content .slide-nums {
+        @media (min-width: $xl) {
+            top: 313px;
+        }
+    }
+
+    .banner-content #btnBannerProjectsPrev,
+    .banner-content #btnBannerProjectsNext {
+        @media (min-width: $xl) {
+            top: 291px;
+        }
+    }
+
+    .banner-content__subtitle {
+        width: auto;
+    }
+}
