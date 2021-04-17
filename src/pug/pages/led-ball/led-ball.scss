@@ -1,0 +1,23 @@
+@import "../../../scss/variables";
+
+.page-led-ball {
+
+    .banner-content__subtitle {
+        @media (min-width: 768px) {
+            width: auto;
+        }
+    }
+
+    .banner-content .slide-nums {
+        @media (min-width: $xl) {
+            top: 313px;
+        }
+    }
+
+    .banner-content #btnBannerProjectsPrev,
+    .banner-content #btnBannerProjectsNext {
+        @media (min-width: $xl) {
+            top: 291px;
+        }
+    }
+}
