@@ -1,0 +1,20 @@
+@import "../../../scss/variables";
+
+.page-sport-screen {
+    .banner-content .slide-nums {
+        @media (min-width: $xl) {
+            top: 398px;
+        }
+    }
+
+    .banner-content #btnBannerProjectsPrev,
+    .banner-content #btnBannerProjectsNext {
+        @media (min-width: $xl) {
+            top: 375px;
+        }
+    }
+
+    .banner-content__subtitle {
+        width: auto;
+    }
+}
