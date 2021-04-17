@@ -1,0 +1,17 @@
+//- Include used template for this page
+extends ../../templates/default
+
+//- VARIABLES FOR INCLUDE THIS IN USED TEMPLATE
+block variables
+    - const title       = 'Рекламные уличные экраны | Ekranika'
+    - const description = 'Write description for the page here'
+    - const keywords    = 'Write keywords for the page here'
+    - const pageClass   = 'page-street-screen'
+
+block content
+    include ../../comps/banner-content/banner-content-street-screen
+    include ../../comps/list/list-street-screen
+    include ../../comps/typical-solutions/typical-solutions
+    include ../../comps/work/work-rent
+    include ../../comps/projects/projects-content
+    include ../../comps/form-order/form-order
