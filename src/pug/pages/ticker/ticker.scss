@@ -9,10 +9,14 @@
         }
     }
 
-    .banner-content__text .paragraph {
+    .banner-content__slide:first-child .paragraph {
         @media (min-width: $xl) {
             max-width: 60%;
         }
+    }
+
+    .banner-content__text_two-column .paragraph {
+        padding-right: 0;
     }
 
     .banner-content .slide-nums {
@@ -25,6 +29,39 @@
     .banner-content #btnBannerProjectsNext {
         @media (min-width: $xl) {
             top: 218px;
+        }
+    }
+
+    .banner-content__text_two-column .paragraph {
+        @media (min-width: $lg) {
+            &:first-child {
+                padding-right: 48px;
+            }
+
+            &:last-child {
+                padding-left: 16px;
+            }
+
+            .paragraph__title {
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        @media (min-width: $xl) {
+            &:first-child {
+                padding-right: 24px;
+            }
+
+            &:last-child {
+                padding-left: 48px;
+                padding-right: 0;
+            }
+
+            .paragraph__title {
+                min-height: initial;
+            }
         }
     }
 }

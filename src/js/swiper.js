@@ -150,7 +150,7 @@ $(document).ready(function () {
         },
     });
 
-    const breakpointXL = window.matchMedia ('(min-width: 1366px)');
+    const breakpointXL = window.matchMedia ('(min-width: 1320px)');
     let listSlider, workSlider;
 
     function breakpointXLChecker() {
