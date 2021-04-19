@@ -1547,6 +1547,10 @@ filter: grayscale(0) blur(0);
         display: inline-block;
         margin-bottom: 0;
         margin-right: 48px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     @media (min-width: $xl) {
