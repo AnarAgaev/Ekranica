@@ -276,7 +276,7 @@
             font-weight: normal;
             font-size: 14px;
             line-height: 160%;
-            color: $color-text-inactive;
+            color: $color-text-primary;
 
             @media (min-width: $lg) {
                 font-size: 16px;
@@ -284,7 +284,6 @@
 
             @media (min-width: $xl) {
                 font-size: 18px;
-                color: #636363;
 
                 &:hover {
                     color: $color-accent;
@@ -312,11 +311,7 @@
 
                     path {
                         transition: $transition;
-                        stroke: $color-text-inactive;
-
-                        @media (min-width: $xl) {
-                            stroke: #636363;
-                        }
+                        stroke: $color-text-primary;
                     }
                 }
             }

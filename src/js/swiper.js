@@ -163,7 +163,7 @@ $(document).ready(function () {
                 workSlider.destroy(true, true);
             }
 
-            if ( ourWorksSlider !== undefined ) {
+            if ( ourWorksSlider !== undefined  && $('.tab-list').length > 0 ) {
                 ourWorksSlider.destroy(true, true);
             }
 
@@ -199,18 +199,23 @@ $(document).ready(function () {
                 speed: 500,
             });
 
-            setTimeout(function () {
-                ourWorksSlider.update();
-            }, 500);
+            if ( $('.tab-list').length > 0 ) {
+                setTimeout(function () {
+                    ourWorksSlider.update();
+                }, 500);
+            }
         }
     }
 
     $(window).resize(function () {
         // Update slider fot mobile and tablet version if it has built
         // for corrected swiper slide width
-        setTimeout(function () {
-            ourWorksSlider.update();
-        }, 1000);
+
+        if ( $('body').hasClass('page-our-works') ) {
+            setTimeout(function () {
+                ourWorksSlider.update();
+            }, 1000);
+        }
     });
 
     // Here are listening breakpoint for large screen and initial check
