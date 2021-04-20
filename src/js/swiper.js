@@ -151,7 +151,7 @@ $(document).ready(function () {
     });
 
     const breakpointXL = window.matchMedia ('(min-width: 1320px)');
-    let listSlider, workSlider;
+    let listSlider, workSlider, ourWorksSlider;
 
     function breakpointXLChecker() {
         if ( breakpointXL.matches === true ) {
@@ -163,9 +163,14 @@ $(document).ready(function () {
                 workSlider.destroy(true, true);
             }
 
+            if ( ourWorksSlider !== undefined ) {
+                ourWorksSlider.destroy(true, true);
+            }
+
         } else if ( breakpointXL.matches === false ) {
             enableListSlider();
             enableWorkSlider();
+            enableOurWorksSlider();
         }
     }
 
@@ -187,7 +192,81 @@ $(document).ready(function () {
         }
     }
 
-// Here are listening breakpoint for large screen and initial check
+    function enableOurWorksSlider() {
+        if ($('#workSlider')[0]) {
+            ourWorksSlider = new Swiper('#ourWorksSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+            });
+
+            setTimeout(function () {
+                ourWorksSlider.update();
+            }, 500);
+        }
+    }
+
+    $(window).resize(function () {
+        // Update slider fot mobile and tablet version if it has built
+        // for corrected swiper slide width
+        setTimeout(function () {
+            ourWorksSlider.update();
+        }, 1000);
+    });
+
+    // Here are listening breakpoint for large screen and initial check
     breakpointXL.addListener(breakpointXLChecker);
     breakpointXLChecker();
+
+    // Tab lists sliders
+    new Swiper('#TabListTickerSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observeParents: true,
+        observer: true,
+        observeSlideChildren: true,
+        navigation: {
+            nextEl: '#btnTabListTickerNext',
+            prevEl: '#btnTabListTickerPrev',
+        },
+    });
+    new Swiper('#TabListMediaFacadeSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '#btnTabListMediaFacadeNext',
+            prevEl: '#btnTabListMediaFacadePrev',
+        },
+    });
+    new Swiper('#TabListOuterLedScreenSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '#btnTabListOuterLedScreenNext',
+            prevEl: '#btnTabListOuterLedScreenPrev',
+        },
+    });
+    new Swiper('#TabListInnerLedScreenSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '#btnTabListInnerLedScreenNext',
+            prevEl: '#btnTabListInnerLedScreenPrev',
+        },
+    });
+    new Swiper('#TabListRentSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '#btnTabListRentNext',
+            prevEl: '#btnTabListRentPrev',
+        },
+    });
 });

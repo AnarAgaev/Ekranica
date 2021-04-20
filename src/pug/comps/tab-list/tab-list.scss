@@ -1,0 +1,190 @@
+@import "../../../scss/variables";
+
+.tab-list {
+
+    .section__title {
+        @extend .title-animation;
+
+        @media (min-width: $md) {
+            width: 450px;
+        }
+
+        @media (min-width: $xl) {
+            width: 687px;
+        }
+    }
+
+    .section__link {
+        @extend .title-link-animation;
+    }
+
+    &__list {
+        padding-top: 50px;
+        margin-top: -50px;
+        padding-bottom: 16px;
+
+        @media (min-width: $md) {
+            padding-bottom: 34px;
+        }
+
+        @media (min-width: $lg) {
+            padding-bottom: 110px;
+        }
+    }
+
+    &__slide {
+        width: 224px; // 200px + 24px
+
+        @media (min-width: $md) {
+            width: 512px; // 464px + 48px
+        }
+
+        @media (min-width: $lg) {
+            width: 918px; // 648px + 270px
+        }
+
+        @media (min-width: $xl) {
+            width: 918px; // 822px + 96px
+        }
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) .projects__card {
+                transition-delay: 0.3s * $i;
+            }
+        }
+
+        @for $i from 31 through 1 {
+            &:nth-child(#{$i}) {
+                z-index: 30 - $i;
+            }
+        }
+    }
+
+    &__card {
+        display: block;
+        width: 200px;
+        min-height: 282px;
+        background: $color-back-primary;
+        box-shadow:
+                -14px -14px 40px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+        border-radius: 12px;
+        padding: 16px 16px 0 16px;
+
+        @extend .card-animation;
+
+        @media (min-width: $md) {
+            width: 440px;
+            height: 444px;
+            padding: 34px 34px 0 34px;
+        }
+
+        @media (min-width: $lg) {
+            width: 648px;
+            height: 584px;
+            padding: 48px 48px 0 48px;
+
+            &:hover {
+                .image {
+                    width: 110%;
+                    height: 110%;
+                }
+
+                .tab-list__place {
+                    color: $color-accent;
+                }
+            }
+        }
+    }
+
+    &__place {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        transition: color .5s;
+        min-height: 44px;
+
+        @media (min-width: $md) {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            margin-bottom: 24px;
+            min-height: 62px;
+        }
+
+        @media (min-width: $lg) {
+            font-size: 30px;
+            line-height: 140%;
+            min-height: 84px;
+        }
+    }
+
+    &__params {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        margin-top: 8px;
+
+        @media (min-width: $md) {
+            font-size: 14px;
+            margin-top: 24px;
+        }
+    }
+
+    &__pic {
+        width: 168px;
+        height: 168px;
+        border-radius: 12px;
+        transform: translateY(24px);
+        position: relative;
+        overflow: hidden;
+
+        @media (min-width: $md) {
+            height: 280px;
+            width: 430px;
+            transform: translateY(34px);
+        }
+
+        @media (min-width: $lg) {
+            height: 446px;
+            width: 754px;
+            transform: translate(20px, 68px);
+            margin-top: -20px;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all .4s ease-out;
+        }
+    }
+
+    #btnTabListTickerPrev,
+    #btnTabListMediaFacadePrev,
+    #btnTabListOuterLedScreenPrev,
+    #btnTabListInnerLedScreenPrev,
+    #btnTabListRentPrev {
+        @media (min-width: $lg) {
+            margin-top: 19px;
+        }
+    }
+
+    #btnTabListTickerNext,
+    #btnTabListMediaFacadeNext,
+    #btnTabListOuterLedScreenNext,
+    #btnTabListInnerLedScreenNext,
+    #btnTabListRentNext {
+        @media (min-width: $lg) {
+            margin-top: -84px;
+        }
+    }
+}

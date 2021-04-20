@@ -1,0 +1,163 @@
+@import "../../../scss/variables";
+
+.slider-tabs {
+
+    &__container {
+        margin-left: -8.108108108108108vw;
+        padding-left: 8.108108108108108vw;
+
+        @media (min-width: $lg) {
+            padding-top: 50px;
+            margin-top: -50px;
+        }
+    }
+
+    &__slide {
+        width: auto;
+        cursor: pointer;
+        padding-bottom: 60px;
+
+        @media (min-width: $md) {
+            padding-bottom: 48px;
+        }
+
+        @media (min-width: $lg) {
+            padding: 0;
+
+            &:last-child .slider-tabs__button {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__wrap {
+        @media (min-width: $lg) {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            width: auto;
+            background: $color-back-primary ;
+            box-shadow:
+                    -10px -10px 30px rgba(35, 33, 58, 0.35),
+                    10px 10px 30px rgba(4, 5, 14, 0.55),
+                    inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+                    inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+            border-radius: 999px;
+            transition: box-shadow .3s;
+            margin-bottom: 36px;
+
+            &:hover {
+                box-shadow:
+                        -8px -16px 30px rgba(35, 33, 58, 0.35),
+                        8px 16px 30px rgba(4, 5, 14, 0.3),
+                        inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+                        inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+            }
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 48px;
+        }
+    }
+
+    &__button {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        transition: $transition;
+        position: relative;
+        margin-right: 24px;
+        cursor: pointer;
+
+        @media (min-width: $md) {
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        @media (min-width: $lg) {
+            font-size: 14px;
+            color: #80758F;
+            padding: 16px 24px;
+            margin-right: 4px;
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+
+        @media (min-width: $xl) {
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 30px;
+            width: 0;
+            z-index: 0;
+            height: 4px;
+            background: $color-accent;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0);
+            opacity: 0;
+            border-radius: 999px;
+            transition: all .5s ease-out;
+
+            @media (min-width: $md) {
+                top: 34px;
+            }
+
+            @media (min-width: $lg) {
+                display: none;
+            }
+        }
+
+        &.active {
+            color: $color-accent;
+            cursor: default;
+
+            &::before {
+                opacity: 1;
+                width: 100%;
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.56);
+            }
+        }
+    }
+
+    .marker {
+        width: 0;
+        height: calc(100% - 8px);
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 4px;
+        z-index: 0;
+        transition: all .3s ease-out;
+        background: $color-back-secondary;
+        opacity: 0;
+        border-radius: 999px;
+        box-shadow:
+                -10px -10px 30px rgba(35, 33, 58, 0.16),
+                10px 10px 30px rgba(4, 5, 14, 0.8),
+                inset 5px 6px 20px rgba(35, 33, 58, 0.5),
+                inset -5px -6px 20px rgba(0, 2, 12, 0.2),
+                0px 0px 0px 1px $color-back-secondary;
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+}
+
+.tabs-items {
+    .container-endless {
+        display: none;
+
+        &.visible {
+            display: block;
+        }
+    }
+}

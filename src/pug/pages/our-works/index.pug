@@ -1,0 +1,14 @@
+//- Include used template for this page
+extends ../../templates/default
+
+//- VARIABLES FOR INCLUDE THIS IN USED TEMPLATE
+block variables
+    - const title       = 'Наши работы | Ekranika'
+    - const description = 'Write description for the page here'
+    - const keywords    = 'Write keywords for the page here'
+    - const pageClass   = 'page-our-works'
+
+block content
+    include ../../comps/tab-list/tab-list-our-works
+    include ../../comps/work/work-our-works
+    include ../../comps/form-order/form-order-question

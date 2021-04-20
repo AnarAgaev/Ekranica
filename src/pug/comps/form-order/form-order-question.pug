@@ -1,0 +1,52 @@
+section.section.section_form-order
+    .form-order
+        .container
+            h2.section__title.animation-element Задайте нам вопрос
+
+        .container
+            form.form-order__form#orderForm(action="/" method="POST" data-target="#orderModal")
+                .form-order__data
+
+                    .form-order__user-data.animation-element
+                        .controller-group
+                            label.controller-label Как вас зовут?
+                            .controller.controller__input
+                                label.label.label__icon
+                                    span.controller-icon.icon-human
+                                        img(src="/img/icon-person.svg" alt="")
+                                    input(type="text" placeholder="Константин Константинопольский" name="name" id="name")
+
+
+                        .controller-group
+                            label.controller-label Номер телефона
+                            // Для валидного значения меняем класс у controller на valid
+                            .controller.controller__input
+                                label.label.label__icon
+                                    span.controller-icon.icon-phone
+                                        img(src="/img/icon-phone.svg" alt="")
+                                    input(type="text" placeholder="+7 900 000 00 00" name="phone" id="phone")
+                                .validator.validator__cross
+                                    img.valid(src="/img/icon-validator-cross-valid.svg" alt="")
+                                    img.invalid(src="/img/icon-validator-cross-invalid.svg" alt="")
+                                .validator.validator__check
+                                    img.valid(src="/img/icon-validator-check-valid.svg" alt="")
+                                    img.invalid(src="/img/icon-validator-check-invalid.svg" alt="")
+
+                    .form-order__comments.animation-element
+                        .controller-group
+                            label.controller-label Комментарий
+                            .controller-wrap
+                                span.controller-icon.icon-msg
+                                    img(src="/img/icon-message.svg" alt="")
+                                textarea(placeholder="Напишите что-нибудь" name="message" id="message")
+
+
+                .form-order__actions.animation-element
+                    .form-order__actions-group
+                        span.form-order__privacy
+                            | Нажимая на кнопку “Отправить заявку”, я даю согласие на
+                            a.revers(href="/") обработку моих персональных данных
+                        .form-order__button
+                            button.btn.btn_primary.form-order__submit(type="submit") Отправить заявку
+
+                    span.form-order__note Перезвоним в течение рабочего дня и поможем определиться с типом оборудования для аренды под ключ

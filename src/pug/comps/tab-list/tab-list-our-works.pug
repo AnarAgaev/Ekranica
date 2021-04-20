@@ -1,0 +1,335 @@
+section.section.section_tab-list
+    .tab-list
+        .container
+
+            h2.section__title.animation-element
+                span.title Наши работы
+
+        .container-endless-fix.tabs
+            .endless.tabs__controlls
+                include ../custom-slider-tabs/custom-slider-tabs-wour-works
+
+        .tabs-items
+            // При сборке страницы, первому слайду добавить класс .visible
+            .container-endless.tabs-item.visible#ticker
+                .endless.tab-list__list.swiper-container#TabListTickerSlider
+                    .tab-list__list__wrap.swiper-wrapper
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place Видеокуб для клуба ЦСКА
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 24 м
+                                        sup 2
+                                    .pixels Cлайдер 1
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place Видеокуб для Баскет Холл
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | г. Москва
+                                    br
+                                    | Конференц-зал
+                                .tab-list__params
+                                    .screen
+                                        | Экран 13,11 м
+                                        sup 2
+                                    .pixels Шаг пикселя 2,5 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place Экспоцентр Москва
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 48 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnTabListTickerPrev
+                    include ../../../img/icon-slider-btn-arr.svg
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnTabListTickerNext
+                    include ../../../img/icon-slider-btn-arr.svg
+
+            .container-endless.tabs-item#mediaFacade
+                .endless.tab-list__list.swiper-container#TabListMediaFacadeSlider
+                    .tab-list__list__wrap.swiper-wrapper
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place Видеокуб для Баскет Холл
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Cлайдер 2
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | г. Москва
+                                    br
+                                    | Конференц-зал
+                                .tab-list__params
+                                    .screen
+                                        | Экран 13,11 м
+                                        sup 2
+                                    .pixels Шаг пикселя 2,5 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place Экспоцентр Москва
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 48 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnTabListMediaFacadePrev
+                    include ../../../img/icon-slider-btn-arr.svg
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnTabListMediaFacadeNext
+                    include ../../../img/icon-slider-btn-arr.svg
+
+            .container-endless.tabs-item#outerLedScreen
+                .endless.tab-list__list.swiper-container#TabListOuterLedScreenSlider
+                    .tab-list__list__wrap.swiper-wrapper
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Cлайдер 3
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | г. Москва
+                                    br
+                                    | Конференц-зал
+                                .tab-list__params
+                                    .screen
+                                        | Экран 13,11 м
+                                        sup 2
+                                    .pixels Шаг пикселя 2,5 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place Экспоцентр Москва
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 48 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnTabListOuterLedScreenPrev
+                    include ../../../img/icon-slider-btn-arr.svg
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnTabListOuterLedScreenNext
+                    include ../../../img/icon-slider-btn-arr.svg
+
+            .container-endless.tabs-item#innerLedScreen
+                .endless.tab-list__list.swiper-container#TabListInnerLedScreenSlider
+                    .tab-list__list__wrap.swiper-wrapper
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | г. Москва
+                                    br
+                                    | Конференц-зал
+                                .tab-list__params
+                                    .screen
+                                        | Экран 13,11 м
+                                        sup 2
+                                    .pixels Cлайдер 4
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place Видеокуб для клуба ЦСКА
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 24 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place Экспоцентр Москва
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 48 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnTabListInnerLedScreenPrev
+                    include ../../../img/icon-slider-btn-arr.svg
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnTabListInnerLedScreenNext
+                    include ../../../img/icon-slider-btn-arr.svg
+
+            .container-endless.tabs-item#rent
+                .endless.tab-list__list.swiper-container#TabListRentSlider
+                    .tab-list__list__wrap.swiper-wrapper
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place Экспоцентр Москва
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 48 м
+                                        sup 2
+                                    .pixels Cлайдер 5
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card.animation-element(href="")
+                                .tab-list__place Видеокуб для Баскет Холл
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .tab-list__slide.swiper-slide
+                            a.tab-list__card(href="")
+                                .tab-list__place
+                                    | Ассоциация
+                                    br
+                                    | банков России
+                                .tab-list__params
+                                    .screen
+                                        | Экран Absen 18 м
+                                        sup 2
+                                    .pixels Шаг пикселя 3,9 мм
+                                .tab-list__pic
+                                    .image(style="background-image: url('/img/placeholder-img.jpg')")
+
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev#btnTabListRentPrev
+                    include ../../../img/icon-slider-btn-arr.svg
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next#btnTabListRentNext
+                    include ../../../img/icon-slider-btn-arr.svg
