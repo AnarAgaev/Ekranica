@@ -39,6 +39,9 @@ $(document).ready(function () {
         getScreenType();
     });
 
+    /* Loader with spinner */
+    window.SPINNER = $('#spinner');
+
     // Animation items when user has scrolled screen to place of item
     const els = $('.animation-element');
 

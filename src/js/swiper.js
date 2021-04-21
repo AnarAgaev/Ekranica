@@ -135,6 +135,9 @@ $(document).ready(function () {
     window.rcSlider = new Swiper('#readyCabinsSlider', {
         slidesPerView: 'auto',
         speed: 500,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
         navigation: {
             nextEl: '#btnRcNext',
             prevEl: '#btnRcPrev',

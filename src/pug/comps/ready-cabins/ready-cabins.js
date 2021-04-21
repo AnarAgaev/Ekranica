@@ -2,6 +2,8 @@ import $ from "jquery";
 
 $(document).ready(function () {
 
+    setTimeout(rcSlider.update, 700);
+
     // TYPICAL SOLUTIONS FILTER
     const rcItems = $('.ready-cabins__slide');
     const rcFilterConstrols = $('.ready-cabins .filter-controller');
@@ -38,29 +40,38 @@ $(document).ready(function () {
                 }
             }
 
-            if (isHidden) {
-                $(rcItems[j]).addClass('hidden');
+            $(rcItems).addClass('hide');
+
+            setTimeout(function () {
+                if (isHidden) {
+                    $(rcItems[j]).addClass('hidden');
+                } else {
+                    $(rcItems[j]).removeClass('hidden');
+                    $(rcItems[j]).addClass('invisible');
+                }
+            }, 300);
+        }
+
+        setTimeout(function () {
+            // Обработка пустого результата фильтрации
+            // если нет ни одного элемента удовлетворяющего фильтру
+            const slides = $('.ready-cabins__slide:not(".hidden")');
+
+            if (slides.length === 0) {
+                $('#notRcFilterResults').addClass('visible');
+                $('#btnRcPrev').addClass('hidden');
+                $('#btnRcNext').addClass('hidden');
             } else {
-                $(rcItems[j]).removeClass('hidden');
+                $('#notRcFilterResults').removeClass('visible');
+                $('#btnRcPrev').removeClass('hidden');
+                $('#btnRcNext').removeClass('hidden');
             }
 
             // Переинициализируем соответствующий слайдер
             rcSlider.update();
-        }
 
-        // Обработка пустого результата фильтрации
-        // если нет ни одного элемента удовлетворяющего фильтру
-        const slides = $('.ready-cabins__slide:not(".hidden")');
-
-        if (slides.length === 0) {
-            $('#notRcFilterResults').addClass('visible');
-            $('#btnRcPrev').addClass('hidden');
-            $('#btnRcNext').addClass('hidden');
-        } else {
-            $('#notRcFilterResults').removeClass('visible');
-            $('#btnRcPrev').removeClass('hidden');
-            $('#btnRcNext').removeClass('hidden');
-        }
+            $(rcItems).removeClass('invisible hide');
+        }, 300);
     }
 
     // Обрабатываем клик на контроллере

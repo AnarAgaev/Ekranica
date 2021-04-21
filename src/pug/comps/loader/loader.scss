@@ -14,9 +14,9 @@
     opacity: 0;
     transform: translateY(-25px);
     transition:
-            left 0s linear .3s,
-            opacity .3s linear 0s,
-            transform .3s linear 0s;
+            left 0s linear .4s,
+            opacity .4s linear 0s,
+            transform .4s linear 0s;
 
 
     &.visible {
@@ -25,8 +25,8 @@
         left: calc(50% - 55px);
         transition:
                 left 0s linear 0s,
-                opacity .3s linear 0s,
-                transform .3s linear 0s;
+                opacity .4s linear 0s,
+                transform .4s linear 0s;
     }
 
     .spinner {

@@ -38,6 +38,15 @@
         width: 240px; // 216px + 24px
         height: auto;
         max-height: 800px;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all .5s ease-out;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) .ready-cabins__card {
+                transition-delay: 0.3s * $i;
+            }
+        }
 
         @media (min-width: $md) {
             width: 256px; // 232px + 24px
@@ -51,21 +60,18 @@
             width: 480px; // 384px + 96px
         }
 
-        @for $i from 1 through 5 {
-            &:nth-child(#{$i}) .ready-cabins__card {
-                transition-delay: 0.3s * $i;
-            }
+        &.hide {
+            opacity: 0;
+            transition: opacity .2s linear;
         }
-
-        transition: all .7s ease-out;
-
 
         &.hidden {
             display: none;
         }
 
-        &.collapsed {
-
+        &.invisible {
+            opacity: 0;
+            transform: translateY(10px);
         }
     }
 
@@ -399,11 +405,23 @@
     }
 
     #notRcFilterResults {
-        display: none;
+        display: block;
+        position: absolute;
+        left: -999999vw;
+        opacity: 0;
+        transform: translateY(10px);
         z-index: 1;
 
         &.visible {
-            display: block;
+            position: relative;
+            left: 0;
+            opacity: 1;
+            transform: translateY(0);
+            transition:
+                    position 0s linear 0s,
+                    left 0s linear 0s,
+                    opacity .2s linear 0s,
+                    transform .2s linear 0s;
         }
     }
 
