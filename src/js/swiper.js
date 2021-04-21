@@ -163,7 +163,7 @@ $(document).ready(function () {
                 workSlider.destroy(true, true);
             }
 
-            if ( ourWorksSlider !== undefined  && $('.tab-list').length > 0 ) {
+            if ( ourWorksSlider !== undefined  && $('#ourWorksSlider').length > 0 ) {
                 ourWorksSlider.destroy(true, true);
             }
 
@@ -199,7 +199,7 @@ $(document).ready(function () {
                 speed: 500,
             });
 
-            if ( $('.tab-list').length > 0 ) {
+            if ( $('#ourWorksSlider').length > 0 ) {
                 setTimeout(function () {
                     ourWorksSlider.update();
                 }, 500);
@@ -211,7 +211,7 @@ $(document).ready(function () {
         // Update slider fot mobile and tablet version if it has built
         // for corrected swiper slide width
 
-        if ( $('body').hasClass('page-our-works') ) {
+        if ( $('#ourWorksSlider').length > 0 ) {
             setTimeout(function () {
                 ourWorksSlider.update();
             }, 1000);

@@ -153,11 +153,39 @@
 }
 
 .tabs-items {
+
     .container-endless {
         display: none;
 
         &.visible {
             display: block;
+            opacity: 1;
+
+            .tab-list__slide {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: all .3s linear;
+            }
+        }
+
+        &.visible.show {
+            .tab-list__slide {
+                opacity: 1;
+                transform: translateY(0);
+
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: 0.1s * $i;
+                    }
+                }
+            }
+        }
+
+        &.visible.show.hide {
+            .tab-list__slide {
+                opacity: 0;
+                transition: opacity .2s linear;
+            }
         }
     }
 }

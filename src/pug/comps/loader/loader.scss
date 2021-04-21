@@ -1,0 +1,81 @@
+@import "../../../scss/variables";
+
+.loader {
+    width: 110px;
+    height: 110px;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 999;
+    position: fixed;
+    top: calc(50% - 55px);
+    left: -1000vw;
+    background: rgba(0,0,0,0.7);
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(-25px);
+    transition:
+            left 0s linear .3s,
+            opacity .3s linear 0s,
+            transform .3s linear 0s;
+
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+        left: calc(50% - 55px);
+        transition:
+                left 0s linear 0s,
+                opacity .3s linear 0s,
+                transform .3s linear 0s;
+    }
+
+    .spinner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(0) scale(1);
+        backface-visibility: hidden;
+        transform-origin: 0 0;
+
+        div {
+            position: absolute;
+            width: 26.400000000000002px;
+            height: 26.400000000000002px;
+            box-sizing: content-box;
+            border-radius: 50%;
+            top: 41.800000000000004px;
+            left: 28.6px;
+        }
+
+        div:nth-child(1) {
+            background: $color-accent;
+            animation: spinner 1.25s linear infinite;
+            animation-delay: -0.625s;
+        }
+
+        div:nth-child(2) {
+            background: $color-text-inactive;
+            animation: spinner 1.25s linear infinite;
+            animation-delay: 0s;
+        }
+
+        div:nth-child(3) {
+            background: $color-accent;
+            animation: spinner-o 1.25s linear infinite;
+            animation-delay: -0.625s;
+        }
+    }
+}
+
+@keyframes spinner-o {
+    0%     { opacity: 1; transform: translate(0 0) }
+    49.99% { opacity: 1; transform: translate(26.400000000000002px,0) }
+    50%    { opacity: 0; transform: translate(26.400000000000002px,0) }
+    100%   { opacity: 0; transform: translate(0,0) }
+}
+
+@keyframes spinner {
+    0%   { transform: translate(0,0) }
+    50%  { transform: translate(26.400000000000002px,0) }
+    100% { transform: translate(0,0) }
+}

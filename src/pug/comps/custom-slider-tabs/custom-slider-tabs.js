@@ -40,10 +40,18 @@ $(document).ready(function () {
 
                 // Show target tab
                 const tabTargetId = $(this).data('targetTabId');
+                const visibleTab = $(this).closest('.tab-list').find('.tabs-item.visible');
 
-                $('.tabs-items .tabs-item').removeClass('visible');
-                $(tabTargetId).addClass('visible');
+                $(visibleTab).addClass('hide');
 
+                setTimeout(function () {
+                    $(visibleTab).removeClass('visible show hide');
+                    $(tabTargetId).addClass('visible');
+                }, 200);
+
+                setTimeout(function () {
+                    $(tabTargetId).addClass('show');
+                }, 300);
             });
         }
     }
