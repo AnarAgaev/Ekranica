@@ -1,0 +1,131 @@
+@import "../../../scss/variables";
+
+.project-description {
+
+    &__title {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        margin-bottom: 16px;
+
+        @extend .title-animation;
+
+        @media (min-width: $md) {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+        }
+
+        @media (min-width: $lg) {
+            font-size: 40px;
+            line-height: 140%;
+            margin-bottom: 68px;
+            color: $color-text-primary;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 60px;
+        }
+    }
+
+    &__content {
+        @media (min-width: $lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        @media (min-width: $xl) {
+            align-items: flex-start;
+        }
+    }
+
+    &__text {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-inactive;
+
+        @extend .card-animation;
+
+        @media (min-width: $lg) {
+            width: 64.30062630480167%;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            color: $color-text-secondary;
+        }
+
+        @media (min-width: $xl) {
+            width: 64.86486486486486%;
+        }
+
+        p {
+            margin-bottom: 12px;
+
+            @media (min-width: $md) {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            @media (min-width: $lg) {
+                font-size: 24px;
+                margin-bottom: 31px;
+            }
+
+            @media (min-width: $xl) {
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__price {
+        display: none;
+
+        @extend .card-animation;
+
+        @media (min-width: $lg) {
+            display: block;
+            width: 274px;
+        }
+
+        @media (min-width: $xl) {
+            width: 384px;
+        }
+    }
+
+    &__amount {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-primary;
+        margin-bottom: 8px;
+    }
+
+    &__comment {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        margin-bottom: 24px;
+
+        @media (min-width: $xl){
+            margin-bottom: 48px;
+        }
+    }
+
+    &__action {
+        .btn {
+            padding-left: 29px;
+            padding-right: 29px;
+        }
+    }
+}

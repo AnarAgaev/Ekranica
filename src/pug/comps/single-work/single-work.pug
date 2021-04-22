@@ -1,0 +1,39 @@
+section.section.section_single-work
+    .single-work
+        .container-endless
+            .endless
+                .single-work__card
+                    .single-work__date.animation-element 26 августа 2020
+
+                    .single-work__title.animation-element
+                        | Видеокуб для клуба ЦСКА
+                        span.single-work__city г. Москва
+
+                    .single-work__props.animation-element
+                        .single-work__props-item.single-work__pixel-step
+                            .single-work__param Р6 мм
+                            .single-work__caption Шаг пикселя
+                        .single-work__props-item.single-work__size
+                            .single-work__param 4,992 x 4.032 м
+                            .single-work__caption Размер экрана
+                        .single-work__props-item.single-work__resolution
+                            .single-work__param 832 x 672 px
+                            .single-work__caption Разрешение экрана
+                        .single-work__props-item.single-work__price
+                            .single-work__param от 77 770 ₽/м2
+                            .single-work__caption Стоимость
+
+                    .single-work__gallery.swiper-container#singleWorkSlider
+                        .single-work__gallery-wrap.swiper-wrapper
+                            .single-work__gallery-slide.swiper-slide.animation-element(style="background-image: url('/img/placeholder-img.jpg');")
+                            .single-work__gallery-slide.swiper-slide.animation-element(style="background-image: url('/img/placeholder-img.jpg');")
+                            .single-work__gallery-slide.swiper-slide.animation-element(style="background-image: url('/img/placeholder-img.jpg');")
+                            .single-work__gallery-slide.swiper-slide(style="background-image: url('/img/placeholder-img.jpg');")
+                            .single-work__gallery-slide.swiper-slide(style="background-image: url('/img/placeholder-img.jpg');")
+                            .single-work__gallery-slide.swiper-slide(style="background-image: url('/img/placeholder-img.jpg');")
+                            .single-work__gallery-slide.swiper-slide(style="background-image: url('/img/placeholder-img.jpg');")
+
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev.animation-element#btnSingleWorkPrev
+                include ../../../img/icon-slider-btn-arr.svg
+            .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next.animation-element#btnSingleWorkNext
+                include ../../../img/icon-slider-btn-arr.svg

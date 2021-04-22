@@ -1,0 +1,128 @@
+@import "../../../scss/variables";
+
+.page-single-work {
+    .section_single-work {
+        margin-top: 16px;
+        margin-bottom: 48px;
+
+        @media (min-width: $md) {
+            margin-top: 24px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 202px;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 28px;
+            margin-bottom: 382px;
+        }
+    }
+
+    .section_project-description {
+        margin-top: 48px;
+
+        @media (min-width: $lg) {
+            margin-top: 202px;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 382px;
+        }
+    }
+
+    .form-order .section__title {
+        max-width: none;
+    }
+
+    @media (max-width: $md - 1) {
+        .feedback__pic {
+            width: 100%;
+            height: 0;
+            padding-bottom: 70%;
+
+            .btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+
+    @media (max-width: $lg - 1) {
+        .feedback__card {
+            width: 100%;
+            min-height: 400px;
+            margin-top: 65px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //.section_tab-list {
+    //    margin-top: 16px;
+    //
+    //    @media (min-width: $md) {
+    //        margin-top: 24px;
+    //    }
+    //
+    //    @media (min-width: $lg) {
+    //        margin-top: 68px;
+    //    }
+    //
+    //    @media (min-width: $xl) {
+    //        margin-top: 96px;
+    //    }
+    //
+    //    .section__title {
+    //        margin-bottom: 16px;
+    //
+    //        @media (min-width: $md) {
+    //            margin-bottom: 34px;
+    //        }
+    //
+    //        @media (min-width: $lg) {
+    //            margin-bottom: 48px;
+    //        }
+    //
+    //        @media (min-width: $xl) {
+    //            margin-bottom: 68px;
+    //        }
+    //    }
+    //}
+    //
+    //.form-order .section__title {
+    //    @media (min-width: $xl) {
+    //        margin-bottom: 68px;
+    //    }
+    //}
+    //
+    //.tab-list {
+    //    .tabs {
+    //        position: relative;
+    //        z-index: 2;
+    //    }
+    //
+    //    .tabs-items {
+    //        position: relative;
+    //        z-index: 1;
+    //    }
+    //}
+}

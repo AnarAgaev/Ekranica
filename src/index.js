@@ -9,6 +9,7 @@ import './pug/templates/header/header';
 import './pug/comps/custom-selects/custom-selects';
 import './pug/comps/custom-slider-radio/custom-slider-radio';
 import './pug/comps/custom-slider-tabs/custom-slider-tabs'
+import './pug/comps/single-work/single-work';
 
 // import './pug/templates/footer/footer';
 import './pug/comps/faq/faq';

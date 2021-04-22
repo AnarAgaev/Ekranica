@@ -32,6 +32,8 @@
 @import "../pug/comps/custom-slider-radio/custom-slider-radio";
 @import "../pug/comps/custom-slider-tabs/custom-slider-tabs";
 @import "../pug/comps/tab-list/tab-list";
+@import "../pug/comps/project-description/project-description";
+@import "../pug/comps/single-work/single-work";
 
 // Include page styles
 @import "../pug/pages/index/index";
@@ -51,3 +53,4 @@
 @import "../pug/pages/conf-screen/conf-screen";
 @import "../pug/pages/street-screen/street-screen";
 @import "../pug/pages/our-works/our-works";
+@import "../pug/pages/single-work/single-work";

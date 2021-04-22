@@ -62,7 +62,9 @@ $(document).ready(function () {
             });
         }
 
-        showAnimElements(els);
+        setTimeout(function () {
+            showAnimElements(els);
+        }, 100);
 
         // Show items on the page after scroll
         $(window).scroll(function () {

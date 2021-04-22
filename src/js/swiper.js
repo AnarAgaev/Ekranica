@@ -132,6 +132,15 @@ $(document).ready(function () {
         },
     });
 
+    new Swiper('#singleWorkSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        navigation: {
+            nextEl: '#btnSingleWorkNext',
+            prevEl: '#btnSingleWorkPrev',
+        },
+    });
+
     window.rcSlider = new Swiper('#readyCabinsSlider', {
         slidesPerView: 'auto',
         speed: 500,

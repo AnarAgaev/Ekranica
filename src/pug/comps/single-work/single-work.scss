@@ -1,0 +1,286 @@
+@import "../../../scss/variables";
+
+.single-work {
+    &__card {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $lg) {
+            width: 830px;
+            height: 491px;
+            background: $color-back-primary;
+            box-shadow:
+                    -14px -14px 30px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            border-radius: 12px;
+            padding: 48px;
+        }
+
+        @media (min-width: $xl) {
+            width: 1104px;
+            height: 673px;
+            padding: 68px 68px 96px 68px;
+        }
+    }
+
+    &__date {
+        display: none;
+
+        @extend .title-animation;
+
+        @media (min-width: $lg) {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 160%;
+            color: $color-text-primary;
+            margin-bottom: 4px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-primary;
+        margin-bottom: 34px;
+        order: 1;
+        margin-right: 7.5%;
+
+        @extend .title-animation;
+
+
+        @media (min-width: $md) {
+            font-size: 40px;
+            line-height: 140%;
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 60px;
+            color: $color-icons;
+            margin-bottom: 68px;
+        }
+    }
+
+    &__city {
+        display: none;
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__props {
+        order: 3;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-right: 7.5%;
+        margin-bottom: -16px;
+
+        @extend .card-animation;
+
+        @media (min-width: $md) {
+            justify-content: flex-start;
+            padding-right: 6.25vw;
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__props-item {
+        margin-bottom: 16px;
+        width: 40vw;
+
+        @media (min-width: $md) {
+            width: auto;
+            margin-right: 48px;
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 16px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 34px;
+        }
+    }
+
+    &__pixel-step {
+        order: 1;
+    }
+
+    &__size {
+        order: 3;
+
+        @media (min-width: $md) {
+            order: 2;
+        }
+    }
+
+    &__resolution {
+        order: 2;
+
+        @media (min-width: $md) {
+            order: 3;
+        }
+    }
+
+    &__price {
+        order: 4;
+
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__param {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 160%;
+        color: $color-text-secondary;
+
+        @media (min-width: $lg) {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            color: $color-text-primary;
+            margin-bottom: 6px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__caption {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+
+        @media (min-width: $lg) {
+            font-size: 14px;
+            color: $color-text-secondary;
+        }
+    }
+
+    &__gallery {
+        order: 2;
+        margin-left: -7.5vw;
+        padding-left: 7.5vw;
+        width: calc(100% + 7.5vw);
+        margin-bottom: 24px;
+
+        @media (min-width: $md) {
+            margin-left: -6.25vw;
+            padding-left: 6.25vw;
+            width: calc(100% + 6.25vw);
+            margin-bottom: 34px;
+        }
+
+        @media (min-width: $lg) {
+            position: absolute;
+            left: 313px;
+            bottom: -68px;
+            margin-left: -34px;
+            padding: 34px 0 34px 34px;
+            margin: -34px 0 -34px -34px;
+            width: calc(85.06588579795022vw - 279px); // 313px - 34px
+        }
+
+        @media (min-width: $xl) {
+            left: 362px;
+            bottom: -119px;
+            width: calc(85vw - 328px); // 362px - 34px
+        }
+    }
+
+    &__gallery-slide {
+        width: 272px;
+        height: 168px;
+        background-position: center;
+        background-size: cover;
+        margin-right: 24px;
+        border-radius: 12px;
+
+        @extend .card-animation;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                transition-delay: 0.5s * $i;
+            }
+        }
+
+        @media (min-width: $md) {
+            width: 672px;
+            height: 378px;
+            margin-right: 48px;
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+        }
+
+        @media (min-width: $lg) {
+            width: 651px;
+            height: 325px;
+            margin-right: 34px;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.15),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    -6px -6px 30px rgba(35, 33, 58, 0.15),
+                    6px 6px 30px rgba(0, 2, 12, 0.3);
+        }
+
+        @media (min-width: $xl) {
+            width: 932px;
+            height: 466px;
+            margin-right: 96px;
+        }
+    }
+
+    #btnSingleWorkPrev {
+        margin-top: 167px;
+        opacity: 1;
+        transition: opacity .7s;
+
+        &.animation-element {
+            opacity: 0;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 268px;
+        }
+    }
+
+    #btnSingleWorkNext {
+        margin-top: 64px;
+        opacity: 1;
+        transition: opacity .7s;
+
+        &.animation-element {
+            opacity: 0;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 165px;
+        }
+    }
+}
