@@ -21,14 +21,15 @@
     &__list {
         padding-top: 50px;
         margin-top: -50px;
-        padding-bottom: 16px;
+        padding-bottom: 200px;
+        margin-bottom: -184px; // -200 + 16
 
         @media (min-width: $md) {
-            padding-bottom: 34px;
+            margin-bottom: -166px; // -200 + 34
         }
 
         @media (min-width: $xl) {
-            padding-bottom: 66px;
+            margin-bottom: -90px; // -200 + 110
         }
     }
 
@@ -84,18 +85,8 @@
                     height: 110%;
                 }
 
-                .city, .location {
+                .projects__place {
                     color: $color-accent;
-                }
-
-                .projects__pic::after {
-                    opacity: 0;
-                }
-            }
-
-            &:active {
-                .city, .location {
-                    color: #9A5BFF;
                 }
             }
         }
@@ -103,6 +94,7 @@
 
     &__place {
         font-weight: 500;
+        min-height: 44px;
         font-size: 14px;
         line-height: 160%;
         color: $color-text-secondary;
@@ -114,9 +106,11 @@
             line-height: 130%;
             letter-spacing: 0.02em;
             margin-bottom: 24px;
+            min-height: 62px;
         }
 
         @media (min-width: $xl) {
+            min-height: 84px;
             font-size: 30px;
             line-height: 140%;
         }
@@ -166,36 +160,6 @@
             background-position: center;
             background-repeat: no-repeat;
             transition: all .4s ease-out;
-        }
-    }
-
-    .city {
-        transition: all .4s ease-out;
-
-        @media (min-width: $xl) {
-            display: inline-block;
-        }
-    }
-
-    .location {
-        transition: all .4s ease-out;
-
-        @media (min-width: $xl) {
-            display: inline-block;
-            padding-left: 10px;
-        }
-
-        &.empty-city {
-            min-height: 44px;
-
-            @media (min-width: $md) {
-                min-height: 62px;
-            }
-
-            @media (min-width: $xl) {
-                min-height: 42px;
-                padding-left: 0;
-            }
         }
     }
 

@@ -2,7 +2,11 @@ import $ from "jquery";
 
 $(document).ready(function () {
 
-    setTimeout(rcSlider.update, 700);
+    setTimeout(function () {
+        if ($('#rcSlider').length > 0) {
+            rcSlider.update();
+        }
+    }, 700);
 
     // TYPICAL SOLUTIONS FILTER
     const rcItems = $('.ready-cabins__slide');
