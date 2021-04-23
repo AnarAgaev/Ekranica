@@ -1,0 +1,21 @@
+.slider-tabs
+    .slider-tabs__container.swiper-container#ourWorksSlider
+        .slider-tabs__wrap.swiper-wrapper
+            .marker
+
+            .slider-tabs__slide.swiper-slide
+                // При инициализации, добавить первому элемну класс .active
+                .slider-tabs__button.active(data-target-tab-id="#ticker")
+                    | Бегущие строки
+            .slider-tabs__slide.swiper-slide
+                .slider-tabs__button(data-target-tab-id="#mediaFacade")
+                    | Медиафасады
+            .slider-tabs__slide.swiper-slide
+                .slider-tabs__button(data-target-tab-id="#outerLedScreen")
+                    | Уличные светодиодные экраны
+            .slider-tabs__slide.swiper-slide
+                .slider-tabs__button(data-target-tab-id="#innerLedScreen")
+                    | Внутренние светодиодные экраны
+            .slider-tabs__slide.swiper-slide
+                .slider-tabs__button(data-target-tab-id="#rent")
+                    | Аренда

@@ -205,17 +205,15 @@ $(document).ready(function () {
     }
 
     function enableOurWorksSlider() {
-        if ($('#workSlider')[0]) {
+        if ($('#ourWorksSlider')[0]) {
             ourWorksSlider = new Swiper('#ourWorksSlider', {
                 slidesPerView: 'auto',
                 speed: 500,
             });
 
-            if ( $('#ourWorksSlider').length > 0 ) {
-                setTimeout(function () {
-                    ourWorksSlider.update();
-                }, 500);
-            }
+            setTimeout(function () {
+                ourWorksSlider.update();
+            }, 500);
         }
     }
 

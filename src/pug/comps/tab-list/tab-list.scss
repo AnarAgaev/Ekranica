@@ -48,7 +48,7 @@
         }
 
         @for $i from 1 through 3 {
-            &:nth-child(#{$i}) .projects__card {
+            &:nth-child(#{$i}) .tab-list__card {
                 transition-delay: 0.3s * $i;
             }
         }

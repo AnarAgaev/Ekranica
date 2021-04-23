@@ -1,0 +1,48 @@
+@import "../../../scss/variables";
+
+.page-knowledge-base {
+
+    .section_tab-list {
+        margin-top: 16px;
+
+        @media (min-width: $md) {
+            margin-top: 24px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 68px;
+        }
+
+        //@media (min-width: $xl) {
+        //    margin-top: 96px;
+        //}
+
+        .section__title {
+            margin-bottom: 16px;
+
+            @media (min-width: $md) {
+                margin-bottom: 34px;
+            }
+
+            @media (min-width: $lg) {
+                margin-bottom: 68px;
+            }
+
+            //@media (min-width: $xl) {
+            //    margin-bottom: 68px;
+            //}
+        }
+    }
+
+    .tab-list {
+        .tabs {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tabs-items {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

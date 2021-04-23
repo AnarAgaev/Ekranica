@@ -161,7 +161,8 @@
             display: block;
             opacity: 1;
 
-            .tab-list__slide {
+            .tab-list__slide,
+            .article-list__slide {
                 opacity: 0;
                 transform: translateY(10px);
                 transition: all .3s linear;
@@ -169,7 +170,8 @@
         }
 
         &.visible.show {
-            .tab-list__slide {
+            .tab-list__slide,
+            .article-list__slide {
                 opacity: 1;
                 transform: translateY(0);
 
@@ -182,7 +184,8 @@
         }
 
         &.visible.show.hide {
-            .tab-list__slide {
+            .tab-list__slide,
+            .article-list__slide {
                 opacity: 0;
                 transition: opacity .2s linear;
             }

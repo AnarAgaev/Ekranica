@@ -1,0 +1,232 @@
+@import "../../../scss/variables";
+
+.article-list {
+
+    &__slide {
+
+            width: 224px; // 200px + 24px
+
+            @media (min-width: $md) {
+                width: 512px; // 440px + 72px
+            }
+
+            @media (min-width: $lg) {
+                width: 513px; // 422px + 91px
+            }
+
+        //    @media (min-width: $xl) {
+        //        width: 918px; // 822px + 96px
+        //    }
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) .article-list__card {
+                transition-delay: 0.3s * $i;
+            }
+        }
+
+        @for $i from 51 through 1 {
+            &:nth-child(#{$i}) {
+                z-index: 50 - $i;
+            }
+        }
+    }
+
+    &__card {
+            display: block;
+            width: 200px;
+
+            @extend .card-animation;
+
+            @media (min-width: $md) {
+                width: 440px;
+                height: 462px;
+                background: $color-back-primary;
+                box-shadow:
+                        -14px -14px 30px rgba(35, 33, 58, 0.35),
+                        16px 5px 40px rgba(4, 5, 14, 0.6);
+                border-radius: 12px;
+                padding: 24px 44px 0 24px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 24px;
+            }
+
+            @media (min-width: $lg) {
+                width: 422px;
+                height: 443px;
+                padding: 24px 26px 0 24px;
+
+                &:hover {
+                    .image {
+                        width: 110%;
+                        height: 110%;
+                    }
+
+                    .article-list__caption {
+                        color: $color-accent;
+                    }
+                }
+            }
+    }
+
+    &__pic {
+        width: 200px;
+        height: 176px;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        position: relative;
+        box-shadow:
+                -14px -14px 40px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+
+        @media (min-width: $md) {
+            order: 1;
+            flex-shrink: 0;
+            width: 440px;
+            height: 280px;
+            box-shadow:
+                    -14px -14px 30px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            width: 422px;
+            height: 269px;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all .4s ease-out;
+        }
+    }
+
+    &__date {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        margin-bottom: 4px;
+
+        @media (min-width: $md) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__caption {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-secondary;
+        margin-bottom: 12px;
+        transition: color .5s;
+
+        @media (min-width: $md) {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 24px;
+            min-height: 93px;
+        }
+    }
+
+    &_time {
+        display: flex;
+        align-items: center;
+
+        @media (min-width: $md) {
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 16px;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            position: relative;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-left: 10px;
+            }
+        }
+
+        .content {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 160%;
+            color: $color-text-inactive;
+            width: 190px;
+        }
+    }
+
+    #btnTabListTickerPrev,
+    #btnTabListMediaFacadePrev,
+    #btnTabListOuterLedScreenPrev,
+    #btnTabListInnerLedScreenPrev,
+    #btnTabListRentPrev {
+        margin-top: -12px;
+
+        @media (min-width: $xl) {}
+    }
+
+    #btnTabListTickerNext,
+    #btnTabListMediaFacadeNext,
+    #btnTabListOuterLedScreenNext,
+    #btnTabListInnerLedScreenNext,
+    #btnTabListRentNext {
+        margin-top: -116px;
+
+        @media (min-width: $xl) {}
+    }
+
+
+    // Customising tabs for article list page.
+    // Delete if it's error into the layout.
+    @media (min-width: $lg) and (max-width: $xl - 1) {
+        .slider-tabs__wrap {
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+            justify-content: flex-start;
+            display: flex;
+            border-radius: initial;
+            transition: none;
+            margin-bottom: 60px;
+        }
+
+        .slider-tabs .marker {
+            display: none;
+        }
+
+        .slider-tabs__button {
+            font-size: 16px;
+            color: $color-text-secondary;
+            padding: 0;
+            margin-right: 24px;
+
+            &.active {
+                color: $color-accent;
+                cursor: default;
+            }
+
+            &::before {
+                display: block;
+            }
+        }
+    }
+}
