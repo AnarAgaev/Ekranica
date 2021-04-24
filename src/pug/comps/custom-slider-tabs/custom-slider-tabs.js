@@ -34,24 +34,27 @@ $(document).ready(function () {
     if (slideTabs.length > 0) {
         for (let i = 0; i < slideTabs.length; i++) {
             $(slideTabs[i]).on('click', function () {
-                $('.slider-tabs__button').removeClass('active');
-                $(this).addClass('active');
-                setTabsMarker(this);
 
-                // Show target tab
-                const tabTargetId = $(this).data('targetTabId');
-                const visibleTab = $(this).closest('.tab-list').find('.tabs-item.visible');
+                if (!$(this).hasClass('active')) {
+                    $('.slider-tabs__button').removeClass('active');
+                    $(this).addClass('active');
+                    setTabsMarker(this);
 
-                $(visibleTab).addClass('hide');
+                    // Show target tab
+                    const tabTargetId = $(this).data('targetTabId');
+                    const visibleTab = $(this).closest('.tab-list').find('.tabs-item.visible');
 
-                setTimeout(function () {
-                    $(visibleTab).removeClass('visible show hide');
-                    $(tabTargetId).addClass('visible');
-                }, 200);
+                    $(visibleTab).addClass('hide');
 
-                setTimeout(function () {
-                    $(tabTargetId).addClass('show');
-                }, 300);
+                    setTimeout(function () {
+                        $(visibleTab).removeClass('visible show hide');
+                        $(tabTargetId).addClass('visible');
+                    }, 200);
+
+                    setTimeout(function () {
+                        $(tabTargetId).addClass('show');
+                    }, 300);
+                }
             });
         }
     }

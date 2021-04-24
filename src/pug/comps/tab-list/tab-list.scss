@@ -187,4 +187,48 @@
             margin-top: -84px;
         }
     }
+
+    &__get-data {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 5%;
+        height: 138px;
+        background: $color-back-primary;
+        border-radius: 12px;
+        box-shadow:
+                -14px -14px 30px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: $color-text-secondary;
+        cursor: pointer;
+        margin-top: 48px;
+        transition: background-color .2s, box-shadow .2s;
+        padding: 0 48px;
+
+        .points {
+            display: flex;
+
+            .point {
+                display: block;
+                margin-right: 8px;
+            }
+        }
+
+        &:hover {
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6),
+                    inset 24px 24px 110px rgba(4, 2, 19, 0.5),
+                    inset -24px -24px 110px rgba(255, 255, 255, 0.06);
+        }
+
+        @media (min-width: $xl) {
+            display: flex;
+        }
+    }
 }

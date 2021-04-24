@@ -162,11 +162,15 @@ $(document).ready(function () {
         },
     });
 
-    const breakpointXL = window.matchMedia ('(min-width: 1320px)');
-    let listSlider, workSlider, ourWorksSlider;
 
-    function breakpointXLChecker() {
-        if ( breakpointXL.matches === true ) {
+    // Handler change window width on laptops for rebuild some sliders
+    const breakpointLG = window.matchMedia ('(min-width: 1320px)'); // breakpoint for more then 1366px
+    let listSlider,
+        workSlider,
+        ourWorksSlider;
+
+    function breakpointLGChecker() {
+        if ( breakpointLG.matches === true ) {
             if ( listSlider !== undefined ) {
                 listSlider.destroy(true, true);
             }
@@ -179,7 +183,7 @@ $(document).ready(function () {
                 ourWorksSlider.destroy(true, true);
             }
 
-        } else if ( breakpointXL.matches === false ) {
+        } else if ( breakpointLG.matches === false ) {
             enableListSlider();
             enableWorkSlider();
             enableOurWorksSlider();
@@ -210,18 +214,14 @@ $(document).ready(function () {
                 slidesPerView: 'auto',
                 speed: 500,
             });
-
-            setTimeout(function () {
-                ourWorksSlider.update();
-            }, 500);
         }
     }
 
     $(window).resize(function () {
-        // Update slider fot mobile and tablet version if it has built
-        // for corrected swiper slide width
+        // Update slider fot mobile and tablet version
+        // if it has built for corrected swiperjs slide width
 
-        if ( $('#ourWorksSlider').length > 0 ) {
+        if ( $('#ourWorksSlider')[0] && !isDesctop) {
             setTimeout(function () {
                 ourWorksSlider.update();
             }, 1000);
@@ -229,59 +229,165 @@ $(document).ready(function () {
     });
 
     // Here are listening breakpoint for large screen and initial check
+    breakpointLG.addListener(breakpointLGChecker);
+    breakpointLGChecker();
+
+
+    // Handler change window width on desctops for rebuild some sliders
+    const breakpointXL = window.matchMedia ('(min-width: 1860px)'); // breakpoint for more then 1920px
+    let tabListTickerSlider,
+        tabListMediaFacadeSlider,
+        tabListOuterLedScreenSlider,
+        tabListInnerLedScreenSlider,
+        tabListRentSlider;
+
+    function breakpointXLChecker() {
+        if ( breakpointXL.matches === true ) {
+            if ( tabListTickerSlider !== undefined
+                    && $('#tabListTickerSlider')[0] ) {
+                tabListTickerSlider.destroy(true, true);
+            }
+
+            if ( tabListMediaFacadeSlider !== undefined
+                    && $('#tabListMediaFacadeSlider')[0] ) {
+                tabListMediaFacadeSlider.destroy(true, true);
+            }
+
+            if ( tabListOuterLedScreenSlider !== undefined
+                    && $('#tabListOuterLedScreenSlider')[0] ) {
+                tabListOuterLedScreenSlider.destroy(true, true);
+            }
+
+            if ( tabListInnerLedScreenSlider !== undefined
+                    && $('#tabListInnerLedScreenSlider')[0] ) {
+                tabListInnerLedScreenSlider.destroy(true, true);
+            }
+
+            if ( tabListRentSlider !== undefined
+                    && $('#tabListRentSlider')[0] ) {
+                tabListRentSlider.destroy(true, true);
+            }
+
+        } else if ( breakpointXL.matches === false ) {
+            enableTabListTickerSlider();
+            enableTabListMediaFacadeSlider();
+            enableTabListOuterLedScreenSlider();
+            enableTabListInnerLedScreenSlider();
+            enableTabListRentSlider();
+        }
+    }
+
+    // Tab lists sliders functions
+    function enableTabListTickerSlider() {
+        if ($('#tabListTickerSlider')[0]) {
+            tabListTickerSlider = new Swiper('#tabListTickerSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observeParents: true,
+                observer: true,
+                observeSlideChildren: true,
+                navigation: {
+                    nextEl: '#btnTabListTickerNext',
+                    prevEl: '#btnTabListTickerPrev',
+                },
+            });
+        }
+    }
+
+    function enableTabListMediaFacadeSlider() {
+        if ($('#tabListMediaFacadeSlider')[0]) {
+            tabListMediaFacadeSlider = new Swiper('#tabListMediaFacadeSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '#btnTabListMediaFacadeNext',
+                    prevEl: '#btnTabListMediaFacadePrev',
+                },
+            });
+        }
+    }
+
+    function enableTabListOuterLedScreenSlider() {
+        if ($('#tabListOuterLedScreenSlider')[0]) {
+            tabListOuterLedScreenSlider = new Swiper('#tabListOuterLedScreenSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '#btnTabListOuterLedScreenNext',
+                    prevEl: '#btnTabListOuterLedScreenPrev',
+                },
+            });
+        }
+    }
+
+    function enableTabListInnerLedScreenSlider() {
+        if ($('#tabListInnerLedScreenSlider')[0]) {
+            tabListInnerLedScreenSlider = new Swiper('#tabListInnerLedScreenSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '#btnTabListInnerLedScreenNext',
+                    prevEl: '#btnTabListInnerLedScreenPrev',
+                },
+            });
+        }
+    }
+
+    function enableTabListRentSlider() {
+        if ($('#tabListRentSlider')[0]) {
+            tabListRentSlider = new Swiper('#tabListRentSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '#btnTabListRentNext',
+                    prevEl: '#btnTabListRentPrev',
+                },
+            });
+        }
+    }
+
+    // Here are listening breakpoint for extra large screen and initial check
     breakpointXL.addListener(breakpointXLChecker);
     breakpointXLChecker();
 
-    // Tab lists sliders
-    new Swiper('#TabListTickerSlider', {
-        slidesPerView: 'auto',
-        speed: 500,
-        observeParents: true,
-        observer: true,
-        observeSlideChildren: true,
-        navigation: {
-            nextEl: '#btnTabListTickerNext',
-            prevEl: '#btnTabListTickerPrev',
-        },
-    });
-    new Swiper('#TabListMediaFacadeSlider', {
-        slidesPerView: 'auto',
-        speed: 500,
-        observer: true,
-        observeParents: true,
-        navigation: {
-            nextEl: '#btnTabListMediaFacadeNext',
-            prevEl: '#btnTabListMediaFacadePrev',
-        },
-    });
-    new Swiper('#TabListOuterLedScreenSlider', {
-        slidesPerView: 'auto',
-        speed: 500,
-        observer: true,
-        observeParents: true,
-        navigation: {
-            nextEl: '#btnTabListOuterLedScreenNext',
-            prevEl: '#btnTabListOuterLedScreenPrev',
-        },
-    });
-    new Swiper('#TabListInnerLedScreenSlider', {
-        slidesPerView: 'auto',
-        speed: 500,
-        observer: true,
-        observeParents: true,
-        navigation: {
-            nextEl: '#btnTabListInnerLedScreenNext',
-            prevEl: '#btnTabListInnerLedScreenPrev',
-        },
-    });
-    new Swiper('#TabListRentSlider', {
-        slidesPerView: 'auto',
-        speed: 500,
-        observer: true,
-        observeParents: true,
-        navigation: {
-            nextEl: '#btnTabListRentNext',
-            prevEl: '#btnTabListRentPrev',
-        },
+    // Updating tab sliders after resizing window
+    $(window).resize(function () {
+        if ($('#tabListTickerSlider')[0]) {
+            setTimeout(function () {
+                tabListTickerSlider.update();
+            }, 1000);
+        }
+
+        if ($('#tabListMediaFacadeSlider')[0]) {
+            setTimeout(function () {
+                tabListMediaFacadeSlider.update();
+            }, 1000);
+        }
+
+        if ($('#tabListOuterLedScreenSlider')[0]) {
+            setTimeout(function () {
+                tabListOuterLedScreenSlider.update();
+            }, 1000);
+        }
+
+        if ($('#tabListInnerLedScreenSlider')[0]) {
+            setTimeout(function () {
+                tabListInnerLedScreenSlider.update();
+            }, 1000);
+        }
+
+        if ($('#tabListRentSlider')[0]) {
+            setTimeout(function () {
+                tabListRentSlider.update();
+            }, 1000);
+        }
     });
 });

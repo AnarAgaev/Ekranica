@@ -10,6 +10,7 @@ import './pug/comps/custom-selects/custom-selects';
 import './pug/comps/custom-slider-radio/custom-slider-radio';
 import './pug/comps/custom-slider-tabs/custom-slider-tabs'
 import './pug/comps/single-work/single-work';
+import './pug/comps/tab-list/tab-list';
 
 // import './pug/templates/footer/footer';
 import './pug/comps/faq/faq';
@@ -34,3 +35,7 @@ import 'swiper/swiper-bundle.css';
 
 // Includes custom styles
 import './scss/main.scss';
+
+
+// !!!!!!!!!!!!!!!!!!!!!!  Временный файл удалить полсе сборки на битриксе
+import './js/temp';

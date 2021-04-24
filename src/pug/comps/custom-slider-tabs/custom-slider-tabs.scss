@@ -190,5 +190,11 @@
                 transition: opacity .2s linear;
             }
         }
+
+        .article-list__slide.added {
+            opacity: 0 !important;
+            transform: translateY(10px) !important;
+
+        }
     }
 }
