@@ -221,7 +221,7 @@ $(document).ready(function () {
         // Update slider fot mobile and tablet version
         // if it has built for corrected swiperjs slide width
 
-        if ( $('#ourWorksSlider')[0] && !isDesctop) {
+        if ( $('#ourWorksSlider')[0] && !isLaptop) {
             setTimeout(function () {
                 ourWorksSlider.update();
             }, 1000);
@@ -277,6 +277,8 @@ $(document).ready(function () {
         }
     }
 
+    let isUnlockAddSlides = true;
+
     // Tab lists sliders functions
     function enableTabListTickerSlider() {
         if ($('#tabListTickerSlider')[0]) {
@@ -293,7 +295,13 @@ $(document).ready(function () {
                 on: {
                     reachEnd: swiper => {
                         const slideWrap = $(swiper.el).children('.tab-list__list__wrap');
-                        addTabListItems(slideWrap, swiper);
+
+                        if (isUnlockAddSlides) {
+                            isUnlockAddSlides = false;
+
+                            setTimeout(() => isUnlockAddSlides = true, 1500);
+                            addTabListItems(slideWrap, swiper);
+                        }
                     },
                 },
             });
@@ -314,7 +322,13 @@ $(document).ready(function () {
                 on: {
                     reachEnd: swiper => {
                         const slideWrap = $(swiper.el).children('.tab-list__list__wrap');
-                        addTabListItems(slideWrap, swiper);
+
+                        if (isUnlockAddSlides) {
+                            isUnlockAddSlides = false;
+
+                            setTimeout(() => isUnlockAddSlides = true, 1500);
+                            addTabListItems(slideWrap, swiper);
+                        }
                     },
                 },
             });
@@ -335,7 +349,13 @@ $(document).ready(function () {
                 on: {
                     reachEnd: swiper => {
                         const slideWrap = $(swiper.el).children('.tab-list__list__wrap');
-                        addTabListItems(slideWrap, swiper);
+
+                        if (isUnlockAddSlides) {
+                            isUnlockAddSlides = false;
+
+                            setTimeout(() => isUnlockAddSlides = true, 1500);
+                            addTabListItems(slideWrap, swiper);
+                        }
                     },
                 },
             });
@@ -356,7 +376,13 @@ $(document).ready(function () {
                 on: {
                     reachEnd: swiper => {
                         const slideWrap = $(swiper.el).children('.tab-list__list__wrap');
-                        addTabListItems(slideWrap, swiper);
+
+                        if (isUnlockAddSlides) {
+                            isUnlockAddSlides = false;
+
+                            setTimeout(() => isUnlockAddSlides = true, 1500);
+                            addTabListItems(slideWrap, swiper);
+                        }
                     },
                 },
             });
@@ -377,7 +403,13 @@ $(document).ready(function () {
                 on: {
                     reachEnd: swiper => {
                         const slideWrap = $(swiper.el).children('.tab-list__list__wrap');
-                        addTabListItems(slideWrap, swiper);
+
+                        if (isUnlockAddSlides) {
+                            isUnlockAddSlides = false;
+
+                            setTimeout(() => isUnlockAddSlides = true, 1500);
+                            addTabListItems(slideWrap, swiper);
+                        }
                     },
                 },
             });
@@ -390,37 +422,40 @@ $(document).ready(function () {
 
     // Updating tab sliders after resizing window
     function updateSlidersTabList () {
-        if ($('#tabListTickerSlider')[0]) {
-            setTimeout(function () {
-                tabListTickerSlider.update();
-            }, 1500);
-        }
+        if (!isDesktop) {
+            if ($('#tabListTickerSlider')[0]) {
+                setTimeout(function () {
+                    tabListTickerSlider.update();
+                }, 1500);
+            }
 
-        if ($('#tabListMediaFacadeSlider')[0]) {
-            setTimeout(function () {
-                tabListMediaFacadeSlider.update();
-            }, 1500);
-        }
+            if ($('#tabListMediaFacadeSlider')[0]) {
+                setTimeout(function () {
+                    tabListMediaFacadeSlider.update();
+                }, 1500);
+            }
 
-        if ($('#tabListOuterLedScreenSlider')[0]) {
-            setTimeout(function () {
-                tabListOuterLedScreenSlider.update();
-            }, 1500);
-        }
+            if ($('#tabListOuterLedScreenSlider')[0]) {
+                setTimeout(function () {
+                    tabListOuterLedScreenSlider.update();
+                }, 1500);
+            }
 
-        if ($('#tabListInnerLedScreenSlider')[0]) {
-            setTimeout(function () {
-                tabListInnerLedScreenSlider.update();
-            }, 1500);
-        }
+            if ($('#tabListInnerLedScreenSlider')[0]) {
+                setTimeout(function () {
+                    tabListInnerLedScreenSlider.update();
+                }, 1500);
+            }
 
-        if ($('#tabListRentSlider')[0]) {
-            setTimeout(function () {
-                tabListRentSlider.update();
-            }, 1500);
+            if ($('#tabListRentSlider')[0]) {
+                setTimeout(function () {
+                    tabListRentSlider.update();
+                }, 1500);
+            }
         }
     }
-    updateSlidersTabList();
+
+    setTimeout(updateSlidersTabList, 1500);
 
     $(window).resize(function () {
         updateSlidersTabList();

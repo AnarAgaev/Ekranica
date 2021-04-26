@@ -6,13 +6,13 @@ $(document).ready(function () {
         const msg = $(el).parent().children('.feedback__msg');
 
         function handlerIn () {
-            if (isDesctop) {
+            if (isLaptop) {
                 $(msg).addClass('hover');
             }
         }
 
         function handlerOut () {
-            if (isDesctop) {
+            if (isLaptop) {
                 $(msg).removeClass('hover');
             }
         }

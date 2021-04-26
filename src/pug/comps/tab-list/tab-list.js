@@ -18,7 +18,6 @@ $(document).ready(function () {
 
 
 
-
         // GETTING DATE FROM SERVER ...
 
         // Получаем данные по url хранящемуся в дата атрибуте targetList,
@@ -29,10 +28,14 @@ $(document).ready(function () {
         setTimeout(function () {
             SPINNER.removeClass('visible');
 
+            if (slider) slider.detachEvents();
+
             targetList.append(articlesData.articles);
 
             if (slider) {
+                slider.attachEvents();
                 slider.update();
+
                 $(slider.el).children('.swiper-wrapper').css({
                     'transform': 'translate3d(-' + offset + 'px, 0px, 0px)',
                     'transitionDuration': '500ms',

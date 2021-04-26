@@ -8,7 +8,7 @@ $(document).ready(function () {
     const helpModals = $('.help-modal');
 
     function responsiveOpen() {
-        if (!isDesctop) {
+        if (!isLaptop) {
             $('body').addClass('modal-open');
             $('.typical-solutions .filter').css('zIndex', 'initial');
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
     }
 
     function responsiveClose() {
-        if (!isDesctop) {
+        if (!isLaptop) {
             $('body').removeClass('modal-open');
             $('.typical-solutions .filter').css('zIndex', '2');
 
@@ -53,7 +53,7 @@ $(document).ready(function () {
 
                     // Remove modal to the left side if there isn't
                     // space for it on the right fro icon
-                    if (isDesctop) {
+                    if (isLaptop) {
                         const modalWidth = $(modal).width();
                         const offsetLeft = $(modal).closest('.label-controll__help').offset().left;
                         const offsetRight = $(window).width() - offsetLeft - 24; // 24px is offset from left side of container

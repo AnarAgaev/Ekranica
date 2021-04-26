@@ -9,7 +9,7 @@ $(document).ready(function () {
     function closeModal() {
         $(modal).removeClass('visible');
 
-        if (isDesctop) {
+        if (isLaptop) {
             $('body')
                 .removeClass('modal-open')
                 .css('paddingRight', '0px');
@@ -25,7 +25,7 @@ $(document).ready(function () {
         img.src = src;
         img.onload = function() {
 
-            if (isDesctop) {
+            if (isLaptop) {
                 $('body')
                     .addClass('modal-open')
                     .css('paddingRight', paddingRightWidth);

@@ -31,7 +31,8 @@ $(document).ready(function () {
 
     /* Get screen type, desktop or not */
     function getScreenType () {
-        window.isDesctop = window.innerWidth >= 1320;
+        window.isLaptop = window.innerWidth >= 1320;
+        window.isDesktop = window.innerWidth >= 1860;
     }
     getScreenType();
 

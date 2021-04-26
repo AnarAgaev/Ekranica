@@ -5,13 +5,13 @@ $(document).ready(function () {
     // It's listening hover for desktop viewport size
     $('header .dropdown').each(function (i, el) {
         function handlerIn () {
-            if (isDesctop) {
+            if (isLaptop) {
                 $('#navLine').addClass('visible');
             }
         }
 
         function handlerOut () {
-            if (isDesctop) {
+            if (isLaptop) {
                 $('#navLine').removeClass('visible');
             }
         }
@@ -28,13 +28,13 @@ $(document).ready(function () {
     $('.nav__item.dropdown').on('click', function (e) {
         const el = e.target
 
-        if (!isDesctop) {
+        if (!isLaptop) {
             $(el).toggleClass('drop-visible');
         }
     });
 
     $('.nav__item.dropdown a').on('click', function (e) {
-        if (!isDesctop) {
+        if (!isLaptop) {
             e.preventDefault();
 
             const el = e.target;
