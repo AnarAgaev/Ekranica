@@ -1,0 +1,12 @@
+.slider-tabs
+    .slider-tabs__container.swiper-container#ourNewsSlider
+        .slider-tabs__wrap.swiper-wrapper
+            .marker
+
+            .slider-tabs__slide.swiper-slide
+                // При инициализации, добавить первому элемну класс .active
+                .slider-tabs__button.active(data-target-tab-id="#newsCompany")
+                    | Новости компании
+            .slider-tabs__slide.swiper-slide
+                .slider-tabs__button(data-target-tab-id="#newsPartners")
+                    | Новости партнеров

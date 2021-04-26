@@ -163,11 +163,12 @@ $(document).ready(function () {
     });
 
 
-    // Handler change window width on laptops for rebuild some sliders
+    // Handler change window width on LAPTOPS for rebuild some sliders
     const breakpointLG = window.matchMedia ('(min-width: 1320px)'); // breakpoint for more then 1366px
     let listSlider,
         workSlider,
-        ourWorksSlider;
+        ourWorksSlider,
+        ourNewsSlider;
 
     function breakpointLGChecker() {
         if ( breakpointLG.matches === true ) {
@@ -183,10 +184,15 @@ $(document).ready(function () {
                 ourWorksSlider.destroy(true, true);
             }
 
+            if ( ourNewsSlider !== undefined  && $('#ourNewsSlider').length > 0 ) {
+                ourNewsSlider.destroy(true, true);
+            }
+
         } else if ( breakpointLG.matches === false ) {
             enableListSlider();
             enableWorkSlider();
             enableOurWorksSlider();
+            enableOurNewsSlider();
         }
     }
 
@@ -217,29 +223,44 @@ $(document).ready(function () {
         }
     }
 
-    $(window).resize(function () {
-        // Update slider fot mobile and tablet version
-        // if it has built for corrected swiperjs slide width
-
-        if ( $('#ourWorksSlider')[0] && !isLaptop) {
-            setTimeout(function () {
-                ourWorksSlider.update();
-            }, 1000);
+    function enableOurNewsSlider() {
+        if ($('#ourNewsSlider')[0]) {
+            ourNewsSlider = new Swiper('#ourNewsSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+            });
         }
-    });
+    }
+
+    // Update slider fot mobile and tablet version
+    // if it has built for corrected swiperjs slide width
+    function updateTabLinksSliders () {
+        setTimeout(function () {
+            if ( !isLaptop ) {
+                if ($('#ourWorksSlider')[0]) ourWorksSlider.update();
+                if ($('#ourNewsSlider')[0]) ourNewsSlider.update();
+            }
+        }, 1500);
+    }
+
+    updateTabLinksSliders();
+
+    $(window).resize(updateTabLinksSliders);
 
     // Here are listening breakpoint for large screen and initial check
     breakpointLG.addListener(breakpointLGChecker);
     breakpointLGChecker();
 
 
-    // Handler change window width on desctops for rebuild some sliders
+    // Handler change window width on DESKTOPS for rebuild some sliders
     const breakpointXL = window.matchMedia ('(min-width: 1860px)'); // breakpoint for more then 1920px
     let tabListTickerSlider,
         tabListMediaFacadeSlider,
         tabListOuterLedScreenSlider,
         tabListInnerLedScreenSlider,
-        tabListRentSlider;
+        tabListRentSlider,
+        tabListNewsCompanySlider,
+        tabListNewsPartnersSlider;
 
     function breakpointXLChecker() {
         if ( breakpointXL.matches === true ) {
@@ -268,12 +289,24 @@ $(document).ready(function () {
                 tabListRentSlider.destroy(true, true);
             }
 
+            if ( tabListNewsCompanySlider !== undefined
+                    && $('#tabListNewsCompanySlider')[0] ) {
+                tabListNewsCompanySlider.destroy(true, true);
+            }
+
+            if ( tabListNewsPartnersSlider !== undefined
+                    && $('#tabListNewsPartnersSlider')[0] ) {
+                tabListNewsPartnersSlider.destroy(true, true);
+            }
+
         } else if ( breakpointXL.matches === false ) {
             enableTabListTickerSlider();
             enableTabListMediaFacadeSlider();
             enableTabListOuterLedScreenSlider();
             enableTabListInnerLedScreenSlider();
             enableTabListRentSlider();
+            enableTabListNewsCompanySlider();
+            enableTabListNewsPartnersSlider();
         }
     }
 
@@ -416,6 +449,60 @@ $(document).ready(function () {
         }
     }
 
+    function enableTabListNewsCompanySlider() {
+        if ($('#tabListNewsCompanySlider')[0]) {
+            tabListNewsCompanySlider = new Swiper('#tabListNewsCompanySlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '#btnTabListNewsCompanyNext',
+                    prevEl: '#btnTabListNewsCompanyPrev',
+                },
+                on: {
+                    reachEnd: swiper => {
+                        const slideWrap = $(swiper.el).children('.tab-list__list__wrap');
+
+                        if (isUnlockAddSlides) {
+                            isUnlockAddSlides = false;
+
+                            setTimeout(() => isUnlockAddSlides = true, 1500);
+                            addTabListItems(slideWrap, swiper);
+                        }
+                    },
+                },
+            });
+        }
+    }
+
+    function enableTabListNewsPartnersSlider() {
+        if ($('#tabListNewsPartnersSlider')[0]) {
+            tabListNewsPartnersSlider = new Swiper('#tabListNewsPartnersSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '#btnTabListNewsPartnersNext',
+                    prevEl: '#btnTabListNewsPartnersPrev',
+                },
+                on: {
+                    reachEnd: swiper => {
+                        const slideWrap = $(swiper.el).children('.tab-list__list__wrap');
+
+                        if (isUnlockAddSlides) {
+                            isUnlockAddSlides = false;
+
+                            setTimeout(() => isUnlockAddSlides = true, 1500);
+                            addTabListItems(slideWrap, swiper);
+                        }
+                    },
+                },
+            });
+        }
+    }
+
     // Here are listening breakpoint for extra large screen and initial check
     breakpointXL.addListener(breakpointXLChecker);
     breakpointXLChecker();
@@ -450,6 +537,18 @@ $(document).ready(function () {
             if ($('#tabListRentSlider')[0]) {
                 setTimeout(function () {
                     tabListRentSlider.update();
+                }, 1500);
+            }
+
+            if ($('#tabListNewsCompanySlider')[0]) {
+                setTimeout(function () {
+                    tabListNewsCompanySlider.update();
+                }, 1500);
+            }
+
+            if ($('#tabListNewsPartnersSlider')[0]) {
+                setTimeout(function () {
+                    tabListNewsPartnersSlider.update();
                 }, 1500);
             }
         }

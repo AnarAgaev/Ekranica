@@ -311,7 +311,9 @@
     #btnTabListMediaFacadePrev,
     #btnTabListOuterLedScreenPrev,
     #btnTabListInnerLedScreenPrev,
-    #btnTabListRentPrev {
+    #btnTabListRentPrev,
+    #btnTabListNewsCompanyPrev,
+    #btnTabListNewsPartnersPrev {
         margin-top: -12px;
 
         @media (min-width: $xl) {
@@ -323,7 +325,9 @@
     #btnTabListMediaFacadeNext,
     #btnTabListOuterLedScreenNext,
     #btnTabListInnerLedScreenNext,
-    #btnTabListRentNext {
+    #btnTabListRentNext,
+    #btnTabListNewsCompanyNext,
+    #btnTabListNewsPartnersNext {
         margin-top: -116px;
 
         @media (min-width: $xl) {

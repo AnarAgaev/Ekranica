@@ -36,7 +36,11 @@ $(document).ready(function () {
             $(slideTabs[i]).on('click', function () {
 
                 if (!$(this).hasClass('active')) {
-                    $('.slider-tabs__button').removeClass('active');
+                    const adjacentBtns = $(this)
+                        .closest('.slider-tabs__wrap')
+                        .find('.slider-tabs__button');
+
+                    $(adjacentBtns).removeClass('active');
                     $(this).addClass('active');
                     setTabsMarker(this);
 
