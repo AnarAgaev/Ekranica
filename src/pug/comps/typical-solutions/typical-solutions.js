@@ -2,6 +2,12 @@ import $ from "jquery";
 
 $(document).ready(function () {
 
+    setTimeout(function () {
+        if ($('#tsSlider').length > 0) {
+            tsSlider.update();
+        }
+    }, 700);
+
     // TYPICAL SOLUTIONS FILTER
     const tsItems = $('.typical-solutions__slide');
     const tsFilterConstrols = $('.typical-solutions .filter-controller');
@@ -39,29 +45,55 @@ $(document).ready(function () {
                 }
             }
 
-            if (isHidden) {
-                $(tsItems[j]).addClass('hidden');
+            $(tsItems).addClass('hide');
+
+            setTimeout(function () {
+                if (isHidden) {
+                    $(tsItems[j]).addClass('hidden');
+                } else {
+                    $(tsItems[j]).removeClass('hidden');
+                    $(tsItems[j]).addClass('invisible');
+                }
+            }, 300);
+        }
+
+        setTimeout(function () {
+            // Обработка пустого результата фильтрации
+            // если нет ни одного элемента удовлетворяющего фильтру
+            const slides = $('.typical-solutions__slide:not(".hidden")');
+
+            if (slides.length === 0) {
+                $('#notFilterTsResults').addClass('visible');
+                $('#btnTsPrev').addClass('hidden');
+                $('#btnTSNext').addClass('hidden');
             } else {
-                $(tsItems[j]).removeClass('hidden');
+                $('#notFilterTsResults').removeClass('visible');
+                $('#btnTsPrev').removeClass('hidden');
+                $('#btnTSNext').removeClass('hidden');
             }
 
             // Переинициализируем соответствующий слайдер
             tsSlider.update();
-        }
+        }, 300);
 
-        // Обработка пустого результата фильтрации
-        // если нет ни одного элемента удовлетворяющего фильтру
-        const slides = $('.typical-solutions__slide:not(".hidden")');
+        // Добавляем delay для постепенного появления слайдов
+        setTimeout(function () {
+            const invisibleItems = $(tsItems).filter('.invisible.hide');
 
-        if (slides.length === 0) {
-            $('#notFilterTsResults').addClass('visible');
-            $('#btnTsPrev').addClass('hidden');
-            $('#btnTSNext').addClass('hidden');
-        } else {
-            $('#notFilterTsResults').removeClass('visible');
-            $('#btnTsPrev').removeClass('hidden');
-            $('#btnTSNext').removeClass('hidden');
-        }
+            for (let i = 0; i < invisibleItems.length; i++) {
+                $(invisibleItems[i]).css('transition-delay', 0.1 * i + 's');
+            }
+        }, 350);
+
+        // Показываем отфильтрованные слайды
+        setTimeout(function () {
+            $(tsItems).removeClass('invisible hide');
+        }, 400);
+
+        // Чистим transition-delay во всех слайдах
+        setTimeout(function () {
+            $(tsItems).attr('style', '');
+        }, 1000);
     }
 
     // Обрабатываем клик на контроллере

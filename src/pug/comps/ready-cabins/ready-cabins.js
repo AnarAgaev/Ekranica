@@ -8,7 +8,7 @@ $(document).ready(function () {
         }
     }, 700);
 
-    // TYPICAL SOLUTIONS FILTER
+    // READY CABINS FILTER
     const rcItems = $('.ready-cabins__slide');
     const rcFilterConstrols = $('.ready-cabins .filter-controller');
     const rcFilterState = {
@@ -73,9 +73,26 @@ $(document).ready(function () {
 
             // Переинициализируем соответствующий слайдер
             rcSlider.update();
-
-            $(rcItems).removeClass('invisible hide');
         }, 300);
+
+        // Добавляем delay для постепенного появления слайдов
+        setTimeout(function () {
+            const invisibleItems = $(rcItems).filter('.invisible.hide');
+
+            for (let i = 0; i < invisibleItems.length; i++) {
+                $(invisibleItems[i]).css('transition-delay', 0.1 * i + 's');
+            }
+        }, 350);
+
+        // Показываем отфильтрованные слайды
+        setTimeout(function () {
+            $(rcItems).removeClass('invisible hide');
+        }, 400);
+
+        // Чистим transition-delay во всех слайдах
+        setTimeout(function () {
+            $(rcItems).attr('style', '');
+        }, 1000);
     }
 
     // Обрабатываем клик на контроллере
