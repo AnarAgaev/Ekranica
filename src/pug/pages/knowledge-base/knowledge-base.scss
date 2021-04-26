@@ -4,17 +4,21 @@
 
     .section_tab-list {
         margin-top: 16px;
+        margin-bottom: 80px;
 
         @media (min-width: $md) {
             margin-top: 24px;
+            margin-bottom: 99px;
         }
 
         @media (min-width: $lg) {
-            margin-top: 68px;
+            margin-top: 24px;
+            margin-bottom: 25px;
         }
 
         @media (min-width: $xl) {
             margin-top: 96px;
+            margin-bottom: 264px;
         }
 
         .section__title {
@@ -22,6 +26,20 @@
 
             @media (min-width: $md) {
                 margin-bottom: 34px;
+            }
+
+            @media (min-width: $lg) {
+                margin-bottom: 68px;
+            }
+        }
+    }
+
+    .section_link-list {
+        margin-top: 0;
+
+        .section__title {
+            @media (min-width: $md) {
+                margin-bottom: 49px;
             }
 
             @media (min-width: $lg) {
