@@ -1,10 +1,8 @@
 // Includes custom scripts
-
-// import './js/polyfills';
 import './js/swiper';
 import './js/anim';
-import './js/main';
 import './js/loading-bar.min';
+import './js/main';
 import './pug/templates/header/header';
 import './pug/comps/custom-selects/custom-selects';
 import './pug/comps/custom-slider-radio/custom-slider-radio';
@@ -12,8 +10,6 @@ import './pug/comps/custom-slider-tabs/custom-slider-tabs'
 import './pug/comps/single-work/single-work';
 import './pug/comps/tab-list/tab-list';
 import './pug/comps/article-news/article-news';
-
-// import './pug/templates/footer/footer';
 import './pug/comps/faq/faq';
 import './pug/pages/index/index';
 import './pug/comps/callback/callback';
@@ -38,5 +34,5 @@ import 'swiper/swiper-bundle.css';
 import './scss/main.scss';
 
 
-// !!!!!!!!!!!!!!!!!!!!!!  Временный файл удалить полсе сборки на битриксе
+// !!!!!!!!!!!!!!!!!!!!!!  Временный файл удалить перед сборкой на битриксе
 import './js/temp';
