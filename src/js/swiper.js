@@ -105,6 +105,15 @@ $(document).ready(function () {
         },
     });
 
+    new Swiper('#newsListSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        navigation: {
+            nextEl: '#btnNewsListNext',
+            prevEl: '#btnNewsListPrev',
+        },
+    });
+
     new Swiper('#clientsList', {
         slidesPerView: 'auto',
         speed: 500,

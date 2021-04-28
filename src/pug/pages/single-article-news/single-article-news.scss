@@ -1,0 +1,21 @@
+@import "../../../scss/variables";
+
+.page-single-article-news {
+
+    .section_article-news {
+        margin-top: 16px;
+
+        @media (min-width: $md) {
+            margin-top: 24px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 68px;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 96px;
+        }
+    }
+
+}

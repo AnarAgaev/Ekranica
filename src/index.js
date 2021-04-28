@@ -11,6 +11,7 @@ import './pug/comps/custom-slider-radio/custom-slider-radio';
 import './pug/comps/custom-slider-tabs/custom-slider-tabs'
 import './pug/comps/single-work/single-work';
 import './pug/comps/tab-list/tab-list';
+import './pug/comps/article-news/article-news';
 
 // import './pug/templates/footer/footer';
 import './pug/comps/faq/faq';

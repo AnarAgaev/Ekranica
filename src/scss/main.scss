@@ -36,6 +36,8 @@
 @import "../pug/comps/single-work/single-work";
 @import "../pug/comps/tab-list/tab-list-article-list";
 @import "../pug/comps/link-list/link-list";
+@import "../pug/comps/article-news/article-news";
+@import "../pug/comps/news-list/news-list";
 
 // Include page styles
 @import "../pug/pages/index/index";
@@ -57,3 +59,4 @@
 @import "../pug/pages/our-works/our-works";
 @import "../pug/pages/single-work/single-work";
 @import "../pug/pages/knowledge-base/knowledge-base";
+@import "../pug/pages/single-article-news/single-article-news";

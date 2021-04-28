@@ -1,0 +1,78 @@
+section.section.section_article-news
+    .container
+
+        .article-news__controlls
+            .article-news__back.animation-element
+                a.btn.btn_secondary(href="")
+                    .icon
+                        include ../../../img/icon-arr-back.svg
+                    span Назад
+            .article-news__controlls-wrap.animation-element
+                // Если нет урла для следующей или предыдущей статьи, добавлять класс .inactive
+                .article-news__controller.article-news__controller_before.inactive
+                    a.btn.btn_icon-outlined.not-focused(href="")
+                        include ../../../img/icon-slider-btn-arr.svg
+                .article-news__controller.article-news__controller_next
+                    a.btn.btn_icon-outlined.not-focused(href="")
+                        include ../../../img/icon-slider-btn-arr.svg
+
+        .article-news__title.animation-element
+            .article-news__date 10.09.2020
+            .article-news__time
+                .icon
+                    include ../../../img/icon-watch.svg
+                .text 3 минуты на прочтение
+            h1.article-news__captioin Светодиодные экраны для рекламы: гайд по выбору
+
+
+        .article-news__content-wrap.animation-element
+            .article-news__picture
+                .article-news__image(style="background-image: url(/img/placeholder-img.jpg)")
+                    img(src="/img/placeholder-img.jpg" alt="")
+                .article-news__image-caption На фото наш уличный рекламный баннер на Теврской улице в Москве
+
+            .article-news__content
+                h2.article-news__subtitle Светодиодный экран для ДК и модель для уличной сцены будут принципиально отличаться. В статье подскажем, какой экран лучше всего подойдёт.
+
+                .article-news__text
+                    p Несмотря на то, что установленная на светодиодный экран для сцены цена выше, чем на стандартные сценические задники и декорации, спрос на led-оборудование в этой сфере стремительно растет. Объясняется это просто — сценический светодиодный экран обладает массой достоинств.
+                    p В помещении устанавливают интерьерные модели. Они имеют меньшую степень защиты, меньше весят и не обладают чрезмерной яркостью, которая необходима уличным дисплеям. Чтобы выбрать светодиодный экран, который будет оптимальным решением для конкретного концертного зала, необходимо обратить внимание на его характеристики.
+
+                    .d-none.sm-visible.md-visible
+                        ul.params
+                            li
+                                span.caption Р6 мм
+                                span.description Стандартный шаг пикселя
+
+                            li
+                                span.caption 4,992 x 4.032 мм
+                                span.description Размер экрана
+
+                    p.d-none.lg-visible.xl-visible Несмотря на то, что установленная на светодиодный экран для сцены цена выше, чем на стандартные сценические задники и декорации, спрос на led-оборудование в этой сфере стремительно растет. Объясняется это просто — сценический светодиодный экран обладает массой достоинств.
+                    p.d-none.lg-visible.xl-visible В помещении устанавливают интерьерные модели. Они имеют меньшую степень защиты, меньше весят и не обладают чрезмерной яркостью, которая необходима уличным дисплеям. Чтобы выбрать светодиодный экран, который будет оптимальным решением для конкретного концертного зала, необходимо обратить внимание на его характеристики.
+
+                    p Несмотря на то, что установленная на светодиодный экран для сцены цена выше, чем на стандартные сценические задники и декорации, спрос на led-оборудование в этой сфере стремительно растет. Объясняется это просто — сценический светодиодный экран обладает массой достоинств.
+                    p В помещении устанавливают интерьерные модели. Они имеют меньшую степень защиты, меньше весят и не обладают чрезмерной яркостью, которая необходима уличным дисплеям. Чтобы выбрать светодиодный экран, который будет оптимальным решением для конкретного концертного зала, необходимо обратить внимание на его характеристики.
+
+                .article-news__links
+                    // Класс .copy-url-link добавлять ко всем ссылкам/кнопкам которые должны копировать url в буфер
+                    .article-news__copy-link.copy-url-link
+                        .icon
+                            include ../../../img/icon-copy-link.svg
+                        .text Копировать ссылку
+
+                    .article-news__shsring
+                        .captioin Поделиться в
+
+                        ul
+                            li
+                                a(href="")
+                                    include ../../../img/icon-youtube.svg
+
+                            li
+                                a(href="")
+                                    include ../../../img/icon-instagram.svg
+
+                            li
+                                a(href="")
+                                    include ../../../img/icon-facebook.svg

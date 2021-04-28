@@ -1,0 +1,238 @@
+@import "../../../scss/variables";
+
+.news-list {
+
+    .section__title {
+        @extend .title-animation;
+    }
+
+    &__list {
+        padding-top: 100px;
+        margin-top: -100px;
+        padding-bottom: 100px;
+        margin-bottom: -100px;
+    }
+
+    &__slide {
+        width: 224px; // 200px + 24px
+
+        @media (min-width: $md) {
+            width: 512px; // 440px + 72px
+        }
+
+        @media (min-width: $lg) {
+            width: 513px; // 422px + 91px
+        }
+
+        @media (min-width: $xl) {
+            width: 720px; // 624px + 96px
+        }
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) .news-list__card {
+                transition-delay: 0.3s * $i;
+            }
+        }
+    }
+
+    &__card {
+        display: block;
+        width: 200px;
+
+        @extend .card-animation;
+
+        @media (min-width: $md) {
+            width: 440px;
+            height: 462px;
+            padding: 24px 44px 0 24px;
+            background: $color-back-primary;
+            box-shadow:
+                    -14px -14px 30px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: $lg) {
+            width: 422px;
+            height: 443px;
+            padding: 24px 26px 0 24px;
+
+            &:hover {
+                .image {
+                    width: 110%;
+                    height: 110%;
+                }
+
+                .news-list__caption {
+                    color: $color-accent;
+                }
+            }
+        }
+
+        @media (min-width: $xl) {
+            width: 624px;
+            height: 551px;
+            padding: 48px 48px 0 48px;
+        }
+    }
+
+    &__pic {
+        width: 200px;
+        height: 176px;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        overflow: hidden;
+        position: relative;
+        box-shadow:
+                -14px -14px 40px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+
+        @media (min-width: $md) {
+            order: 1;
+            flex-shrink: 0;
+            width: 440px;
+            height: 280px;
+            box-shadow:
+                    -14px -14px 30px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            width: 422px;
+            height: 269px;
+        }
+
+        @media (min-width: $xl) {
+            width: 528px;
+            height: 317px;
+            margin-top: -48px;
+            transform: translateY(48px);
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all .4s ease-out;
+        }
+    }
+
+    &__date {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        margin-bottom: 4px;
+
+        @media (min-width: $md) {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 14px;
+        }
+    }
+
+    &__caption {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-secondary;
+        margin-bottom: 12px;
+        transition: color .5s;
+
+        @media (min-width: $md) {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 24px;
+            min-height: 93px;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 30px;
+            line-height: 140%;
+            margin-bottom: 0;
+            min-height: 126px;
+        }
+    }
+
+    &_time {
+        display: flex;
+        align-items: center;
+
+        @media (min-width: $md) {
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 33px;
+            height: 38px;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            position: relative;
+
+            @media (min-width: $lg) {
+                width: 20px;
+                height: 20px;
+                -webkit-transform: scale(1.34);
+                transform: scale(1.34);
+            }
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-left: 10px;
+
+                @media (min-width: $lg) {
+                    path {
+                        stroke: $color-text-inactive;
+                    }
+                }
+
+                @media (min-width: $xl) {
+                    path {
+                        stroke: $color-text-primary;
+                    }
+                }
+            }
+        }
+
+        .content {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 160%;
+            color: $color-text-inactive;
+
+            @media (min-width: $xl) {
+                color: $color-text-secondary;
+            }
+        }
+    }
+
+    #btnNewsListPrev {
+        margin-top: 16px;
+    }
+
+    #btnNewsListNext {
+        margin-top: -87px;
+    }
+}

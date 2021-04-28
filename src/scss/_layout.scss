@@ -1713,3 +1713,32 @@ filter: grayscale(0) blur(0);
         }
     }
 }
+
+// Visible elements
+.d-none {
+    display: none;
+}
+
+.sm-visible {
+    @media (max-width: $md - 1) {
+        display: block !important;
+    }
+}
+
+.md-visible {
+    @media (min-width: $md) and (max-width: $lg - 1) {
+        display: block !important;
+    }
+}
+
+.lg-visible {
+    @media (min-width: $lg) and (max-width: $xl - 1) {
+        display: block !important;
+    }
+}
+
+.xl-visible {
+    @media (min-width: $xl) {
+        display: block !important;
+    }
+}
