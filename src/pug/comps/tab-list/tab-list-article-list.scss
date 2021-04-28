@@ -121,7 +121,7 @@
             }
         }
 
-        @for $i from 1 through 3 {
+        @for $i from 1 through 5 {
             &:nth-child(#{$i}) .article-list__card {
                 transition-delay: 0.3s * $i;
             }
@@ -360,36 +360,36 @@
 
     // Customising tabs for article list page.
     // Delete if it's error into the layout.
-    @media (min-width: $lg) and (max-width: $xl - 1) {
-        .slider-tabs__wrap {
-            background: transparent;
-            box-shadow: none;
-            padding: 0;
-            justify-content: flex-start;
-            display: flex;
-            border-radius: initial;
-            transition: none;
-            margin-bottom: 60px;
-        }
-
-        .slider-tabs .marker {
-            display: none;
-        }
-
-        .slider-tabs__button {
-            font-size: 16px;
-            color: $color-text-secondary;
-            padding: 0;
-            margin-right: 24px;
-
-            &.active {
-                color: $color-accent;
-                cursor: default;
-            }
-
-            &::before {
-                display: block;
-            }
-        }
-    }
+    //@media (min-width: $lg) and (max-width: $xl - 1) {
+    //    .slider-tabs__wrap {
+    //        background: transparent;
+    //        box-shadow: none;
+    //        padding: 0;
+    //        justify-content: flex-start;
+    //        display: flex;
+    //        border-radius: initial;
+    //        transition: none;
+    //        margin-bottom: 60px;
+    //    }
+    //
+    //    .slider-tabs .marker {
+    //        display: none;
+    //    }
+    //
+    //    .slider-tabs__button {
+    //        font-size: 16px;
+    //        color: $color-text-secondary;
+    //        padding: 0;
+    //        margin-right: 24px;
+    //
+    //        &.active {
+    //            color: $color-accent;
+    //            cursor: default;
+    //        }
+    //
+    //        &::before {
+    //            display: block;
+    //        }
+    //    }
+    //}
 }

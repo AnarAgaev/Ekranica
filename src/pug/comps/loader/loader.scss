@@ -1,32 +1,29 @@
 @import "../../../scss/variables";
 
 .loader {
-    width: 110px;
-    height: 110px;
+    width: 170px;
+    height: 170px;
     display: inline-block;
     overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 999;
     position: fixed;
-    top: calc(50% - 55px);
+    top: calc(50% - 85px);
     left: -1000vw;
-    background: rgba(0,0,0,0.7);
-    border-radius: 12px;
+    border-radius: 50%;
     opacity: 0;
     transform: translateY(-25px);
-    transition:
-            left 0s linear .4s,
-            opacity .4s linear 0s,
-            transform .4s linear 0s;
-
+    transition: left 0s linear .4s,
+                opacity .4s linear 0s,
+                transform .4s linear 0s;
 
     &.visible {
         opacity: 1;
         transform: translateY(0);
-        left: calc(50% - 55px);
-        transition:
-                left 0s linear 0s,
-                opacity .4s linear 0s,
-                transform .4s linear 0s;
+        left: calc(50% - 85px);
+        transition: left 0s linear 0s,
+                    opacity .4s linear 0s,
+                    transform .4s linear 0s;
     }
 
     .spinner {
@@ -37,45 +34,62 @@
         backface-visibility: hidden;
         transform-origin: 0 0;
 
+        > div {
+            transform: translate(0px,-10.2px);
+
+            > div {
+                animation: spinner-animation-first
+                           1.6666666666666667s
+                           linear
+                           infinite;
+                transform-origin: 85px 85px;
+
+                > div {
+                    position: absolute;
+                    transform: translate(85px, 72.75999999999999px);
+
+                    > div {
+                        width: 40.8px;
+                        height: 40.8px;
+                        border-radius: 50%;
+                        background: $color-accent;
+                        animation: spinner-animation-second
+                                   1.6666666666666667s
+                                   linear
+                                   infinite;
+                    }
+                }
+
+                &:last-child {
+                    animation-delay: -0.8333333333333334s;
+
+                    > div {
+                        > div {
+                            animation-delay: -0.8333333333333334s;
+                            background: #9a5bff;
+                        }
+                    }
+                }
+            }
+        }
+
         div {
-            position: absolute;
-            width: 26.400000000000002px;
-            height: 26.400000000000002px;
             box-sizing: content-box;
-            border-radius: 50%;
-            top: 41.800000000000004px;
-            left: 28.6px;
-        }
-
-        div:nth-child(1) {
-            background: $color-accent;
-            animation: spinner 1.25s linear infinite;
-            animation-delay: -0.625s;
-        }
-
-        div:nth-child(2) {
-            background: $color-text-inactive;
-            animation: spinner 1.25s linear infinite;
-            animation-delay: 0s;
-        }
-
-        div:nth-child(3) {
-            background: $color-accent;
-            animation: spinner-o 1.25s linear infinite;
-            animation-delay: -0.625s;
         }
     }
 }
 
-@keyframes spinner-o {
-    0%     { opacity: 1; transform: translate(0 0) }
-    49.99% { opacity: 1; transform: translate(26.400000000000002px,0) }
-    50%    { opacity: 0; transform: translate(26.400000000000002px,0) }
-    100%   { opacity: 0; transform: translate(0,0) }
+@keyframes spinner-animation-first {
+    0%, 100% { animation-timing-function: cubic-bezier(0.2 0 0.8 0.8) }
+    50% { animation-timing-function: cubic-bezier(0.2 0.2 0.8 1) }
+    0% { transform: rotate(0deg) }
+    50% { transform: rotate(180deg) }
+    100% { transform: rotate(360deg) }
 }
-
-@keyframes spinner {
-    0%   { transform: translate(0,0) }
-    50%  { transform: translate(26.400000000000002px,0) }
-    100% { transform: translate(0,0) }
+@keyframes spinner-animation-second {
+    0%, 100% { animation-timing-function: cubic-bezier(0.2 0 0.8 0.8) }
+    50% { animation-timing-function: cubic-bezier(0.2 0.2 0.8 1) }
+    0% { transform: translate(-20.4px,-20.4px) scale(0) }
+    50% { transform: translate(-20.4px,-20.4px) scale(1) }
+    100% { transform: translate(-20.4px,-20.4px) scale(0) }
 }
