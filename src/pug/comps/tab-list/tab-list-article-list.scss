@@ -289,7 +289,7 @@
             margin-right: 8px;
             position: relative;
 
-            @media (min-width: $lg) {
+            @media (min-width: $xl) {
                 width: 20px;
                 height: 20px;
                 -webkit-transform: scale(1.34);
@@ -301,16 +301,21 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                margin-left: 10px;
+                height: auto;
+                width: 20px;
 
                 @media (min-width: $lg) {
-                    path {
-                        stroke: $color-text-inactive;
-                    }
+                    width: 18px;
                 }
 
                 @media (min-width: $xl) {
-                    path {
+                    width: 16px;
+                }
+
+                path {
+                    stroke: $color-text-inactive;
+
+                    @media (min-width: $xl) {
                         stroke: $color-text-primary;
                     }
                 }
