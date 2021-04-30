@@ -1,0 +1,43 @@
+section.section.section_delivery
+    .delivery
+        .container
+            h2.section__title.animation-element
+                span.title Доставка
+
+        .container-endless
+            .endless.delivery__content
+                .delivery__description.animation-element
+                    | После оформления и оплаты заказа он передается на доставку.
+                    | Сроки и способ доставки зависит от того, что конкретно нужно доставить.
+                    | Выберите тип конструкции, чтобы узнать подробнее о сбособах его доставки
+
+                .delivery__methods.tab-list.animation-element
+                    .delivery__methods-title Способы доставки
+
+                    .delivery__methods-tabs
+                        .tabs__controlls-caption Конструкция
+                        include ../custom-slider-tabs/custom-slider-tabs-delivery
+
+                    .delivery__methods-slider
+                        .delivery__methods-list.swiper-container#deliveryMethodsSlider
+                            .delivery__methods-wrap.swiper-wrapper
+
+                                // Первому слайду всегда добавлять классы .visible.show
+                                .delivery__methods-slide.swiper-slide.tabs-item.visible.show#deliveryFrameMonolithic
+                                    .delivery__methods-card
+                                        .delivery__methods-caption Рамно-монолитная
+                                        .delivery__methods-description Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam animi, blanditiis culpa deleniti dicta est fuga, fugiat ipsum iste laborum libero nobis praesentium quas reiciendis totam voluptatibus!
+
+                                .delivery__methods-slide.swiper-slide.tabs-item#deliveryCabinet
+                                    .delivery__methods-card
+                                        .delivery__methods-caption Кабинет
+                                        .delivery__methods-description Довезем продукцию до площадки в короткие сроки. Каждый кабинет запакован в отдельную коробку, поэтому доезжает до заказчик в целости и сохранности
+
+                                .delivery__methods-slide.swiper-slide.tabs-item#deliveryTransportCase
+                                    .delivery__methods-card
+                                        .delivery__methods-caption Транспортный кофр
+                                        .delivery__methods-description
+                                            | Транспортный кофр понадобится, если в дальнейшем планируется перевозка экрана с объекта на объект.
+                                            br
+                                            | Его мы не предоставляем в аренду, возможна только покупка целиком
+

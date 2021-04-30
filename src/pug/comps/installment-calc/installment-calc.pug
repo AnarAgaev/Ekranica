@@ -1,0 +1,22 @@
+.installment-calc
+    .installment-calc__wrap
+        .installment-calc__controlls
+            include ../custom-input/custom-input-cost
+            include ../custom-selects/suffix-select-installment
+            include ../custom-selects/suffix-select-first-payment
+        .installment-calc__btn-calc
+            .btn.btn_primary#calculateInstallment Рассчитать
+
+    .installment-calc__delimiter
+
+    .installment-calc__result
+        .installment-calc__total
+            span.caption Итого к оплате —
+            spna.sum#calcResultSum 1 752 373
+            span ₽
+
+        .installment-calc__overpayment Переплата за 24 месяца — 252 373 ₽
+
+        .installment-calc__firstpayment Первый платёж — 30% от стоимости экрана.
+
+        .installment-calc__remainder Остаток можно погашать ежемесячно до трех лет.

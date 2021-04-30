@@ -1,0 +1,39 @@
+@import "../../../scss/variables";
+
+.page-payment-delivery {
+
+    .section_delivery {
+        margin-top: 16px;
+
+        @media (min-width: $md) {
+            margin-top: 24px;
+            margin-bottom: 96px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 96px;
+            margin-bottom: 134px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 264px;
+        }
+    }
+
+    .section_payment {
+        z-index: 1;
+
+        @media (min-width: $md) {
+            margin-top: 96px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 134px;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 264px;
+        }
+    }
+
+}

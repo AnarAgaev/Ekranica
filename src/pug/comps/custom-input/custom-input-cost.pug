@@ -1,0 +1,13 @@
+.label-controll
+    .label-controll__caption Стоимость оборудования
+    .label-controll__body
+        .label-controll__content
+
+            .input-suffix.custom-input#cost
+                input(type="text" data-calc-property="cost" data-calc-value="")
+                .input-suffix__delimiter
+                .input-suffix__units ₽
+
+            .validator.validator__cross
+                img.valid(src="/img/icon-validator-cross-valid.svg" alt="")
+                img.invalid(src="/img/icon-validator-cross-invalid.svg" alt="")

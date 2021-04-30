@@ -1,0 +1,25 @@
+section.section.section_payment
+    .payment
+        .container
+            h2.section__title.animation-element
+                span.title Схемы оплаты
+
+        .container.payment__content
+            .payment__description.animation-element
+                .payment__description-text
+                    | После согласования всех деталей с клиентом заключается договор.
+                    | Далее необходимо внести предоплату, после чего сотрудники нашей
+                    | компании приступают к изготовлению проекта с учетом индивидуальных
+                    | особенностей и потребностей вашего заказа
+                a.payment__download(href="" download)
+                    .payment__download-link
+                        .icon
+                            include ../../../img/icon-down.svg
+                        span Скачать реквизиты
+                    .payment__download-caption
+                        | Плательщикам НДС просьба заблаговременно
+                        | подготовить копию свидетельства налогоплательщика
+
+            .payment__calc.animation-element
+                .payment__calc-title Калькулятор рассрочки
+                include ../installment-calc/installment-calc

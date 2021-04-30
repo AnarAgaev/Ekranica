@@ -1,14 +1,14 @@
 @import "../../../scss/variables";
 
 .loader {
-    width: 170px;
-    height: 170px;
+    width: 100px;
+    height: 100px;
     display: inline-block;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.6);
     z-index: 999;
     position: fixed;
-    top: calc(50% - 85px);
+    top: calc(50% - 50px);
     left: -1000vw;
     border-radius: 50%;
     opacity: 0;
@@ -20,76 +20,72 @@
     &.visible {
         opacity: 1;
         transform: translateY(0);
-        left: calc(50% - 85px);
+        left: calc(50% - 50px);
         transition: left 0s linear 0s,
                     opacity .4s linear 0s,
                     transform .4s linear 0s;
     }
+}
 
-    .spinner {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform: translateZ(0) scale(1);
-        backface-visibility: hidden;
-        transform-origin: 0 0;
-
+.spinner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    
+    > div {
+        transform: translate(0px,-9.5px);
+        
         > div {
-            transform: translate(0px,-10.2px);
-
+            animation: spinner-animation-first 1.6666666666666667s linear infinite;
+            transform-origin: 50px 50px;
+            
             > div {
-                animation: spinner-animation-first
-                           1.6666666666666667s
-                           linear
-                           infinite;
-                transform-origin: 85px 85px;
-
+                position: absolute;
+                transform: translate(50px, 38.6px);
+                
                 > div {
-                    position: absolute;
-                    transform: translate(85px, 72.75999999999999px);
-
-                    > div {
-                        width: 40.8px;
-                        height: 40.8px;
-                        border-radius: 50%;
-                        background: $color-accent;
-                        animation: spinner-animation-second
-                                   1.6666666666666667s
-                                   linear
-                                   infinite;
-                    }
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background: #ab78ff;
+                    animation: spinner-animation-second 1.6666666666666667s linear infinite;
                 }
+            }
 
-                &:last-child {
-                    animation-delay: -0.8333333333333334s;
-
+            &:last-child {
+                animation-delay: -0.8333333333333334s;
+                
+                > div {
+                    
                     > div {
-                        > div {
-                            animation-delay: -0.8333333333333334s;
-                            background: #9a5bff;
-                        }
+                        animation-delay: -0.8333333333333334s;
+                        background: #9a5bff;
                     }
                 }
             }
         }
-
-        div {
-            box-sizing: content-box;
-        }
+    }
+    
+    div {
+        box-sizing: content-box;
     }
 }
 
 @keyframes spinner-animation-first {
-    0%, 100% { animation-timing-function: cubic-bezier(0.2 0 0.8 0.8) }
-    50% { animation-timing-function: cubic-bezier(0.2 0.2 0.8 1) }
-    0% { transform: rotate(0deg) }
-    50% { transform: rotate(180deg) }
-    100% { transform: rotate(360deg) }
+    0%, 100% { animation-timing-function: cubic-bezier(0.2 0 0.8 0.8); }
+    50%      { animation-timing-function: cubic-bezier(0.2 0.2 0.8 1); }
+    0%       { transform: rotate(0deg); }
+    50%      { transform: rotate(180deg); }
+    100%     { transform: rotate(360deg); }
 }
+
 @keyframes spinner-animation-second {
-    0%, 100% { animation-timing-function: cubic-bezier(0.2 0 0.8 0.8) }
-    50% { animation-timing-function: cubic-bezier(0.2 0.2 0.8 1) }
-    0% { transform: translate(-20.4px,-20.4px) scale(0) }
-    50% { transform: translate(-20.4px,-20.4px) scale(1) }
-    100% { transform: translate(-20.4px,-20.4px) scale(0) }
+    0%, 100% { animation-timing-function: cubic-bezier(0.2 0 0.8 0.8); }
+    50%      { animation-timing-function: cubic-bezier(0.2 0.2 0.8 1); }
+    0%       { transform: translate(-19px,-19px) scale(0); }
+    50%      { transform: translate(-19px,-19px) scale(1); }
+    100%     { transform: translate(-19px,-19px) scale(0); }
 }

@@ -1,0 +1,71 @@
+@import "../../../scss/variables";
+
+.custom-input {
+    width: auto;
+    padding: 16px 34px;
+    z-index: 3;
+    height: 60px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 999px;
+    background: $color-back-secondary;
+    transition: box-shadow .3s;
+    box-shadow:
+            -10px -10px 30px rgba(35, 33, 58, 0.35),
+            10px 10px 30px rgba(4, 5, 14, 0.55),
+            inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+            inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+
+    @media (min-width: $lg) {
+        &:hover {
+            box-shadow:
+                    -8px -16px 30px rgba(35, 33, 58, 0.35),
+                    8px 16px 30px rgba(4, 5, 14, 0.3),
+                    inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+                    inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+
+            input {
+                color: #9A5BFF;
+            }
+        }
+    }
+}
+
+.input-suffix {
+    input {
+        width: auto;
+        min-width: 0;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-accent;
+        margin-right: 16px;
+        transition: color .3s;
+    }
+
+    &__delimiter {
+        width: 2px;
+        height: 28px;
+        margin-right: 16px;
+        background: url("/img/icon-delimiter.svg") center no-repeat;
+        box-shadow:
+                -1px -2px 4px rgba(35, 33, 58, 0.6),
+                1px 2px 4px rgba(4, 5, 14, 0.8);
+    }
+
+    &__units {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+    }
+}

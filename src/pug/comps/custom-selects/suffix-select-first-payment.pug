@@ -1,0 +1,30 @@
+.label-controll
+    .label-controll__caption Первый платёж
+    .label-controll__body
+        .label-controll__content
+
+            // Добавлять класс custom-select всем кастомным селектам
+            .select-suffix.custom-select#firstPayment
+                // Если есть значение по умолчанию добавить его в .select-suffix__selected-item.selected вместо &nbsp;
+                .select-suffix__selected-item.selected &nbsp;
+                .select-suffix__arr
+                .select-suffix__delimiter
+                .select-suffix__units %
+                .custom-select__container
+                    .custom-select__list.scroller
+                        // Если есть значение по умолчанию добавить .active соответствующему значению
+                        // Список значений формировать динамически из параметров элементв на стороне сервера
+                        // Тип свойства фильтра data-filter-property НЕ ТРОГАТЬ! именно так оно указано в JS
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="10") 10
+                        .custom-select__item.installment-calc-controller(data-calcproperty="firstPayment" data-fcalcvalue="20") 20
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="30") 30
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="40") 40
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="50") 50
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="60") 60
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="70") 70
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="80") 80
+                        .custom-select__item.installment-calc-controller(data-calc-property="firstPayment" data-calc-value="90") 90
+
+            .validator.validator__cross
+                img.valid(src="/img/icon-validator-cross-valid.svg" alt="")
+                img.invalid(src="/img/icon-validator-cross-invalid.svg" alt="")

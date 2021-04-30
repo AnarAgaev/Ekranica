@@ -172,12 +172,13 @@ $(document).ready(function () {
     });
 
 
-    // Handler change window width on LAPTOPS for rebuild some sliders
+    // Handler change window width from LAPTOPS and more for rebuild some sliders
     const breakpointLG = window.matchMedia ('(min-width: 1320px)'); // breakpoint for more then 1366px
     let listSlider,
         workSlider,
         ourWorksSlider,
-        ourNewsSlider;
+        ourNewsSlider,
+        deliveryMethodsSlider;
 
     function breakpointLGChecker() {
         if ( breakpointLG.matches === true ) {
@@ -197,11 +198,17 @@ $(document).ready(function () {
                 ourNewsSlider.destroy(true, true);
             }
 
+            if ( deliveryMethodsSlider !== undefined
+                && $('#deliveryMethodsSlider')[0] ) {
+                deliveryMethodsSlider.destroy(true, true);
+            }
+
         } else if ( breakpointLG.matches === false ) {
             enableListSlider();
             enableWorkSlider();
             enableOurWorksSlider();
             enableOurNewsSlider();
+            enableDeliveryMethodsSlider();
         }
     }
 
@@ -241,6 +248,18 @@ $(document).ready(function () {
         }
     }
 
+    function enableDeliveryMethodsSlider() {
+        if ($('#deliveryMethodsSlider')[0]) {
+            deliveryMethodsSlider = new Swiper('#deliveryMethodsSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
+            });
+        }
+    }
+
     // Update slider fot mobile and tablet version
     // if it has built for corrected swiperjs slide width
     function updateTabLinksSliders () {
@@ -261,7 +280,7 @@ $(document).ready(function () {
     breakpointLGChecker();
 
 
-    // Handler change window width on DESKTOPS for rebuild some sliders
+    // Handler change window width from DESKTOPS and more for rebuild some sliders
     const breakpointXL = window.matchMedia ('(min-width: 1860px)'); // breakpoint for more then 1920px
     let tabListTickerSlider,
         tabListMediaFacadeSlider,

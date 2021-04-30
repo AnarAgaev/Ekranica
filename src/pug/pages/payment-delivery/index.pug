@@ -1,0 +1,14 @@
+//- Include used template for this page
+extends ../../templates/default
+
+//- VARIABLES FOR INCLUDE THIS IN USED TEMPLATE
+block variables
+    - const title       = 'Доставка и оплата | Ekranika'
+    - const description = 'Write description for the page here'
+    - const keywords    = 'Write keywords for the page here'
+    - const pageClass   = 'page-payment-delivery'
+
+block content
+    include ../../comps/delivery/delivery
+    include ../../comps/payment/payment
+    include ../../comps/form-order/form-order-choose-equipment

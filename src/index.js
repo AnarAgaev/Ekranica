@@ -22,6 +22,7 @@ import './pug/comps/ready-cabins/ready-cabins';
 import './pug/comps/custom-cursor/custom-cursor';
 import './pug/comps/galary-modal/gallery-modal';
 import './pug/comps/help-modal/help-modal';
+import './pug/comps/installment-calc/installment-calc';
 
 // Include vendor styles
 import 'normalize.css';

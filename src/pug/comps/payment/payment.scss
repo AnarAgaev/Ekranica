@@ -1,0 +1,269 @@
+@import "../../../scss/variables";
+
+.payment {
+
+    @media (min-width: $lg) {
+        margin: 0 4.978038067349927vw;
+        background: $color-back-primary;
+        box-shadow:
+                -14px -14px 40px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+        border-radius: 12px;
+        padding: 68px 90px 68px 136px;
+
+        .container {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    @media (min-width: $xl) {
+        padding: 96px 192px;
+    }
+
+    .section__title {
+        margin-bottom: 24px;
+
+        @extend .title-animation;
+
+        @media (min-width: $md) {
+            margin-bottom: 18px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 34px;
+        }
+
+        .title {
+            margin-right: 0;
+        }
+    }
+
+    &__content {
+        @media (min-width: $lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__description {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        margin-bottom: 48px;
+
+        @extend .card-animation;
+
+        @media (min-width: $md) {
+            font-size: 16px;
+            margin-bottom: 48px;
+            padding-right: 6.25vw;
+            line-height: 163%;
+        }
+
+        @media (min-width: $lg) {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            color: $color-text-secondary;
+            padding-right: 68px;
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $xl) {
+            padding-right: 144px;
+        }
+    }
+
+    &__description-text {
+        margin-bottom: 48px;
+
+        @media (min-width: $lg) {
+            margin-bottom: 68px;
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+
+    &__download {
+        position: relative;
+        margin-bottom: 96px;
+        display: block;
+
+        @media (min-width: $md) {
+            padding: 21px 24px;
+            background: $color-back-primary;
+            border-radius: 12px;
+            margin-bottom: 134px;
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+        }
+
+        @media (min-width: $lg) {
+            background: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+
+            &:hover {
+                .payment__download-link {
+                    color: $color-accent;
+
+                    .icon svg path {
+                        stroke: $color-accent;
+                    }
+                }
+            }
+        }
+
+        &-link {
+            position: relative;
+            padding-left: 72px;
+            margin-bottom: 8px;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 160%;
+            color: $color-text-secondary;
+            transition: $transition;
+
+            @media (min-width: $md) {
+                font-size: 18px;
+                line-height: 160%;
+                color: $color-text-secondary;
+                padding-left: 48px;
+                margin-bottom: 0;
+            }
+
+            @media (min-width: $lg) {
+                color: $color-icons;
+                padding-left: 29px;
+                margin-bottom: 12px;
+            }
+
+            @media (min-width: $xl) {
+                margin-bottom: 16px;
+            }
+
+            .icon {
+                width: 48px;
+                height: 48px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: $color-back-secondary;
+                border-radius: 50%;
+                box-shadow: -14px -28px 30px rgba(35, 33, 58, 0.35),
+                14px 28px 30px rgba(4, 5, 14, 0.3),
+                inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                inset -4px -4px 24px rgba(255, 255, 255, 0);
+
+                @media (min-width: $md) {
+                    width: 24px;
+                    height: 24px;
+                    background: transparent;
+                    box-shadow: none;
+                    top: 2px;
+                }
+
+                @media (min-width: $lg) {
+                    top: 1px;
+                }
+
+                svg {
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    @media (min-width: $lg) {
+                        height: auto;
+                        width: 83px;
+                    }
+
+                    path {
+                        transition: $transition;
+                    }
+                }
+            }
+        }
+
+        &-caption {
+            padding-left: 72px;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 160%;
+            color: $color-text-inactive;
+
+            @media (min-width: $md) {
+                padding-left: 48px;
+            }
+
+            @media (min-width: $lg) {
+                font-size: 14px;
+                padding-left: 3px;
+            }
+        }
+    }
+
+    &__calc {
+        margin-bottom: 48px;
+        transition-delay: .9s !important;
+
+        @extend .card-animation;
+
+        @media (min-width: $lg) {
+            width: 500px;
+            flex: 1 0 auto;
+            margin-bottom: 0;
+            margin-top: -105px;
+            padding: 48px 48px 96px 48px;
+            background: $color-back-primary;
+            border-radius: 12px;
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+        }
+
+        @media (min-width: $xl) {
+            width: 720px;
+            padding: 68px;
+            margin-top: -118px;
+        }
+    }
+
+    &__calc-title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-primary;
+        margin-bottom: 48px;
+
+        @media (min-width: $md) {
+            font-size: 40px;
+            line-height: 140%;
+        }
+
+        @media (min-width: $lg) {
+            font-size: 24px;
+            line-height: 130%;
+            margin-bottom: 34px;
+            color: $color-text-secondary;
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+}
