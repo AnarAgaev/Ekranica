@@ -21,31 +21,6 @@
         }
     }
 
-    .tabs__controlls-caption {
-        display: none;
-
-        @media (min-width: $xl) {
-            display: block;
-        }
-    }
-
-    .tabs__controlls {
-        @media (min-width: $xl) {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        &-caption {
-            font-weight: normal;
-            font-size: 18px;
-            line-height: 160%;
-            color: #A3A3A3;
-            margin-right: 34px;
-            position: relative;
-            top: 17px;
-        }
-    }
-
     .tab-list__list {
         @media (min-width: $xl) {
             padding-bottom: 0;
