@@ -241,3 +241,24 @@
         margin-top: -87px;
     }
 }
+
+
+#newsList {
+    //Тестовый варинт, убрать полсе того как определимся с вариантом
+
+    @media (min-width: $xl) {
+        .article-list__slide:first-child,
+        .article-list__slide:nth-of-type(4n + 5) {
+            width: 720px;
+            margin-right: 0;
+
+            .article-list__card {
+                width: 624px;
+            }
+        }
+
+        .article-list__slide {
+            width: 40vw;
+        }
+    }
+}
