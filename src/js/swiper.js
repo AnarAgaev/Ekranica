@@ -150,6 +150,81 @@ $(document).ready(function () {
         },
     });
 
+    const tabListOurWorkTickerSlider = new Swiper('#tabListOurWorkTickerSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        navigation: {
+            nextEl: '#btnTabListTickerNext',
+            prevEl: '#btnTabListTickerPrev',
+        },
+    });
+
+    const tabListOurWorkMediaFacadeSlider = new Swiper('#tabListOurWorkMediaFacadeSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        navigation: {
+            nextEl: '#btnTabListMediaFacadeNext',
+            prevEl: '#btnTabListMediaFacadePrev',
+        },
+    });
+
+    const tabListOurWorkOuterLedScreenSlider = new Swiper('#tabListOurWorkOuterLedScreenSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        navigation: {
+            nextEl: '#btnTabListOuterLedScreenNext',
+            prevEl: '#btnTabListOuterLedScreenPrev',
+        },
+    });
+
+    const tabListOurWorkInnerLedScreenSlider = new Swiper('#tabListOurWorkInnerLedScreenSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        navigation: {
+            nextEl: '#btnTabListInnerLedScreenNext',
+            prevEl: '#btnTabListInnerLedScreenPrev',
+        },
+    });
+
+    const tabListOurWorkRentSlider = new Swiper('#tabListOurWorkRentSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        navigation: {
+            nextEl: '#btnTabListRentNext',
+            prevEl: '#btnTabListRentPrev',
+        },
+    });
+
+    // Update sliders for all screen
+    function updateSliders () {
+        setTimeout(function () {
+            if ($('#tabListOurWorkTickerSlider')[0])         tabListOurWorkTickerSlider.update();
+            if ($('#tabListOurWorkMediaFacadeSlider')[0])    tabListOurWorkMediaFacadeSlider.update();
+            if ($('#tabListOurWorkOuterLedScreenSlider')[0]) tabListOurWorkOuterLedScreenSlider.update();
+            if ($('#tabListOurWorkInnerLedScreenSlider')[0]) tabListOurWorkInnerLedScreenSlider.update();
+            if ($('#tabListOurWorkRentSlider')[0])           tabListOurWorkRentSlider.update();
+        }, 1500);
+    }
+
+    setTimeout(updateSliders, 1500);
+
+    $(window).resize(updateSliders);
+
     window.rcSlider = new Swiper('#readyCabinsSlider', {
         slidesPerView: 'auto',
         speed: 500,
@@ -170,7 +245,6 @@ $(document).ready(function () {
             prevEl: '#btnTsPrev',
         },
     });
-
 
     // Handler change window width from LAPTOPS and more for rebuild some sliders
     const breakpointLG = window.matchMedia ('(min-width: 1320px)'); // breakpoint for more then 1366px
@@ -260,7 +334,7 @@ $(document).ready(function () {
         }
     }
 
-    // Update slider fot mobile and tablet version
+    // Update slider for mobile and tablet version
     // if it has built for corrected swiperjs slide width
     function updateTabLinksSliders () {
         setTimeout(function () {
@@ -271,14 +345,13 @@ $(document).ready(function () {
         }, 1500);
     }
 
-    updateTabLinksSliders();
+    setTimeout(updateTabLinksSliders, 1500);
 
     $(window).resize(updateTabLinksSliders);
 
     // Here are listening breakpoint for large screen and initial check
     breakpointLG.addListener(breakpointLGChecker);
     breakpointLGChecker();
-
 
     // Handler change window width from DESKTOPS and more for rebuild some sliders
     const breakpointXL = window.matchMedia ('(min-width: 1860px)'); // breakpoint for more then 1920px
