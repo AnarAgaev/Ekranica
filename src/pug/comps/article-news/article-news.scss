@@ -19,7 +19,7 @@
     }
 
     &__back {
-        @extend .title-animation;
+        @include title-animation;
         transition-delay: .25s !important;
 
         .icon {
@@ -49,7 +49,7 @@
 
     &__controlls-wrap {
         display: flex;
-        @extend .title-animation;
+        @include title-animation;
         transition-delay: .5s !important;
     }
 
@@ -99,7 +99,7 @@
         justify-content: flex-start;
         margin-bottom: 16px;
 
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $md) {
             margin-bottom: 24px;
@@ -240,7 +240,7 @@
     }
 
     &__content-wrap {
-        @extend .card-animation;
+        @include card-animation;
         transition-delay: .5s !important;
 
         @media (min-width: $lg) {

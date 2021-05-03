@@ -9,7 +9,7 @@
         color: $color-text-secondary;
         margin-bottom: 16px;
 
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $md) {
             font-weight: bold;
@@ -49,7 +49,7 @@
         line-height: 160%;
         color: $color-text-inactive;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $lg) {
             width: 64.30062630480167%;
@@ -89,7 +89,7 @@
     &__price {
         display: none;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $lg) {
             display: block;

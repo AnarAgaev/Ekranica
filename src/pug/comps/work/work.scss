@@ -4,7 +4,7 @@
     overflow: hidden;
 
     .section__title {
-        @extend .title-animation;
+        @include title-animation;
             @media (min-width: $md) {
                 width: 444px;
             }
@@ -435,7 +435,7 @@
         margin-bottom: 16px;
         color: $color-text-secondary;
 
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $md) {
             padding-left: 116px;
@@ -469,7 +469,7 @@
         line-height: 160%;
         color: $color-text-inactive;
 
-        @extend .title-link-animation;
+        @include title-link-animation;
 
         @media (min-width: $md) {
             font-size: 14px;
@@ -498,7 +498,7 @@
             filter: blur(2);
         }
 
-        @extend .title-link-animation;
+        @include title-link-animation;
 
         @media (min-width: $lg) {
             display: block;

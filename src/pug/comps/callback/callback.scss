@@ -14,11 +14,11 @@
     }
 
     .section__title {
-        @extend .title-animation;
+        @include title-animation;
     }
 
     .section__link {
-        @extend .title-link-animation;
+        @include title-link-animation;
 
         @media (min-width: $md) {
             display: inline-block;
@@ -43,7 +43,7 @@
         margin-top: -13px;
 
         transition-delay: 0.5s !important;
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $md) {
             font-weight: 700;
@@ -75,7 +75,7 @@
         width: 200px;
 
         transition-delay: 0.7s !important;
-        @extend .title-link-animation;
+        @include title-link-animation;
 
         @media (min-width: $md) {
             width: auto;
@@ -95,7 +95,7 @@
         flex-direction: column;
         padding-right: 16px;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $md) {
             margin-top: 68px;
@@ -226,7 +226,7 @@
         display: none;
         transition-delay: 1.7s !important;
 
-        @extend .title-link-animation;
+        @include title-link-animation;
 
         @media (min-width: $lg) {
             display: block;

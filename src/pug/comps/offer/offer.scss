@@ -3,11 +3,11 @@
 .offer {
 
     .section__title {
-        @extend .title-animation;
+        @include title-animation;
     }
 
     .section__link {
-        @extend .title-link-animation;
+        @include title-link-animation;
     }
 
     &__list {
@@ -63,7 +63,7 @@
                 16px 5px 40px rgba(4, 5, 14, 0.6);
         padding: 0 16px 16px;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $md) {
             width: 358px;

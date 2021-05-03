@@ -3,7 +3,7 @@
 .clients {
 
     .section__title {
-        @extend .title-animation;
+        @include title-animation;
     }
 
     &__list {
@@ -72,7 +72,7 @@
                     16px 5px 40px rgba(4, 5, 14, 0.6);
         }
 
-        @extend .card-animation;
+        @include card-animation;
 
         img, svg {
             max-width: 100%;

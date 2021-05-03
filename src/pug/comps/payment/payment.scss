@@ -25,7 +25,7 @@
     .section__title {
         margin-bottom: 24px;
 
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $md) {
             margin-bottom: 18px;
@@ -59,7 +59,7 @@
         color: $color-text-inactive;
         margin-bottom: 48px;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $md) {
             font-size: 16px;
@@ -220,7 +220,7 @@
         margin-bottom: 48px;
         transition-delay: .9s !important;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $lg) {
             width: 500px;

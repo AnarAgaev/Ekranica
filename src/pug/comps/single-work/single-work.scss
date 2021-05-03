@@ -26,7 +26,7 @@
     &__date {
         display: none;
 
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $lg) {
             display: block;
@@ -52,7 +52,7 @@
         order: 1;
         margin-right: 7.5%;
 
-        @extend .title-animation;
+        @include title-animation;
 
 
         @media (min-width: $md) {
@@ -84,7 +84,7 @@
         padding-right: 7.5%;
         margin-bottom: -16px;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $md) {
             justify-content: flex-start;
@@ -221,7 +221,7 @@
         margin-right: 24px;
         border-radius: 12px;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i}) {

@@ -27,7 +27,7 @@
     .section__title {
         margin-bottom: 24px;
 
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $md) {
             margin-bottom: 18px;
@@ -60,7 +60,7 @@
         margin-bottom: 48px;
         padding-right: 7.5vw;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $md) {
             font-size: 16px;
@@ -88,7 +88,7 @@
     &__methods {
         transition-delay: .3s !important;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $lg) {
             .slider-tabs__container {

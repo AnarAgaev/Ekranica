@@ -3,7 +3,7 @@
 .list {
 
     .section__title {
-        @extend .title-animation;
+        @include title-animation;
 
         @media (min-width: $md) {
             width: 500px;

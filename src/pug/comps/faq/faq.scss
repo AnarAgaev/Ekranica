@@ -3,11 +3,11 @@
 .faq {
 
     .section__title {
-        @extend .title-animation;
+        @include title-animation;
     }
 
     .section__link {
-        @extend .title-link-animation;
+        @include title-link-animation;
     }
 
     &__list {
@@ -15,7 +15,7 @@
         flex-direction: column;
         margin-top: 48px;
 
-        @extend .card-animation;
+        @include card-animation;
 
         @media (min-width: $xl) {
             margin-top: 134px;

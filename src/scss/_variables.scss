@@ -24,7 +24,7 @@ $xxl                    : 2560px;
 // Fonts
 $font-primary           : 'Montserrat', sans-serif;
 
-.title-animation {
+@mixin title-animation {
     opacity: 1;
     transform: translateX(0);
     transition: $anim-title;
@@ -35,7 +35,7 @@ $font-primary           : 'Montserrat', sans-serif;
     }
 }
 
-.title-link-animation {
+@mixin title-link-animation {
     opacity: 1;
     transform: translateX(0);
     transition: $anim-title;
@@ -46,7 +46,7 @@ $font-primary           : 'Montserrat', sans-serif;
     }
 }
 
-.card-animation {
+@mixin card-animation {
     transform: translateY(0);
     opacity: 1;
     transition: $anim-card;

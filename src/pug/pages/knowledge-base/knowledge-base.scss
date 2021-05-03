@@ -54,7 +54,7 @@
             z-index: 2;
             transition-delay: .3s !important;
 
-            @extend .title-animation;
+            @include title-animation;
         }
 
         .tabs-items {
