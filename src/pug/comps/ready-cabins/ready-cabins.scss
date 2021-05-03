@@ -312,6 +312,9 @@
 
     &__controlls {
         margin-bottom: 48px;
+        transition-delay: .3s !important;
+
+        @include title-animation;
 
         @media (min-width: $xl) {
             margin-bottom: 68px;
