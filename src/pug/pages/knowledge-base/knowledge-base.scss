@@ -52,6 +52,9 @@
         .tabs {
             position: relative;
             z-index: 2;
+            transition-delay: .3s !important;
+
+            @extend .title-animation;
         }
 
         .tabs-items {

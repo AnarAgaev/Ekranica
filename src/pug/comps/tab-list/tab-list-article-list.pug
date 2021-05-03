@@ -5,19 +5,20 @@ section.section.section_tab-list
             h2.section__title.animation-element
                 span.title Полезные статьи
 
-        .tabs
+        .tabs.animation-element
             .container-endless-fix
                 .endless.tabs__controlls
                     include ../custom-slider-tabs/custom-slider-tabs-article-list
 
         .tabs-items#aricleList
-            // При сборке страницы, первому слайду добавить класс .visible
-            .container-endless.tabs-item.visible.show#ticker
+
+            // При сборке страницы, первому слайду добавить классы .visible.show и класс .animation-element
+            .container-endless.tabs-item.visible.show.animation-element#ticker
                 .endless.tab-list__list.swiper-container#tabListTickerSlider
                     .tab-list__list__wrap.swiper-wrapper
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/temp/news-1.jpg')")
                                 .article-list__date 10.09.2020
@@ -28,7 +29,7 @@ section.section.section_tab-list
                                     span.content 3 минуты на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/temp/news-2.jpg')")
                                 .article-list__date 12.10.2020
@@ -39,7 +40,7 @@ section.section.section_tab-list
                                     span.content 5 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/temp/rectangle-60.jpg')")
                                 .article-list__date 10.09.2020
@@ -50,7 +51,7 @@ section.section.section_tab-list
                                     span.content 17 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/temp/rectangle-30.jpg')")
                                 .article-list__date 12.10.2020
@@ -70,7 +71,7 @@ section.section.section_tab-list
                     .tab-list__list__wrap.swiper-wrapper
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -81,7 +82,7 @@ section.section.section_tab-list
                                     span.content 3 минуты на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020
@@ -92,7 +93,7 @@ section.section.section_tab-list
                                     span.content 5 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -103,7 +104,7 @@ section.section.section_tab-list
                                     span.content 17 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020
@@ -124,7 +125,7 @@ section.section.section_tab-list
                     .tab-list__list__wrap.swiper-wrapper
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020
@@ -135,7 +136,7 @@ section.section.section_tab-list
                                     span.content 5 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -146,7 +147,7 @@ section.section.section_tab-list
                                     span.content 3 минуты на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -157,7 +158,7 @@ section.section.section_tab-list
                                     span.content 17 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020
@@ -177,7 +178,7 @@ section.section.section_tab-list
                     .tab-list__list__wrap.swiper-wrapper
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -188,7 +189,7 @@ section.section.section_tab-list
                                     span.content 3 минуты на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020
@@ -199,7 +200,7 @@ section.section.section_tab-list
                                     span.content 5 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -210,7 +211,7 @@ section.section.section_tab-list
                                     span.content 17 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020
@@ -231,7 +232,7 @@ section.section.section_tab-list
                     .tab-list__list__wrap.swiper-wrapper
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020
@@ -242,7 +243,7 @@ section.section.section_tab-list
                                     span.content 5 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -253,7 +254,7 @@ section.section.section_tab-list
                                     span.content 3 минуты на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 10.09.2020
@@ -264,7 +265,7 @@ section.section.section_tab-list
                                     span.content 17 минут на прочтение
 
                         .article-list__slide.swiper-slide
-                            a.article-list__card.animation-element(href="")
+                            a.article-list__card(href="")
                                 .article-list__pic
                                     .image(style="background-image: url('/img/placeholder-img.jpg')")
                                 .article-list__date 12.10.2020

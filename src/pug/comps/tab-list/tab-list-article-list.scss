@@ -110,50 +110,56 @@
     }
 
     &__card {
-            display: block;
-            width: 200px;
+        display: block;
+        width: 200px;
+        opacity: 1;
+        transform: translateY(0);
+        transition: $anim-card;
 
-            @extend .card-animation;
+        @media (min-width: $md) {
+            width: 440px;
+            height: 462px;
+            background: $color-back-primary;
+            box-shadow:
+                    -14px -14px 30px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            border-radius: 12px;
+            padding: 24px 44px 0 24px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
 
-            @media (min-width: $md) {
-                width: 440px;
-                height: 462px;
-                background: $color-back-primary;
-                box-shadow:
-                        -14px -14px 30px rgba(35, 33, 58, 0.35),
-                        16px 5px 40px rgba(4, 5, 14, 0.6);
-                border-radius: 12px;
-                padding: 24px 44px 0 24px;
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 24px;
-            }
+        @media (min-width: $lg) {
+            width: 422px;
+            height: 443px;
+            padding: 24px 26px 0 24px;
 
-            @media (min-width: $lg) {
-                width: 422px;
-                height: 443px;
-                padding: 24px 26px 0 24px;
+            &:hover {
+                .image {
+                    width: 110%;
+                    height: 110%;
+                }
 
-                &:hover {
-                    .image {
-                        width: 110%;
-                        height: 110%;
-                    }
-
-                    .article-list__caption {
-                        color: $color-accent;
-                    }
+                .article-list__caption {
+                    color: $color-accent;
                 }
             }
+        }
 
-            @media (min-width: $xl) {
-                width: 100%;
-                height: auto;
-                padding: 0 0 0 202px;
-                margin: 0 0 34px;
-                background-color: transparent;
-                box-shadow: none;
-            }
+        @media (min-width: $xl) {
+            width: 100%;
+            height: auto;
+            padding: 0 0 0 202px;
+            margin: 0 0 34px;
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+
+    .animation-element &__card {
+        transform: translateY(100px);
+        opacity: 0;
     }
 
     &__pic {
@@ -336,40 +342,4 @@
             display: none !important;
         }
     }
-
-
-    // Customising tabs for article list page.
-    // Delete if it's error into the layout.
-    //@media (min-width: $lg) and (max-width: $xl - 1) {
-    //    .slider-tabs__wrap {
-    //        background: transparent;
-    //        box-shadow: none;
-    //        padding: 0;
-    //        justify-content: flex-start;
-    //        display: flex;
-    //        border-radius: initial;
-    //        transition: none;
-    //        margin-bottom: 60px;
-    //    }
-    //
-    //    .slider-tabs .marker {
-    //        display: none;
-    //    }
-    //
-    //    .slider-tabs__button {
-    //        font-size: 16px;
-    //        color: $color-text-secondary;
-    //        padding: 0;
-    //        margin-right: 24px;
-    //
-    //        &.active {
-    //            color: $color-accent;
-    //            cursor: default;
-    //        }
-    //
-    //        &::before {
-    //            display: block;
-    //        }
-    //    }
-    //}
 }
