@@ -192,4 +192,50 @@ $(document).ready(function () {
             });
         }
     }
+
+    // Round function
+    window.truncated = function (num) {
+        return Math.trunc(num * 100) / 100;
+    }
+
+    /**
+     * Converts months to a string
+     * @param int months : Number of months
+     * @return string
+     */
+    window.prettyMonth = function (months) {
+        let monthsPostfixes = ['месяц', 'месяца', 'месяцев'];
+
+        /**
+         * Determines the correct end of the month
+         * from the point of view of the Russian language
+         * @param int months
+         * @param array postfixes
+         * @return string
+         */
+        function postfix(months, postfixes) {
+            // Divide the number without a remainder by 100
+            months = months % 100;
+
+            // If more than 19, divide it without
+            // a remainder again, already by 10
+            if (months > 19) {
+                months = months % 10;
+            }
+
+            // Depending on what numbers are left, we return the values
+            switch (months) {
+                case 1:
+                    return postfixes[0];
+
+                case 2: case 3: case 4:
+                    return postfixes[1];
+
+                default:
+                    return postfixes[2];
+            }
+        }
+
+        return months + ' ' + postfix(months, monthsPostfixes);
+    }
 });
