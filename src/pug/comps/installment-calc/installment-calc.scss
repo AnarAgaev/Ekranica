@@ -47,6 +47,27 @@
         }
     }
 
+    .label-controll {
+        @media (min-width: $lg) {
+            align-items: flex-start;
+        }
+
+        @media (min-width: $xl) {
+            align-items: center;
+        }
+
+    }
+
+    .label-controll__caption {
+        @media (min-width: $lg) {
+            top: 19px;
+        }
+
+        @media (min-width: $xl) {
+            top: 0;
+        }
+    }
+
     &__wrap {
         @media (min-width: $md) {
             display: flex;
@@ -148,16 +169,16 @@
             max-height: 500px;
 
             .installment-calc__total,
-            .installment-calc__overpayment,
             .installment-calc__firstpayment,
+            .installment-calc__monthlypayment,
+            .installment-calc__paymentterm,
             .installment-calc__remainder {
                 opacity: 1;
                 transform: translate(0);
-
             }
         }
 
-        @for $i from 1 through 4 {
+        @for $i from 1 through 7 {
             & > div:nth-child(#{$i}) {
                 transition-delay: 0.2s + 0.2s * $i;
             }
@@ -190,30 +211,13 @@
         }
 
         @media (min-width: $xl) {
-            margin-bottom: 8px;
-        }
-
-        .caption {
-            display: block;
-
-            @media (min-width: $md) {
-                display: inline-block;
-                margin-right: 10px;
-            }
-        }
-
-        .number {
-            display: inline-block;
-            margin-right: 7px;
-
-            @media (min-width: $md) {
-                margin-right: 10px;
-            }
+            margin-bottom: 24px;
         }
     }
 
-    &__overpayment,
     &__firstpayment,
+    &__monthlypayment,
+    &__paymentterm,
     &__remainder {
         font-weight: normal;
         font-size: 12px;
@@ -243,12 +247,6 @@
         }
     }
 
-    &__firstpayment {
-        @media (min-width: $lg) {
-            margin-bottom: 0;
-        }
-    }
-
     .input-suffix input {
         width: 115px;
 
@@ -261,7 +259,7 @@
         }
 
         @media (min-width: $xl) {
-            width: 80px;
+            width: 90px;
         }
     }
 }

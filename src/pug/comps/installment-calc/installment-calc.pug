@@ -2,20 +2,19 @@
     .installment-calc__wrap
         .installment-calc__controlls
             include ../custom-input/custom-input-cost
-            include ../custom-selects/suffix-select-installment
-            include ../custom-selects/suffix-select-first-payment
+            include ../custom-range/custom-range-installment
+            include ../custom-range/custom-range-payment
+
+            //- include ../custom-selects/suffix-select-installment
+            //- include ../custom-selects/suffix-select-first-payment
         .installment-calc__btn-calc
             input.btn.btn_primary.not-focused#calculateInstallment(type="submit" value="Рассчитать")
 
     .installment-calc__delimiter
 
     .installment-calc__result
-        .installment-calc__total
-            span.caption Итого к оплате —
-            spna.number#calcResultTotal
-
-        .installment-calc__overpayment#calcResultOverPayment
-
+        .installment-calc__total Итого
         .installment-calc__firstpayment#calcResultFirstPayment
-
+        .installment-calc__monthlypayment#calcResultMonthlyPayment
+        .installment-calc__paymentterm#calcResultPaymentTerm Срок выплаты
         .installment-calc__remainder Остаток можно погашать ежемесячно до трех лет.

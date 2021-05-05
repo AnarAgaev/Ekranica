@@ -23,6 +23,7 @@ import './pug/comps/custom-cursor/custom-cursor';
 import './pug/comps/galary-modal/gallery-modal';
 import './pug/comps/help-modal/help-modal';
 import './pug/comps/installment-calc/installment-calc';
+import './pug/comps/custom-range/custom-range';
 
 // Include vendor styles
 import 'normalize.css';

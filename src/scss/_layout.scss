@@ -926,13 +926,13 @@ textarea {
 }
 
 input[type="checkbox"]:checked + .checker {
-.check {
-    opacity: 1;
-}
+    .check {
+        opacity: 1;
+    }
 
-.uncheck {
-    opacity: 0;
-}
+    .uncheck {
+        opacity: 0;
+    }
 }
 
 .label {
@@ -1729,7 +1729,7 @@ filter: grayscale(0) blur(0);
                     opacity .4s linear .1s;
 
             @media (min-width: $md) {
-                max-height: 150px;
+                max-height: 180px;
             }
         }
     }
