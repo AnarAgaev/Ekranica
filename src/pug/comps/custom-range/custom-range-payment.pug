@@ -1,14 +1,26 @@
-.label-controll
+.label-controll.blocked
     .label-controll__caption Первоначальный взнос
     .label-controll__body
         .label-controll__content
 
-            .custom-range#firstPayment
-                label.custom-range__value
-                    span.value.value_small 30
-                    span.delimiter
-                    span.units %
+            .custom-range
+                .input-suffix.custom-input#firstPayment
+                    input.value(
+                        type="text"
+                        data-calc-property="firstPayment"
+                        disabled
+                    )
+                    span.input-suffix__delimiter
+                    span.input-suffix__units ₽
+
                 .custom-range__controller
                     span.status-bar
                     spna.slider
-                    input.custom-range__slide(type="range" step="1" min="30" max="95" value="30" data-calc-property="firstPayment")
+                    input.custom-range__slide(
+                        type="range"
+                        step="10000"
+                        min="0"
+                        max="0"
+                        value="0"
+                        data-calc-property="firstPayment"
+                    )

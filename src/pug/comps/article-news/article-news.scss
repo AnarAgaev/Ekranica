@@ -3,22 +3,25 @@
 .article-news {
 
     &__controlls {
-        display: none;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 24px;
         z-index: 1;
 
-        @media (min-width: $lg) {
-            display: flex;
+        @media (min-width: $md) {
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 52px;
+            margin-bottom: 48px;
         }
 
-        @media (min-width: $xl) {
+        @media (min-width: $lg) {
+            margin-bottom: 52px;
         }
     }
 
     &__back {
+        display: none;
         @include title-animation;
         transition-delay: .25s !important;
 
@@ -31,18 +34,24 @@
             display: inline-block;
             transition: transform .3s linear;
 
-            svg {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+            svg path {
+                transition: all .3s linear;
             }
+        }
 
+        @media (min-width: $md) {
+            display: block;
         }
 
         @media (min-width: $lg) {
-            .btn:hover .icon {
-                transform: translateX(-5px);
+            .btn:hover {
+                .icon {
+                    transform: translateX(-5px);
+
+                    svg path {
+                        fill: $color-text-secondary;
+                    }
+                }
             }
         }
     }
@@ -461,7 +470,7 @@
 
             &:hover {
                 .icon svg path {
-                    stroke: $color-text-primary;
+                    fill: $color-text-primary;
                 }
 
                 .text {
@@ -476,16 +485,8 @@
             margin-right: 8px;
             position: relative;
 
-            svg {
-                position: absolute;
-                top: calc(50% - 1px);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                margin-left: 10px;
-
-                path {
-                    transition: all .2s linear;
-                }
+            svg path {
+                transition: all .2s linear;
             }
         }
 

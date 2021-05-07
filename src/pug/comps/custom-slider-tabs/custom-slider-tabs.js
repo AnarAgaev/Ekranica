@@ -24,10 +24,10 @@ $(document).ready(function () {
             }
         }
     }
-    setTimeout(initTabsMarker, 300);
+    setTimeout(initTabsMarker, 1000);
 
     $(window).resize(function () {
-        setTimeout(initTabsMarker, 300);
+        setTimeout(initTabsMarker, 3000);
     });
 
 

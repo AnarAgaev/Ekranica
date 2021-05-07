@@ -1639,6 +1639,7 @@ filter: grayscale(0) blur(0);
         color: $color-text-secondary;
         z-index: 1;
         position: relative;
+        transition: all .3s linear;
 
         &::after {
             content: "";

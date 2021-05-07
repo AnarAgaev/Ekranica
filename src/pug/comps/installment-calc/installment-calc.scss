@@ -2,9 +2,8 @@
 
 .installment-calc {
 
-    @media (min-width: $md) {
-
-        .label-controll {
+    .label-controll {
+        @media (min-width: $md) {
             &:first-child {
                 .label-controll__caption::after {
                     display: none;
@@ -17,22 +16,50 @@
                     left: 0 !important;
                 }
             }
+        }
 
-            @media (min-width: $lg) {
-                display: flex;
-                align-items: center;
-                margin-bottom: 34px;
-                margin-right: 0;
+        @media (min-width: $lg) {
+            display: flex;
+            align-items: center;
+            margin-bottom: 34px;
+            margin-right: 0;
 
-                .label-controll__caption {
-                    width: 210px;
-                    flex: 1 0 auto;
-                }
+            .label-controll__caption {
+                width: 226px;
+            }
+        }
+
+        @media (min-width: $xl) {
+            .label-controll__content {
+                margin-left: 0;
+            }
+        }
+
+        &.blocked {
+            .label-controll__caption {
+                color: $color-icons-inactive;
             }
 
-            @media (min-width: $xl) {
-                width: 195px;
-                flex: none;
+            .custom-input,
+            .value,
+            .custom-range__slide {
+                cursor: default;
+            }
+
+            .custom-input {
+                box-shadow:
+                        -10px -10px 30px rgba(35, 33, 58, .35),
+                        10px 10px 30px rgba(4, 5, 14, .55),
+                        inset -5px -6px 20px rgba(35, 33, 58, .3),
+                        inset 5px 6px 20px rgba(0, 2, 12, .5) !important;
+            }
+
+            .input-suffix__units {
+                color: $color-icons-inactive ;
+            }
+
+            .label-controll__caption:after {
+                opacity: .3;
             }
         }
     }
@@ -55,7 +82,6 @@
         @media (min-width: $xl) {
             align-items: center;
         }
-
     }
 
     .label-controll__caption {
@@ -71,10 +97,17 @@
     &__wrap {
         @media (min-width: $md) {
             display: flex;
+            justify-content: space-between;
         }
 
         @media (min-width: $lg) {
             flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        @media (min-width: $xl) {
+            flex-direction: row;
+            justify-content: space-between;
         }
     }
 
@@ -101,30 +134,28 @@
         margin-top: 34px;
 
         @media (min-width: $md) {
-            margin-left: 68px;
             margin-top: 39px;
         }
 
         @media (min-width: $lg) {
-            margin-left: 0;
-            margin-top: 14px;
+            margin-top: 16px;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 5px;
         }
     }
 
     &__delimiter {
         width: 0;
-        height: 46px;
+        height: 62px;
         max-height: 0;
         opacity: 0;
         position: relative;
         transition: all .4s ease-out;
 
         @media (min-width: $md) {
-            height: 70px;
-        }
-
-        @media (min-width: $md) {
-            height: 46px;
+            height: 68px;
         }
 
         &::before {
@@ -147,14 +178,10 @@
         &.show {
             width: 100%;
             opacity: 1;
-            max-height: 46px;
+            max-height: 62px;
 
             @media (min-width: $md) {
-                max-height: 70px;
-            }
-
-            @media (min-width: $lg) {
-                max-height: 46px;
+                max-height: 68px;
             }
         }
     }
@@ -200,17 +227,6 @@
         @media (min-width: $md) {
             font-size: 40px;
             line-height: 140%;
-            margin-bottom: 48px;
-        }
-
-        @media (min-width: $lg) {
-            font-size: 24px;
-            line-height: 130%;
-            margin-top: 34px;
-            margin-bottom: 12px;
-        }
-
-        @media (min-width: $xl) {
             margin-bottom: 24px;
         }
     }
@@ -235,31 +251,9 @@
         @media (min-width: $md) {
             font-size: 16px;
         }
-
-        @media (min-width: $lg) {
-            font-size: 14px;
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: $xl) {
-            font-size: 18px;
-            margin-bottom: 18px;
-        }
     }
 
     .input-suffix input {
         width: 115px;
-
-        @media (min-width: $md) {
-            width: 160px;
-        }
-
-        @media (min-width: $lg) {
-            width: 67px;
-        }
-
-        @media (min-width: $xl) {
-            width: 90px;
-        }
     }
 }
