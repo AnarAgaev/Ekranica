@@ -3,12 +3,24 @@
     .label-controll__body
         .label-controll__content
 
-            .custom-range#installment
-                label.custom-range__value
-                    span.value.value_small 12
-                    span.delimiter
-                    span.units мес
+            .custom-range
+                .input-suffix.custom-input#installment
+                    input.value(
+                        type="text"
+                        data-calc-property="installment"
+                        value="12"
+                    )
+                    span.input-suffix__delimiter
+                    span.input-suffix__units мес
+
                 .custom-range__controller
                     span.status-bar
                     spna.slider
-                    input.custom-range__slide(type="range" step="1" min="12" max="36" value="12" data-calc-property="installment")
+                    input.custom-range__slide(
+                        type="range"
+                        step="1"
+                        min="12"
+                        max="36"
+                        value="12"
+                        data-calc-property="installment"
+                    )

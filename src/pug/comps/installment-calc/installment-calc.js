@@ -3,10 +3,14 @@ import IMask from 'imask';
 
 $(document).ready(function () {
     const el = $('#cost').children('input')[0];
+
+    const installmentEl = $('#installment').children('input')[0];
+    const installmentRange = $('#installment + .custom-range__controller input');
+
     const firstPaymentEl = $('#firstPayment').children('input')[0];
     const firstPaymentRange = $('#firstPayment + .custom-range__controller input');
-    const statusBar = $('#firstPayment + .custom-range__controller .status-bar');
-    const slider = $('#firstPayment + .custom-range__controller .slider');
+    const firstPaymentStatusBar = $('#firstPayment + .custom-range__controller .status-bar');
+    const firstPaymentSlider = $('#firstPayment + .custom-range__controller .slider');
 
     window.installmentCalcState = {
         cost: '',
@@ -46,9 +50,12 @@ $(document).ready(function () {
 
             console.log(installmentCalcState);
 
-
             if ($('#firstPayment input').val() === '') {
-                $('#firstPayment input').val(installmentCalcState.firstPayment);
+                firstPaymentMask.unmaskedValue = installmentCalcState.firstPayment;
+            }
+
+            if ($('#installment input').val() === '') {
+                installmentMask.unmaskedValue = installmentCalcState.installment;
             }
 
             let monthlyPayment; // ануитентный ежёмесячный платёж (одинаковый каждый месяц кредита)
@@ -91,6 +98,13 @@ $(document).ready(function () {
 
     if (el) {
         $('#cost').on('click', () => el.focus());
+
+        $('#installment').on('click', function () {
+            const input = $(this).children('input')[0];
+            input.setSelectionRange(2, 2);
+
+            $(input).focus();
+        });
 
         $('#firstPayment').on('click', function () {
             if (installmentCalcState.cost !== '') {
@@ -152,8 +166,8 @@ $(document).ready(function () {
                     firstPaymentMask.unmaskedValue = (min).toString();
                 }
 
-                $(statusBar).css('width', '0');
-                $(slider).css('left', '0');
+                $(firstPaymentStatusBar).css('width', '0');
+                $(firstPaymentSlider).css('left', '0');
 
                 firstPaymentMask.updateOptions({
                     min: min,
@@ -162,12 +176,42 @@ $(document).ready(function () {
             },
         );
 
+        // Masking for installment controller
+        window.installmentMask = IMask(installmentEl, {
+            mask: Number,  // enable number mask
+
+            // other options are optional with defaults below
+            scale: 0,  // digits after point, 0 for integers
+            signed: false,  // disallow negative
+            thousandsSeparator: ' ',  // any single char
+            radix: ',',  // fractional delimiter
+            mapToRadix: ['.'], // symbols to process as radix
+
+            // additional number interval options (e.g.)
+            min: 12,
+            max: 36
+        });
+
+        installmentMask.on(
+            "accept",
+            function () {
+
+                installmentCalcState.installment = installmentMask.unmaskedValue === ''
+                    ? 12
+                    : installmentMask.unmaskedValue;
+
+                $(installmentRange).val(installmentCalcState.installment);
+
+                setRange($(installmentRange)[0], false);
+            },
+        );
+
         // Masking for firstPayment controller
         window.firstPaymentMask = IMask(firstPaymentEl, {
             mask: Number,  // enable number mask
 
             // other options are optional with defaults below
-            scale: 1,  // digits after point, 0 for integers
+            scale: 2,  // digits after point, 0 for integers
             signed: false,  // disallow negative
             thousandsSeparator: ' ',  // any single char
             radix: ',',  // fractional delimiter
@@ -182,19 +226,13 @@ $(document).ready(function () {
             "accept",
             function () {
 
-                const input = $('#firstPayment + .custom-range__controller input');
+                installmentCalcState.firstPayment = firstPaymentMask.unmaskedValue === ''
+                    ? Math.floor(installmentCalcState.cost * 0.3)
+                    : firstPaymentMask.unmaskedValue;
 
-                if (firstPaymentMask.unmaskedValue === '') {
-                    const firstPayVal = Math.floor(installmentCalcState.cost * 0.3)
-                    installmentCalcState.firstPayment = firstPayVal;
-                    //firstPaymentMask.unmaskedValue = (firstPayVal).toString();
-                } else {
-                    installmentCalcState.firstPayment = firstPaymentMask.unmaskedValue;
-                }
+                $(firstPaymentRange).val(installmentCalcState.firstPayment);
 
-                $(input).val(installmentCalcState.firstPayment);
-
-                setRange($(input)[0], false);
+                setRange($(firstPaymentRange)[0], false);
             },
         );
 

@@ -1,10 +1,14 @@
 @import "../../../scss/variables";
 
 #firstPayment {
-    .custom-input {
-        @media (min-width: $md) {
-            margin-right: 34px;
-        }
+    @media (min-width: $md) {
+        margin-right: 34px;
+    }
+}
+
+#installment {
+    input {
+        width: 20px !important;
     }
 
     @media (min-width: $md) {
