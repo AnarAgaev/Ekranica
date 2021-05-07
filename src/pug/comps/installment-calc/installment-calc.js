@@ -34,6 +34,17 @@ $(document).ready(function () {
                 }, 1000);
             }
 
+            // Scrolling to required field
+            if (!isLaptop) {
+                setTimeout(function () {
+                    const winHeight = $(window).height();
+                    const resTargetOffset = $('.installment-calc__controlls').offset().top;
+                    const resTop = (resTargetOffset - winHeight / 2) + 170;
+                    $('body,html').animate({ scrollTop: resTop }, 500);
+                    $('#cost input').focus();
+                }, 700);
+            }
+
             // If it has error, block calculating.
             return false;
         }
@@ -54,8 +65,6 @@ $(document).ready(function () {
     function calculateInstallmentCalc() {
 
         if (checkInstallmentCalc()) {
-
-            console.log(installmentCalcState);
 
             if ($('#firstPayment input').val() === '') {
                 firstPaymentMask.unmaskedValue = installmentCalcState.firstPayment;
@@ -90,16 +99,26 @@ $(document).ready(function () {
             $('.installment-calc__delimiter').addClass('show');
             $('.installment-calc__result').addClass('show');
 
-            console.log('*** *** *** *** *** *** ***')
-            console.log('годовая процентная ставка:', creditPercentYear);
-            console.log('процентная ставка на 1 месяц:', creditPercentMonth);
-            console.log('стоимость оборудования:', cost);
-            console.log('первоначасльный взнос в процентах:', installmentCalcState.firstPayment);
-            console.log('первоначасльный взнос в рублях:', firstPayment);
-            console.log('сумма кредита:', creditAmount);
-            console.log('срок кредита в месяцах:', creditTerm);
-            console.log('ануитентный ежёмесячный платёж:', truncated(monthlyPayment));
-            console.log('переплата:', overpayment);
+            // Scrolling to results for touch devices
+            if (!isLaptop) {
+                setTimeout(function () {
+                    const winHeight = $(window).height();
+                    const resTargetOffset = $('.installment-calc__delimiter').offset().top;
+                    const resTop = (resTargetOffset - winHeight / 2) + 150;
+                    $('body,html').animate({ scrollTop: resTop }, 500);
+                }, 700);
+            }
+
+            //- console.log('*** *** *** *** *** *** ***')
+            //- console.log('годовая процентная ставка:', creditPercentYear);
+            //- console.log('процентная ставка на 1 месяц:', creditPercentMonth);
+            //- console.log('стоимость оборудования:', cost);
+            //- console.log('первоначасльный взнос в процентах:', installmentCalcState.firstPayment);
+            //- console.log('первоначасльный взнос в рублях:', firstPayment);
+            //- console.log('сумма кредита:', creditAmount);
+            //- console.log('срок кредита в месяцах:', creditTerm);
+            //- console.log('ануитентный ежёмесячный платёж:', truncated(monthlyPayment));
+            //- console.log('переплата:', overpayment);
         }
     }
 
