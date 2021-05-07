@@ -41,6 +41,13 @@ $(document).ready(function () {
         return true;
     }
 
+    // Show controllers for touchebble devices
+    function showControllers() {
+        $('.installment-calc')
+            .find('.label-controll__caption')
+            .addClass('visible');
+    }
+
     // Calculate Installment
     // calculation methodology taken from
     // the site https://www.raiffeisen.ru/wiki/kak-rasschitat-annuitetnyj-platezh/
@@ -111,18 +118,14 @@ $(document).ready(function () {
                 $(this).children('input').focus();
             } else {
                 checkInstallmentCalc();
+                showControllers();
             }
         });
 
-        $(firstPaymentRange).on('mousedown', function () {
+        $(firstPaymentRange).on('touchstart mousedown', function () {
             if (installmentCalcState.cost === '') {
                 checkInstallmentCalc();
-            }
-        });
-
-        $(firstPaymentRange).on('click', function () {
-            if (installmentCalcState.cost === '') {
-                checkInstallmentCalc();
+                showControllers();
             }
         });
 
@@ -237,10 +240,7 @@ $(document).ready(function () {
         );
 
         $('#calculateInstallment').on('click', function () {
-
-            // Show controllers for touchebble devices
-            $('.installment-calc').find('.label-controll__caption').addClass('visible');
-
+            showControllers();
             calculateInstallmentCalc();
         });
     }
