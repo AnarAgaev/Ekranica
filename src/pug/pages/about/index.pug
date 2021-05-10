@@ -1,0 +1,15 @@
+//- Include used template for this page
+extends ../../templates/default
+
+//- VARIABLES FOR INCLUDE THIS IN USED TEMPLATE
+block variables
+    - const title       = 'О нас, Гарантия, Контакты | Ekranika'
+    - const description = 'Write description for the page here'
+    - const keywords    = 'Write keywords for the page here'
+    - const pageClass   = 'page-about'
+
+block content
+    include ../../comps/list/list-partners-choose
+    include ../../comps/clients/clients
+    include ../../comps/callback/callback.pug
+    include ../../comps/form-order/form-order-question

@@ -92,9 +92,9 @@ $(document).ready(function () {
             overpayment = truncated((monthlyPayment * creditTerm) - creditAmount); // переплата
 
             // Print results of calculating
-            $('#calcResultFirstPayment').text('Первоначальный взнос: ' + firstPayment.toLocaleString('ru-RU') + ' ₽.');
-            $('#calcResultMonthlyPayment').text('Ежемесячный платёж: ' + truncated(monthlyPayment).toLocaleString('ru-RU') + ' ₽.');
-            $('#calcResultPaymentTerm').text('Срок выплаты: ' + prettyMonth(creditTerm) + '.');
+            $('#calcResultFirstPayment').html('Первоначальный взнос: <span>' + firstPayment.toLocaleString('ru-RU') + ' ₽</span>');
+            $('#calcResultMonthlyPayment').html('Ежемесячный платёж: <span>' + truncated(monthlyPayment).toLocaleString('ru-RU') + ' ₽</span>');
+            $('#calcResultPaymentTerm').html('Срок выплаты: <span>' + prettyMonth(creditTerm) + '</span>');
 
             $('.installment-calc__delimiter').addClass('show');
             $('.installment-calc__result').addClass('show');
