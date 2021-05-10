@@ -63,10 +63,6 @@
                 margin-right: 96px;
                 margin-bottom: 34px;
 
-                .article-list__pic {
-                    position: relative;
-                }
-
                 .article-list__card {
                     background: $color-back-primary;
                     border-radius: 12px;
@@ -88,17 +84,11 @@
                 }
 
                 .article-list__pic {
+                    position: relative;
                     width: 100%;
-                    height: auto;
+                    height: 317px;
                     margin-top: -48px;
                     transform: translateY(48px);
-
-                    .image {
-                        height: 0;
-                        padding-bottom: 60%;
-                        display: block;
-                        position: relative;
-                    }
                 }
             }
         }
@@ -348,5 +338,22 @@
         @media (min-width: $xl) {
             display: none !important;
         }
+    }
+}
+
+
+#aricleList {
+
+    .article-list__slide {
+        &:first-child,
+        &:nth-of-type(4n + 5) {
+            .article-list__caption {
+                min-height: 126px;
+            }
+        }
+    }
+
+    .article-list__card {
+        margin-bottom: 55px;
     }
 }
