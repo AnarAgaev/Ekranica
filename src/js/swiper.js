@@ -660,4 +660,34 @@ $(document).ready(function () {
     $(window).resize(function () {
         updateSlidersTabList();
     });
+
+    // Handler change window width from TABLET to LAPTOP for rebuild some sliders
+    const breakpointMD = window.matchMedia ('(min-width: 768px) and (max-width: 1319px)'); // breakpoint for from 768px to 1366px
+    let aboutOfferListSlider;
+
+    function breakpointMDChecker() {
+        if ( breakpointMD.matches === true ) {
+            enableAboutOfferListSlider();
+        } else if ( breakpointXL.matches === false ) {
+
+            if ( aboutOfferListSlider !== undefined
+                && $('#aboutOfferListSlider')[0] ) {
+                aboutOfferListSlider.destroy(true, true);
+            }
+        }
+    }
+
+    // Lists sliders functions
+    function enableAboutOfferListSlider() {
+        if ($('#aboutOfferListSlider')[0]) {
+            aboutOfferListSlider = new Swiper('#aboutOfferListSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+            });
+        }
+    }
+
+    // Here are listening breakpoint from tablet to laptop and initial check
+    breakpointMD.addListener(breakpointMDChecker);
+    breakpointMDChecker();
 });

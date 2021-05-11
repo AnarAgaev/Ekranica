@@ -24,6 +24,7 @@ import './pug/comps/galary-modal/gallery-modal';
 import './pug/comps/help-modal/help-modal';
 import './pug/comps/installment-calc/installment-calc';
 import './pug/comps/custom-range/custom-range';
+import './pug/comps/about-offer/about-offer';
 
 // Include vendor styles
 import 'normalize.css';
