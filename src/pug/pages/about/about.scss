@@ -25,6 +25,8 @@
     &__pic {
         margin-bottom: 44px;
 
+        @include card-animation;
+
         @media (min-width: $md) {
             order: 2;
             position: absolute;
@@ -62,6 +64,8 @@
     &__title {
         margin-bottom: 24px;
 
+        @include title-animation;
+
         @media (min-width: $md) {
             margin-bottom: 48px;
         }
@@ -96,6 +100,9 @@
         letter-spacing: 0.02em;
         color: $color-text-secondary;
         margin-bottom: 12px;
+
+        @include title-link-animation;
+        transition-delay: .5s;
 
         @media (min-width: $md) {
             font-weight: bold;
@@ -145,6 +152,9 @@
         line-height: 160%;
         color: $color-text-inactive;
         padding-right: 7.5vw;
+
+        @include title-link-animation;
+        transition-delay: .3s;
 
         @media (min-width: $md) {
             font-size: 14px;

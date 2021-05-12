@@ -10,6 +10,8 @@
     }
 
     .section__title {
+        @include title-animation;
+
         @media (min-width: $xl) {
             margin-bottom: 96px;
         }
@@ -236,6 +238,12 @@
             margin-bottom: 0;
         }
 
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) .about-offer__card {
+                transition-delay: 0.3s * $i;
+            }
+        }
+
         @media (min-width: $md) {
             margin-bottom: 0;
             width: 372px; // 324 + 48
@@ -252,6 +260,8 @@
     }
 
     &__card {
+        @include card-animation;
+
         @media (min-width: $md) {
             width: 324px;
         }
