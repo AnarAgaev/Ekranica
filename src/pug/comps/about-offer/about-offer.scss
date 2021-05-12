@@ -3,6 +3,7 @@
 .section__about-offer {
     background: $color-back-secondary;
     padding: 48px 0;
+    margin-bottom: 0 !important;
 
     @media (min-width: $xl) {
         padding: 134px 0;
@@ -262,6 +263,7 @@
 
         @media (min-width: $xl) {
             width: 384px;
+            height: calc(100% - 96px);
         }
     }
 }

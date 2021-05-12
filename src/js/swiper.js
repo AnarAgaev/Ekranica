@@ -252,7 +252,8 @@ $(document).ready(function () {
         workSlider,
         ourWorksSlider,
         ourNewsSlider,
-        deliveryMethodsSlider;
+        deliveryMethodsSlider,
+        aboutWorkWithSlider;
 
     function breakpointLGChecker() {
         if ( breakpointLG.matches === true ) {
@@ -277,12 +278,18 @@ $(document).ready(function () {
                 deliveryMethodsSlider.destroy(true, true);
             }
 
+            if ( aboutWorkWithSlider !== undefined
+                && $('#workWithSlider')[0] ) {
+                aboutWorkWithSlider.destroy(true, true);
+            }
+
         } else if ( breakpointLG.matches === false ) {
             enableListSlider();
             enableWorkSlider();
             enableOurWorksSlider();
             enableOurNewsSlider();
             enableDeliveryMethodsSlider();
+            enableAboutWorkWithSlider();
         }
     }
 
@@ -330,6 +337,15 @@ $(document).ready(function () {
                 observer: true,
                 observeParents: true,
                 observeSlideChildren: true,
+            });
+        }
+    }
+
+    function enableAboutWorkWithSlider() {
+        if ($('#workWithSlider')[0]) {
+            aboutWorkWithSlider = new Swiper('#workWithSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
             });
         }
     }
