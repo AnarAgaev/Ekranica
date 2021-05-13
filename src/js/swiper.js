@@ -159,6 +159,15 @@ $(document).ready(function () {
         },
     });
 
+    new Swiper('#certificatesSlider', {
+        slidesPerView: 'auto',
+        speed: 500,
+        navigation: {
+            nextEl: '#btnCertificatesSliderNext',
+            prevEl: '#btnCertificatesSliderPrev',
+        },
+    });
+
     const tabListOurWorkTickerSlider = new Swiper('#tabListOurWorkTickerSlider', {
         slidesPerView: 'auto',
         speed: 500,

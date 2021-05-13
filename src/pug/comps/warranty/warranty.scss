@@ -18,27 +18,9 @@
         padding: 100px 0 100px 100px;
         margin: -100px 0 -100px -100px;
 
-        @media (min-width: $md) {
-        }
-
         @media (min-width: $lg) {
             padding-left: 40px;
             margin-left: -40px;
-        }
-
-        @media (min-width: $xl) {
-        }
-    }
-
-    &__list-wrap {
-        @media (min-width: $md) {
-        }
-
-        @media (min-width: $lg) {
-
-        }
-
-        @media (min-width: $xl) {
         }
     }
 
@@ -49,6 +31,10 @@
         @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
                 z-index: calc(10 - #{$i});
+            }
+
+            &:nth-child(#{$i}) .warranty__card {
+                transition-delay: 0.3s * $i;
             }
         }
 
@@ -74,6 +60,8 @@
                 16px 5px 40px rgba(4, 5, 14, 0.6);
         border-radius: 12px;
         padding: 16px;
+
+        @include card-animation;
 
         @media (min-width: $md) {
             width: 324px;
@@ -136,6 +124,12 @@
 
     #btnWarrantySliderPrev {
         margin-top: 38px;
+        opacity: 1;
+        transition: opacity 1s;
+
+        &.animation-element {
+            opacity: 0;
+        }
 
         @media (min-width: $xl) {
             margin-top: 16px;
@@ -144,6 +138,12 @@
 
     #btnWarrantySliderNext {
         margin-top: -65px;
+        opacity: 1;
+        transition: opacity 1s;
+
+        &.animation-element {
+            opacity: 0;
+        }
 
         @media (min-width: $xl) {
             margin-top: -87px;
@@ -174,6 +174,8 @@
         letter-spacing: 0.02em;
         color: $color-text-secondary;
         margin-bottom: 24px;
+
+        @include title-link-animation;
 
         @media (min-width: $md) {
             font-weight: bold;
@@ -221,19 +223,19 @@
     }
 
     &__guarantee-list-wrap {
-        @media (min-width: $md) {
-        }
-
         @media (min-width: $lg) {
             flex-wrap: wrap;
-        }
-
-        @media (min-width: $xl) {
         }
     }
 
     &__guarantee-slide {
         width: 224px; // 200 + 24
+
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) .warranty__guarantee-card {
+                transition-delay: 0.3s * $i;
+            }
+        }
 
         @media (min-width: $md) {
             width: 416px; // 368 + 48
@@ -242,6 +244,11 @@
         @media (min-width: $lg) {
             width: 513px; // 445 + 68
             margin-bottom: 24px;
+
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
+                margin-bottom: 0;
+            }
 
             &:nth-child(even) {
                 flex: 1 0 auto;
@@ -260,6 +267,8 @@
         line-height: 160%;
         color: $color-text-inactive;
         position: relative;
+
+        @include card-animation;
 
         @media (min-width: $md) {
             width: 368px;

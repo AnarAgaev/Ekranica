@@ -1,0 +1,52 @@
+section.section.section_certificates
+    .certificates
+
+        .container
+            h2.section__title.animation-element Сертификаты
+
+        .container-endless
+            .endless
+
+                .certificates__subtitle.animation-element Мы работаем с надежными производителями
+
+                .certificates__list.swiper-container#certificatesSlider
+                    .certificates__list-wrap.swiper-wrapper
+
+                        .certificates__slide.swiper-slide
+                            // В аторибут data-gallery-img-source доабавить путь для основной (большй) картинки
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                // В src для картинки добавить картинку для анонса
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .certificates__slide.swiper-slide
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .certificates__slide.swiper-slide
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .certificates__slide.swiper-slide
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .certificates__slide.swiper-slide
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .certificates__slide.swiper-slide
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .certificates__slide.swiper-slide
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                        .certificates__slide.swiper-slide
+                            .certificates__card.animation-element.gallery-picture.custom-cursor(data-gallery-img-source="/img/placeholder-img.jpg")
+                                .certificates__pic(style="background-image: url('/img/placeholder-img.jpg')")
+
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_prev.animation-element#btnCertificatesSliderPrev
+                    include ../../../img/icon-slider-btn-arr.svg
+                .btn.btn_icon-outlined.not-focused.slider-controller.slider-controller_next.animation-element#btnCertificatesSliderNext
+                    include ../../../img/icon-slider-btn-arr.svg
