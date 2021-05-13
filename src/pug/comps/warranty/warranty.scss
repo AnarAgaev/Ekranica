@@ -1,0 +1,288 @@
+@import "../../../scss/variables";
+
+.warranty {
+
+    .section__title {
+        @include title-animation;
+
+        @media (min-width: $md) {
+            max-width: 350px;
+        }
+
+        @media (min-width: $lg) {
+            max-width: none;
+        }
+    }
+
+    &__list {
+        padding: 100px 0 100px 100px;
+        margin: -100px 0 -100px -100px;
+
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+            padding-left: 40px;
+            margin-left: -40px;
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+
+    &__list-wrap {
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+
+    &__slide {
+        width: 224px; // 200 + 24
+        height: auto;
+
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                z-index: calc(10 - #{$i});
+            }
+        }
+
+        @media (min-width: $md) {
+            width: 348px; // 324 + 24
+        }
+
+        @media (min-width: $lg) {
+            width: 513px; // 445 + 68
+        }
+
+        @media (min-width: $xl) {
+            width: 720px; // 624 + 96
+        }
+    }
+
+    &__card {
+        width: 200px;
+        height: 100%;
+        background: $color-back-primary;
+        box-shadow:
+                -14px -14px 40px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+        border-radius: 12px;
+        padding: 16px;
+
+        @media (min-width: $md) {
+            width: 324px;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        @media (min-width: $lg) {
+            width: 445px;
+            background: $color-back-primary;
+            padding: 34px;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.15),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    -6px -6px 30px rgba(35, 33, 58, 0.15),
+                    6px 6px 30px rgba(0, 2, 12, 0.3);
+        }
+
+        @media (min-width: $xl) {
+            width: 624px;
+            padding: 48px;
+        }
+    }
+
+    &__card-title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-secondary;
+        margin-bottom: 12px;
+
+        @media (min-width: $md) {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 24px;
+            font-size: 30px;
+            line-height: 140%;
+        }
+    }
+
+    &__card-desc {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+
+        @media (min-width: $md) {
+            font-size: 14px;
+        }
+    }
+
+    #btnWarrantySliderPrev {
+        margin-top: 38px;
+
+        @media (min-width: $xl) {
+            margin-top: 16px;
+        }
+    }
+
+    #btnWarrantySliderNext {
+        margin-top: -65px;
+
+        @media (min-width: $xl) {
+            margin-top: -87px;
+        }
+    }
+
+    &__guarantee {
+        margin-top: 60px;
+
+        @media (min-width: $md) {
+            margin-top: 48px;
+        }
+
+        @media (min-width: $lg) {
+            margin-top: 68px;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 96px;
+        }
+    }
+
+    &__guarantee-title {
+        max-width: 250px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-secondary;
+        margin-bottom: 24px;
+
+        @media (min-width: $md) {
+            font-weight: bold;
+            font-size: 24px;
+            max-width: 400px;
+            margin-bottom: 12px;
+        }
+
+        @media (min-width: $lg) {
+            max-width: 445px;
+            padding-bottom: 28px;
+            margin-bottom: 34px;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100vw;
+                height: 12px;
+                background: #0B0D19;
+                box-shadow:
+                        -20px -27px 40px rgba(35, 33, 58, 0.35),
+                        20px 27px 40px rgba(4, 5, 14, 0.17),
+                        inset -2px -2px 5px rgba(52, 40, 62, 0.3),
+                        inset 2px 2px 5px rgba(0, 2, 12, 0.8);
+                border-radius: 12px;
+            }
+        }
+
+        @media (min-width: $xl) {
+            font-size: 30px;
+            line-height: 140%;
+            margin-bottom: 34px;
+            max-width: 625px;
+            padding-bottom: 27px;
+        }
+    }
+
+    &__guarantee-list {
+        padding-left: 100px;
+        margin-left: -100px;
+    }
+
+    &__guarantee-list-wrap {
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+
+    &__guarantee-slide {
+        width: 224px; // 200 + 24
+
+        @media (min-width: $md) {
+            width: 416px; // 368 + 48
+        }
+
+        @media (min-width: $lg) {
+            width: 513px; // 445 + 68
+            margin-bottom: 24px;
+
+            &:nth-child(even) {
+                flex: 1 0 auto;
+            }
+        }
+
+        @media (min-width: $xl) {
+            width: 37.5vw; // 624 + 96 = 720px for 1920 screen width
+        }
+    }
+
+    &__guarantee-card {
+        width: 200px;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        position: relative;
+
+        @media (min-width: $md) {
+            width: 368px;
+        }
+
+        @media (min-width: $lg) {
+            width: 445px;
+            padding-left: 16px;
+        }
+
+        @media (min-width: $xl) {
+            width: 32.5vw; // 624px for 1920 screen width
+        }
+
+        .point {
+            display: none;
+
+            @media (min-width: $lg) {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 8px;
+            }
+        }
+    }
+}

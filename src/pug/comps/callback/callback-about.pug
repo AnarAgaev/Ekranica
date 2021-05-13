@@ -1,0 +1,40 @@
+section.section.section_callback
+    .callback
+        .container
+            h2.section__title.animation-element
+                span.title Стать клиентом
+                span.section__link.animation-element
+                    a.revers(href="") Открыть контакты
+                        include ../../../img/icon-title-arr.svg
+
+            .callback__title.animation-element Заинтересовались светодиодным оборудованием?
+            .callback__subtitle.animation-element Укажите ваш мобильный номер телефона и мы перезвоним в течение 5 минут
+
+        .callback__background-pic.animation-element
+            img(src="/img/callback-pic-about.png" alt="")
+
+        .container-endless
+            .endless
+                form.callback__form.animation-element#callbackForm(action="/" method="POST" data-target="#calbackModal")
+                    .callback__data
+                        // Для валидного значения меняем класс у controller на valid
+                        .controller.controller__input
+                            label.label.label__icon
+                                span.icon
+                                    img(src="/img/icon-phone.svg" alt="")
+                                input(type="text" placeholder="+7 900 000 00 00" name="phone" id="phone")
+                            .validator.validator__cross
+                                img.valid(src="/img/icon-validator-cross-valid.svg" alt="")
+                                img.invalid(src="/img/icon-validator-cross-invalid.svg" alt="")
+                            .validator.validator__check
+                                img.valid(src="/img/icon-validator-check-valid.svg" alt="")
+                                img.invalid(src="/img/icon-validator-check-invalid.svg" alt="")
+
+                    .callback__actions
+                        button.btn.btn_primary(type="submit") Отправить номер
+
+                        span.privacy Нажимая на кнопку “Отправить номер”, я даю согласие на
+                            a.revers(href="" target="_blank") обработку моих персональных данных
+
+                    span.send-mail Или напишите нам
+                        a(href="mailto:info@ekranika.ru") info@ekranika.ru

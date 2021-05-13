@@ -147,6 +147,10 @@
             padding-right: 34px;
             height: 100%;
         }
+
+        @media (min-width: $xl) {
+            padding-bottom: 61px;
+        }
     }
 
     &__item {

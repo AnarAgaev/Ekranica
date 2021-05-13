@@ -150,6 +150,15 @@ $(document).ready(function () {
         },
     });
 
+    new Swiper('#warrantyList', {
+        slidesPerView: 'auto',
+        speed: 500,
+        navigation: {
+            nextEl: '#btnWarrantySliderNext',
+            prevEl: '#btnWarrantySliderPrev',
+        },
+    });
+
     const tabListOurWorkTickerSlider = new Swiper('#tabListOurWorkTickerSlider', {
         slidesPerView: 'auto',
         speed: 500,
@@ -253,7 +262,8 @@ $(document).ready(function () {
         ourWorksSlider,
         ourNewsSlider,
         deliveryMethodsSlider,
-        aboutWorkWithSlider;
+        aboutWorkWithSlider,
+        warrantyGuaranteeSlider;
 
     function breakpointLGChecker() {
         if ( breakpointLG.matches === true ) {
@@ -283,6 +293,11 @@ $(document).ready(function () {
                 aboutWorkWithSlider.destroy(true, true);
             }
 
+            if ( warrantyGuaranteeSlider !== undefined
+                && $('#warrantyGuaranteeList')[0] ) {
+                warrantyGuaranteeSlider.destroy(true, true);
+            }
+
         } else if ( breakpointLG.matches === false ) {
             enableListSlider();
             enableWorkSlider();
@@ -290,6 +305,7 @@ $(document).ready(function () {
             enableOurNewsSlider();
             enableDeliveryMethodsSlider();
             enableAboutWorkWithSlider();
+            enableWarrantyGuaranteeSlider();
         }
     }
 
@@ -344,6 +360,15 @@ $(document).ready(function () {
     function enableAboutWorkWithSlider() {
         if ($('#workWithSlider')[0]) {
             aboutWorkWithSlider = new Swiper('#workWithSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+            });
+        }
+    }
+
+    function enableWarrantyGuaranteeSlider() {
+        if ($('#warrantyGuaranteeList')[0]) {
+            warrantyGuaranteeSlider = new Swiper('#warrantyGuaranteeList', {
                 slidesPerView: 'auto',
                 speed: 500,
             });

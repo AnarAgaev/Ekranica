@@ -16,6 +16,13 @@
             margin-top: 96px;
         }
     }
+
+    @media (min-width: $md) {
+        .callback .container,
+        .callback .container-endless {
+            padding-left: 0;
+        }
+    }
 }
 
 

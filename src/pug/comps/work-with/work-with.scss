@@ -21,10 +21,14 @@
         @include title-animation;
 
         @media (min-width: $md) {
-            margin-bottom: 68px;
+            margin-bottom: 62px;
         }
 
         @media (min-width: $lg) {
+            margin-bottom: 68px;
+        }
+
+        @media (min-width: $xl) {
             margin-bottom: 96px;
         }
 
