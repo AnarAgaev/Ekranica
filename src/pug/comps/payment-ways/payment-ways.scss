@@ -1,0 +1,302 @@
+@import "../../../scss/variables";
+
+.payment-ways {
+
+    .section__title {
+        @include title-animation;
+    }
+
+    .section__link {
+        display: flex;
+
+        @include title-link-animation;
+
+        @media (min-width: $lg) {
+            display: inline-flex;
+        }
+
+        a {
+            width: 200px;
+            line-height: 160%;
+
+            @media (min-width: $lg) {
+                width: auto;
+            }
+        }
+
+        .icon {
+            display: block;
+            margin-top: 4px;
+            margin-left: 8px;
+        }
+    }
+
+    &__methods {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 34px;
+
+        @media (min-width: $md) {
+            flex-direction: row;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 34px;
+        }
+    }
+
+    &__methods-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 24px;
+
+        @include card-animation;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                transition-delay: 0.3s * $i;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $md) {
+            margin-bottom: 0;
+            margin-right: 34px;
+
+            &:nth-child(2) {
+                flex-basis: 233px;
+                min-width: 233px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media (min-width: $lg) {
+            margin-right: 68px;
+            flex-basis: 274px !important;
+            min-width: 274px !important;
+        }
+
+        @media (min-width: $xl) {
+            margin-right: 96px;
+            flex-basis: auto !important;
+            min-width: auto !important;
+        }
+
+        .icon {
+            height: 48px;
+            margin-right: 8px;
+            position: relative;
+            flex-basis: 48px;
+            min-width: 48px;
+            max-width: 48px;
+
+            @media (min-width: $lg) {
+                margin-right: 16px;
+            }
+
+            &_card {
+                svg {
+                    margin-left: 7px;
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .text {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            color: $color-text-secondary;
+
+            @media (min-width: $lg) {
+                font-weight: bold;
+                font-size: 24px;
+            }
+
+            @media (min-width: $xl) {
+                font-size: 30px;
+                line-height: 140%;
+            }
+        }
+    }
+
+    &__mark {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        margin-bottom: 48px;
+        transition-delay: 1s !important;
+
+        @include card-animation;
+
+        @media (min-width: $md) {
+            margin-bottom: 68px;
+        }
+
+        @media (min-width: $lg) {
+            font-size: 14px;
+        }
+
+        @media (min-width: $xl) {
+            max-width: 800px;
+            margin-bottom: 96px;
+        }
+    }
+
+    &__requisites {}
+
+    &__requisites-title {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.02em;
+        color: $color-text-secondary;
+        margin-bottom: 32px;
+
+        @include title-link-animation;
+
+        @media (min-width: $md) {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 29px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 34px;
+        }
+
+        @media (min-width: $xl) {
+            font-size: 30px;
+            line-height: 140%;
+            margin-bottom: 43px;
+        }
+
+        .icon {
+            display: none;
+            width: 24px;
+            height: 32px;
+            position: relative;
+            margin-left: 8px;
+
+            @media (min-width: $md) {
+                display: inline-block;
+            }
+
+            @media (min-width: $lg) {
+                margin-left: 12px;
+            }
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &__requisites__list {
+        display: flex;
+        flex-direction: column;
+
+        &.animation-element li {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    }
+
+    &__requisites__item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 24px;
+        opacity: 1;
+        transform: translateY(0);
+        transition: $anim-card;
+
+        @for $i from 1 through 15 {
+            &:nth-child(#{$i}) {
+                transition-delay: 0.3s * $i;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 24px;
+        }
+
+        .caption {
+            flex-basis: 100px;
+            min-width: 100px;
+            max-width: 100px;
+            margin-right: 16px;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 163%;
+            color: $color-text-inactive;
+
+            @media (min-width: $md) {
+                flex-basis: 208px;
+                min-width: 208px;
+                max-width: 208px;
+                margin-right: 24px;
+            }
+
+            @media (min-width: $lg) {
+                flex-basis: 274px;
+                min-width: 274px;
+                max-width: 274px;
+                margin-right: 68px;
+                font-size: 14px;
+            }
+
+            @media (min-width: $xl) {
+                flex-basis: 288px;
+                min-width: 288px;
+                max-width: 288px;
+                margin-right: 192px;
+                font-size: 18px;
+            }
+        }
+
+        .content {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 163%;
+            color: $color-text-secondary;
+
+            @media (min-width: $xl) {
+                font-size: 18px;
+            }
+        }
+    }
+}
