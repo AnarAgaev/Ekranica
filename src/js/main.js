@@ -29,6 +29,28 @@ $(document).ready(function () {
         return windowsWidth - documentWidth;
     }
 
+    /* Animation error (red cross) on the controllers at forms */
+    window.animationFormError = function (controller, validator) {
+        // Add checked class if controller haven't it
+        if (!$(controller).hasClass('checked')) {
+            $(controller).addClass('checked');
+        }
+
+        // Add invalid class if controller haven't it
+        if (!$(controller).hasClass('invalid')) {
+            $(controller).addClass('invalid');
+        }
+
+        // Add error animation class if controller haven't it
+        if (!$(validator).hasClass('bounce-top')) {
+            $(validator).addClass('bounce-top');
+
+            setTimeout(function () {
+                $(validator).removeClass('bounce-top');
+            }, 1000);
+        }
+    }
+
     /* Get screen type, desktop or not */
     function getScreenType () {
         window.isLaptop = window.innerWidth >= 1320;

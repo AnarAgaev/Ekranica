@@ -3,38 +3,16 @@ import IMask from 'imask';
 
 $(document).ready(function () {
 
-    let mask;
-    const form = $('#orderForm');
+    let maskFormOrder;
     const controller = $('#phone').closest('.controller');
     const validator = $('#orderForm .validator__cross');
-
-    function animationError() {
-        // Add checked class if controller haven't it
-        if (!$(controller).hasClass('checked')) {
-            $(controller).addClass('checked');
-        }
-
-        // Add invalid class if controller haven't it
-        if (!$(controller).hasClass('invalid')) {
-            $(controller).addClass('invalid');
-        }
-
-        // Add error animation class if controller haven't it
-        if (!$(validator).hasClass('bounce-top')) {
-            $(validator).addClass('bounce-top');
-
-            setTimeout(function () {
-                $(validator).removeClass('bounce-top');
-            }, 1000);
-        }
-    }
 
     function checkPhone () {
         let phone = $('#phone').val();
 
         if (phone !== '') {
             if (!validPhone(phone.replace(/\s+|\+/g, ''))) {
-                animationError();
+                animationFormError(controller, validator);
             }
         }
     }
@@ -46,16 +24,13 @@ $(document).ready(function () {
         const maskOptions = {
             mask: '+{7} 000 000 00 00',
         };
-        mask = IMask(el, maskOptions);
+        maskFormOrder = IMask(el, maskOptions);
 
         // Let's add handler function on phone change
-        mask.on("accept", phoneHandler);
-        // mask.on("complete", phoneHandler);
+        maskFormOrder.on("accept", phoneHandler);
 
         function phoneHandler() {
-            mask.updateValue();
-
-            if (validPhone(mask.unmaskedValue)) {
+            if (validPhone(maskFormOrder.unmaskedValue)) {
                 $(controller).addClass('checked valid');
                 $(controller).removeClass('invalid');
             } else {
@@ -65,7 +40,7 @@ $(document).ready(function () {
                 }
             }
 
-            if (mask.unmaskedValue === '') {
+            if (maskFormOrder.unmaskedValue === '') {
                 $(controller).removeClass('checked');
             }
         }
@@ -92,12 +67,12 @@ $(document).ready(function () {
         if (phone !== '') {
             if (!validPhone(phone.replace(/\s+|\+/g, ''))) {
                 isFormValid = false;
-                animationError();
+                animationFormError(controller, validator);
             }
 
         } else {
             isFormValid = false;
-            animationError();
+            animationFormError(controller, validator);
         }
 
         if (isFormValid) {
@@ -106,9 +81,9 @@ $(document).ready(function () {
             const message = $('#message').val();
 
             // Reset form
-            $(form)[0].reset();
             $(controller).removeClass('valid input checked');
-            mask.updateValue();
+            maskFormOrder.unmaskedValue = '';
+            $('#orderModal .modal__close').focus();
 
 
             // !!!!!!!!!!!!!!!!!!!!!!!   Send data to server
