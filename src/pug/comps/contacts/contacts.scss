@@ -1,0 +1,168 @@
+@import "../../../scss/variables";
+
+.contacts {
+
+    .section__title {
+        @include title-animation;
+    }
+
+    .section__link {
+        @include title-link-animation;
+    }
+
+    &__map-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 64.70588235294118%;
+        position: relative;
+        margin-bottom: 34px;
+        background-color: $color-text-inactive;
+        border-radius: 12px;
+        box-shadow:
+                -14px -14px 40px rgba(35, 33, 58, 0.35),
+                16px 5px 40px rgba(4, 5, 14, 0.6);
+
+        @include card-animation;
+
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+
+    &__map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+
+    &__addres {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+        }
+
+        @media (min-width: $xl) {
+        }
+
+        &.animation-element li {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    }
+
+    &__addres-item {
+        margin-bottom: 25px;
+        padding-left: 36px;
+        position: relative;
+        transition: $anim-card;
+        opacity: 1;
+        transform: translateY(0);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}){
+                transition-delay: 0.3s * $i;
+            }
+        }
+
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+
+    &__addres__title {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+        }
+
+        @media (min-width: $xl) {
+        }
+
+        .icon {
+            display: block;
+            width: 24px;
+            height: 24px;
+            position: relative;
+
+            @media (min-width: $md) {
+            }
+
+            @media (min-width: $lg) {
+            }
+
+            @media (min-width: $xl) {
+            }
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .txt {
+            display: none;
+            
+            @media (min-width: $md) {
+            }
+
+            @media (min-width: $lg) {
+            }
+
+            @media (min-width: $xl) {
+            }
+        }
+    }
+
+    &__addres-content {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-inactive;
+
+        @media (min-width: $md) {
+        }
+
+        @media (min-width: $lg) {
+        }
+
+        @media (min-width: $xl) {
+        }
+    }
+}

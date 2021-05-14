@@ -1,0 +1,45 @@
+section.section.section_contacts
+    .contacts
+        .container
+            h2.section__title.animation-element
+                span.title Контакты
+                span.section__link.animation-element
+                    a.revers(href="") Посмотреть на карте
+                        include ../../../img/icon-title-arr.svg
+
+        .container
+            .contacts__map-container.animation-element
+                .contacts__map#map
+
+            ul.contacts__addres.animation-element
+                li.contacts__addres-item
+                    span.contacts__addres__title
+                        span.icon
+                            include ../../../img/icon-addr-house.svg
+                        span.txt Адрес
+                    span.contacts__addres-content 123100, г. Москва, наб. Пресненская, д.10 строение 2 этаж 11, пом. 97, ком. 2, оф. 100
+
+                li.contacts__addres-item
+                    span.contacts__addres__title
+                        span.icon
+                            include ../../../img/icon-addr-phone.svg
+                        span.txt Телефон
+                    a.contacts__addres-content(href="tel:+74999388779") +7 499 938-87-79
+
+
+                li.contacts__addres-item
+                    span.contacts__addres__title
+                        span.icon
+                            include ../../../img/icon-addr-shit.svg
+                        span.txt Режим работы
+                    span.contacts__addres-content
+                        | Пн-пт: с 09.00 до 18.00
+                        br
+                        | Сб Вс: выходной
+
+                li.contacts__addres-item
+                    span.contacts__addres__title
+                        span.icon
+                            include ../../../img/icon-attr-mail.svg
+                        span.txt Эл. почта
+                    a.contacts__addres-content(href="mailto:info@ekranika.ru") info@ekranika.ru
