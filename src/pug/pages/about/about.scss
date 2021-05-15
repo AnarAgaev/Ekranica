@@ -23,6 +23,25 @@
             padding-left: 0;
         }
     }
+
+    .section_callback {
+        background: $color-back-secondary;
+        padding: 48px 0;
+
+        @media (min-width: $md) {
+            padding: 96px 0;
+        }
+
+        @media (min-width: $xl) {
+            padding: 134px 0;
+        }
+    }
+
+    .callback__background-pic {
+        @media (min-width: $xl) {
+            top: 85px;
+        }
+    }
 }
 
 

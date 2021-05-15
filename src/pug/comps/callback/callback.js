@@ -3,82 +3,90 @@ import IMask from 'imask';
 
 $(document).ready(function () {
 
+    // It's the handler for the phone value at the callback form
+    const callbackPhone = document.getElementById('callbackPhone');
+    const callbackPhoneController = $('#callbackPhone').closest('.controller');
+    const callbackPhoneValidator = $('#callbackForm .validator__cross');
+
     let maskCallback;
-    const controller = $('#phone').closest('.controller');
-    const validator = $('#callbackForm .validator__cross');
 
-    function checkPhone () {
-        let phone = $('#phone').val();
-
+    function checkCallbackPhone (phone) {
         if (phone !== '') {
             if (!validPhone(phone.replace(/\s+|\+/g, ''))) {
-                animationFormError(controller, validator);
+                animationFormError(
+                    callbackPhoneController,
+                    callbackPhoneValidator
+                );
             }
         }
     }
 
-    // It's the handler of the phone value
-    const el = document.getElementById('phone');
+    if (callbackPhone) {
 
-    if (el) {
         const maskOptions = {
             mask: '+{7} 000 000 00 00',
         };
-        maskCallback = IMask(el, maskOptions);
+        maskCallback = IMask(callbackPhone, maskOptions);
 
         // Let's add handler function on phone change
         maskCallback.on("accept", phoneHandler);
 
         function phoneHandler() {
             if (validPhone(maskCallback.unmaskedValue)) {
-                $(controller).addClass('valid');
-                $(controller).removeClass('invalid');
-                $(controller).addClass('checked');
+                $(callbackPhoneController).addClass('valid');
+                $(callbackPhoneController).removeClass('invalid');
+                $(callbackPhoneController).addClass('checked');
             } else {
-                if ($(controller).hasClass('checked')) {
-                    $(controller).addClass('invalid');
-                    $(controller).removeClass('valid');
+                if ($(callbackPhoneController).hasClass('checked')) {
+                    $(callbackPhoneController).addClass('invalid');
+                    $(callbackPhoneController).removeClass('valid');
                 }
             }
 
             if(maskCallback.unmaskedValue === '') {
-                $(controller).removeClass('checked');
+                $(callbackPhoneController).removeClass('checked');
             }
         }
     }
 
     // Handle unfocused phone input
-    $('#phone').blur(function () {
-        checkPhone();
+    $('#callbackPhone').blur(function () {
+        checkCallbackPhone($('#callbackPhone').val());
     });
 
     // Show error on input when user scroll on it focused
     $(window).scroll(function () {
-        if ($('#phone').is(':focus')) {
-            checkPhone();
+        if ($('#callbackPhone').is(':focus')) {
+            checkCallbackPhone($('#callbackPhone').val());
         }
     });
 
     $('#callbackForm').on('submit', function(e) {
         e.preventDefault();
 
-        let phoneValue = $('#phone').val();
+        let phoneValue = $('#callbackPhone').val();
         let callbackFormValid = true;
 
         if (phoneValue !== '') {
             if (!validPhone(phoneValue.replace(/\s+|\+/g, ''))) {
                 callbackFormValid = false;
-                animationFormError(controller, validator);
+                animationFormError(
+                    callbackPhoneController,
+                    callbackPhoneValidator
+                );
             }
 
         } else {
             callbackFormValid = false;
-            animationFormError(controller, validator);
+            animationFormError(
+                callbackPhoneController,
+                callbackPhoneValidator
+            );
         }
 
         if (callbackFormValid) {
             // Reset form
-            $(controller).removeClass('valid input checked');
+            $(callbackPhoneController).removeClass('valid input checked');
             maskCallback.unmaskedValue = '';
             $('#calbackModal .modal__close').focus();
 
