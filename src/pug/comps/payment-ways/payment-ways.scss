@@ -21,6 +21,14 @@
 
             @media (min-width: $lg) {
                 width: auto;
+
+                .icon svg path {
+                    transition: all 0.2s;
+                }
+
+                &:hover + .icon svg path {
+                    stroke: $color-text-primary;
+                }
             }
         }
 

@@ -50,6 +50,11 @@
 
 .work-with {
 
+    &__caption-container {
+        position: relative;
+        z-index: 2;
+    }
+
     &__list {
         padding: 100px 0 100px 100px;
         margin: -100px 0 -100px -100px;
