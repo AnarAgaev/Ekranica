@@ -15,6 +15,9 @@ html(lang="ru")
         meta(name="keywords" content=keywords)
         title #{title}
 
+        // API Яндекс карт подключать только на страницаъ с картой
+        script(src="https://api-maps.yandex.ru/2.1/?apikey=4c74d479-972b-4c76-81e7-b1bc63268173&lang=ru_RU")
+
     body(class=pageClass)
         //- Loader
         include ../comps/loader/loader

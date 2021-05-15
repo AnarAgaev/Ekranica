@@ -2,6 +2,7 @@
 import './js/swiper';
 import './js/anim';
 import './js/loading-bar.min';
+import './js/yamaps';
 import './js/main';
 import './pug/templates/header/header';
 import './pug/comps/custom-selects/custom-selects';

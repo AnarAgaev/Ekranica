@@ -1764,3 +1764,23 @@ filter: grayscale(0) blur(0);
         display: block !important;
     }
 }
+
+
+// Customizing Yandex maps
+.ymaps-2-1-77-gotoymaps__pin,
+.ymaps-2-1-78-gotoymaps__pin {
+    background: url(/img/ymaps-pin.svg) no-repeat !important;
+}
+
+.ymaps-2-1-78-ground-pane {
+    filter: grayscale(1);
+}
+
+.ymaps-2-1-78-map {
+    .ymaps-2-1-78-gototech,
+    .ymaps-2-1-78-copyright__link {
+        &:hover {
+            color: $color-accent !important;
+        }
+    }
+}
