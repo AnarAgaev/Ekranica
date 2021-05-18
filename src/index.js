@@ -26,6 +26,7 @@ import './pug/comps/help-modal/help-modal';
 import './pug/comps/installment-calc/installment-calc';
 import './pug/comps/custom-range/custom-range';
 import './pug/comps/about-offer/about-offer';
+import './pug/comps/quiz/quiz';
 
 // Include vendor styles
 import 'normalize.css';
