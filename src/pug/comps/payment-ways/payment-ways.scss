@@ -101,6 +101,10 @@
             min-width: auto !important;
         }
 
+        @media (min-width: $xxl) {
+            margin-right: 134px;
+        }
+
         .icon {
             height: 48px;
             margin-right: 8px;

@@ -96,7 +96,7 @@
             }
         }
 
-        @media (min-width: 2048px) {
+        @media (min-width: $xxl) {
             &:first-child,
             &:nth-of-type(4n + 5) {
                 .article-list__caption {
