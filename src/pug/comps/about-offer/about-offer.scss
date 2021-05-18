@@ -68,6 +68,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            path {
+                fill: $color-icons;
+            }
         }
 
         @media (min-width: $md) {
@@ -174,7 +178,7 @@
                     transform: translateX(3px);
 
                     svg path {
-                        stroke: $color-accent;
+                        fill: $color-accent;
                     }
                 }
 
@@ -199,9 +203,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 16px;
+            height: auto;
 
             path {
-                transition: stroke .2s linear;
+                transition: fill .2s linear;
+                fill: $color-icons;
             }
         }
     }
