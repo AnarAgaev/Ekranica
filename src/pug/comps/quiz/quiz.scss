@@ -13,8 +13,8 @@
     outline: 0;
     background-color: $color-back-secondary;
     transition:
-            left 0s linear .15s,
-            opacity .15s linear 0s;
+            left 0s linear 1s,
+            opacity .3s linear .3s;
 
     &.visible {
         left: 0;
@@ -45,7 +45,11 @@
         margin: 16px 0;
         opacity: 0;
         transform: translateY(100px);
-        transition: transform .1s linear;
+        transition:
+                all
+                .3s
+                cubic-bezier(0.33, 1, 0.68, 1)
+                0s;
 
         @media (min-width: $md) {
             margin: 24px auto;
