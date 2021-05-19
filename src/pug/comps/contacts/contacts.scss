@@ -183,8 +183,11 @@
                 width: 24px;
                 height: auto;
                 margin-top: -1px;
+            }
 
-                path {
+            &_phone,
+            &_mail {
+                svg path {
                     fill: $color-accent;
                 }
             }

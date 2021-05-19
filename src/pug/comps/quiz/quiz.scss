@@ -83,7 +83,6 @@
             margin: 0;
             border-radius: 34px;
             border: 6px solid $color-back-secondary;
-            padding: 96px 136px;
             box-shadow:
                     inset -2px -2px 3px rgba(35, 33, 58, 0.5),
                     inset 2px 2px 3px rgba(0, 2, 12, 0.5),
@@ -91,10 +90,6 @@
                     14px 28px 30px rgba(4, 5, 14, 0.3),
                     -6px -6px 30px rgba(35, 33, 58, 0.5),
                     6px 6px 30px rgba(0, 2, 12, 0.4);
-        }
-
-        @media (min-width: $xl) {
-            padding: 134px 180px 134px 192px;
         }
     }
 
@@ -159,17 +154,18 @@
 
     &__prolog {
         padding-top: 56px;
+        display: none;
 
         @media (min-width: $md) {
             padding-top: 0;
         }
 
         @media (min-width: $lg) {
-            padding-left: 220px;
+            padding: 96px 136px 96px 356px;
         }
 
         @media (min-width: $xl) {
-            padding-left: 300px;
+            padding: 134px 180px 134px 492px;
         }
 
         .pic {
@@ -265,6 +261,81 @@
                 line-height: 163%;
             }
         }
+    }
+
+    &__questions {
+        display: block;
+    }
+
+    &__slide {
+     display: none;
+
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+    &__btn-next {
+        width: 100%;
+        margin-bottom: 68px;
+    }
+
+    &__btn-prev {
+
+    }
+
+    &__state {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__state-caption {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        color: $color-text-inactive;
+        margin-bottom: 12px;
+
+        span {
+            display: inline-block;
+            margin-right: 4px;
+        }
+    }
+
+    &__progress {
+       display: flex;
+    }
+
+    &__progress-point {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 16px;
+        background: #0D101F;
+        box-shadow:
+                -2px -4px 8px rgba(35, 33, 58, 0.6),
+                2px 4px 8px rgba(4, 5, 14, 0.6),
+                -1px -1px 8px rgba(35, 33, 58, 0.6),
+                1px 1px 8px rgba(0, 2, 12, 0.6);
+        border-radius: 100px;
+        transform: rotate(-90deg);
+
+        &:nth-child(n + 5) {
+            display: none;
+        }
+    }
+
+    &__messege {
+        display: none;
     }
 
 }
