@@ -770,17 +770,125 @@
                     inset 5px 6px 20px rgba(0, 2, 12, 0.5);
         }
 
+        &__data {
+            @media (min-width: $lg) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
         &__privacy {
             margin-bottom: 0;
+
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                width: 100%;
+            }
         }
 
         &__actions {
-            @media (min-width: $lg) {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
                 margin-top: -51px;
+                flex-direction: row;
+                justify-content: flex-end;
             }
 
             @media (min-width: $xl) {
                 margin-top: -18px;
+            }
+        }
+
+        &__user-data {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                width: 46.45093945720251%;
+            }
+        }
+
+        &__comments {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                width: 46.45093945720251%;
+            }
+        }
+
+        &__actions-group {
+            @media (min-width: $md) and (max-width: $lg - 1) {
+                margin-top: 8px;
+            }
+
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                width: 46.45093945720251%;
+                margin-top: 19px;
+                margin-bottom: 6px;
+            }
+        }
+
+        .controller-group {
+            &__validation {
+                @media (min-width: $lg) and (max-width: $xl - 1) {
+                    .validator__cross {
+                        right: 39px;
+                        top: 8px;
+                    }
+
+                    .validator__check {
+                        right: 0;
+                        top: 7px;
+                    }
+                }
+            }
+        }
+
+        .controller-label {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 160%;
+                color: $color-text-secondary;
+                margin-bottom: 12px;
+            }
+        }
+
+        .controller-icon {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                width: 20px;
+                height: 20px;
+                top: 12px;
+                left: 12px;
+
+                img {
+                    width: 54px;
+                }
+            }
+        }
+
+        .controller__input {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                height: 43px;
+                margin-bottom: 49px;
+
+                input {
+                    height: 44px;
+                    padding: 11px 12px 11px 44px;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 160%;
+                    color: $color-text-inactive;
+                }
+            }
+        }
+
+        .controller-wrap {
+            @media (min-width: $lg) and (max-width: $xl - 1) {
+                height: auto;
+
+                textarea {
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 160%;
+                    color: $color-text-inactive;
+                    border-radius: 12px;
+                    height: 170px;
+                    padding: 11px 12px 11px 45px;
+                }
             }
         }
     }
