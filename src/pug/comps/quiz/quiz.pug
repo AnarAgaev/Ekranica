@@ -1,6 +1,6 @@
 .quiz#quiz
     .quiz__dialog
-        .quiz__content
+        form.quiz__content(action="/" method="POST")
             .quiz__button-close.btn-quiz-toggle
                 button
                     include ../../../img/icon-cross.svg
@@ -13,39 +13,84 @@
                     .subtitle Предлагаем пройти тест из 5 вопросов, на основании ответов на которые, мы бесплатно подберем нужную вам конфигурацию
                     .btn.btn_primary#buttonQuizAciton Пройти тест
 
-            .quiz__questions
+            .quiz__questions(data-state-question="1")
                 .quiz__body
-                    .quiz__slide.active#quizSlide_1
+                    .quiz__slide#quizSlide_1
+                        .quiz__slide-title Где будет стоять экран?
+                        .quiz__slide-subtitle Уличные экраны, в отличии от внутренних, защищены от воздействий внешней среды и светят ярче солнечного света
+                        .quiz__slide-controllers
+                            .quiz__radio-group
+                                input#quizLocationOutside(type='radio' name='type' value='')
+                                label.quiz__radio-group-controller(for='quizLocationOutside')
+                                    span.picture
+                                        include ../../../img/quiz-location-outside.svg
+                                    span.text На улице
+                                input#quizLocationInside(type='radio' name='type' value='')
+                                label.quiz__radio-group-controller(for='quizLocationInside')
+                                    span.picture
+                                        include ../../../img/quiz-location-inside.svg
+                                    span.text В помещении
+
                     .quiz__slide#quizSlide_2
+                        .quiz__slide-title
+                        .quiz__slide-subtitle
+                        .quiz__slide-controllers
+
                     .quiz__slide#quizSlide_3
+                        .quiz__slide-title
+                        .quiz__slide-subtitle
+                        .quiz__slide-controllers
+
                     .quiz__slide#quizSlide_4
-                    .quiz__slide#quizSlide_5
+                        .quiz__slide-title Нужна аренда или хотите купить сразу?
+                        .quiz__slide-subtitle
+                            | При аренде настроим всё по техзаданию.
+                            br
+                            | При покупке сразу подскажем, как провести подключение.
+                        .quiz__slide-controllers
+                            .quiz__radio-group
+                                input#quizRent(type='radio' name='type' value='')
+                                label.quiz__radio-group-controller(for='quizRent')
+                                    span.picture
+                                        include ../../../img/quiz-rent.svg
+                                    span.text Нужна аренда
+                                input#quizBuy(type='radio' name='type' value='')
+                                label.quiz__radio-group-controller(for='quizBuy')
+                                    span.picture
+                                        include ../../../img/quiz-buy.svg
+                                    span.text Куплю сразу
+
+                    .quiz__slide.active#quizSlide_5
+                        .quiz__slide-title Оставьте свои контакты
+                        .quiz__slide-subtitle Свяжемся с вами в течение дня и поможем подобрать оптимальный вариант экрана
+                        .quiz__slide-controllers
+                            include ../../comps/form-order/form-order-quiz
 
                 .quiz__footer
                     .quiz__btn-next
-                        .btn.btn_primary Следующий вопрос
+                        button.btn.btn_primary Следующий вопрос
 
                     .quiz__btn-prev
-                        .btn.btn_icon-outlined.not-focused.quiz-controller
+                        button.btn.btn_icon-outlined.not-focused.quiz-controller
                             include ../../../img/icon-slider-btn-arr.svg
 
                     .quiz__state
                         .quiz__state-caption
-                            span#numStep 1
+                            span#numStep 5
                             | из 5 вопросов
                         .quiz__progress
                             span.quiz__progress-point
-                                span.dot
+                                span.dot.visible
                             span.quiz__progress-point
-                                span.dot
+                                span.dot.visible
                             span.quiz__progress-point
-                                span.dot
+                                span.dot.visible
                             span.quiz__progress-point
-                                span.dot
+                                span.dot.visible
                             span.quiz__progress-point
-                                span.dot
+                                span.dot.visible
                             span.quiz__progress-point
-                                span.dot
+                                span.dot.visible
                             span.quiz__progress-point
                                 span.dot
                             span.quiz__progress-point

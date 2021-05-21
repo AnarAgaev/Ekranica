@@ -88,14 +88,14 @@
             width: 100%;
             margin: 0;
             border-radius: 34px;
-            border: 6px solid $color-back-secondary;
             box-shadow:
+                    0 0 0 6px $color-back-secondary,
                     inset -2px -2px 3px rgba(35, 33, 58, 0.5),
-                    inset 2px 2px 3px rgba(0, 2, 12, 0.5),
-                    -14px -28px 30px rgba(35, 33, 58, 0.35),
-                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    inset 2px 3px 6px rgba(0, 2, 12, 0.5),
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6),
                     -6px -6px 30px rgba(35, 33, 58, 0.5),
-                    6px 6px 30px rgba(0, 2, 12, 0.4);
+                    6px 6px 30px rgba(0, 2, 12, 0.3);
         }
     }
 
@@ -120,7 +120,7 @@
 
         @media (min-width: $lg) {
             top: 28px;
-            right: 28px;
+            right: 34px;
 
             &:hover {
                 button {
@@ -135,7 +135,7 @@
 
         @media (min-width: $xl) {
             top: 42px;
-            right: 42px;
+            right: 48px;
         }
 
         svg {
@@ -171,8 +171,9 @@
     }
 
     &__prolog {
+        display: none;
+        width: 100%;
         padding-top: 56px;
-        display: block;
 
         @media (min-width: $md) {
             padding-top: 0;
@@ -282,15 +283,326 @@
     }
 
     &__questions {
-        display: none;
+        display: block;
+        width: 100%;
+
+        @media (min-width: $lg) {
+            padding: 34px 136px 44px;
+        }
+
+        @media (min-width: $xl) {
+            padding: 63px 192px 68px 192px;
+        }
+    }
+
+    &__body {
+        padding-top: 56px;
+        margin-bottom: 48px;
+
+        @media (min-width: $md) {
+            padding-top: 0;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 69px;
+        }
     }
 
     &__slide {
-     display: none;
-
+        display: none;
 
         &.active {
             display: block;
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 130%;
+            letter-spacing: 0.02em;
+            color: $color-text-secondary;
+            margin-bottom: 12px;
+
+            @media (min-width: $md) {
+                font-weight: bold;
+                font-size: 40px;
+                line-height: 140%;
+                color: $color-text-primary;
+                margin-bottom: 68px;
+            }
+
+            @media (min-width: $lg) {
+                font-size: 24px;
+                line-height: 130%;
+                color: $color-text-secondary;
+                margin-bottom: 16px;
+                text-align: center;
+            }
+
+            @media (min-width: $xl) {
+                font-size: 30px;
+                line-height: 140%;
+                max-width: 540px;
+                margin: 0 auto 23px;
+            }
+        }
+
+        &-subtitle {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 160%;
+            color: $color-text-inactive;
+            margin-bottom: 48px;
+
+            @media (min-width: $md) {
+                font-size: 16px;
+                margin-bottom: 34px;
+                max-width: 600px;
+                line-height: 163%;
+            }
+
+            @media (min-width: $lg) {
+                font-size: 14px;
+                text-align: center;
+                margin: 0 auto 34px;
+                max-width: 500px;
+            }
+
+            @media (min-width: $xl) {
+                margin-bottom: 67px;
+            }
+        }
+    }
+
+    &__slide-controllers {
+
+    }
+
+    &__radio-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        input[type="radio"]:checked + label::after {
+            opacity: 1;
+        }
+
+        @media (min-width: $lg) {
+            flex-direction: row;
+            justify-content: space-between;
+
+            input[type="radio"]:checked + label {
+                cursor: default;
+                
+                &::before {
+                    opacity: 1;
+                }
+
+                .text {
+                    color: $color-accent;
+                }
+            }
+        }
+    }
+
+    &__radio-group-controller {
+        display: inline-block;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        margin-bottom: 18px;
+        padding-left: 32px;
+        position: relative;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: $lg) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 445px;
+            height: 270px;
+            padding: 0;
+            margin: 0;
+            background: $color-back-secondary;
+            box-shadow:
+                    -14px -14px 40px rgba(35, 33, 58, 0.35),
+                    16px 5px 40px rgba(4, 5, 14, 0.6);
+            border-radius: 12px;
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+
+                .text {
+                    color: $color-accent;
+                }
+            }
+        }
+
+        @media (min-width: $xl) {
+            width: 624px;
+            height: 380px;
+            box-shadow:
+                    -14px -28px 30px rgba(35, 33, 58, 0.15),
+                    14px 28px 30px rgba(4, 5, 14, 0.3),
+                    -6px -6px 30px rgba(35, 33, 58, 0.15),
+                    6px 6px 30px rgba(0, 2, 12, 0.3);
+            cursor: pointer;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            background: $color-back-secondary;
+            box-shadow:
+                    -2px -4px 8px rgba(35, 33, 58, 0.6),
+                    2px 4px 8px rgba(4, 5, 14, 0.6),
+                    -1px -1px 8px rgba(35, 33, 58, 0.6),
+                    1px 1px 8px rgba(0, 2, 12, 0.6),
+                    inset -2px -4px 8px rgba(35, 33, 58, 0.6),
+                    inset 2px 4px 8px rgba(4, 5, 14, 0.8);
+            border-radius: 50%;
+
+            @media (min-width: $lg) {
+                width: calc(100% + 6px);
+                height: calc(100% + 6px);
+                top: -3px;
+                left: -3px;
+                background-color: transparent;
+                background-image: linear-gradient(89.25deg, rgba(180, 135, 255, 0.5) 0.21%, rgba(152, 101, 226, 0.5) 100.18%);
+                box-shadow: none;
+                border-radius: 16px;
+                opacity: 0;
+                z-index: 1;
+                transition: all .3s;
+            }
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            top: 7px;
+            left: 4px;
+            background: $color-accent;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.56);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity .2s linear;
+
+            @media (min-width: $lg) {
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                top: 2px;
+                left: 2px;
+                background-color: $color-back-secondary;
+                box-shadow: none;
+                border-radius: 12px;
+                opacity: 1;
+                z-index: 2;
+            }
+
+            @media (min-width: $xl) {
+                width: calc(100% - 6px);
+                height: calc(100% - 6px);
+                top: 3px;
+                left: 3px;
+            }
+        }
+
+        .picture {
+            display: none;
+
+            @media (min-width: $lg) {
+                position: relative;
+                display: block;
+                z-index: 3;
+            }
+
+            svg {
+                position: relative;
+            }
+        }
+
+        .text {
+            @media (min-width: $lg) {
+                position: absolute;
+                width: 100%;
+                height: auto;
+                left: 0;
+                bottom: 16px;
+                text-align: center;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 160%;
+                color: $color-text-inactive;
+                transition: all .3s ;
+                z-index: 3;
+            }
+
+            @media (min-width: $xl) {
+                font-size: 16px;
+                bottom: 24px;
+            }
+        }
+    }
+
+    #quizLocationOutside {
+        & + label svg {
+            top: -21px;
+            left: 15px;
+            width: 224px;
+            height: auto;
+
+            @media (min-width: $xl) {
+                top: -25px;
+                left: 21px;
+                width: 309px;
+            }
+        }
+    }
+
+    #quizLocationInside {
+        & + label svg {
+            top: 0;
+            left: 19px;
+            width: 218px;
+            height: auto;
+
+            @media (min-width: $xl) {
+                top: 4px;
+                left: 11px;
+                width: 304px;
+            }
+        }
+    }
+
+    #quizRent,
+    #quizBuy {
+        & + label svg {
+            top: 19px;
+            left: -5px;
+            width: 146px;
+            height: auto;
+
+            @media (min-width: $xl) {
+                top: -6px;
+                left: -4px;
+                width: 241px;
+            }
         }
     }
 
@@ -298,22 +610,72 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: flex-end;
 
+        @media (min-width: $lg) {
+            flex-wrap: nowrap;
+        }
+
+        @media (min-width: $xl) {
+        }
     }
 
     &__btn-next {
         width: 100%;
         margin-bottom: 68px;
+
+        @media (min-width: $md) {
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: $lg) {
+            width: auto;
+            margin-bottom: 0;
+            order: 3;
+        }
+
+        @media (min-width: $xl) {
+        }
     }
 
     &__btn-prev {
+        width: 40px;
+        height: 40px;
 
+        @media (min-width: $md) {
+            width: 48px;
+            height: 48px;
+        }
+
+        @media (min-width: $lg) {
+            width: 50px;
+            height: 50px;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+
+            svg {
+                width: 9px;
+                height: auto;
+                transform: scale(-1, 1);
+                margin-left: -2px;
+            }
+        }
     }
 
     &__state {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        @media (min-width: $lg) {
+            align-items: flex-start;
+        }
+
+        @media (min-width: $xl) {
+        }
     }
 
     &__state-caption {
@@ -327,6 +689,14 @@
             display: inline-block;
             margin-right: 4px;
         }
+
+        @media (min-width: $lg) {
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: $xl) {
+        }
     }
 
     &__progress {
@@ -334,26 +704,109 @@
     }
 
     &__progress-point {
-        display: inline-block;
+        display: none;
+        position: relative;
         width: 16px;
         height: 16px;
         margin-left: 16px;
-        background: #0D101F;
+        background: $color-back-secondary;
         box-shadow:
                 -2px -4px 8px rgba(35, 33, 58, 0.6),
                 2px 4px 8px rgba(4, 5, 14, 0.6),
                 -1px -1px 8px rgba(35, 33, 58, 0.6),
-                1px 1px 8px rgba(0, 2, 12, 0.6);
-        border-radius: 100px;
-        transform: rotate(-90deg);
+                1px 1px 8px rgba(0, 2, 12, 0);
+        border-radius: 50%;
 
-        &:nth-child(n + 5) {
-            display: none;
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:nth-child(-n + 5) {
+            display: inline-block;
+        }
+
+        @media (min-width: $lg) {
+            &:nth-child(-n + 20) {
+                display: inline-block;
+            }
+        }
+
+        @media (min-width: $xl) {
+            display: inline-block !important;
+        }
+
+        .dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            left: 4px;
+            top: 4px;
+            background: #B2ACE8;
+            box-shadow: 0 0 8px rgba(171, 120, 255, 0.68);
+            border-radius: 50%;
+            transform: rotate(-90deg);
+            opacity: 0;
+            transition: opacity .3s linear;
+
+            &.visible {
+                opacity: 1;
+            }
         }
     }
 
     &__messege {
         display: none;
+        width: 100%;
     }
 
+    .form-order {
+        input,
+        textarea {
+            background: $color-back-secondary;
+            box-shadow:
+                    -10px -10px 30px rgba(35, 33, 58, 0.35),
+                    10px 10px 30px rgba(4, 5, 14, 0.55),
+                    inset -5px -6px 20px rgba(35, 33, 58, 0.3),
+                    inset 5px 6px 20px rgba(0, 2, 12, 0.5);
+        }
+
+        &__privacy {
+            margin-bottom: 0;
+        }
+
+        &__actions {
+            @media (min-width: $lg) {
+                margin-top: -51px;
+            }
+
+            @media (min-width: $xl) {
+                margin-top: -18px;
+            }
+        }
+    }
+
+    //- Стили для firefox
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+
+    //- скроллбар
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background: transparent;
+    }
+}
+
+#quizSlide_5 {
+    .quiz__slide-title {
+        @media (min-width: $md) and (max-width: $lg - 1) {
+            margin-bottom: 8px;
+        }
+    }
+
+    .quiz__slide-subtitle {
+        @media (min-width: $md) and (max-width: $lg - 1) {
+            margin-bottom: 48px;
+        }
+    }
 }
