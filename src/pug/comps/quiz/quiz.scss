@@ -171,7 +171,7 @@
     }
 
     &__prolog {
-        display: none;
+        display: block;
         width: 100%;
         padding-top: 56px;
 
@@ -283,7 +283,7 @@
     }
 
     &__questions {
-        display: block;
+        display: none;
         width: 100%;
 
         @media (min-width: $lg) {
@@ -1021,9 +1021,89 @@
         }
     }
 
-    &__messege {
+    &__epilog {
         display: none;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
+        padding-top: 56px;
+
+        @media (min-width: $md) {
+            padding-top: 0;
+        }
+
+        @media (min-width: $lg) {
+            padding: 76px 0 96px 0;
+        }
+
+        @media (min-width: $xl) {
+            padding: 114px 0 134px 0;
+        }
+
+        .title {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 130%;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: $color-text-secondary;
+            margin-bottom: 12px;
+
+            @media (min-width: $md) {
+                order: 2;
+                font-weight: bold;
+                font-size: 40px;
+                line-height: 140%;
+                color: $color-text-primary;
+                margin-bottom: 16px;
+            }
+        }
+
+        .subtitle {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 160%;
+            text-align: center;
+            color: $color-text-inactive;
+            margin-bottom: 16px;
+            max-width: 200px;
+
+            @media (min-width: $md) {
+                order: 3;
+                font-size: 16px;
+                margin-bottom: 48px;
+                max-width: none;
+            }
+        }
+
+        .pic {
+            width: 128px;
+            height: 128px;
+            margin-bottom: 16px;
+            position: relative;
+
+            @media (min-width: $md) {
+                order: 1;
+                margin-bottom: 24px;
+            }
+
+            img {
+                display: block;
+                max-width: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 152px;
+                height: auto;
+            }
+        }
+
+        .btn {
+            @media (min-width: $md) {
+                order: 4;
+            }
+        }
     }
 
     .form-order {
@@ -1244,6 +1324,22 @@
         @media (min-width: $xl) {
             max-width: 540px;
             margin: 0 auto 23px;
+        }
+    }
+}
+
+#quizSlide_4 {
+    .quiz__slide-title {
+        @media (min-width: $md) {
+            max-width: 500px;
+        }
+
+        @media (min-width: $lg) {
+            max-width: none;
+        }
+
+        @media (min-width: $xl) {
+            max-width: 540px;
         }
     }
 }

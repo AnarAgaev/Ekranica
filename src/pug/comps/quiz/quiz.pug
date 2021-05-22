@@ -13,11 +13,16 @@
                     .subtitle Предлагаем пройти тест из 5 вопросов, на основании ответов на которые, мы бесплатно подберем нужную вам конфигурацию
                     .btn.btn_primary#buttonQuizAciton Пройти тест
 
-            .quiz__questions(data-state-question="1")
+            .quiz__epilog
+                .title Заявка отправлена
+                .subtitle Перезвоним вам в ближайшее время
+                .pic
+                    img(src="/img/icon-modal-phone.svg" alt="")
+                button.btn.btn_primary.btn-quiz-toggle Закрыть окно
+
+            .quiz__questions
                 .quiz__body
-                    
-                    
-                    .quiz__slide#quizSlide_1
+                    .quiz__slide.active#quizSlide_1
                         .quiz__slide-title Где будет стоять экран?
                         .quiz__slide-subtitle Уличные экраны, в отличии от внутренних, защищены от воздействий внешней среды и светят ярче солнечного света
                         .quiz__slide-controllers
@@ -30,8 +35,6 @@
                                 label.quiz__controller(for='quizLocationInside')
                                     img.picture(src="/img/quiz-location-inside.png" alt="")
                                     span.text В помещении
-
-                    
                     .quiz__slide#quizSlide_2
                         .quiz__slide-title Какое расстояние от экрана до наблюдателя?
                         .quiz__slide-subtitle На какое минимальное расстояние зритель может подойти без ухудшения качества изображения
@@ -47,9 +50,7 @@
                                             .picture
                                                 include ../../../img/icon-smile.svg
                                             span.text 12 метров достаточно, чтобы не травмировать глаза наблюдателя
-
-                    
-                    .quiz__slide.active#quizSlide_3
+                    .quiz__slide#quizSlide_3
                         .quiz__slide-title Какими должны быть ширина и высота экрана?
                         .quiz__slide-subtitle Эти параметры влияют на количество пикселей, размер экрана, цену и расходы на транспортировку
                         .quiz__slide-controllers
@@ -60,8 +61,6 @@
                                 .quiz__sliders
                                     include ../custom-range/custom-range-quiz-width
                                     include ../custom-range/custom-range-quiz-height
-
-
                     .quiz__slide#quizSlide_4
                         .quiz__slide-title Нужна аренда или хотите купить сразу?
                         .quiz__slide-subtitle
@@ -78,8 +77,6 @@
                                 label.quiz__controller(for='quizBuy')
                                     img.picture(src="/img/quiz-buy.png" alt="")
                                     span.text Куплю сразу
-
-                    
                     .quiz__slide#quizSlide_5
                         .quiz__slide-title Оставьте свои контакты
                         .quiz__slide-subtitle Свяжемся с вами в течение дня и поможем подобрать оптимальный вариант экрана
@@ -159,5 +156,3 @@
                                 span.dot
                             span.quiz__progress-point
                                 span.dot
-
-            .quiz__messege
