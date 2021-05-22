@@ -608,6 +608,19 @@
         }
     }
 
+    #quizSlide_3 .quiz__controller .picture {
+        top: -30px;
+        left: 18px;
+        width: 294px;
+        margin: 0 auto;
+
+        @media (min-width: $xl) {
+            top: -4px;
+            left: 13px;
+            width: 347px;
+        }
+    }
+
     &__slider-group {
         @media (min-width: $lg) {
             display: flex;
@@ -624,6 +637,67 @@
         @media (min-width: $xl) {
             width: 624px;
             padding-top: 29px;
+        }
+    }
+
+    &__sliders {
+        @media (min-width: $md) {
+            display: flex;
+        }
+
+        @media (min-width: $lg) {
+            display: block;
+            width: 417px;
+            padding-top: 13px;
+        }
+
+        @media (min-width: $xl) {
+            width: 624px;
+            padding-top: 29px;
+        }
+
+        .label-controll {
+            margin-bottom: 48px;
+
+            @media (min-width: $md) {
+                margin-bottom: 0;
+            }
+
+            &:first-child {
+                @media (min-width: $md) {
+                    margin-right: 48px;
+                }
+
+                @media (min-width: $lg) {
+                    margin-bottom: 80px;
+                }
+
+                @media (min-width: $xl) {
+                    margin-bottom: 96px;
+                }
+
+                .input-suffix {
+                    @media (min-width: $lg) {
+                        margin-left: 74px;
+                    }
+
+                    @media (min-width: $xl) {
+                        margin-left: 128px;
+                    }
+                }
+            }
+
+            &:last-child {
+                .input-suffix {
+                    @media (min-width: $lg) {
+                        margin-left: 65px;
+                    }
+
+                    @media (min-width: $xl) {
+                        margin-left: 128px;
+                    }
+                }
+            }
         }
     }
 
@@ -1132,6 +1206,43 @@
 
         @media (min-width: $xl) {
             max-width: 500px;
+            margin: 0 auto 23px;
+        }
+    }
+}
+
+#quizSlide_3 {
+    .quiz__controller {
+        display: none;
+        cursor: default;
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        .text {
+            color: $color-accent;
+        }
+    }
+
+    .quiz__slide-title {
+        @media (min-width: $md) {
+            max-width: 500px;
+            margin-bottom: 13px;
+        }
+
+        @media (min-width: $lg) {
+            max-width: 430px;
+            margin: 0 auto 16px;
+        }
+
+        @media (min-width: $xl) {
+            max-width: 540px;
             margin: 0 auto 23px;
         }
     }

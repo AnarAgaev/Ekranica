@@ -32,7 +32,7 @@
                                     span.text В помещении
 
                     
-                    .quiz__slide.active#quizSlide_2
+                    .quiz__slide#quizSlide_2
                         .quiz__slide-title Какое расстояние от экрана до наблюдателя?
                         .quiz__slide-subtitle На какое минимальное расстояние зритель может подойти без ухудшения качества изображения
                         .quiz__slide-controllers
@@ -41,7 +41,7 @@
                                     img.picture(src="/img/quiz-distance.png" alt="")
                                     span.text 12 метров
                                 .quiz__single-slider
-                                    include ../custom-range/custom-range-distance
+                                    include ../custom-range/custom-range-quiz-distance
                                     .quiz__distance-comment
                                         .comment-item
                                             .picture
@@ -49,12 +49,19 @@
                                             span.text 12 метров достаточно, чтобы не травмировать глаза наблюдателя
 
                     
-                    .quiz__slide#quizSlide_3
-                        .quiz__slide-title
-                        .quiz__slide-subtitle
+                    .quiz__slide.active#quizSlide_3
+                        .quiz__slide-title Какими должны быть ширина и высота экрана?
+                        .quiz__slide-subtitle Эти параметры влияют на количество пикселей, размер экрана, цену и расходы на транспортировку
                         .quiz__slide-controllers
+                            .quiz__slider-group
+                                .quiz__controller
+                                    img.picture(src="/img/quiz-size.png" alt="")
+                                    span.text 12 x 8 метров
+                                .quiz__sliders
+                                    include ../custom-range/custom-range-quiz-width
+                                    include ../custom-range/custom-range-quiz-height
 
-                    
+
                     .quiz__slide#quizSlide_4
                         .quiz__slide-title Нужна аренда или хотите купить сразу?
                         .quiz__slide-subtitle
