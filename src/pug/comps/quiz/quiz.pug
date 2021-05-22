@@ -15,31 +15,47 @@
 
             .quiz__questions(data-state-question="1")
                 .quiz__body
+                    
+                    
                     .quiz__slide#quizSlide_1
                         .quiz__slide-title Где будет стоять экран?
                         .quiz__slide-subtitle Уличные экраны, в отличии от внутренних, защищены от воздействий внешней среды и светят ярче солнечного света
                         .quiz__slide-controllers
                             .quiz__radio-group
                                 input#quizLocationOutside(type='radio' name='type' value='')
-                                label.quiz__radio-group-controller(for='quizLocationOutside')
+                                label.quiz__controller(for='quizLocationOutside')
                                     img.picture(src="/img/quiz-location-outside.png" alt="")
                                     span.text На улице
                                 input#quizLocationInside(type='radio' name='type' value='')
-                                label.quiz__radio-group-controller(for='quizLocationInside')
+                                label.quiz__controller(for='quizLocationInside')
                                     img.picture(src="/img/quiz-location-inside.png" alt="")
                                     span.text В помещении
 
-                    .quiz__slide#quizSlide_2
-                        .quiz__slide-title
-                        .quiz__slide-subtitle
+                    
+                    .quiz__slide.active#quizSlide_2
+                        .quiz__slide-title Какое расстояние от экрана до наблюдателя?
+                        .quiz__slide-subtitle На какое минимальное расстояние зритель может подойти без ухудшения качества изображения
                         .quiz__slide-controllers
+                            .quiz__slider-group
+                                .quiz__controller
+                                    img.picture(src="/img/quiz-distance.png" alt="")
+                                    span.text 12 метров
+                                .quiz__single-slider
+                                    include ../custom-range/custom-range-distance
+                                    .quiz__distance-comment
+                                        .comment-item
+                                            .picture
+                                                include ../../../img/icon-smile.svg
+                                            span.text 12 метров достаточно, чтобы не травмировать глаза наблюдателя
 
+                    
                     .quiz__slide#quizSlide_3
                         .quiz__slide-title
                         .quiz__slide-subtitle
                         .quiz__slide-controllers
 
-                    .quiz__slide.active#quizSlide_4
+                    
+                    .quiz__slide#quizSlide_4
                         .quiz__slide-title Нужна аренда или хотите купить сразу?
                         .quiz__slide-subtitle
                             | При аренде настроим всё по техзаданию.
@@ -48,14 +64,15 @@
                         .quiz__slide-controllers
                             .quiz__radio-group
                                 input#quizRent(type='radio' name='type' value='')
-                                label.quiz__radio-group-controller(for='quizRent')
+                                label.quiz__controller(for='quizRent')
                                     img.picture(src="/img/quiz-rent.png" alt="")
                                     span.text Нужна аренда
                                 input#quizBuy(type='radio' name='type' value='')
-                                label.quiz__radio-group-controller(for='quizBuy')
+                                label.quiz__controller(for='quizBuy')
                                     img.picture(src="/img/quiz-buy.png" alt="")
                                     span.text Куплю сразу
 
+                    
                     .quiz__slide#quizSlide_5
                         .quiz__slide-title Оставьте свои контакты
                         .quiz__slide-subtitle Свяжемся с вами в течение дня и поможем подобрать оптимальный вариант экрана
@@ -72,7 +89,7 @@
 
                     .quiz__state
                         .quiz__state-caption
-                            span#numStep 5
+                            span#numStep 2
                             | из 5 вопросов
                         .quiz__progress
                             span.quiz__progress-point
