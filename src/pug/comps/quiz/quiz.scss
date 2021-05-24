@@ -79,6 +79,9 @@
         background-clip: padding-box;
         outline: 0;
         background: $color-back-secondary;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all .3s linear;
 
         @media (min-width: $md) {
             width: 87.5%;
@@ -97,6 +100,12 @@
                     -6px -6px 30px rgba(35, 33, 58, 0.5),
                     6px 6px 30px rgba(0, 2, 12, 0.3);
         }
+
+        &.hide {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
     }
 
     &__button-close {

@@ -11,7 +11,7 @@
                 .title Как определить какой именно экран, подойдет лучше всего?
                 .content
                     .subtitle Предлагаем пройти тест из 5 вопросов, на основании ответов на которые, мы бесплатно подберем нужную вам конфигурацию
-                    .btn.btn_primary#buttonQuizAciton Пройти тест
+                    .btn.btn_primary#btnQuizQuestionsStart Пройти тест
 
             .quiz__epilog
                 .title Заявка отправлена
@@ -22,6 +22,7 @@
 
             .quiz__questions
                 .quiz__body
+
                     .quiz__slide.active#quizSlide_1
                         .quiz__slide-title Где будет стоять экран?
                         .quiz__slide-subtitle Уличные экраны, в отличии от внутренних, защищены от воздействий внешней среды и светят ярче солнечного света
@@ -35,6 +36,7 @@
                                 label.quiz__controller(for='quizLocationInside')
                                     img.picture(src="/img/quiz-location-inside.png" alt="")
                                     span.text В помещении
+
                     .quiz__slide#quizSlide_2
                         .quiz__slide-title Какое расстояние от экрана до наблюдателя?
                         .quiz__slide-subtitle На какое минимальное расстояние зритель может подойти без ухудшения качества изображения
@@ -50,6 +52,7 @@
                                             .picture
                                                 include ../../../img/icon-smile.svg
                                             span.text 12 метров достаточно, чтобы не травмировать глаза наблюдателя
+
                     .quiz__slide#quizSlide_3
                         .quiz__slide-title Какими должны быть ширина и высота экрана?
                         .quiz__slide-subtitle Эти параметры влияют на количество пикселей, размер экрана, цену и расходы на транспортировку
@@ -61,6 +64,7 @@
                                 .quiz__sliders
                                     include ../custom-range/custom-range-quiz-width
                                     include ../custom-range/custom-range-quiz-height
+
                     .quiz__slide#quizSlide_4
                         .quiz__slide-title Нужна аренда или хотите купить сразу?
                         .quiz__slide-subtitle
@@ -77,6 +81,7 @@
                                 label.quiz__controller(for='quizBuy')
                                     img.picture(src="/img/quiz-buy.png" alt="")
                                     span.text Куплю сразу
+
                     .quiz__slide#quizSlide_5
                         .quiz__slide-title Оставьте свои контакты
                         .quiz__slide-subtitle Свяжемся с вами в течение дня и поможем подобрать оптимальный вариант экрана
@@ -85,7 +90,7 @@
 
                 .quiz__footer
                     .quiz__btn-next
-                        button.btn.btn_primary Следующий вопрос
+                        button.btn.btn_primary#quizBtnNextStep Следующий вопрос
 
                     .quiz__btn-prev
                         button.btn.btn_icon-outlined.not-focused.quiz-controller

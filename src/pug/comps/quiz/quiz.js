@@ -6,6 +6,13 @@ $(document).ready(function () {
     let buttonsQuizToggle = $('.btn-quiz-toggle');
     addHandleClickToButtonsQuizToggle(buttonsQuizToggle);
 
+    // Start quiz questions
+    let btnQuizQuestionsStart = $('#btnQuizQuestionsStart')[0];
+    addHandleClickToButtonQuestionsStart(btnQuizQuestionsStart);
+
+
+
+
 
 
 
@@ -57,4 +64,54 @@ $(document).ready(function () {
     function isQuizVisible() {
         return $('#quiz').hasClass('visible');
     }
+
+    function addHandleClickToButtonQuestionsStart(button) {
+        $(button).on(
+            'click',
+            showQuizQuestions
+        );
+    }
+
+    function showQuizQuestions() {
+        // take this parameter in CSS from .quiz__content class
+        const ANIMATION_TIME = 700;
+
+        let quizProlog = $('.quiz__prolog')[0];
+        let quizQuestions = $('.quiz__questions')[0];
+
+        hideQuizBody();
+
+        setTimeout(
+            () => {
+                hidePrologSlide(quizProlog);
+                showQuestionsSlide(quizQuestions);
+                showQuizBody();
+            },
+            ANIMATION_TIME + 100
+        );
+    }
+
+    function hidePrologSlide(prolog) {
+        $(prolog).css('display', 'none');
+    }
+
+    function showQuestionsSlide(questions) {
+        $(questions).css('display', 'block');
+    }
+
+    function hideQuizBody() {
+        let quizBody = $('.quiz__content');
+
+        $(quizBody).addClass('hide');
+    }
+
+    function showQuizBody() {
+        let quizBody = $('.quiz__content');
+
+        $(quizBody).removeClass('hide');
+    }
+
+
+
+
 });
