@@ -414,7 +414,7 @@
         }
     }
 
-    &__controller {
+    &__card {
         display: inline-block;
         font-weight: normal;
         font-size: 16px;
@@ -604,7 +604,7 @@
         }
     }
 
-    #quizSlide_2 .quiz__controller .picture {
+    #quizSlide_2 .quiz__card .picture {
         top: -34px;
         left: 28px;
         width: 279px;
@@ -617,7 +617,7 @@
         }
     }
 
-    #quizSlide_3 .quiz__controller .picture {
+    #quizSlide_3 .quiz__card .picture {
         top: -30px;
         left: 18px;
         width: 294px;
@@ -910,7 +910,32 @@
             order: 3;
         }
 
-        @media (min-width: $xl) {
+        .btn {
+            &.disabled {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 160%;
+                color: $color-icons-inactive;
+                border: 2px solid #141727;
+                background: $color-back-secondary;
+                box-shadow:
+                        -14px -28px 30px rgba(35, 33, 58, 0.35),
+                        14px 28px 30px rgba(4, 5, 14, 0.3),
+                        inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                        inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+                cursor: default;
+
+                &:hover {
+                    color: $color-icons-inactive;
+                    border: 2px solid #141727;
+                    background: $color-back-secondary;
+                    box-shadow:
+                            -14px -28px 30px rgba(35, 33, 58, 0.35),
+                            14px 28px 30px rgba(4, 5, 14, 0.3),
+                            inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                            inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+                }
+            }
         }
     }
 
@@ -1017,14 +1042,20 @@
             height: 8px;
             left: 4px;
             top: 4px;
-            background: #B2ACE8;
-            box-shadow: 0 0 8px rgba(171, 120, 255, 0.68);
             border-radius: 50%;
             transform: rotate(-90deg);
             opacity: 0;
-            transition: opacity .3s linear;
+            transition: all .3s linear;
 
-            &.visible {
+            &.active {
+                background: #B2ACE8;
+                box-shadow: 0 0 8px rgba(171, 120, 255, 0.68);
+                opacity: 1;
+            }
+
+            &.selected {
+                background: linear-gradient(90deg, #B487FF -1.04%, #9865E2 101.04%);
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.56);
                 opacity: 1;
             }
         }
@@ -1262,7 +1293,7 @@
 }
 
 #quizSlide_2 {
-    .quiz__controller {
+    .quiz__card {
         display: none;
         cursor: default;
 
@@ -1301,7 +1332,7 @@
 }
 
 #quizSlide_3 {
-    .quiz__controller {
+    .quiz__card {
         display: none;
         cursor: default;
 
