@@ -91,14 +91,8 @@ $(document).ready(function () {
         "accept",
         function () {
 
-            setQuizStateProp('distance', quizDistanceMask)
-
-            $(quizDistanceRange).val(
-                QUIZ_STATE.distance === undefined
-                    ? 1
-                    : QUIZ_STATE.distance
-                );
-
+            setQuizStateProp('distance', quizDistanceMask);
+            resetErrorRangeValueToMinimum(quizDistanceRange, 'distance');
             setDistanceText();
             setDistanceUnit();
             checkButtonNext();
@@ -177,6 +171,7 @@ $(document).ready(function () {
         return distanceCommentId;
     }
 
+
     // Select Size Width property
     const quizSizeWidthEl = $('#quizSizeWidth')
         .children('input')[0];
@@ -203,13 +198,7 @@ $(document).ready(function () {
         function () {
 
             setQuizStateProp('sizeWidth', quizSizeWidthMask)
-
-            $(quizSizeWidthRange).val(
-                QUIZ_STATE.sizeWidth === undefined
-                    ? 1
-                    : QUIZ_STATE.sizeWidth
-            );
-
+            resetErrorRangeValueToMinimum(quizSizeWidthRange, 'sizeWidth');
             checkStateSize();
             setSizeText();
             setSizeWidthUnit();
@@ -237,6 +226,7 @@ $(document).ready(function () {
         $(sizeWidthUnits).text(text);
     }
 
+
     // Select Size Width property
     const quizSizeHeightEl = $('#quizSizeHeight')
         .children('input')[0];
@@ -263,13 +253,7 @@ $(document).ready(function () {
         function () {
 
             setQuizStateProp('sizeHeight', quizSizeHeightMask);
-
-            $(quizSizeHeightRange).val(
-                QUIZ_STATE.sizeHeight === undefined
-                    ? 1
-                    : QUIZ_STATE.sizeHeight
-            );
-
+            resetErrorRangeValueToMinimum(quizSizeHeightRange, 'sizeHeight');
             checkStateSize();
             setSizeText();
             setSizeHeightUnit();
@@ -322,8 +306,12 @@ $(document).ready(function () {
             : iMask.unmaskedValue;
     }
     
-    function setRangeFromIMask() {
-
+    function resetErrorRangeValueToMinimum(controller, propName) {
+        $(controller).val(
+            QUIZ_STATE[propName] === undefined
+                ? 1
+                : QUIZ_STATE[propName]
+        );
     }
 
 
