@@ -65,7 +65,6 @@ $(document).ready(function () {
     let locationControls = $('#quizSlide_1 .quiz__card');
     addHandleClickToLocationCard(locationControls);
 
-
     // Select distance property
     const quizDistanceEl = $('#quizDistance')
         .children('input')[0];
@@ -526,6 +525,7 @@ $(document).ready(function () {
                             blockUnblockTransition(nextBtn);
                             blockUnblockTransition(prevBtn);
                             checkProgress(filteredProgressDots());
+                            setNumberOfQuizSlide();
                         },
                         ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
                     );
@@ -553,6 +553,7 @@ $(document).ready(function () {
                             checkButtonNext();
                             showQuizBody();
                             checkProgress(filteredProgressDots());
+                            setNumberOfQuizSlide();
                         },
                         ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
                     );
