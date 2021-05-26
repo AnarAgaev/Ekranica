@@ -15,7 +15,7 @@ $(document).ready(function () {
      * @contactsPhone {string} required field with validation by iMask
      * @distance {string} string with number from 1 to 50
      * @location {string} like inside or outside
-     * @rent {boolean} TRUE if rent is need or FALSE else
+     * @contract {string} rent or buy
      * @size {boolean} is size of screen selected
      * @sizeHeight {number}  from 1 to 100
      * @sizeWidth {number} from 1 to 100
@@ -27,7 +27,7 @@ $(document).ready(function () {
         contactsPhone: undefined,
         distance: undefined,
         location: undefined,
-        rent: undefined,
+        contract: undefined,
         size: undefined,
         sizeHeight: undefined,
         sizeWidth: undefined,
@@ -64,6 +64,11 @@ $(document).ready(function () {
     // Select location property
     let locationControls = $('#quizSlide_1 .quiz__card');
     addHandleClickToLocationCard(locationControls);
+
+    // Select rent property
+    let rentControls = $('#quizSlide_4 .quiz__card');
+    addHandleClickToRentCard(rentControls);
+
 
     // Select distance property
     const quizDistanceEl = $('#quizDistance')
@@ -451,6 +456,25 @@ $(document).ready(function () {
     }
 
     function setQuizLocation (controller) {
+        let property = $(controller).data('quizProperty');
+        let value = $(controller).data('quizValue');
+
+        QUIZ_STATE[property] = value;
+    }
+
+    function addHandleClickToRentCard (controls) {
+        for (let i = 0; i < controls.length; i++) {
+            $(controls[i]).on(
+                'click',
+                function () {
+                    setQuizRent(this);
+                    checkButtonNext();
+                }
+            );
+        }
+    }
+
+    function setQuizRent (controller) {
         let property = $(controller).data('quizProperty');
         let value = $(controller).data('quizValue');
 

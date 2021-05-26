@@ -77,7 +77,7 @@
                                     include ../custom-range/custom-range-quiz-width
                                     include ../custom-range/custom-range-quiz-height
 
-                    .quiz__slide(data-quiz-property="rent")#quizSlide_4
+                    .quiz__slide(data-quiz-property="contract")#quizSlide_4
                         .quiz__slide-title Нужна аренда или хотите купить сразу?
                         .quiz__slide-subtitle
                             | При аренде настроим всё по техзаданию.
@@ -86,13 +86,19 @@
                         .quiz__slide-controllers
                             .quiz__radio-group
                                 input#quizRent(type='radio' name='type' value='')
-                                label.quiz__card(for='quizRent')
-                                    img.picture(src="/img/quiz-rent.png" alt="")
-                                    span.text Нужна аренда
+                                label.quiz__card(
+                                    for='quizRent'
+                                    data-quiz-property="contract"
+                                    data-quiz-value="rent")
+                                        img.picture(src="/img/quiz-rent.png" alt="")
+                                        span.text Нужна аренда
                                 input#quizBuy(type='radio' name='type' value='')
-                                label.quiz__card(for='quizBuy')
-                                    img.picture(src="/img/quiz-buy.png" alt="")
-                                    span.text Куплю сразу
+                                label.quiz__card(
+                                    for='quizBuy'
+                                    data-quiz-property="contract"
+                                    data-quiz-value="buy")
+                                        img.picture(src="/img/quiz-buy.png" alt="")
+                                        span.text Куплю сразу
 
                     .quiz__slide(data-quiz-property="contacts")#quizSlide_5
                         .quiz__slide-title Оставьте свои контакты
