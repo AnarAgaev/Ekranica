@@ -550,6 +550,7 @@ $(document).ready(function () {
                             blockUnblockTransition(prevBtn);
                             checkProgress(filteredProgressDots());
                             setNumberOfQuizSlide();
+                            renameNextButtonOnLastSlide();
                         },
                         ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
                     );
@@ -578,12 +579,24 @@ $(document).ready(function () {
                             showQuizBody();
                             checkProgress(filteredProgressDots());
                             setNumberOfQuizSlide();
+                            renameNextButtonOnLastSlide();
                         },
                         ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
                     );
                 }
             }
         )
+    }
+
+    function renameNextButtonOnLastSlide() {
+        let currentSlideNumber = $('.quiz__slide.active').index();
+        let buttonNextStep = $('#quizBtnNextStep');
+
+        if (currentSlideNumber === 4) {
+            $(buttonNextStep).text('Отправить запрос');
+        } else {
+            $(buttonNextStep).text('Следующий вопрос');
+        }
     }
 
     function hideQuizSlide (slide) {
