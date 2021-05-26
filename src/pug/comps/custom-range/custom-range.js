@@ -28,15 +28,7 @@ $(document).ready(function () {
         stateProp = $(controller).data('calcProperty');
 
         if (setValue) {
-            switch(stateProp) {
-                case 'installment':
-                    installmentMask.unmaskedValue = controller.value;
-                    break;
-
-                case 'firstPayment':
-                    firstPaymentMask.unmaskedValue = controller.value;
-                    break;
-            }
+            setValueInControllerInput(controller, stateProp);
         }
 
         installmentCalcState[$(controller).data('calcProperty')] = controller.value;
@@ -45,11 +37,29 @@ $(document).ready(function () {
         $(slider).css('left', sliderOffsetLeft + 'px');
     }
 
+    // Handle change value into the input type range
     if (ranges.length > 0) {
         for (let i = 0; i < ranges.length; i++) {
             $(ranges[i]).on('input',function () {
                 setRange(this);
             });
+        }
+    }
+
+    // Set value to the iMask input after the input type range has changed
+    function setValueInControllerInput(controller, stateProp) {
+        switch(stateProp) {
+            case 'installment':
+                installmentMask.unmaskedValue = controller.value;
+                break;
+
+            case 'firstPayment':
+                firstPaymentMask.unmaskedValue = controller.value;
+                break;
+
+            case 'quizDistance':
+                quizDistanceMask.unmaskedValue = controller.value;
+                break;
         }
     }
 });

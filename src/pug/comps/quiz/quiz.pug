@@ -43,6 +43,7 @@
                                         img.picture(src="/img/quiz-location-inside.png" alt="")
                                         span.text В помещении
 
+
                     .quiz__slide(data-quiz-property="distance")#quizSlide_2
                         .quiz__slide-title Какое расстояние от экрана до наблюдателя?
                         .quiz__slide-subtitle На какое минимальное расстояние зритель может подойти без ухудшения качества изображения
@@ -50,14 +51,20 @@
                             .quiz__slider-group
                                 .quiz__card
                                     img.picture(src="/img/quiz-distance.png" alt="")
-                                    span.text 12 метров
+                                    span.text.text_warning#distanceText Выберите расстояние до экрана!
                                 .quiz__single-slider
                                     include ../custom-range/custom-range-quiz-distance
                                     .quiz__distance-comment
                                         .comment-item
                                             .picture
                                                 include ../../../img/icon-smile.svg
-                                            span.text 12 метров достаточно, чтобы не травмировать глаза наблюдателя
+                                            .text
+                                                span(data-quiz-distance-comment="0").visible Выберите расстояние до экрана!
+                                                span(data-quiz-distance-comment="1") Расстояние до экрана в 1 метр - сверхчеткое изображение для особых задач.
+                                                span(data-quiz-distance-comment="24") Расстояние от 2 до 4 метров - для презентаций с мелким текстом.
+                                                span(data-quiz-distance-comment="510") Расстояние от 5 до 10 метров - хорошая картинка для помещения.
+                                                span(data-quiz-distance-comment="1020") Расстояние от 11 до 20 метров - уличный видеоэкран.
+                                                span(data-quiz-distance-comment="2050") Расстояние от 21 до 50 метров - уличный экран или медиафасад.
 
                     .quiz__slide(data-quiz-property="size")#quizSlide_3
                         .quiz__slide-title Какими должны быть ширина и высота экрана?
@@ -108,29 +115,29 @@
                             | из 5 вопросов
                         .quiz__progress
                             span.quiz__progress-point
-                                span.dot.selected
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.selected
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.selected
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.selected
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.selected
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.selected
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.active
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.active
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.active
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.active
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.active
+                                span.dot
                             span.quiz__progress-point
-                                span.dot.active
+                                span.dot
                             span.quiz__progress-point
                                 span.dot
                             span.quiz__progress-point

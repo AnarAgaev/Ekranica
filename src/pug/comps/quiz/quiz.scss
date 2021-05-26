@@ -564,6 +564,12 @@
                 font-size: 16px;
                 bottom: 24px;
             }
+
+            transition: color .3s linear;
+
+            &.text_warning {
+                color: $color-text-inactive !important;
+            }
         }
     }
 
@@ -746,6 +752,22 @@
             font-size: 12px;
             line-height: 160%;
             color: $color-text-inactive;
+            position: relative;
+
+            span {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-40%);
+                opacity: 0;
+                transition: all .3s linear;
+
+                &.visible {
+                    opacity: 1;
+                    transform: translateY(-50%);
+                }
+            }
         }
     }
 
@@ -878,6 +900,10 @@
                 font-size: 18px;
                 color: $color-text-secondary;
                 opacity: 0.5;
+            }
+
+            &#quizDistanceUnits {
+                width: 68px;
             }
         }
     }
@@ -1045,7 +1071,6 @@
             border-radius: 50%;
             transform: rotate(-90deg);
             opacity: 0;
-            transition: all .3s linear;
 
             &.active {
                 background: #B2ACE8;

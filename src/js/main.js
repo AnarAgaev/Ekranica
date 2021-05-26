@@ -260,4 +260,20 @@ $(document).ready(function () {
 
         return months + ' ' + postfix(months, monthsPostfixes);
     }
+
+    // Get word form for meters
+    window.getMeterWordForm = function (num) {
+        let cases = [2, 0, 1, 1, 1, 2];
+        let forms = ['метр', 'метра', 'метров'];
+
+        let resultForm = forms[ (num%100 > 4 && num%100 < 20)
+                                    ? 2
+                                    : cases[ (num%10 < 5)
+                                        ? num%10
+                                        : 5
+                                      ]
+                                ];
+
+        return resultForm;
+    };
 });
