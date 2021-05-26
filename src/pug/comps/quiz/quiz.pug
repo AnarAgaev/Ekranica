@@ -43,7 +43,6 @@
                                         img.picture(src="/img/quiz-location-inside.png" alt="")
                                         span.text В помещении
 
-
                     .quiz__slide(data-quiz-property="distance")#quizSlide_2
                         .quiz__slide-title Какое расстояние от экрана до наблюдателя?
                         .quiz__slide-subtitle На какое минимальное расстояние зритель может подойти без ухудшения качества изображения
@@ -73,7 +72,7 @@
                             .quiz__slider-group
                                 .quiz__card
                                     img.picture(src="/img/quiz-size.png" alt="")
-                                    span.text 12 x 8 метров
+                                    span.text.text_warning#sizeText Выберите размеры экрана!
                                 .quiz__sliders
                                     include ../custom-range/custom-range-quiz-width
                                     include ../custom-range/custom-range-quiz-height

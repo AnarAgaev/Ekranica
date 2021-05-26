@@ -4,14 +4,14 @@
         .label-controll__content
 
             .custom-range
-                .input-suffix.custom-input#quizWidth
+                .input-suffix.custom-input#quizSizeWidth
                     input.value(
                         type="text"
-                        data-calc-property="quiz-width"
-                        value="12"
+                        data-calc-property="quizSizeWidth"
+                        value=""
                     )
                     span.input-suffix__delimiter
-                    span.input-suffix__units метров
+                    span.input-suffix__units#quizSizeWidthUnits метры
 
                 .custom-range__controller
                     span.status-bar
@@ -20,7 +20,7 @@
                         type="range"
                         step="1"
                         min="1"
-                        max="50"
-                        value="12"
-                        data-calc-property="quiz-width"
+                        max="100"
+                        value="1"
+                        data-calc-property="quizSizeWidth"
                     )

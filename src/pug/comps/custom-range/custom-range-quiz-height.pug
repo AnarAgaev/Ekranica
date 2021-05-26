@@ -4,14 +4,14 @@
         .label-controll__content
 
             .custom-range
-                .input-suffix.custom-input#distance
+                .input-suffix.custom-input#quizSizeHeight
                     input.value(
                         type="text"
-                        data-calc-property="quiz-height"
-                        value="8"
+                        data-calc-property="quizSizeHeight"
+                        value=""
                     )
                     span.input-suffix__delimiter
-                    span.input-suffix__units метров
+                    span.input-suffix__units#quizSizeHeightUnits метры
 
                 .custom-range__controller
                     span.status-bar
@@ -20,7 +20,7 @@
                         type="range"
                         step="1"
                         min="1"
-                        max="30"
-                        value="8"
-                        data-calc-property="quiz-height"
+                        max="100"
+                        value="1"
+                        data-calc-property="quizSizeHeight"
                     )

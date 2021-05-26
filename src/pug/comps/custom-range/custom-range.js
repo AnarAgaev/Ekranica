@@ -31,7 +31,9 @@ $(document).ready(function () {
             setValueInControllerInput(controller, stateProp);
         }
 
-        installmentCalcState[$(controller).data('calcProperty')] = controller.value;
+        if ($('.payment__calc').length > 0) {
+            installmentCalcState[$(controller).data('calcProperty')] = controller.value;
+        }
 
         $(statusBar).css('width', statusBarWidth + 'px');
         $(slider).css('left', sliderOffsetLeft + 'px');
@@ -59,6 +61,14 @@ $(document).ready(function () {
 
             case 'quizDistance':
                 quizDistanceMask.unmaskedValue = controller.value;
+                break;
+
+            case 'quizSizeWidth':
+                quizSizeWidthMask.unmaskedValue = controller.value;
+                break;
+
+            case 'quizSizeHeight':
+                quizSizeHeightMask.unmaskedValue = controller.value;
                 break;
         }
     }

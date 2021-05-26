@@ -895,14 +895,12 @@
             font-size: 14px;
             line-height: 160%;
             color: $color-icons-inactive;
+            width: 50px;
 
             @media (min-width: $xl) {
                 font-size: 18px;
                 color: $color-text-secondary;
                 opacity: 0.5;
-            }
-
-            &#quizDistanceUnits {
                 width: 68px;
             }
         }

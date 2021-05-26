@@ -67,8 +67,12 @@ $(document).ready(function () {
 
 
     // Select distance property
-    const quizDistanceEl = $('#quizDistance').children('input')[0];
-    const quizDistanceRange = $('#quizDistance + .custom-range__controller input');
+    const quizDistanceEl = $('#quizDistance')
+        .children('input')[0];
+
+    const quizDistanceRange = $('#quizDistance')
+        .next('.custom-range__controller')
+        .children('input');
 
     // Masking for quiz Distance controller
     window.quizDistanceMask = IMask(quizDistanceEl, {
@@ -77,9 +81,6 @@ $(document).ready(function () {
         // other options are optional with defaults below
         scale: 0,  // digits after point, 0 for integers
         signed: false,  // disallow negative
-        thousandsSeparator: ' ',  // any single char
-        radix: ',',  // fractional delimiter
-        mapToRadix: ['.'], // symbols to process as radix
 
         // additional number interval options (e.g.)
         min: 1,
@@ -90,14 +91,7 @@ $(document).ready(function () {
         "accept",
         function () {
 
-            QUIZ_STATE.distance = quizDistanceMask.unmaskedValue === ''
-                ? undefined
-                : quizDistanceMask.unmaskedValue;
-
-            setDistanceText();
-            setDistanceUnit();
-            checkButtonNext();
-            setDistanceComment();
+            setQuizStateProp('distance', quizDistanceMask)
 
             $(quizDistanceRange).val(
                 QUIZ_STATE.distance === undefined
@@ -105,14 +99,16 @@ $(document).ready(function () {
                     : QUIZ_STATE.distance
                 );
 
+            setDistanceText();
+            setDistanceUnit();
+            checkButtonNext();
+            setDistanceComment();
             setRange($(quizDistanceRange)[0], false);
-
-            console.log(QUIZ_STATE)
         },
     );
-    
+
     function setDistanceText() {
-        let distanceText = $('#distanceText');
+        let textContainer = $('#distanceText');
         let text;
 
         if (QUIZ_STATE.distance === undefined) {
@@ -122,10 +118,10 @@ $(document).ready(function () {
             text = QUIZ_STATE.distance
                 + ' '
                 + getMeterWordForm(QUIZ_STATE.distance);
-            $(distanceText).removeClass('text_warning');
+            $(textContainer).removeClass('text_warning');
         }
 
-        $(distanceText).text(text);
+        $(textContainer).text(text);
     }
 
     function setDistanceUnit() {
@@ -140,19 +136,24 @@ $(document).ready(function () {
 
     function setDistanceComment() {
         let comments = $('.quiz__single-slider .comment-item span');
+        let currentCommentId = $('[data-quiz-distance-comment].visible').data('quizDistanceComment');
 
-        $(comments).removeClass('visible');
+        if (currentCommentId !== undefined
+                && currentCommentId !== getDistanceCommentId()) {
 
-        setTimeout(
-            () => {
-                let distanceCommentId = getDistanceCommentId();
+            $(comments).removeClass('visible');
 
-                $('[data-quiz-distance-comment="'
-                    + distanceCommentId
-                    + '"]').addClass('visible');
-            },
-            300
-        );
+            setTimeout(
+                () => {
+                    let distanceCommentId = getDistanceCommentId();
+
+                    $('[data-quiz-distance-comment="'
+                        + distanceCommentId
+                        + '"]').addClass('visible');
+                },
+                300
+            );
+        }
     }
 
     function getDistanceCommentId() {
@@ -176,6 +177,154 @@ $(document).ready(function () {
         return distanceCommentId;
     }
 
+    // Select Size Width property
+    const quizSizeWidthEl = $('#quizSizeWidth')
+        .children('input')[0];
+
+    const quizSizeWidthRange = $('#quizSizeWidth')
+        .next('.custom-range__controller')
+        .children('input');
+
+    // Masking for quiz Size Width controller
+    window.quizSizeWidthMask = IMask(quizSizeWidthEl, {
+        mask: Number,  // enable number mask
+
+        // other options are optional with defaults below
+        scale: 0,  // digits after point, 0 for integers
+        signed: false,  // disallow negative
+
+        // additional number interval options (e.g.)
+        min: 1,
+        max: 100
+    });
+
+    quizSizeWidthMask.on(
+        "accept",
+        function () {
+
+            setQuizStateProp('sizeWidth', quizSizeWidthMask)
+
+            $(quizSizeWidthRange).val(
+                QUIZ_STATE.sizeWidth === undefined
+                    ? 1
+                    : QUIZ_STATE.sizeWidth
+            );
+
+            checkStateSize();
+            setSizeText();
+            setSizeWidthUnit();
+            checkButtonNext();
+            setRange($(quizSizeWidthRange)[0], false);
+        },
+    );
+
+    function checkStateSize () {
+        if (QUIZ_STATE.sizeWidth !== undefined
+            && QUIZ_STATE.sizeHeight !== undefined) {
+            QUIZ_STATE.size = true;
+        } else {
+            QUIZ_STATE.size = undefined;
+        }
+    }
+
+    function setSizeWidthUnit() {
+        let sizeWidthUnits = $('#quizSizeWidthUnits');
+
+        let text = QUIZ_STATE.sizeWidth === undefined
+            ? 'метры'
+            : getMeterWordForm(QUIZ_STATE.sizeWidth);
+
+        $(sizeWidthUnits).text(text);
+    }
+
+    // Select Size Width property
+    const quizSizeHeightEl = $('#quizSizeHeight')
+        .children('input')[0];
+
+    const quizSizeHeightRange = $('#quizSizeHeight')
+        .next('.custom-range__controller')
+        .children('input');
+
+    // Masking for quiz Size Width controller
+    window.quizSizeHeightMask = IMask(quizSizeHeightEl, {
+        mask: Number,  // enable number mask
+
+        // other options are optional with defaults below
+        scale: 0,  // digits after point, 0 for integers
+        signed: false,  // disallow negative
+
+        // additional number interval options (e.g.)
+        min: 1,
+        max: 100
+    });
+
+    quizSizeHeightMask.on(
+        "accept",
+        function () {
+
+            setQuizStateProp('sizeHeight', quizSizeHeightMask);
+
+            $(quizSizeHeightRange).val(
+                QUIZ_STATE.sizeHeight === undefined
+                    ? 1
+                    : QUIZ_STATE.sizeHeight
+            );
+
+            checkStateSize();
+            setSizeText();
+            setSizeHeightUnit();
+            checkButtonNext();
+            setRange($(quizSizeHeightRange)[0], false);
+        },
+    );
+
+    function setSizeText() {
+        let textContainer = $('#sizeText');
+        let text;
+
+        if (!QUIZ_STATE.size) {
+            text = 'Выберите размеры экрана!';
+            $(textContainer).addClass('text_warning');
+
+            if (!QUIZ_STATE.sizeWidth && QUIZ_STATE.sizeHeight) {
+                text = 'Выберите ширину экрана!';
+            } else if (QUIZ_STATE.sizeWidth && !QUIZ_STATE.sizeHeight) {
+                text = 'Выберите высоту экрана!';
+            }
+
+        } else {
+
+            text = QUIZ_STATE.sizeWidth
+                + ' на '
+                + QUIZ_STATE.sizeHeight
+                + ' '
+                + getMeterWordForm(QUIZ_STATE.sizeHeight);
+
+            $(textContainer).removeClass('text_warning');
+        }
+
+        $(textContainer).text(text);
+    }
+
+    function setSizeHeightUnit() {
+        let sizeHeightUnits = $('#quizSizeHeightUnits');
+
+        let text = QUIZ_STATE.sizeHeight === undefined
+            ? 'метры'
+            : getMeterWordForm(QUIZ_STATE.sizeHeight);
+
+        $(sizeHeightUnits).text(text);
+    }
+
+    function setQuizStateProp(quizStateProp, iMask) {
+        QUIZ_STATE[quizStateProp] = iMask.unmaskedValue === ''
+            ? undefined
+            : iMask.unmaskedValue;
+    }
+    
+    function setRangeFromIMask() {
+
+    }
 
 
 
@@ -196,7 +345,15 @@ $(document).ready(function () {
 
 
 
-        // Check the possibility go to the previous slide
+
+
+
+
+
+
+
+
+    // Check the possibility go to the previous slide
     function checkButtonPrev () {
         let prevBtn = $('#quizBtnPrevStep')[0];
         let firstQuestionSlide = $('#quizSlide_1')[0];
@@ -466,15 +623,33 @@ $(document).ready(function () {
     }
     handleClickOnDistantController();
 
+    function handleClickOnSizeWidthController () {
+        $('#quizSizeWidth').on(
+            'click',
+            function () {
+                let input = $(this).children('input')[0];
 
+                // Set cursor to the end of the input text
+                input.setSelectionRange(3, 3);
 
+                $(input).focus();
+            });
+    }
+    handleClickOnSizeWidthController();
 
+    function handleClickOnSizeHeightController () {
+        $('#quizSizeHeight').on(
+            'click',
+            function () {
+                let input = $(this).children('input')[0];
 
+                // Set cursor to the end of the input text
+                input.setSelectionRange(3, 3);
 
-
-
-
-
+                $(input).focus();
+            });
+    }
+    handleClickOnSizeHeightController();
 
     // Send quiz from to the server
     $('#quizForm').on(
