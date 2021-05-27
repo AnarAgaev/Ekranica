@@ -132,7 +132,7 @@
             right: 34px;
 
             &:hover {
-                button {
+                .button {
                     transform: rotate(180deg) translateY(1px);
                 }
 
@@ -166,7 +166,7 @@
             }
         }
 
-        button {
+        .button {
             display: block;
             position: absolute;
             width: 100%;
@@ -977,7 +977,7 @@
             height: 50px;
         }
 
-        button {
+        .btn {
             width: 100%;
             height: 100%;
 
@@ -1084,7 +1084,7 @@
         }
     }
 
-    &__epilog {
+    &__epilogue {
         display: none;
         flex-direction: column;
         align-items: center;

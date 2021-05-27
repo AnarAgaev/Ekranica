@@ -2,10 +2,10 @@
     .quiz__dialog
         form.quiz__content(action="/" method="POST")#quizForm
             .quiz__button-close.btn-quiz-toggle
-                button
+                .button
                     include ../../../img/icon-cross.svg
 
-            .quiz__prolog
+            .quiz__prolog#quizProlog
                 .pic
                     include ../../../img/questionmark.svg
                 .title Как определить какой именно экран, подойдет лучше всего?
@@ -13,14 +13,14 @@
                     .subtitle Предлагаем пройти тест из 5 вопросов, на основании ответов на которые, мы бесплатно подберем нужную вам конфигурацию
                     .btn.btn_primary#btnQuizQuestionsStart Пройти тест
 
-            .quiz__epilog
+            .quiz__epilogue#quizEpilogue
                 .title Заявка отправлена
                 .subtitle Перезвоним вам в ближайшее время
                 .pic
                     img(src="/img/icon-modal-phone.svg" alt="")
-                button.btn.btn_primary.btn-quiz-toggle Закрыть окно
+                .btn.btn_primary.btn-quiz-toggle Закрыть окно
 
-            .quiz__questions
+            .quiz__questions#quizQuestions
                 .quiz__body
 
                     .quiz__slide.active(data-quiz-property="location")#quizSlide_1
@@ -108,10 +108,10 @@
 
                 .quiz__footer
                     .quiz__btn-next
-                        button.btn.btn_primary.not-focused#quizBtnNextStep Следующий вопрос
+                        .btn.btn_primary.not-focused#quizBtnNextStep Следующий вопрос
 
                     .quiz__btn-prev
-                        button.btn.btn_icon-outlined.not-focused#quizBtnPrevStep
+                        .btn.btn_icon-outlined.not-focused#quizBtnPrevStep
                             include ../../../img/icon-slider-btn-arr.svg
 
                     .quiz__state

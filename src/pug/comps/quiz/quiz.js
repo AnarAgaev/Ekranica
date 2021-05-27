@@ -6,11 +6,18 @@ $(document).ready(function () {
     // take this parameter in CSS from .quiz__content class
     const ANIMATION_TIME_TOGGLE_QUIZ_SLIDE = 300;
 
+    let quizProlog    = $('#quizProlog');
+    let quizQuestions = $('#quizQuestions');
+    let quizEpilogue  = $('#quizEpilogue');
+    let btnNextStep   = $('#quizBtnNextStep');
+    let btnPrevStep   = $('#quizBtnPrevStep');
+
+
     /**
      * QUIZ_STATE - it's save data of the selected parameters and its values
      *
      * @constants {boolean} true if contacts are valid
-     * @contactsComment {string} may not be selected
+     * @contactsMessage {string} may not be selected
      * @contactsName {string} may not be selected
      * @contactsPhone {string} required field with validation by iMask
      * @distance {string} string with number from 1 to 50
@@ -22,7 +29,7 @@ $(document).ready(function () {
      */
     window.QUIZ_STATE = {
         contacts: undefined,
-        contactsComment: undefined,
+        contactsMessage: undefined,
         contactsName: undefined,
         contactsPhone: undefined,
         distance: undefined,
@@ -34,12 +41,10 @@ $(document).ready(function () {
     }
 
     // Show or hide Quiz
-    let buttonsQuizToggle = $('.btn-quiz-toggle');
-    addHandleClickToButtonsQuizToggle(buttonsQuizToggle);
+    addHandleClickToButtonsQuizToggle();
 
     // Start quiz questions
-    let btnQuizQuestionsStart = $('#btnQuizQuestionsStart')[0];
-    addHandleClickToButtonQuestionsStart(btnQuizQuestionsStart);
+    addHandleClickToButtonQuestionsStart();
 
     // Check progress dots
     checkProgress(filteredProgressDots());
@@ -53,14 +58,6 @@ $(document).ready(function () {
     // Set number of the current question in its container
     setNumberOfQuizSlide();
 
-    // Go to the next question
-    let btnNextStep = $('#quizBtnNextStep')[0];
-    addHandleClickBtnNextStep(btnNextStep);
-
-    // Go to the preview question
-    let btnPrevStep = $('#quizBtnPrevStep')[0];
-    addHandleClickBtnPrevStep(btnPrevStep);
-
     // Select location property
     let locationControls = $('#quizSlide_1 .quiz__card');
     addHandleClickToLocationCard(locationControls);
@@ -68,7 +65,6 @@ $(document).ready(function () {
     // Select rent property
     let rentControls = $('#quizSlide_4 .quiz__card');
     addHandleClickToRentCard(rentControls);
-
 
     // Select distance property
     const quizDistanceEl = $('#quizDistance')
@@ -175,7 +171,6 @@ $(document).ready(function () {
         return distanceCommentId;
     }
 
-
     // Select Size Width property
     const quizSizeWidthEl = $('#quizSizeWidth')
         .children('input')[0];
@@ -230,8 +225,7 @@ $(document).ready(function () {
         $(sizeWidthUnits).text(text);
     }
 
-
-    // Select Size Width property
+    // Select Size Height property
     const quizSizeHeightEl = $('#quizSizeHeight')
         .children('input')[0];
 
@@ -239,7 +233,7 @@ $(document).ready(function () {
         .next('.custom-range__controller')
         .children('input');
 
-    // Masking for quiz Size Width controller
+    // Masking for quiz Size Height controller
     window.quizSizeHeightMask = IMask(quizSizeHeightEl, {
         mask: Number,  // enable number mask
 
@@ -318,32 +312,65 @@ $(document).ready(function () {
         );
     }
 
+    // Validate Quiz contacts form
+    let quizPhone = $('#quizPhone')[0];
+    let quizPhoneController = $(quizPhone).closest('.controller');
+    let quizPhoneValidator = $(quizPhoneController).children('.validator__cross');
 
+    window.maskForQuizPhone = IMask(
+        quizPhone,
+        {
+            mask: '+{7} 000 000 00 00',
+        }
+    );
 
+    // Let's add handler function on quiz phone change
+    maskForQuizPhone.on(
+        "accept",
+        quizPhoneChangeHandler
+    );
 
+    function quizPhoneChangeHandler() {
+        if ( validPhone(maskForQuizPhone.unmaskedValue) ) {
 
+            $(quizPhoneController).addClass('checked valid');
+            $(quizPhoneController).removeClass('invalid');
+            QUIZ_STATE.contacts = true;
+            checkButtonNext();
 
+        } else {
+            if ( $(quizPhoneController).hasClass('checked') ) {
+                $(quizPhoneController).addClass('invalid');
+                $(quizPhoneController).removeClass('valid');
 
+                QUIZ_STATE.contacts = undefined;
+                checkButtonNext();
+            }
+        }
 
+        if (maskForQuizPhone.unmaskedValue === '') {
+            $(quizPhoneController).removeClass('checked');
+        }
+    }
 
+    // Handle unfocused phone input
+    $('#quizPhone').blur(function () {
+        checkQuizPhone();
+    });
 
+    function checkQuizPhone () {
+        let phoneValue = $('#quizPhone').val();
 
+        if (phoneValue !== '') {
+            if (!validPhone(phoneValue.replace(/\s+|\+/g, ''))) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                animationFormError(
+                    quizPhoneController,
+                    quizPhoneValidator
+                );
+            }
+        }
+    }
 
     // Check the possibility go to the previous slide
     function checkButtonPrev () {
@@ -373,9 +400,11 @@ $(document).ready(function () {
         $(numOfSlide).text(activeSlideNumber);
     }
 
-    function addHandleClickToButtonsQuizToggle (buttons) {
-        for (let i = 0; i < buttons.length; i++) {
-            $(buttons[i]).on(
+    function addHandleClickToButtonsQuizToggle () {
+        let buttonsQuizToggle = $('.btn-quiz-toggle');
+
+        for (let i = 0; i < buttonsQuizToggle.length; i++) {
+            $(buttonsQuizToggle[i]).on(
                 'click',
                 event => {
                     event.preventDefault();
@@ -419,24 +448,20 @@ $(document).ready(function () {
         return $('#quiz').hasClass('visible');
     }
 
-    function addHandleClickToButtonQuestionsStart (button) {
-        $(button).on(
+    function addHandleClickToButtonQuestionsStart () {
+        $('#btnQuizQuestionsStart').on(
             'click',
             showQuizQuestions
         );
     }
 
     function showQuizQuestions () {
-
-        let quizProlog = $('.quiz__prolog')[0];
-        let quizQuestions = $('.quiz__questions')[0];
-
         hideQuizBody();
 
         setTimeout(
             () => {
-                hidePrologSlide(quizProlog);
-                showQuestionsSlide(quizQuestions);
+                hideQuizSlide(quizProlog);
+                showQuizSlide(quizQuestions);
                 showQuizBody();
             },
             ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
@@ -526,84 +551,91 @@ $(document).ready(function () {
         }
     }
 
-    function addHandleClickBtnNextStep (button) {
-        $(button).on(
+    (function addHandleClickBtnNextStep () {
+        $(btnNextStep).on(
             'click',
             function () {
-                let activeSlide = $('.quiz__slide.active');
-                let nextSlide = $(activeSlide).next();
-                let activeProp = $(activeSlide).data('quizProperty');
-                let nextBtn = $('#quizBtnNextStep');
-                let prevBtn = $('#quizBtnPrevStep');
+                let activeSlide = $('.quiz__slide.active').data('quizProperty');
 
-                if (QUIZ_STATE[activeProp] !== undefined) {
+                if (QUIZ_STATE[activeSlide] !== undefined) {
                     hideQuizBody();
 
+                    // If user is on last quiz question (form user's data)
+                    // send quiz data to the server else go to next question.
                     setTimeout(
-                        () => {
-                            hideQuizSlide(activeSlide);
-                            showQuizSlide(nextSlide);
-                            checkButtonPrev();
-                            checkButtonNext();
-                            showQuizBody();
-                            blockUnblockTransition(nextBtn);
-                            blockUnblockTransition(prevBtn);
-                            checkProgress(filteredProgressDots());
-                            setNumberOfQuizSlide();
-                            renameNextButtonOnLastSlide();
-                        },
+                        () =>
+                            activeSlide === 'contacts'
+                                ? handleQuizContacts()
+                                : goToNextQuizQuestion(),
                         ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
                     );
                 }
             }
         )
+    })();
+
+    function goToNextQuizQuestion () {
+        let activeSlide = $('.quiz__slide.active');
+        let nextSlide = $(activeSlide).next();
+
+        inactivateQuizSlide(activeSlide);
+        activateQuizSlide(nextSlide);
+        checkButtonPrev();
+        checkButtonNext();
+        showQuizBody();
+        blockUnblockTransition(btnNextStep);
+        blockUnblockTransition(btnPrevStep);
+        checkProgress(filteredProgressDots());
+        setNumberOfQuizSlide();
+        renameNextButtonOnLastSlide();
     }
 
-    function addHandleClickBtnPrevStep (button) {
-        $(button).on(
+    (function addHandleClickBtnPrevStep () {
+        $(btnPrevStep).on(
             'click',
             function () {
-                let activeSlide = $('.quiz__slide.active');
-                let prevSlide = $(activeSlide).prev();
-
-                if (!$(button).hasClass('inactive')) {
+                if (!$(btnPrevStep).hasClass('inactive')) {
                     hideQuizBody();
 
                     setTimeout(
-                        () => {
-                            hideQuizSlide(activeSlide);
-                            showQuizSlide(prevSlide);
-                            blockUnblockTransition(button);
-                            checkButtonPrev();
-                            checkButtonNext();
-                            showQuizBody();
-                            checkProgress(filteredProgressDots());
-                            setNumberOfQuizSlide();
-                            renameNextButtonOnLastSlide();
-                        },
+                        goToPrevQuizQuestion,
                         ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
                     );
                 }
             }
         )
+    })();
+
+    function goToPrevQuizQuestion () {
+        let activeSlide = $('.quiz__slide.active');
+        let prevSlide = $(activeSlide).prev();
+
+        inactivateQuizSlide(activeSlide);
+        activateQuizSlide(prevSlide);
+        blockUnblockTransition(btnPrevStep);
+        checkButtonPrev();
+        checkButtonNext();
+        showQuizBody();
+        checkProgress(filteredProgressDots());
+        setNumberOfQuizSlide();
+        renameNextButtonOnLastSlide();
     }
 
     function renameNextButtonOnLastSlide() {
         let currentSlideNumber = $('.quiz__slide.active').index();
-        let buttonNextStep = $('#quizBtnNextStep');
 
         if (currentSlideNumber === 4) {
-            $(buttonNextStep).text('Отправить запрос');
+            $(btnNextStep).text('Отправить запрос');
         } else {
-            $(buttonNextStep).text('Следующий вопрос');
+            $(btnNextStep).text('Следующий вопрос');
         }
     }
 
-    function hideQuizSlide (slide) {
+    function inactivateQuizSlide (slide) {
         $(slide).removeClass('active');
     }
 
-    function showQuizSlide (slide) {
+    function activateQuizSlide (slide) {
         $(slide).addClass('active');
     }
 
@@ -617,12 +649,12 @@ $(document).ready(function () {
         );
     }
 
-    function hidePrologSlide (prolog) {
-        $(prolog).css('display', 'none');
+    function hideQuizSlide (slide) {
+        $(slide).css('display', 'none');
     }
 
-    function showQuestionsSlide (questions) {
-        $(questions).css('display', 'block');
+    function showQuizSlide (slide) {
+        $(slide).css('display', 'block');
     }
 
     function hideQuizBody () {
@@ -635,7 +667,40 @@ $(document).ready(function () {
         $(quizBody).removeClass('hide');
     }
 
-    function handleClickOnDistantController () {
+    function handleQuizContacts() {
+        setContactsToQuizState();
+        sendQuizDataToTheServe();
+        showQuizEpilogue();
+    }
+
+    function setContactsToQuizState() {
+        let quizName = $('#quizName').val();
+        let quizPhone = $('#quizPhone').val();
+        let quizMessage = $('#quizMessage').val();
+
+        QUIZ_STATE.contactsPhone = quizPhone;
+
+        if (quizName !== '') {
+            QUIZ_STATE.contactsName = quizName;
+        }
+
+        if (quizMessage !== '') {
+            QUIZ_STATE.contactsMessage = quizName;
+        }
+    }
+
+    function showQuizEpilogue() {
+        setTimeout(
+            () => {
+                hideQuizSlide(quizQuestions);
+                showQuizSlide(quizEpilogue);
+                showQuizBody();
+            },
+            ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
+        );
+    }
+
+    (function handleClickOnDistantController () {
         $('#quizDistance').on(
             'click',
             function () {
@@ -646,10 +711,9 @@ $(document).ready(function () {
 
                 $(input).focus();
             });
-    }
-    handleClickOnDistantController();
+    })();
 
-    function handleClickOnSizeWidthController () {
+    (function handleClickOnSizeWidthController () {
         $('#quizSizeWidth').on(
             'click',
             function () {
@@ -660,10 +724,9 @@ $(document).ready(function () {
 
                 $(input).focus();
             });
-    }
-    handleClickOnSizeWidthController();
+    })();
 
-    function handleClickOnSizeHeightController () {
+    (function handleClickOnSizeHeightController () {
         $('#quizSizeHeight').on(
             'click',
             function () {
@@ -674,16 +737,25 @@ $(document).ready(function () {
 
                 $(input).focus();
             });
-    }
-    handleClickOnSizeHeightController();
+    })();
 
-    // Send quiz from to the server
+    // Stopped Send quiz to the server
     $('#quizForm').on(
         'submit',
-        function (event) {
-            event.preventDefault();
+        e => {
+            e.preventDefault();
         }
     );
+
+    function sendQuizDataToTheServe () {
+
+        // Sending data to server
+        console.log('Sending data to server...')
+        console.log(QUIZ_STATE);
+
+
+        // Clean Quiz form
+    }
 
     // Update base elements when use resized window
     $(window).resize(function () {
