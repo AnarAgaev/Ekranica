@@ -685,7 +685,7 @@ $(document).ready(function () {
         }
 
         if (quizMessage !== '') {
-            QUIZ_STATE.contactsMessage = quizName;
+            QUIZ_STATE.contactsMessage = quizMessage;
         }
     }
 
@@ -747,14 +747,77 @@ $(document).ready(function () {
         }
     );
 
+    (function handleClickOnButtonsResetQuiz() {
+        $('.btn-reset-quiz').on(
+            'click',
+            resetQuizData
+        );
+    })();
+
+    function resetQuizData () {
+        let firstQuestion = $('#quizSlide_1');
+        let lastQuestion = $('#quizSlide_5');
+
+        setTimeout(
+            () => {
+                resetQuizState();
+                hideQuizSlide(quizEpilogue);
+                showQuizSlide(quizProlog);
+                inactivateQuizSlide(lastQuestion);
+                activateQuizSlide(firstQuestion);
+                checkButtonPrev();
+                checkButtonNext();
+                checkProgress(filteredProgressDots());
+                resetDataControllers();
+                resetQuizDistance();
+                resetQuizFormData();
+                resetQuizSize();
+                setNumberOfQuizSlide();
+            },
+            ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
+        )
+    }
+
+    function resetQuizDistance () {
+        quizDistanceMask.unmaskedValue = '';
+        setDistanceText();
+        setDistanceUnit();
+        setDistanceComment();
+    }
+
+    function resetQuizSize () {
+        quizSizeWidthMask.unmaskedValue = '';
+        quizSizeHeightMask.unmaskedValue = '';
+        setSizeText();
+        setSizeWidthUnit();
+        setSizeHeightUnit();
+    }
+
+    function resetQuizFormData () {
+        $('#quizName').val('');
+        $('#quizMessage').val('');
+        maskForQuizPhone.unmaskedValue = '';
+    }
+
+    function resetDataControllers () {
+        let inputControllers = document.querySelectorAll('#quiz input[type="radio"]');
+
+        for (let i = 0; i < inputControllers.length; i++) {
+            inputControllers[i].checked = false;
+        }
+    }
+
+    function resetQuizState () {
+        for (let key in QUIZ_STATE) {
+            QUIZ_STATE[key] = undefined;
+        }
+    }
+
     function sendQuizDataToTheServe () {
 
         // Sending data to server
         console.log('Sending data to server...')
         console.log(QUIZ_STATE);
-
-
-        // Clean Quiz form
     }
 
     // Update base elements when use resized window
