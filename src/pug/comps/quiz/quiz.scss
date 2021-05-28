@@ -81,7 +81,12 @@
         background: $color-back-secondary;
         opacity: 1;
         transform: translateY(0);
-        transition: all .3s linear;
+        top: 0;
+        transition:
+                all
+                2.5s
+                cubic-bezier(0.33, 1, 0.68, 1)
+                .2s;
 
         @media (min-width: $md) {
             width: 87.5%;
@@ -103,8 +108,14 @@
 
         &.hide {
             opacity: 0;
-            transform: translateY(15px);
+            transform: translateY(50px);
+            transition: all .3s linear;
         }
+
+        &.hide.hidden {
+            transform: translateY(100px);
+        }
+
 
     }
 

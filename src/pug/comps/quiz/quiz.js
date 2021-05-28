@@ -674,11 +674,18 @@ $(document).ready(function () {
     function hideQuizBody () {
         let quizBody = $('.quiz__content');
         $(quizBody).addClass('hide');
+
+        setTimeout(
+            () => {
+                $(quizBody).addClass('hidden');
+            },
+            ANIMATION_TIME_TOGGLE_QUIZ_SLIDE
+        );
     }
 
     function showQuizBody () {
         let quizBody = $('.quiz__content');
-        $(quizBody).removeClass('hide');
+        $(quizBody).removeClass('hide hidden');
     }
 
     function handleQuizContacts () {
