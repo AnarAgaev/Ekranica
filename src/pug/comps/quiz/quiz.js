@@ -97,6 +97,7 @@ $(document).ready(function () {
             setDistanceUnit();
             checkButtonNext();
             setDistanceComment();
+            setQuizCommentSmileyFace();
             setRange($(quizDistanceRange)[0], false);
         },
     );
@@ -171,6 +172,19 @@ $(document).ready(function () {
         return distanceCommentId;
     }
 
+    function setQuizCommentSmileyFace () {
+        let like = $('#commentSmiley svg:first-child')
+        let unlike = $('#commentSmiley svg:last-child');
+
+        if (getDistanceCommentId() === 0) {
+            like.css('opacity', '0');
+            unlike.css('opacity', '1');
+        } else {
+            like.css('opacity', '1');
+            unlike.css('opacity', '0');
+        }
+    }
+
     // Select Size Width property
     const quizSizeWidthEl = $('#quizSizeWidth')
         .children('input')[0];
@@ -215,7 +229,7 @@ $(document).ready(function () {
         }
     }
 
-    function setSizeWidthUnit() {
+    function setSizeWidthUnit () {
         let sizeWidthUnits = $('#quizSizeWidthUnits');
 
         let text = QUIZ_STATE.sizeWidth === undefined
@@ -260,7 +274,7 @@ $(document).ready(function () {
         },
     );
 
-    function setSizeText() {
+    function setSizeText () {
         let textContainer = $('#sizeText');
         let text;
 
@@ -288,7 +302,7 @@ $(document).ready(function () {
         $(textContainer).text(text);
     }
 
-    function setSizeHeightUnit() {
+    function setSizeHeightUnit () {
         let sizeHeightUnits = $('#quizSizeHeightUnits');
 
         let text = QUIZ_STATE.sizeHeight === undefined
@@ -298,13 +312,13 @@ $(document).ready(function () {
         $(sizeHeightUnits).text(text);
     }
 
-    function setQuizStateProp(quizStateProp, iMask) {
+    function setQuizStateProp (quizStateProp, iMask) {
         QUIZ_STATE[quizStateProp] = iMask.unmaskedValue === ''
             ? undefined
             : iMask.unmaskedValue;
     }
     
-    function resetErrorRangeValueToMinimum(controller, propName) {
+    function resetErrorRangeValueToMinimum (controller, propName) {
         $(controller).val(
             QUIZ_STATE[propName] === undefined
                 ? 1
@@ -330,7 +344,7 @@ $(document).ready(function () {
         quizPhoneChangeHandler
     );
 
-    function quizPhoneChangeHandler() {
+    function quizPhoneChangeHandler () {
         if ( validPhone(maskForQuizPhone.unmaskedValue) ) {
 
             $(quizPhoneController).addClass('checked valid');
@@ -621,7 +635,7 @@ $(document).ready(function () {
         renameNextButtonOnLastSlide();
     }
 
-    function renameNextButtonOnLastSlide() {
+    function renameNextButtonOnLastSlide () {
         let currentSlideNumber = $('.quiz__slide.active').index();
 
         if (currentSlideNumber === 4) {
@@ -639,7 +653,7 @@ $(document).ready(function () {
         $(slide).addClass('active');
     }
 
-    function blockUnblockTransition(el) {
+    function blockUnblockTransition (el) {
         let transitionValue = $(el).css('transition');
         $(el).css('transition', 'none');
 
@@ -667,13 +681,13 @@ $(document).ready(function () {
         $(quizBody).removeClass('hide');
     }
 
-    function handleQuizContacts() {
+    function handleQuizContacts () {
         setContactsToQuizState();
         sendQuizDataToTheServe();
         showQuizEpilogue();
     }
 
-    function setContactsToQuizState() {
+    function setContactsToQuizState () {
         let quizName = $('#quizName').val();
         let quizPhone = $('#quizPhone').val();
         let quizMessage = $('#quizMessage').val();
@@ -689,7 +703,7 @@ $(document).ready(function () {
         }
     }
 
-    function showQuizEpilogue() {
+    function showQuizEpilogue () {
         setTimeout(
             () => {
                 hideQuizSlide(quizQuestions);
@@ -747,7 +761,7 @@ $(document).ready(function () {
         }
     );
 
-    (function handleClickOnButtonsResetQuiz() {
+    (function handleClickOnButtonsResetQuiz () {
         $('.btn-reset-quiz').on(
             'click',
             resetQuizData
