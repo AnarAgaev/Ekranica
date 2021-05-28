@@ -755,27 +755,30 @@ $(document).ready(function () {
     })();
 
     function resetQuizData () {
-        let firstQuestion = $('#quizSlide_1');
-        let lastQuestion = $('#quizSlide_5');
+        // Reset data only if user is on last slide (epilogue)
+        if ($('#quizEpilogue').css('display') === 'block') {
+            let firstQuestion = $('#quizSlide_1');
+            let lastQuestion = $('#quizSlide_5');
 
-        setTimeout(
-            () => {
-                resetQuizState();
-                hideQuizSlide(quizEpilogue);
-                showQuizSlide(quizProlog);
-                inactivateQuizSlide(lastQuestion);
-                activateQuizSlide(firstQuestion);
-                checkButtonPrev();
-                checkButtonNext();
-                checkProgress(filteredProgressDots());
-                resetDataControllers();
-                resetQuizDistance();
-                resetQuizFormData();
-                resetQuizSize();
-                setNumberOfQuizSlide();
-            },
-            ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
-        )
+            setTimeout(
+                () => {
+                    resetQuizState();
+                    hideQuizSlide(quizEpilogue);
+                    showQuizSlide(quizProlog);
+                    inactivateQuizSlide(lastQuestion);
+                    activateQuizSlide(firstQuestion);
+                    checkButtonPrev();
+                    checkButtonNext();
+                    checkProgress(filteredProgressDots());
+                    resetDataControllers();
+                    resetQuizDistance();
+                    resetQuizFormData();
+                    resetQuizSize();
+                    setNumberOfQuizSlide();
+                },
+                ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
+            )
+        }
     }
 
     function resetQuizDistance () {
