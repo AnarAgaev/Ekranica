@@ -2,8 +2,9 @@
 
 .quiz {
     width: 100vw;
-    height: calc(100vh - 76px);
-    top: 76px;
+    height: 100vh;
+    top: 0;
+    padding-top: 76px;
     left: -9999px;
     opacity: 0;
     position: fixed;
@@ -35,14 +36,13 @@
     }
 
     @media (min-width: $md) {
-        height: calc(100vh - 114px);
-        top: 114px;
+        padding-top: 114px;
     }
 
     &__dialog {
         position: relative;
         width: 100%;
-        margin: 16px 0;
+        margin-top: 16px;
         opacity: 0;
         transform: translateY(100px);
         transition:
@@ -52,20 +52,18 @@
                 0s;
 
         @media (min-width: $md) {
-            margin: 24px auto;
+            margin: 25px auto 0;
             width: 768px;
         }
 
         @media (min-width: $lg) {
             width: 1230px;
-            margin-top: 48px;
-            margin-bottom: 48px;
+            margin-top: 8px;
         }
 
         @media (min-width: $xl) {
             width: 1728px;
-            margin-top: 68px;
-            margin-bottom: 68px;
+            margin-top: 14px;
         }
     }
 

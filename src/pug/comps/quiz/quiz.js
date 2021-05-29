@@ -431,15 +431,18 @@ $(document).ready(function () {
     function toggleVisibleQuiz () {
         let quiz = $('#quiz');
         let body = $('body');
+        let header = $('#header');
         let scrollWidth = getScrollWidth() + 'px';
 
         if (isQuizVisible()) {
             $(quiz).removeClass('visible');
             $(body).removeClass('modal-open');
+            $(header).removeClass('quiz-open')
             fixScrollWidth(scrollWidth);
         } else {
             $(quiz).addClass('visible');
             $(body).addClass('modal-open');
+            $(header).addClass('quiz-open').header
             fixScrollWidth(scrollWidth);
         }
     }

@@ -7,12 +7,14 @@ $(document).ready(function () {
         function handlerIn () {
             if (isLaptop) {
                 $('#navLine').addClass('visible');
+                $('#header').addClass('hover-with-quiz');
             }
         }
 
         function handlerOut () {
             if (isLaptop) {
                 $('#navLine').removeClass('visible');
+                $('#header').removeClass('hover-with-quiz');
             }
         }
 
@@ -20,7 +22,7 @@ $(document).ready(function () {
     });
 
     $('#navToggler').on('click', function () {
-        $('#header').toggleClass('nav-visible');
+        $('#header').toggleClass('nav-visible hover-with-quiz');
         $('.nav__item.dropdown').removeClass('drop-visible');
         $('.nav__item.dropdown > a').removeClass('drop-visible');
     });
