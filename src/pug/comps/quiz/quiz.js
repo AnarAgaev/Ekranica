@@ -439,6 +439,7 @@ $(document).ready(function () {
             $(body).removeClass('modal-open');
             $(header).removeClass('quiz-open')
             fixScrollWidth(scrollWidth);
+            resetQuizScrollTop();
         } else {
             $(quiz).addClass('visible');
             $(body).addClass('modal-open');
@@ -453,7 +454,7 @@ $(document).ready(function () {
 
             $('header.header').css({
                 'paddingRight': 'calc(5vw + ' + scrollWidth + ')',
-                'transition': 'none',
+                'transition': 'background-color .3s linear',
             });
         } else if (isLaptop) {
             $('body').css('paddingRight', '0');
@@ -480,6 +481,7 @@ $(document).ready(function () {
                 hideQuizSlide(quizProlog);
                 showQuizSlide(quizQuestions);
                 showQuizBody();
+                resetQuizScrollTop();
             },
             ANIMATION_TIME_TOGGLE_QUIZ_SLIDE + 100
         );
@@ -605,6 +607,7 @@ $(document).ready(function () {
         checkProgress(filteredProgressDots());
         setNumberOfQuizSlide();
         renameNextButtonOnLastSlide();
+        resetQuizScrollTop();
     }
 
     (function addHandleClickBtnPrevStep () {
@@ -636,6 +639,7 @@ $(document).ready(function () {
         checkProgress(filteredProgressDots());
         setNumberOfQuizSlide();
         renameNextButtonOnLastSlide();
+        resetQuizScrollTop();
     }
 
     function renameNextButtonOnLastSlide () {
@@ -695,6 +699,7 @@ $(document).ready(function () {
         setContactsToQuizState();
         sendQuizDataToTheServe();
         showQuizEpilogue();
+        resetQuizScrollTop();
     }
 
     function setContactsToQuizState () {
@@ -845,6 +850,25 @@ $(document).ready(function () {
         // Sending data to server
         console.log('Sending data to server...')
         console.log(QUIZ_STATE);
+    }
+
+    (function handleScrollOnQuiz () {
+        let quiz = $('#quiz');
+        $(quiz).scroll(toggleHeaderBackground);
+    })();
+
+    function toggleHeaderBackground () {
+        let header = $('#header');
+        let scrollTop = $("#quiz").scrollTop();
+
+        scrollTop > 0
+            ? $(header).addClass('paint-background')
+            : $(header).removeClass('paint-background');
+    }
+
+    function resetQuizScrollTop () {
+        let quiz = $('#quiz');
+        $(quiz).scrollTop(0);
     }
 
     // Update base elements when use resized window
