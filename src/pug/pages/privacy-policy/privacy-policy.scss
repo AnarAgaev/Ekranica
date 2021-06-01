@@ -23,6 +23,8 @@
 
     .section__title {
         word-break: break-word;
+
+        @include title-animation;
     }
 
     &__caption {
@@ -33,6 +35,8 @@
         text-align: left;
         color: $color-text-secondary;
         position: relative;
+
+        @include title-link-animation;
 
         @media (min-width: $md) {
             font-weight: bold;
@@ -62,6 +66,8 @@
 
     &__description {
         padding-top: 28px;
+
+        @include card-animation;
 
         @media (min-width: $md) {
             padding-top: 50px;
@@ -93,20 +99,6 @@
         }
 
         ul {
-            padding-left: 8px;
-
-            @media (min-width: $md) {
-                padding-left: 12px;
-            }
-
-            @media (min-width: $lg) {
-                padding-left: 16px;
-            }
-
-            @media (min-width: $xl) {
-                padding-left: 24px;
-            }
-
             li {
                 position: relative;
                 font-weight: 400;
