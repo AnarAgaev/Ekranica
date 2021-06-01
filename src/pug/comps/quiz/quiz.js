@@ -454,7 +454,7 @@ $(document).ready(function () {
 
             $('header.header').css({
                 'paddingRight': 'calc(5vw + ' + scrollWidth + ')',
-                'transition': 'background-color .3s linear',
+                'transition': 'background-color .3s linear, box-shadow .3s linear',
             });
         } else if (isLaptop) {
             $('body').css('paddingRight', '0');
