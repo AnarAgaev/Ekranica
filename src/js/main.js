@@ -276,4 +276,14 @@ $(document).ready(function () {
 
         return resultForm;
     };
+
+    window.getScreenType = function () {
+        let windowWidth = $(window).width();
+
+        if (windowWidth >= 2520) return 'xxl';
+            else if (windowWidth >= 1860) return 'xl';
+                else if (windowWidth >= 1320) return 'lg';
+                    else if (windowWidth >= 768) return 'md';
+                        else return 'sm';
+    }
 });

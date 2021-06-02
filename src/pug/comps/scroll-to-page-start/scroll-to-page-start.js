@@ -17,6 +17,7 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         toggleVisibleBtnScrollToTop();
+        fixBtnScrollToTopPositionForFooterVisible();
     });
 
     function toggleVisibleBtnScrollToTop () {
@@ -26,5 +27,33 @@ $(document).ready(function () {
         windowScrollTop > windowHeight
             ? $(btnScrollToPageStart).addClass('visible')
             : $(btnScrollToPageStart).removeClass('visible');
+    }
+
+    function fixBtnScrollToTopPositionForFooterVisible () {
+        let footer = $('#footer');
+        let windowHeight = $(window).height();
+        let windowScrollTop = $(window).scrollTop();
+        let footerOffsetTop = $(footer).offset().top;
+
+        let fixedPosition = footerOffsetTop
+            - windowHeight
+            + getBtnScrollToTopPositionRatio();
+
+        fixedPosition <= windowScrollTop
+            ? $(btnScrollToPageStart).addClass('fixed-position')
+            : $(btnScrollToPageStart).removeClass('fixed-position');
+    }
+
+    function getBtnScrollToTopPositionRatio() {
+        switch(getScreenType()) {
+            case 'md':
+                return 17;
+
+            case 'lg':
+                return 38;
+
+            case 'xl':
+                return 58;
+        }
     }
 });
