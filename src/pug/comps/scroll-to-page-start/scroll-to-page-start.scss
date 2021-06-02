@@ -7,7 +7,7 @@
     width: 40px;
     height: 56px;
     bottom: 24px;
-    right: 24px;
+    right: 7.5vw;
     background: $color-back-secondary;
     box-shadow:
             -14px -28px 30px rgba(35, 33, 58, 0.35),
@@ -45,12 +45,12 @@
         width: 50px;
         height: 70px;
         bottom: 46px;
-        right: 46px;
+        right: 6.25vw;
     }
 
     @media (min-width: $lg) {
         bottom: 67px;
-        right: 67px;
+        right: 4.978038067349927vw;
 
         &:hover {
             box-shadow:
@@ -69,7 +69,7 @@
 
     @media (min-width: $xl) {
         bottom: 96px;
-        right: 96px;
+        right: 5vw;
     }
 
     svg {
