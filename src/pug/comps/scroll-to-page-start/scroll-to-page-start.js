@@ -53,6 +53,7 @@ $(document).ready(function () {
                 return 38;
 
             case 'xl':
+            case 'xxl':
                 return 58;
         }
     }
