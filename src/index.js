@@ -28,6 +28,7 @@ import './pug/comps/custom-range/custom-range';
 import './pug/comps/about-offer/about-offer';
 import './pug/comps/quiz/quiz';
 import './pug/comps/scroll-to-page-start/scroll-to-page-start';
+import './pug/comps/calc/calc';
 
 // Include vendor styles
 import 'normalize.css';

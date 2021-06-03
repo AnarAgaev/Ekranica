@@ -272,7 +272,8 @@ $(document).ready(function () {
         ourNewsSlider,
         deliveryMethodsSlider,
         aboutWorkWithSlider,
-        warrantyGuaranteeSlider;
+        warrantyGuaranteeSlider,
+        calcTabListStep1Slider;
 
     function breakpointLGChecker() {
         if ( breakpointLG.matches === true ) {
@@ -286,6 +287,10 @@ $(document).ready(function () {
 
             if ( ourWorksSlider !== undefined  && $('#ourWorksSlider').length > 0 ) {
                 ourWorksSlider.destroy(true, true);
+            }
+
+            if ( calcTabListStep1Slider !== undefined  && $('#calcTabListStep1Slider').length > 0 ) {
+                calcTabListStep1Slider.destroy(true, true);
             }
 
             if ( ourNewsSlider !== undefined  && $('#ourNewsSlider').length > 0 ) {
@@ -315,6 +320,7 @@ $(document).ready(function () {
             enableDeliveryMethodsSlider();
             enableAboutWorkWithSlider();
             enableWarrantyGuaranteeSlider();
+            enableCalcTabListStep1Slider();
         }
     }
 
@@ -339,6 +345,15 @@ $(document).ready(function () {
     function enableOurWorksSlider() {
         if ($('#ourWorksSlider')[0]) {
             ourWorksSlider = new Swiper('#ourWorksSlider', {
+                slidesPerView: 'auto',
+                speed: 500,
+            });
+        }
+    }
+
+    function enableCalcTabListStep1Slider() {
+        if ($('#calcTabListStep1Slider')[0]) {
+            calcTabListStep1Slider = new Swiper('#calcTabListStep1Slider', {
                 slidesPerView: 'auto',
                 speed: 500,
             });
@@ -390,12 +405,12 @@ $(document).ready(function () {
         setTimeout(function () {
             if ( !isLaptop ) {
                 if ($('#ourWorksSlider')[0]) ourWorksSlider.update();
+                if ($('#calcTabListStep1Slider')[0]) calcTabListStep1Slider.update();
                 if ($('#ourNewsSlider')[0]) ourNewsSlider.update();
             }
         }, 1500);
     }
-
-    setTimeout(updateTabLinksSliders, 1500);
+    updateTabLinksSliders();
 
     $(window).resize(updateTabLinksSliders);
 
