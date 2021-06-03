@@ -16,8 +16,13 @@ $(document).ready(function () {
     })();
 
     $(window).scroll(function () {
-        toggleVisibleBtnScrollToTop();
-        fixBtnScrollToTopPositionForFooterVisible();
+        let windowHeight = $(window).height();
+        let bodyHeight = $('body').height();
+
+        if (bodyHeight > windowHeight * 2) {
+            toggleVisibleBtnScrollToTop();
+            fixBtnScrollToTopPositionForFooterVisible();
+        }
     });
 
     function toggleVisibleBtnScrollToTop () {
