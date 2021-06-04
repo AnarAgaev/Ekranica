@@ -6,6 +6,7 @@
 
 .calc {
     margin-top: 16px;
+    margin-bottom: 96px;
 
     @media (min-width: $lg) {
         margin-top: 48px;
@@ -115,7 +116,7 @@
             @media (min-width: $lg) {
                 content: "";
                 display: block;
-                width: 958px;
+                width: 82.44406196213425%;
                 height: 1px;
                 position: absolute;
                 top: 35px;
@@ -124,7 +125,7 @@
             }
 
             @media (min-width: $xl) {
-                width: 1345px;
+                width: 100%;
             }
         }
     }
@@ -143,7 +144,7 @@
             font-size: 14px;
             line-height: 160%;
             color: $color-text-secondary;
-            transition: $transition;
+            transition: all .3s linear;
             position: relative;
             margin-right: 24px;
             cursor: pointer;
@@ -155,6 +156,10 @@
 
             @media (min-width: $lg) {
                 margin-right: 35px;
+
+                &:hover {
+                    color: $color-accent;
+                }
             }
 
             @media (min-width: $xl) {
@@ -194,4 +199,68 @@
             }
         }
     }
+    
+    &__calculator {
+        display: none;
+        
+        &.active {
+            display: block;
+        }
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+
+        &-controllers {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .label-controll {
+                @media (min-width: $lg) {
+                    margin-right: 0;
+                    margin-bottom: 34px;
+                }
+
+                @media (min-width: $xl) {
+                    margin-bottom: 49px;
+                }
+            }
+
+            .label-controll__help {
+                @media (min-width: $lg) {
+                    position: absolute;
+                    top: 62px;
+                    right: -40px;
+                }
+
+                @media (min-width: $xl) {
+                    position: relative;
+                    top: auto;
+                    right: auto;
+                }
+            }
+
+            .label-controll__caption {
+                @media (min-width: $xl) {
+                    width: 220px;
+                }
+            }
+
+            .label-controll__content {
+                @media (min-width: $xl) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        &-result {
+            display: none;
+        }
+    }
+
+
+
+
 }
