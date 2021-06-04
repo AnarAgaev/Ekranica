@@ -1,0 +1,56 @@
+@import "../../../scss/variables";
+
+.custom-checkbox {
+    padding-left: 34px;
+
+    &__container {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-text-secondary;
+        cursor: pointer;
+    }
+
+    &__checkmark {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 22px;
+        height: 22px;
+        background: $color-back-secondary;
+        border: 1px solid $color-icons-inactive;
+        border-radius: 2px;
+        transition: all .1s linear;
+        box-shadow:
+                inset -1px -1px 2px rgba(35, 33, 58, 0.3),
+                inset 1px 1px 5px rgba(0, 2, 12, 0.8),
+                -12px -10px 30px #23213A,
+                12px 10px 30px rgba(0, 2, 12, 0.5);
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url("/img/icon-checkbox.svg") center no-repeat;
+            opacity: 0;
+            transition: opacity .1s linear;
+        }
+    }
+
+    input[type="checkbox"]:checked ~ .custom-checkbox__checkmark {
+        background: $color-accent;
+        box-shadow:
+                inset 2px 2px 3px rgba(49, 4, 38, 0.4),
+                -6px -5px 30px #23213A,
+                12px 10px 30px rgba(0, 2, 12, 0.5);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
