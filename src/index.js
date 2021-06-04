@@ -29,6 +29,7 @@ import './pug/comps/about-offer/about-offer';
 import './pug/comps/quiz/quiz';
 import './pug/comps/scroll-to-page-start/scroll-to-page-start';
 import './pug/comps/calc/calc';
+import './pug/comps/datepicker/datepicker';
 
 // Include vendor styles
 import 'normalize.css';

@@ -7,14 +7,16 @@
     .label-controll__body
         .label-controll__content
 
-            .input-date.not-selected.custom-input#rentInstallment
+            .input-datepicker.not-selected.custom-input#rentInstallment
                 input.visuallyhidden(type="text" data-calc-property="rentInstallment" data-calc-value="")
                 span.day дд
-                span.input-date__delimiter
+                span.input-datepicker__delimiter
                 span.month мм
-                span.input-date__delimiter
+                span.input-datepicker__delimiter
                 span.year гггг
-                span.input-date__icon
+                span.input-datepicker__icon
                     include ../../../img/icon-calendar.svg
+
+        input(type="text" data-calc-property="rentInstallment" data-calc-value="")
 
 
