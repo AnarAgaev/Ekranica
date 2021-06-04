@@ -30,6 +30,7 @@ import './pug/comps/quiz/quiz';
 import './pug/comps/scroll-to-page-start/scroll-to-page-start';
 import './pug/comps/calc/calc';
 import './pug/comps/datepicker/datepicker';
+import './pug/comps/custom-input/custom-input';
 
 // Include vendor styles
 import 'normalize.css';

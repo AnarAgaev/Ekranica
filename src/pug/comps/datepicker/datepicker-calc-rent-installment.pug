@@ -3,12 +3,12 @@
         include ../../../img/icon-help.svg
         include ../../comps/help-modal/help-modal-rent-installment
 
-    .label-controll__caption Срок аренды
+    .label-controll__caption Начало срока аренды
     .label-controll__body
         .label-controll__content
 
             .input-datepicker.not-selected.custom-input#rentInstallment
-                input.visuallyhidden(type="text" data-calc-property="rentInstallment" data-calc-value="")
+                input.visuallyhidden#datepickerRentInstallment(type="text" data-calc-property="rentInstallment" data-calc-value="")
                 span.day дд
                 span.input-datepicker__delimiter
                 span.month мм
@@ -16,7 +16,3 @@
                 span.year гггг
                 span.input-datepicker__icon
                     include ../../../img/icon-calendar.svg
-
-        input(type="text" data-calc-property="rentInstallment" data-calc-value="")
-
-

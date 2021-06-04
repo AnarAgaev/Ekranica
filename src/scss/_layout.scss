@@ -1792,13 +1792,15 @@ filter: grayscale(0) blur(0);
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
     clip-path: inset(50%) !important;
-    height: 1px !important;
+    height: 0 !important;
     overflow: hidden !important;
     padding: 0 !important;
     margin: 0 !important;
     position: absolute !important;
-    width: 1px !important;
+    width: 0 !important;
     white-space: nowrap !important;
+    z-index: -1 !important;
+    opacity: 0 !important;
 
     &:focus,
     &:active {
