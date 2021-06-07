@@ -2,75 +2,24 @@
 
     .container
         .calc__title-picture
-            .image.active(data-calc-type-pic="#outsideScreen" style="background-image: url('/img/quiz-location-outside.png');")
+            .image(data-calc-type-pic="#outsideScreen" style="background-image: url('/img/quiz-location-outside.png');")
             .image(data-calc-type-pic="#insideScreen" style="background-image: url('/img/quiz-location-inside.png');")
             .image(data-calc-type-pic="#mediaFacade" style="background-image: url('/img/calc-media-faced.png');")
-            .image(data-calc-type-pic="#rentScreen" style="background-image: url('/img/quiz-location-inside.png');")
+            .image.active(data-calc-type-pic="#rentScreen" style="background-image: url('/img/quiz-location-inside.png');")
 
     .container
         h2.calc__title
             span.title.animation-element  Рассчитать стоимость конструкции
-            span.step.animation-element шаг 1 из 2
+            span.step.animation-element шаг 1 из 3
 
     .container-endless-fix
         .endless
             .calc__tab-list.swiper-container#calcTabListStep1Slider
                 .calc__tab-list-wrap.swiper-wrapper
-
-                    .calc__tab-list__slide.swiper-slide
-                        // При инициализации, добавить первому элемну класс .active
-                        .calc__tab-list__button(data-target-tab-id="#outsideScreen")
-                            | Уличный светодиодный экран
-
-                    .calc__tab-list__slide.swiper-slide
-                        .calc__tab-list__button(data-target-tab-id="#insideScreen")
-                            | Внутренний светодиодный экран
-
-                    .calc__tab-list__slide.swiper-slide
-                        .calc__tab-list__button(data-target-tab-id="#mediaFacade")
-                            | Медиафасад
-
-                    .calc__tab-list__slide.swiper-slide
-                        .calc__tab-list__button.active(data-target-tab-id="#rentScreen")
-                            | Аренда
+                    include calc-tab-list
 
     .calc__content
-        .calc__calculator.active#outsideScree
-            .container
-                .calc__body
-                    .calc__body-controllers
-                        include ../custom-slider-radio/custom-slider-radio-rent-construction
-                        include ../custom-selects/suffix-select-calc-rent-pixel-step
-                        include ../custom-selects/suffix-select-calc-rent-width
-                        include ../custom-selects/suffix-select-calc-rent-height
-                        include ../custom-input/custom-input-rent-days
-                        include ../datepicker/datepicker-calc-rent-installment
-                        include ../custom-checkbox/custom-checkbox-calc-rent-delivery
-                        include ../custom-checkbox/custom-checkbox-calc-rent-cotroller
-
-
-
-
-
-                    .calc__body-result
-
-                .calc__specification
-                    .calc__specification-list
-                    .calc__specification-rusult
-
-                .calc__order
-                    .calc__order-form
-                    .calc__order-result
-
-        .calc__calculator#insideScreen
-            .container
-                p Внутренний светодиодный экран
-
-        .calc__calculator#mediaFacade
-            .container
-                p Медиафасад
-
-        .calc__calculator#rentScreen
-            .container
-                p Аренда
-
+        include calc-outside-screen
+        include calc-inside-screen
+        include calc-media-facade-screen
+        include calc-rent-screen

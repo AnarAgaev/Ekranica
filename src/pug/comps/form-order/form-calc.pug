@@ -1,0 +1,38 @@
+form.form-order#calcOrderForm(action="/" method="POST" data-target="#calcModal")
+    .controller-group
+        label.controller-label ФИО
+        .controller.controller__input
+            label.label.label__icon
+                span.controller-icon.icon-human
+                    img(src="/img/icon-person.svg" alt="")
+                input(type="text" placeholder="Как Вас зовут?" name="name" id="rentName")
+
+    .controller-group
+        label.controller-label Номер телефона
+        // Для валидного значения меняем класс у controller на valid
+        .controller.controller__input
+            label.label.label__icon
+                span.controller-icon.icon-phone
+                    img(src="/img/icon-phone.svg" alt="")
+                input(type="text" placeholder="+7 900 000 00 00" name="phone" id="rentPhone")
+            .validator.validator__cross
+                img.valid(src="/img/icon-validator-cross-valid.svg" alt="")
+                img.invalid(src="/img/icon-validator-cross-invalid.svg" alt="")
+            .validator.validator__check
+                img.valid(src="/img/icon-validator-check-valid.svg" alt="")
+                img.invalid(src="/img/icon-validator-check-invalid.svg" alt="")
+
+    .controller-group
+        label.controller-label Email
+        .controller.controller__input
+            label.label.label__icon
+                span.controller-icon.icon-mail
+                    img(src="/img/icon-calc-mail.svg" alt="")
+                input(type="text" placeholder="example@email.com" name="mail" id="rentMail")
+
+    .controller-group
+        label.controller-label Комментарий
+        .controller-wrap
+            span.controller-icon.icon-msg
+                img(src="/img/icon-message.svg" alt="")
+            textarea(placeholder="Напишите что-нибудь" name="message" id="rentMessage")

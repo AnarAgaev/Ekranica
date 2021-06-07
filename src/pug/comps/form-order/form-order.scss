@@ -150,6 +150,16 @@
             }
         }
 
+        &.icon-mail {
+            img {
+                width: 106px;
+
+                @media (min-width: $lg) {
+                    width: 130px;
+                }
+            }
+        }
+
         &.icon-msg {
             img {
                 width: 39px;

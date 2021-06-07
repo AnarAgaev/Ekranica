@@ -237,10 +237,12 @@ img {
 
 //- Links
 a,
-a.link {
+a.link,
+.link{
     text-decoration: none;
     color: $color-text-primary;
     transition: $transition;
+    cursor: pointer;
 
     @media (min-width: $lg) {
         &:hover {
