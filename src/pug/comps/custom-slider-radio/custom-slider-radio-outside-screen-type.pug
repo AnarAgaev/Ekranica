@@ -1,0 +1,17 @@
+.label-controll
+    .label-controll__help.help-button(data-help-modal-id="helpModalPixelConstruction")
+        include ../../../img/icon-help.svg
+        include ../../comps/help-modal/help-modal-pixel-construction
+
+    .label-controll__caption Тип исполнения
+    .label-controll__body
+        .label-controll__content
+            .radio-group#calcOutsideScreenType(data-controller-type="radio-group")
+                .marker
+                // Если нужно чтобы при инициализации был выбран какой-то пункт, добавить checked='' в соответсвующий input
+                // Список значений формировать динамически из параметров элементв на стороне сервера
+                // Тип свойства в сторе data-calc-property НЕ ТРОГАТЬ! именно так оно указано в JS
+                input#calcOutsideScreenTypeMono(type='radio' name='type' value='')
+                label.filter-controller(for='calcOutsideScreenTypeMono' data-calc-property="rentOutsideScreenType" data-filter-value="mono") Монолитный
+                input#calcOutsideScreenTypeCabin(type='radio' name='type' value='')
+                label.filter-controller(for='calcOutsideScreenTypeCabin' data-calc-property="rentOutsideScreenType" data-filter-value="cabin") Кабинетный

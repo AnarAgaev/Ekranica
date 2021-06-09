@@ -1,4 +1,5 @@
-.calc__calculator.calc__calculator_rent.active#rentScreen
+// Для активного элемента добавлять класс active
+.calc__calculator.calc__calculator_rent#rentScreen
     .container
 
         .calc__body
@@ -51,7 +52,7 @@
             .calc__specification-result
                 .calc__specification-result-sum
                     span Итого:
-                    span#calcRentSpecificationresultSum 2 240 000 ₽
+                    span#calcRentSpecificationResultSum 2 240 000 ₽
                 .calc__specification-result-comment
                     span В расчете указана приблизительная стоимость.
                     br
@@ -89,9 +90,8 @@
                 .calc__tab-list-wrap.swiper-wrapper
                     include calc-tab-list
 
-
             .calc__order-form
-                include ../../comps/form-order/form-calc
+                include ../../comps/form-order/form-calc-rent
 
             .calc__order-result
                 .calc__order-result-pic

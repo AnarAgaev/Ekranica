@@ -204,6 +204,10 @@
         line-height: 160%;
         color: $color-accent;
         transition: color .3s;
+
+        &.short {
+            min-width: 14px !important;
+        }
     }
 
     &__arr {

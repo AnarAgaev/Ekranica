@@ -1740,6 +1740,18 @@ filter: grayscale(0) blur(0);
             }
         }
     }
+
+    &.label-controll_checkbox {
+        margin-bottom: 24px;
+
+        @media (min-width: $xl) {
+            margin-bottom: 34px !important;
+        }
+
+        & + .label-controll:not(.label-controll_checkbox) {
+            padding-top: 10px;
+        }
+    }
 }
 
 // Visible elements
@@ -1814,4 +1826,10 @@ filter: grayscale(0) blur(0);
         width: auto !important;
         white-space: normal !important;
     }
+}
+
+// Offsets
+
+.mr-0 {
+    margin-right: 0 !important;
 }

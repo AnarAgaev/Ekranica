@@ -258,6 +258,8 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        position: relative;
+        z-index: 3;
 
         &-controllers {
             display: flex;
@@ -388,6 +390,7 @@
         margin-bottom: 96px;
         padding-top: 60px;
         position: relative;
+        z-index: 2;
 
         @media (min-width: $md) {
             display: flex;
@@ -938,6 +941,7 @@
         margin-bottom: 96px;
         padding-top: 60px;
         position: relative;
+        z-index: 1;
 
         @media (min-width: $md) {
             display: flex;
@@ -1208,14 +1212,11 @@
                     border-radius: 12px;
 
                     img {
-                        width: 217px;
                         height: auto;
                         position: absolute;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        margin-top: -14px;
-                        margin-left: 19px;
                     }
                 }
 
@@ -1234,7 +1235,7 @@
                 @media (min-width: $xl) {
                     width: 100%;
                     height: auto;
-                    padding: 76px 172px 76px 68px;
+                    padding: 76px 280px 76px 68px;
                     background: $color-back-primary;
                     box-shadow:
                             -14px -28px 30px rgba(35, 33, 58, 0.15),
@@ -1372,10 +1373,141 @@
             }
         }
     }
+
+    &__collapse-controllers {
+        margin-bottom: 44px;
+
+        @media (min-width: $lg) {
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: $xl) {
+            margin-bottom: 54px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            margin-top: 8px;
+
+            .text {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 160%;
+                color: $color-text-secondary;
+                margin-right: 9px;
+                transition: all .2s linear;
+            }
+
+            .icon {
+                position: relative;
+                width: 16px;
+                height: 16px;
+                margin-top: 1px;
+                transition: all .3s linear;
+                transform: scale(1, 1);
+            }
+
+            @media (min-width: $lg) {
+                &:hover {
+                    .text {
+                        color: $color-accent;
+                    }
+
+                    .icon svg path {
+                        stroke: $color-accent;
+                    }
+                }
+            }
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            max-height: 0;
+            padding: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all .5s;
+        }
+
+        &.hidden {
+            .body {
+                overflow: hidden;
+            }
+        }
+
+        &.open {
+
+            .btn {
+                .icon {
+                    transform: scale(1, -1);
+                }
+            }
+
+            .body {
+                padding-top: 36px;
+                max-height: 800px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .label-controll:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .calc__calculator {
+    &_outside-screen {
+        .calc__body-result-picture img {
+            width: 300px;
+            margin-top: -36px;
+            margin-left: 29px;
+
+            @media (min-width: $xl) {
+                width: 347px;
+                margin-top: -60px;
+                margin-left: 43px;
+            }
+        }
+
+        .calc__order-result-pic img {
+            @media (min-width: $lg) {
+                width: 300px;
+                margin-top: -19px;
+                margin-left: 8px;
+            }
+        }
+
+        .calc__order-result-list {
+            @media (min-width: $xl) {
+                background: url("/img/quiz-location-screen.png") no-repeat;
+                background-size: 307px;
+                background-position: top 14px right 5%;
+            }
+
+            @media (min-width: $xxl) {
+                background: url(/img/calc-location-outside.png) no-repeat;
+                background-position: top 20px right 7%;
+                background-size: 333px;
+            }
+        }
+    }
+
     &_rent {
+        .calc__order-result-pic img {
+            @media (min-width: $lg) {
+                width: 217px;
+                margin-top: -14px;
+                margin-left: 19px;
+            }
+        }
+
         .calc__order-result-list {
             @media (min-width: $xl) {
                 background: url("/img/quiz-location-inside.png") no-repeat;
