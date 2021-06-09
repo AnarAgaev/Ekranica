@@ -1477,11 +1477,9 @@
         }
 
         .calc__order-result-pic img {
-            @media (min-width: $lg) {
-                width: 300px;
-                margin-top: -19px;
-                margin-left: 8px;
-            }
+            width: 300px;
+            margin-top: -19px;
+            margin-left: 8px;
         }
 
         .calc__order-result-list {
@@ -1492,7 +1490,41 @@
             }
 
             @media (min-width: $xxl) {
-                background: url(/img/calc-location-outside.png) no-repeat;
+                background: url("/img/calc-location-outside.png") no-repeat;
+                background-position: top 20px right 7%;
+                background-size: 333px;
+            }
+        }
+    }
+
+    &_inside-screen {
+        .calc__body-result-picture img {
+            width: 229px;
+            margin-top: -14px;
+            margin-left: 30px;
+
+            @media (min-width: $xl) {
+                width: 324px;
+                margin-top: -17px;
+                margin-left: 50px;
+            }
+        }
+
+        .calc__order-result-pic img {
+            width: 229px;
+            margin-top: -2px;
+            margin-left: 23px;
+        }
+
+        .calc__order-result-list {
+            @media (min-width: $xl) {
+                background: url("/img/quiz-location-inside.png") no-repeat;
+                background-size: 307px;
+                background-position: top 14px right 5%;
+            }
+
+            @media (min-width: $xxl) {
+                background: url("/img/quiz-location-inside.png") no-repeat;
                 background-position: top 20px right 7%;
                 background-size: 333px;
             }
@@ -1501,11 +1533,9 @@
 
     &_rent {
         .calc__order-result-pic img {
-            @media (min-width: $lg) {
-                width: 217px;
-                margin-top: -14px;
-                margin-left: 19px;
-            }
+            width: 217px;
+            margin-top: -14px;
+            margin-left: 19px;
         }
 
         .calc__order-result-list {
