@@ -1531,6 +1531,39 @@
         }
     }
 
+    &_media-facade {
+        .calc__body-result-picture img {
+            width: 220px;
+            margin-top: 0;
+            margin-left: 0;
+
+            @media (min-width: $xl) {
+                width: 300px;
+                margin-top: 0;
+                margin-left: 0;
+            }
+        }
+
+        .calc__order-result-pic img {
+            width: 220px;
+            margin-top: 0;
+            margin-left: 0;
+        }
+
+        .calc__order-result-list {
+            @media (min-width: $xl) {
+                background: url("/img/calc-media-facade.png") no-repeat;
+                background-size: 260px;
+                background-position: top 100px right 9%;
+            }
+
+            @media (min-width: $xxl) {
+                background-size: 270px;
+                background-position: top 86px right 14%;
+            }
+        }
+    }
+
     &_rent {
         .calc__order-result-pic img {
             width: 217px;
@@ -1549,5 +1582,13 @@
                 background-position: top 14px right 15%;
             }
         }
+    }
+}
+
+[data-calc-type-pic="#mediaFacade"] {
+    background-size: 65% !important;
+
+    @media (min-width: $md) {
+        background-size: 50% !important;
     }
 }

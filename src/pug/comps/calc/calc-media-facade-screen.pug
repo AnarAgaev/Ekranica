@@ -1,3 +1,134 @@
+// Для активного элемента добавлять класс active
 .calc__calculator.calc__calculator_media-facade#mediaFacade
     .container
-        p Медиафасад
+
+        .calc__body
+            .calc__body-controllers
+                include ../custom-slider-radio/custom-slider-radio-outside-screen-type
+                include ../custom-selects/suffix-select-calc-rent-pixel-step
+                include ../custom-selects/suffix-select-calc-rent-width
+                include ../custom-selects/suffix-select-calc-rent-height
+                include ../custom-slider-radio/custom-slider-radio-outside-screen-system-controll
+                include ../custom-selects/suffix-select-calc-outside-screen-content-controller
+                include ../custom-selects/suffix-select-calc-outside-screen-projects.pug
+                include ../custom-checkbox/custom-checkbox-calc-outside-screen-brightness-sensor
+                include ../custom-checkbox/custom-checkbox-calc-outside-screen-temperature-sensor
+
+                .calc__collapse-controllers.hidden
+                    .btn
+                        span.text Дополнительно
+                        span.icon
+                            include ../../../img/icon-ts.svg
+                    .body
+                        include ../custom-checkbox/custom-checkbox-calc-outside-screen-electrical-project
+                        include ../custom-checkbox/custom-checkbox-calc-outside-screen-steel-construction-project
+                        include ../custom-checkbox/custom-checkbox-calc-outside-screen-switchboard
+                        include ../custom-checkbox/custom-checkbox-calc-outside-screen-additional-spare-parts
+                        include ../custom-selects/suffix-select-calc-ouside-screen-extended-warranty
+                        include ../custom-selects/suffix-select-calc-ouside-screen-advanced-service
+                        include ../custom-selects/suffix-select-calc-ouside-screen-insurance
+
+                .btn.btn_primary.btn_show-result Рассчитать стоимость
+
+            .calc__body-result
+                .calc__body-result-picture
+                    img(src="/img/calc-media-facade.png" alt="")
+                .calc__body-result-sum
+                    span Итого:
+                    span#calcMediaFacadeContentSum 3 340 000 ₽
+                .btn.btn_primary Посмотреть спецификацию
+
+
+        .calc__specification
+            .calc__specification-title
+                span.title  Просмотр спецификации
+                span.step шаг 2 из 3
+
+            .calc__tab-list.swiper-container
+                .calc__tab-list-wrap.swiper-wrapper
+                    include calc-tab-list
+
+            .calc__specification-list
+                .calc__specification-list-title Спецификация
+
+                .calc__specification-list-short
+                    ul
+                        li Уличный светодиодный экран 2720 x 3420 мм
+                        li Комплектующие в сборе
+                        li Гарантийное обслуживание
+                        li Страховка
+                .calc__specification-list-sum
+                    span Итого:
+                    span#calcMediaFacadeSpecificationListSum 3 340 000 ₽
+
+            .calc__specification-table
+                include calc-specification-tabel
+
+            .calc__specification-result
+                .calc__specification-result-sum
+                    span Итого:
+                    span#calcMediaFacadeSpecificationResultSum 3 340 000 ₽
+                .calc__specification-result-comment
+                    span В расчете указана приблизительная стоимость.
+                    br
+                    span Для определения более точной стоимости
+                    a.link.revers заполните заявку
+                .calc__specification-result-set-form
+                    .btn.btn_primary Заполнить заявку
+                .calc__specification-result-download
+                    a.btn.btn_primary(href="" download)
+                        spna.icon-prolog
+                            include ../../../img/icon-download-btn.svg
+                        span.d-none.sm-visible.md-visible Скачать смету
+                        span.d-none.lg-visible.xl-visible Скачать спецификацию
+                        span.icon-epilogue
+                            include ../../../img/icon-arr-btn.svg
+                a(href="").calc__specification-result-share
+                    span.icon
+                        include ../../../img/icon-share.svg
+                    | Поделиться спецификацией
+                .calc__specification-result-recalc
+                    .btn
+                        span.icon
+                            include ../../../img/icon-calc-btn.svg
+                        | Пересчитать
+
+
+        .calc__order
+
+            .calc__order-title
+                span.title  Отправьте заявку на подробный расчет
+                span.step шаг 3 из 3
+
+            .calc__tab-list.swiper-container
+                .calc__tab-list-wrap.swiper-wrapper
+                    include calc-tab-list
+
+
+            .calc__order-form
+                include ../../comps/form-order/form-calc-media-facade
+
+            .calc__order-result
+                .calc__order-result-pic
+                    img(src="/img/calc-media-facade.png" alt="")
+
+                .calc__order-result-list
+                    .calc__order-result-list-title Спецификация
+                    .calc__order-result-list-short
+                        ul
+                            li Уличный светодиодный экран 2720 x 3420 мм
+                            li Комплектующие в сборе
+                            li Гарантийное обслуживание
+                            li Страховка
+                    .calc__order-result-list-sum
+                        span Итого:
+                        span#calcMediaFacadeOrderListSum 3 340 000 ₽
+
+                .calc__order-result-submit
+                    .form-order__actions
+                        .form-order__actions-group
+                            span.form-order__privacy
+                                | Нажимая на кнопку “Отправить заявку”, я даю согласие на
+                                a.revers(href="/") обработку моих персональных данных
+                            .form-order__button
+                                button.btn.btn_primary.form-order__submit(type="submit") Отправить заявку
