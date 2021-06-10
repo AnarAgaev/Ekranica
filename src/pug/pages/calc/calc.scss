@@ -41,7 +41,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             opacity: 0;
-            transition: opacity .3s linear;
+            transition: opacity .7s linear;
 
             &.active {
                 opacity: 1;
@@ -210,9 +210,19 @@
     
     &__calculator {
         display: none;
+        opacity: 1;
+        transform: translateY(0);
+
+        @include card-animation;
         
         &.active {
             display: block;
+        }
+
+        &.hidden {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all .3s linear;
         }
 
         &_rent {
@@ -265,7 +275,6 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-bottom: 96px;
 
             .label-controll {
                 @media (min-width: $lg) {
@@ -351,6 +360,14 @@
 
             &-sum {
                 margin-bottom: 24px;
+                opacity: 1;
+                transform: translateY(0);
+                @include card-animation;
+
+                &.hidden {
+                    opacity: 0;
+                    transform: translateY(25px);
+                }
 
                 @media (min-width: $xl) {
                     margin-top: 10px;
@@ -383,14 +400,43 @@
                     }
                 }
             }
+
+            &-btn {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: .5s;
+                @include card-animation;
+
+                &.hidden {
+                    opacity: 0;
+                    transform: translateY(25px);
+                }
+            }
         }
     }
 
     &__specification {
-        margin-bottom: 96px;
+        margin-top: 96px;
         padding-top: 60px;
         position: relative;
         z-index: 2;
+        opacity: 1;
+        transform: translateY(0);
+
+        @include card-animation;
+
+        &.invisible {
+            height: 0 !important;
+            overflow: hidden !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        &.hidden {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all .3s linear;
+        }
 
         @media (min-width: $md) {
             display: flex;
@@ -938,10 +984,27 @@
     }
 
     &__order {
-        margin-bottom: 96px;
+        margin-top: 96px;
         padding-top: 60px;
         position: relative;
         z-index: 1;
+        opacity: 1;
+        transform: translateY(0);
+
+        @include card-animation;
+
+        &.invisible {
+            height: 0 !important;
+            overflow: hidden !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        &.hidden {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all .3s linear;
+        }
 
         @media (min-width: $md) {
             display: flex;
@@ -1585,10 +1648,24 @@
     }
 }
 
+[data-calc-type-pic="#outsideScreen"] {
+    @media (min-width: $md) {
+        background-position: 100px center !important;
+    }
+}
+
 [data-calc-type-pic="#mediaFacade"] {
     background-size: 65% !important;
 
     @media (min-width: $md) {
         background-size: 50% !important;
+        background-position: 181px 100px!important;
+    }
+}
+
+[data-calc-type-pic="#rentScreen"],
+[data-calc-type-pic="#insideScreen"] {
+    @media (min-width: $md) {
+        background-position: 174px center !important;
     }
 }

@@ -1,5 +1,5 @@
 // Для активного элемента добавлять класс active
-.calc__calculator.calc__calculator_outside-screen.active#outsideScree
+.calc__calculator.calc__calculator_outside-screen.active#outsideScreen
     .container
 
         .calc__body
@@ -33,13 +33,12 @@
             .calc__body-result
                 .calc__body-result-picture
                     img(src="/img/calc-location-outside.png" alt="")
-                .calc__body-result-sum
+                .calc__body-result-sum.hidden
                     span Итого:
                     span#calcRentContentSum 1 340 000 ₽
-                .btn.btn_primary Посмотреть спецификацию
+                .btn.btn_primary.calc__body-result-btn.hidden Посмотреть спецификацию
 
-
-        .calc__specification
+        .calc__specification.hidden.invisible
             .calc__specification-title
                 span.title  Просмотр спецификации
                 span.step шаг 2 из 3
@@ -94,8 +93,8 @@
                         | Пересчитать
 
 
-        .calc__order
 
+        .calc__order.hidden.invisible
             .calc__order-title
                 span.title  Отправьте заявку на подробный расчет
                 span.step шаг 3 из 3

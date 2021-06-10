@@ -286,4 +286,8 @@ $(document).ready(function () {
                     else if (windowWidth >= 768) return 'md';
                         else return 'sm';
     }
+
+    window.scrollToPageStart = function () {
+        $('body, html').animate({scrollTop: 0}, 500);
+    }
 });
