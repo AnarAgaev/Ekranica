@@ -45,6 +45,7 @@ $(document).ready(function () {
             )
         }
 
+
     // Handle click on calc tab buttons
     $(() => $('.calc__tab-list__button')
         .toArray()
@@ -121,6 +122,7 @@ $(document).ready(function () {
             );
         }
 
+
     // Calculating result of entered data
     $(() => $('.btn_show-result')
         .toArray()
@@ -152,11 +154,17 @@ $(document).ready(function () {
 
             addSumToContainers(sum, sumContainers);
 
-            if (getScreenType() === 'lg' || getScreenType() === 'xl') {
+            if (isLargeScreen()) {
                 showSumInCalcBody(body);
             } else {
-                showSpecification(specification);
+                showCalcSection(specification);
             }
+        }
+
+        function isLargeScreen () {
+            return getScreenType() === 'lg'
+                || getScreenType() === 'xl'
+                || getScreenType() === 'xxl';
         }
 
         function addSumToContainers (sum, containers) {
@@ -184,18 +192,6 @@ $(document).ready(function () {
             }, 500);
         }
 
-        function showSpecification (specification) {
-            let offsetIdx = getScreenType() === 'sm' ? 30 : -20;
-            let scrollTo = $(specification).offset().top + offsetIdx;
-            $('body,html').animate({ scrollTop: scrollTo }, 500);
-
-            $(specification).removeClass('invisible');
-
-            setTimeout(
-                () => $(specification).removeClass('hidden'),
-                100
-            )
-        }
 
     // Show specification
     $(() => $('.show-specification')
@@ -210,13 +206,126 @@ $(document).ready(function () {
         }
 
         function handleClickOnButtonShowSpecification () {
-            let specification = $(this)
+            let specificationSection = $(this)
                 .closest('.calc__body')
                 .next('.calc__specification');
 
-            showSpecification(specification);
+            showCalcSection(specificationSection);
         }
 
-    // Show order form
 
+    // Show order form
+    $(() => $('.show-order-form')
+        .toArray()
+        .forEach(addHandlerClickToBtnShowOrderForm));
+
+        function addHandlerClickToBtnShowOrderForm (el) {
+            $(el).on(
+                'click',
+                handleClickToBtnShowOrderForm
+            );
+        }
+
+        function handleClickToBtnShowOrderForm () {
+            let formOrderSection = $(this)
+                .closest('.calc__specification')
+                .next('.calc__order');
+
+            showCalcSection(formOrderSection);
+        }
+
+        function showCalcSection (section) {
+            let offsetTop = $(section).prev().offset().top;
+            let sectionHeight = $(section).prev().innerHeight();
+            let offsetIdx = getScreenType() === 'sm' ? 50 : 0; // fix for mobile screens
+            let scrollTo = offsetTop + sectionHeight + offsetIdx;
+
+            $('body,html').animate({ scrollTop: scrollTo }, 500);
+            $(section).removeClass('invisible');
+
+            setTimeout(
+                () => $(section).removeClass('hidden'),
+                100
+            )
+        }
+
+
+    // Reset calc section and inner form
+    $(() => $('.reset-calc-section')
+        .toArray()
+        .forEach(addHandlerClickToBtnRecalc));
+
+        function addHandlerClickToBtnRecalc (el) {
+            $(el).on(
+                'click',
+                resetCalcSection
+            );
+        }
+
+        function resetCalcSection () {
+            scrollToPageStart();
+            resetBodyControllers();
+            hideCalcSections();
+        }
+
+        function resetBodyControllers () {
+            let calc = $('.calc__calculator.active');
+            let body = $(calc).find('.calc__body');
+            let bodySum = $(body).find('.calc__body-result-sum');
+            let btnShowSpecification = $(body).find('.show-specification');
+
+            $(bodySum).addClass('hidden');
+            $(btnShowSpecification).addClass('hidden');
+        }
+
+        function hideCalcSections () {
+            let calc = $('.calc__calculator.active');
+            let specification = $(calc).find('.calc__specification');
+            let order = $(calc).find('.calc__order');
+
+            $(specification).addClass('hidden');
+            $(order).addClass('hidden');
+            setTimeout(
+                () => {
+                    $(specification).addClass('invisible');
+                    $(order).addClass('invisible');
+                },
+                300
+            );
+        }
+
+
+    // Submit calc order form
+    $(() => $('.form-order__submit')
+        .toArray()
+        .forEach(addHandlerClickOnBtnOrderForm));
+
+        function addHandlerClickOnBtnOrderForm (el) {
+            $(el).on(
+                'click',
+                handleClickOnBtnOrderForm
+            );
+        }
+
+        function handleClickOnBtnOrderForm () {
+            let form = $(this)
+                .closest('.calc__order-result')
+                .prev('.calc__order-form')
+                .children('.form-order');
+
+
+            // Валидация и обработка данных форма
+            // Отправка данных на сервер
+
+
+            scrollToPageStart();
+            resetBodyControllers();
+            hideCalcSections();
+            modalOpen(form);
+            setFocusOnCalcModalClose();
+        }
+
+        function setFocusOnCalcModalClose() {
+            $('#calcModal .modal__close').focus();
+        }
 });

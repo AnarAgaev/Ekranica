@@ -367,6 +367,7 @@
                 &.hidden {
                     opacity: 0;
                     transform: translateY(25px);
+                    transition: all .3s linear;
                 }
 
                 @media (min-width: $xl) {
@@ -409,6 +410,7 @@
                 &.hidden {
                     opacity: 0;
                     transform: translateY(25px);
+                    transition: all .3s linear;
                 }
             }
         }
