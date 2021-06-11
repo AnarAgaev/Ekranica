@@ -401,10 +401,9 @@
                 }
             }
 
-            &-btn {
+            .show-specification {
                 opacity: 1;
                 transform: translateY(0);
-                transition-delay: .5s;
                 @include card-animation;
 
                 &.hidden {
@@ -436,6 +435,10 @@
             opacity: 0;
             transform: translateY(25px);
             transition: all .3s linear;
+
+            &:before {
+                width: 0;
+            }
         }
 
         @media (min-width: $md) {
@@ -463,6 +466,7 @@
                     inset -2px -2px 5px rgba(52, 40, 62, 0.3),
                     inset 2px 2px 5px rgba(0, 2, 12, 0.8);
             border-radius: 12px;
+            transition: width 1.5s;
         }
 
         .calc__tab-list {

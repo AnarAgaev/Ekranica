@@ -19,8 +19,8 @@
                     img(src="/img/quiz-location-inside.png" alt="")
                 .calc__body-result-sum.hidden
                     span Итого:
-                    span#calcRentContentSum 2 240 000 ₽
-                .btn.btn_primary.calc__body-result-btn.hidden Посмотреть спецификацию
+                    span.sum-container
+                .btn.btn_primary.show-specification.hidden Посмотреть спецификацию
 
         .calc__specification.hidden.invisible
             .calc__specification-title
@@ -42,7 +42,7 @@
                         li Техническая консультация
                 .calc__specification-list-sum
                     span Итого:
-                    span#calcRentSpecificationListSum 2 240 000 ₽
+                    span.sum-container
 
             .calc__specification-table
                 include calc-specification-tabel
@@ -50,7 +50,7 @@
             .calc__specification-result
                 .calc__specification-result-sum
                     span Итого:
-                    span#calcRentSpecificationResultSum 2 240 000 ₽
+                    span.sum-container
                 .calc__specification-result-comment
                     span В расчете указана приблизительная стоимость.
                     br
@@ -105,7 +105,7 @@
                             li Техническая консультация
                     .calc__order-result-list-sum
                         span Итого:
-                        span#calcRentOrderListSum 2 240 000 ₽
+                        span.sum-container
 
                 .calc__order-result-submit
                     .form-order__actions.animation-element

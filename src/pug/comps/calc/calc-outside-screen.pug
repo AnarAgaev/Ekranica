@@ -35,8 +35,8 @@
                     img(src="/img/calc-location-outside.png" alt="")
                 .calc__body-result-sum.hidden
                     span Итого:
-                    span#calcRentContentSum 1 340 000 ₽
-                .btn.btn_primary.calc__body-result-btn.hidden Посмотреть спецификацию
+                    span.sum-container
+                .btn.btn_primary.show-specification.hidden Посмотреть спецификацию
 
         .calc__specification.hidden.invisible
             .calc__specification-title
@@ -58,7 +58,7 @@
                         li Страховка
                 .calc__specification-list-sum
                     span Итого:
-                    span#calcOutsideScreenSpecificationListSum 1 340 000 ₽
+                    span.sum-container
 
             .calc__specification-table
                 include calc-specification-tabel
@@ -66,7 +66,7 @@
             .calc__specification-result
                 .calc__specification-result-sum
                     span Итого:
-                    span#calcOutsideScreenSpecificationResultSum 1 340 000 ₽
+                    span.sum-container
                 .calc__specification-result-comment
                     span В расчете указана приблизительная стоимость.
                     br
@@ -91,8 +91,6 @@
                         span.icon
                             include ../../../img/icon-calc-btn.svg
                         | Пересчитать
-
-
 
         .calc__order.hidden.invisible
             .calc__order-title
@@ -121,7 +119,7 @@
                             li Страховка
                     .calc__order-result-list-sum
                         span Итого:
-                        span#calcOutsideScreenOrderListSum 1 340 000 ₽
+                        span.sum-container
 
                 .calc__order-result-submit
                     .form-order__actions

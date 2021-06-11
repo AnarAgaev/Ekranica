@@ -2,21 +2,21 @@ import $ from "jquery";
 import IMask from "imask";
 
 $(document).ready(function () {
-    // handle click on additionally controller buttons
-    $(function () {
-        let btns = $('.calc__collapse-controllers .btn');
+    // Handle click on additionally controller buttons
+    $(() => $('.calc__collapse-controllers .btn')
+        .toArray()
+        .forEach(addHandleClickToBtnAdditionallyCalcControllers));
 
-        for ( let i = 0; i < btns.length; i++) {
-            $(btns[i]).on(
+        function addHandleClickToBtnAdditionallyCalcControllers(el) {
+            $(el).on(
                 'click',
-                () => toggleVisibleAdditionallyCalcControllers(btns[i]),
+                toggleVisibleAdditionallyCalcControllers
             );
         }
-    });
 
-        function toggleVisibleAdditionallyCalcControllers (btn) {
+        function toggleVisibleAdditionallyCalcControllers () {
             const HIDDEN_TIMEOUT = 500; // take this param from css transition
-            let container = $(btn).parent();
+            let container = $(this).parent();
 
             if (isHidden(container)) {
                 showEl(container);
@@ -45,12 +45,10 @@ $(document).ready(function () {
             )
         }
 
-    // handle click on calc tab buttons
-    $(function () {
-        $('.calc__tab-list__button')
-            .toArray()
-            .forEach(addHandleClickToCalcTabs);
-    })
+    // Handle click on calc tab buttons
+    $(() => $('.calc__tab-list__button')
+        .toArray()
+        .forEach(addHandleClickToCalcTabs));
 
         function addHandleClickToCalcTabs (el) {
             $(el).on(
@@ -123,6 +121,102 @@ $(document).ready(function () {
             );
         }
 
+    // Calculating result of entered data
+    $(() => $('.btn_show-result')
+        .toArray()
+        .forEach(addHandleClickOnButtonGetCalcResult));
 
+        function addHandleClickOnButtonGetCalcResult (el) {
+            $(el).on(
+                'click',
+                getCalcResults
+            );
+        }
+
+        function getCalcResults () {
+            // HERE SHOULD BE THE RESULTS OF CALCULATIONS !!!!!!!!!!!!!!!!!!!!
+            let tempSumForWork = 1320000; // deleted after calc real results
+
+            showCalcResults(tempSumForWork, this)
+        }
+
+        function showCalcResults (sum, btnGetResult) {
+            let body = $(btnGetResult).closest('.calc__body');
+            let specification = $(body).next('.calc__specification');
+            let order = $(specification).next('.calc__order');
+
+            let sumContainers = []
+                .concat($(body).find('.sum-container').toArray())
+                .concat($(specification).find('.sum-container').toArray())
+                .concat($(order).find('.sum-container').toArray());
+
+            addSumToContainers(sum, sumContainers);
+
+            if (getScreenType() === 'lg' || getScreenType() === 'xl') {
+                showSumInCalcBody(body);
+            } else {
+                showSpecification(specification);
+            }
+        }
+
+        function addSumToContainers (sum, containers) {
+            containers.forEach(
+                el => {
+                    $(el).html(sum.toLocaleString('ru-RU') + '&nbsp;₽');
+                }
+            );
+        }
+
+        function showSumInCalcBody (body) {
+            // Take 144 from css style. It's a height of header plus 30px.
+            let scrollTo = $(body).offset().top - 144;
+
+            $('body,html').animate({ scrollTop: scrollTo }, 500);
+
+            $(body)
+                .find('.calc__body-result-sum')
+                .removeClass('hidden');
+
+            setTimeout(() => {
+                $(body)
+                    .find('.show-specification')
+                    .removeClass('hidden');
+            }, 500);
+        }
+
+        function showSpecification (specification) {
+            let offsetIdx = getScreenType() === 'sm' ? 30 : -20;
+            let scrollTo = $(specification).offset().top + offsetIdx;
+            $('body,html').animate({ scrollTop: scrollTo }, 500);
+
+            $(specification).removeClass('invisible');
+
+            setTimeout(
+                () => $(specification).removeClass('hidden'),
+                100
+            )
+        }
+
+    // Show specification
+    $(() => $('.show-specification')
+        .toArray()
+        .forEach(addHandleClickToBtnShowSpecification));
+
+        function addHandleClickToBtnShowSpecification (el) {
+            $(el).on(
+                'click',
+                handleClickOnButtonShowSpecification
+            );
+        }
+
+        function handleClickOnButtonShowSpecification () {
+            let specification = $(this)
+                .closest('.calc__body')
+                .next('.calc__specification');
+
+            showSpecification(specification);
+        }
+
+    // Show order form
 
 });
