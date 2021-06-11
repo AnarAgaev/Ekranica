@@ -45,8 +45,14 @@ $(document).ready(function () {
             + getBtnScrollToTopPositionRatio();
 
         fixedPosition <= windowScrollTop
-            ? $(btnScrollToPageStart).addClass('fixed-position')
+            ? addFixedToTheScrollToTopButton()
             : $(btnScrollToPageStart).removeClass('fixed-position');
+    }
+
+    function addFixedToTheScrollToTopButton() {
+        if ($(btnScrollToPageStart).hasClass('visible')) {
+            $(btnScrollToPageStart).addClass('fixed-position')
+        }
     }
 
     function getBtnScrollToTopPositionRatio() {

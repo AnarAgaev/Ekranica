@@ -89,7 +89,11 @@ $(document).ready(function () {
         setTimeout(function () {
             for (let i = 0; i < selects.length; i++) {
                 const items = $(selects[i]).find('.custom-select__item');
-                let width = 0;
+
+                // min-width for input into the all selects
+                // maybe it bust be customs on calc page
+                // between changes it was be width = 0;
+                let width = 43;
 
                 if (items.length > 0) {
                     for (let j = 0; j < items.length; j++) {
