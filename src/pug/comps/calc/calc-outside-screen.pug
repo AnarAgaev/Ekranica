@@ -3,7 +3,7 @@
     .container
 
         .calc__body
-            .calc__body-controllers
+            form.calc__body-controllers(action="/calc-results.html" method="POST")
                 include ../custom-slider-radio/custom-slider-radio-outside-screen-type
                 include ../custom-selects/suffix-select-calc-rent-pixel-step
                 include ../custom-selects/suffix-select-calc-rent-width
@@ -28,104 +28,8 @@
                         include ../custom-selects/suffix-select-calc-ouside-screen-advanced-service
                         include ../custom-selects/suffix-select-calc-ouside-screen-insurance
 
-                .btn.btn_primary.btn_show-result Рассчитать стоимость
+                button.btn.btn_primary.btn_show-result(type="submit") Рассчитать стоимость
 
-            .calc__body-result
-                .calc__body-result-picture
+            .calc__body-picture
+                .calc__body-image
                     img(src="/img/calc-location-outside.png" alt="")
-                .calc__body-result-sum.hidden
-                    span Итого:
-                    span.sum-container
-                .btn.btn_primary.show-specification.hidden Посмотреть спецификацию
-
-        .calc__specification.hidden.invisible
-            .calc__specification-title
-                span.title  Просмотр спецификации
-                span.step шаг 2 из 3
-
-            .calc__tab-list.swiper-container
-                .calc__tab-list-wrap.swiper-wrapper
-                    include calc-tab-list
-
-            .calc__specification-list
-                .calc__specification-list-title Спецификация
-
-                .calc__specification-list-short
-                    ul
-                        li Уличный светодиодный экран 2720 x 3420 мм
-                        li Комплектующие в сборе
-                        li Гарантийное обслуживание
-                        li Страховка
-                .calc__specification-list-sum
-                    span Итого:
-                    span.sum-container
-
-            .calc__specification-table
-                include calc-specification-tabel
-
-            .calc__specification-result
-                .calc__specification-result-sum
-                    span Итого:
-                    span.sum-container
-                .calc__specification-result-comment
-                    span В расчете указана приблизительная стоимость.
-                    br
-                    span Для определения более точной стоимости
-                    a.link.revers.show-order-form заполните заявку
-                .calc__specification-result-set-form
-                    .btn.btn_primary.show-order-form Заполнить заявку
-                .calc__specification-result-download
-                    a.btn.btn_primary(href="" download)
-                        spna.icon-prolog
-                            include ../../../img/icon-download-btn.svg
-                        span.d-none.sm-visible.md-visible Скачать смету
-                        span.d-none.lg-visible.xl-visible Скачать спецификацию
-                        span.icon-epilogue
-                            include ../../../img/icon-arr-btn.svg
-                a(href="").calc__specification-result-share
-                    span.icon
-                        include ../../../img/icon-share.svg
-                    | Поделиться спецификацией
-                .calc__specification-result-recalc
-                    .btn.reset-calc-section
-                        span.icon
-                            include ../../../img/icon-calc-btn.svg
-                        | Пересчитать
-
-        .calc__order.hidden.invisible
-            .calc__order-title
-                span.title  Отправьте заявку на подробный расчет
-                span.step шаг 3 из 3
-
-            .calc__tab-list.swiper-container
-                .calc__tab-list-wrap.swiper-wrapper
-                    include calc-tab-list
-
-
-            .calc__order-form
-                include ../../comps/form-order/form-calc-outside-screen
-
-            .calc__order-result
-                .calc__order-result-pic
-                    img(src="/img/calc-location-outside.png" alt="")
-
-                .calc__order-result-list
-                    .calc__order-result-list-title Спецификация
-                    .calc__order-result-list-short
-                        ul
-                            li Уличный светодиодный экран 2720 x 3420 мм
-                            li Комплектующие в сборе
-                            li Гарантийное обслуживание
-                            li Страховка
-                    .calc__order-result-list-sum
-                        span Итого:
-                        span.sum-container
-
-                .calc__order-result-submit
-                    .form-order__actions
-                        .form-order__actions-group
-                            span.form-order__privacy
-                                | Нажимая на кнопку “Отправить заявку”, я даю согласие на
-                                a.revers(href="/") обработку моих персональных данных
-                            .form-order__button
-                                button.btn.btn_primary.form-order__submit(type="submit") Отправить заявку

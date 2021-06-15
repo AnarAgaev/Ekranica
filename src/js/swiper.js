@@ -273,7 +273,7 @@ $(document).ready(function () {
         deliveryMethodsSlider,
         aboutWorkWithSlider,
         warrantyGuaranteeSlider,
-        calcTabListStep1Slider;
+        calcTabsSlider;
 
     function breakpointLGChecker() {
         if ( breakpointLG.matches === true ) {
@@ -289,8 +289,8 @@ $(document).ready(function () {
                 ourWorksSlider.destroy(true, true);
             }
 
-            if ( calcTabListStep1Slider !== undefined  && $('#calcTabListStep1Slider').length > 0 ) {
-                calcTabListStep1Slider.destroy(true, true);
+            if ( calcTabsSlider !== undefined  && $('#calcTabsSlider').length > 0 ) {
+                calcTabsSlider.destroy(true, true);
             }
 
             if ( ourNewsSlider !== undefined  && $('#ourNewsSlider').length > 0 ) {
@@ -320,7 +320,7 @@ $(document).ready(function () {
             enableDeliveryMethodsSlider();
             enableAboutWorkWithSlider();
             enableWarrantyGuaranteeSlider();
-            enableCalcTabListStep1Slider();
+            enableCalcTabsSlider();
         }
     }
 
@@ -351,9 +351,9 @@ $(document).ready(function () {
         }
     }
 
-    function enableCalcTabListStep1Slider() {
-        if ($('#calcTabListStep1Slider')[0]) {
-            calcTabListStep1Slider = new Swiper('#calcTabListStep1Slider', {
+    function enableCalcTabsSlider() {
+        if ($('#calcTabsSlider')[0]) {
+            calcTabsSlider = new Swiper('#calcTabsSlider', {
                 slidesPerView: 'auto',
                 speed: 500,
             });
@@ -405,7 +405,7 @@ $(document).ready(function () {
         setTimeout(function () {
             if ( !isLaptop ) {
                 if ($('#ourWorksSlider')[0]) ourWorksSlider.update();
-                if ($('#calcTabListStep1Slider')[0]) calcTabListStep1Slider.update();
+                if ($('#calcTabsSlider')[0]) calcTabsSlider.update();
                 if ($('#ourNewsSlider')[0]) ourNewsSlider.update();
             }
         }, 1500);
