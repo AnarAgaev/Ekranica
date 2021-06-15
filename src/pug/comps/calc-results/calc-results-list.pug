@@ -1,53 +1,54 @@
-//.calc__specification.hidden.invisible
-//    .calc__specification-title
-//        span.title  Просмотр спецификации
-//        span.step шаг 2 из 3
-//
-//    .calc__tab-list.swiper-container
-//        .calc__tab-list-wrap.swiper-wrapper
-//            include calc-tab-list
-//
-//    .calc__specification-list
-//        .calc__specification-list-title Спецификация
-//
-//        .calc__specification-list-short
-//            ul
-//                li Уличный светодиодный экран 2720 x 3420 мм
-//                li Комплектующие в сборе
-//                li Гарантийное обслуживание
-//                li Страховка
-//        .calc__specification-list-sum
-//            span Итого:
-//            span.sum-container
-//
-//    .calc__specification-table
-//        include calc-specification-tabel
-//
-//    .calc__specification-result
-//        .calc__specification-result-sum
-//            span Итого:
-//            span.sum-container
-//        .calc__specification-result-comment
-//            span В расчете указана приблизительная стоимость.
-//            br
-//            span Для определения более точной стоимости
-//            a.link.revers.show-order-form заполните заявку
-//        .calc__specification-result-set-form
-//            .btn.btn_primary.show-order-form Заполнить заявку
-//        .calc__specification-result-download
-//            a.btn.btn_primary(href="" download)
-//                spna.icon-prolog
-//                    include ../../../img/icon-download-btn.svg
-//                span.d-none.sm-visible.md-visible Скачать смету
-//                span.d-none.lg-visible.xl-visible Скачать спецификацию
-//                span.icon-epilogue
-//                    include ../../../img/icon-arr-btn.svg
-//        a(href="").calc__specification-result-share
-//            span.icon
-//                include ../../../img/icon-share.svg
-//            | Поделиться спецификацией
-//        .calc__specification-result-recalc
-//            .btn.reset-calc-section
-//                span.icon
-//                    include ../../../img/icon-calc-btn.svg
-//                | Пересчитать
+.container
+    .calc__specification.hidden.invisible
+        .calc__specification-title
+            span.title  Просмотр спецификации
+            span.step шаг 2 из 2
+
+        .calc__tab-list.swiper-container
+            .calc__tab-list-wrap.swiper-wrapper
+                include ../calc/calc-tab-list
+
+        .calc__specification-list
+            .calc__specification-list-title Спецификация
+
+            .calc__specification-list-short
+                ul
+                    li Уличный светодиодный экран 2720 x 3420 мм
+                    li Комплектующие в сборе
+                    li Гарантийное обслуживание
+                    li Страховка
+            .calc__specification-list-sum
+                span Итого:
+                span.sum-container 1 320 000 ₽
+
+        .calc__specification-table
+            include calc-specification-tabel
+
+        .calc__specification-result
+            .calc__specification-result-sum
+                span Итого:
+                span.sum-container 1 320 000 ₽
+            .calc__specification-result-comment
+                span В расчете указана приблизительная стоимость.
+                br
+                span Для определения более точной стоимости
+                a.link.revers.show-order-form заполните заявку
+            .calc__specification-result-set-form
+                .btn.btn_primary.show-order-form Заполнить заявку
+            .calc__specification-result-download
+                a.btn.btn_primary(href="" download)
+                    spna.icon-prolog
+                        include ../../../img/icon-download-btn.svg
+                    span.d-none.sm-visible.md-visible Скачать смету
+                    span.d-none.lg-visible.xl-visible Скачать спецификацию
+                    span.icon-epilogue
+                        include ../../../img/icon-arr-btn.svg
+            a(href="").calc__specification-result-share
+                span.icon
+                    include ../../../img/icon-share.svg
+                | Поделиться спецификацией
+            .calc__specification-result-recalc
+                .btn.reset-calc-section
+                    span.icon
+                        include ../../../img/icon-calc-btn.svg
+                    | Пересчитать

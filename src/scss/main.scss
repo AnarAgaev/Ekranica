@@ -53,6 +53,8 @@
 @import "../pug/comps/scroll-to-page-start/scroll-to-page-start";
 @import "../pug/comps/datepicker/datepicker";
 @import "../pug/comps/custom-checkbox/custom-checkbox";
+@import "../pug/comps/calc/calc";
+@import "../pug/comps/calc-results/calc-results";
 
 // Include page styles
 @import "../pug/pages/index/index";
@@ -79,3 +81,4 @@
 @import "../pug/pages/about/about";
 @import "../pug/pages/privacy-policy/privacy-policy";
 @import "../pug/pages/calc/calc";
+@import "../pug/pages/calc-results/calc-results";
