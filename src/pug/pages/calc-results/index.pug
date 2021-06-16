@@ -9,5 +9,8 @@ block variables
     - const pageClass   = 'page-calc-results'
 
 block content
-    include ../../comps/calc-results/calc-results-list
-    include ../../comps/calc-results/calc-results-form
+    // В зависимости от того с какого калькулятора пришли данные оборачивать контетн в блок
+    // с одним из кдассов .calc_outside-screen, .calc_inside-screen, .calc_media-facade, .calc_rent
+    .calc_outside-screen
+        include ../../comps/calc-results/calc-results-list
+        include ../../comps/calc-results/calc-results-form

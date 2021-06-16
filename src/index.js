@@ -29,6 +29,7 @@ import './pug/comps/about-offer/about-offer';
 import './pug/comps/quiz/quiz';
 import './pug/comps/scroll-to-page-start/scroll-to-page-start';
 import './pug/comps/calc/calc';
+import './pug/comps/calc-results/calc-results';
 import './pug/comps/datepicker/datepicker';
 import './pug/comps/custom-input/custom-input';
 import './pug/comps/custom-checkbox/custom-checkbox';

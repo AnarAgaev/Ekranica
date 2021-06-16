@@ -958,4 +958,125 @@
             }
         }
     }
+
+    &_outside-screen {
+        .calc__body-result-picture img {
+            width: 300px;
+            margin-top: -36px;
+            margin-left: 29px;
+
+            @media (min-width: $xl) {
+                width: 347px;
+                margin-top: -60px;
+                margin-left: 43px;
+            }
+        }
+
+        .calc__order-result-pic img {
+            width: 300px;
+            margin-top: -19px;
+            margin-left: 8px;
+        }
+
+        .calc__order-result-list {
+            @media (min-width: $xl) {
+                background: url("/img/quiz-location-screen.png") no-repeat;
+                background-size: 307px;
+                background-position: top 14px right 5%;
+            }
+
+            @media (min-width: $xxl) {
+                background: url("/img/calc-location-outside.png") no-repeat;
+                background-position: top 20px right 7%;
+                background-size: 333px;
+            }
+        }
+    }
+
+    &_inside-screen {
+        .calc__body-result-picture img {
+            width: 229px;
+            margin-top: -14px;
+            margin-left: 30px;
+
+            @media (min-width: $xl) {
+                width: 324px;
+                margin-top: -17px;
+                margin-left: 50px;
+            }
+        }
+
+        .calc__order-result-pic img {
+            width: 229px;
+            margin-top: -2px;
+            margin-left: 23px;
+        }
+
+        .calc__order-result-list {
+            @media (min-width: $xl) {
+                background: url("/img/quiz-location-inside.png") no-repeat;
+                background-size: 307px;
+                background-position: top 14px right 5%;
+            }
+
+            @media (min-width: $xxl) {
+                background: url("/img/quiz-location-inside.png") no-repeat;
+                background-position: top 20px right 7%;
+                background-size: 333px;
+            }
+        }
+    }
+
+    &_media-facade {
+        .calc__body-result-picture img {
+            width: 220px;
+            margin-top: 0;
+            margin-left: 0;
+
+            @media (min-width: $xl) {
+                width: 300px;
+                margin-top: 0;
+                margin-left: 0;
+            }
+        }
+
+        .calc__order-result-pic img {
+            width: 220px;
+            margin-top: 0;
+            margin-left: 0;
+        }
+
+        .calc__order-result-list {
+            @media (min-width: $xl) {
+                background: url("/img/calc-media-facade.png") no-repeat;
+                background-size: 260px;
+                background-position: top 100px right 9%;
+            }
+
+            @media (min-width: $xxl) {
+                background-size: 270px;
+                background-position: top 86px right 14%;
+            }
+        }
+    }
+
+    &_rent {
+        .calc__order-result-pic img {
+            width: 217px;
+            margin-top: -14px;
+            margin-left: 19px;
+        }
+
+        .calc__order-result-list {
+            @media (min-width: $xl) {
+                background: url("/img/quiz-location-inside.png") no-repeat;
+                background-size: 307px;
+                background-position: top 14px right 5%;
+            }
+
+            @media (min-width: $xxl) {
+                background-position: top 14px right 15%;
+            }
+        }
+    }
 }
