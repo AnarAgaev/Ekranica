@@ -2,7 +2,7 @@
 
 .calc {
     &__specification {
-        padding-top: 60px;
+        padding-top: 48px;
         position: relative;
 
         @media (min-width: $md) {
@@ -12,7 +12,7 @@
         }
 
         @media (min-width: $lg) {
-            padding-top: 96px;
+            padding-top: 69px;
         }
 
         .calc__tab-list {
@@ -45,7 +45,7 @@
             }
 
             @media (min-width: $xl) {
-                margin-bottom: 66px;
+                margin-bottom: 68px;
             }
 
             .title {
@@ -77,8 +77,11 @@
 
                 @media (min-width: $lg) {
                     font-size: 16px;
-                    color: #80758F;
                     margin-bottom: 0;
+                }
+
+                @media (min-width: $xl) {
+                 font-size: 18px;
                 }
             }
         }
@@ -535,6 +538,7 @@
 
     &__order {
         margin-top: 96px;
+        margin-bottom: 96px;
         padding-top: 60px;
         position: relative;
 
@@ -545,7 +549,11 @@
         }
 
         @media (min-width: $lg) {
-            padding-top: 96px;
+            padding-top: 0;
+        }
+
+        @media (min-width: $xl) {
+            padding-top: 74px;
         }
 
         &::before {
@@ -591,6 +599,7 @@
 
         &-title {
             width: 100%;
+            margin-bottom: 48px;
 
             @media (min-width: $lg) {
                 display: none;
@@ -641,6 +650,7 @@
             }
 
             .form-order {
+
                 .controller-label {
                     font-size: 14px;
 
