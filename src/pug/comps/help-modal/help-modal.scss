@@ -34,7 +34,7 @@
         z-index: 3;
         background: none;
         cursor: default;
-        border-radius: 34px;
+        border-radius: 24px;
         overflow: initial !important;
     }
 
@@ -60,7 +60,7 @@
         background: rgba(13, 16, 31, 0.4);
         border: 1px solid #241838;
         box-sizing: border-box;
-        border-radius: 34px;
+        border-radius: 24px;
         padding: 34px;
 
         @media (min-width: $md) {
