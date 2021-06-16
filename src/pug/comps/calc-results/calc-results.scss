@@ -192,8 +192,11 @@
 
             @media (min-width: $lg) {
                 display: block;
-                width: 100%;
+                width: calc(100% + 10px);
                 margin-bottom: 35px;
+                max-height: 464px;
+                overflow-y: auto;
+                padding-right: 10px;
 
                 table {
                     width: 100%;
@@ -251,6 +254,13 @@
                 width: 64.71471471471471%;
                 float: left;
                 margin-bottom: 0;
+            }
+
+            &.scroller {
+                //- Цвет бегунка полосы
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(36, 24, 56, 0.7);
+                }
             }
         }
 
