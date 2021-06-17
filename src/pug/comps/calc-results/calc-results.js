@@ -32,7 +32,7 @@ $(document).ready(function () {
     // Add mask to the calc phone input
     let maskCalcPhone;
 
-    if ($('#calcFormPhone')) {
+    if ($('#calcFormPhone')[0] !== undefined) {
         let phone = document.getElementById('calcFormPhone');
         let controller = $(phone).closest('.controller');
 
