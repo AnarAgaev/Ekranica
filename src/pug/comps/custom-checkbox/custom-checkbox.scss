@@ -5,6 +5,11 @@
 
     @media (min-width: $lg) {
         margin-bottom: -6px;
+        cursor: pointer;
+
+        &:hover .custom-checkbox__checkmark::after {
+            opacity: 1;
+        }
     }
 
     @media (min-width: $xl) {
@@ -61,10 +66,6 @@
             transition: all .2s linear;
             background: url("/img/icon-checkbox.svg") no-repeat left 5px center;
             border-radius: 2px;
-        }
-
-        &:hover::after {
-            opacity: 1;
         }
     }
 
