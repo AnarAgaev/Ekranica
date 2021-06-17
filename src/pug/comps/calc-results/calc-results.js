@@ -19,9 +19,9 @@ $(document).ready(function () {
             let offsetTop = $(specification).offset().top;
             let sectionHeight = $(specification).innerHeight();
             let offsetIdx = getScreenType() === 'sm'
-                ? 50 // fix for mobile screens
-                : getScreenType() === 'lg'
-                    ? -70 // fix for desktop screens
+                ? -30 // fix for mobile screens
+                : (getScreenType() === 'md' || getScreenType() === 'lg')
+                    ? -70 // fix for tablet and desktop screens
                     : 0;
 
             let scrollTo = offsetTop + sectionHeight + offsetIdx;
