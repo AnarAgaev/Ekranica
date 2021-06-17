@@ -148,4 +148,41 @@ $(document).ready(function () {
             // Show modal if form has send finished well
             modalOpen($('#calcForm'));
         }
+
+    // Toggle visible for download formats dropdown
+    $(() => $('.calc__specification-result-download')
+        .toArray()
+        .forEach(addHandlerToSpecificationDownBtn));
+
+        function addHandlerToSpecificationDownBtn(el) {
+            $(el).on(
+                'click',
+                handlerClickOnSpecificationDownBtn
+            );
+        }
+
+        function handlerClickOnSpecificationDownBtn() {
+            if (isSmallScreen()) {
+                $(this).toggleClass('is-hover');
+            }
+        }
+
+        function isSmallScreen() {
+            return getScreenType() === 'sm' || getScreenType() === 'md';
+        }
+
+        $(() => $(document).on(
+            'click',
+            hideSpecificationFormatDrop
+        ));
+
+        function hideSpecificationFormatDrop(evt) {
+            let btn = $('.calc__specification-result-download');
+            let targetEl = evt.target;
+            let isPrent = $(targetEl).closest(btn)[0];
+
+            if (isPrent === undefined && isSmallScreen()) {
+                $(btn).removeClass('is-hover');
+            }
+        }
 });

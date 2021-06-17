@@ -369,11 +369,51 @@
             }
 
             &-download {
-                display: flex;
+                display: inline-flex;
                 justify-content: flex-start;
+                position: relative;
+                padding-bottom: 10px;
+
+                @mixin is-hover {
+                    .dropdown {
+                        opacity: 1;
+                        transform: translateY(100%);
+                        left: 0;
+                        transition:
+                                left 0s linear 0s,
+                                opacity .7s ease-out 0s,
+                                transform .7s ease-out 0s;
+                    }
+
+                    .btn {
+                        background-color: #9A5BFF;
+                        border-color: #9A5BFF;
+                        box-shadow:
+                                -8px -16px 30px rgba(35, 33, 58, 0.35),
+                                8px 16px 30px rgba(4, 5, 14, 0.3),
+                                inset 5px 4px 10px rgba(49, 4, 38, 0.5),
+                                inset -2px -2px 30px rgba(255, 255, 255, 0.2);
+
+                        .icon-epilogue {
+                            svg {
+                                transform: scale(1, -1);
+                            }
+                        }
+                    }
+                }
+
+                &.is-hover {
+                    @media (max-width: $lg - 1) {
+                        @include is-hover;
+                    }
+                }
 
                 @media (min-width: $lg) {
                     order: 2;
+
+                    &:hover {
+                        @include is-hover;
+                    }
                 }
 
                 @media (min-width: $xl) {
@@ -384,6 +424,8 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    padding-left: 24px;
+                    padding-right: 24px;
 
                     .icon-prolog {
                         display: inline-block;
@@ -406,10 +448,81 @@
                         margin-left: 10px;
                         position: relative;
                         top: -1px;
+                         svg {
+                             transform: scale(1, 1);
+                             transition: transform .3s linear;
+                         }
                     }
 
                     svg path {
                         stroke: $color-text-primary;
+                    }
+                }
+
+                .dropdown {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 16px 24px;
+                    position: absolute;
+                    width: 203px;
+                    bottom: 0;
+                    background: rgba(13, 16, 31, 0.4);
+                    border: 1px solid #382359;
+                    box-sizing: border-box;
+                    backdrop-filter: blur(10px);
+                    border-radius: 24px;
+                    z-index: 1;
+                    opacity: 0;
+                    transform: translateY(calc(100% + 10px));
+                    left: -9999px;
+                    transition:
+                        left 0s linear .3s,
+                        opacity .3s linear 0s,
+                        transform .3s linear 0s;
+
+                    @media (min-width: $lg) {
+                        width: 275px;
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        @media (min-width: $lg) {
+                            &:hover {
+                                .icon {
+                                    svg path {
+                                        stroke: $color-accent;
+                                    }
+                                }
+
+                                .txt {
+                                    color: $color-accent;
+                                }
+                            }
+                        }
+
+                        .icon {
+                            svg path {
+                                stroke: $color-text-primary;
+                                transition: $transition;
+                            }
+                        }
+
+                        .txt {
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 160%;
+                            color: $color-text-primary;
+                            margin-left: 8px;
+                            transition: $transition;
+                        }
                     }
                 }
             }
@@ -423,7 +536,7 @@
                 line-height: 160%;
                 color: $color-text-primary;
                 height: 24px;
-                margin-top: 34px;
+                margin-top: 24px;
                 margin-right: 24px;
 
                 @media (min-width: $lg) {
