@@ -344,7 +344,7 @@
                     width: 274px;
                     font-size: 14px;
                     color: $color-text-secondary;
-                    margin-bottom: 47px;
+                    margin-bottom: 0;
 
                     br {
                         display: none;
@@ -360,24 +360,11 @@
                     order: 2;
                     text-align: center;
                     width: 100%;
+                    margin-bottom: 48px;
 
                     br {
                         display: block;
                     }
-                }
-            }
-
-            &-set-form {
-                display: flex;
-                justify-content: flex-start;
-                margin-bottom: 16px;
-
-                @media (min-width: $md) {
-                    margin-bottom: 24px;
-                }
-
-                @media (min-width: $lg) {
-                    display: none;
                 }
             }
 
@@ -398,27 +385,13 @@
                     justify-content: center;
                     align-items: center;
 
-                    @media (max-width: $lg - 1) {
-                        border: none;
-                        color: $color-accent;
-                        background: $color-back-secondary;
-                        box-shadow:
-                                inset 5px 6px 20px rgba(35, 33, 58, 0.5),
-                                inset -5px -6px 20px rgba(0, 2, 12, 0.2),
-                                -10px -10px 30px rgba(35, 33, 58, 0.16),
-                                10px 10px 30px rgba(4, 5, 14, 0.8);
-                    }
-
                     .icon-prolog {
                         display: inline-block;
-                        margin-right: 12px;
+                        margin-right: 10px;
                         width: 16px;
                         height: 16px;
                         position: relative;
-
-                        @media (min-width: $lg) {
-                            margin-right: 6px;
-                        }
+                        top: -1px;
 
                         svg {
                             position: absolute;
@@ -431,31 +404,29 @@
                     .icon-epilogue {
                         display: inline-block;
                         margin-left: 10px;
+                        position: relative;
+                        top: -1px;
                     }
 
                     svg path {
-                        @media (min-width: $lg) {
-                            stroke: $color-text-primary;
-                        }
+                        stroke: $color-text-primary;
                     }
                 }
             }
 
             &-share {
-                display: none;
+                display: flex;
+                align-items: center;
+                order: 4;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 160%;
+                color: $color-text-primary;
+                height: 24px;
+                margin-top: 34px;
+                margin-right: 24px;
 
                 @media (min-width: $lg) {
-                    display: flex;
-                    align-items: center;
-                    order: 4;
-                    font-weight: normal;
-                    font-size: 14px;
-                    line-height: 160%;
-                    color: $color-text-primary;
-                    height: 24px;
-                    margin-top: 33px;
-                    margin-right: 24px;
-
                     &:hover {
                         svg path {
                             stroke: $color-accent;
@@ -484,11 +455,10 @@
             }
 
             &-recalc {
-                display: none;
+                width: 100%;
+                margin-top: 48px;
 
                 @media (min-width: $lg) {
-                    display: block;
-                    width: 100%;
                     order: 5;
                     text-align: right;
                 }
