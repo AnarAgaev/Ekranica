@@ -734,7 +734,6 @@
                 .controller__input {
                     height: 46px;
                     color: $color-text-inactive !important;
-                    -webkit-text-fill-color: $color-text-inactive !important;
 
                     @media (min-width: $xl) {
                         height: 60px;
@@ -760,7 +759,6 @@
                     input:-webkit-autofill:focus,
                     input:-webkit-autofill:active {
                         color: $color-text-inactive !important;
-                        -webkit-text-fill-color: $color-text-inactive !important;
                     }
                 }
 
