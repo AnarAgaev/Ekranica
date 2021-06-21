@@ -1,49 +1,106 @@
 import $ from "jquery";
 import IMask from "imask";
 
+const isDebug = true;
+
+const VARIABLE_COMMENTS = {
+    $: 'цена',
+    H: 'высота экрана',
+    W: 'ширина экрана',
+    Q: 'количество',
+    HCab: 'высота кабинета',
+    WCab: 'ширина кабинета',
+};
+
+const LEGEND_COMMENTS = {
+    Sum: 'общее',
+    Mod: 'модуль',
+    Rv: 'приним карта',
+    Bp: 'блок питания',
+    Mag: 'магнит',
+    Pr: 'профиль ',
+    Ug: 'уголок',
+    Na: 'направляющие',
+    Cab: 'кабинет',
+    St: 'коммутация',
+}
+
+if (isDebug) console.log('Переменные: ', VARIABLE_COMMENTS);
+if (isDebug) console.log('Условные обозначения: ', LEGEND_COMMENTS);
+
+window.MAIN_CALC_STATE = {
+    calcType: 'outsideScreen', // outsideScreen, insideScreen, mediaFaced, rentScreen
+
+    outsideScreen: {
+        executionType: undefined, // monolithic, cabinet
+        pixelStep: undefined,
+    },
+    insideScreen: {
+        executionType: undefined, // monolithic, cabinet
+        pixelStep: undefined,
+    },
+    mediaFaced: {
+        executionType: undefined, // monolithic, cabinet
+        pixelStep: undefined,
+    },
+    rentScreen: {
+        rentConstruction: undefined, // outdoor, Подвесная
+        pixelStep: undefined,
+    },
+
+
+
+}
+
+function printMainState() {
+    console.log('Выбранные значения: ', MAIN_CALC_STATE);
+}
+
+
+
 $(document).ready(function () {
     // Handle click on additionally controller buttons
     $(() => $('.calc__collapse-controllers .btn')
         .toArray()
         .forEach(addHandleClickToBtnAdditionallyCalcControllers));
 
-    function addHandleClickToBtnAdditionallyCalcControllers(el) {
-        $(el).on(
-            'click',
-            toggleVisibleAdditionallyCalcControllers
-        );
-    }
-
-    function toggleVisibleAdditionallyCalcControllers () {
-        const HIDDEN_TIMEOUT = 500; // take this param from css transition
-        let container = $(this).parent();
-
-        if (isHidden(container)) {
-            showEl(container);
-        } else {
-            hideEl(container, HIDDEN_TIMEOUT);
+        function addHandleClickToBtnAdditionallyCalcControllers(el) {
+            $(el).on(
+                'click',
+                toggleVisibleAdditionallyCalcControllers
+            );
         }
-    }
 
-    function isHidden(el) {
-        return $(el).hasClass('hidden');
-    }
+        function toggleVisibleAdditionallyCalcControllers () {
+            const HIDDEN_TIMEOUT = 500; // take this param from css transition
+            let container = $(this).parent();
 
-    function showEl(el) {
-        $(el).removeClass('hidden');
-        $(el).addClass('open');
-    }
+            if (isHidden(container)) {
+                showEl(container);
+            } else {
+                hideEl(container, HIDDEN_TIMEOUT);
+            }
+        }
 
-    function hideEl(el, timeout) {
-        $(el).removeClass('open');
+        function isHidden(el) {
+            return $(el).hasClass('hidden');
+        }
 
-        setTimeout(
-            () => {
-                $(el).addClass('hidden');
-            },
-            timeout
-        )
-    }
+        function showEl(el) {
+            $(el).removeClass('hidden');
+            $(el).addClass('open');
+        }
+
+        function hideEl(el, timeout) {
+            $(el).removeClass('open');
+
+            setTimeout(
+                () => {
+                    $(el).addClass('hidden');
+                },
+                timeout
+            )
+        }
 
 
     // Handle click on calc tab buttons
@@ -51,76 +108,84 @@ $(document).ready(function () {
         .toArray()
         .forEach(addHandleClickToCalcTabs));
 
-    function addHandleClickToCalcTabs(el) {
-        $(el).on(
-            'click',
-            handleClickOnCalcTab
-        );
-    }
-
-    function handleClickOnCalcTab() {
-        let activeTabIndex = $(this).parent().index();
-        let newActiveTabId = $(this).data('targetTabId');
-        let isButtonInactive = isCalcTabInactive(this);
-
-        if (isButtonInactive ) {
-            deactivateCalcTabs();
-            activateCalcTabs(activeTabIndex);
-            deactivateCalcPicture();
-            activateCalcPicture(newActiveTabId);
-            toggleActiveCalc(newActiveTabId);
+        function addHandleClickToCalcTabs(el) {
+            $(el).on(
+                'click',
+                handleClickOnCalcTab
+            );
         }
-    }
 
-    function isCalcTabInactive(tab) {
-        return !$(tab).hasClass('active');
-    }
+        function handleClickOnCalcTab() {
+            let activeTabIndex = $(this).parent().index();
+            let newActiveTabId = $(this).data('targetTabId');
+            let newActiveCalcState = $(this).data('calcType');
+            let isButtonInactive = isCalcTabInactive(this);
 
-    function deactivateCalcTabs() {
-        let buttons = $('.calc__tab-list__button');
-        $(buttons).removeClass('active');
-    }
+            if (isButtonInactive ) {
+                deactivateCalcTabs();
+                activateCalcTabs(activeTabIndex);
+                deactivateCalcPicture();
+                activateCalcPicture(newActiveTabId);
+                toggleActiveCalc(newActiveTabId);
+                setCalcTypeToState(newActiveCalcState);
 
-    function activateCalcTabs(idx) {
-        let wrappers = $('.calc__tab-list-wrap').toArray();
+                if (isDebug) printMainState();
+            }
+        }
 
-        wrappers.forEach(
-            el => $(el)
-                .find('.calc__tab-list__slide:eq(' + idx + ')')
-                .children()
-                .addClass('active')
-        );
-    }
+        function isCalcTabInactive(tab) {
+            return !$(tab).hasClass('active');
+        }
 
-    function deactivateCalcPicture() {
-        $('.calc__title-picture .image').removeClass('active');
-    }
+        function deactivateCalcTabs() {
+            let buttons = $('.calc__tab-list__button');
+            $(buttons).removeClass('active');
+        }
 
-    function activateCalcPicture(id) {
-        $('[data-calc-type-pic="' + id + '"]').addClass('active');
-    }
+        function activateCalcTabs(idx) {
+            let wrappers = $('.calc__tab-list-wrap').toArray();
 
-    function toggleActiveCalc(id) {
-        let calculators = $('.calc__calculator');
-        const TIMEOUT_ANIMATION = 400; // take this parameter from css styles
+            wrappers.forEach(
+                el => $(el)
+                    .find('.calc__tab-list__slide:eq(' + idx + ')')
+                    .children()
+                    .addClass('active')
+            );
+        }
 
-        scrollToPageStart();
+        function deactivateCalcPicture() {
+            $('.calc__title-picture .image').removeClass('active');
+        }
 
-        $(calculators).addClass('hidden');
+        function activateCalcPicture(id) {
+            $('[data-calc-type-pic="' + id + '"]').addClass('active');
+        }
 
-        setTimeout(
-            () => {
-                $(calculators).removeClass('active');
-                $(id).addClass('active');
-            },
-            TIMEOUT_ANIMATION + 100
-        );
+        function toggleActiveCalc(id) {
+            let calculators = $('.calc__calculator');
+            const TIMEOUT_ANIMATION = 400; // take this parameter from css styles
 
-        setTimeout(
-            () => $(id).removeClass('hidden'),
-            TIMEOUT_ANIMATION + 200
-        );
-    }
+            scrollToPageStart();
+
+            $(calculators).addClass('hidden');
+
+            setTimeout(
+                () => {
+                    $(calculators).removeClass('active');
+                    $(id).addClass('active');
+                },
+                TIMEOUT_ANIMATION + 100
+            );
+
+            setTimeout(
+                () => $(id).removeClass('hidden'),
+                TIMEOUT_ANIMATION + 200
+            );
+        }
+
+        function setCalcTypeToState(type) {
+            MAIN_CALC_STATE.calcType = type;
+        }
 
     // Sticky picture at the calc body
     $(window).scroll(function () {
@@ -128,28 +193,51 @@ $(document).ready(function () {
         if (container) toggleStickyImg(container);
     });
 
-    function toggleStickyImg(container) {
-        let offsetTop = container.getBoundingClientRect().top;
-        let pic = $(container).children('.calc__body-image');
-        let stickyLeft = container.getBoundingClientRect().x;
+        function toggleStickyImg(container) {
+            let offsetTop = container.getBoundingClientRect().top;
+            let pic = $(container).children('.calc__body-image');
+            let stickyLeft = container.getBoundingClientRect().x;
 
-        const STICKY_TOP = 150; // take this prop from css style
+            const STICKY_TOP = 150; // take this prop from css style
 
-        if (offsetTop <= STICKY_TOP) {
-            $(pic).addClass('sticky');
-            $(pic).css('left', stickyLeft + 'px');
-        } else {
-            $(pic).removeClass('sticky');
-            $(pic).attr('style', '');
+            if (offsetTop <= STICKY_TOP) {
+                $(pic).addClass('sticky');
+                $(pic).css('left', stickyLeft + 'px');
+            } else {
+                $(pic).removeClass('sticky');
+                $(pic).attr('style', '');
+            }
         }
-    }
 
-    $(window).resize(resetStickyPics);
+        $(window).resize(resetStickyPics);
 
-    function resetStickyPics() {
-        let pics = $('.calc__body-image');
+        function resetStickyPics() {
+            let pics = $('.calc__body-image');
 
-        $(pics).removeClass('sticky');
-        $(pics).attr('style', '');
-    }
+            $(pics).removeClass('sticky');
+            $(pics).attr('style', '');
+        }
+
+    // Change execution type
+    $('.calc-execution-type label')
+        .toArray()
+        .forEach(addHandleClickToExecutionTypeController)
+
+        function addHandleClickToExecutionTypeController(el) {
+            $(el).on(
+                'click',
+                handleClickToExecutionTypeController
+            );
+        }
+
+        function handleClickToExecutionTypeController () {
+            let propName = $(this).data('calcProperty');
+            let propValue = $(this).data('calcValue');
+            let activeCalc = MAIN_CALC_STATE.calcType;
+
+            MAIN_CALC_STATE[activeCalc][propName] = propValue;
+
+            if(isDebug) printMainState();
+        }
+
 });

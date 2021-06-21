@@ -1,16 +1,16 @@
 .calc__tab-list__slide.swiper-slide
     // При инициализации, добавить первому элемну класс .active
-    .calc__tab-list__button.active(data-target-tab-id="#outsideScreen")
+    .calc__tab-list__button.active(data-target-tab-id="#outsideScreen" data-calc-type="outsideScreen")
         | Уличный светодиодный экран
 
 .calc__tab-list__slide.swiper-slide
-    .calc__tab-list__button(data-target-tab-id="#insideScreen")
+    .calc__tab-list__button(data-target-tab-id="#insideScreen" data-calc-type="insideScreen")
         | Внутренний светодиодный экран
 
 .calc__tab-list__slide.swiper-slide
-    .calc__tab-list__button(data-target-tab-id="#mediaFacade")
+    .calc__tab-list__button(data-target-tab-id="#mediaFacade" data-calc-type="mediaFaced")
         | Медиафасад
 
 .calc__tab-list__slide.swiper-slide
-    .calc__tab-list__button(data-target-tab-id="#rentScreen")
+    .calc__tab-list__button(data-target-tab-id="#rentScreen" data-calc-type="rentScreen")
         | Аренда
