@@ -733,7 +733,6 @@
 
                 .controller__input {
                     height: 46px;
-                    color: $color-text-inactive !important;
 
                     @media (min-width: $xl) {
                         height: 60px;
@@ -742,7 +741,7 @@
                     input {
                         height: 46px;
                         padding: 12px 16px 12px 40px;
-                        color: $color-text-inactive !important;
+                        color: $color-text-inactive;
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 160%;

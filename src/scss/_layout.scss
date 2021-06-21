@@ -939,18 +939,8 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 textarea:-webkit-autofill:active {
-    background: $color-back-primary !important;
-    background-image: none !important;
-    color: inherit !important;
-    -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both;
-}
-
-@-webkit-keyframes autofill {
-    to {
-        color: inherit;
-        background: $color-back-primary !important;
-    }
+    transition: all 5000s linear 0s;
+    transition-property: background-color, color;
 }
 
 input[type="checkbox"]:checked + .checker {
