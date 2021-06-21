@@ -890,7 +890,7 @@ input,
 textarea {
     min-width: 144px;
     height: 46px;
-    background-color: $color-back-primary !important;
+    background-color: $color-back-primary;
     padding: 12px 32px 12px 60px; // padding-left: 32+16+12
     border-radius: 999px;
     display: inline-block;
@@ -944,7 +944,6 @@ textarea:-webkit-autofill:active {
     color: inherit !important;
     -webkit-animation-name: autofill;
     -webkit-animation-fill-mode: both;
-    -webkit-box-shadow: 0 0 0 10em $color-back-primary inset !important;
 }
 
 @-webkit-keyframes autofill {

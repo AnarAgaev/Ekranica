@@ -1,6 +1,41 @@
 import $ from "jquery";
 import IMask from "imask";
 
+const VARIABLE_COMMENTS = {
+    $: 'цена',
+    H: 'высота экрана',
+    W: 'ширина экрана',
+    Q: 'количество',
+    HCab: 'высота кабинета',
+    WCab: 'ширина кабинета',
+};
+
+const LEGEND_COMMENTS = {
+    Sum: 'общее',
+    Mod: 'модуль',
+    Rv: 'приним карта',
+    Bp: 'блок питания',
+    Mag: 'магнит',
+    Pr: 'профиль ',
+    Ug: 'уголок',
+    Na: 'направляющие',
+    Cab: 'кабинет',
+    St: 'коммутация',
+}
+console.log('Переменные: ', VARIABLE_COMMENTS);
+console.log('Условные обозначения: ', LEGEND_COMMENTS);
+
+window.MAIN_CALC_STATE = {
+    type: 'outside', // outside, inside, mediafaced, rent
+    pixelStep: undefined,
+
+}
+
+
+
+
+
+
 $(document).ready(function () {
     // Show order form
     $(() => $('.show-order-form')
@@ -185,4 +220,32 @@ $(document).ready(function () {
                 $(btn).removeClass('is-hover');
             }
         }
+
+
+
+
+
+
+
+
+
+    printMainState()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Print main calc state
+    function printMainState() {
+        console.log('Выбранные значения: ', MAIN_CALC_STATE);
+    }
 });

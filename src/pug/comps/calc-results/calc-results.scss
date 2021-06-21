@@ -742,7 +742,7 @@
                     input {
                         height: 46px;
                         padding: 12px 16px 12px 40px;
-                        color: $color-text-inactive;
+                        color: $color-text-inactive !important;
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 160%;
@@ -752,13 +752,6 @@
                             height: 60px;
                             padding-left: 66px;
                         }
-                    }
-
-                    input:-webkit-autofill,
-                    input:-webkit-autofill:hover,
-                    input:-webkit-autofill:focus,
-                    input:-webkit-autofill:active {
-                        color: $color-text-inactive !important;
                     }
                 }
 
