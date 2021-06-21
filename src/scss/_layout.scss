@@ -939,13 +939,18 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 textarea:-webkit-autofill:active {
-    -webkit-animation: autofill 0s forwards;
+    background: $color-back-primary !important;
+    background-image: none !important;
+    color: inherit !important;
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+    -webkit-box-shadow: 0 0 0 10em $color-back-primary inset !important;
 }
 
 @-webkit-keyframes autofill {
-    100% {
-        background-color: $color-back-primary !important;
+    to {
         color: inherit;
+        background: $color-back-primary !important;
     }
 }
 
