@@ -56,8 +56,6 @@ function printMainState() {
     console.log('Выбранные значения: ', MAIN_CALC_STATE);
 }
 
-
-
 $(document).ready(function () {
     // Handle click on additionally controller buttons
     $(() => $('.calc__collapse-controllers .btn')
@@ -218,7 +216,7 @@ $(document).ready(function () {
             $(pics).attr('style', '');
         }
 
-    // Change execution type
+    // Set execution type
     $('.calc-execution-type label')
         .toArray()
         .forEach(addHandleClickToExecutionTypeController)
@@ -231,6 +229,28 @@ $(document).ready(function () {
         }
 
         function handleClickToExecutionTypeController () {
+            let propName = $(this).data('calcProperty');
+            let propValue = $(this).data('calcValue');
+            let activeCalc = MAIN_CALC_STATE.calcType;
+
+            MAIN_CALC_STATE[activeCalc][propName] = propValue;
+
+            if(isDebug) printMainState();
+        }
+
+    // Set pixel step
+    $('.calc-pixel-step .filter-controller')
+        .toArray()
+        .forEach(addHandleClickToPixelStepController)
+
+        function addHandleClickToPixelStepController(el) {
+            $(el).on(
+                'click',
+                handleClickToPixelStepController
+            );
+        }
+
+        function handleClickToPixelStepController () {
             let propName = $(this).data('calcProperty');
             let propValue = $(this).data('calcValue');
             let activeCalc = MAIN_CALC_STATE.calcType;
