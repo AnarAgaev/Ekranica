@@ -1,0 +1,28 @@
+.label-controll
+    .label-controll__caption Высота
+    .label-controll__body
+        .label-controll__content
+
+            .custom-range
+                .input-suffix.custom-input
+                    input.value(
+                        type="number"
+                        data-calc-property="height"
+                        value=""
+                        min="160"
+                        max="9600"
+                    )
+                    span.input-suffix__delimiter
+                    span.input-suffix__units мм
+
+                .custom-range__controller
+                    span.status-bar
+                    spna.slider
+                    input.custom-range__slide(
+                        type="range"
+                        step="160"
+                        min="160"
+                        max="9600"
+                        value="160"
+                        data-calc-property="height"
+                    )

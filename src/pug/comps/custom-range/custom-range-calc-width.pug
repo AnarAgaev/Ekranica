@@ -1,0 +1,28 @@
+.label-controll
+    .label-controll__caption Ширина
+    .label-controll__body
+        .label-controll__content
+
+            .custom-range
+                .input-suffix.custom-input
+                    input.value(
+                        type="number"
+                        data-calc-property="width"
+                        value=""
+                        min="320"
+                        max="9600"
+                    )
+                    span.input-suffix__delimiter
+                    span.input-suffix__units мм
+
+                .custom-range__controller
+                    span.status-bar
+                    spna.slider
+                    input.custom-range__slide(
+                        type="range"
+                        step="320"
+                        min="320"
+                        max="9600"
+                        value="320"
+                        data-calc-property="width"
+                    )

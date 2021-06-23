@@ -1,7 +1,7 @@
 import $ from "jquery";
 import IMask from "imask";
 
-const isDebug = true;
+window.isDebugMainCalc = true;
 
 const VARIABLE_COMMENTS = {
     $: 'цена',
@@ -25,35 +25,46 @@ const LEGEND_COMMENTS = {
     St: 'коммутация',
 }
 
-if (isDebug) console.log('Переменные: ', VARIABLE_COMMENTS);
-if (isDebug) console.log('Условные обозначения: ', LEGEND_COMMENTS);
+if (isDebugMainCalc && $('#mainCalc')[0]) console.log('Переменные: ', VARIABLE_COMMENTS);
+if (isDebugMainCalc && $('#mainCalc')[0]) console.log('Условные обозначения: ', LEGEND_COMMENTS);
 
 window.MAIN_CALC_STATE = {
     calcType: 'outsideScreen', // outsideScreen, insideScreen, mediaFaced, rentScreen
 
     outsideScreen: {
-        executionType: undefined, // monolithic, cabinet
+        executionType: 'monolithic', // monolithic, cabinet
         pixelStep: undefined,
+        width: undefined,
+        height: undefined,
     },
     insideScreen: {
-        executionType: undefined, // monolithic, cabinet
+        executionType: 'monolithic', // monolithic, cabinet
         pixelStep: undefined,
+        width: undefined,
+        height: undefined,
     },
     mediaFaced: {
-        executionType: undefined, // monolithic, cabinet
+        executionType: 'monolithic', // monolithic, cabinet
         pixelStep: undefined,
+        width: undefined,
+        height: undefined,
     },
     rentScreen: {
-        rentConstruction: undefined, // outdoor, Подвесная
+        rentConstruction: 'monolithic', // outdoor, Подвесная
         pixelStep: undefined,
+        width: undefined,
+        height: undefined,
     },
-
-
-
 }
 
-function printMainState() {
-    console.log('Выбранные значения: ', MAIN_CALC_STATE);
+window.printMainState = function() {
+    if ($('#mainCalc')[0]) {
+        console.log('Выбранные значения: ', MAIN_CALC_STATE);
+    }
+}
+
+window.getActiveMainCalc = function() {
+    return $('.calc__calculator.active')[0];
 }
 
 $(document).ready(function () {
@@ -126,8 +137,9 @@ $(document).ready(function () {
                 activateCalcPicture(newActiveTabId);
                 toggleActiveCalc(newActiveTabId);
                 setCalcTypeToState(newActiveCalcState);
+                setExecutionTypeMarker();
 
-                if (isDebug) printMainState();
+                if (isDebugMainCalc) printMainState();
             }
         }
 
@@ -185,6 +197,24 @@ $(document).ready(function () {
             MAIN_CALC_STATE.calcType = type;
         }
 
+        function setExecutionTypeMarker() {
+            setTimeout(setMarker, 700);
+
+            function setMarker() {
+                let radio = $(getActiveMainCalc()).find('.calc-execution-type');
+                let marker = $(radio).children('.marker');
+                let label = $(radio).find('input:checked + label');
+                let width = $(label).innerWidth();
+                let left = $(label).position().left;
+
+                $(marker).css({
+                    'width': width,
+                    'left': left + 'px',
+                    'opacity': '1',
+                });
+            }
+        }
+
     // Sticky picture at the calc body
     $(window).scroll(function () {
         let container = $('.calc__calculator.active .calc__body-picture')[0];
@@ -216,7 +246,7 @@ $(document).ready(function () {
             $(pics).attr('style', '');
         }
 
-    // Set execution type
+    // Setting execution type
     $('.calc-execution-type label')
         .toArray()
         .forEach(addHandleClickToExecutionTypeController)
@@ -235,10 +265,10 @@ $(document).ready(function () {
 
             MAIN_CALC_STATE[activeCalc][propName] = propValue;
 
-            if(isDebug) printMainState();
+            if(isDebugMainCalc) printMainState();
         }
 
-    // Set pixel step
+    // Setting pixel step
     $('.calc-pixel-step .filter-controller')
         .toArray()
         .forEach(addHandleClickToPixelStepController)
@@ -257,7 +287,55 @@ $(document).ready(function () {
 
             MAIN_CALC_STATE[activeCalc][propName] = propValue;
 
-            if(isDebug) printMainState();
+            if(isDebugMainCalc) printMainState();
         }
 
+    // Setting the width and height of the screen to its state and the range controller
+    $('#mainCalc .custom-range .custom-input input')
+        .toArray()
+        .forEach(addHandleOnFocusoutRangeInput);
+
+        function addHandleOnFocusoutRangeInput(el) {
+            $(el).focusout(
+                handleOnFocusoutRangeInput
+            );
+        }
+
+        function handleOnFocusoutRangeInput() {
+            let value = getRoundRangeVal(this);
+
+            pushValToInputValue(value, this);
+            pushValToRange(value, this);
+        }
+
+        function getRoundRangeVal(input) {
+            let val = parseInt($(input).val(), 10);
+            let min = parseInt($(input).attr('min'), 10);
+            let max = parseInt($(input).attr('max'), 10);
+
+            if (val < min) return min;
+            else if (val > max) return max;
+            else if (val % min === 0) return val;
+
+            let wholeNumber = Math.trunc(val / min) + 1;
+            let roundVal = min * wholeNumber;
+
+            return roundVal > max
+                ? max
+                : roundVal;
+        }
+
+        function pushValToInputValue(value, input) {
+            $(input).val(value);
+        }
+
+        function pushValToRange(value, input) {
+            let range = $(input)
+                .closest('.custom-input')
+                .next('.custom-range__controller')
+                .find('.custom-range__slide')[0];
+
+            $(range).val(value);
+            setRange(range, false);
+        }
 });

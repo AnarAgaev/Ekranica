@@ -470,6 +470,20 @@
             }
         }
     }
+
+    .input-suffix {
+        margin-right: 24px;
+
+        input {
+            width: 67px;
+        }
+    }
+
+    .custom-range__controller {
+        @media (min-width: $xl) {
+            width: 220px;
+        }
+    }
 }
 
 [data-calc-type-pic="#outsideScreen"] {

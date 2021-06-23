@@ -35,6 +35,14 @@ $(document).ready(function () {
             installmentCalcState[$(controller).data('calcProperty')] = controller.value;
         }
 
+        // set value into main calc state
+        if ($('#mainCalc')[0]) {
+            let calc = $(getActiveMainCalc()).attr('id');
+            MAIN_CALC_STATE[calc][stateProp] = controller.value;
+
+            if (isDebugMainCalc) printMainState();
+        }
+
         $(statusBar).css('width', statusBarWidth + 'px');
         $(slider).css('left', sliderOffsetLeft + 'px');
     }
@@ -70,6 +78,23 @@ $(document).ready(function () {
             case 'quizSizeHeight':
                 quizSizeHeightMask.unmaskedValue = controller.value;
                 break;
+
+            case 'width':
+                setRangeValToInputControllerOnMainCalc(controller);
+                break;
+
+            case 'height':
+                setRangeValToInputControllerOnMainCalc(controller);
+                break;
         }
+    }
+
+    function setRangeValToInputControllerOnMainCalc(controller) {
+        let input = $(controller)
+            .closest('.custom-range')
+            .children('.custom-input')
+            .children('input');
+
+        $(input).val(controller.value);
     }
 });
