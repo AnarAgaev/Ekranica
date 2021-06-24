@@ -1,5 +1,5 @@
-.label-controll.label-controll__size-type-width
-    .label-controll__caption Ширина
+.label-controll.label-controll__size-type-height
+    .label-controll__caption Высота
     .label-controll__body
         .label-controll__content
 
@@ -7,10 +7,10 @@
                 .input-suffix.custom-input
                     input.value(
                         type="number"
-                        data-calc-property="width"
-                        data-min="320"
-                        data-max="9600"
+                        data-calc-property="height"
                         value=""
+                        data-min="160"
+                        data-max="48000"
                     )
                     span.input-suffix__delimiter
                     span.input-suffix__units мм
@@ -20,9 +20,9 @@
                     spna.slider
                     input.custom-range__slide(
                         type="range"
-                        step="320"
-                        min="320"
-                        max="9600"
-                        value="320"
-                        data-calc-property="width"
+                        step="160"
+                        min="160"
+                        max="48000"
+                        value="160"
+                        data-calc-property="height"
                     )

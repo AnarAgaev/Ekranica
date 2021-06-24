@@ -39,8 +39,6 @@ $(document).ready(function () {
         if ($('#mainCalc')[0]) {
             let calc = $(getActiveMainCalc()).attr('id');
             MAIN_CALC_STATE[calc][stateProp] = controller.value;
-
-            if (isDebugMainCalc) printMainState();
         }
 
         $(statusBar).css('width', statusBarWidth + 'px');
