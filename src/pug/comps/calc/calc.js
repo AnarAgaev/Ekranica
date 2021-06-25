@@ -1,6 +1,11 @@
 import $ from "jquery";
 
-window.isDebugMainCalc = true;
+// Удалить полсе переноса на сервер
+// На сервере цены будут бартся из прайса хранящегося в БД
+import { calcPrice } from '../../../js/temp';
+
+window.isDebugMainCalc = false;
+window.isDebugMainCalcResults = true;
 
 const VARIABLE_COMMENTS = {
     $: 'цена',
@@ -29,8 +34,8 @@ const LEGEND_COMMENTS = {
 
 window.MAIN_CALC_STATE = {
     calcType: 'outsideScreen', // outsideScreen, insideScreen, mediaFaced, rentScreen
-
     outsideScreen: {
+        location: "outdoor",
         executionType: 'monolithic', // monolithic, cabinet
         sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
         pixelStep: undefined,
@@ -47,9 +52,16 @@ window.MAIN_CALC_STATE = {
                 max: 48000,
                 step: 160
             }
-        }
+        },
+        QModH: undefined,
+        QModW: undefined,
+        QModSum: undefined,
+        usedDisplay: undefined,
+        $ModSum: undefined,
+
     },
     insideScreen: {
+        location: "indoor",
         executionType: 'monolithic', // monolithic, cabinet
         sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
         pixelStep: undefined,
@@ -66,7 +78,12 @@ window.MAIN_CALC_STATE = {
                 max: 12000,
                 step: 160
             }
-        }
+        },
+        QModH: undefined,
+        QModW: undefined,
+        QModSum: undefined,
+        usedDisplay: undefined,
+        $ModSum: undefined,
     },
     mediaFaced: {
         executionType: 'monolithic', // monolithic, cabinet
@@ -600,7 +617,6 @@ $(document).ready(function () {
             if(isDebugMainCalc) printMainState();
         }
 
-
     // Setting pixel step
     $('.calc-pixel-step .filter-controller')
         .toArray()
@@ -672,10 +688,119 @@ $(document).ready(function () {
             $(range).val(value);
             setRange(range, false);
         }
-});
 
-// Delete after handle calc forms submit
-$('#mainCalc form').on('submit', (evt) => {
-    evt.preventDefault();
-    $('*').blur();
+    // Submit calc forms
+    $('#mainCalc form')
+        .toArray()
+        .forEach(addHandleOnCalcFormSubmit)
+
+        function addHandleOnCalcFormSubmit(el) {
+            $(el).submit(handleOnCalcFormSubmit)
+        }
+
+        function handleOnCalcFormSubmit(evt) {
+            evt.preventDefault();
+            // SPINNER.addClass('visible');
+
+            checkCalcPixelStep();
+            checkCalcWidth();
+            checkCalcHeight();
+
+            let calcType = MAIN_CALC_STATE.calcType;
+            let executionType = MAIN_CALC_STATE[calcType].executionType;
+
+            switch (executionType) {
+                case 'monolithic':
+                    calcMonolithicScreen();
+                    break;
+                case 'cabinet':
+                    calcCabinetScreen();
+                    break;
+            }
+        }
+
+        function checkCalcPixelStep() {
+            let calc = $(getActiveMainCalc()).attr('id')
+            let pixelStep = MAIN_CALC_STATE[calc].pixelStep;
+
+            if (pixelStep === undefined) {
+                $(getActiveMainCalc())
+                    .find('.calc-pixel-step')
+                    .find('.scroller')
+                    .children('.filter-controller:first-child')
+                    .click();
+            }
+        }
+
+        function checkCalcWidth() {
+            let calc = $(getActiveMainCalc()).attr('id')
+            let width = MAIN_CALC_STATE[calc].width;
+
+            if (width === undefined) {
+                $(getActiveMainCalc())
+                    .find('.label-controll__size-type-width')
+                    .find('.custom-input input')
+                    .focusout();
+            }
+        }
+
+        function checkCalcHeight() {
+            let calc = $(getActiveMainCalc()).attr('id')
+            let height = MAIN_CALC_STATE[calc].height;
+
+            if (height === undefined) {
+                $(getActiveMainCalc())
+                    .find('.label-controll__size-type-height')
+                    .find('.custom-input input')
+                    .focusout();
+            }
+        }
+
+        function calcMonolithicScreen() {
+            let state = MAIN_CALC_STATE[$(getActiveMainCalc()).attr('id')];
+
+            state.QModW = state.width / 320;
+            if (isDebugMainCalcResults) console.log('QModW - Количество модулей в ширину: ', state.QModW);
+
+            state.QModH = state.height / 160;
+            if (isDebugMainCalcResults) console.log('QModH - Количество модулей в высоту: ', state.QModH);
+
+            state.QModSum = state.QModW * state.QModH;
+            if (isDebugMainCalcResults) console.log('QModSum - Количество модулей в изделии: ', state.QModSum);
+
+            state.usedDisplay = getUsedDisplayUnit(state);
+            if (isDebugMainCalcResults) console.log('Используемый светодиодный модуль: ', state.usedDisplay);
+
+            state.$ModSum = state.QModSum * (
+                parseFloat(
+                    state.usedDisplay.price.replace(",",".")
+                ) + 6);
+            if (isDebugMainCalcResults) console.log('$ModSum - Сумма за модули: ', state.$ModSum);
+
+
+
+
+
+
+
+
+            console.log('--- --- --- --- --- --- ---');
+        }
+
+        function calcCabinetScreen() {
+            console.log('calcCabinetScreen')
+        }
+
+        function getUsedDisplayUnit(state) {
+            let pixels = "Q" + state.pixelStep;
+            let location = state.location;
+            let size = state.sizeType.join('*');
+
+            return calcPrice.filter(
+                display => display.pixels === pixels
+                    && display.location === location
+                    && display.size === size
+            )[0];
+        }
+
 });
