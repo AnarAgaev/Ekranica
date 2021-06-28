@@ -56,9 +56,28 @@ window.MAIN_CALC_STATE = {
         QModH: undefined,
         QModW: undefined,
         QModSum: undefined,
-        usedDisplay: undefined,
+        Mod: undefined,
         $ModSum: undefined,
-
+        QBp: undefined,
+        Bp: undefined,
+        $BpSum: undefined,
+        QRv: undefined,
+        Rv: undefined,
+        $RvSum: undefined,
+        $St: undefined,
+        QMag: undefined,
+        Mag: undefined,
+        $MagSum: undefined,
+        Pr: undefined,
+        $PrSum: undefined,
+        Ug: undefined,
+        $UgSum: undefined,
+        QNa: undefined,
+        Na: undefined,
+        $NaSum: undefined,
+        $Sum: undefined,
+        ExchangeRate: undefined,
+        RubSum: undefined,
     },
     insideScreen: {
         location: "indoor",
@@ -82,8 +101,28 @@ window.MAIN_CALC_STATE = {
         QModH: undefined,
         QModW: undefined,
         QModSum: undefined,
-        usedDisplay: undefined,
+        Mod: undefined,
         $ModSum: undefined,
+        QBp: undefined,
+        Bp: undefined,
+        $BpSum: undefined,
+        QRv: undefined,
+        Rv: undefined,
+        $RvSum: undefined,
+        $St: undefined,
+        QMag: undefined,
+        Mag: undefined,
+        $MagSum: undefined,
+        Pr: undefined,
+        $PrSum: undefined,
+        Ug: undefined,
+        $UgSum: undefined,
+        QNa: undefined,
+        Na: undefined,
+        $NaSum: undefined,
+        $Sum: undefined,
+        ExchangeRate: undefined,
+        RubSum: undefined,
     },
     mediaFaced: {
         executionType: 'monolithic', // monolithic, cabinet
@@ -700,7 +739,7 @@ $(document).ready(function () {
 
         function handleOnCalcFormSubmit(evt) {
             evt.preventDefault();
-            // SPINNER.addClass('visible');
+            SPINNER.addClass('visible');
 
             checkCalcPixelStep();
             checkCalcWidth();
@@ -757,50 +796,175 @@ $(document).ready(function () {
         }
 
         function calcMonolithicScreen() {
+
             let state = MAIN_CALC_STATE[$(getActiveMainCalc()).attr('id')];
+            state.width = parseInt(state.width, 10);
+            state.height = parseInt(state.height, 10);
 
             state.QModW = state.width / 320;
-            if (isDebugMainCalcResults) console.log('QModW - Количество модулей в ширину: ', state.QModW);
+            if (isDebugMainCalcResults) console.log('QModW - Количество модулей в ширину:', state.QModW);
 
             state.QModH = state.height / 160;
-            if (isDebugMainCalcResults) console.log('QModH - Количество модулей в высоту: ', state.QModH);
+            if (isDebugMainCalcResults) console.log('QModH - Количество модулей в высоту:', state.QModH);
 
             state.QModSum = state.QModW * state.QModH;
-            if (isDebugMainCalcResults) console.log('QModSum - Количество модулей в изделии: ', state.QModSum);
+            if (isDebugMainCalcResults) console.log('QModSum - Количество модулей в изделии:', state.QModSum);
 
-            state.usedDisplay = getUsedDisplayUnit(state);
-            if (isDebugMainCalcResults) console.log('Используемый светодиодный модуль: ', state.usedDisplay);
+            state.Mod = getMod(state);
+            if (isDebugMainCalcResults) console.log('Mod - Используемый светодиодный модуль:', state.Mod);
 
             state.$ModSum = state.QModSum * (
                 parseFloat(
-                    state.usedDisplay.price.replace(",",".")
+                    state.Mod.price.replace("," , ".")
                 ) + 6);
-            if (isDebugMainCalcResults) console.log('$ModSum - Сумма за модули: ', state.$ModSum);
+            state.$ModSum = parseFloat(state.$ModSum.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$ModSum - Сумма за модули:', state.$ModSum);
+
+            state.QBp = Math.ceil(state.QModSum / 6);
+            if (isDebugMainCalcResults) console.log('QBp - Количество блоков питания:', state.QBp);
+
+            state.Bp = getBp();
+            if (isDebugMainCalcResults) console.log('Bp - Используемый блок питания:', state.Bp);
+
+            state.$BpSum = state.QBp * state.Bp.price;
+            state.$BpSum = parseFloat(state.$BpSum.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$BpSum - Сумма за блоки питания:', state.$BpSum);
+
+            state.QRv = Math.ceil(state.QModSum / 6);
+            if (isDebugMainCalcResults) console.log('QRv - Количество принимающих карт:', state.QRv);
+
+            state.Rv = getRv();
+            if (isDebugMainCalcResults) console.log('Rv - Используемая принимающая карта:', state.Rv);
+
+            state.$RvSum = state.QRv * parseFloat(state.Rv.price.replace("," , "."));
+            state.$RvSum = parseFloat(state.$RvSum.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$RvSum - Сумма за принимающие карты:', state.$RvSum);
+
+            state.$St = (state.width * state.height) / 1000000 * 7; // Fix price is 7 dollars
+            state.$St = parseFloat(state.$St.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$St - Сумма за коммутацию (квадратный метр):', state.$St);
+
+            state.QMag = state.QModSum * 4;
+            if (isDebugMainCalcResults) console.log('QMag - Количество магнитов:', state.QMag);
+
+            state.Mag = getMag();
+            if (isDebugMainCalcResults) console.log('Mag - Используемый магнитный держатель:', state.Mag);
+
+            state.$MagSum = state.QMag * parseFloat(state.Mag.price.replace("," , "."));
+            state.$MagSum = parseFloat(state.$MagSum.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$MagSum - Сумма за магниты:', state.$MagSum);
+
+            state.Pr = getPr();
+            if (isDebugMainCalcResults) console.log('Pr - Используемый профиль:', state.Pr);
+
+            state.$PrSum = (state.height + state.width) * 2 / 1000 * parseFloat(state.Pr.price.replace("," , "."));
+            state.$PrSum = parseFloat(state.$PrSum.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$PrSum - Сумма за профиль:', state.$PrSum);
+
+            state.Ug = getUg();
+            if (isDebugMainCalcResults) console.log('Ug - Используемый уголок:', state.Ug);
+
+            state.$UgSum = 4 * parseFloat(state.Ug.price.replace("," , "."));
+            if (isDebugMainCalcResults) console.log('$UgSum - Сумма за уголки:', state.$UgSum);
+
+            state.QNa = (state.QModW + 1) * (state.height / 1000);
+            if (isDebugMainCalcResults) console.log('QNa - Количество направляющих:', state.QNa);
+
+            state.Na = getNa();
+            if (isDebugMainCalcResults) console.log('Na - Используемые направляющие:', state.Na);
+
+            state.$NaSum = state.QNa * parseFloat(state.Na.price.replace("," , "."));
+            if (isDebugMainCalcResults) console.log('$NaSum - Стоимость направляющих:', state.$NaSum);
+
+            state.$Sum =
+                  state.$ModSum
+                + state.$BpSum
+                + state.$RvSum
+                + state.$St
+                + state.$MagSum
+                + state.$PrSum
+                + state.$UgSum
+                + state.$NaSum;
+            state.$Sum = parseFloat(state.$Sum.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$Sum = $ModSum + $BpSum + $RvSum + $St + $MagSum + $PrSum + $UgSum + $NaSum');
+            if (isDebugMainCalcResults) console.log('$Sum - Итого сумма:', state.$Sum);
+
+            let request = $.ajax({
+                url: "https://ntart.ru/tempius/dollar/get.php",
+            })
+
+            request.done(response => {
+                state.ExchangeRate = response;
+                if (isDebugMainCalcResults) console.log('ExchangeRate - Обменный курс на момент рассчёта:', state.ExchangeRate);
+
+                state.RubSum = state.$Sum * (state.ExchangeRate * 1.01);
+                state.RubSum = parseFloat(state.RubSum.toFixed(2));
+                if (isDebugMainCalcResults) console.log('RubSum - Итого сумма в рублях:', state.RubSum);
+                if (isDebugMainCalcResults) console.log('--- --- --- --- --- --- ---');
+
+                SPINNER.removeClass('visible');
+
+                // Send calc data to Server
 
 
 
+            })
 
+            request.fail((jqXHR, textStatus) => {
+                console.log('Произошла ошибка при попытке запросить курс доллара!');
+                console.log('URL: https://ntart.ru/tempius/dollar/get.php');
+                console.log(jqXHR);
+                console.log(textStatus);
 
-
-
-
-            console.log('--- --- --- --- --- --- ---');
+                alert('Произошла ошибка при попытке запросить курс доллара! Попробуйте немного позже.');
+            });
         }
 
         function calcCabinetScreen() {
             console.log('calcCabinetScreen')
         }
 
-        function getUsedDisplayUnit(state) {
+        function getMod(state) {
             let pixels = "Q" + state.pixelStep;
             let location = state.location;
             let size = state.sizeType.join('*');
+            let unit = calcPrice.modules.filter(
+                module => module.pixels === pixels
+                    && module.location === location
+                    && module.size === size
+            );
 
-            return calcPrice.filter(
-                display => display.pixels === pixels
-                    && display.location === location
-                    && display.size === size
-            )[0];
+            if (unit.length > 1) unit = unit.filter(
+                module => module.type === "ECO" // Changed to the PRO this parameter if its need customer
+            );
+
+            return unit[0];
         }
+
+        function getBp() {
+            return calcPrice.powerSupplies[0];
+        }
+
+        function getRv() {
+            return calcPrice.controllers[0];
+        }
+
+        function getMag() {
+            return calcPrice.magnets[0];
+        }
+
+        function getPr() {
+            return calcPrice.profiles[0];
+        }
+
+        function getUg() {
+            return calcPrice.corners[0];
+        }
+
+        function getNa() {
+            return calcPrice.guides[0];
+        }
+
+
 
 });
