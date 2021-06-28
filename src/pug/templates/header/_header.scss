@@ -12,7 +12,6 @@
     z-index: 10;
     background: $color-back-primary;
     box-shadow: 30px 30px 64px rgba(4, 5, 14, 0.6);
-    transition: all .3s linear;
 
     @media (min-width: $md) {
         height: 114px;
