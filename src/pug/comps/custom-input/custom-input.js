@@ -9,11 +9,27 @@ $(document).ready(function () {
             function () {
                 let controller = $(this).children('input');
 
-                $(controller).attr('type', 'text');
-                $(controller)[0].setSelectionRange(100,100);
-                $(controller).attr('type', 'number');
+
                 $(controller).focus();
             }
         );
     });
+
+    $('.custom-range .custom-input input')
+        .toArray()
+        .forEach(addHandlerChangeOnCustomInputRange);
+
+        function addHandlerChangeOnCustomInputRange(el) {
+            $(el).focusout(handlerChangeOnCustomInputRange);
+        }
+
+        function handlerChangeOnCustomInputRange() {
+            if ($(this).attr('type') === 'text') {
+                $(this)[0].setSelectionRange(100,100);
+            } else if ($(this).attr('type') === 'number') {
+                $(this).attr('type', 'text');
+                $(this)[0].setSelectionRange(100,100);
+                $(this).attr('type', 'number');
+            }
+        }
 });

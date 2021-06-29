@@ -480,12 +480,20 @@
     }
 
     .custom-range {
+        @media (min-width: $md) {
+            flex-wrap: wrap;
+        }
+
         @media (min-width: $lg) {
             flex-direction: column;
             align-items: flex-start;
         }
 
         &__controller {
+            @media (min-width: $md) {
+                max-width: 250px;
+            }
+
             @media (min-width: $lg) {
                 margin-top: 24px;
                 width: 250px;
@@ -493,6 +501,7 @@
 
             @media (min-width: $xl) {
                 width: 295px;
+                max-width: 295px;
             }
         }
     }
