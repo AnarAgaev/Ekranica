@@ -896,6 +896,7 @@ $(document).ready(function () {
             request.done(response => {
                 state.ExchangeRate = response;
                 if (isDebugMainCalcResults) console.log('ExchangeRate - Обменный курс на момент рассчёта:', state.ExchangeRate);
+                if (isDebugMainCalcResults) console.log('ExchangeRate + 1% - Обменный курс + 1%:', state.ExchangeRate * 1.01);
 
                 state.RubSum = state.$Sum * (state.ExchangeRate * 1.01);
                 state.RubSum = parseFloat(state.RubSum.toFixed(2));
