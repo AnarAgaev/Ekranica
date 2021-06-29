@@ -48,9 +48,13 @@ $(document).ready(function () {
     // Handle change value into the input type range
     if (ranges.length > 0) {
         for (let i = 0; i < ranges.length; i++) {
-            $(ranges[i]).on('input',function () {
-                setRange(this);
-            });
+            $(ranges[i]).on(
+                'input',
+                function () {
+                    setRange(this);
+                    triggerFocusOutEventOnController(this);
+                }
+            );
         }
     }
 
@@ -94,5 +98,14 @@ $(document).ready(function () {
             .children('input');
 
         $(input).val(controller.value);
+    }
+
+    function triggerFocusOutEventOnController(rangeInput) {
+        let inputController = $(rangeInput)
+            .closest('.custom-range')
+            .find('.custom-input')
+            .children('input');
+
+        $(inputController).focusout();
     }
 });
