@@ -1,35 +1,18 @@
 import $ from "jquery";
 
 $(document).ready(function () {
-    let customInputControllers = $('.custom-input');
-
-    $(function handleClickOnCustomInputController () {
-        $(customInputControllers).on(
-            'click',
-            function () {
-                let controller = $(this).children('input');
-
-
-                $(controller).focus();
-            }
-        );
-    });
-
-    $('.custom-range .custom-input input')
+    $('.custom-input')
         .toArray()
-        .forEach(addHandlerChangeOnCustomInputRange);
+        .forEach(addHandlerClickOnCustomInput);
 
-        function addHandlerChangeOnCustomInputRange(el) {
-            $(el).focusout(handlerChangeOnCustomInputRange);
+        function addHandlerClickOnCustomInput(el) {
+            $(el).on(
+                'click',
+                handlerClickOnCustomInput
+            );
         }
 
-        function handlerChangeOnCustomInputRange() {
-            if ($(this).attr('type') === 'text') {
-                $(this)[0].setSelectionRange(100,100);
-            } else if ($(this).attr('type') === 'number') {
-                $(this).attr('type', 'text');
-                $(this)[0].setSelectionRange(100,100);
-                $(this).attr('type', 'number');
-            }
+        function handlerClickOnCustomInput() {
+            $(this).children('input').focus();
         }
 });
