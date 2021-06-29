@@ -52,7 +52,7 @@ $(document).ready(function () {
                 'input',
                 function () {
                     setRange(this);
-                    triggerFocusOutEventOnController(this);
+                    callFocusOutEventOnController(this);
                 }
             );
         }
@@ -100,7 +100,7 @@ $(document).ready(function () {
         $(input).val(controller.value);
     }
 
-    function triggerFocusOutEventOnController(rangeInput) {
+    function callFocusOutEventOnController(rangeInput) {
         let inputController = $(rangeInput)
             .closest('.custom-range')
             .find('.custom-input')
