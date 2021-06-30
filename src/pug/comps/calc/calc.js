@@ -78,6 +78,8 @@ window.MAIN_CALC_STATE = {
         $Sum: undefined,
         ExchangeRate: undefined,
         RubSum: undefined,
+        QMk: undefined,
+        $MkSum: undefined,
     },
     insideScreen: {
         location: "indoor",
@@ -123,6 +125,8 @@ window.MAIN_CALC_STATE = {
         $Sum: undefined,
         ExchangeRate: undefined,
         RubSum: undefined,
+        QMk: undefined,
+        $MkSum: undefined,
     },
     mediaFaced: {
         executionType: 'monolithic', // monolithic, cabinet
@@ -870,7 +874,7 @@ $(document).ready(function () {
             state.$ModSum = state.QModSum * (
                 parseFloat(
                     state.Mod.price.replace("," , ".")
-                ) + 7);
+                ) + 7); // Plus fix sum as 7$ for build service
             state.$ModSum = parseFloat(state.$ModSum.toFixed(2));
             if (isDebugMainCalcResults) console.log('$ModSum - Сумма за модули:', state.$ModSum);
 
@@ -930,6 +934,14 @@ $(document).ready(function () {
             state.$NaSum = state.QNa * parseFloat(state.Na.price.replace("," , "."));
             if (isDebugMainCalcResults) console.log('$NaSum - Стоимость направляющих:', state.$NaSum);
 
+            state.QMk = (state.width * state.height) / 1000000;
+            // state.QMk = parseFloat(state.QMk.toFixed(2));
+            if (isDebugMainCalcResults) console.log('QMk - Количество металлоконструкции (квадратный метр):', state.QMk);
+
+            state.$MkSum = state.QMk * 70; // The fixed price is 70$ per square meter
+            state.$MkSum = parseFloat(state.$MkSum.toFixed(2));
+            if (isDebugMainCalcResults) console.log('$MkSum - Стоимость металлоконструкции (70$ за 1 кв.м.):', state.$MkSum);
+
             state.$Sum =
                   state.$ModSum
                 + state.$BpSum
@@ -938,9 +950,10 @@ $(document).ready(function () {
                 + state.$MagSum
                 + state.$PrSum
                 + state.$UgSum
-                + state.$NaSum;
+                + state.$NaSum
+                + state.$MkSum;
             state.$Sum = parseFloat(state.$Sum.toFixed(2));
-            if (isDebugMainCalcResults) console.log('$Sum = $ModSum + $BpSum + $RvSum + $St + $MagSum + $PrSum + $UgSum + $NaSum');
+            if (isDebugMainCalcResults) console.log('$Sum = $ModSum + $BpSum + $RvSum + $St + $MagSum + $PrSum + $UgSum + $NaSum + $MkSum');
             if (isDebugMainCalcResults) console.log('$Sum - Итого сумма:', state.$Sum);
 
             let request = $.ajax({
@@ -948,7 +961,7 @@ $(document).ready(function () {
             })
 
             request.done(response => {
-                state.ExchangeRate = response;
+                state.ExchangeRate = parseFloat(response);
                 if (isDebugMainCalcResults) console.log('ExchangeRate - Обменный курс на момент рассчёта:', state.ExchangeRate);
                 if (isDebugMainCalcResults) console.log('ExchangeRate + 1% - Обменный курс + 1%:', state.ExchangeRate * 1.01);
 
@@ -959,7 +972,12 @@ $(document).ready(function () {
 
                 SPINNER.removeClass('visible');
 
+
+
+
+                // ************************************************************************************
                 // Send calc data to Server
+                // ************************************************************************************
 
 
 
