@@ -351,6 +351,7 @@ $(document).ready(function () {
             setSizeTypeToState(this);
             setSizeTypeToInputsRange(this);
             correctInputRangesAfterUpdateState();
+            checkPixelStepAfterToggleExecutionType(this);
         }
 
         function setExecutionTypeToState(controller) {
@@ -618,6 +619,37 @@ $(document).ready(function () {
                 .map(el => parseInt(el, 10));
         }
 
+        function checkPixelStepAfterToggleExecutionType(btn) {
+            let pixelStep = $(btn)
+                .closest('.calc__body-controllers')
+                .find('.calc-pixel-step')
+                .find('.custom-select__item.active');
+
+            let warning = $(btn)
+                .closest('.calc__body-controllers')
+                .find('.label-controll__warning');
+
+            let executionType = $(btn).data('calcValue');
+
+            if (executionType === "monolithic" && pixelStep.length > 0) {
+
+                let val = $(pixelStep).data('calcValue');
+
+                val = typeof val === 'string'
+                    ? parseFloat(val.replace("," , "."))
+                    : val;
+
+                if (val <= 2.5) {
+                    $(warning).addClass('visible');
+
+                    setTimeout(
+                        () => $(warning).removeClass('visible'),
+                        7000
+                    )
+                }
+            }
+        }
+
     // Settings type size
     $('.calc-cabin-type label')
         .toArray()
@@ -761,6 +793,58 @@ $(document).ready(function () {
             return roundVal > max
                 ? max
                 : roundVal;
+        }
+
+    // Go to the cabin calc if pixel step is 2,5 or less
+    $('#mainCalc .calc-pixel-step .custom-select__item')
+        .toArray()
+        .forEach(addHandlerOnPixelStepClick);
+
+        function addHandlerOnPixelStepClick(el) {
+            $(el).click(
+                handleOnPixelStepClick
+            );
+        }
+
+        function handleOnPixelStepClick() {
+            let val = $(this).data('calcValue');
+
+            let pixelStep = typeof val === 'string'
+                ? parseFloat(val.replace("," , "."))
+                : val;
+
+            let warning = $(this)
+                .closest('.label-controll')
+                .find('.label-controll__warning');
+
+            let cabinBtn = $(this)
+                .closest('.calc__body-controllers')
+                .find('.calc-execution-type')
+                .find('[data-calc-value="cabinet"]');
+
+            let hideWarning = function() {
+                setTimeout(
+                    () => $(warning).removeClass('visible'),
+                    7000
+                );
+            }
+
+            let clickOnBtn = function () {
+                setTimeout(
+                    () => $(cabinBtn).click(),
+                    4000
+                );
+            }
+
+            let calcType = MAIN_CALC_STATE.calcType;
+            let executionType = MAIN_CALC_STATE[calcType].executionType;
+
+            if (pixelStep <= 2.5 && executionType === 'monolithic') {
+                $(warning).addClass('visible');
+
+                hideWarning();
+                clickOnBtn();
+            }
         }
 
     // Submit calc forms
