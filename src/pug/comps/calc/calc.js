@@ -4,7 +4,7 @@ import $ from "jquery";
 // На сервере цены будут бартся из прайса хранящегося в БД
 import { calcPrice } from '../../../js/temp';
 
-window.isDebugMainCalc = false;
+window.isDebugMainCalcState = false;
 window.isDebugMainCalcResults = true;
 window.MAIN_CALC_STATE = {
     calcType: 'outsideScreen', // outsideScreen, insideScreen, mediaFaced, rentScreen
@@ -227,7 +227,7 @@ $(document).ready(function () {
                 setCalcTypeToState(newActiveCalcState);
                 setExecutionTypeMarker();
 
-                if (isDebugMainCalc) printMainState();
+                if (isDebugMainCalcState) printMainState();
             }
         }
 
@@ -360,7 +360,7 @@ $(document).ready(function () {
 
             MAIN_CALC_STATE[activeCalc][propName] = propValue;
 
-            if(isDebugMainCalc) printMainState();
+            if(isDebugMainCalcState) printMainState();
         }
 
         function toggleTypeOfCabin(controller) {
@@ -634,7 +634,7 @@ $(document).ready(function () {
             setSizeTypeToInputsRange(this);
             correctInputRangesAfterUpdateState();
 
-            if(isDebugMainCalc) printMainState();
+            if(isDebugMainCalcState) printMainState();
         }
 
     // Setting pixel step
@@ -656,7 +656,7 @@ $(document).ready(function () {
 
             MAIN_CALC_STATE[activeCalc][propName] = propValue;
 
-            if(isDebugMainCalc) printMainState();
+            if(isDebugMainCalcState) printMainState();
         }
 
     // Setting the width and height of the screen to its state and the range controller
