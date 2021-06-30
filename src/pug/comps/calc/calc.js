@@ -888,7 +888,17 @@ $(document).ready(function () {
             state.$BpSum = parseFloat(state.$BpSum.toFixed(2));
             if (isDebugMainCalcResults) console.log('$BpSum - Сумма за блоки питания:', state.$BpSum);
 
-            state.QRv = Math.ceil(state.QModSum / 6);
+            let pixelStep = typeof state.pixelStep === 'string'
+                ? parseFloat(state.pixelStep.replace("," , "."))
+                : state.pixelStep;
+
+            if ( pixelStep <= 1.66) {
+                state.QRv = state.QModSum;
+                if (isDebugMainCalcResults) console.log('*Для экрана используются модули с шагом пикселя 1,66 и менее!');
+                if (isDebugMainCalcResults) console.log('Используемый шаг пикселя: Q' + pixelStep);
+            } else {
+                state.QRv = Math.ceil(state.QModSum / 6);
+            }
             if (isDebugMainCalcResults) console.log('QRv - Количество принимающих карт:', state.QRv);
 
             state.Rv = getRv();
@@ -935,7 +945,6 @@ $(document).ready(function () {
             if (isDebugMainCalcResults) console.log('$NaSum - Стоимость направляющих:', state.$NaSum);
 
             state.QMk = (state.width * state.height) / 1000000;
-            // state.QMk = parseFloat(state.QMk.toFixed(2));
             if (isDebugMainCalcResults) console.log('QMk - Количество металлоконструкции (квадратный метр):', state.QMk);
 
             state.$MkSum = state.QMk * 70; // The fixed price is 70$ per square meter
