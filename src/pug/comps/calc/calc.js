@@ -6,32 +6,6 @@ import { calcPrice } from '../../../js/temp';
 
 window.isDebugMainCalc = false;
 window.isDebugMainCalcResults = true;
-
-const VARIABLE_COMMENTS = {
-    $: 'цена',
-    H: 'высота экрана',
-    W: 'ширина экрана',
-    Q: 'количество',
-    HCab: 'высота кабинета',
-    WCab: 'ширина кабинета',
-};
-
-const LEGEND_COMMENTS = {
-    Sum: 'общее',
-    Mod: 'модуль',
-    Rv: 'приним карта',
-    Bp: 'блок питания',
-    Mag: 'магнит',
-    Pr: 'профиль ',
-    Ug: 'уголок',
-    Na: 'направляющие',
-    Cab: 'кабинет',
-    St: 'коммутация',
-}
-
-// if (isDebugMainCalc && $('#mainCalc')[0]) console.log('Переменные: ', VARIABLE_COMMENTS);
-// if (isDebugMainCalc && $('#mainCalc')[0]) console.log('Условные обозначения: ', LEGEND_COMMENTS);
-
 window.MAIN_CALC_STATE = {
     calcType: 'outsideScreen', // outsideScreen, insideScreen, mediaFaced, rentScreen
     outsideScreen: {
