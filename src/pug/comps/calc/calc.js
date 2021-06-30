@@ -1,9 +1,5 @@
 import $ from "jquery";
 
-// Удалить полсе переноса на сервер
-// На сервере цены будут бартся из прайса хранящегося в БД
-import { calcPrice } from '../../../js/temp';
-
 window.isDebugMainCalcState = false;
 window.isDebugMainCalcResults = true;
 window.MAIN_CALC_STATE = {
@@ -140,6 +136,10 @@ window.MAIN_CALC_STATE = {
             }
         }
     },
+}
+
+if ($('#mainCalc')) {
+    window.CALC_PRICE = $('#mainCalc').data('calcPrice');
 }
 
 $(document).ready(function () {
@@ -931,7 +931,7 @@ $(document).ready(function () {
         }
 
         function setUsedMod_MD(state) {
-            state.Mod = getMod(state); // should return the object obtained from the calcPrice
+            state.Mod = getMod(state); // should return the object obtained from the CALC_PRICE
 
             if (isDebugMainCalcResults) {
                 console.log(
@@ -945,7 +945,7 @@ $(document).ready(function () {
             let pixels = "Q" + state.pixelStep;
             let location = state.location;
             let size = state.sizeType.join('*');
-            let unit = calcPrice.modules.filter(
+            let unit = CALC_PRICE.modules.filter(
                 module => module.pixels === pixels
                     && module.location === location
                     && module.size === size
@@ -986,7 +986,7 @@ $(document).ready(function () {
         }
 
         function setUsedBp_MD(state) {
-            state.Bp = getBp(); // should return the object obtained from the calcPrice
+            state.Bp = getBp(); // should return the object obtained from the CALC_PRICE
 
             if (isDebugMainCalcResults) {
                 console.log(
@@ -997,7 +997,7 @@ $(document).ready(function () {
         }
 
         function getBp() {
-            return calcPrice.powerSupplies[0];
+            return CALC_PRICE.powerSupplies[0];
         }
 
         function set$BpSum_MD(state) {
@@ -1041,7 +1041,7 @@ $(document).ready(function () {
         }
 
         function setUsedRv_MD(state) {
-            state.Rv = getRv(); // should return the object obtained from the calcPrice
+            state.Rv = getRv(); // should return the object obtained from the CALC_PRICE
 
             if (isDebugMainCalcResults) {
                 console.log(
@@ -1052,7 +1052,7 @@ $(document).ready(function () {
         }
 
         function getRv() {
-            return calcPrice.controllers[0];
+            return CALC_PRICE.controllers[0];
         }
 
         function set$RvSum_MD(state) {
@@ -1101,7 +1101,7 @@ $(document).ready(function () {
         }
 
         function getMag() {
-            return calcPrice.magnets[0];
+            return CALC_PRICE.magnets[0];
         }
 
         function set$MagSum_MD(state) {
@@ -1128,7 +1128,7 @@ $(document).ready(function () {
         }
 
         function getPr() {
-            return calcPrice.profiles[0];
+            return CALC_PRICE.profiles[0];
         }
 
         function set$PrSum_MD(state) {
@@ -1154,7 +1154,7 @@ $(document).ready(function () {
         }
 
         function getUg() {
-            return calcPrice.corners[0];
+            return CALC_PRICE.corners[0];
         }
 
         function set$UgSum_MD(state) {
@@ -1191,7 +1191,7 @@ $(document).ready(function () {
         }
 
         function getNa() {
-            return calcPrice.guides[0];
+            return CALC_PRICE.guides[0];
         }
 
         function set$NaSum_MD(state) {
