@@ -35,9 +35,9 @@ $(document).ready(function () {
             installmentCalcState[$(controller).data('calcProperty')] = controller.value;
         }
 
-        // set value into main calc state
+        // If range using on Main calculator, set value into current main calculator state
         if ($('#mainCalc')[0]) {
-            let calc = $(getActiveMainCalc()).attr('id');
+            let calc = $('.calc__calculator.active')[0].attr('id');
             MAIN_CALC_STATE[calc][stateProp] = controller.value;
         }
 

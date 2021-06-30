@@ -142,17 +142,20 @@ window.MAIN_CALC_STATE = {
     },
 }
 
-function printMainState() {
-    if ($('#mainCalc')[0]) {
-        console.log('Выбранные значения: ', MAIN_CALC_STATE);
-    }
-}
-
-window.getActiveMainCalc = function() {
-    return $('.calc__calculator.active')[0];
-}
-
 $(document).ready(function () {
+    function printMainState() {
+        if ($('#mainCalc')[0]) {
+            console.log(
+                'Current STATE of all calculators: ',
+                MAIN_CALC_STATE
+            );
+        }
+    }
+
+    function getActiveMainCalc() {
+        return $('.calc__calculator.active')[0];
+    }
+
     // Handle click on additionally controller buttons
     $(() => $('.calc__collapse-controllers .btn')
         .toArray()
