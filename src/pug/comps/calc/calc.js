@@ -14,12 +14,12 @@ window.MAIN_CALC_STATE = {
         controllerParams: {
             width: {
                 min: 320,
-                max: 48000,
+                max: 30400,
                 step: 320
             },
             height: {
                 min: 160,
-                max: 48000,
+                max: 30400,
                 step: 160
             }
         },
@@ -66,7 +66,7 @@ window.MAIN_CALC_STATE = {
             },
             height: {
                 min: 160,
-                max: 12000,
+                max: 16000,
                 step: 160
             }
         },
@@ -455,7 +455,7 @@ $(document).ready(function () {
             switch(screenType) {
                 case 'outsideScreen':
                     newParams.min = newParams.step = value;
-                    newParams.max = value * 150; // For outside screen maximum width is 150 modules.
+                    newParams.max = value * 95; // For outside screen maximum width is 95 modules.
                     break;
 
                 case 'insideScreen':
@@ -508,12 +508,12 @@ $(document).ready(function () {
             switch(screenType) {
                 case 'outsideScreen':
                     newParams.min = newParams.step = value;
-                    newParams.max = value * 300; // For outside screen maximum height is 300 modules.
+                    newParams.max = value * 190; // For outside screen maximum height is 190 modules.
                     break;
 
                 case 'insideScreen':
                     newParams.min = newParams.step = value;
-                    newParams.max = value * 75; // For inside screen maximum height is 75 modules.
+                    newParams.max = value * 100; // For inside screen maximum height is 100 modules.
                     break;
 
                 default:
