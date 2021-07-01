@@ -629,6 +629,10 @@ $(document).ready(function () {
                 .closest('.calc__body-controllers')
                 .find('.label-controll__warning');
 
+            let cabinBtn = $(btn)
+                .closest('.calc-execution-type')
+                .find('[data-calc-value="cabinet"]');
+
             let executionType = $(btn).data('calcValue');
 
             if (executionType === "monolithic" && pixelStep.length > 0) {
@@ -639,13 +643,18 @@ $(document).ready(function () {
                     ? parseFloat(val.replace("," , "."))
                     : val;
 
-                if (val <= 2.5) {
+                if (val <= 2) {
                     $(warning).addClass('visible');
 
                     setTimeout(
                         () => $(warning).removeClass('visible'),
-                        7000
-                    )
+                        10000
+                    );
+
+                    setTimeout(
+                        () => $(cabinBtn).click(),
+                        5000
+                    );
                 }
             }
         }
@@ -795,7 +804,7 @@ $(document).ready(function () {
                 : roundVal;
         }
 
-    // Go to the cabin calc if pixel step is 2,5 or less
+    // Go to the cabin calc if pixel step is 2 or less
     $('#mainCalc .calc-pixel-step .custom-select__item')
         .toArray()
         .forEach(addHandlerOnPixelStepClick);
@@ -825,21 +834,21 @@ $(document).ready(function () {
             let hideWarning = function() {
                 setTimeout(
                     () => $(warning).removeClass('visible'),
-                    7000
+                    10000
                 );
             }
 
             let clickOnBtn = function () {
                 setTimeout(
                     () => $(cabinBtn).click(),
-                    4000
+                    5000
                 );
             }
 
             let calcType = MAIN_CALC_STATE.calcType;
             let executionType = MAIN_CALC_STATE[calcType].executionType;
 
-            if (pixelStep <= 2.5 && executionType === 'monolithic') {
+            if (pixelStep <= 2 && executionType === 'monolithic') {
                 $(warning).addClass('visible');
 
                 hideWarning();
