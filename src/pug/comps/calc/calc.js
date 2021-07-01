@@ -11,6 +11,15 @@ window.MAIN_CALC_STATE = {
         pixelStep: undefined,
         width: undefined,
         height: undefined,
+        maxSizes: {
+            monolithic: {
+                320160: [30400,30400]
+            },
+            cabinet: {
+                640640: [30720,30720],
+                960960: [30720,30720]
+            }
+        },
         controllerParams: {
             width: {
                 min: 320,
@@ -58,6 +67,16 @@ window.MAIN_CALC_STATE = {
         pixelStep: undefined,
         width: undefined,
         height: undefined,
+        maxSizes: {
+            monolithic: {
+                320160: [16000,16000]
+            },
+            cabinet: {
+                640480: [16000,16320],
+                640640: [16000,16000],
+                960960: [16320,16320]
+            }
+        },
         controllerParams: {
             width: {
                 min: 320,
