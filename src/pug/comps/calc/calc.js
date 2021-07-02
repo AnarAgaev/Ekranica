@@ -7,19 +7,15 @@ window.MAIN_CALC_STATE = {
     outsideScreen: {
         location: "outdoor",
         executionType: 'monolithic', // monolithic, cabinet
-        sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
+        sizeType: [320, 160], // [320,160], [640,640], [960,960]
+        maxSizes: {
+            320160: [30400,30400],
+            640640: [30720,30720],
+            960960: [30720,30720]
+        },
         pixelStep: undefined,
         width: undefined,
         height: undefined,
-        maxSizes: {
-            monolithic: {
-                320160: [30400,30400]
-            },
-            cabinet: {
-                640640: [30720,30720],
-                960960: [30720,30720]
-            }
-        },
         controllerParams: {
             width: {
                 min: 320,
@@ -64,19 +60,15 @@ window.MAIN_CALC_STATE = {
         location: "indoor",
         executionType: 'monolithic', // monolithic, cabinet
         sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
+        maxSizes: {
+            320160: [16000,16000],
+            640480: [16000,16320],
+            640640: [16000,16000],
+            960960: [16320,16320]
+        },
         pixelStep: undefined,
         width: undefined,
         height: undefined,
-        maxSizes: {
-            monolithic: {
-                320160: [16000,16000]
-            },
-            cabinet: {
-                640480: [16000,16320],
-                640640: [16000,16000],
-                960960: [16320,16320]
-            }
-        },
         controllerParams: {
             width: {
                 min: 320,
@@ -368,7 +360,7 @@ $(document).ready(function () {
             setExecutionTypeToState(this);
             toggleTypeOfCabin(this);
             setSizeTypeToState(this);
-            setSizeTypeToInputsRange(this);
+            setTypeSizeToInputsRange(this);
             correctInputRangesAfterUpdateState();
             checkPixelStepAfterToggleExecutionType(this);
         }
@@ -399,11 +391,11 @@ $(document).ready(function () {
             let calcProp = $(controller).data('calcProperty');
 
             MAIN_CALC_STATE[calcType].sizeType = (calcProp === 'executionType')
-                ? getActiveCabinSizeType(controller)
+                ? getTypeSizeFromExecutionTypeBtn(controller)
                 : getSizeTypeFromString($(controller).data('calcValue'));
         }
 
-        function getActiveCabinSizeType(controller) {
+        function getTypeSizeFromExecutionTypeBtn(controller) {
             let screenType = $(controller).data('calcValue');
 
             if (screenType === 'monolithic') {
@@ -419,25 +411,25 @@ $(document).ready(function () {
             return getSizeTypeFromString(value);
         }
 
-        function setSizeTypeToInputsRange(controller) {
+        function setTypeSizeToInputsRange(controller) {
             let from = $(controller).data('calcProperty');
             let value = $(controller).data('calcValue');
             let typeSize;
 
             if (from === 'executionType') {
-                typeSize = getActiveCabinSizeType(controller);
+                typeSize = getTypeSizeFromExecutionTypeBtn(controller);
             } else if (from === 'cabinType') {
                 typeSize = getSizeTypeFromString(value);
             }
 
-            setWidthToInputRange(typeSize[0]);
-            setHeightToInputRange(typeSize[1]);
+            setWidthToInputRange(typeSize);
+            setHeightToInputRange(typeSize);
 
-            setWidthParamsToCalcState(typeSize[0]);
-            setHeightParamsToCalcState(typeSize[1]);
+            setWidthParamsToCalcState(typeSize);
+            setHeightParamsToCalcState(typeSize);
         }
 
-        function setWidthToInputRange(width) {
+        function setWidthToInputRange(typeSize) {
             let container = $(getActiveMainCalc())
                 .find('.label-controll__size-type-width');
 
@@ -448,7 +440,7 @@ $(document).ready(function () {
             let slider = $(container)
                 .find('.custom-range__slide');
 
-            let newParams = getNewSizeTypeWidthParams(width);
+            let newParams = getNewTypeSizeForWidth(typeSize);
 
             $(controller).data('min', newParams.min);
             $(controller).data('max', newParams.max);
@@ -458,28 +450,20 @@ $(document).ready(function () {
             $(slider).prop('step', newParams.step);
         }
 
-        function setWidthParamsToCalcState(width) {
-            let calcType = $(getActiveMainCalc()).attr('id');
-            let newParams = getNewSizeTypeWidthParams(width);
-
-            MAIN_CALC_STATE[calcType].controllerParams.width.min = newParams.min;
-            MAIN_CALC_STATE[calcType].controllerParams.width.max = newParams.max;
-            MAIN_CALC_STATE[calcType].controllerParams.width.step = newParams.step;
-        }
-
-        function getNewSizeTypeWidthParams(value) {
+        function getNewTypeSizeForWidth(typeSize) {
             let screenType = $(getActiveMainCalc()).attr('id');
+            let sizeId = parseInt(typeSize.join(''));
             let newParams = {};
 
             switch(screenType) {
                 case 'outsideScreen':
-                    newParams.min = newParams.step = value;
-                    newParams.max = value * 95; // For outside screen maximum width is 95 modules.
+                    newParams.min = newParams.step = typeSize[0];
+                    newParams.max = MAIN_CALC_STATE.outsideScreen.maxSizes[sizeId][0];
                     break;
 
                 case 'insideScreen':
-                    newParams.min = newParams.step = value;
-                    newParams.max = value * 50; // For inside screen maximum width is 50 modules.
+                    newParams.min = newParams.step = typeSize[0];
+                    newParams.max = MAIN_CALC_STATE.insideScreen.maxSizes[sizeId][0];
                     break;
 
                 default:
@@ -490,16 +474,16 @@ $(document).ready(function () {
             return newParams;
         }
 
-        function setHeightParamsToCalcState(height) {
+        function setWidthParamsToCalcState(typeSize) {
             let calcType = $(getActiveMainCalc()).attr('id');
-            let newParams = getNewSizeTypeHeightParams(height);
+            let newParams = getNewTypeSizeForWidth(typeSize);
 
-            MAIN_CALC_STATE[calcType].controllerParams.height.min = newParams.min;
-            MAIN_CALC_STATE[calcType].controllerParams.height.max = newParams.max;
-            MAIN_CALC_STATE[calcType].controllerParams.height.step = newParams.step;
+            MAIN_CALC_STATE[calcType].controllerParams.width.min = newParams.min;
+            MAIN_CALC_STATE[calcType].controllerParams.width.max = newParams.max;
+            MAIN_CALC_STATE[calcType].controllerParams.width.step = newParams.step;
         }
 
-        function setHeightToInputRange(height) {
+        function setHeightToInputRange(typeSize) {
             let container = $(getActiveMainCalc())
                 .find('.label-controll__size-type-height');
 
@@ -510,7 +494,7 @@ $(document).ready(function () {
             let slider = $(container)
                 .find('.custom-range__slide');
 
-            let newParams = getNewSizeTypeHeightParams(height);
+            let newParams = getNewTypeSizeForHeight(typeSize);
 
             $(controller).data('min', newParams.min);
             $(controller).data('max', newParams.max);
@@ -520,19 +504,20 @@ $(document).ready(function () {
             $(slider).prop('step', newParams.step);
         }
 
-        function getNewSizeTypeHeightParams(value) {
+        function getNewTypeSizeForHeight(typeSize) {
             let screenType = $(getActiveMainCalc()).attr('id');
+            let sizeId = parseInt(typeSize.join(''));
             let newParams = {};
 
             switch(screenType) {
                 case 'outsideScreen':
-                    newParams.min = newParams.step = value;
-                    newParams.max = value * 190; // For outside screen maximum height is 190 modules.
+                    newParams.min = newParams.step = typeSize[1];
+                    newParams.max = MAIN_CALC_STATE.outsideScreen.maxSizes[sizeId][1];
                     break;
 
                 case 'insideScreen':
-                    newParams.min = newParams.step = value;
-                    newParams.max = value * 100; // For inside screen maximum height is 100 modules.
+                    newParams.min = newParams.step = typeSize[1];
+                    newParams.max = MAIN_CALC_STATE.insideScreen.maxSizes[sizeId][1];
                     break;
 
                 default:
@@ -543,10 +528,19 @@ $(document).ready(function () {
             return newParams;
         }
 
-        function correctInputRangesAfterUpdateState() {
-            correctCalcInputRanges('width');
-            correctCalcInputRanges('height');
+        function setHeightParamsToCalcState(typeSize) {
+            let calcType = $(getActiveMainCalc()).attr('id');
+            let newParams = getNewTypeSizeForHeight(typeSize);
+
+            MAIN_CALC_STATE[calcType].controllerParams.height.min = newParams.min;
+            MAIN_CALC_STATE[calcType].controllerParams.height.max = newParams.max;
+            MAIN_CALC_STATE[calcType].controllerParams.height.step = newParams.step;
         }
+
+        function correctInputRangesAfterUpdateState() {
+                correctCalcInputRanges('width');
+                correctCalcInputRanges('height');
+            }
 
         function correctCalcInputRanges(stateProperty) {
             let activeCalc = $(getActiveMainCalc()).attr('id');
@@ -691,7 +685,7 @@ $(document).ready(function () {
 
         function handlerClickOnTypeSizeToggle() {
             setSizeTypeToState(this);
-            setSizeTypeToInputsRange(this);
+            setTypeSizeToInputsRange(this);
             correctInputRangesAfterUpdateState();
 
             if(isDebugMainCalcState) printMainState();
@@ -850,28 +844,21 @@ $(document).ready(function () {
                 .find('.calc-execution-type')
                 .find('[data-calc-value="cabinet"]');
 
-            let hideWarning = function() {
-                setTimeout(
-                    () => $(warning).removeClass('visible'),
-                    10000
-                );
-            }
-
-            let clickOnBtn = function () {
-                setTimeout(
-                    () => $(cabinBtn).click(),
-                    5000
-                );
-            }
-
             let calcType = MAIN_CALC_STATE.calcType;
             let executionType = MAIN_CALC_STATE[calcType].executionType;
 
             if (pixelStep <= 2 && executionType === 'monolithic') {
                 $(warning).addClass('visible');
 
-                hideWarning();
-                clickOnBtn();
+                setTimeout(
+                    () => $(warning).removeClass('visible'),
+                    10000
+                );
+
+                setTimeout(
+                    () => $(cabinBtn).click(),
+                    5000
+                );
             }
         }
 
