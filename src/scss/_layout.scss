@@ -1797,7 +1797,7 @@ filter: grayscale(0) blur(0);
     &__warning {
         width: 100%;
         height: auto;
-        max-width: 300px;
+        max-width: 280px;
         order: 999;
         z-index: -1;
         font-weight: normal;
@@ -1805,6 +1805,8 @@ filter: grayscale(0) blur(0);
         line-height: 160%;
         color: $color-text-primary;
         margin-top: 0;
+        margin-left: -16px;
+        padding-left: 16px;
         position: relative;
         opacity: 0;
         max-height: 0;
@@ -1822,7 +1824,7 @@ filter: grayscale(0) blur(0);
 
         &.visible {
             opacity: 1;
-            max-height: 60px;
+            max-height: 100px;
             margin-top: 24px;
             transform: translateY(0);
             transition:
@@ -1831,6 +1833,53 @@ filter: grayscale(0) blur(0);
                     opacity 1s linear .1s,
                     transform 1s ease-out .1s;
         }
+
+        &::before {
+            content: "!";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            border: 1px solid $color-accent;
+            color: $color-accent;
+            font-size: 8px;
+            font-weight: bold;
+            -webkit-animation: blink 1.8s infinite both;
+            animation: blink 1.8s infinite both;
+        }
+    }
+}
+
+.blink-animation {
+    -webkit-animation: blink 1.8s infinite both;
+    animation: blink 1.8s infinite both;
+}
+
+@-webkit-keyframes blink {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+@keyframes blink {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
     }
 }
 

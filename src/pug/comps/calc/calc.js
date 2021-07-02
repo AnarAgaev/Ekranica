@@ -153,6 +153,11 @@ if ($('#mainCalc')) {
     window.CALC_PRICE = $('#mainCalc').data('calcPrice');
 }
 
+window.executionTypeTimer = {
+    pixelStep: undefined,
+    executionType: undefined
+};
+
 $(document).ready(function () {
     function printMainState() {
         if ($('#mainCalc')[0]) {
@@ -357,12 +362,13 @@ $(document).ready(function () {
         }
 
         function handleClickOnExecutionTypeToggle() {
-            setExecutionTypeToState(this);
-            toggleTypeOfCabin(this);
-            setSizeTypeToState(this);
-            setTypeSizeToInputsRange(this);
-            correctInputRangesAfterUpdateState();
-            checkPixelStepAfterToggleExecutionType(this);
+            if (checkPixelStep(this)) { // if screen can be calculate with selected pixel step
+                setExecutionTypeToState(this);
+                toggleTypeOfCabin(this);
+                setSizeTypeToState(this);
+                setTypeSizeToInputsRange(this);
+                correctInputRangesAfterUpdateState();
+            }
         }
 
         function setExecutionTypeToState(controller) {
@@ -632,11 +638,18 @@ $(document).ready(function () {
                 .map(el => parseInt(el, 10));
         }
 
-        function checkPixelStepAfterToggleExecutionType(btn) {
+        function checkPixelStep(btn) {
             let pixelStep = $(btn)
                 .closest('.calc__body-controllers')
                 .find('.calc-pixel-step')
-                .find('.custom-select__item.active');
+                .find('.custom-select__item.active')
+                .data('calcValue');
+
+            if(pixelStep === undefined) return true;
+
+            pixelStep = typeof pixelStep === 'string'
+                    ? parseFloat(pixelStep.replace("," , "."))
+                    : pixelStep;
 
             let warning = $(btn)
                 .closest('.calc__body-controllers')
@@ -648,28 +661,58 @@ $(document).ready(function () {
 
             let executionType = $(btn).data('calcValue');
 
-            if (executionType === "monolithic" && pixelStep.length > 0) {
+            if (executionType === "monolithic" && pixelStep <= 2) {
+                if ($(warning).hasClass('visible')) {
 
-                let val = $(pixelStep).data('calcValue');
+                    if (executionTypeTimer.pixelStep) {
+                        $(warning).removeClass('visible');
+                        clearTimeout(executionTypeTimer.pixelStep);
+                        executionTypeTimer.pixelStep = undefined;
 
-                val = typeof val === 'string'
-                    ? parseFloat(val.replace("," , "."))
-                    : val;
+                        setTimeout(
+                            () => showPixelStepWar(warning),
+                            500
+                        );
+                    }
+                } else showPixelStepWar(warning);
 
-                if (val <= 2) {
-                    $(warning).addClass('visible');
+                setTimeout(
+                    () => $(cabinBtn).click(), // for block toggle controller
+                    3
+                );
 
-                    setTimeout(
-                        () => $(warning).removeClass('visible'),
-                        10000
-                    );
-
-                    setTimeout(
-                        () => $(cabinBtn).click(),
-                        5000
-                    );
-                }
+                return false; // for block toggle execution type
             }
+
+            if (executionType === "monolithic" && pixelStep > 2) {
+                $(warning).removeClass('visible');
+
+                clearTimeout(executionTypeTimer.pixelStep);
+                executionTypeTimer.pixelStep = undefined;
+
+                clearTimeout(executionTypeTimer.executionType);
+                executionTypeTimer.executionType = undefined;
+
+                return true;
+            }
+        }
+
+        function showPixelStepWar (warning) {
+            $(warning)
+                .text(
+                    'Для экранов с шагом пикселя менее 2,5 ' +
+                    'возможно реализация только на Кабинетах. ' +
+                    'Для переключения на Монолитный тип исполнения, ' +
+                    'выберите шаг пикселя 2,5 и более.')
+                .addClass('visible');
+
+            executionTypeTimer.executionType = setTimeout(
+                () => {
+                    $(warning).removeClass('visible');
+                    executionTypeTimer.executionType = undefined;
+                },
+                15000
+            );
         }
 
     // Settings type size
@@ -848,17 +891,28 @@ $(document).ready(function () {
             let executionType = MAIN_CALC_STATE[calcType].executionType;
 
             if (pixelStep <= 2 && executionType === 'monolithic') {
-                $(warning).addClass('visible');
-
-                setTimeout(
-                    () => $(warning).removeClass('visible'),
-                    10000
+                $(warning).text(
+                    'Мы переключили Вас на кабинеты, ' +
+                    'так как для экранов с шагом пикселя менее 2,5, ' +
+                    'реализация возможна только на кабинетах.'
                 );
 
+                $(cabinBtn).click()
+
                 setTimeout(
-                    () => $(cabinBtn).click(),
-                    5000
+                    () => $(warning).addClass('visible'),
+                    100
                 );
+
+                executionTypeTimer.pixelStep = setTimeout(
+                    () => {
+                        $(warning).removeClass('visible');
+                        executionTypeTimer.pixelStep = undefined;
+                    },
+                    15000
+                );
+
+                MAIN_CALC_STATE.insideScreen.executionType = 'cabinet';
             }
         }
 
