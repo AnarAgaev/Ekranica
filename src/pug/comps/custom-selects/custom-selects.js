@@ -56,8 +56,8 @@ $(document).ready(function () {
     /*
      * Handle click on select item
      *
-     * Any selects must have element span with class .selected
-     * for put in it selected item after lick on item into the select.
+     * Any selects must have element with class .selected
+     * for put in it selected item after click on item into the custom select.
      *
      * Items into custom select must have class .custom-select__item
      *
