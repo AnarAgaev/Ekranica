@@ -11,7 +11,7 @@
                 // Если нужно чтобы при инициализации был выбран какой-то пункт, добавить checked в соответсвующий input
                 // Список значений формировать динамически из параметров элементв на стороне сервера
                 // Тип свойства в сторе data-calc-property НЕ ТРОГАТЬ! именно так оно указано в JS
-                input#calcInsideExecutionTypeMonolithic(type='radio' name='type' value='' checked)
+                input#calcInsideExecutionTypeMonolithic(type='radio' name='execution-type-inside-screen' value='' checked)
                 label.filter-controller(for='calcInsideExecutionTypeMonolithic' data-calc-property="executionType" data-calc-value="monolithic") Монолитный
-                input#calcInsideExecutionTypeCabin(type='radio' name='type' value='')
+                input#calcInsideExecutionTypeCabin(type='radio' name='execution-type-inside-screen' value='')
                 label.filter-controller(for='calcInsideExecutionTypeCabin' data-calc-property="executionType" data-calc-value="cabinet") Кабинетный
