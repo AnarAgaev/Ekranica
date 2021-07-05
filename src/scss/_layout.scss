@@ -1773,6 +1773,13 @@ filter: grayscale(0) blur(0);
         & + .label-controll:not(.label-controll_checkbox) {
             padding-top: 10px;
         }
+
+        .label-controll__help {
+            position: absolute;
+            right: -28px;
+            margin: 0;
+            top: 4px;
+        }
     }
 
     &_with-warning {
