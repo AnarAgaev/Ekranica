@@ -17,7 +17,10 @@ $(document).ready(function () {
         });
     }
 
-    function initRadioMarker() {
+    window.initRadioMarker = function () {
+        console.log('asdf')
+
+
         const btns = $("input[type='radio']:checked + label");
 
         if (btns.length > 0) {

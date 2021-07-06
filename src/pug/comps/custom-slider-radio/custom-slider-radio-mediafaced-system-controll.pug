@@ -1,0 +1,17 @@
+.label-controll
+    //.label-controll__help.help-button(data-help-modal-id="helpModalOutsideScreenSystemControll")
+    //    include ../../../img/icon-help.svg
+    //    include ../../comps/help-modal/help-modal-outside-screen-system-controll
+
+    .label-controll__caption Система управления
+    .label-controll__body
+        .label-controll__content
+            .radio-group#calcMediafacedSystemControll(data-controller-type="radio-group")
+                .marker
+                // Если нужно чтобы при инициализации был выбран какой-то пункт, добавить checked='' в соответсвующий input
+                // Список значений формировать динамически из параметров элементв на стороне сервера
+                // Тип свойства в сторе data-calc-property НЕ ТРОГАТЬ! именно так оно указано в JS
+                input#calcMediafacedSystemControllController(type='radio' name='system-controll-mediafaced' value='' checked)
+                label.filter-controller(for='calcMediafacedSystemControllController' data-calc-property="" data-filter-value="controller") Контроллер
+                input#calcMediafacedSystemControllProcessor(type='radio' name='system-controll-mediafaced' value='')
+                label.filter-controller(for='calcMediafacedSystemControllProcessor' data-calc-property="" data-filter-value="processor") Видеопроцессор

@@ -27,6 +27,7 @@ $(document).ready(
                 toggleActiveCalc(newActiveTabId);
                 setCalcTypeToState(newActiveCalcState);
                 setExecutionTypeMarker();
+                showMarkersOfHiddenRadioControllers();
 
                 if (isDebugMainCalcState) printMainState();
             }
@@ -102,6 +103,10 @@ $(document).ready(
                     'opacity': '1',
                 });
             }
+        }
+
+        function showMarkersOfHiddenRadioControllers() {
+            setTimeout(initRadioMarker, 500);
         }
     }
 );
