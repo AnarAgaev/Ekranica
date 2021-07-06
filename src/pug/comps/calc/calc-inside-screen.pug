@@ -11,9 +11,7 @@
                 include ../custom-selects/suffix-select-calc-inside-screen-pixel-step
                 include ../custom-range/custom-range-calc-inside-width
                 include ../custom-range/custom-range-calc-inside-height
-                include ../custom-slider-radio/custom-slider-radio-inside-screen-system-controll
                 include ../custom-slider-radio/custom-slider-radio-inside-screen-content-controller
-                include ../custom-checkbox/custom-checkbox-calc-inside-screen-brightness-sensor.pug
 
                 .calc__collapse-controllers.hidden
                     .btn
@@ -21,6 +19,8 @@
                         span.icon
                             include ../../../img/icon-ts.svg
                     .body
+                        include ../custom-slider-radio/custom-slider-radio-inside-screen-system-controll
+                        include ../custom-checkbox/custom-checkbox-calc-inside-screen-brightness-sensor.pug
                         include ../custom-checkbox/custom-checkbox-calc-inside-screen-electrical-project
                         include ../custom-checkbox/custom-checkbox-calc-inside-screen-steel-construction-project
                         include ../custom-checkbox/custom-checkbox-calc-inside-screen-switchboard
