@@ -30,6 +30,8 @@ export default function calcMonolithicScreen() {
     set$NaSum_MD  (state);   // Стоимость направляющих
     setQMk_MD     (state);   // Количество металлоконструкции (квадратный метр)
     set$MkSum_MD  (state);   // Стоимость металлоконструкции
+    setUsedSU_MD  (state);   // Система управления
+    set$SUSum_MD  (state);   // Стоимость системы управления
     set$Sum_MD    (state);   // Стоимость экрана в $
 
     getExRate_MD(
@@ -394,6 +396,38 @@ function set$MkSum_MD(state) {
     }
 }
 
+function setUsedSU_MD(state) {
+    state.SU = getControllerSystem(state); // should return the object obtained from the CALC_PRICE
+
+    if (isDebugMainCalcResults) {
+        console.log(
+            'SU - Используемая система управления:',
+            state.SU
+        );
+    }
+}
+
+function getControllerSystem(state) {
+    let type = state.SUType;
+    let systems = CALC_PRICE.controlSystems;
+
+    return systems.filter(
+        el => el.type === type
+    )[0];
+}
+
+function set$SUSum_MD(state) {
+    state.$SUSum = parseFloat(state.SU.price.replace("," , ".")) * 1.2;
+    state.$SUSum = parseFloat(state.$SUSum.toFixed(2));
+
+    if (isDebugMainCalcResults) {
+        console.log(
+            '$SUSum - Стоимость системы управлнеия = стоимость по прайсу (' + state.SU.price + ') + 20%:',
+            state.$SUSum
+        );
+    }
+}
+
 function set$Sum_MD(state) {
     state.$Sum = state.$ModSum
         + state.$BpSum
@@ -403,7 +437,8 @@ function set$Sum_MD(state) {
         + state.$PrSum
         + state.$UgSum
         + state.$NaSum
-        + state.$MkSum;
+        + state.$MkSum
+        + state.$SUSum;
 
     state.$Sum = parseFloat(state.$Sum.toFixed(2));
 
@@ -417,7 +452,8 @@ function set$Sum_MD(state) {
             '+ $PrSum ' +
             '+ $UgSum ' +
             '+ $NaSum ' +
-            '+ $MkSum'
+            '+ $MkSum' +
+            '+ $SUSum'
         );
 
         console.log(
@@ -428,9 +464,9 @@ function set$Sum_MD(state) {
 }
 
 function getExRate_MD(state, sendDataFunc) {
-
     let request = $.ajax({
-        url: "https://ntart.ru/tempius/dollar/get.php",
+        // Exchange rates from the website of the Central Bank
+        url: "https://www.cbr-xml-daily.ru/daily_json.js",
     });
 
     request.done(
@@ -447,8 +483,10 @@ function getExRate_MD(state, sendDataFunc) {
     );
 }
 
-function setRubSum_MD(state, rate, sendDataFunc) {
-    state.ExchangeRate = parseFloat(rate);
+function setRubSum_MD(state, response, sendDataFunc) {
+    let rates = JSON.parse(response);
+
+    state.ExchangeRate = parseFloat(rates.Valute.USD.Value);
 
     if (isDebugMainCalcResults) {
         console.log('ExchangeRate - Обменный курс на момент рассчёта:', state.ExchangeRate);

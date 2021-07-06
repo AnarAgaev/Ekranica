@@ -18,9 +18,6 @@ $(document).ready(function () {
     }
 
     window.initRadioMarker = function () {
-        console.log('asdf')
-
-
         const btns = $("input[type='radio']:checked + label");
 
         if (btns.length > 0) {

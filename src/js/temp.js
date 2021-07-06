@@ -313,6 +313,22 @@ export let calcPrice = {
             "comment": "20хл/3м/упак"
         }
     ],
+    controlSystems: [
+        {
+            "name": "Асинхронный контроллер",
+            "model": "TB6",
+            "type": "controller",
+            "price": "390",
+            "comment": "Т6 в корпусе"
+        },
+        {
+            "name": "Видео процессор",
+            "model": "VX4S",
+            "type": "processor",
+            "price": "1080",
+            "comment": "Отправл контрол+видеопроц 2,3 млн пикс,4 порта"
+        }
+    ],
 };
 
 import $ from "jquery";

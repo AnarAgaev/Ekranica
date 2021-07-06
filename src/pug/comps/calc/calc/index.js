@@ -7,6 +7,7 @@ import './setting-execution-type';
 import './settings-type-size';
 import './setting-pixel-step';
 import './setting-width-height';
+import './setting-controller-system';
 import './go-to-cabin-pixel-step-less-than-2_5';
 import './submit-calc-forms';
 
@@ -69,6 +70,9 @@ window.MAIN_CALC_STATE = {
         RubSum: undefined,
         QMk: undefined,
         $MkSum: undefined,
+        SUType: "controller", // controller, processor
+        SU: undefined,
+        $SUSum: undefined
     },
     insideScreen: {
         location: "indoor",
@@ -122,6 +126,9 @@ window.MAIN_CALC_STATE = {
         RubSum: undefined,
         QMk: undefined,
         $MkSum: undefined,
+        SUType: "controller", // controller, processor
+        SU: undefined,
+        $SUSum: undefined
     },
     mediaFaced: {
         executionType: 'monolithic', // monolithic, cabinet
