@@ -1776,9 +1776,17 @@ filter: grayscale(0) blur(0);
 
         .label-controll__help {
             position: absolute;
-            right: -28px;
+            right: -24px;
             margin: 0;
             top: 4px;
+
+            @media (min-width: $lg) {
+                right: -30px;
+            }
+
+            @media (min-width: $xl) {
+                right: -38px;
+            }
         }
     }
 
