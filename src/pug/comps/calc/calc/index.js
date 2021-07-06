@@ -10,6 +10,7 @@ import './setting-width-height';
 import './setting-controller-system';
 import './go-to-cabin-pixel-step-less-than-2_5';
 import './submit-calc-forms';
+import './toggle-hidden-controllers';
 
 window.isDebugMainCalcState = false;
 

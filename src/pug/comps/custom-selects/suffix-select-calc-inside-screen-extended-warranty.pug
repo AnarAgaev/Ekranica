@@ -10,17 +10,17 @@
             // Добавлять класс custom-select всем кастомным селектам
             .select-suffix.custom-select#calcOutsideScreenExtendedWarranty(data-controller-type="custom-select")
                 // Если есть значение по умолчанию добавить его в .select-suffix__selected-item.selected вместо &nbsp;
-                .select-suffix__selected-item.short.selected 2
+                .select-suffix__selected-item.short.selected 1
                 .select-suffix__arr
                 .select-suffix__delimiter
-                .select-suffix__units года
+                .select-suffix__units год
                 .custom-select__container
                     .custom-select__list.scroller
                         // Если есть значение по умолчанию добавить .active соответствующему значению
                         // Список значений формировать динамически из параметров элементв на стороне сервера
                         // Тип свойства фильтра data-filter-property НЕ ТРОГАТЬ! именно так оно указано в JS
-                        .custom-select__item.filter-controller(data-filter-property="outsideScreenExtendedWarranty" data-filter-value="1") 1
-                        .custom-select__item.filter-controller.active(data-filter-property="outsideScreenExtendedWarranty" data-filter-value="2") 2
+                        .custom-select__item.filter-controller.active(data-filter-property="outsideScreenExtendedWarranty" data-filter-value="1") 1
+                        .custom-select__item.filter-controller(data-filter-property="outsideScreenExtendedWarranty" data-filter-value="2") 2
                         .custom-select__item.filter-controller(data-filter-property="outsideScreenExtendedWarranty" data-filter-value="3") 3
                         .custom-select__item.filter-controller(data-filter-property="outsideScreenExtendedWarranty" data-filter-value="4") 4
                         .custom-select__item.filter-controller(data-filter-property="outsideScreenExtendedWarranty" data-filter-value="5") 5
