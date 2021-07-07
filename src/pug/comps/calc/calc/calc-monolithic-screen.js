@@ -32,7 +32,10 @@ export default function calcMonolithicScreen() {
     set$MkSum_MD  (state);   // Стоимость металлоконструкции
     setUsedSU_MD  (state);   // Система управления
     set$SUSum_MD  (state);   // Стоимость системы управления
-    set$Sum_MD    (state);   // Стоимость экрана в $
+    set$Sum_MD    (state);   // Стоимость экрана в $ без учёта доп. параметров
+    set$RG_MD     (state);   // Стоимость с учётом расширенной гарантии
+    set$RS_MD     (state);   // Стоимость с учётом расширенного сервиса
+    set$SumDop_MD (state);   // Стоимость экрана в $ с учётом доп. параметров
 
     getExRate_MD(
         state,
@@ -457,7 +460,82 @@ function set$Sum_MD(state) {
         );
 
         console.log(
-            '$Sum - Итого сумма:',
+            '$Sum - Итого сумма ($) без учёта доп. параметров:',
+            state.$Sum
+        );
+    }
+}
+
+function set$RG_MD(state) {
+    if (state.RG !== undefined) {
+        let percent = 20;
+        let $RG;
+
+        for (let i = 1; i <= state.RG; i++) {
+            percent += 10;
+        }
+
+        $RG = (state.$Sum / 100) * percent;
+        state.$RG = parseFloat($RG.toFixed(2));
+
+        if (isDebugMainCalcResults) {
+            console.log(
+                'Расширенная гарантия (' + percent + '%):',
+                state.$RG
+            );
+        }
+
+        return;
+    }
+
+    if (isDebugMainCalcResults)
+        console.log('Расширенная гарантия: НЕТ');
+}
+
+function set$RS_MD(state) {
+    if (state.RS !== undefined) {
+        let percent = 0;
+        let $RS;
+
+        for (let i = 1; i <= state.RS; i++) {
+            percent += 10;
+        }
+
+        $RS = (state.$Sum / 100) * percent;
+        state.$RS = parseFloat($RS.toFixed(2));
+
+        if (isDebugMainCalcResults) {
+            console.log(
+                'Расширенный сервис (' + percent + '%):',
+                state.$RS
+            );
+        }
+
+        return;
+    }
+
+    if (isDebugMainCalcResults)
+        console.log('Расширенный сервис: НЕТ');
+}
+
+function set$SumDop_MD (state) {
+    let $RG = state.$RG === undefined
+        ? 0
+        : state.$RG;
+
+    let $RS = state.$RS === undefined
+        ? 0
+        : state.$RS;
+
+    state.$Sum = state.$Sum + $RG + $RS;
+    state.$Sum = parseFloat(state.$Sum.toFixed(2));
+
+    if (isDebugMainCalcResults) {
+        console.log('$Sum = $Sum + $RG + $RS');
+
+        console.log(
+            '$Sum - Итого сумма ($) с учётом доп. параметров ' +
+            '(Расширенная гарантия, Рассширенный сервис):',
             state.$Sum
         );
     }
