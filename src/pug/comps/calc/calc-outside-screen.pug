@@ -5,7 +5,7 @@
         .calc__subtitle Уличные экраны защищены от влаги и пыли IP65, имеют яркость 4000-6500КД для противодействия солнечному засвету.
 
         .calc__body
-            form.calc__body-controllers(action="/calc-results.html" method="POST")
+            .calc__body-controllers
                 include ../custom-slider-radio/custom-slider-radio-outside-screen-type
                 include ../custom-slider-radio/custom-slider-radio-calc-outside-cabin
                 include ../custom-selects/suffix-select-calc-outside-screen-pixel-step
@@ -30,8 +30,16 @@
                         include ../custom-checkbox/custom-checkbox-calc-outside-screen-advanced-service
                         include ../custom-selects/suffix-select-calc-ouside-screen-advanced-service
 
-                button.btn.btn_primary.btn_show-result(type="submit") Рассчитать стоимость
+                button.btn.btn_primary.btn_show-result.not-focused Рассчитать стоимость
 
             .calc__body-picture
                 .calc__body-image
-                    img(src="/img/calc-location-outside.png" alt="")
+                    .calc__body-image-body
+                        img(src="/img/calc-location-outside.png" alt="")
+
+                    form.calc__results(action="/calc-results.html" method="POST" id="#calcResultsForm")
+                        input(type="hidden" id="#calcResults" name="calc-results" value="")
+                        .calc__results-sum
+                            .txt Итого:
+                            .number 2 540 000 ₽
+                        button.btn.btn_secondary.not-focused(type="submit") Посмотреть спецификацию
