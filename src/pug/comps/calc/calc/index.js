@@ -9,7 +9,7 @@ import './setting-pixel-step';
 import './setting-width-height';
 import './setting-controller-system';
 import './go-to-cabin-pixel-step-less-than-2_5';
-import './submit-calc-forms';
+import './calculating';
 import './toggle-hidden-controllers';
 import './set-hidden-select-controler-value-to-state';
 import './set-checkbox-value-into-state';

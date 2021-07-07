@@ -5,16 +5,15 @@ import calcCabinetScreen from './calc-cabinet-screen';
 
 $(document).ready(
     function () {
-        $('#mainCalc form')
+        $('.calculating')
             .toArray()
-            .forEach(addHandleOnCalcFormSubmit)
+            .forEach(addHandleOnCalculatingBtnClick)
 
-        function addHandleOnCalcFormSubmit(el) {
-            $(el).submit(handleOnCalcFormSubmit)
+        function addHandleOnCalculatingBtnClick(el) {
+            $(el).click(handleClickOnCalculatingBtn)
         }
 
-        function handleOnCalcFormSubmit(evt) {
-            evt.preventDefault();
+        function handleClickOnCalculatingBtn(evt) {
             SPINNER.addClass('visible');
 
             checkCalcPixelStep();
