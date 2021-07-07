@@ -12,6 +12,7 @@ import './go-to-cabin-pixel-step-less-than-2_5';
 import './submit-calc-forms';
 import './toggle-hidden-controllers';
 import './set-hidden-select-controler-value-to-state';
+import './set-checkbox-value-into-state';
 
 window.isDebugMainCalcState = false;
 
@@ -79,6 +80,11 @@ window.MAIN_CALC_STATE = {
         $RG: undefined,
         RS: undefined, // number of years
         $RS: undefined,
+        DY: undefined,
+        EP: undefined,
+        ESH: undefined,
+        PM: undefined,
+        ZCH: undefined,
     },
     insideScreen: {
         location: "indoor",
@@ -139,6 +145,11 @@ window.MAIN_CALC_STATE = {
         $RG: undefined,
         RS: undefined, // number of years
         $RS: undefined,
+        DY: undefined,
+        EP: undefined,
+        ESH: undefined,
+        PM: undefined,
+        ZCH: undefined,
     },
     mediaFaced: {
         executionType: 'monolithic', // monolithic, cabinet
