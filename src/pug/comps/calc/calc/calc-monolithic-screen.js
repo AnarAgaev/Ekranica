@@ -36,6 +36,7 @@ export default function calcMonolithicScreen() {
     set$RG_MD     (state);   // Стоимость с учётом расширенной гарантии
     set$RS_MD     (state);   // Стоимость с учётом расширенного сервиса
     set$SumDop_MD (state);   // Стоимость экрана в $ с учётом доп. параметров
+    printDop_MD   (state);   // Печатем в консоль доп. параметры не входящие в рассчёт
 
     getExRate_MD(
         state,
@@ -531,13 +532,22 @@ function set$SumDop_MD (state) {
     state.$Sum = parseFloat(state.$Sum.toFixed(2));
 
     if (isDebugMainCalcResults) {
-        console.log('$Sum = $Sum + $RG + $RS');
-
         console.log(
             '$Sum - Итого сумма ($) с учётом доп. параметров ' +
-            '(Расширенная гарантия, Рассширенный сервис):',
+            '(Расширенная гарантия, Рассширенный сервис ' +
+            '$Sum = $Sum + $RG + $RS):',
             state.$Sum
         );
+    }
+}
+
+function printDop_MD (state) {
+    if (isDebugMainCalcResults) {
+        console.log('Датчик яркости:', state.DY === undefined ? 'НЕТ' : 'ДА');
+        console.log('Электротехнический проект:', state.EP === undefined ? 'НЕТ' : 'ДА');
+        console.log('Электрощитовая:', state.ESH === undefined ? 'НЕТ' : 'ДА');
+        console.log('Проект металлоконструкции:', state.PM === undefined ? 'НЕТ' : 'ДА');
+        console.log('Комплект запасных частей:', state.ZCH === undefined ? 'НЕТ' : 'ДА');
     }
 }
 
