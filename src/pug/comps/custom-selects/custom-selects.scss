@@ -235,6 +235,10 @@
         font-size: 14px;
         line-height: 160%;
         color: $color-text-secondary;
+
+        &.units-year {
+            width: 33px;
+        }
     }
 }
 

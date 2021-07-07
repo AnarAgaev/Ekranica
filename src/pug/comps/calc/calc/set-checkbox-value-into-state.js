@@ -58,9 +58,15 @@ $(document).ready(
                 .addClass('active');
 
             setTimeout(
-                () => $(hiddenController)
-                    .find('.select-suffix__selected-item')
-                    .text('1'),
+                () => {
+                    $(hiddenController)
+                        .find('.select-suffix__selected-item')
+                        .text('1');
+
+                    $(hiddenController)
+                        .find('.select-suffix__units')
+                        .text('год');
+                },
                 300
             )
         }
@@ -79,79 +85,3 @@ $(document).ready(
         }
     }
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function handleChangeOnHiddenLabelController () {
-//     let controller = $(this)
-//         .closest('.label-controll_checkbox')
-//         .next('.label-controll_hidden');
-//
-//     if ($(this).prop("checked")) {
-//         showCalcHiddenController(controller);
-//         setValueOfHiddenCheckerToState(this);
-//
-//         console.log(show)
-//     } else {
-//         hideCalcHiddenController(controller);
-//         removeValueOfHiddenCheckerToState(this);
-//     }
-// }
-//
-// function showCalcHiddenController (controller) {
-//     let caption = $(controller)
-//         .find('.label-controll__caption');
-//
-//     $(controller).removeClass('hide');
-//
-//     setTimeout(
-//         () => {
-//             $(controller).addClass('visible');
-//             $(caption).addClass('visible');
-//         },
-//         100
-//     )
-// }
-//
-// function setValueOfHiddenCheckerToState (self) {
-//     let prop = $(self).data('calcProperty');
-//     let calc = $(getActiveMainCalc()).attr('id');
-//
-//     MAIN_CALC_STATE[calc][prop] = 1;
-// }
-//
-// function hideCalcHiddenController (controller) {
-//     let caption = $(controller)
-//         .find('.label-controll__caption');
-//
-//     $(controller).removeClass('visible');
-//     $(caption).removeClass('visible');
-//
-//     setTimeout(
-//         () => {
-//             $(controller).addClass('hide');
-//         },
-//         500
-//     );
-// }
-//
-// function removeValueOfHiddenCheckerToState (self) {
-//     let prop = $(self).data('calcProperty');
-//     let calc = $(getActiveMainCalc()).attr('id');
-//
-//     MAIN_CALC_STATE[calc][prop] = undefined;
-//
-//     resetValueHiddenController (self);
-// }
-//
