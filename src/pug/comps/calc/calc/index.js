@@ -11,6 +11,7 @@ import './setting-controller-system';
 import './go-to-cabin-pixel-step-less-than-2_5';
 import './submit-calc-forms';
 import './toggle-hidden-controllers';
+import './set-hidden-select-controler-value-to-state';
 
 window.isDebugMainCalcState = false;
 
@@ -73,7 +74,11 @@ window.MAIN_CALC_STATE = {
         $MkSum: undefined,
         SUType: "controller", // controller, processor
         SU: undefined,
-        $SUSum: undefined
+        $SUSum: undefined,
+        RG: undefined, // number of years
+        $RG: undefined,
+        RS: undefined, // number of years
+        $RS: undefined,
     },
     insideScreen: {
         location: "indoor",
@@ -129,7 +134,11 @@ window.MAIN_CALC_STATE = {
         $MkSum: undefined,
         SUType: "controller", // controller, processor
         SU: undefined,
-        $SUSum: undefined
+        $SUSum: undefined,
+        RG: undefined, // number of years
+        $RG: undefined,
+        RS: undefined, // number of years
+        $RS: undefined,
     },
     mediaFaced: {
         executionType: 'monolithic', // monolithic, cabinet
