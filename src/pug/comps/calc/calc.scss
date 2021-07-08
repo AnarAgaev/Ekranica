@@ -317,6 +317,8 @@
         }
 
         &-picture {
+            position: relative;
+
             @media (min-width: $lg) {
                 display: block;
                 width: 445px;
@@ -332,19 +334,29 @@
 
             @media (min-width: $lg) {
                 width: 445px;
+                position: sticky;
+                top: 150px;
             }
 
             @media (min-width: $xl) {
                 width: 624px;
             }
 
-            &.sticky {
-                @media (min-width: $lg) {
-                    position: fixed;
-                    top: 150px;
-                    //z-index: -1;
-                }
-            }
+            //&.sticky {
+            //    @media (min-width: $lg) {
+            //        position: fixed;
+            //        top: 150px;
+            //    }
+            //}
+            //
+            //&.sticky.sticky_bottom {
+            //    @media (min-width: $lg) {
+            //        position: absolute;
+            //        top: initial;
+            //        bottom: 0;
+            //        left: 0 !important;
+            //    }
+            //}
 
             &-body {
                 display: none;

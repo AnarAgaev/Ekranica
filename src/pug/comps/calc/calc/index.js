@@ -2,7 +2,6 @@ import $ from "jquery";
 
 import './handle-click-on-additionally-controller-buttons';
 import './handle-click-on-calc-tab-buttons';
-import './sticky-picture-at-the-calc-body';
 import './setting-execution-type';
 import './settings-type-size';
 import './setting-pixel-step';

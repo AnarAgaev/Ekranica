@@ -38,10 +38,7 @@ export default function calcMonolithicScreen() {
     set$SumDop_MD (state);   // Стоимость экрана в $ с учётом доп. параметров
     printDop_MD   (state);   // Печатем в консоль доп. параметры не входящие в рассчёт
 
-    getExRate_MD(
-        state,
-        printResults
-    );
+    getExRate_MD( state, printResults ); // Получаем курс валют на завтра и выводим сумму
 
     function printResults(finalState) {
         let resJSON = JSON.stringify(finalState);
