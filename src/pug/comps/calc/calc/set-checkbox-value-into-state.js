@@ -34,8 +34,13 @@ $(document).ready(
 
             switch (prop) {
                 case 'RG':
+                    resetValueHiddenSelect(self);
+                    resetValueInState('RG');
+                    break;
+
                 case 'RS':
                     resetValueHiddenSelect(self);
+                    resetValueInState('RS');
                     break;
 
                 case 'EP':
@@ -69,6 +74,20 @@ $(document).ready(
                 },
                 300
             )
+        }
+
+        function resetValueInState(flag) {
+            let calcType = $(getActiveMainCalc()).attr('id');
+
+            switch (flag) {
+                case 'RG':
+                    MAIN_CALC_STATE[calcType].$RG = undefined;
+                    break;
+
+                case 'RS':
+                    MAIN_CALC_STATE[calcType].$RS = undefined;
+                    break;
+            }
         }
 
         function resetValueHiddenCheckbox (self) {
