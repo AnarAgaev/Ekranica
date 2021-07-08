@@ -1,10 +1,11 @@
-.label-controll.label-controll_checkbox
-    .label-controll__help.help-button(data-help-modal-id="helpModalInsideScreenSwitchboard")
-        include ../../../img/icon-help.svg
-        include ../../comps/help-modal/help-modal-inside-screen-switchboard
+.label-controll.label-controll_checkbox.label-controll_hidden.hide
+    .label-controll_hidden-content
+        .label-controll__help.help-button(data-help-modal-id="helpModalInsideScreenSwitchboard")
+            include ../../../img/icon-help.svg
+            include ../../comps/help-modal/help-modal-inside-screen-switchboard
 
-    .custom-checkbox
-        label.custom-checkbox__container
-            | Электрощитовая
-            input.visuallyhidden(type="checkbox" data-calc-property="outsideScreenSwitchboard" data-calc-value="")
-            span.custom-checkbox__checkmark
+        .custom-checkbox
+            label.custom-checkbox__container
+                | Электрощитовая
+                input.visuallyhidden.clac-checkbox(type="checkbox" data-calc-property="ESH")
+                span.custom-checkbox__checkmark

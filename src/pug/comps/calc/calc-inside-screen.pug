@@ -5,7 +5,7 @@
         .calc__subtitle Внутренние экраны имеют защиту IP22, параметр яркости 600-800 КД для комфортного просмотра и сохранения энергии.
 
         .calc__body
-            form.calc__body-controllers(action="/calc-results.html" method="POST")
+            .calc__body-controllers
                 include ../custom-slider-radio/custom-slider-radio-inside-screen-type
                 include ../custom-slider-radio/custom-slider-radio-calc-inside-cabin
                 include ../custom-selects/suffix-select-calc-inside-screen-pixel-step
@@ -20,16 +20,26 @@
                     .body
                         include ../custom-slider-radio/custom-slider-radio-inside-screen-content-controller
                         include ../custom-slider-radio/custom-slider-radio-inside-screen-system-controll
-                        include ../custom-checkbox/custom-checkbox-calc-inside-screen-brightness-sensor.pug
+                        include ../custom-checkbox/custom-checkbox-calc-inside-screen-brightness-sensor
                         include ../custom-checkbox/custom-checkbox-calc-inside-screen-electrical-project
-                        include ../custom-checkbox/custom-checkbox-calc-inside-screen-steel-construction-project
                         include ../custom-checkbox/custom-checkbox-calc-inside-screen-switchboard
+                        include ../custom-checkbox/custom-checkbox-calc-inside-screen-steel-construction-project
                         include ../custom-checkbox/custom-checkbox-calc-inside-screen-additional-spare
+                        include ../custom-checkbox/custom-checkbox-calc-inside-screen-extended-warranty
                         include ../custom-selects/suffix-select-calc-inside-screen-extended-warranty
+                        include ../custom-checkbox/custom-checkbox-calc-inside-screen-advanced-service
                         include ../custom-selects/suffix-select-calc-inside-screen-advanced-service
 
-                button.btn.btn_primary.calculating(type="submit") Рассчитать стоимость
+                button.btn.btn_primary.calculating.not-focused Рассчитать стоимость
 
             .calc__body-picture
                 .calc__body-image
-                    img(src="/img/quiz-location-inside.png" alt="")
+                    .calc__body-image-body
+                        img(src="/img/calc-location-outside.png" alt="")
+
+                    form.calc__results.calc-results-form(action="/calc-results.html" method="POST")
+                        input.calc-results-input(type="hidden" name="calc-results" value="")
+                        .calc__results-sum
+                            .txt Итого:
+                            .number.calc-results-number 0 ₽
+                        button.btn.btn_secondary.not-focused(type="submit") Посмотреть спецификацию
