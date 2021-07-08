@@ -13,15 +13,15 @@ $(document).ready(
             $(el).click(handleClickOnCalculatingBtn)
         }
 
-        function handleClickOnCalculatingBtn(evt) {
+        function handleClickOnCalculatingBtn() {
             SPINNER.addClass('visible');
-
-            checkCalcPixelStep();
-            checkCalcWidth();
-            checkCalcHeight();
 
             let calcType = MAIN_CALC_STATE.calcType;
             let executionType = MAIN_CALC_STATE[calcType].executionType;
+
+            checkCalcPixelStep(executionType);
+            checkCalcWidth();
+            checkCalcHeight();
 
             switch (executionType) {
                 case 'monolithic':
@@ -33,16 +33,30 @@ $(document).ready(
             }
         }
 
-        function checkCalcPixelStep() {
+        function checkCalcPixelStep(executionType) {
             let calc = $(getActiveMainCalc()).attr('id')
             let pixelStep = MAIN_CALC_STATE[calc].pixelStep;
 
             if (pixelStep === undefined) {
-                $(getActiveMainCalc())
-                    .find('.calc-pixel-step')
-                    .find('.scroller')
-                    .children('.filter-controller:first-child')
-                    .click();
+                $(getClickableEl(calc, executionType)).click();
+            }
+        }
+        
+        function getClickableEl(calcType, executionType) {
+            let items = $(getActiveMainCalc())
+                .find('.calc-pixel-step')
+                .find('.scroller')
+                .children('.filter-controller');
+
+            switch (calcType) {
+                case 'outsideScreen':
+                    return items[0];
+
+                case 'insideScreen':
+                    if (executionType === 'monolithic')
+                        return items[7];
+                    else
+                        return items[0];
             }
         }
 
