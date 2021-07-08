@@ -2,6 +2,8 @@
 
 .page-calc {
     main.main {
-        overflow: initial;
+        @media (min-width: $lg) {
+            overflow: initial;
+        }
     }
 }
