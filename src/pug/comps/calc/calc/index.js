@@ -23,6 +23,7 @@ window.CALC_PRICE = $('#mainCalc').data('calcPrice');
 window.MAIN_CALC_STATE = {
     calcType: 'outsideScreen', // outsideScreen, insideScreen, mediaFaced, rentScreen
     outsideScreen: {
+        calcType: "outsideScreen",
         location: "outdoor",
         executionType: 'monolithic', // monolithic, cabinet
         sizeType: [320, 160], // [320,160], [640,640], [960,960]
@@ -87,6 +88,7 @@ window.MAIN_CALC_STATE = {
         ZCH: undefined,
     },
     insideScreen: {
+        calcType: "insideScreen",
         location: "indoor",
         executionType: 'monolithic', // monolithic, cabinet
         sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
@@ -152,6 +154,7 @@ window.MAIN_CALC_STATE = {
         ZCH: undefined,
     },
     mediaFaced: {
+        calcType: "mediaFaced",
         executionType: 'monolithic', // monolithic, cabinet
         sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
         pixelStep: undefined,
@@ -171,6 +174,7 @@ window.MAIN_CALC_STATE = {
         }
     },
     rentScreen: {
+        calcType: "rentScreen",
         rentConstruction: 'monolithic', // outdoor, Подвесная
         sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
         pixelStep: undefined,

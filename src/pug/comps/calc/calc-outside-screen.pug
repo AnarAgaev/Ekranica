@@ -37,9 +37,9 @@
                     .calc__body-image-body
                         img(src="/img/calc-location-outside.png" alt="")
 
-                    form.calc__results(action="/calc-results.html" method="POST" id="#calcResultsForm")
-                        input(type="hidden" id="#calcResults" name="calc-results" value="")
+                    form.calc__results.calc-results-form(action="/calc-results.html" method="POST")
+                        input.calc-results-input(type="hidden" name="calc-results" value="")
                         .calc__results-sum
                             .txt Итого:
-                            .number 2 540 000 ₽
+                            .number.calc-results-number
                         button.btn.btn_secondary.not-focused(type="submit") Посмотреть спецификацию

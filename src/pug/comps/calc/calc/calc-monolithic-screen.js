@@ -40,15 +40,44 @@ export default function calcMonolithicScreen() {
 
     getExRate_MD(
         state,
-        sendCalcResultsToServer
+        printResults
     );
 
-    function sendCalcResultsToServer() {
+    function printResults(finalState) {
+        let resJSON = JSON.stringify(finalState);
+        let rumSum = finalState.RubSum.toLocaleString('ru-RU'); //   new Intl.NumberFormat('ru-RU').format(finalState.RubSum);
+        let calc = $('#' + finalState.calcType);
+        let resForm = calc.find('.calc-results-form');
+        let resInput = calc.find('.calc-results-input');
+        let resNumber = calc.find('.calc-results-number');
 
-        // ************************************************************************************
-        // Send calc data to Server
-        // ************************************************************************************
+        $(resInput).val(resJSON);
+        $(resNumber).text(rumSum + ' ₽');
 
+        if (getScreenType() === 'sm' || getScreenType() === 'md') {
+            $(resForm).css('display', 'flex');
+
+            setTimeout(
+                () => scrollToCalcResults(resForm),
+                100
+            );
+        }
+
+        setTimeout(
+            () => $(resForm).addClass('visible'),
+            100
+        );
+    }
+
+    function scrollToCalcResults(form) {
+        let offsetTop = form.offset().top;
+        let headerHeight = $('#header').height();
+        let targetScroll = offsetTop - headerHeight + 10;
+
+        $('body,html').animate(
+            {scrollTop: targetScroll},
+            500
+        );
     }
 }
 
@@ -551,7 +580,7 @@ function printDop_MD (state) {
     }
 }
 
-function getExRate_MD(state, sendDataFunc) {
+function getExRate_MD(state, fPrintResults) {
     let request = $.ajax({
         // Exchange rates from the website of the Central Bank
         url: "https://www.cbr-xml-daily.ru/daily_json.js",
@@ -561,7 +590,7 @@ function getExRate_MD(state, sendDataFunc) {
         response => setRubSum_MD(
             state,
             response,
-            sendDataFunc)
+            fPrintResults)
     );
 
     request.fail(
@@ -571,7 +600,7 @@ function getExRate_MD(state, sendDataFunc) {
     );
 }
 
-function setRubSum_MD(state, response, sendDataFunc) {
+function setRubSum_MD(state, response, fPrintResult) {
     let rates = JSON.parse(response);
 
     state.ExchangeRate = parseFloat(rates.Valute.USD.Value);
@@ -591,7 +620,7 @@ function setRubSum_MD(state, response, sendDataFunc) {
 
     SPINNER.removeClass('visible');
 
-    sendDataFunc(); // Send data to server
+    fPrintResult(state);
 }
 
 function handleErrorOnRequestExRate(jqXHR, textStatus) {

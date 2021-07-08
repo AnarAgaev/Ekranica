@@ -273,9 +273,6 @@
             justify-content: space-between;
         }
 
-        @media (min-width: $xl) {
-        }
-
         &-controllers {
             display: flex;
             flex-direction: column;
@@ -467,31 +464,35 @@
     }
 
     &__results {
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: flex-start;
-        margin-top: 68px;
-        padding-top: 36px;
+        height: auto;
+        max-height: 0;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
         position: relative;
+        transition: all .3s ease-out;
 
         @media (min-width: $md) {
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding-top: 68px;
-            padding-bottom: 36px;
         }
 
         @media (min-width: $lg) {
-            margin-top: 0;
-            padding-top: 48px;
-            padding-bottom: 0;
+            display: flex;
+            margin-top: 0 !important;
+            padding-top: 48px !important;
+            padding-bottom: 0 !important;
+            max-height: initial !important;
             flex-direction: column;
             align-items: flex-start;
         }
 
         @media (min-width: $xl) {
-            padding-top: 0;
+            padding-top: 0 !important;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
@@ -500,11 +501,12 @@
         &::before {
             content: "";
             display: block;
-            width: 100%;
+            width: 0;
             height: 12px;
             position: absolute;
             top: 0;
             left: 0;
+            opacity: 0;
             border-radius: 12px;
             background: $color-back-secondary;
             box-shadow:
@@ -512,6 +514,7 @@
                     20px 27px 40px rgba(4, 5, 14, 0.17),
                     inset -2px -2px 5px rgba(52, 40, 62, 0.3),
                     inset 2px 2px 5px rgba(0, 2, 12, 0.8);
+            transition: all 1s cubic-bezier(0.33, 1, 0.68, 1);
 
             @media (min-width: $lg) {
                 display: none;
@@ -522,6 +525,9 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 34px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 2s cubic-bezier(0.33, 1, 0.68, 1);
 
             @media (min-width: $md) {
                 flex-direction: row;
@@ -568,6 +574,9 @@
                 line-height: 130%;
                 letter-spacing: 0.02em;
                 color: $color-text-primary;
+                opacity: 0;
+                transform: translateX(10px);
+                transition: all 1s cubic-bezier(0.33, 1, 0.68, 1);
 
                 @media (min-width: $lg) {
                     font-weight: 500;
@@ -587,6 +596,37 @@
         .btn {
             padding-left: 28px;
             padding-right: 28px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 2s cubic-bezier(0.33, 1, 0.68, 1) .5s;
+        }
+
+        &.visible {
+            max-height: 250px;
+            margin-top: 68px;
+            padding-top: 36px;
+
+            @media (min-width: $md) {
+                max-height: 200px;
+                padding-top: 68px;
+                padding-bottom: 36px;
+            }
+
+            &::before {
+                width: 100%;
+                opacity: 1;
+            }
+
+            .calc__results-sum,
+            .btn {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .number {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     }
 }
