@@ -1810,9 +1810,10 @@ filter: grayscale(0) blur(0);
     }
 
     &__warning {
-        width: 100%;
+        width: auto;
+        min-width: 300px;
+        max-width: 300px;
         height: auto;
-        max-width: 280px;
         order: 999;
         z-index: -1;
         font-weight: normal;

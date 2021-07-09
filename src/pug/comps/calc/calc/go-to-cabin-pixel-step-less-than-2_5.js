@@ -32,10 +32,10 @@ $(document).ready(
             let executionType = MAIN_CALC_STATE[calcType].executionType;
 
             if (pixelStep <= 2 && executionType === 'monolithic') {
-                $(warning).text(
-                    'Мы переключили Вас на кабинеты, ' +
-                    'так как для экранов с шагом пикселя менее 2,5, ' +
-                    'реализация возможна только на кабинетах.'
+                $(warning).html(
+                    'Шаг менее 2.5мм собирают на Кабинетах.' +
+                    '<br>' +
+                    'Тип Исполнения изменен автоматически.'
                 );
 
                 $(cabinBtn).click()

@@ -350,11 +350,10 @@ function checkPixelStep (btn) {
 
 function showPixelStepWar (warning) {
     $(warning)
-        .text(
-            'Для экранов с шагом пикселя менее 2,5, ' +
-            'возможно реализация только на Кабинетах. ' +
-            'Для переключения на Монолитный тип исполнения, ' +
-            'выберите шаг пикселя 2,5 и более.')
+        .html(
+            'Шаг менее 2.5мм собирают на Кабинетах.' +
+            '<br>' +
+            'Выберите другой Тип Исполнения экрана.')
         .addClass('visible');
 
     executionTypeTimer.executionType = setTimeout(
