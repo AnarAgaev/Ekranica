@@ -13,20 +13,10 @@
     }
 
     &__subtitle {
-        font-size: 16px;
-        margin: -16px 0 34px;
+        font-size: 14px;
         line-height: 163%;
-        color: $color-text-primary;
-
-        @media (min-width: $lg) {
-            margin: -12px 0 48px;
-            max-width: 70%;
-        }
-
-        @media (min-width: $xl) {
-            font-size: 18px;
-            margin-bottom: 68px;
-        }
+        margin-bottom: 96px;
+        color: $color-text-inactive;
     }
 
     &__title-picture {
@@ -149,18 +139,19 @@
 
         &__slide {
             width: auto;
-            padding-bottom: 60px;
+            padding-bottom: 68px;
 
-            @media (min-width: $lg) {
-                padding-bottom: 45px;
-            }
-
-            @media (min-width: $xl) {
-                padding-bottom: 56px;
-            }
+            //@media (min-width: $lg) {
+            //    padding-bottom: 45px;
+            //}
+            //
+            //@media (min-width: $xl) {
+            //    padding-bottom: 56px;
+            //}
         }
 
         &__button {
+            height: 32px;
             font-weight: 500;
             font-size: 14px;
             line-height: 160%;
@@ -171,6 +162,7 @@
             cursor: pointer;
 
             @media (min-width: $md) {
+                height: 36px;
                 font-weight: normal;
                 font-size: 16px;
             }
@@ -614,7 +606,9 @@
                     opacity 2s cubic-bezier(0.33, 1, 0.68, 1) .5s,
                     transform 2s cubic-bezier(0.33, 1, 0.68, 1) .5s,
                     color .3s linear,
-                    box-shadow .3s linear;
+                    box-shadow .3s linear,
+                    background-color .3s linear,
+                    border-color .3s linear;
         }
 
         &.visible {
@@ -643,6 +637,24 @@
                 opacity: 1;
                 transform: translateX(0);
             }
+        }
+    }
+
+    button.calculating {
+        color: $color-accent !important;
+
+        &:focus {
+            box-shadow:
+                -14px -28px 30px rgba(35, 33, 58, 0.35),
+                14px 28px 30px rgba(4, 5, 14, 0.3),
+                inset 4px 4px 24px rgba(4, 2, 19, 0.5),
+                inset -4px -4px 24px rgba(255, 255, 255, 0.06);
+        }
+
+        &:hover {
+            box-shadow:
+                -8px -16px 30px rgba(35, 33, 58, 0.35),
+                8px 16px 30px rgba(4, 5, 14, 0.3);
         }
     }
 }
