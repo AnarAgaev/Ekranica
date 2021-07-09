@@ -569,6 +569,14 @@ function set$SumDop_MD (state) {
 
 function printDop_MD (state) {
     if (isDebugMainCalcResults) {
+        console.log('Управление контентом:',
+                state.UK === 'place'
+                    ? 'На месте'
+                    : state.UK === 'remotely'
+                        ? 'Удалённо'
+                        : 'НЕТ'
+        );
+
         console.log('Датчик яркости:', state.DY === undefined ? 'НЕТ' : 'ДА');
         console.log('Электротехнический проект:', state.EP === undefined ? 'НЕТ' : 'ДА');
         console.log('Электрощитовая:', state.ESH === undefined ? 'НЕТ' : 'ДА');

@@ -7,6 +7,7 @@ import './settings-type-size';
 import './setting-pixel-step';
 import './setting-width-height';
 import './setting-controller-system';
+import './setting-content-controller';
 import './go-to-cabin-pixel-step-less-than-2_5';
 import './calculating';
 import './toggle-hidden-controllers';
@@ -87,6 +88,7 @@ $(document).ready(
                 ESH: undefined,
                 PM: undefined,
                 ZCH: undefined,
+                UK: undefined, // place, remotely
             },
             insideScreen: {
                 calcType: "insideScreen",
@@ -153,6 +155,7 @@ $(document).ready(
                 ESH: undefined,
                 PM: undefined,
                 ZCH: undefined,
+                UK: undefined, // place, remotely
             },
             mediaFaced: {
                 calcType: "mediaFaced",
