@@ -57,17 +57,26 @@ $(document).ready(
                         .prop('checked')
                 )
                 .forEach(
-                    (el, idx) => animateCalcChecker(el, idx)
+                    (el, idx, arr) => animateCalcChecker(el, idx, arr)
                 );
         }
 
-        function animateCalcChecker(el, idx) {
+        function animateCalcChecker(el, idx, arr) {
             let checkmark = $(el)
                 .find('.custom-checkbox__checkmark');
 
+            console.log()
+
             setTimeout(
-                () => $(checkmark).addClass('highlight'),
-                idx * 400
+                () => {
+                    $(checkmark).addClass('highlight');
+
+                    setTimeout(
+                        () => $(checkmark).removeClass('highlight'),
+                        arr.length * 70
+                    );
+                },
+                idx * 70
             );
         }
 

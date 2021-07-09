@@ -70,14 +70,8 @@
         }
 
         &.highlight:after {
-            animation: .8s linear highlight_checkmark;
+            opacity: 1;
         }
-    }
-
-    @keyframes highlight_checkmark {
-        0%   { opacity: 0; }
-        50%  { opacity: 1; }
-        100% { opacity: 0; }
     }
 
     input[type="checkbox"]:checked ~ .custom-checkbox__checkmark {
