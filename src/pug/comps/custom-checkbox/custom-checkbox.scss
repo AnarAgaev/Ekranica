@@ -40,7 +40,8 @@
                 -6px -5px 30px #23213A,
                 12px 10px 30px rgba(0, 2, 12, 0.5);
 
-        &::after {
+        &::after,
+        &.highlight:after {
             content: "";
             display: block;
             position: absolute;
@@ -67,6 +68,16 @@
             background: url("/img/icon-checkbox.svg") no-repeat left 5px center;
             border-radius: 2px;
         }
+
+        &.highlight:after {
+            animation: .8s linear highlight_checkmark;
+        }
+    }
+
+    @keyframes highlight_checkmark {
+        0%   { opacity: 0; }
+        50%  { opacity: 1; }
+        100% { opacity: 0; }
     }
 
     input[type="checkbox"]:checked ~ .custom-checkbox__checkmark {

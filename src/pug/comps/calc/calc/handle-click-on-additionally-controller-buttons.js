@@ -19,8 +19,10 @@ $(document).ready(
 
             if (isHidden(container)) {
                 showEl(container);
+                addAnimationToCalcCheckers(container);
             } else {
                 hideEl(container, HIDDEN_TIMEOUT);
+                removeAnimationToCalcCheckers();
             }
         }
 
@@ -42,6 +44,36 @@ $(document).ready(
                 },
                 timeout
             )
+        }
+
+        function addAnimationToCalcCheckers (container) {
+            $(container)
+                .find('.label-controll_checkbox')
+                .not('.hide')
+                .toArray()
+                .filter(
+                    el => !$(el)
+                        .find('input')
+                        .prop('checked')
+                )
+                .forEach(
+                    (el, idx) => animateCalcChecker(el, idx)
+                );
+        }
+
+        function animateCalcChecker(el, idx) {
+            let checkmark = $(el)
+                .find('.custom-checkbox__checkmark');
+
+            setTimeout(
+                () => $(checkmark).addClass('highlight'),
+                idx * 400
+            );
+        }
+
+        function removeAnimationToCalcCheckers() {
+            $('.custom-checkbox__checkmark.highlight')
+                .removeClass('highlight');
         }
     }
 );
