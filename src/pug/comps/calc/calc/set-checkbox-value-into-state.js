@@ -2,7 +2,7 @@ import $ from "jquery";
 
 $(document).ready(
     function () {
-        $('.clac-checkbox')
+        $('.calc-checkbox')
             .toArray()
             .forEach(addHandlerOnCalcCheckboxChange)
 
