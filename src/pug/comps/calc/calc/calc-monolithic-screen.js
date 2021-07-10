@@ -42,14 +42,14 @@ export default function calcMonolithicScreen() {
 
     function printResults(finalState) {
         let resJSON = JSON.stringify(finalState);
-        let rumSum = finalState.RubSum.toLocaleString('ru-RU'); //   new Intl.NumberFormat('ru-RU').format(finalState.RubSum);
+        let rubSum = finalState.RubSum.toLocaleString('ru-RU'); //   new Intl.NumberFormat('ru-RU').format(finalState.RubSum);
         let calc = $('#' + finalState.calcType);
         let resForm = calc.find('.calc-results-form');
         let resInput = calc.find('.calc-results-input');
         let resNumber = calc.find('.calc-results-number');
 
         $(resInput).val(resJSON);
-        $(resNumber).text(rumSum + ' ₽');
+        $(resNumber).text(rubSum + ' ₽');
 
         if (getScreenType() === 'sm' || getScreenType() === 'md') {
             $(resForm).css('display', 'flex');
@@ -142,7 +142,7 @@ function setUsedMod_MD(state) {
 function getMod(state) {
     let pixels = "Q" + state.pixelStep;
     let location = state.location;
-    let size = state.sizeType.join('*');
+    let size = '320*160'; // use modules only size 320*160
     let unit = CALC_PRICE.modules.filter(
         module => module.pixels === pixels
             && module.location === location
@@ -482,7 +482,7 @@ function set$Sum_MD(state) {
             '+ $PrSum ' +
             '+ $UgSum ' +
             '+ $NaSum ' +
-            '+ $MkSum' +
+            '+ $MkSum ' +
             '+ $SUSum'
         );
 

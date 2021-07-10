@@ -89,6 +89,12 @@ $(document).ready(
                 PM: undefined,
                 ZCH: undefined,
                 UK: undefined, // place, remotely
+                QCabW: undefined,
+                QCabH: undefined,
+                QCab: undefined,
+                QModCab: undefined,
+                Cab: undefined,
+                $CabSum: undefined,
             },
             insideScreen: {
                 calcType: "insideScreen",
@@ -156,6 +162,12 @@ $(document).ready(
                 PM: undefined,
                 ZCH: undefined,
                 UK: undefined, // place, remotely
+                QCabW: undefined,
+                QCabH: undefined,
+                QCab: undefined,
+                QModCab: undefined,
+                Cab: undefined,
+                $CabSum: undefined,
             },
             mediaFaced: {
                 calcType: "mediaFaced",
