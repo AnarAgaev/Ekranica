@@ -10,10 +10,6 @@ export default function calcCabinetScreen() {
     setQCabH_CD   (state);   // Количество кабинетов в высоту
     setQCab_CD    (state);   // Количество кабинетов в изделии
     setQModCab_CD (state);   // Количество модулей в одном кабинете
-
-    // setQModW_CD   (state);   // Количество модулей в ширину
-    // setQModH_CD   (state);   // Количество модулей в высоту
-
     setQModSum_CD (state);   // Количество модулей в изделии
     setUsedMod_CD (state);   // Используемый светодиодный модуль
     set$ModSum_CD (state);   // Сумма за модули
@@ -27,15 +23,6 @@ export default function calcCabinetScreen() {
     setQMag_CD    (state);   // Количество магнитов
     setUsedMag_CD (state);   // Используемый магнитный держатель
     set$MagSum_CD (state);   // Сумма за магниты
-
-    // setUsedPr_CD  (state);   // Используемый профиль
-    // set$PrSum_CD  (state);   // Сумма за профиль
-    // setUsedUg_CD  (state);   // Используемый уголок
-    // set$UgSum_CD  (state);   // Сумма за уголки
-    // setQNa_CD     (state);   // Количество направляющих
-    // setUsedNa_CD  (state);   // Используемые направляющие
-    // set$NaSum_CD  (state);   // Стоимость направляющих
-
     setUsedCab_CD (state);   // Используемый кабинет
     set$CabSum_CD (state);   // Сумма за кабинеты
     setQMk_CD     (state);   // Количество металлоконструкции (квадратный метр)
@@ -154,34 +141,6 @@ function setQModCab_CD (state) {
         );
     }
 }
-
-
-
-
-// function setQModW_CD(state) {
-//     state.QModW = state.width / 320;
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             'QModW - Количество модулей в ширину:',
-//             state.QModW
-//         );
-//     }
-// }
-//
-// function setQModH_CD(state) {
-//     state.QModH = state.height / 160;
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             'QModH - Количество модулей в высоту:',
-//             state.QModH
-//         );
-//     }
-// }
-
-
-
 
 function setQModSum_CD(state) {
     state.QModSum = state.QCab * state.QModCab;
@@ -379,102 +338,6 @@ function set$MagSum_CD(state) {
         );
     }
 }
-
-
-
-
-// function setUsedPr_CD(state) {
-//     state.Pr = getPr();
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             'Pr - Используемый профиль:',
-//             state.Pr
-//         );
-//     }
-// }
-//
-// function getPr() {
-//     return CALC_PRICE.profiles[0];
-// }
-//
-// function set$PrSum_CD(state) {
-//     state.$PrSum = (state.height + state.width) * 2 / 1000 * parseFloat(state.Pr.price.replace("," , "."));
-//     state.$PrSum = parseFloat(state.$PrSum.toFixed(2));
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             '$PrSum - Сумма за профиль:',
-//             state.$PrSum
-//         );
-//     }
-// }
-//
-// function setUsedUg_CD(state) {
-//     state.Ug = getUg();
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             'Ug - Используемый уголок:',
-//             state.Ug
-//         );
-//     }
-// }
-//
-// function getUg() {
-//     return CALC_PRICE.corners[0];
-// }
-//
-// function set$UgSum_CD(state) {
-//     state.$UgSum = 4 * parseFloat(state.Ug.price.replace("," , "."));
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             '$UgSum - Сумма за уголки:',
-//             state.$UgSum
-//         );
-//     }
-// }
-//
-// function setQNa_CD(state) {
-//     state.QNa = (state.QModW + 1) * (state.height / 1000);
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             'QNa - Количество направляющих (в метрах):',
-//             state.QNa
-//         );
-//     }
-// }
-//
-// function setUsedNa_CD(state) {
-//     state.Na = getNa();
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             'Na - Используемые направляющие:',
-//             state.Na
-//         );
-//     }
-// }
-//
-// function getNa() {
-//     return CALC_PRICE.guides[0];
-// }
-//
-// function set$NaSum_CD(state) {
-//     state.$NaSum = state.QNa * parseFloat(state.Na.price.replace("," , "."));
-//
-//     if (isDebugMainCalcResults) {
-//         console.log(
-//             '$NaSum - Стоимость направляющих:',
-//             state.$NaSum
-//         );
-//     }
-// }
-
-
-
-
 
 function setUsedCab_CD(state) {
     state.Cab = getCab_CD(state); // should return the object obtained from the CALC_PRICE
