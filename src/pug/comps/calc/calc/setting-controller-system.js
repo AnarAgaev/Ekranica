@@ -16,6 +16,8 @@ $(document).ready(
             let calc = $(getActiveMainCalc()).attr('id');
 
             MAIN_CALC_STATE[calc][prop] = val;
+
+            cleanCalcCurrentResult();
         }
     }
 );

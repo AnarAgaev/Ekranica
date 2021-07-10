@@ -204,15 +204,45 @@ $(document).ready(
             executionType: undefined
         };
 
-        window.printMainState = function() {
+        window.printMainState = function () {
             console.log(
                 'Current STATE of all calculators: ',
                 MAIN_CALC_STATE
             );
         };
 
-        window.getActiveMainCalc = function() {
+        window.getActiveMainCalc = function () {
             return $('.calc__calculator.active')[0];
+        }
+
+        window.cleanCalcCurrentResult = function () {
+            let currentCalc = getActiveMainCalc();
+
+            let currentCalcResult = $(currentCalc)
+                .find('.calc__results');
+
+            let resultJsonStorage = $(currentCalc)
+                .find('.calc-results-input');
+
+            setTimeout(cleanAndHideCalcResult, 100);
+
+            function cleanAndHideCalcResult () {
+                if (isCalcResultVisible()) {
+                    $(currentCalcResult).addClass('hidden');
+                    $(resultJsonStorage).val('');
+
+                    setTimeout(
+                        () => $(currentCalcResult)
+                            .removeClass('visible hidden'),
+                        700
+                    )
+                }
+            }
+
+            function isCalcResultVisible() {
+                return $(currentCalcResult)
+                    .hasClass('visible');
+            }
         }
     }
 );

@@ -7,7 +7,9 @@ $(document).ready(
             .forEach(addHandlerOnContentControllerBtnClick);
 
         function addHandlerOnContentControllerBtnClick (el) {
-            $(el).click(handleClickOnContentControllerBtn);
+            $(el).click(
+                handleClickOnContentControllerBtn
+            );
         }
 
         function handleClickOnContentControllerBtn () {
@@ -16,6 +18,8 @@ $(document).ready(
             let calc = $(getActiveMainCalc()).attr('id');
 
             MAIN_CALC_STATE[calc][prop] = val;
+
+            cleanCalcCurrentResult();
         }
     }
 );

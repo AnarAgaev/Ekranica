@@ -19,6 +19,8 @@ function handleClickOnExecutionTypeToggle () {
         setSizeTypeToState(this);
         setTypeSizeToInputsRange(this);
         correctInputRangesAfterUpdateState();
+
+        cleanCalcCurrentResult();
     }
 }
 
@@ -325,6 +327,7 @@ function checkPixelStep (btn) {
                     500
                 );
             }
+
         } else showPixelStepWar(warning);
 
         setTimeout(

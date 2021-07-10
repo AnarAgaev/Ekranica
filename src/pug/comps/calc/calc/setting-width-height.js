@@ -1,9 +1,13 @@
 import $ from "jquery";
 
 /*
- These scripts for setting the width
- and height of the screen to its state
- and the range controllers.
+ * These scripts for setting the width
+ * and height of the screen to its state
+ * and the range controllers.
+
+ * Setting value of width and height controllers
+ * location in src/pug/comps/custom-range/custom-range.js
+ *
  */
 
 $(document).ready(
@@ -39,6 +43,8 @@ $(document).ready(
                 $(error).html(msg);
                 $(error).addClass('visible');
             }
+
+            cleanCalcCurrentResult();
         }
 
         function getErrorRangeInputMessage(input) {
@@ -91,6 +97,8 @@ $(document).ready(
 
             $(range).val(value);
             setRange(range, false);
+
+            cleanCalcCurrentResult();
         }
 
         function getRoundRangeVal(input) {

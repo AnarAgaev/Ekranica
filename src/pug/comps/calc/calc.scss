@@ -660,6 +660,21 @@
                 transform: translateX(0);
             }
         }
+
+        &.visible.hidden {
+
+            &::before {
+                width: 0;
+                opacity: 0;
+            }
+
+            .calc__results-sum,
+            .btn {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: all .5s ease-in;
+            }
+        }
     }
 
     button.calculating {

@@ -7,7 +7,9 @@ $(document).ready(
             .forEach(addHandlerOnHiddenSelectItemClick);
 
         function addHandlerOnHiddenSelectItemClick (el) {
-            $(el).click(handleClickOnHiddenSelectItem);
+            $(el).click(
+                handleClickOnHiddenSelectItem
+            );
         }
 
         function handleClickOnHiddenSelectItem () {
@@ -18,6 +20,7 @@ $(document).ready(
             MAIN_CALC_STATE[calc][prop] = val;
 
             setNewYearFormIntoUnits(this);
+            cleanCalcCurrentResult();
         }
 
         function setNewYearFormIntoUnits (self) {

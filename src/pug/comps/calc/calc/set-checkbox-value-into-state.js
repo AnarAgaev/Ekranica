@@ -14,6 +14,8 @@ $(document).ready(
             $(this).prop("checked")
                 ? setCheckboxValueToState(this)
                 : removeCheckboxValueFromState(this);
+
+            cleanCalcCurrentResult();
         }
 
         function setCheckboxValueToState(self) {

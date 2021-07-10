@@ -23,6 +23,8 @@ $(document).ready(
             setTypeSizeToInputsRange(this);
             correctInputRangesAfterUpdateState();
 
+           cleanCalcCurrentResult();
+
             if(isDebugMainCalcState) printMainState();
         }
     }
