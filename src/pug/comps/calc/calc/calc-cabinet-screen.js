@@ -245,8 +245,11 @@ function setQRv_CD(state) {
         state.QRv = state.QModSum;
 
         if (isDebugMainCalcResults) {
-            console.log('*** Для экрана используются модули с шагом пикселя 1,66 и менее! ' +
-                'Используемый шаг пикселя: Q' + pixelStep + ' ***');
+            console.log(
+                '*** Для экрана используются модули с шагом пикселя 1,66 и менее! ' +
+                'Для данных экранов количество принимающих карт ' +
+                'равно количестову модулей (' + state.QModSum + ' модулей). ' +
+                'Используемый шаг пикселя: Q' + pixelStep);
             console.log('QRv - Количество принимающих карт:', state.QRv);
         }
 
@@ -257,7 +260,7 @@ function setQRv_CD(state) {
 
     if (isDebugMainCalcResults) {
         console.log(
-            'QRv - Количество принимающих карт:',
+            'QRv - Количество принимающих карт (равно количеству Кабинетов):',
             state.QRv
         );
     }

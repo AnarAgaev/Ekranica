@@ -211,23 +211,6 @@ function set$BpSum_MD(state) {
 }
 
 function setQRv_MD(state) {
-
-    let pixelStep = typeof state.pixelStep === 'string'
-        ? parseFloat(state.pixelStep.replace("," , "."))
-        : state.pixelStep;
-
-    if ( pixelStep <= 1.66) {
-        state.QRv = state.QModSum;
-
-        if (isDebugMainCalcResults) {
-            console.log('*** Для экрана используются модули с шагом пикселя 1,66 и менее! ' +
-                'Используемый шаг пикселя: Q' + pixelStep + ' ***');
-            console.log('QRv - Количество принимающих карт:', state.QRv);
-        }
-
-        return;
-    }
-
     state.QRv = Math.ceil(state.QModSum / 6);
 
     if (isDebugMainCalcResults) {
