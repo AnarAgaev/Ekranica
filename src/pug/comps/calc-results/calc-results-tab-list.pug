@@ -1,17 +1,17 @@
 // На стороне сервера обеспечить открытие соответствующего калькулятора если в url если id маркер
-a(href="/calc.html/#outsideScreen").calc__tab-list__slide.swiper-slide
+a(href="/calc.html/?calc=outsideScreen").calc__tab-list__slide.swiper-slide
     // При инициализации, добавить первому элемну класс .active
     .calc__tab-list__button.active(data-target-tab-id="#outsideScreen")
         | Уличный светодиодный экран
 
-a(href="/calc.html/#insideScreen").calc__tab-list__slide.swiper-slide
+a(href="/calc.html/?calc=insideScreen").calc__tab-list__slide.swiper-slide
     .calc__tab-list__button(data-target-tab-id="#insideScreen")
         | Внутренний светодиодный экран
 
-a(href="/calc.html/#mediaFacade").calc__tab-list__slide.swiper-slide
+a(href="/calc.html/?calc=mediaFacade").calc__tab-list__slide.swiper-slide
     .calc__tab-list__button(data-target-tab-id="#mediaFacade")
         | Медиафасад
 
-a(href="/calc.html/#rentScreen").calc__tab-list__slide.swiper-slide
+a(href="/calc.html/?calc=rentScreen").calc__tab-list__slide.swiper-slide
     .calc__tab-list__button(data-target-tab-id="#rentScreen")
         | Аренда
