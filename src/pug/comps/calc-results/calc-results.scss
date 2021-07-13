@@ -821,6 +821,11 @@
 
                 .validator__cross {
                     display: none;
+
+                    @media (min-width: $lg) and (max-width: $xl - 1) {
+                        right: 34px;
+                        display: block;
+                    }
                 }
 
                 .controller-group {

@@ -1141,14 +1141,6 @@ input[type="password"]::-ms-reveal {
 }
 
 .controller.checked.valid {
-    .validator__check {
-        display: block;
-    }
-
-    .validator__cross {
-        display: none;
-    }
-
     .validator__cross,
     .validator__check {
         .valid {
@@ -1158,19 +1150,19 @@ input[type="password"]::-ms-reveal {
             opacity: 0
         }
     }
-}
 
-.controller.checked.invalid {
-    .validator__cross {
-        display: block;
-    }
+    &.single-valid-warning {
+        .validator__check {
+            display: block;
+        }
 
-    .validator__check {
-        @media (max-width: $md - 1) {
+        .validator__cross {
             display: none;
         }
     }
+}
 
+.controller.checked.invalid {
     .validator__cross,
     .validator__check {
         .valid {
@@ -1178,6 +1170,18 @@ input[type="password"]::-ms-reveal {
         }
         .invalid {
             opacity: 1;
+        }
+    }
+
+    &.single-valid-warning {
+        .validator__cross {
+            display: block;
+        }
+
+        .validator__check {
+            @media (max-width: $md - 1) {
+                display: none;
+            }
         }
     }
 }
