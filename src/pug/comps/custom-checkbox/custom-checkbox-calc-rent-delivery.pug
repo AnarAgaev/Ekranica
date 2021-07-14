@@ -1,6 +1,10 @@
-.label-controll
+.label-controll.label-controll_checkbox
+    .label-controll__help.help-button(data-help-modal-id="helpModalRentDelivery")
+        include ../../../img/icon-help.svg
+        include ../../comps/help-modal/help-modal-rent-delivery
+
     .custom-checkbox
         label.custom-checkbox__container
-            | Нужна доставка за пределы Москвы
-            input.visuallyhidden(type="checkbox" data-calc-property="rentDelivery" data-calc-value="")
+            | Доставка за пределы Москвы
+            input.visuallyhidden.calc-checkbox(type="checkbox" data-calc-property="DOST")
             span.custom-checkbox__checkmark

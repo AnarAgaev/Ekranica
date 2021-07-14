@@ -1,9 +1,13 @@
-.label-controll
+.label-controll.calc-rent-days-controller
+    .label-controll__help.help-button(data-help-modal-id="helpModalRentDays")
+        include ../../../img/icon-help.svg
+        include ../../comps/help-modal/help-modal-rent-days
+
     .label-controll__caption Срок аренды
     .label-controll__body
         .label-controll__content
 
-            .input-suffix.custom-input.input_w30#rentPeriodDays
-                input(type="text" data-calc-property="rentPeriodDays" data-calc-value="")
+            .input-suffix.custom-input.input_w30
+                input.calc-rent-days(type="text" data-calc-property="DN")
                 .input-suffix__delimiter
                 .input-suffix__units дни

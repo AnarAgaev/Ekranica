@@ -701,6 +701,48 @@
                 8px 16px 30px rgba(4, 5, 14, 0.3);
         }
     }
+
+    .calc-rent-days-controller {
+        @media (min-width: $lg) {
+            padding-top: 0 !important;
+        }
+
+        .input-suffix {
+            @media (min-width: $lg) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .calc-rent-technician-controller {
+        margin-bottom: 34px;
+
+        @media (min-width: $md) {
+            margin-top: 10px;
+        }
+
+        @media (min-width: $lg) {
+            margin-bottom: 30px;
+            padding-bottom: 6px;
+        }
+
+        @media (min-width: $xl) {
+            margin-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 48px !important;
+        }
+
+        & + .label-controll {
+            @media (min-width: $lg) {
+                padding-bottom: 6px;
+            }
+
+            @media (min-width: $xl) {
+                padding-bottom: 0;
+                margin-bottom: 48px !important;
+            }
+        }
+    }
 }
 
 .calc__calculator {
