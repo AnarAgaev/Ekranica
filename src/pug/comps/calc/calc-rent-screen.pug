@@ -3,7 +3,21 @@
     .container
 
         .calc__body.animation-element
-            form.calc__body-controllers(action="/calc-results.html" method="POST")
+            .calc__body-controllers
+                include ../custom-slider-radio/custom-slider-radio-rent-execution
+
+
+
+                br
+                br
+                br
+                br
+                br
+
+
+
+
+
                 include ../custom-slider-radio/custom-slider-radio-rent-construction
                 include ../custom-selects/suffix-select-calc-rent-pixel-step
                 include ../custom-range/custom-range-calc-width
@@ -12,8 +26,17 @@
                 include ../datepicker/datepicker-calc-rent-installment
                 include ../custom-checkbox/custom-checkbox-calc-rent-delivery
                 include ../custom-checkbox/custom-checkbox-calc-rent-cotroller
-                button.btn.btn_secondary.calculating(type="submit") Рассчитать стоимость
+
+                button.btn.btn_secondary.calculating Рассчитать стоимость
 
             .calc__body-picture
                 .calc__body-image
-                    img(src="/img/quiz-location-inside.png" alt="")
+                    .calc__body-image-body
+                        img(src="/img/quiz-location-inside.png" alt="")
+
+                    form.calc__results.calc-results-form(action="/calc-results.html" method="POST")
+                        input.calc-results-input(type="hidden" name="calc-results" value="")
+                        .calc__results-sum
+                            .txt Итого:
+                            .number.calc-results-number 0 ₽
+                        button.btn.btn_primary.not-focused(type="submit") Посмотреть спецификацию
