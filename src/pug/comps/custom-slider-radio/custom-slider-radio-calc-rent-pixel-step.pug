@@ -1,0 +1,14 @@
+.label-controll
+    .label-controll__help.help-button(data-help-modal-id="helpModalRentPixelStep")
+        include ../../../img/icon-help.svg
+        include ../../comps/help-modal/help-modal-rent-pixel-step
+
+    .label-controll__caption Шаг пикселя
+    .label-controll__body
+        .label-controll__content
+            .radio-group.rent-pixel-step(data-controller-type="radio-group")
+                .marker
+                input#calcRentPixelStep39(type='radio' name='rent-pixel-step')
+                label.filter-controller(for='calcRentPixelStep39' data-calc-property="pixelStep" data-calc-value="3.9") 3,9 мм.
+                input#calcRentPixelStep48(type='radio' name='rent-pixel-step')
+                label.filter-controller(for='calcRentPixelStep48' data-calc-property="pixelStep" data-calc-value="4.8") 4,8 мм.

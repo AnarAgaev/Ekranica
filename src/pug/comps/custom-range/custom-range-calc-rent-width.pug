@@ -1,0 +1,30 @@
+.label-controll.label-controll__size-type-width
+    .label-controll__caption Ширина
+    .label-controll__body
+        .label-controll__content
+
+            .custom-range
+                .input-suffix.custom-input
+                    input.value(
+                        type="number"
+                        data-calc-property="width"
+                        data-min="500"
+                        data-max="50000"
+                        value=""
+                    )
+                    span.input-suffix__delimiter
+                    span.input-suffix__units мм.
+
+                .custom-range__controller
+                    span.status-bar
+                    spna.slider
+                    input.custom-range__slide(
+                        type="range"
+                        step="500"
+                        min="500"
+                        max="50000"
+                        value="500"
+                        data-calc-property="width"
+                    )
+
+                .custom-range__value-error(data-default-txt="Некорректное значение ширины.")
