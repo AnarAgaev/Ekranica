@@ -26,7 +26,6 @@ $(document).ready(
                 activateCalcPicture(newActiveTabId);
                 toggleActiveCalc(newActiveTabId);
                 setCalcTypeToState(newActiveCalcState);
-                setExecutionTypeMarker();
                 showMarkersOfHiddenRadioControllers();
 
                 if (isDebugMainCalcState) printMainState();
@@ -85,24 +84,6 @@ $(document).ready(
 
         function setCalcTypeToState(type) {
             MAIN_CALC_STATE.calcType = type;
-        }
-
-        function setExecutionTypeMarker() {
-            setTimeout(setMarker, 700);
-
-            function setMarker() {
-                let radio = $(getActiveMainCalc()).find('.calc-execution-type');
-                let marker = $(radio).children('.marker');
-                let label = $(radio).find('input:checked + label');
-                let width = $(label).innerWidth();
-                let left = $(label).position().left;
-
-                $(marker).css({
-                    'width': width,
-                    'left': left + 'px',
-                    'opacity': '1',
-                });
-            }
         }
 
         function showMarkersOfHiddenRadioControllers() {
