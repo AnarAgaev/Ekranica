@@ -8,7 +8,17 @@
         .label-controll__content
             .radio-group.rent-pixel-step(data-controller-type="radio-group")
                 .marker
+
                 input#calcRentPixelStep39(type='radio' name='rent-pixel-step')
-                label.filter-controller(for='calcRentPixelStep39' data-calc-property="pixelStep" data-calc-value="3.9") 3,9 мм.
+                label.filter-controller(
+                    for='calcRentPixelStep39'
+                    data-calc-property="pixelStep"
+                    data-calc-value="3.9"
+                    data-calc-execution="inner") 3,9 мм.
+
                 input#calcRentPixelStep48(type='radio' name='rent-pixel-step')
-                label.filter-controller(for='calcRentPixelStep48' data-calc-property="pixelStep" data-calc-value="4.8") 4,8 мм.
+                label.filter-controller(
+                    for='calcRentPixelStep48'
+                    data-calc-property="pixelStep"
+                    data-calc-value="4.8"
+                    data-calc-execution="outer") 4,8 мм.

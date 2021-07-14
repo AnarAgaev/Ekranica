@@ -14,6 +14,9 @@ import './toggle-hidden-controllers';
 import './set-hidden-select-controler-value-to-state';
 import './set-checkbox-value-into-state';
 
+import './rent/setting-rent-execution';
+import './rent/setting-rent-pixel-step';
+
 $(document).ready(
     function () {
         window.isDebugMainCalcState = false;
@@ -191,9 +194,12 @@ $(document).ready(
             },
             rentScreen: {
                 calcType: "rentScreen",
-                rentConstruction: 'monolithic', // outdoor, Подвесная
-                sizeType: [320, 160], // [320,160], [640,480], [640,640], [960,960]
+                execution: undefined, // inner, outer
                 pixelStep: undefined,
+
+
+
+
                 width: undefined,
                 height: undefined,
                 controllerParams: {

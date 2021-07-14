@@ -5,18 +5,6 @@ $(document).ready(function () {
     // Handle click on buttons at the radio group
     const radioBtns = $('.radio-group label');
 
-    function setRadioMarker(label) {
-        const marker = $(label).parent().children('.marker');
-        const width = $(label).innerWidth();
-        const left = $(label).position().left;
-
-        $(marker).css({
-            'width': width,
-            'left': left + 'px',
-            'opacity': '1',
-        });
-    }
-
     window.initRadioMarker = function () {
         const btns = $("input[type='radio']:checked + label");
 
@@ -41,3 +29,14 @@ $(document).ready(function () {
     }
 });
 
+export default function setRadioMarker (label) {
+    const marker = $(label).parent().children('.marker');
+    const width = $(label).innerWidth();
+    const left = $(label).position().left;
+
+    $(marker).css({
+        'width': width,
+        'left': left + 'px',
+        'opacity': '1',
+    });
+}
