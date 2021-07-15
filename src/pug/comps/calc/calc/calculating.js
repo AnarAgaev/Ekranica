@@ -1,7 +1,8 @@
 import $ from "jquery";
-
 import calcMonolithicScreen from './calc-monolithic-screen';
 import calcCabinetScreen from './calc-cabinet-screen';
+import checkCalcRentParameters from "./rent/check-calc-rent-parameters";
+import calculatingRent from "./rent/calculating-rent";
 
 $(document).ready(
     function () {
@@ -17,19 +18,26 @@ $(document).ready(
             SPINNER.addClass('visible');
 
             let calcType = MAIN_CALC_STATE.calcType;
-            let executionType = MAIN_CALC_STATE[calcType].executionType;
 
-            checkCalcPixelStep(executionType);
-            checkCalcWidth();
-            checkCalcHeight();
+            if (calcType === 'rentScreen') {
+                checkCalcRentParameters();
+                calculatingRent();
+            } else {
+                let executionType = MAIN_CALC_STATE[calcType]
+                    .executionType;
 
-            switch (executionType) {
-                case 'monolithic':
-                    calcMonolithicScreen();
-                    break;
-                case 'cabinet':
-                    calcCabinetScreen();
-                    break;
+                checkCalcPixelStep(executionType);
+                checkCalcWidth();
+                checkCalcHeight();
+
+                switch (executionType) {
+                    case 'monolithic':
+                        calcMonolithicScreen();
+                        break;
+                    case 'cabinet':
+                        calcCabinetScreen();
+                        break;
+                }
             }
         }
 

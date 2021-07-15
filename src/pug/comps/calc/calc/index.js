@@ -19,6 +19,7 @@ import './rent/set-pixel-step';
 import './rent/set-construction';
 import './rent/set-system-control';
 import './rent/set-rent-days';
+import './rent/check-calc-rent-parameters';
 
 $(document).ready(
     function () {

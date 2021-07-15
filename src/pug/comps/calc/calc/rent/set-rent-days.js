@@ -8,33 +8,39 @@ $(document).ready(() => {
 
     function addHandleChangeToRentDaysController (el) {
         let mask = IMask(el, {
-            mask: Number,
-            scale: 0,  // digits after point, 0 for integers
-            signed: false,  // disallow negative
-            min: 1,
-            max: 365
-        });
+                mask: Number,
+                scale: 0,  // digits after point, 0 for integers
+                signed: false,  // disallow negative
+                min: 1,
+                max: 365
+            });
+
+        setTimeout(
+            () => setRentDaysMaskToState(mask),
+            1000
+        );
 
         $(el).on(
             'input',
-            { mask },
             handleChangeRentDaysController
         );
     }
 
-    function handleChangeRentDaysController (event) {
+    function setRentDaysMaskToState (mask) {
+        if (MAIN_CALC_STATE.rentScreen.mask === undefined)
+            MAIN_CALC_STATE.rentScreen.mask = mask;
+    }
+
+    function handleChangeRentDaysController () {
         let calc = MAIN_CALC_STATE.calcType,
             prop = $(this).data('calcProperty'),
-            mask = event.data.mask;
+            mask = MAIN_CALC_STATE[calc].mask;
 
         MAIN_CALC_STATE[calc][prop] = mask.value === ''
             ? undefined
             : mask.value === '0'
                 ? 1
                 : Number.parseInt(mask.value);
-
-        if (MAIN_CALC_STATE[calc].mask === undefined)
-            MAIN_CALC_STATE[calc].mask = mask;
 
         if(isDebugMainCalcState) printMainState();
     }
