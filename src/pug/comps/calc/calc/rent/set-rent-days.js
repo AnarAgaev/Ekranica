@@ -29,7 +29,9 @@ $(document).ready(() => {
 
         MAIN_CALC_STATE[calc][prop] = mask.value === ''
             ? undefined
-            : Number.parseInt(mask.value);
+            : mask.value === '0'
+                ? 1
+                : Number.parseInt(mask.value);
 
         if (MAIN_CALC_STATE[calc].mask === undefined)
             MAIN_CALC_STATE[calc].mask = mask;
