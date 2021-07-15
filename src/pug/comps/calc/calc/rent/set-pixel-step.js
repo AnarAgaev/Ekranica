@@ -1,6 +1,9 @@
 import $ from "jquery";
 import { setRentExecutionToState } from "./set-execution";
 import setRadioMarker from '../../../custom-slider-radio/custom-slider-radio';
+import setCalcRentWidthToItsRange from "./set-width";
+import setCalcRentHeightToItsRange from "./set-height";
+
 
 $(document).ready(() => {
     $('.rent-pixel-step label')
@@ -16,6 +19,10 @@ $(document).ready(() => {
     function handleClickOnRentPixelStepToggle () {
         setRentPixelStepToState(this);
         setRentExecution(this);
+        setCalcRentWidthToItsRange(this);
+        setCalcRentHeightToItsRange(this);
+
+        cleanCalcCurrentResult();
     }
 
     function setRentExecution(controller) {
