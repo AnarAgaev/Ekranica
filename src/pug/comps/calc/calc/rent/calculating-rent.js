@@ -18,22 +18,22 @@ export default function calculatingRent () {
 
     // _R postfix mean rent calculator
     parseWidthAndHeight_R   (state);
-    setQCabW_R              (state);  // Количество кабинетов в ширину
-    setQCabH_R              (state);  // Количество кабинетов в высоту
-    setQCabSum_R            (state);  // Всего кабинетов в экране
-    set$CabSum_R            (state);  // Стоимость всех кабинетов
+    setQCabW_R              (state); // Количество кабинетов в ширину
+    setQCabH_R              (state); // Количество кабинетов в высоту
+    setQCabSum_R            (state); // Всего кабинетов в экране
+    set$CabSum_R            (state); // Стоимость всех кабинетов
     printExecution_R        (state);
     printPixelStep_R        (state);
     printConstruction_R     (state);
-    setSupportsNumber       (state);
-    setConstructionPrice    (state);
+    setSupportsNumber_R     (state);
+    setConstructionPrice_R  (state);
     setSystemControlPrice_R (state);
     setTechnicianPrice_R    (state);
     printDelivery_R         (state);
-    printDateStart          (state);
-    setCostPerRentDay       (state);
-    setFinalCost            (state);
-    printCalcRentResults    (state);
+    printDateStart_R        (state);
+    setCostPerRentDay_R     (state);
+    setFinalCost_R          (state);
+    printCalcRentResults_R  (state);
 
     if (isDebugMainCalcResults) {
         console.log('--- --- --- --- --- ---');
@@ -128,7 +128,7 @@ function printConstruction_R (state) {
     }
 }
 
-function setSupportsNumber (state) {
+function setSupportsNumber_R (state) {
     if (state.construction === 'floor') {
         let plusCount = (state.width % 1500 === 0) ? 1 : 2,
             roundCount = Math.trunc(state.width / 1500);
@@ -141,7 +141,7 @@ function setSupportsNumber (state) {
     }
 }
 
-function setConstructionPrice (state) {
+function setConstructionPrice_R (state) {
     state.constructionPrice = (state.construction === 'floor')
         ? state.supportsNumber * CONSTRUCTION_PRICE.floor
         : 0;
@@ -191,7 +191,7 @@ function printDelivery_R (state) {
     }
 }
 
-function printDateStart (state) {
+function printDateStart_R (state) {
     if (isDebugMainCalcResults) {
         let dateStart = state.dateStart !== undefined
             ? state.dateStart
@@ -201,7 +201,7 @@ function printDateStart (state) {
     }
 }
 
-function setCostPerRentDay (state) {
+function setCostPerRentDay_R (state) {
     state.costPerDay =
         state.$CabSum // стоимость всех кабинетов
         + state.constructionPrice // стоимость ног (напольный), подвесов (подвесной)
@@ -213,7 +213,7 @@ function setCostPerRentDay (state) {
     }
 }
 
-function setFinalCost (state) {
+function setFinalCost_R (state) {
     let days = state.rentDays,
         percent = 0;
 
@@ -242,7 +242,7 @@ function setFinalCost (state) {
     }
 }
 
-function printCalcRentResults(state) {
+function printCalcRentResults_R (state) {
     let resJSON = JSON.stringify(state);
     let rubSum = state.cost.toLocaleString('ru-RU');
     let calc = $('#' + state.calcType);
