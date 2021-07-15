@@ -14,8 +14,9 @@ import './toggle-hidden-controllers';
 import './set-hidden-select-controler-value-to-state';
 import './set-checkbox-value-into-state';
 
-import './rent/setting-rent-execution';
-import './rent/setting-rent-pixel-step';
+import './rent/setting-execution';
+import './rent/setting-pixel-step';
+import './rent/setting-construction';
 
 $(document).ready(
     function () {
@@ -196,7 +197,7 @@ $(document).ready(
                 calcType: "rentScreen",
                 execution: undefined, // inner, outer
                 pixelStep: undefined,
-
+                construction: undefined, // floor, suspended
 
 
 

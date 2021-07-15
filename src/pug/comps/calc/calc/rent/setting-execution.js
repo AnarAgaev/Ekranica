@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { setRentPixelStepToState } from "./setting-rent-pixel-step";
+import { setRentPixelStepToState } from "./setting-pixel-step";
 import setRadioMarker from '../../../custom-slider-radio/custom-slider-radio';
 
 $(document).ready(() => {

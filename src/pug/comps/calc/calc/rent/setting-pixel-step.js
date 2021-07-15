@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { setRentExecutionToState } from "./setting-rent-execution";
+import { setRentExecutionToState } from "./setting-execution";
 import setRadioMarker from '../../../custom-slider-radio/custom-slider-radio';
 
 $(document).ready(() => {
