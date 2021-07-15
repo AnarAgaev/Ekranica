@@ -306,4 +306,20 @@ $(document).ready(function () {
 
         return resultForm;
     };
+
+    // Get word form for years
+    window.getDaysWordForm = function (num) {
+        let cases = [2, 0, 1, 1, 1, 2];
+        let forms = ['день', 'дня', 'дней'];
+
+        let resultForm = forms[ (num%100 > 4 && num%100 < 20)
+            ? 2
+            : cases[ (num%10 < 5)
+                ? num%10
+                : 5
+                ]
+            ];
+
+        return resultForm;
+    };
 });

@@ -24,6 +24,11 @@ $(document).ready(() => {
             'input',
             handleChangeRentDaysController
         );
+
+        $(el).on(
+            'blur',
+            setDaysWordFormToRentDaysController
+        )
     }
 
     function setRentDaysMaskToState (mask) {
@@ -42,8 +47,26 @@ $(document).ready(() => {
                 ? 1
                 : Number.parseInt(mask.value);
 
+        setDaysWordFormToRentDaysController();
+
         cleanCalcCurrentResult();
 
         if(isDebugMainCalcState) printMainState();
     }
 });
+
+export default function setDaysWordFormToRentDaysController () {
+    let days = MAIN_CALC_STATE.rentScreen.rentDays,
+        wordForm = getDaysWordForm(days),
+        controller = $(getActiveMainCalc())
+            .find('.calc-rent-days-controller')
+            .find('.input-suffix__units');
+
+    wordForm = days === undefined
+        ? 'дни'
+        : MAIN_CALC_STATE.rentScreen.mask.unmaskedValue === '0'
+            ? 'дней'
+            : wordForm;
+
+    $(controller).text(wordForm);
+}

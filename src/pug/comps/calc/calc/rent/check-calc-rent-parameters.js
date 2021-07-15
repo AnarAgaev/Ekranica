@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import setDaysWordFormToRentDaysController from "./set-rent-days";
 
 export default function checkCalcRentParameters () {
     let calc = MAIN_CALC_STATE.calcType,
@@ -63,5 +64,6 @@ function checkCalcRentDays (state) {
     if (state.rentDays === undefined) {
         state.rentDays = 1;
         state.mask.unmaskedValue = '1';
+        setDaysWordFormToRentDaysController();
     }
 }
