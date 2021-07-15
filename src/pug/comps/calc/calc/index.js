@@ -14,10 +14,11 @@ import './toggle-hidden-controllers';
 import './set-hidden-select-controler-value-to-state';
 import './set-checkbox-value-into-state';
 
-import './rent/setting-execution';
-import './rent/setting-pixel-step';
-import './rent/setting-construction';
-import './rent/setting-system-control';
+import './rent/set-execution';
+import './rent/set-pixel-step';
+import './rent/set-construction';
+import './rent/set-system-control';
+import './rent/set-rent-days';
 
 $(document).ready(
     function () {
@@ -200,7 +201,10 @@ $(document).ready(
                 pixelStep: undefined,
                 construction: undefined, // floor, suspended
                 systemControl: undefined, // controller, processor
-
+                technician: undefined, // undefined, true
+                delivery: undefined, // undefined, true
+                rentDays: undefined,
+                mask: undefined,
 
                 width: undefined,
                 height: undefined,
