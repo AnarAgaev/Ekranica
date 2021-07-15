@@ -201,8 +201,12 @@ $(document).ready(
                 execution: undefined, // inner, outer
                 pixelStep: undefined,
                 construction: undefined, // floor, suspended
+                supportsNumber: undefined,
+                constructionPrice: undefined,
                 systemControl: undefined, // controller, processor
+                systemControlPrice: undefined,
                 technician: undefined, // undefined, true
+                technicianPrice: undefined,
                 delivery: undefined, // undefined, true
                 rentDays: undefined,
                 dateStart: undefined,
@@ -231,6 +235,12 @@ $(document).ready(
                         step: 500
                     }
                 },
+                QCabW: undefined,
+                QCabH: undefined,
+                QCabSum: undefined,
+                $CabSum: undefined,
+                costPerDay: undefined,
+                cost: undefined,
             },
         };
 
