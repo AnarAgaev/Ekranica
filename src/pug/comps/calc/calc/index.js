@@ -19,7 +19,6 @@ import './rent/set-pixel-step';
 import './rent/set-construction';
 import './rent/set-system-control';
 import './rent/set-rent-days';
-import './rent/set-data-start';
 
 $(document).ready(
     function () {
@@ -207,21 +206,30 @@ $(document).ready(
                 rentDays: undefined,
                 dateStart: undefined,
                 mask: undefined,
-
                 width: undefined,
                 height: undefined,
+                maxSizes: {
+                    39: {
+                        width: 50000,
+                        height: 50000,
+                    },
+                    48: {
+                        width: 100000,
+                        height: 100000,
+                    }
+                },
                 controllerParams: {
                     width: {
-                        min: undefined,
-                        max: undefined,
-                        step: undefined
+                        min: 500,
+                        max: 50000,
+                        step: 500
                     },
                     height: {
-                        min: undefined,
-                        max: undefined,
-                        step: undefined
+                        min: 500,
+                        max: 50000,
+                        step: 500
                     }
-                }
+                },
             },
         };
 

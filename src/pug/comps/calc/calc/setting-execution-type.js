@@ -71,13 +71,13 @@ function getTypeSizeFromExecutionTypeBtn (controller) {
 }
 
 function setTypeSizeToInputsRange (controller) {
-    let from = $(controller).data('calcProperty');
+    let prop = $(controller).data('calcProperty');
     let value = $(controller).data('calcValue');
     let typeSize;
 
-    if (from === 'executionType') {
+    if (prop === 'executionType') {
         typeSize = getTypeSizeFromExecutionTypeBtn(controller);
-    } else if (from === 'cabinType') {
+    } else if (prop === 'cabinType') {
         typeSize = getSizeTypeFromString(value);
     }
 
