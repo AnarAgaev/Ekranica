@@ -19,6 +19,7 @@ import './rent/set-pixel-step';
 import './rent/set-construction';
 import './rent/set-system-control';
 import './rent/set-rent-days';
+import './rent/set-data-start';
 
 $(document).ready(
     function () {
@@ -204,6 +205,7 @@ $(document).ready(
                 technician: undefined, // undefined, true
                 delivery: undefined, // undefined, true
                 rentDays: undefined,
+                dateStart: undefined,
                 mask: undefined,
 
                 width: undefined,

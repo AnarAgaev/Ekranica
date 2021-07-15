@@ -2,6 +2,7 @@ import $ from "jquery";
 import 'jquery-ui/ui/widgets/datepicker'
 import 'jquery-ui/themes/base/datepicker.css'
 import 'jquery-ui/themes/base/theme.css'
+import setCalcRentDataStartToState from "../calc/calc/rent/set-data-start";
 
 $(document).ready(function () {
     $.datepicker.regional['ru'] = {
@@ -24,7 +25,7 @@ $(document).ready(function () {
     $.datepicker.setDefaults($.datepicker.regional['ru']);
 
     $(function initDatepicker () {
-        $('#datepickerRentInstallment').datepicker({
+        $('#datepickerRentDateStart').datepicker({
             minDate: 0,
             onSelect: handleSelectOnDate
         });
@@ -37,6 +38,7 @@ $(document).ready(function () {
         let year = dateArr[2];
 
         setDateToController(this, day, month, year);
+        setCalcRentDataStartToState(day, month, year);
     }
 
     function setDateToController (controller, day, month, year) {
