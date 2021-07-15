@@ -42,6 +42,8 @@ $(document).ready(() => {
                 ? 1
                 : Number.parseInt(mask.value);
 
+        cleanCalcCurrentResult();
+
         if(isDebugMainCalcState) printMainState();
     }
 });

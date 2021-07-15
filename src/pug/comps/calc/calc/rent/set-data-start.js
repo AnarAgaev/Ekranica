@@ -8,5 +8,7 @@ export default function setCalcRentDataStartToState(...date) {
 
     MAIN_CALC_STATE[activeCalc][prop] = date.join('.');
 
+    cleanCalcCurrentResult();
+
     if(isDebugMainCalcState) printMainState();
 }

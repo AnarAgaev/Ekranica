@@ -18,6 +18,8 @@ $(document).ready(() => {
 
         MAIN_CALC_STATE[activeCalc][propName] = propValue;
 
+        cleanCalcCurrentResult();
+
         if(isDebugMainCalcState) printMainState();
     }
 });
