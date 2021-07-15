@@ -17,6 +17,7 @@ import './set-checkbox-value-into-state';
 import './rent/setting-execution';
 import './rent/setting-pixel-step';
 import './rent/setting-construction';
+import './rent/setting-system-control';
 
 $(document).ready(
     function () {
@@ -198,7 +199,7 @@ $(document).ready(
                 execution: undefined, // inner, outer
                 pixelStep: undefined,
                 construction: undefined, // floor, suspended
-
+                systemControl: undefined, // controller, processor
 
 
                 width: undefined,
