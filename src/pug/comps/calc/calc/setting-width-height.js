@@ -48,6 +48,8 @@ $(document).ready(
         }
 
         function getErrorRangeInputMessage(input) {
+            console.log($(input))
+
             let val = parseInt($(input).val(), 10);
             let min = parseInt($(input).data('min'), 10);
             let max = parseInt($(input).data('max'), 10);
@@ -57,13 +59,13 @@ $(document).ready(
                 .find('.custom-range__value-error')
                 .data('defaultTxt');
 
-            let less = (min * whole - min) < min
+            let less = (min * whole) < min
                 ? min
-                : min * whole - min;
+                : min * whole;
 
-            let more = (min * whole + min) > max
+            let more = (min * (whole + 1)) > max
                 ? max
-                : min * whole + min;
+                : min * (whole + 1);
 
             if (Number.isNaN(val)) return undefined; // for blank strings
             if (val % min === 0) return undefined; // for correct value
