@@ -762,19 +762,32 @@
             margin-left: 29px;
 
             @media (min-width: $xl) {
-                width: 347px;
-                margin-top: -60px;
-                margin-left: 43px;
+                width: 350px;
+                margin-top: -40px;
+                margin-left: 30px;
             }
         }
     }
 
-    &_inside-screen,
+    &_inside-screen {
+        .calc__body-image img {
+            width: 240px;
+            margin-top: -10px;
+            margin-left: 34px;
+
+            @media (min-width: $xl) {
+                width: 324px;
+                margin-top: -17px;
+                margin-left: 50px;
+            }
+        }
+    }
+
     &_rent {
         .calc__body-image img {
-            width: 229px;
-            margin-top: -14px;
-            margin-left: 30px;
+            width: 300px;
+            margin-top: 5px;
+            margin-left: -10px;
 
             @media (min-width: $xl) {
                 width: 324px;
@@ -888,7 +901,15 @@
     }
 }
 
-[data-calc-type-pic="#rentScreen"],
+[data-calc-type-pic="#rentScreen"] {
+    background-size: 65% !important;
+
+    @media (min-width: $md) {
+        background-size: 57% !important;
+        background-position: 135px 90px !important;
+    }
+}
+
 [data-calc-type-pic="#insideScreen"] {
     @media (min-width: $md) {
         background-position: 174px center !important;
