@@ -100,14 +100,12 @@ $(document).ready(function () {
             $('.installment-calc__result').addClass('show');
 
             // Scrolling to results for touch devices
-            if (!isLaptop) {
-                setTimeout(function () {
-                    const winHeight = $(window).height();
-                    const resTargetOffset = $('.installment-calc__delimiter').offset().top;
-                    const resTop = (resTargetOffset - winHeight / 2) + 150;
-                    $('body,html').animate({ scrollTop: resTop }, 500);
-                }, 700);
-            }
+            setTimeout(function () {
+                const winHeight = $(window).height();
+                const resTargetOffset = $('.installment-calc__delimiter').offset().top;
+                const resTop = (resTargetOffset - winHeight / 2) + 200;
+                $('body,html').animate({ scrollTop: resTop }, 500);
+            }, 700);
 
             //- console.log('*** *** *** *** *** *** ***')
             //- console.log('годовая процентная ставка:', creditPercentYear);
