@@ -140,9 +140,20 @@
         letter-spacing: 0.02em;
         color: $color-text-primary;
         margin: 16px 0 12px;
+        word-wrap: break-word;
 
         @media (min-width: $md) {
             margin-top: 24px;
+        }
+
+        span.wbr::before {
+            content: "-";
+            display: inline-block;
+            position: relative;
+
+            @media (min-width: $md) {
+                display: none;
+            }
         }
     }
 

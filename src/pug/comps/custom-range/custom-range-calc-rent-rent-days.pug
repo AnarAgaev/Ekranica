@@ -1,0 +1,32 @@
+.label-controll.calc-rent-days-controller
+    .label-controll__help.help-button(data-help-modal-id="helpModalRentDays")
+        include ../../../img/icon-help.svg
+        include ../../comps/help-modal/help-modal-rent-days
+
+    .label-controll__caption Срок аренды
+    .label-controll__body
+        .label-controll__content
+
+            .custom-range
+                .input-suffix.custom-input
+                    input.value(
+                        type="number"
+                        data-calc-property="rentDays"
+                        data-min="1"
+                        data-max="30"
+                        value=""
+                    )
+                    span.input-suffix__delimiter
+                    span.input-suffix__units дни
+
+                .custom-range__controller
+                    span.status-bar
+                    spna.slider
+                    input.custom-range__slide(
+                        type="range"
+                        step="1"
+                        min="1"
+                        max="30"
+                        value="1"
+                        data-calc-property="rentDays"
+                    )
