@@ -105,7 +105,7 @@ $(document).ready(function () {
                 const resTargetOffset = $('.installment-calc__delimiter').offset().top;
                 const resTop = (resTargetOffset - winHeight / 2) + 200;
                 $('body,html').animate({ scrollTop: resTop }, 500);
-            }, 700);
+            }, 100);
 
             //- console.log('*** *** *** *** *** *** ***')
             //- console.log('годовая процентная ставка:', creditPercentYear);
