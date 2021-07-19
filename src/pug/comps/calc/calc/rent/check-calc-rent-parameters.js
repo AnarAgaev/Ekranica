@@ -61,9 +61,16 @@ function checkCalcRentSystemControl (state) {
 }
 
 function checkCalcRentDays (state) {
+    let controller = $(getActiveMainCalc())
+        .find('.calc-rent-days-controller')
+        .find('.custom-input')
+        .find('input');
+
     if (state.rentDays === undefined) {
         state.rentDays = 1;
-        state.mask.unmaskedValue = '1';
+        $(controller).val('1');
         setDaysWordFormToRentDaysController();
+    } else {
+        state.rentDays = parseInt(state.rentDays);
     }
 }

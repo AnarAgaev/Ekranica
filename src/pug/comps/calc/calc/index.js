@@ -210,7 +210,6 @@ $(document).ready(
                 delivery: undefined, // undefined, true
                 rentDays: undefined,
                 dateStart: undefined,
-                mask: undefined,
                 width: undefined,
                 height: undefined,
                 maxSizes: {

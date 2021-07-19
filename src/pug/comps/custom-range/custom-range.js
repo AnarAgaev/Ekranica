@@ -82,10 +82,8 @@ $(document).ready(function () {
                 break;
 
             case 'width':
-                setRangeValToInputControllerOnMainCalc(controller);
-                break;
-
             case 'height':
+            case 'rentDays':
                 setRangeValToInputControllerOnMainCalc(controller);
                 break;
         }

@@ -48,8 +48,6 @@ $(document).ready(
         }
 
         function getErrorRangeInputMessage(input) {
-            console.log($(input))
-
             let val = parseInt($(input).val(), 10);
             let min = parseInt($(input).data('min'), 10);
             let max = parseInt($(input).data('max'), 10);

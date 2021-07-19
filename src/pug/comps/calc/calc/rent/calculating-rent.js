@@ -235,6 +235,7 @@ function setFinalCost_R (state) {
     }
 
     state.cost = state.costPerDay * percent;
+    state.cost = parseFloat(state.cost.toFixed(2));
 
     if (isDebugMainCalcResults) {
         console.log(`Количество дней аренды: ${state.rentDays}`);
